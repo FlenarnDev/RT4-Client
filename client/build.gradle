@@ -41,14 +41,19 @@ dependencies {
     // LWJGL
     implementation 'lib:lwjgl'
     implementation 'lib:lwjgl-natives-windows'
+    implementation 'lib:lwjgl-natives-linux'
     implementation 'lib:lwjgl-glfw'
     implementation 'lib:lwjgl-glfw-natives-windows'
+    implementation 'lib:lwjgl-glfw-natives-linux'
     implementation 'lib:lwjgl-jemalloc'
     implementation 'lib:lwjgl-jemalloc-natives-windows'
+    implementation 'lib:lwjgl-jemalloc-natives-linux'
     implementation 'lib:lwjgl-opengl'
     implementation 'lib:lwjgl-opengl-natives-windows'
+    implementation 'lib:lwjgl-opengl-natives-linux'
     implementation 'lib:lwjgl-openal'
     implementation 'lib:lwjgl-openal-natives-windows'
+    implementation 'lib:lwjgl-openal-natives-linux'
 }
 
 jar {

@@ -845,7 +845,7 @@ public final class GlRenderer {
 				return result;
 			}
 
-			initializeRenderingState();
+			genTextures();
 			resetOpenGLState();
 			glClear(GL_COLOR_BUFFER_BIT);
 			swapBuffersAttempts = 0;
@@ -936,7 +936,7 @@ public final class GlRenderer {
 	}
 
 	@OriginalMember(owner = "client!tf", name = "s", descriptor = "()V")
-	private static void initializeRenderingState() {
+	private static void genTextures() {
 		IntBuffer textureIdBuffer = BufferUtils.createIntBuffer(1);
 		glGenTextures(textureIdBuffer);
 		anInt5328 = textureIdBuffer.get(0);
