@@ -713,11 +713,15 @@ public final class GlRenderer {
 	}
 
 	private static void initLWJGL() {
+		// Until Wayland gets its shit together, we have to do this.
+		if (glfwPlatformSupported(GLFW_PLATFORM_WAYLAND)) {
+			glfwInitHint(GLFW_PLATFORM, GLFW_PLATFORM_X11);
+		}
+
 		// Setup an error callback. The default implementation will print the error message in System.err.
 		GLFWErrorCallback.createPrint(System.err).set();
 
-		// Initialize GLFW. Most GLFW functions will not work as intended
-		// before doing this.
+		// Initialize GLFW.
 		if (!glfwInit()) {
 			throw new IllegalStateException("Unable to initialize GLFW");
 		}
@@ -728,7 +732,7 @@ public final class GlRenderer {
 		glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE); // Window will be resizable.
 
 		// Create the window
-		LWJGLWindow = glfwCreateWindow(300, 300, "Hello world!", NULL, NULL);
+		LWJGLWindow = glfwCreateWindow(300, 300, "Runescape", NULL, NULL);
 		if (LWJGLWindow == NULL) {
 			throw new IllegalStateException("Unable to create the GLFW window");
 		}

@@ -11,34 +11,34 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
-@OriginalClass("runetek4.client!uh")
+@OriginalClass("client!uh")
 public final class GlTexture extends SecondaryNode {
 
-	@OriginalMember(owner = "runetek4.client!oj", name = "t", descriptor = "[I")
+	@OriginalMember(owner = "client!oj", name = "t", descriptor = "[I")
 	public static int[] anIntArray372;
 
-	@OriginalMember(owner = "runetek4.client!uh", name = "K", descriptor = "F")
+	@OriginalMember(owner = "client!uh", name = "K", descriptor = "F")
 	private float aFloat35;
 
-	@OriginalMember(owner = "runetek4.client!uh", name = "X", descriptor = "I")
+	@OriginalMember(owner = "client!uh", name = "X", descriptor = "I")
 	private int anInt5492;
 
-	@OriginalMember(owner = "runetek4.client!uh", name = "Z", descriptor = "[I")
+	@OriginalMember(owner = "client!uh", name = "Z", descriptor = "[I")
 	private int[] anIntArray481;
 
-	@OriginalMember(owner = "runetek4.client!uh", name = "bb", descriptor = "I")
+	@OriginalMember(owner = "client!uh", name = "bb", descriptor = "I")
 	private int textureId = -1;
 
-	@OriginalMember(owner = "runetek4.client!uh", name = "eb", descriptor = "Z")
+	@OriginalMember(owner = "client!uh", name = "eb", descriptor = "Z")
 	public boolean aBoolean287 = false;
 
-	@OriginalMember(owner = "runetek4.client!uh", name = "db", descriptor = "I")
+	@OriginalMember(owner = "client!uh", name = "db", descriptor = "I")
 	private int textureSize = 0;
 
-	@OriginalMember(owner = "runetek4.client!uh", name = "W", descriptor = "Lclient!lc;")
+	@OriginalMember(owner = "client!uh", name = "W", descriptor = "Lclient!lc;")
 	private final Texture aClass88_1;
 
-	@OriginalMember(owner = "runetek4.client!uh", name = "U", descriptor = "Z")
+	@OriginalMember(owner = "client!uh", name = "U", descriptor = "Z")
 	private final boolean aBoolean286;
 
 	@OriginalMember(owner = "runetek4.client!uh", name = "jb", descriptor = "Z")
