@@ -313,7 +313,18 @@ public final class JString implements StringInterface {
 		return local126;
 	}
 
-	@OriginalMember(owner = "runetek4.client!na", name = "a", descriptor = "(Z)Ljava/net/URL;")
+    @OriginalMember(owner = "client!tf", name = "a", descriptor = "(Ljava/lang/String;)Lclient!na;")
+    static JString convertStringToJString(@OriginalArg(0) String string) {
+        @Pc(3) byte[] bytes;
+        try {
+            bytes = string.getBytes("ISO-8859-1");
+        } catch (@Pc(5) UnsupportedEncodingException unsupportedEncodingException) {
+            bytes = string.getBytes();
+        }
+        return decodeString(bytes, bytes.length, 0);
+    }
+
+    @OriginalMember(owner = "runetek4.client!na", name = "a", descriptor = "(Z)Ljava/net/URL;")
 	public final URL method3107() throws MalformedURLException {
 		return new URL(new String(this.chars, 0, this.length));
 	}

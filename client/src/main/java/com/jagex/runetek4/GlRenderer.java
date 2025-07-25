@@ -1,7 +1,6 @@
 package com.jagex.runetek4;
 
 import java.awt.Canvas;
-import java.io.UnsupportedEncodingException;
 import java.nio.ByteOrder;
 import java.nio.IntBuffer;
 
@@ -11,10 +10,59 @@ import com.jagex.runetek4.util.ThreadUtils;
 import com.jogamp.nativewindow.awt.AWTGraphicsConfiguration;
 import com.jogamp.nativewindow.awt.JAWTWindow;
 import com.jogamp.opengl.*;
+import com.jogamp.opengl.GLCapabilities;
 import jogamp.newt.awt.NewtFactoryAWT;
+import org.lwjgl.opengl.GL;
+import org.lwjgl.glfw.GLFWErrorCallback;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import org.lwjgl.*;
+import org.lwjgl.glfw.*;
+import org.lwjgl.system.*;
+
+import static com.jogamp.opengl.GL.GL_DEPTH_TEST;
+import static com.jogamp.opengl.GL2ES1.*;
+import static com.jogamp.opengl.GL2ES1.GL_ADD;
+import static com.jogamp.opengl.GL2ES1.GL_ALPHA_TEST;
+import static com.jogamp.opengl.GL2ES1.GL_FOG;
+import static com.jogamp.opengl.GL2ES1.GL_MODULATE;
+import static com.jogamp.opengl.GL2ES1.GL_TEXTURE_ENV;
+import static com.jogamp.opengl.GL2ES1.GL_TEXTURE_ENV_MODE;
+import static com.jogamp.opengl.fixedfunc.GLLightingFunc.GL_LIGHTING;
+import static com.jogamp.opengl.fixedfunc.GLLightingFunc.GL_SMOOTH;
+import static com.jogamp.opengl.fixedfunc.GLMatrixFunc.GL_MODELVIEW;
+import static com.jogamp.opengl.fixedfunc.GLMatrixFunc.GL_PROJECTION;
+import static com.jogamp.opengl.fixedfunc.GLPointerFunc.GL_COLOR_ARRAY;
+import static com.jogamp.opengl.fixedfunc.GLPointerFunc.GL_NORMAL_ARRAY;
+import static org.lwjgl.glfw.Callbacks.*;
+import static org.lwjgl.glfw.GLFW.*;
+import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL11.GL_BACK;
+import static org.lwjgl.opengl.GL11.GL_BLEND;
+import static org.lwjgl.opengl.GL11.GL_COLOR_BUFFER_BIT;
+import static org.lwjgl.opengl.GL11.GL_DEPTH_BUFFER_BIT;
+import static org.lwjgl.opengl.GL11.GL_FRONT;
+import static org.lwjgl.opengl.GL11.GL_GREATER;
+import static org.lwjgl.opengl.GL11.GL_LEQUAL;
+import static org.lwjgl.opengl.GL11.GL_ONE_MINUS_SRC_ALPHA;
+import static org.lwjgl.opengl.GL11.GL_RENDERER;
+import static org.lwjgl.opengl.GL11.GL_REPLACE;
+import static org.lwjgl.opengl.GL11.GL_RGBA;
+import static org.lwjgl.opengl.GL11.GL_RGBA8;
+import static org.lwjgl.opengl.GL11.GL_SRC_ALPHA;
+import static org.lwjgl.opengl.GL11.GL_TEXTURE_2D;
+import static org.lwjgl.opengl.GL11.GL_TEXTURE_COORD_ARRAY;
+import static org.lwjgl.opengl.GL11.GL_UNSIGNED_BYTE;
+import static org.lwjgl.opengl.GL11.GL_VENDOR;
+import static org.lwjgl.opengl.GL11.GL_VERSION;
+import static org.lwjgl.opengl.GL11.GL_VERTEX_ARRAY;
+import static org.lwjgl.opengl.GL11C.GL_CULL_FACE;
+import static org.lwjgl.opengl.GL11C.GL_TEXTURE;
+import static org.lwjgl.opengl.GL13C.glActiveTexture;
+import static org.lwjgl.system.MemoryStack.*;
+import static org.lwjgl.system.MemoryUtil.*;
 
 public final class GlRenderer {
 
@@ -25,7 +73,7 @@ public final class GlRenderer {
 	private static String renderer;
 
 	@OriginalMember(owner = "client!tf", name = "c", descriptor = "F")
-	private static float aFloat30;
+	private static float depthScaleFactor;
 
 	@OriginalMember(owner = "client!tf", name = "e", descriptor = "I")
 	public static int maxTextureUnits;
@@ -34,7 +82,7 @@ public final class GlRenderer {
 	public static boolean bigEndian;
 
 	@OriginalMember(owner = "client!tf", name = "k", descriptor = "F")
-	private static float aFloat32;
+	private static float scaledFarClipDistance;
 
 	@OriginalMember(owner = "client!tf", name = "p", descriptor = "Lgl!javax/media/opengl/GLContext;")
 	private static GLContext context;
@@ -91,19 +139,19 @@ public final class GlRenderer {
 	private static int textureCombineRgbMode = 0;
 
 	@OriginalMember(owner = "client!tf", name = "j", descriptor = "F")
-	private static float aFloat31 = 0.0F;
+	private static float depthAdjustmentFactor = 0.0F;
 
 	@OriginalMember(owner = "client!tf", name = "l", descriptor = "Z")
 	private static boolean lightingEnabled = true;
 
 	@OriginalMember(owner = "client!tf", name = "m", descriptor = "F")
-	private static float aFloat33 = 0.0F;
+	private static float depthAdjustmentParameter = 0.0F;
 
 	@OriginalMember(owner = "client!tf", name = "n", descriptor = "Z")
 	public static boolean normalArrayEnabled = true;
 
 	@OriginalMember(owner = "client!tf", name = "o", descriptor = "Z")
-	private static boolean aBoolean266 = false;
+	private static boolean isOrthoViewConfigured = false;
 
 	@OriginalMember(owner = "client!tf", name = "q", descriptor = "F")
 	private static final float aFloat34 = 0.09765625F;
@@ -128,26 +176,25 @@ public final class GlRenderer {
 
 	private static JAWTWindow window;
 
-	@OriginalMember(owner = "client!tf", name = "a", descriptor = "(Ljava/lang/String;)Lclient!na;")
-	private static JString method4147(@OriginalArg(0) String arg0) {
-		@Pc(3) byte[] local3;
-		try {
-			local3 = arg0.getBytes("ISO-8859-1");
-		} catch (@Pc(5) UnsupportedEncodingException local5) {
-			local3 = arg0.getBytes();
-		}
-		return JString.decodeString(local3, local3.length, 0);
-	}
+	private static long LWJGLWindow;
+
+	public static int leftMargin;
+
+	public static int topMargin;
+
+	public static int viewportWidth;
+
+	public static int viewportHeight;
 
 	@OriginalMember(owner = "client!tf", name = "a", descriptor = "(IIII)V")
 	public static void method4148(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		method4171(0, 0, canvasWidth, canvasHeight, arg0, arg1, 0.0F, 0.0F, arg2, arg3);
+		setupViewTransformations(0, 0, canvasWidth, canvasHeight, arg0, arg1, 0.0F, 0.0F, arg2, arg3);
 	}
 
 	@OriginalMember(owner = "client!tf", name = "a", descriptor = "()V")
-	public static void method4149() {
+	public static void setupRgbAlphaMode1Rendering() {
 		MaterialManager.setMaterial(0, 0);
-		method4163();
+		configureOrthographicView();
 		setTextureCombineRgbMode(1);
 		setTextureCombineAlphaMode(1);
 		setLightingEnabled(false);
@@ -159,17 +206,17 @@ public final class GlRenderer {
 	@OriginalMember(owner = "client!tf", name = "b", descriptor = "()V")
 	public static void resetTextureMatrix() {
 		if (textureMatrixModified) {
-			gl.glMatrixMode(GL2.GL_TEXTURE);
-			gl.glLoadIdentity();
-			gl.glMatrixMode(GL2.GL_MODELVIEW);
+			glMatrixMode(GL_TEXTURE);
+			glLoadIdentity();
+			glMatrixMode(GL_MODELVIEW);
 			textureMatrixModified = false;
 		}
 	}
 
 	@OriginalMember(owner = "client!tf", name = "c", descriptor = "()V")
-	public static void method4151() {
-		MaterialManager.setMaterial(0, 0); // MaterialManager
-		method4163();
+	public static void setupRgbAlphaMode0Rendering() {
+		MaterialManager.setMaterial(0, 0);
+		configureOrthographicView();
 		setTextureCombineRgbMode(0);
 		setTextureCombineAlphaMode(0);
 		setLightingEnabled(false);
@@ -179,31 +226,38 @@ public final class GlRenderer {
 	}
 
 	@OriginalMember(owner = "client!tf", name = "a", descriptor = "(FF)V")
-	public static void method4152(@OriginalArg(0) float arg0, @OriginalArg(1) float arg1) {
-		if (aBoolean266 || arg0 == aFloat33 && arg1 == aFloat31) {
+	public static void configureDepthAdjustment(@OriginalArg(0) float arg0, @OriginalArg(1) float arg1) {
+		if (isOrthoViewConfigured || arg0 == depthAdjustmentParameter && arg1 == depthAdjustmentFactor) {
 			return;
 		}
-		aFloat33 = arg0;
-		aFloat31 = arg1;
+		depthAdjustmentParameter = arg0;
+		depthAdjustmentFactor = arg1;
 		if (arg1 == 0.0F) {
-			matrix[10] = aFloat30;
-			matrix[14] = aFloat32;
+			matrix[10] = depthScaleFactor;
+			matrix[14] = scaledFarClipDistance;
 		} else {
-			@Pc(25) float local25 = arg0 / (arg1 + arg0);
-			@Pc(29) float local29 = local25 * local25;
-			@Pc(42) float local42 = -aFloat32 * (1.0F - local25) * (1.0F - local25) / arg1;
-			matrix[10] = aFloat30 + local42;
-			matrix[14] = aFloat32 * local29;
+			@Pc(25) float depthRatio = arg0 / (arg1 + arg0);
+			@Pc(29) float depthRatioSquared = depthRatio * depthRatio;
+			@Pc(42) float depthAdjustment = -scaledFarClipDistance * (1.0F - depthRatio) * (1.0F - depthRatio) / arg1;
+			matrix[10] = depthScaleFactor + depthAdjustment;
+			matrix[14] = scaledFarClipDistance * depthRatioSquared;
 		}
-		gl.glMatrixMode(GL2.GL_PROJECTION);
-		gl.glLoadMatrixf(matrix, 0);
-		gl.glMatrixMode(GL2.GL_MODELVIEW);
+		glMatrixMode(GL_PROJECTION);
+		glLoadMatrixf(matrix);
+		glMatrixMode(GL_MODELVIEW);
 	}
 
 	@OriginalMember(owner = "client!tf", name = "d", descriptor = "()V")
 	public static void swapBuffers() {
 		try {
-			drawable.swapBuffers();
+			//drawable.swapBuffers();
+
+			if (!glfwWindowShouldClose(LWJGLWindow)) {
+				glfwSwapBuffers(LWJGLWindow); // Swap the color buffers
+
+				glfwPollEvents();
+			}
+
 		} catch (@Pc(3) Exception local3) {
 		}
 	}
@@ -214,9 +268,9 @@ public final class GlRenderer {
 			return;
 		}
 		if (enabled) {
-			gl.glEnable(GL2.GL_FOG);
+			glEnable(GL_FOG);
 		} else {
-			gl.glDisable(GL2.GL_FOG);
+			glDisable(GL_FOG);
 		}
 		fogEnabled = enabled;
 	}
@@ -224,7 +278,7 @@ public final class GlRenderer {
 	@OriginalMember(owner = "client!tf", name = "e", descriptor = "()V")
 	public static void method4155() {
 		MaterialManager.setMaterial(0, 0);
-		method4163();
+		configureOrthographicView();
 		setTextureCombineRgbMode(0);
 		setTextureCombineAlphaMode(0);
 		setLightingEnabled(false);
@@ -234,51 +288,51 @@ public final class GlRenderer {
 	}
 
 	@OriginalMember(owner = "client!tf", name = "f", descriptor = "()V")
-	private static void method4156() {
-		aBoolean266 = false;
-		gl.glDisable(GL2.GL_TEXTURE_2D);
+	private static void resetOpenGLState() {
+		isOrthoViewConfigured = false;
+		glDisable(GL_TEXTURE_2D);
 		textureId = -1;
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_TEXTURE_ENV_MODE, GL2.GL_COMBINE);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_RGB, GL2.GL_MODULATE);
+		glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_COMBINE);
+		glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_RGB, GL_MODULATE);
 		textureCombineRgbMode = 0;
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_ALPHA, GL2.GL_MODULATE);
+		glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_ALPHA, GL_MODULATE);
 		textureCombineAlphaMode = 0;
-		gl.glEnable(GL2.GL_LIGHTING);
-		gl.glEnable(GL2.GL_FOG);
-		gl.glEnable(GL2.GL_DEPTH_TEST);
+		glEnable(GL_LIGHTING);
+		glEnable(GL_FOG);
+		glEnable(GL_DEPTH_TEST);
 		lightingEnabled = true;
 		depthTestEnabled = true;
 		fogEnabled = true;
 		resetMaterial();
-		gl.glActiveTexture(GL2.GL_TEXTURE1);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_TEXTURE_ENV_MODE, GL2.GL_COMBINE);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_RGB, GL2.GL_MODULATE);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_ALPHA, GL2.GL_MODULATE);
-		gl.glActiveTexture(GL2.GL_TEXTURE0);
+		glActiveTexture(GL_TEXTURE1);
+		glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_COMBINE);
+		glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_RGB, GL_MODULATE);
+		glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_ALPHA, GL_MODULATE);
+		glActiveTexture(GL_TEXTURE0);
 		gl.setSwapInterval(0);
-		gl.glClearColor(0.0F, 0.0F, 0.0F, 0.0F);
-		gl.glShadeModel(GL2.GL_SMOOTH);
-		gl.glClearDepth(1.0D);
-		gl.glDepthFunc(GL2.GL_LEQUAL);
+		glClearColor(0.0F, 0.0F, 0.0F, 0.0F);
+		glShadeModel(GL_SMOOTH);
+		glClearDepth(1.0D);
+		glDepthFunc(GL_LEQUAL);
 		enableDepthMask();
-		gl.glMatrixMode(GL2.GL_TEXTURE);
-		gl.glLoadIdentity();
-		gl.glPolygonMode(GL2.GL_FRONT, GL2.GL_FILL);
-		gl.glEnable(GL2.GL_CULL_FACE);
-		gl.glCullFace(GL2.GL_BACK);
-		gl.glEnable(GL2.GL_BLEND);
-		gl.glBlendFunc(GL2.GL_SRC_ALPHA, GL2.GL_ONE_MINUS_SRC_ALPHA);
-		gl.glEnable(GL2.GL_ALPHA_TEST);
-		gl.glAlphaFunc(GL2.GL_GREATER, 0.0F);
-		gl.glEnableClientState(GL2.GL_VERTEX_ARRAY);
-		gl.glEnableClientState(GL2.GL_NORMAL_ARRAY);
+		glMatrixMode(GL_TEXTURE);
+		glLoadIdentity();
+		glPolygonMode(GL_FRONT, GL_FILL);
+		glEnable(GL_CULL_FACE);
+		glCullFace(GL_BACK);
+		glEnable(GL_BLEND);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		glEnable(GL_ALPHA_TEST);
+		glAlphaFunc(GL_GREATER, 0.0F);
+		glEnableClientState(GL_VERTEX_ARRAY);
+		glEnableClientState(GL_NORMAL_ARRAY);
 		normalArrayEnabled = true;
-		gl.glEnableClientState(GL2.GL_COLOR_ARRAY);
-		gl.glEnableClientState(GL2.GL_TEXTURE_COORD_ARRAY);
-		gl.glMatrixMode(GL2.GL_MODELVIEW);
-		gl.glLoadIdentity();
+		glEnableClientState(GL_COLOR_ARRAY);
+		glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+		glMatrixMode(GL_MODELVIEW);
+		glLoadIdentity();
 		FogManager.setup();
-		LightingManager.method2400(); // LightingManager
+		LightingManager.resetLightningState();
 	}
 
 	@OriginalMember(owner = "client!tf", name = "g", descriptor = "()V")
@@ -292,36 +346,82 @@ public final class GlRenderer {
 			return;
 		}
 		if (enabled) {
-			gl.glEnable(GL2.GL_DEPTH_TEST);
+			glEnable(GL_DEPTH_TEST);
 		} else {
-			gl.glDisable(GL2.GL_DEPTH_TEST);
+			glDisable(GL_DEPTH_TEST);
 		}
 		depthTestEnabled = enabled;
 	}
 
 	@OriginalMember(owner = "client!tf", name = "a", descriptor = "(F)V")
 	public static void method4159(@OriginalArg(0) float arg0) {
-		method4152(3000.0F, arg0 * 1.5F);
+		configureDepthAdjustment(3000.0F, arg0 * 1.5F);
 	}
 
 	@OriginalMember(owner = "client!tf", name = "h", descriptor = "()V")
 	public static void draw() {
-		@Pc(2) int[] local2 = new int[2];
-		gl.glGetIntegerv(GL2.GL_DRAW_BUFFER, local2, 0);
-		gl.glGetIntegerv(GL2.GL_READ_BUFFER, local2, 1);
-		gl.glDrawBuffer(GL2.GL_BACK_LEFT);
-		gl.glReadBuffer(GL2.GL_FRONT_LEFT);
+		@Pc(2) int[] ints = new int[2];
+
+		// These first two are special, need more research.
+		gl.glGetIntegerv(GL_DRAW_BUFFER, ints, 0);
+		gl.glGetIntegerv(GL_READ_BUFFER, ints, 1);
+
+		glDrawBuffer(GL_BACK_LEFT);
+		glReadBuffer(GL_FRONT_LEFT);
 		setTextureId(-1);
-		gl.glPushAttrib(GL2.GL_ENABLE_BIT);
-		gl.glDisable(GL2.GL_FOG);
-		gl.glDisable(GL2.GL_BLEND);
-		gl.glDisable(GL2.GL_DEPTH_TEST);
-		gl.glDisable(GL2.GL_ALPHA_TEST);
-		gl.glRasterPos2i(0, 0);
-		gl.glCopyPixels(0, 0, canvasWidth, canvasHeight, GL2.GL_COLOR);
-		gl.glPopAttrib();
-		gl.glDrawBuffer(local2[0]);
-		gl.glReadBuffer(local2[1]);
+		glPushAttrib(GL_ENABLE_BIT);
+		glDisable(GL_FOG);
+		glDisable(GL_BLEND);
+		glDisable(GL_DEPTH_TEST);
+		glDisable(GL_ALPHA_TEST);
+		glRasterPos2i(0, 0);
+		glCopyPixels(0, 0, canvasWidth, canvasHeight, GL_COLOR);
+		glPopAttrib();
+		glDrawBuffer(ints[0]);
+		glReadBuffer(ints[1]);
+	}
+
+	@OriginalMember(owner = "client!tf", name = "i", descriptor = "()V")
+	public static void method4162() {
+		MaterialManager.setMaterial(0, 0);
+		configureOrthographicView();
+		setTextureId(-1);
+		setLightingEnabled(false);
+		setDepthTestEnabled(false);
+		setFogEnabled(false);
+		resetTextureMatrix();
+	}
+
+	@OriginalMember(owner = "client!tf", name = "j", descriptor = "()V")
+	private static void configureOrthographicView() {
+		if (isOrthoViewConfigured) {
+			return;
+		}
+		glMatrixMode(GL_PROJECTION);
+		glLoadIdentity();
+		glOrtho(0.0D, canvasWidth, 0.0D, canvasHeight, -1.0D, 1.0D);
+		setViewportBounds(0, 0, canvasWidth, canvasHeight);
+		glMatrixMode(GL_MODELVIEW);
+		glLoadIdentity();
+		isOrthoViewConfigured = true;
+	}
+
+	@OriginalMember(owner = "client!tf", name = "c", descriptor = "(Z)V")
+	public static void setLightingEnabled(@OriginalArg(0) boolean enabled) {
+		if (enabled == lightingEnabled) {
+			return;
+		}
+		if (enabled) {
+			glEnable(GL_LIGHTING);
+		} else {
+			glDisable(GL_LIGHTING);
+		}
+		lightingEnabled = enabled;
+	}
+
+	@OriginalMember(owner = "client!tf", name = "l", descriptor = "()F")
+	public static float method4166() {
+		return depthAdjustmentFactor;
 	}
 
 	@OriginalMember(owner = "client!tf", name = "a", descriptor = "(Ljava/awt/Canvas;)V")
@@ -348,54 +448,11 @@ public final class GlRenderer {
 		}
 	}
 
-	@OriginalMember(owner = "client!tf", name = "i", descriptor = "()V")
-	public static void method4162() {
-		MaterialManager.setMaterial(0, 0);
-		method4163();
-		setTextureId(-1);
-		setLightingEnabled(false);
-		setDepthTestEnabled(false);
-		setFogEnabled(false);
-		resetTextureMatrix();
-	}
-
-	@OriginalMember(owner = "client!tf", name = "j", descriptor = "()V")
-	private static void method4163() {
-		if (aBoolean266) {
-			return;
-		}
-		gl.glMatrixMode(GL2.GL_PROJECTION);
-		gl.glLoadIdentity();
-		gl.glOrtho(0.0D, (double) canvasWidth, 0.0D, (double) canvasHeight, -1.0D, 1.0D);
-		setViewportBounds(0, 0, canvasWidth, canvasHeight);
-		gl.glMatrixMode(GL2.GL_MODELVIEW);
-		gl.glLoadIdentity();
-		aBoolean266 = true;
-	}
-
-	@OriginalMember(owner = "client!tf", name = "c", descriptor = "(Z)V")
-	public static void setLightingEnabled(@OriginalArg(0) boolean enabled) {
-		if (enabled == lightingEnabled) {
-			return;
-		}
-		if (enabled) {
-			gl.glEnable(GL2.GL_LIGHTING);
-		} else {
-			gl.glDisable(GL2.GL_LIGHTING);
-		}
-		lightingEnabled = enabled;
-	}
-
-	@OriginalMember(owner = "client!tf", name = "l", descriptor = "()F")
-	public static float method4166() {
-		return aFloat31;
-	}
-
 	@OriginalMember(owner = "client!tf", name = "m", descriptor = "()I")
 	private static int checkContext() {
 		@Pc(1) int result = 0;
-		vendor = gl.glGetString(GL2.GL_VENDOR);
-		renderer = gl.glGetString(GL2.GL_RENDERER);
+		vendor = glGetString(GL_VENDOR);
+		renderer = glGetString(GL_RENDERER);
 		@Pc(12) String vendor = GlRenderer.vendor.toLowerCase();
 		if (vendor.contains("microsoft")) {
 			result = 1;
@@ -403,7 +460,7 @@ public final class GlRenderer {
 		if (vendor.contains("brian paul") || vendor.contains("mesa")) {
 			result |= 0x1;
 		}
-		@Pc(39) String version = gl.glGetString(GL2.GL_VERSION);
+		@Pc(39) String version = glGetString(GL_VERSION);
 		@Pc(43) String[] versionParts = version.split("[. ]");
 		if (versionParts.length >= 2) {
 			try {
@@ -426,11 +483,11 @@ public final class GlRenderer {
 			result |= 0x20;
 		}
 		@Pc(100) int[] data = new int[1];
-		gl.glGetIntegerv(GL2.GL_MAX_TEXTURE_UNITS, data, 0);
+		glGetIntegerv(GL2.GL_MAX_TEXTURE_UNITS, data);
 		maxTextureUnits = data[0];
-		gl.glGetIntegerv(GL2.GL_MAX_TEXTURE_COORDS, data, 0);
+		glGetIntegerv(GL2.GL_MAX_TEXTURE_COORDS, data);
 		maxTextureCoords = data[0];
-		gl.glGetIntegerv(GL2.GL_MAX_TEXTURE_IMAGE_UNITS, data, 0);
+		glGetIntegerv(GL2.GL_MAX_TEXTURE_IMAGE_UNITS, data);
 		maxTextureImageUnits = data[0];
 		if (maxTextureUnits < 2 || maxTextureCoords < 2 || maxTextureImageUnits < 2) {
 			result |= 0x10;
@@ -444,7 +501,7 @@ public final class GlRenderer {
 		arbTextureCubeMapSupported = gl.isExtensionAvailable("GL_ARB_texture_cube_map");
 		arbVertexProgramSupported = gl.isExtensionAvailable("GL_ARB_vertex_program");
 		extTexture3dSupported = gl.isExtensionAvailable("GL_EXT_texture3D");
-		@Pc(176) JString renderer = method4147(GlRenderer.renderer).toLowerCase();
+		@Pc(176) JString renderer = JString.convertStringToJString(GlRenderer.renderer).toLowerCase();
 		if (renderer.indexOf(RADEON) != -1) {
 			@Pc(184) int v = 0;
 			@Pc(193) JString[] rendererParts = renderer.replaceSlashWithSpace().split(32);
@@ -476,7 +533,7 @@ public final class GlRenderer {
 
 	@OriginalMember(owner = "client!tf", name = "n", descriptor = "()V")
 	public static void clearDepthBuffer() {
-		gl.glClear(GL2.GL_DEPTH_BUFFER_BIT);
+		glClear(GL_DEPTH_BUFFER_BIT);
 	}
 
 	@OriginalMember(owner = "client!tf", name = "o", descriptor = "()V")
@@ -486,6 +543,14 @@ public final class GlRenderer {
 				MaterialManager.quit(); // MaterialManager
 			} catch (@Pc(5) Throwable local5) {
 			}
+
+			// Release LWJGL
+			glfwFreeCallbacks(LWJGLWindow);
+			glfwDestroyWindow(LWJGLWindow);
+
+			// Terminate GLFW and error callback.
+			glfwTerminate();
+			glfwSetErrorCallback(null).free();
 		}
 
 		if (window != null) {
@@ -494,7 +559,7 @@ public final class GlRenderer {
 			}
 
 			if (context != null) {
-				GlCleaner.clear(); // GlCleaner
+				GlCleaner.clear();
 				try {
 					if (GLContext.getCurrent() == context) {
 						context.release();
@@ -518,45 +583,45 @@ public final class GlRenderer {
 		gl = null;
 		context = null;
 		drawable = null;
-		LightingManager.method2398(); // LightingManager
+		LightingManager.releaseLighting();
 		enabled = false;
 	}
 
 	@OriginalMember(owner = "client!tf", name = "a", descriptor = "(FFF)V")
 	public static void translateTextureMatrix(@OriginalArg(0) float x, @OriginalArg(1) float y, @OriginalArg(2) float z) {
-		gl.glMatrixMode(GL2.GL_TEXTURE);
+		glMatrixMode(GL_TEXTURE);
 		if (textureMatrixModified) {
 			gl.glLoadIdentity();
 		}
-		gl.glTranslatef(x, y, z);
-		gl.glMatrixMode(GL2.GL_MODELVIEW);
+		glTranslatef(x, y, z);
+		glMatrixMode(GL_MODELVIEW);
 		textureMatrixModified = true;
 	}
 
 	@OriginalMember(owner = "client!tf", name = "a", descriptor = "(IIIIIIFFII)V")
-	public static void method4171(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) float arg6, @OriginalArg(7) float arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9) {
-		@Pc(7) int local7 = (arg0 - arg4 << 8) / arg8;
-		@Pc(17) int local17 = (arg0 + arg2 - arg4 << 8) / arg8;
-		@Pc(25) int local25 = (arg1 - arg5 << 8) / arg9;
-		@Pc(35) int local35 = (arg1 + arg3 - arg5 << 8) / arg9;
-		gl.glMatrixMode(GL2.GL_PROJECTION);
-		gl.glLoadIdentity();
-		method4175((float) local7 * aFloat34, (float) local17 * aFloat34, (float) -local35 * aFloat34, (float) -local25 * aFloat34, 50.0F, 3584.0F);
+	public static void setupViewTransformations(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) float rotationX, @OriginalArg(7) float rotationY, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9) {
+		@Pc(7) int scaledBoxStartX = (arg0 - arg4 << 8) / arg8;
+		@Pc(17) int scaledBoxEndX = (arg0 + arg2 - arg4 << 8) / arg8;
+		@Pc(25) int scaledBoxStartY = (arg1 - arg5 << 8) / arg9;
+		@Pc(35) int scaledBoxEndY = (arg1 + arg3 - arg5 << 8) / arg9;
+		glMatrixMode(GL_PROJECTION);
+		glLoadIdentity();
+		configureProjectionMatrix((float) scaledBoxStartX * aFloat34, (float) scaledBoxEndX * aFloat34, (float) -scaledBoxEndY * aFloat34, (float) -scaledBoxStartY * aFloat34, 50.0F, 3584.0F);
 		setViewportBounds(arg0, canvasHeight - arg1 - arg3, arg2, arg3);
-		gl.glMatrixMode(GL2.GL_MODELVIEW);
-		gl.glLoadIdentity();
-		gl.glRotatef(180.0F, 1.0F, 0.0F, 0.0F);
-		if (arg6 != 0.0F) {
-			gl.glRotatef(arg6, 1.0F, 0.0F, 0.0F);
+		glMatrixMode(GL_MODELVIEW);
+		glLoadIdentity();
+		glRotatef(180.0F, 1.0F, 0.0F, 0.0F);
+		if (rotationX != 0.0F) {
+			glRotatef(rotationX, 1.0F, 0.0F, 0.0F);
 		}
-		if (arg7 != 0.0F) {
-			gl.glRotatef(arg7, 0.0F, 1.0F, 0.0F);
+		if (rotationY != 0.0F) {
+			glRotatef(rotationY, 0.0F, 1.0F, 0.0F);
 		}
-		aBoolean266 = false;
-		Rasterizer.screenLowerX = local7;
-		Rasterizer.screenUpperX = local17;
-		Rasterizer.screenLowerY = local25;
-		Rasterizer.screenUpperY = local35;
+		isOrthoViewConfigured = false;
+		Rasterizer.screenLowerX = scaledBoxStartX;
+		Rasterizer.screenUpperX = scaledBoxEndX;
+		Rasterizer.screenLowerY = scaledBoxStartY;
+		Rasterizer.screenUpperY = scaledBoxEndY;
 	}
 
 	@OriginalMember(owner = "client!tf", name = "d", descriptor = "(Z)V")
@@ -565,9 +630,9 @@ public final class GlRenderer {
 			return;
 		}
 		if (enabled) {
-			gl.glEnableClientState(GL2.GL_NORMAL_ARRAY);
+			glEnableClientState(GL_NORMAL_ARRAY);
 		} else {
-			gl.glDisableClientState(GL2.GL_NORMAL_ARRAY);
+			glDisableClientState(GL_NORMAL_ARRAY);
 		}
 		normalArrayEnabled = enabled;
 	}
@@ -589,19 +654,19 @@ public final class GlRenderer {
 			return;
 		}
 		if (mode == 0) {
-			gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_ALPHA, GL2.GL_MODULATE);
+			glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_ALPHA, GL_MODULATE);
 		}
 		if (mode == 1) {
-			gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_ALPHA, GL2.GL_REPLACE);
+			glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_ALPHA, GL_REPLACE);
 		}
 		if (mode == 2) {
-			gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_ALPHA, GL2.GL_ADD);
+			glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_ALPHA, GL_ADD);
 		}
 		textureCombineAlphaMode = mode;
 	}
 
 	@OriginalMember(owner = "client!tf", name = "a", descriptor = "(FFFFFF)V")
-	private static void method4175(@OriginalArg(0) float arg0, @OriginalArg(1) float arg1, @OriginalArg(2) float arg2, @OriginalArg(3) float arg3, @OriginalArg(4) float arg4, @OriginalArg(5) float arg5) {
+	private static void configureProjectionMatrix(@OriginalArg(0) float arg0, @OriginalArg(1) float arg1, @OriginalArg(2) float arg2, @OriginalArg(3) float arg3, @OriginalArg(4) float arg4, @OriginalArg(5) float arg5) {
 		@Pc(3) float local3 = arg4 * 2.0F;
 		matrix[0] = local3 / (arg1 - arg0);
 		matrix[1] = 0.0F;
@@ -613,22 +678,22 @@ public final class GlRenderer {
 		matrix[7] = 0.0F;
 		matrix[8] = (arg1 + arg0) / (arg1 - arg0);
 		matrix[9] = (arg3 + arg2) / (arg3 - arg2);
-		matrix[10] = aFloat30 = -(arg5 + arg4) / (arg5 - arg4);
+		matrix[10] = depthScaleFactor = -(arg5 + arg4) / (arg5 - arg4);
 		matrix[11] = -1.0F;
 		matrix[12] = 0.0F;
 		matrix[13] = 0.0F;
-		matrix[14] = aFloat32 = -(local3 * arg5) / (arg5 - arg4);
+		matrix[14] = scaledFarClipDistance = -(local3 * arg5) / (arg5 - arg4);
 		matrix[15] = 0.0F;
-		gl.glLoadMatrixf(matrix, 0);
-		aFloat33 = 0.0F;
-		aFloat31 = 0.0F;
+		glLoadMatrixf(matrix);
+		depthAdjustmentParameter = 0.0F;
+		depthAdjustmentFactor = 0.0F;
 	}
 
 	@OriginalMember(owner = "client!tf", name = "b", descriptor = "(I)V")
 	public static void clearColorAndDepthBuffers(@OriginalArg(0) int rgb) {
-		gl.glClearColor((float) (rgb >> 16 & 0xFF) / 255.0F, (float) (rgb >> 8 & 0xFF) / 255.0F, (float) (rgb & 0xFF) / 255.0F, 0.0F);
-		gl.glClear(GL2.GL_DEPTH_BUFFER_BIT | GL2.GL_COLOR_BUFFER_BIT);
-		gl.glClearColor(0.0F, 0.0F, 0.0F, 0.0F);
+		glClearColor((float) (rgb >> 16 & 0xFF) / 255.0F, (float) (rgb >> 8 & 0xFF) / 255.0F, (float) (rgb & 0xFF) / 255.0F, 0.0F);
+		glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
+		glClearColor(0.0F, 0.0F, 0.0F, 0.0F);
 	}
 
 	@OriginalMember(owner = "client!tf", name = "c", descriptor = "(I)V")
@@ -637,14 +702,68 @@ public final class GlRenderer {
 			return;
 		}
 		if (id == -1) {
-			gl.glDisable(GL2.GL_TEXTURE_2D);
+			glDisable(GL_TEXTURE_2D);
 		} else {
 			if (textureId == -1) {
-				gl.glEnable(GL2.GL_TEXTURE_2D);
+				glEnable(GL_TEXTURE_2D);
 			}
-			gl.glBindTexture(GL2.GL_TEXTURE_2D, id);
+			glBindTexture(GL_TEXTURE_2D, id);
 		}
 		textureId = id;
+	}
+
+	private static void initLWJGL() {
+		// Setup an error callback. The default implementation will print the error message in System.err.
+		GLFWErrorCallback.createPrint(System.err).set();
+
+		// Initialize GLFW. Most GLFW functions will not work as intended
+		// before doing this.
+		if (!glfwInit()) {
+			throw new IllegalStateException("Unable to initialize GLFW");
+		}
+
+		// Configure GLFW
+		glfwDefaultWindowHints();
+		glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE); // Window will stay hidden after creation.
+		glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE); // Window will be resizable.
+
+		// Create the window
+		LWJGLWindow = glfwCreateWindow(300, 300, "Hello world!", NULL, NULL);
+		if (LWJGLWindow == NULL) {
+			throw new IllegalStateException("Unable to create the GLFW window");
+		}
+
+		// Setup a key callback. It will be called every time a key is pressed, repeated or released.
+		glfwSetKeyCallback(LWJGLWindow, (window, key, scancode, action, mods) -> {
+			if (key == GLFW_KEY_ESCAPE && action == GLFW_RELEASE) {
+				glfwSetWindowShouldClose(window, true);
+			}
+		});
+
+		try (MemoryStack stack = stackPush()) {
+			IntBuffer width = stack.mallocInt(1); // int*
+			IntBuffer height = stack.mallocInt(1); // int*
+
+			// Get the window size passed to glfwCreateWindow
+			glfwGetWindowSize(LWJGLWindow, width, height);
+
+			// Get the resolution of the primary monitor.
+			GLFWVidMode vidMode = glfwGetVideoMode(glfwGetPrimaryMonitor());
+
+			// Center the window properly
+			glfwSetWindowPos(LWJGLWindow, (vidMode.width() - width.get(0)) / 2, vidMode.height() - height.get(0) / 2);
+
+			// Make the OpenGL context current.
+			glfwMakeContextCurrent(LWJGLWindow);
+
+			// Enable V-Sync
+			glfwSwapInterval(1);
+
+			// Make the window visible
+			glfwShowWindow(LWJGLWindow);
+
+			GL.createCapabilities();
+		}
 	}
 
 	@OriginalMember(owner = "client!tf", name = "q", descriptor = "()V")
@@ -654,7 +773,7 @@ public final class GlRenderer {
 
 	@OriginalMember(owner = "client!tf", name = "r", descriptor = "()F")
 	public static float method4179() {
-		return aFloat33;
+		return depthAdjustmentParameter;
 	}
 
 	@OriginalMember(owner = "client!tf", name = "a", descriptor = "(Ljava/awt/Canvas;I)I")
@@ -663,24 +782,31 @@ public final class GlRenderer {
 			if (!canvas.isDisplayable()) {
 				return -1;
 			}
+
+			// Create JOGL
 			GLProfile profile = GLProfile.get(GLProfile.GL3bc);
+
 			@Pc(8) GLCapabilities capabilities = new GLCapabilities(profile);
 			if (numSamples > 0) {
 				capabilities.setSampleBuffers(true);
 				capabilities.setNumSamples(numSamples);
 			}
+
 			@Pc(18) GLDrawableFactory factory = GLDrawableFactory.getFactory(profile);
 			AWTGraphicsConfiguration config = AWTGraphicsConfiguration.create(canvas.getGraphicsConfiguration(), capabilities, capabilities);
 			window = NewtFactoryAWT.getNativeWindow(canvas, config);
+
 			if (!window.getLock().isLocked()) {
 				window.lockSurface();
 			}
+
 			try {
 				drawable = factory.createGLDrawable(window);
 				drawable.setRealized(true);
 			} finally {
 				window.unlockSurface();
 			}
+
 			@Pc(29) int swapBuffersAttempts = 0;
 			@Pc(36) int result;
 			while (true) {
@@ -695,24 +821,33 @@ public final class GlRenderer {
 				if (swapBuffersAttempts++ > 5) {
 					return -2;
 				}
-				ThreadUtils.sleep(1000L);
+				ThreadUtils.sleep(100L);
 			}
+
 			if (window.getLock().isLocked()) {
 				window.unlockSurface();
 			}
+
+			// Create LWJGL
+			System.out.println("Hello from LWJGL version: " + Version.getVersion() + "!");
+			initLWJGL();
+
             gl = GLContext.getCurrentGL().getGL2();
-			gl.glLineWidth((float) GameShell.canvasScale);
+			glLineWidth((float) GameShell.canvasScale);
 			enabled = true;
 			canvasWidth = canvas.getSize().width;
 			canvasHeight = canvas.getSize().height;
-			result = checkContext();
-			if (result != 0) {
+
+			//result = checkContext(); // Should not be needed?
+
+			if (LWJGLWindow == 0) {
 				quit();
 				return result;
 			}
-			method4184();
-			method4156();
-			gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
+
+			initializeRenderingState();
+			resetOpenGLState();
+			glClear(GL_COLOR_BUFFER_BIT);
 			swapBuffersAttempts = 0;
 			while (true) {
 				try {
@@ -726,7 +861,7 @@ public final class GlRenderer {
 					ThreadUtils.sleep(100L);
 				}
 			}
-			gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
+			glClear(GL_COLOR_BUFFER_BIT);
 			return 0;
 		} catch (@Pc(103) Throwable ex) {
 			quit();
@@ -738,16 +873,8 @@ public final class GlRenderer {
 	public static void setCanvasSize(@OriginalArg(0) int width, @OriginalArg(1) int height) {
 		canvasWidth = width;
 		canvasHeight = height;
-		aBoolean266 = false;
+		isOrthoViewConfigured = false;
 	}
-
-	public static int leftMargin;
-
-	public static int topMargin;
-
-	public static int viewportWidth;
-
-	public static int viewportHeight;
 
 	public static void setViewportBounds(@OriginalArg(0) int x, @OriginalArg(1) int y, @OriginalArg(2) int width, @OriginalArg(3) int height) {
 		leftMargin = x;
@@ -764,58 +891,67 @@ public final class GlRenderer {
 	}
 
 	@OriginalMember(owner = "client!tf", name = "a", descriptor = "(IIIIII)V")
-	public static void method4182(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
-		@Pc(2) int local2 = -arg0;
-		@Pc(6) int local6 = canvasWidth - arg0;
-		@Pc(9) int local9 = -arg1;
-		@Pc(13) int local13 = canvasHeight - arg1;
-		gl.glMatrixMode(GL2.GL_PROJECTION);
-		gl.glLoadIdentity();
-		@Pc(23) float local23 = (float) arg2 / 512.0F;
-		@Pc(30) float local30 = local23 * (256.0F / (float) arg4);
-		@Pc(37) float local37 = local23 * (256.0F / (float) arg5);
-		gl.glOrtho((double) ((float) local2 * local30), (double) ((float) local6 * local30), (double) ((float) -local13 * local37), (double) ((float) -local9 * local37), (double) (50 - arg3), (double) (3584 - arg3));
+	public static void setupOrthographicProjector(@OriginalArg(0) int xOffset, @OriginalArg(1) int yOffset, @OriginalArg(2) int resolution, @OriginalArg(3) int arg3, @OriginalArg(4) int color, @OriginalArg(5) int cardMemory) {
+		@Pc(2) int negXOffset = -xOffset;
+		@Pc(6) int adjustedCanvasWidth = canvasWidth - xOffset;
+		@Pc(9) int negYOffset = -yOffset;
+		@Pc(13) int adjustedCanvasHeight = canvasHeight - yOffset;
+		@Pc(23) float resolutionFactor = (float) resolution / 512.0F;
+		@Pc(30) float colorDepthFactor = resolutionFactor * (256.0F / (float) color);
+		@Pc(37) float memoryFactor = resolutionFactor * (256.0F / (float) cardMemory);
+		glMatrixMode(GL_PROJECTION);
+		glLoadIdentity();
+		glOrtho((float) negXOffset * colorDepthFactor, (float) adjustedCanvasWidth * colorDepthFactor, (float) -adjustedCanvasHeight * memoryFactor, (float) -negYOffset * memoryFactor, 50 - arg3, 3584 - arg3);
 		setViewportBounds(0, 0, canvasWidth, canvasHeight);
-		gl.glMatrixMode(GL2.GL_MODELVIEW);
-		gl.glLoadIdentity();
-		gl.glRotatef(180.0F, 1.0F, 0.0F, 0.0F);
-		aBoolean266 = false;
+		glMatrixMode(GL_MODELVIEW);
+		glLoadIdentity();
+		glRotatef(180.0F, 1.0F, 0.0F, 0.0F);
+		isOrthoViewConfigured = false;
 	}
 
 	@OriginalMember(owner = "client!tf", name = "d", descriptor = "(I)V")
-	public static void setTextureCombineRgbMode(@OriginalArg(0) int arg0) {
-		if (arg0 == textureCombineRgbMode) {
+	public static void setTextureCombineRgbMode(@OriginalArg(0) int mode) {
+		if (mode == textureCombineRgbMode) {
 			return;
 		}
-		if (arg0 == 0) {
-			gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_RGB, GL2.GL_MODULATE);
+		if (mode == 0) {
+			glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_RGB, GL_MODULATE);
 		}
-		if (arg0 == 1) {
-			gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_RGB, GL2.GL_REPLACE);
+		if (mode == 1) {
+			glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_RGB, GL_REPLACE);
 		}
-		if (arg0 == 2) {
-			gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_RGB, GL2.GL_ADD);
+		if (mode == 2) {
+			glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_RGB, GL_ADD);
 		}
-		if (arg0 == 3) {
-			gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_RGB, GL2.GL_SUBTRACT);
+		if (mode == 3) {
+			glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_RGB, GL_SUBTRACT);
 		}
-		if (arg0 == 4) {
-			gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_RGB, GL2.GL_ADD_SIGNED);
+		if (mode == 4) {
+			glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_RGB, GL_ADD_SIGNED);
 		}
-		if (arg0 == 5) {
-			gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_RGB, GL2.GL_INTERPOLATE);
+		if (mode == 5) {
+			glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_RGB, GL_INTERPOLATE);
 		}
-		textureCombineRgbMode = arg0;
+		textureCombineRgbMode = mode;
 	}
 
 	@OriginalMember(owner = "client!tf", name = "s", descriptor = "()V")
-	private static void method4184() {
-		@Pc(2) int[] local2 = new int[1];
-		gl.glGenTextures(1, local2, 0);
-		anInt5328 = local2[0];
-		gl.glBindTexture(GL2.GL_TEXTURE_2D, anInt5328);
-		gl.glTexImage2D(GL2.GL_TEXTURE_2D, 0, 4, 1, 1, 0, GL2.GL_RGBA, GL2.GL_UNSIGNED_BYTE, IntBuffer.wrap(new int[] { -1 }));
-		LightingManager.method2401();
+	private static void initializeRenderingState() {
+		IntBuffer textureIdBuffer = BufferUtils.createIntBuffer(1);
+		glGenTextures(textureIdBuffer);
+		anInt5328 = textureIdBuffer.get(0);
+
+		// Bind texture
+		glBindTexture(GL_TEXTURE_2D, anInt5328);
+
+		IntBuffer texData = BufferUtils.createIntBuffer(1);
+		texData.put(0xFFFFFFFF).flip();
+
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, 1, 1, 0, GL_RGBA, GL_UNSIGNED_BYTE, texData);
+
+		glFinish();
+
+		LightingManager.init();
 		MaterialManager.init();
 	}
 

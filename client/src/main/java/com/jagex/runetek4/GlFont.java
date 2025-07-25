@@ -72,7 +72,7 @@ public final class GlFont extends Font {
 	protected void renderGlyph(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
 		@Pc(4) GL2 gl;
 		if (masked == null) {
-			GlRenderer.method4151();
+			GlRenderer.setupRgbAlphaMode0Rendering();
 			gl = GlRenderer.gl;
 			GlRenderer.setTextureId(this.textureId);
 			gl.glColor3ub((byte) (arg5 >> 16), (byte) (arg5 >> 8), (byte) arg5);
@@ -81,7 +81,7 @@ public final class GlFont extends Font {
 			gl.glLoadIdentity();
 			return;
 		}
-		GlRenderer.method4151();
+		GlRenderer.setupRgbAlphaMode0Rendering();
 		gl = GlRenderer.gl;
 		gl.glColor3ub((byte) (arg5 >> 16), (byte) (arg5 >> 8), (byte) arg5);
 		gl.glTranslatef((float) arg1, (float) (GlRenderer.canvasHeight - arg2), 0.0F);
@@ -124,7 +124,7 @@ public final class GlFont extends Font {
 	@OriginalMember(owner = "client!mb", name = "a", descriptor = "(IIIIIIIZ)V")
 	@Override
 	protected void renderGlyphTransparent(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
-		GlRenderer.method4151();
+		GlRenderer.setupRgbAlphaMode0Rendering();
 		@Pc(2) GL2 local2 = GlRenderer.gl;
 		GlRenderer.setTextureId(this.textureId);
 		local2.glColor4ub((byte) (arg5 >> 16), (byte) (arg5 >> 8), (byte) arg5, arg6 > 255 ? -1 : (byte) arg6);

@@ -62,7 +62,7 @@ public class LightingManager {
     }
 
     @OriginalMember(owner = "runetek4.client!jf", name = "e", descriptor = "()V")
-    public static void method2400() {
+    public static void resetLightningState() {
         @Pc(1) GL2 local1 = GlRenderer.gl;
         @Pc(3) int local3;
         for (local3 = 0; local3 < 4; local3++) {
@@ -78,7 +78,7 @@ public class LightingManager {
     }
 
     @OriginalMember(owner = "runetek4.client!jf", name = "c", descriptor = "()V")
-    public static void method2398() {
+    public static void releaseLighting() {
         lights = null;
         anIntArray284 = null;
         enabledLights = null;
@@ -88,7 +88,7 @@ public class LightingManager {
     }
 
     @OriginalMember(owner = "runetek4.client!jf", name = "f", descriptor = "()V")
-    public static void method2401() {
+    public static void init() {
         lights = new Light[255];
         anIntArray284 = new int[4];
         enabledLights = new boolean[4];

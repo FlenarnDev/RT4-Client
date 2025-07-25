@@ -1151,10 +1151,10 @@ public final class ClientScriptRunner {
 												objId = component.height / 2 + local114 + (cardMemory * component.anInt481 >> 8);
 												if (GlRenderer.enabled) {
 													if (component.modelOrtho) {
-														GlRenderer.method4182(dragY, objId, component.modelZoom, component.aShort11, color, cardMemory);
+														GlRenderer.setupOrthographicProjector(dragY, objId, component.modelZoom, component.aShort11, color, cardMemory);
 													} else {
 														GlRenderer.method4148(dragY, objId, color, cardMemory);
-														GlRenderer.method4152((float) component.aShort10, (float) component.aShort11 * 1.5F);
+														GlRenderer.configureDepthAdjustment((float) component.aShort10, (float) component.aShort11 * 1.5F);
 													}
 													GlRenderer.restoreLighting();
 													GlRenderer.setDepthTestEnabled(true);
@@ -1438,7 +1438,7 @@ public final class ClientScriptRunner {
 				local248 = Camera.aFloat15 * 360.0F / 6.2831855F;
 				local253 = Camera.aFloat10 * 360.0F / 6.2831855F;
 			}
-			GlRenderer.method4171(arg2, arg4, arg3, arg0, arg3 / 2 + arg2, arg4 - -(arg0 / 2), local248, local253, anInt5029, anInt5029);
+			GlRenderer.setupViewTransformations(arg2, arg4, arg3, arg0, arg3 / 2 + arg2, arg4 - -(arg0 / 2), local248, local253, anInt5029, anInt5029);
 		} else {
 			SoftwareRaster.setClip(arg2, arg4, arg3 + arg2, arg0 + arg4);
 			Rasterizer.prepare();

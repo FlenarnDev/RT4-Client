@@ -221,6 +221,7 @@ public final class DisplayMode {
 		}
 		if (mode == 0 && windowMode > 0) {
 			GlRenderer.createAndDestroyContext(GameShell.canvas);
+			// Switch back to SD
 		}
 		if (arg2 && mode > 0) {
 			GameShell.canvas.setIgnoreRepaint(true);
