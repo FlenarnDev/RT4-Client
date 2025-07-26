@@ -3,19 +3,24 @@ package com.jagex.runetek4;
 import java.nio.ByteBuffer;
 
 import com.jagex.runetek4.util.ColorUtils;
-import com.jogamp.opengl.*;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
-@OriginalClass("runetek4.client!pd")
+import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL12.GL_CLAMP_TO_EDGE;
+import static org.lwjgl.opengl.GL13.*;
+import static org.lwjgl.opengl.GL15.*;
+
+@OriginalClass("client!pd")
 public final class WaterMaterialRenderer implements MaterialRenderer {
 
-	@OriginalMember(owner = "runetek4.client!v", name = "c", descriptor = "[F")
+	@OriginalMember(owner = "client!v", name = "c", descriptor = "[F")
 	public static final float[] aFloatArray2 = new float[] { 0.073F, 0.169F, 0.24F, 1.0F };
 
-	@OriginalMember(owner = "runetek4.client!pd", name = "b", descriptor = "[F")
+	@OriginalMember(owner = "client!pd", name = "b", descriptor = "[F")
 	public static final float[] aFloatArray22 = new float[] { 0.1F, 0.1F, 0.15F, 0.1F };
 
 	@OriginalMember(owner = "client!pd", name = "a", descriptor = "I")
@@ -36,7 +41,7 @@ public final class WaterMaterialRenderer implements MaterialRenderer {
 		this.method3437();
 	}
 
-	@OriginalMember(owner = "runetek4.client!jj", name = "a", descriptor = "(B)[F")
+	@OriginalMember(owner = "client!jj", name = "a", descriptor = "(B)[F")
 	public static float[] method2422() {
 		@Pc(3) float local3 = FogManager.getLightingModelAmbient() + FogManager.getLight0Diffuse();
 		@Pc(9) int local9 = FogManager.getLightColor();
@@ -63,78 +68,81 @@ public final class WaterMaterialRenderer implements MaterialRenderer {
 	@OriginalMember(owner = "client!pd", name = "d", descriptor = "()V")
 	private void method3435() {
 		@Pc(2) byte[] local2 = new byte[] { 0, -1 };
-		@Pc(12) GL2 gl = GlRenderer.gl;
 		@Pc(15) int[] local15 = new int[1];
-		gl.glGenTextures(1, local15, 0);
-		gl.glBindTexture(GL2.GL_TEXTURE_1D, local15[0]);
-		gl.glTexImage1D(GL2.GL_TEXTURE_1D, 0, GL2.GL_ALPHA, 2, 0, GL2.GL_ALPHA, GL2.GL_UNSIGNED_BYTE, ByteBuffer.wrap(local2));
-		gl.glTexParameteri(GL2.GL_TEXTURE_1D, GL2.GL_TEXTURE_MIN_FILTER, GL2.GL_LINEAR);
-		gl.glTexParameteri(GL2.GL_TEXTURE_1D, GL2.GL_TEXTURE_MAG_FILTER, GL2.GL_LINEAR);
-		gl.glTexParameteri(GL2.GL_TEXTURE_1D, GL2.GL_TEXTURE_WRAP_S, GL2.GL_CLAMP_TO_EDGE);
+
+		glGenTextures(local15);
+		glBindTexture(GL_TEXTURE_2D, local15[0]);
+		ByteBuffer buffer = ByteBuffer.allocateDirect(local2.length);
+		buffer.put(local2);
+		buffer.flip();
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, 2, 1, 0, GL_RED, GL_UNSIGNED_BYTE, buffer);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 		this.anInt4441 = local15[0];
 	}
 
 	@OriginalMember(owner = "client!pd", name = "f", descriptor = "()V")
 	private void method3437() {
-		@Pc(1) GL2 gl = GlRenderer.gl;
-		this.anInt4440 = gl.glGenLists(2);
-		gl.glNewList(this.anInt4440, GL2.GL_COMPILE);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_OPERAND0_RGB, GL2.GL_SRC_COLOR);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_SRC1_RGB, GL2.GL_CONSTANT);
-		gl.glTexEnvf(GL2.GL_TEXTURE_ENV, GL2.GL_RGB_SCALE, 2.0F);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2GL3.GL_SRC1_ALPHA, GL2.GL_CONSTANT);
-		gl.glTexGeni(GL2.GL_S, GL2.GL_TEXTURE_GEN_MODE, GL2.GL_OBJECT_LINEAR);
-		gl.glTexGeni(GL2.GL_T, GL2.GL_TEXTURE_GEN_MODE, GL2.GL_OBJECT_LINEAR);
-		gl.glTexGenfv(GL2.GL_S, GL2.GL_OBJECT_PLANE, new float[] { 9.765625E-4F, 0.0F, 0.0F, 0.0F }, 0);
-		gl.glTexGenfv(GL2.GL_T, GL2.GL_OBJECT_PLANE, new float[] { 0.0F, 0.0F, 9.765625E-4F, 0.0F }, 0);
-		gl.glEnable(GL2.GL_TEXTURE_GEN_S);
-		gl.glEnable(GL2.GL_TEXTURE_GEN_T);
+		this.anInt4440 = glGenLists(2);
+		glNewList(this.anInt4440, GL_COMPILE);
+		glTexEnvi(GL_TEXTURE_ENV, GL_OPERAND0_RGB, GL_SRC_COLOR);
+		glTexEnvi(GL_TEXTURE_ENV, GL_SRC1_RGB, GL_CONSTANT);
+		glTexEnvf(GL_TEXTURE_ENV, GL_RGB_SCALE, 2.0F);
+		glTexEnvi(GL_TEXTURE_ENV, GL_SRC1_ALPHA, GL_CONSTANT);
+		glTexGeni(GL_S, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);
+		glTexGeni(GL_T, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);
+		glTexGenfv(GL_S, GL_OBJECT_PLANE, new float[] { 9.765625E-4F, 0.0F, 0.0F, 0.0F });
+		glTexGenfv(GL_T, GL_OBJECT_PLANE, new float[] { 0.0F, 0.0F, 9.765625E-4F, 0.0F });
+		glEnable(GL_TEXTURE_GEN_S);
+		glEnable(GL_TEXTURE_GEN_T);
 		if (MaterialManager.allows3DTextureMapping) {
-			gl.glBindTexture(GL2.GL_TEXTURE_3D, MaterialManager.texture3D);
-			gl.glTexGeni(GL2.GL_R, GL2.GL_TEXTURE_GEN_MODE, GL2.GL_OBJECT_LINEAR);
-			gl.glTexGeni(GL2.GL_Q, GL2.GL_TEXTURE_GEN_MODE, GL2.GL_OBJECT_LINEAR);
-			gl.glTexGenfv(GL2.GL_Q, GL2.GL_OBJECT_PLANE, new float[] { 0.0F, 0.0F, 0.0F, 1.0F }, 0);
-			gl.glEnable(GL2.GL_TEXTURE_GEN_R);
-			gl.glEnable(GL2.GL_TEXTURE_GEN_Q);
-			gl.glEnable(GL2.GL_TEXTURE_3D);
+			glBindTexture(GL_TEXTURE_3D, MaterialManager.texture3D);
+			glTexGeni(GL_R, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);
+			glTexGeni(GL_Q, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);
+			glTexGenfv(GL_Q, GL_OBJECT_PLANE, new float[] { 0.0F, 0.0F, 0.0F, 1.0F });
+			glEnable(GL_TEXTURE_GEN_R);
+			glEnable(GL_TEXTURE_GEN_Q);
+			glEnable(GL_TEXTURE_3D);
 		}
-		gl.glActiveTexture(GL2.GL_TEXTURE1);
-		gl.glEnable(GL2.GL_TEXTURE_1D);
-		gl.glBindTexture(GL2.GL_TEXTURE_1D, this.anInt4441);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_RGB, GL2.GL_INTERPOLATE);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_SRC0_RGB, GL2.GL_CONSTANT);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_SRC2_RGB, GL2.GL_TEXTURE);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_ALPHA, GL2.GL_INTERPOLATE);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_SRC0_ALPHA, GL2.GL_CONSTANT);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_SRC2_ALPHA, GL2.GL_TEXTURE);
-		gl.glEnable(GL2.GL_TEXTURE_GEN_S);
-		gl.glTexGeni(GL2.GL_S, GL2.GL_TEXTURE_GEN_MODE, GL2.GL_EYE_LINEAR);
-		gl.glPushMatrix();
-		gl.glLoadIdentity();
-		gl.glEndList();
-		gl.glNewList(this.anInt4440 + 1, GL2.GL_COMPILE);
-		gl.glActiveTexture(GL2.GL_TEXTURE1);
-		gl.glDisable(GL2.GL_TEXTURE_1D);
-		gl.glDisable(GL2.GL_TEXTURE_GEN_S);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_RGB, GL2.GL_MODULATE);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_SRC0_RGB, GL2.GL_TEXTURE);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_SRC2_RGB, GL2.GL_CONSTANT);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_ALPHA, GL2.GL_MODULATE);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_SRC0_ALPHA, GL2.GL_TEXTURE);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_SRC2_ALPHA, GL2.GL_CONSTANT);
-		gl.glActiveTexture(GL2.GL_TEXTURE0);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_OPERAND0_RGB, GL2.GL_SRC_COLOR);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_SRC1_RGB, GL2.GL_PREVIOUS);
-		gl.glTexEnvf(GL2.GL_TEXTURE_ENV, GL2.GL_RGB_SCALE, 1.0F);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2GL3.GL_SRC1_ALPHA, GL2.GL_PREVIOUS);
-		gl.glDisable(GL2.GL_TEXTURE_GEN_S);
-		gl.glDisable(GL2.GL_TEXTURE_GEN_T);
+		glActiveTexture(GL_TEXTURE1);
+		glEnable(GL_TEXTURE_1D);
+		glBindTexture(GL_TEXTURE_1D, this.anInt4441);
+		glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_RGB, GL_INTERPOLATE);
+		glTexEnvi(GL_TEXTURE_ENV, GL_SRC0_RGB, GL_CONSTANT);
+		glTexEnvi(GL_TEXTURE_ENV, GL_SRC2_RGB, GL_TEXTURE);
+		glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_ALPHA, GL_INTERPOLATE);
+		glTexEnvi(GL_TEXTURE_ENV, GL_SRC0_ALPHA, GL_CONSTANT);
+		glTexEnvi(GL_TEXTURE_ENV, GL_SRC2_ALPHA, GL_TEXTURE);
+		glEnable(GL_TEXTURE_GEN_S);
+		glTexGeni(GL_S, GL_TEXTURE_GEN_MODE, GL_EYE_LINEAR);
+		glPushMatrix();
+		glLoadIdentity();
+		glEndList();
+		glNewList(this.anInt4440 + 1, GL_COMPILE);
+		glActiveTexture(GL_TEXTURE1);
+		glDisable(GL_TEXTURE_1D);
+		glDisable(GL_TEXTURE_GEN_S);
+		glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_RGB, GL_MODULATE);
+		glTexEnvi(GL_TEXTURE_ENV, GL_SRC0_RGB, GL_TEXTURE);
+		glTexEnvi(GL_TEXTURE_ENV, GL_SRC2_RGB, GL_CONSTANT);
+		glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_ALPHA, GL_MODULATE);
+		glTexEnvi(GL_TEXTURE_ENV, GL_SRC0_ALPHA, GL_TEXTURE);
+		glTexEnvi(GL_TEXTURE_ENV, GL_SRC2_ALPHA, GL_CONSTANT);
+		glActiveTexture(GL_TEXTURE0);
+		glTexEnvi(GL_TEXTURE_ENV, GL_OPERAND0_RGB, GL_SRC_COLOR);
+		glTexEnvi(GL_TEXTURE_ENV, GL_SRC1_RGB, GL_PREVIOUS);
+		glTexEnvf(GL_TEXTURE_ENV, GL_RGB_SCALE, 1.0F);
+		glTexEnvi(GL_TEXTURE_ENV, GL_SRC1_ALPHA, GL_PREVIOUS);
+		glDisable(GL_TEXTURE_GEN_S);
+		glDisable(GL_TEXTURE_GEN_T);
 		if (MaterialManager.allows3DTextureMapping) {
-			gl.glDisable(GL2.GL_TEXTURE_GEN_R);
-			gl.glDisable(GL2.GL_TEXTURE_GEN_Q);
-			gl.glDisable(GL2.GL_TEXTURE_3D);
+			glDisable(GL_TEXTURE_GEN_R);
+			glDisable(GL_TEXTURE_GEN_Q);
+			glDisable(GL_TEXTURE_3D);
 		}
-		gl.glEndList();
+		glEndList();
 	}
 
 	@OriginalMember(owner = "client!pd", name = "a", descriptor = "()V")
@@ -146,10 +154,9 @@ public final class WaterMaterialRenderer implements MaterialRenderer {
 	@OriginalMember(owner = "client!pd", name = "a", descriptor = "(I)V")
 	@Override
 	public void setArgument(@OriginalArg(0) int arg0) {
-		@Pc(1) GL2 gl = GlRenderer.gl;
-		gl.glActiveTexture(GL2.GL_TEXTURE1);
-		gl.glTexEnvfv(GL2.GL_TEXTURE_ENV, GL2.GL_TEXTURE_ENV_COLOR, aFloatArray2, 0);
-		gl.glActiveTexture(GL2.GL_TEXTURE0);
+        glActiveTexture(GL_TEXTURE1);
+		glTexEnvfv(GL_TEXTURE_ENV, GL_TEXTURE_ENV_COLOR, aFloatArray2);
+		glActiveTexture(GL_TEXTURE0);
 		if ((arg0 & 0x1) == 1) {
 			if (!MaterialManager.allows3DTextureMapping) {
 				GlRenderer.setTextureId(MaterialManager.anIntArray341[GlRenderer.anInt5323 * 64 / 100 % 64]);
@@ -158,7 +165,7 @@ public final class WaterMaterialRenderer implements MaterialRenderer {
 				this.aFloatArray23[1] = 0.0F;
 				this.aFloatArray23[2] = 0.0F;
 				this.aFloatArray23[3] = (float) GlRenderer.anInt5323 * 0.005F;
-				gl.glTexGenfv(GL2.GL_R, GL2.GL_OBJECT_PLANE, this.aFloatArray23, 0);
+				glTexGenfv(GL_R, GL_OBJECT_PLANE, this.aFloatArray23);
 				this.anInt4442 = GlRenderer.anInt5323;
 			}
 		} else if (MaterialManager.allows3DTextureMapping) {
@@ -166,7 +173,7 @@ public final class WaterMaterialRenderer implements MaterialRenderer {
 			this.aFloatArray23[1] = 0.0F;
 			this.aFloatArray23[2] = 0.0F;
 			this.aFloatArray23[3] = 0.0F;
-			gl.glTexGenfv(GL2.GL_R, GL2.GL_OBJECT_PLANE, this.aFloatArray23, 0);
+			glTexGenfv(GL_R, GL_OBJECT_PLANE, this.aFloatArray23);
 		} else {
 			GlRenderer.setTextureId(MaterialManager.anIntArray341[0]);
 		}
@@ -175,11 +182,10 @@ public final class WaterMaterialRenderer implements MaterialRenderer {
 	@OriginalMember(owner = "client!pd", name = "b", descriptor = "()V")
 	@Override
 	public void bind() {
-		@Pc(1) GL2 gl = GlRenderer.gl;
 		GlRenderer.setTextureCombineRgbMode(2);
 		GlRenderer.setTextureCombineAlphaMode(2);
 		GlRenderer.resetTextureMatrix();
-		gl.glCallList(this.anInt4440);
+		glCallList(this.anInt4440);
 		@Pc(12) float local12 = 2662.4001F;
 		local12 += (float) (MaterialManager.anInt5559 - 128) * 0.5F;
 		if (local12 >= 3328.0F) {
@@ -189,10 +195,10 @@ public final class WaterMaterialRenderer implements MaterialRenderer {
 		this.aFloatArray23[1] = 0.0F;
 		this.aFloatArray23[2] = 1.0F / (local12 - 3328.0F);
 		this.aFloatArray23[3] = local12 / (local12 - 3328.0F);
-		gl.glTexGenfv(GL2.GL_S, GL2.GL_EYE_PLANE, this.aFloatArray23, 0);
-		gl.glPopMatrix();
-		gl.glActiveTexture(GL2.GL_TEXTURE0);
-		gl.glTexEnvfv(GL2.GL_TEXTURE_ENV, GL2.GL_TEXTURE_ENV_COLOR, aFloatArray22, 0);
+		glTexGenfv(GL_S, GL_EYE_PLANE, this.aFloatArray23);
+		glPopMatrix();
+		glActiveTexture(GL_TEXTURE0);
+		glTexEnvfv(GL_TEXTURE_ENV, GL_TEXTURE_ENV_COLOR, aFloatArray22);
 	}
 
 	@OriginalMember(owner = "client!pd", name = "c", descriptor = "()I")

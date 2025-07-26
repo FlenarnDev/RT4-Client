@@ -17,122 +17,180 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 public class MiniMenu {
-    @OriginalMember(owner = "runetek4.client!se", name = "m", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "client!se", name = "m", descriptor = "Lclient!na;")
     public static final JString aClass100_961 = JString.parse(" )2>");
-    @OriginalMember(owner = "runetek4.client!pf", name = "r", descriptor = "[I")
+
+    @OriginalMember(owner = "client!pf", name = "r", descriptor = "[I")
     public static final int[] cursors = new int[500];
-    @OriginalMember(owner = "runetek4.client!uj", name = "C", descriptor = "[Lclient!na;")
+
+    @OriginalMember(owner = "client!uj", name = "C", descriptor = "[Lclient!na;")
     public static final JString[] ops = new JString[500];
-    @OriginalMember(owner = "runetek4.client!t", name = "v", descriptor = "[Lclient!na;")
+
+    @OriginalMember(owner = "client!t", name = "v", descriptor = "[Lclient!na;")
     public static final JString[] opBases = new JString[500];
-    @OriginalMember(owner = "runetek4.client!d", name = "eb", descriptor = "[S")
+
+    @OriginalMember(owner = "client!d", name = "eb", descriptor = "[S")
     public static final short[] actions = new short[500];
-    @OriginalMember(owner = "runetek4.client!hd", name = "l", descriptor = "Lclient!na;")
+
+    @OriginalMember(owner = "client!hd", name = "l", descriptor = "Lclient!na;")
     public static final JString NULL = JString.parse("null");
+
     @OriginalMember(owner = "client!aj", name = "R", descriptor = "Lclient!na;")
     public static final JString aClass100_32 = JString.parse("<col=ff9040>");
-    @OriginalMember(owner = "runetek4.client!pl", name = "e", descriptor = "[I")
+
+    @OriginalMember(owner = "client!pl", name = "e", descriptor = "[I")
     public static final int[] intArgs1 = new int[500];
+
     @OriginalMember(owner = "client!df", name = "l", descriptor = "Lclient!na;")
     public static final JString GREEN = JString.parse("<col=00ff00>");
-    @OriginalMember(owner = "runetek4.client!sc", name = "g", descriptor = "Lclient!na;")
+
+    @OriginalMember(owner = "client!sc", name = "g", descriptor = "Lclient!na;")
     public static final JString aClass100_947 = JString.parse(" )2> <col=ff9040>");
-    @OriginalMember(owner = "runetek4.client!mi", name = "U", descriptor = "[J")
+
+    @OriginalMember(owner = "client!mi", name = "U", descriptor = "[J")
     public static final long[] keys = new long[500];
+
     @OriginalMember(owner = "client!ef", name = "c", descriptor = "[I")
     public static final int[] intArgs2 = new int[500];
-    @OriginalMember(owner = "runetek4.client!nm", name = "bb", descriptor = "Lclient!na;")
+
+    @OriginalMember(owner = "client!nm", name = "bb", descriptor = "Lclient!na;")
     public static final JString RED = JString.parse("<col=ff0000>");
+
     @OriginalMember(owner = "client!fb", name = "p", descriptor = "Lclient!na;")
     public static final JString RED2 = JString.parse("<col=ff3000>");
-    @OriginalMember(owner = "runetek4.client!sc", name = "D", descriptor = "Lclient!na;")
+
+    @OriginalMember(owner = "client!sc", name = "D", descriptor = "Lclient!na;")
     public static final JString ORANGE = JString.parse("<col=ff7000>");
-    @OriginalMember(owner = "runetek4.client!si", name = "Z", descriptor = "Lclient!na;")
+
+    @OriginalMember(owner = "client!si", name = "Z", descriptor = "Lclient!na;")
     public static final JString YELLOW = JString.parse("<col=ffb000>");
+
     @OriginalMember(owner = "client!ag", name = "bb", descriptor = "Lclient!na;")
     public static final JString GREEN2 = JString.parse("<col=40ff00>");
+
     @OriginalMember(owner = "client!dc", name = "v", descriptor = "Lclient!na;")
     public static final JString GREEN3 = JString.parse("<col=c0ff00>");
-    @OriginalMember(owner = "runetek4.client!sf", name = "g", descriptor = "Lclient!na;")
+
+    @OriginalMember(owner = "client!sf", name = "g", descriptor = "Lclient!na;")
     public static final JString YELLOW2 = JString.parse("<col=ffff00>");
-    @OriginalMember(owner = "runetek4.client!vg", name = "f", descriptor = "Lclient!na;")
+
+    @OriginalMember(owner = "client!vg", name = "f", descriptor = "Lclient!na;")
     public static final JString GREEN4 = JString.parse("<col=80ff00>");
-    @OriginalMember(owner = "runetek4.client!r", name = "d", descriptor = "Z")
+
+    @OriginalMember(owner = "client!r", name = "d", descriptor = "Z")
     public static final boolean aBoolean237 = false;
-    @OriginalMember(owner = "runetek4.client!a", name = "j", descriptor = "Lclient!na;")
+
+    @OriginalMember(owner = "client!a", name = "j", descriptor = "Lclient!na;")
     public static final JString aClass100_2 = JString.parse("<col=ffffff> )4 ");
+
     @OriginalMember(owner = "client!cb", name = "fb", descriptor = "Lclient!na;")
     public static final JString aClass100_168 = JString.parse(": ");
-    @OriginalMember(owner = "runetek4.client!qf", name = "Q", descriptor = "Lclient!na;")
+
+    @OriginalMember(owner = "client!qf", name = "Q", descriptor = "Lclient!na;")
 	public static final JString aClass100_407 = JString.parse(" )2> <col=ffff00>");
-    @OriginalMember(owner = "runetek4.client!qf", name = "R", descriptor = "Lclient!na;")
+
+    @OriginalMember(owner = "client!qf", name = "R", descriptor = "Lclient!na;")
     public static final JString aClass100_408 = JString.parse(" )2> ");
+
     @OriginalMember(owner = "client!fl", name = "V", descriptor = "Lclient!na;")
     public static final JString CLOSE_PARENTHESIS = JString.parse("(Y");
+
     @OriginalMember(owner = "client!gd", name = "c", descriptor = "Lclient!na;")
     public static final JString PLUS = JString.parse(")0");
-    @OriginalMember(owner = "runetek4.client!jj", name = "g", descriptor = "Lclient!na;")
+
+    @OriginalMember(owner = "client!jj", name = "g", descriptor = "Lclient!na;")
     public static final JString OPEN_PARENTHESIS = JString.parse(" (X");
-    @OriginalMember(owner = "runetek4.client!qi", name = "B", descriptor = "Lclient!na;")
+
+    @OriginalMember(owner = "client!qi", name = "B", descriptor = "Lclient!na;")
 	public static final JString WHITE = JString.parse("<col=ffffff>");
+
     @OriginalMember(owner = "client!cb", name = "ab", descriptor = "Lclient!na;")
     public static final JString aClass100_164 = JString.parse(" )2> <col=00ffff>");
-    @OriginalMember(owner = "runetek4.client!ud", name = "Q", descriptor = "Lclient!na;")
+
+    @OriginalMember(owner = "client!ud", name = "Q", descriptor = "Lclient!na;")
     public static final JString aClass100_1039 = JString.parse(" x ");
-    @OriginalMember(owner = "runetek4.client!ib", name = "k", descriptor = "Lclient!na;")
+
+    @OriginalMember(owner = "client!ib", name = "k", descriptor = "Lclient!na;")
     public static final JString aClass100_561 = JString.parse(" )2> <col=ffffff>");
-    @OriginalMember(owner = "runetek4.client!tg", name = "e", descriptor = "Lclient!na;")
+
+    @OriginalMember(owner = "client!tg", name = "e", descriptor = "Lclient!na;")
     public static final JString aClass100_1008 = JString.parse("<col=00ffff>");
-    @OriginalMember(owner = "runetek4.client!uf", name = "q", descriptor = "Lclient!na;")
+
+    @OriginalMember(owner = "client!uf", name = "q", descriptor = "Lclient!na;")
     public static final JString aClass100_1042 = JString.parse("Null");
+
     @OriginalMember(owner = "client!e", name = "pc", descriptor = "[I")
     public static final int[] anIntArray132 = new int[4];
-    @OriginalMember(owner = "runetek4.client!af", name = "l", descriptor = "[S")
+
+    @OriginalMember(owner = "client!af", name = "l", descriptor = "[S")
     public static final short[] aShortArray2 = new short[] { 30, 6, 31, 29, 10, 44, 37, 57 };
-    @OriginalMember(owner = "runetek4.client!sk", name = "kb", descriptor = "I")
+
+    @OriginalMember(owner = "client!sk", name = "kb", descriptor = "I")
     public static int menuActionRow = 0;
-    @OriginalMember(owner = "runetek4.client!vd", name = "C", descriptor = "I")
+
+    @OriginalMember(owner = "client!vd", name = "C", descriptor = "I")
     public static int anInt5014 = 0;
-    @OriginalMember(owner = "runetek4.client!th", name = "n", descriptor = "Z")
+
+    @OriginalMember(owner = "client!th", name = "n", descriptor = "Z")
     public static boolean aBoolean302 = false;
-    @OriginalMember(owner = "runetek4.client!pk", name = "bb", descriptor = "Lclient!na;")
+
+    @OriginalMember(owner = "client!pk", name = "bb", descriptor = "Lclient!na;")
     public static JString walkText;
-    @OriginalMember(owner = "runetek4.client!em", name = "D", descriptor = "I")
+
+    @OriginalMember(owner = "client!em", name = "D", descriptor = "I")
     public static int gregorianDateSeed;
-    @OriginalMember(owner = "runetek4.client!hj", name = "e", descriptor = "I")
+
+    @OriginalMember(owner = "client!hj", name = "e", descriptor = "I")
     public static int anInt2512;
-    @OriginalMember(owner = "runetek4.client!u", name = "i", descriptor = "I")
+
+    @OriginalMember(owner = "client!u", name = "i", descriptor = "I")
     public static int anInt5393;
+
     @OriginalMember(owner = "client!be", name = "Ec", descriptor = "I")
     public static int anInt506 = -1;
-    @OriginalMember(owner = "runetek4.client!hn", name = "W", descriptor = "Lclient!na;")
+
+    @OriginalMember(owner = "client!hn", name = "W", descriptor = "Lclient!na;")
     public static JString aClass100_545 = null;
-    @OriginalMember(owner = "runetek4.client!p", name = "e", descriptor = "I")
+
+    @OriginalMember(owner = "client!p", name = "e", descriptor = "I")
     public static int anInt4370;
-    @OriginalMember(owner = "runetek4.client!uf", name = "t", descriptor = "I")
+
+    @OriginalMember(owner = "client!uf", name = "t", descriptor = "I")
     public static int anInt5444 = 0;
-    @OriginalMember(owner = "runetek4.client!v", name = "b", descriptor = "Lclient!be;")
+
+    @OriginalMember(owner = "client!v", name = "b", descriptor = "Lclient!be;")
     public static Component pressedInventoryComponent;
-    @OriginalMember(owner = "runetek4.client!aa", name = "a", descriptor = "I")
+
+    @OriginalMember(owner = "client!aa", name = "a", descriptor = "I")
     public static int anInt7 = 0;
-    @OriginalMember(owner = "runetek4.client!id", name = "k", descriptor = "I")
+
+    @OriginalMember(owner = "client!id", name = "k", descriptor = "I")
     public static int anInt2878;
-    @OriginalMember(owner = "runetek4.client!cl", name = "Y", descriptor = "I")
+
+    @OriginalMember(owner = "client!cl", name = "Y", descriptor = "I")
     public static int anInt1092 = -1;
-    @OriginalMember(owner = "runetek4.client!jl", name = "v", descriptor = "I")
+
+    @OriginalMember(owner = "client!jl", name = "v", descriptor = "I")
     public static int anInt3096 = 0;
+
     @OriginalMember(owner = "client!ck", name = "D", descriptor = "Lclient!na;")
     public static JString aClass100_203 = null;
+
     @OriginalMember(owner = "client!gd", name = "i", descriptor = "Lclient!na;")
     public static JString aClass100_466 = null;
-    @OriginalMember(owner = "runetek4.client!wf", name = "f", descriptor = "I")
+
+    @OriginalMember(owner = "client!wf", name = "f", descriptor = "I")
     public static int anInt4999;
-    @OriginalMember(owner = "runetek4.client!wf", name = "d", descriptor = "I")
+
+    @OriginalMember(owner = "client!wf", name = "d", descriptor = "I")
     public static int anInt4997;
+
     @OriginalMember(owner = "client!fl", name = "P", descriptor = "I")
     public static int anInt2043 = 0;
-    @OriginalMember(owner = "runetek4.client!ml", name = "Q", descriptor = "I")
+
+    @OriginalMember(owner = "client!ml", name = "Q", descriptor = "I")
     public static int anInt3953 = 0;
+
     @OriginalMember(owner = "client!bh", name = "t", descriptor = "I")
     public static int mouseInvInterfaceIndex = 0;
 
@@ -207,22 +265,29 @@ public class MiniMenu {
     public static final int UNKNOWN_41 = 41;
     public static final int UNKNOWN_10 = 10;
     public static final int UNKNOWN_44 = 44;
+
     @OriginalMember(owner = "client!ef", name = "g", descriptor = "I")
     public static int clickTileX = -1;
-    @OriginalMember(owner = "runetek4.client!ha", name = "q", descriptor = "I")
+
+    @OriginalMember(owner = "client!ha", name = "q", descriptor = "I")
     public static int anInt2388 = 0;
-    @OriginalMember(owner = "runetek4.client!jb", name = "p", descriptor = "I")
+
+    @OriginalMember(owner = "client!jb", name = "p", descriptor = "I")
     public static int anInt2954 = -1;
-    @OriginalMember(owner = "runetek4.client!jg", name = "b", descriptor = "I")
+
+    @OriginalMember(owner = "client!jg", name = "b", descriptor = "I")
     public static int anInt3039;
-    @OriginalMember(owner = "runetek4.client!kd", name = "zb", descriptor = "I")
+
+    @OriginalMember(owner = "client!kd", name = "zb", descriptor = "I")
     public static int anInt3259 = 0;
-    @OriginalMember(owner = "runetek4.client!mh", name = "Y", descriptor = "Z")
+
+    @OriginalMember(owner = "client!mh", name = "Y", descriptor = "Z")
     public static boolean aBoolean187 = false;
-    @OriginalMember(owner = "runetek4.client!mj", name = "i", descriptor = "I")
+
+    @OriginalMember(owner = "client!mj", name = "i", descriptor = "I")
     public static int anInt3902 = 0;
 
-    @OriginalMember(owner = "runetek4.client!ud", name = "a", descriptor = "(ILclient!be;)Z")
+    @OriginalMember(owner = "client!ud", name = "a", descriptor = "(ILclient!be;)Z")
     public static boolean method4265(@OriginalArg(1) Component arg0) {
         if (arg0.contentType == 205) {
             Protocol.idleTimeout = 250;
@@ -232,7 +297,7 @@ public class MiniMenu {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!ec", name = "a", descriptor = "(B)V")
+    @OriginalMember(owner = "client!ec", name = "a", descriptor = "(B)V")
     public static void method1294() {
         if (!aBoolean302) {
             return;
@@ -249,7 +314,7 @@ public class MiniMenu {
         InterfaceList.redraw(local19);
     }
 
-    @OriginalMember(owner = "runetek4.client!hj", name = "a", descriptor = "(IJBLclient!na;ISLclient!na;I)V")
+    @OriginalMember(owner = "client!hj", name = "a", descriptor = "(IJBLclient!na;ISLclient!na;I)V")
     public static void addActionRow(@OriginalArg(0) int arg0, @OriginalArg(1) long arg1, @OriginalArg(3) JString arg2, @OriginalArg(4) int arg3, @OriginalArg(5) short arg4, @OriginalArg(6) JString arg5, @OriginalArg(7) int arg6) {
         if (ClientScriptRunner.aBoolean108 || menuActionRow >= 500) {
             return;
@@ -264,7 +329,7 @@ public class MiniMenu {
         menuActionRow++;
     }
 
-    @OriginalMember(owner = "runetek4.client!va", name = "a", descriptor = "(IZILclient!be;)V")
+    @OriginalMember(owner = "client!va", name = "a", descriptor = "(IZILclient!be;)V")
     public static void addComponentEntries(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Component component) {
         if (component.buttonType == 1) {
             addActionRow(-1, 0L, JString.EMPTY, 0, (short) 8, component.option, component.id);
@@ -417,7 +482,7 @@ public class MiniMenu {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!qe", name = "b", descriptor = "(II)V")
+    @OriginalMember(owner = "client!qe", name = "b", descriptor = "(II)V")
     public static void remove(@OriginalArg(1) int i) {
         menuActionRow--;
         if (menuActionRow == i) {
@@ -432,7 +497,7 @@ public class MiniMenu {
         ArrayUtils.copy(intArgs2, i + 1, intArgs2, i, menuActionRow - i);
     }
 
-    @OriginalMember(owner = "runetek4.client!wl", name = "b", descriptor = "(I)V")
+    @OriginalMember(owner = "client!wl", name = "b", descriptor = "(I)V")
     public static void sort() {
         @Pc(3) boolean local3 = false;
         while (!local3) {
@@ -466,7 +531,7 @@ public class MiniMenu {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!ij", name = "a", descriptor = "(B)V")
+    @OriginalMember(owner = "client!ij", name = "a", descriptor = "(B)V")
     public static void drawB() {
         @Pc(3) int local3 = InterfaceList.anInt4271;
         @Pc(9) int local9 = InterfaceList.anInt5138;
@@ -571,7 +636,7 @@ public class MiniMenu {
         InterfaceList.forceRedrawScreen(InterfaceList.anInt4271, InterfaceList.anInt5138, InterfaceList.anInt436, InterfaceList.anInt761);
     }
 
-    @OriginalMember(owner = "runetek4.client!lf", name = "b", descriptor = "(I)V")
+    @OriginalMember(owner = "client!lf", name = "b", descriptor = "(I)V")
     public static void drawA() {
         @Pc(3) int local3 = InterfaceList.anInt5138;
         @Pc(9) int local9 = InterfaceList.anInt761;
@@ -619,7 +684,7 @@ public class MiniMenu {
         InterfaceList.redrawScreen(anIntArray132[0], anIntArray132[2], anIntArray132[1], anIntArray132[3]);
     }
 
-    @OriginalMember(owner = "runetek4.client!wk", name = "a", descriptor = "(I[Lclient!na;)[Lclient!na;")
+    @OriginalMember(owner = "client!wk", name = "a", descriptor = "(I[Lclient!na;)[Lclient!na;")
     public static JString[] annotateOps(@OriginalArg(1) JString[] ops) {
         @Pc(8) JString[] annotatedOps = new JString[5];
         for (@Pc(15) int i = 0; i < 5; i++) {
@@ -642,12 +707,12 @@ public class MiniMenu {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!wa", name = "a", descriptor = "(IZ)Lclient!na;")
+    @OriginalMember(owner = "client!wa", name = "a", descriptor = "(IZ)Lclient!na;")
     public static JString getOp(@OriginalArg(0) int arg0) {
         return opBases[arg0].length() > 0 ? JString.concatenate(new JString[] { ops[arg0], LocalizedText.MINISEPARATOR, opBases[arg0] }) : ops[arg0];
     }
 
-    @OriginalMember(owner = "runetek4.client!i", name = "p", descriptor = "(II)V")
+    @OriginalMember(owner = "client!i", name = "p", descriptor = "(II)V")
     public static void doAction(@OriginalArg(1) int arg0) {
         if (arg0 < 0) {
             return;
@@ -1353,7 +1418,7 @@ public class MiniMenu {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!jj", name = "a", descriptor = "(IBI)Lclient!na;")
+    @OriginalMember(owner = "client!jj", name = "a", descriptor = "(IBI)Lclient!na;")
     public static JString getCombatLevelColorTag(@OriginalArg(0) int viewerLevel, @OriginalArg(2) int otherLevel) {
         @Pc(4) int diff = otherLevel - viewerLevel;
         if (diff < -9) {
@@ -1375,7 +1440,7 @@ public class MiniMenu {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!ob", name = "a", descriptor = "(IIIIIIB)V")
+    @OriginalMember(owner = "client!ob", name = "a", descriptor = "(IIIIIIB)V")
     public static void addEntries(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
         @Pc(15) int local15;
         @Pc(47) int local47;
@@ -1572,7 +1637,7 @@ public class MiniMenu {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!u", name = "a", descriptor = "(Lclient!me;IIII)V")
+    @OriginalMember(owner = "client!u", name = "a", descriptor = "(Lclient!me;IIII)V")
     public static void addNpcEntries(@OriginalArg(0) NpcType npc, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
         if (menuActionRow >= 400) {
             return;
@@ -1665,7 +1730,7 @@ public class MiniMenu {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!rj", name = "a", descriptor = "(IIILclient!e;I)V")
+    @OriginalMember(owner = "client!rj", name = "a", descriptor = "(IIILclient!e;I)V")
     public static void addPlayerEntries(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Player other, @OriginalArg(4) int arg3) {
         if (PlayerList.self == other || menuActionRow >= 400) {
             return;
@@ -1749,7 +1814,7 @@ public class MiniMenu {
         return local32;
     }
 
-    @OriginalMember(owner = "runetek4.client!il", name = "a", descriptor = "(III)V")
+    @OriginalMember(owner = "client!il", name = "a", descriptor = "(III)V")
     public static void method3556(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
         aBoolean187 = true;
         anInt3902 = arg0;
@@ -1759,7 +1824,7 @@ public class MiniMenu {
         anInt2954 = -1;
     }
 
-    @OriginalMember(owner = "runetek4.client!wi", name = "c", descriptor = "(II)Z")
+    @OriginalMember(owner = "client!wi", name = "c", descriptor = "(II)Z")
     public static boolean menuHasAddFriend(@OriginalArg(0) int arg0) {
         if (arg0 < 0) {
             return false;
@@ -1771,7 +1836,7 @@ public class MiniMenu {
         return local12 == 1003;
     }
 
-    @OriginalMember(owner = "runetek4.client!ub", name = "b", descriptor = "(IIIIIII)V")
+    @OriginalMember(owner = "client!ub", name = "b", descriptor = "(IIIIIII)V")
     public static void method4246(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(6) int arg5) {
         @Pc(8) Component local8 = InterfaceList.getCreatedComponent(arg0, arg1);
         if (local8 != null && local8.onUse != null) {
@@ -1815,7 +1880,7 @@ public class MiniMenu {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!aa", name = "a", descriptor = "(IZI)V")
+    @OriginalMember(owner = "client!aa", name = "a", descriptor = "(IZI)V")
     public static void method10(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
         Protocol.outboundBuffer.pIsaac1(132);
         Protocol.outboundBuffer.p4rme(arg1);

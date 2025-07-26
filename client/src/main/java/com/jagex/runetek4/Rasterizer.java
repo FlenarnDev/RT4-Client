@@ -2,61 +2,75 @@ package com.jagex.runetek4;
 
 import com.jagex.runetek4.util.ColorUtils;
 import com.jagex.runetek4.util.IntUtils;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 public final class Rasterizer {
 
-    @OriginalMember(owner = "runetek4.client!hf", name = "a", descriptor = "[I")
+    @OriginalMember(owner = "client!hf", name = "a", descriptor = "[I")
     public static final int[] palette = new int[65536];
 
-	@OriginalMember(owner = "runetek4.client!hf", name = "e", descriptor = "Lclient!m;")
+	@OriginalMember(owner = "client!hf", name = "e", descriptor = "Lclient!m;")
 	public static TextureProvider textureProvider;
-	@OriginalMember(owner = "runetek4.client!hf", name = "k", descriptor = "I")
+
+	@OriginalMember(owner = "client!hf", name = "k", descriptor = "I")
 	public static int height;
-	@OriginalMember(owner = "runetek4.client!hf", name = "c", descriptor = "[I")
+
+	@OriginalMember(owner = "client!hf", name = "c", descriptor = "[I")
 	public static int[] offsets = new int[1024];
-	@OriginalMember(owner = "runetek4.client!hf", name = "d", descriptor = "Z")
+
+	@OriginalMember(owner = "client!hf", name = "d", descriptor = "Z")
 	public static boolean textureHasTransparency = false;
-	@OriginalMember(owner = "runetek4.client!tg", name = "c", descriptor = "I")
+
+	@OriginalMember(owner = "client!tg", name = "c", descriptor = "I")
 	public static int screenLowerX;
-	@OriginalMember(owner = "runetek4.client!ub", name = "m", descriptor = "I")
+
+	@OriginalMember(owner = "client!ub", name = "m", descriptor = "I")
 	public static int screenUpperX;
-	@OriginalMember(owner = "runetek4.client!a", name = "g", descriptor = "I")
+
+	@OriginalMember(owner = "client!a", name = "g", descriptor = "I")
 	public static int screenLowerY;
-	@OriginalMember(owner = "runetek4.client!li", name = "x", descriptor = "I")
+	@OriginalMember(owner = "client!li", name = "x", descriptor = "I")
 	public static int screenUpperY;
-	@OriginalMember(owner = "runetek4.client!hf", name = "j", descriptor = "Z")
+
+	@OriginalMember(owner = "client!hf", name = "j", descriptor = "Z")
 	public static boolean jagged = true;
-	@OriginalMember(owner = "runetek4.client!hf", name = "b", descriptor = "I")
+
+	@OriginalMember(owner = "client!hf", name = "b", descriptor = "I")
 	public static int centerY;
-	@OriginalMember(owner = "runetek4.client!hf", name = "m", descriptor = "I")
+
+	@OriginalMember(owner = "client!hf", name = "m", descriptor = "I")
 	public static int centerX;
-	@OriginalMember(owner = "runetek4.client!hf", name = "n", descriptor = "I")
+	@OriginalMember(owner = "client!hf", name = "n", descriptor = "I")
 	public static int width;
-	@OriginalMember(owner = "runetek4.client!hf", name = "i", descriptor = "Z")
+	@OriginalMember(owner = "client!hf", name = "i", descriptor = "Z")
 	public static boolean opaque = false;
-	@OriginalMember(owner = "runetek4.client!hf", name = "l", descriptor = "Z")
+
+	@OriginalMember(owner = "client!hf", name = "l", descriptor = "Z")
 	public static boolean lowDetail = false;
-	@OriginalMember(owner = "runetek4.client!hf", name = "o", descriptor = "F")
+
+	@OriginalMember(owner = "client!hf", name = "o", descriptor = "F")
 	public static float brightness = 1.0F;
-	@OriginalMember(owner = "runetek4.client!hf", name = "p", descriptor = "Z")
+
+	@OriginalMember(owner = "client!hf", name = "p", descriptor = "Z")
 	public static boolean testX = false;
-	@OriginalMember(owner = "runetek4.client!hf", name = "q", descriptor = "I")
+
+	@OriginalMember(owner = "client!hf", name = "q", descriptor = "I")
 	public static int alpha = 0;
 
-	@OriginalMember(owner = "runetek4.client!hf", name = "a", descriptor = "(Lclient!m;)V")
+	@OriginalMember(owner = "client!hf", name = "a", descriptor = "(Lclient!m;)V")
     public static void unpackTextures(@OriginalArg(0) TextureProvider arg0) {
         textureProvider = arg0;
     }
 
-	@OriginalMember(owner = "runetek4.client!hf", name = "a", descriptor = "()V")
+	@OriginalMember(owner = "client!hf", name = "a", descriptor = "()V")
 	public static void prepare() {
 		prepareOffsets(SoftwareRaster.clipLeft, SoftwareRaster.clipTop, SoftwareRaster.clipRight, SoftwareRaster.clipBottom);
 	}
 
-	@OriginalMember(owner = "runetek4.client!hf", name = "a", descriptor = "(IIII)V")
+	@OriginalMember(owner = "client!hf", name = "a", descriptor = "(IIII)V")
 	private static void prepareOffsets(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		width = arg2 - arg0;
 		height = arg3 - arg1;
@@ -71,7 +85,7 @@ public final class Rasterizer {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!hf", name = "b", descriptor = "(II)V")
+	@OriginalMember(owner = "client!hf", name = "b", descriptor = "(II)V")
 	public static void setBounds(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		@Pc(3) int local3 = offsets[0];
 		@Pc(7) int local7 = local3 / SoftwareRaster.width;
@@ -84,7 +98,7 @@ public final class Rasterizer {
 		screenUpperY = height - centerY;
 	}
 
-	@OriginalMember(owner = "runetek4.client!hf", name = "c", descriptor = "()V")
+	@OriginalMember(owner = "client!hf", name = "c", descriptor = "()V")
 	public static void prepareOffsets() {
 		centerX = width / 2;
 		centerY = height / 2;
@@ -94,7 +108,7 @@ public final class Rasterizer {
 		screenUpperY = height - centerY;
 	}
 
-	@OriginalMember(owner = "runetek4.client!hf", name = "a", descriptor = "([BIIIIIII)V")
+	@OriginalMember(owner = "client!hf", name = "a", descriptor = "([BIIIIIII)V")
 	public static void fillSpriteTriangle(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
 		@Pc(1) int local1 = 0;
 		if (arg2 != arg1) {
@@ -469,7 +483,7 @@ public final class Rasterizer {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!hf", name = "a", descriptor = "([BIIII)V")
+	@OriginalMember(owner = "client!hf", name = "a", descriptor = "([BIIII)V")
 	private static void drawSpriteScanline(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		if (arg2 >= arg3) {
 			return;
@@ -499,7 +513,7 @@ public final class Rasterizer {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!hf", name = "a", descriptor = "(IIIIIIIIIIIIIIIIIII)V")
+	@OriginalMember(owner = "client!hf", name = "a", descriptor = "(IIIIIIIIIIIIIIIIIII)V")
 	public static void fillTexturedTriangle(@OriginalArg(0) int yA, @OriginalArg(1) int yB, @OriginalArg(2) int yC, @OriginalArg(3) int xA, @OriginalArg(4) int arg4, @OriginalArg(5) int xC, @OriginalArg(6) int colorA, @OriginalArg(7) int colorB, @OriginalArg(8) int colorC, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int arg11, @OriginalArg(12) int arg12, @OriginalArg(13) int arg13, @OriginalArg(14) int arg14, @OriginalArg(15) int arg15, @OriginalArg(16) int arg16, @OriginalArg(17) int arg17, @OriginalArg(18) int textureId) {
 		@Pc(5) int[] texels = textureProvider.method3232(textureId, brightness);
 		@Pc(12) int averageColor;
@@ -1064,7 +1078,7 @@ public final class Rasterizer {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!hf", name = "b", descriptor = "([I[IIIIIIIIIIIIII)V")
+	@OriginalMember(owner = "client!hf", name = "b", descriptor = "([I[IIIIIIIIIIIIII)V")
 	private static void drawTexturedScanline(@OriginalArg(0) int[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(8) int arg6, @OriginalArg(9) int arg7, @OriginalArg(10) int arg8, @OriginalArg(11) int arg9, @OriginalArg(12) int arg10, @OriginalArg(13) int arg11, @OriginalArg(14) int arg12) {
 		if (testX) {
 			if (arg4 > width) {
@@ -1387,7 +1401,7 @@ public final class Rasterizer {
 		} while (local28 > 0);
 	}
 
-	@OriginalMember(owner = "runetek4.client!hf", name = "a", descriptor = "([IIIIIIII)V")
+	@OriginalMember(owner = "client!hf", name = "a", descriptor = "([IIIIIIII)V")
 	private static void drawGouraudScanline(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5) {
 		if (testX) {
 			if (arg3 > width) {
@@ -1491,7 +1505,7 @@ public final class Rasterizer {
 		} while (local32 > 0);
 	}
 
-	@OriginalMember(owner = "runetek4.client!hf", name = "a", descriptor = "(IIIIIIIII)V")
+	@OriginalMember(owner = "client!hf", name = "a", descriptor = "(IIIIIIIII)V")
 	public static void fillGouraudTriangle(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8) {
 		@Pc(3) int local3 = arg4 - arg3;
 		@Pc(7) int local7 = arg1 - arg0;
@@ -1941,13 +1955,13 @@ public final class Rasterizer {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!hf", name = "a", descriptor = "(F)V")
+	@OriginalMember(owner = "client!hf", name = "a", descriptor = "(F)V")
 	public static void setBrightness(@OriginalArg(0) float arg0) {
 		randBrightness(arg0);
 		calculateBrightness();
 	}
 
-	@OriginalMember(owner = "runetek4.client!hf", name = "c", descriptor = "(II)V")
+	@OriginalMember(owner = "client!hf", name = "c", descriptor = "(II)V")
 	private static void calculateBrightness() {
 		@Pc(3) int local3 = 0;
 		for (@Pc(5) int local5 = 0; local5 < 512; local5++) {
@@ -2017,13 +2031,13 @@ public final class Rasterizer {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!hf", name = "b", descriptor = "(F)V")
+	@OriginalMember(owner = "client!hf", name = "b", descriptor = "(F)V")
 	private static void randBrightness(@OriginalArg(0) float arg0) {
 		brightness = arg0;
 		brightness = (float) ((double) brightness + Math.random() * 0.03D - 0.015D);
 	}
 
-	@OriginalMember(owner = "runetek4.client!hf", name = "b", descriptor = "(IIIIIIIIIIIIIIIIIII)V")
+	@OriginalMember(owner = "client!hf", name = "b", descriptor = "(IIIIIIIIIIIIIIIIIII)V")
 	public static void fillTexturedAlphaTriangle(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int arg11, @OriginalArg(12) int arg12, @OriginalArg(13) int arg13, @OriginalArg(14) int arg14, @OriginalArg(15) int arg15, @OriginalArg(16) int arg16, @OriginalArg(17) int arg17, @OriginalArg(18) int arg18) {
 		@Pc(5) int[] texels = textureProvider.method3232(arg18, brightness);
 		@Pc(15) int local15;
@@ -2589,7 +2603,7 @@ public final class Rasterizer {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!hf", name = "a", descriptor = "([I[IIIIIIIIIIIIII)V")
+	@OriginalMember(owner = "client!hf", name = "a", descriptor = "([I[IIIIIIIIIIIIII)V")
 	private static void drawTexturedAlphaScanline(@OriginalArg(0) int[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(8) int arg6, @OriginalArg(9) int arg7, @OriginalArg(10) int arg8, @OriginalArg(11) int arg9, @OriginalArg(12) int arg10, @OriginalArg(13) int arg11, @OriginalArg(14) int arg12) {
 		if (testX) {
 			if (arg4 > width) {
@@ -2968,12 +2982,12 @@ public final class Rasterizer {
 		} while (local28 > 0);
 	}
 
-	@OriginalMember(owner = "runetek4.client!hf", name = "b", descriptor = "()I")
+	@OriginalMember(owner = "client!hf", name = "b", descriptor = "()I")
 	public static int getOffsetRemainder() {
 		return offsets[0] % SoftwareRaster.width;
 	}
 
-	@OriginalMember(owner = "runetek4.client!hf", name = "a", descriptor = "(IIIIIII)V")
+	@OriginalMember(owner = "client!hf", name = "a", descriptor = "(IIIIIII)V")
 	public static void fillTriangle(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
 		@Pc(1) int local1 = 0;
 		if (arg1 != arg0) {
@@ -3372,7 +3386,7 @@ public final class Rasterizer {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!hf", name = "a", descriptor = "([IIIIII)V")
+	@OriginalMember(owner = "client!hf", name = "a", descriptor = "([IIIIII)V")
 	private static void drawScanline(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		if (testX) {
 			if (arg4 > width) {
@@ -3462,12 +3476,12 @@ public final class Rasterizer {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!hf", name = "a", descriptor = "(III)V")
+	@OriginalMember(owner = "client!hf", name = "a", descriptor = "(III)V")
 	public static void testPoints(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		testX = arg0 < 0 || arg0 > width || arg1 < 0 || arg1 > width || arg2 < 0 || arg2 > width;
 	}
 
-	@OriginalMember(owner = "runetek4.client!hf", name = "d", descriptor = "()I")
+	@OriginalMember(owner = "client!hf", name = "d", descriptor = "()I")
 	public static int getOffset() {
 		return offsets[0] / SoftwareRaster.width;
 	}

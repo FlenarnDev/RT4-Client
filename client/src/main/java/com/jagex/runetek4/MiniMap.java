@@ -1,82 +1,87 @@
 package com.jagex.runetek4;
 
-import com.jagex.runetek4.config.types.npc.NpcType;
 import com.jagex.runetek4.cache.media.Font;
 import com.jagex.runetek4.cache.media.SoftwareSprite;
 import com.jagex.runetek4.cache.media.component.Component;
+
 import com.jagex.runetek4.client.client;
+
 import com.jagex.runetek4.config.types.loc.LocTypeList;
 import com.jagex.runetek4.config.types.msi.MSITypeList;
 import com.jagex.runetek4.config.types.loc.LocType;
+import com.jagex.runetek4.config.types.npc.NpcType;
 import com.jagex.runetek4.config.types.msi.MSIType;
+
 import com.jagex.runetek4.scene.tile.PlainTile;
 import com.jagex.runetek4.scene.tile.ShapedTile;
 import com.jagex.runetek4.scene.tile.Tile;
+
 import com.jagex.runetek4.util.MathUtils;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 public class MiniMap {
 
-    @OriginalMember(owner = "runetek4.client!wc", name = "h", descriptor = "[[I")
+    @OriginalMember(owner = "client!wc", name = "h", descriptor = "[[I")
     public static final int[][] anIntArrayArray46 = new int[][] { { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }, { 12, 8, 4, 0, 13, 9, 5, 1, 14, 10, 6, 2, 15, 11, 7, 3 }, { 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 }, { 3, 7, 11, 15, 2, 6, 10, 14, 1, 5, 9, 13, 0, 4, 8, 12 } };
 
-    @OriginalMember(owner = "runetek4.client!ke", name = "T", descriptor = "[[I")
+    @OriginalMember(owner = "client!ke", name = "T", descriptor = "[[I")
     public static final int[][] anIntArrayArray24 = new int[][] { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, { 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1 }, { 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 }, { 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1 }, { 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, { 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1 }, { 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 }, { 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1 }, { 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1 }, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1 } };
 
-    @OriginalMember(owner = "runetek4.client!ld", name = "b", descriptor = "[Lclient!nc;")
+    @OriginalMember(owner = "client!ld", name = "b", descriptor = "[Lclient!nc;")
     public static final MapMarker[] hintMapMarkers = new MapMarker[4];
 
-    @OriginalMember(owner = "runetek4.client!qc", name = "ab", descriptor = "[I")
+    @OriginalMember(owner = "client!qc", name = "ab", descriptor = "[I")
     public static final int[] locId = new int[1000];
 
-    @OriginalMember(owner = "runetek4.client!lf", name = "d", descriptor = "[I")
+    @OriginalMember(owner = "client!lf", name = "d", descriptor = "[I")
     public static final int[] locX = new int[1000];
 
-    @OriginalMember(owner = "runetek4.client!he", name = "eb", descriptor = "[I")
+    @OriginalMember(owner = "client!he", name = "eb", descriptor = "[I")
     public static final int[] locZ = new int[1000];
 
-    @OriginalMember(owner = "runetek4.client!ld", name = "d", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "client!ld", name = "d", descriptor = "Lclient!na;")
     public static final JString HIDDEN_USE = JString.parse("Hidden)2use");
 
-    @OriginalMember(owner = "runetek4.client!ha", name = "i", descriptor = "Lclient!qf;")
+    @OriginalMember(owner = "client!ha", name = "i", descriptor = "Lclient!qf;")
     public static Sprite sprite;
 
-    @OriginalMember(owner = "runetek4.client!wb", name = "d", descriptor = "I")
+    @OriginalMember(owner = "client!wb", name = "d", descriptor = "I")
     public static int state = 0;
 
-    @OriginalMember(owner = "runetek4.client!we", name = "w", descriptor = "I")
+    @OriginalMember(owner = "client!we", name = "w", descriptor = "I")
     public static int minimapZoom = 0;
 
-    @OriginalMember(owner = "runetek4.client!ej", name = "W", descriptor = "I")
+    @OriginalMember(owner = "client!ej", name = "W", descriptor = "I")
     public static int minimapAnticheatAngle = 0;
 
-    @OriginalMember(owner = "runetek4.client!sd", name = "R", descriptor = "I")
+    @OriginalMember(owner = "client!sd", name = "R", descriptor = "I")
     public static int anInt5062;
 
     @OriginalMember(owner = "client!ef", name = "j", descriptor = "Lclient!mm;")
     public static SoftwareSprite softwareSprite;
 
-    @OriginalMember(owner = "runetek4.client!ug", name = "m", descriptor = "I")
+    @OriginalMember(owner = "client!ug", name = "m", descriptor = "I")
     public static int locs = 0;
 
-    @OriginalMember(owner = "runetek4.client!vg", name = "d", descriptor = "I")
+    @OriginalMember(owner = "client!vg", name = "d", descriptor = "I")
     public static int minimapAngleModifier = 2;
 
-    @OriginalMember(owner = "runetek4.client!oe", name = "n", descriptor = "I")
+    @OriginalMember(owner = "client!oe", name = "n", descriptor = "I")
     public static int minimapZoomModifier = 1;
 
     @OriginalMember(owner = "client!gi", name = "H", descriptor = "I")
     public static int minimapOffsetCycle = 0;
 
-    @OriginalMember(owner = "runetek4.client!nf", name = "i", descriptor = "I")
+    @OriginalMember(owner = "client!nf", name = "i", descriptor = "I")
     public static int anInt4075 = -1;
 
-    @OriginalMember(owner = "runetek4.client!se", name = "h", descriptor = "I")
+    @OriginalMember(owner = "client!se", name = "h", descriptor = "I")
     public static int anInt5073 = -1;
 
-    @OriginalMember(owner = "runetek4.client!em", name = "a", descriptor = "(Lclient!be;Lclient!qf;IIIBI)V")
+    @OriginalMember(owner = "client!em", name = "a", descriptor = "(Lclient!be;Lclient!qf;IIIBI)V")
     public static void drawOnMinimap(@OriginalArg(0) Component arg0, @OriginalArg(1) Sprite sprite, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(6) int arg5) {
         if (sprite == null) {
             return;
@@ -100,7 +105,7 @@ public class MiniMap {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!ed", name = "a", descriptor = "(IBIILclient!be;)V")
+    @OriginalMember(owner = "client!ed", name = "a", descriptor = "(IBIILclient!be;)V")
     public static void render(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) Component arg3) {
         client.audioLoop();
         if (GlRenderer.enabled) {
@@ -288,7 +293,7 @@ public class MiniMap {
         InterfaceList.rectangleRedraw[arg0] = true;
     }
 
-    @OriginalMember(owner = "runetek4.client!ma", name = "a", descriptor = "([IIIIII)V")
+    @OriginalMember(owner = "client!ma", name = "a", descriptor = "([IIIIII)V")
     public static void drawMiniMapTile(@OriginalArg(0) int[] destPixels, @OriginalArg(1) int offset, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
         @Pc(7) Tile tile = SceneGraph.tiles[arg2][arg3][arg4];
         if (tile == null) {
@@ -348,7 +353,7 @@ public class MiniMap {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!kl", name = "b", descriptor = "(II)Z")
+    @OriginalMember(owner = "client!kl", name = "b", descriptor = "(II)Z")
     public static boolean drawMap(@OriginalArg(1) int arg0) {
         @Pc(35) int local35;
         @Pc(37) int local37;
@@ -470,7 +475,7 @@ public class MiniMap {
         return true;
     }
 
-    @OriginalMember(owner = "runetek4.client!hi", name = "a", descriptor = "(IIIIILclient!be;Z)V")
+    @OriginalMember(owner = "client!hi", name = "a", descriptor = "(IIIIILclient!be;Z)V")
     public static void drawMinimapMark(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int mapX, @OriginalArg(4) int mapY, @OriginalArg(5) Component arg5) {
         @Pc(13) int len = mapX * mapX + mapY * mapY;
         if (len > 360000) {
@@ -499,7 +504,7 @@ public class MiniMap {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!hi", name = "a", descriptor = "(Lclient!be;B)Lclient!na;")
+    @OriginalMember(owner = "client!hi", name = "a", descriptor = "(Lclient!be;B)Lclient!na;")
     public static JString getTargetVerb(@OriginalArg(0) Component arg0) {
         if (InterfaceList.getServerActiveProperties(arg0).getTargetMask() == 0) {
             return null;
@@ -562,7 +567,7 @@ public class MiniMap {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!na", name = "a", descriptor = "(IIIIIIIZ)Z")
+    @OriginalMember(owner = "client!na", name = "a", descriptor = "(IIIIIIIZ)Z")
     public static boolean method3109(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(6) int arg4) {
         @Pc(14) long wallKey = SceneGraph.getWallKey(arg4, arg0 + 0, arg2);
         @Pc(28) int rotation;

@@ -20,70 +20,70 @@ public final class Loc extends Entity {
 	@OriginalMember(owner = "client!ci", name = "q", descriptor = "Lclient!ek;")
 	public static SoftwareIndexedSprite sprite1 = null;
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "U", descriptor = "Lclient!ga;")
+	@OriginalMember(owner = "client!dc", name = "U", descriptor = "Lclient!ga;")
 	private ParticleSystem particles;
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "x", descriptor = "I")
+	@OriginalMember(owner = "client!dc", name = "x", descriptor = "I")
 	private int anInt1296 = 0;
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "t", descriptor = "Z")
+	@OriginalMember(owner = "client!dc", name = "t", descriptor = "Z")
 	private boolean aBoolean80 = false;
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "s", descriptor = "I")
+	@OriginalMember(owner = "client!dc", name = "s", descriptor = "I")
 	private int anInt1294 = 0;
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "B", descriptor = "Z")
+	@OriginalMember(owner = "client!dc", name = "B", descriptor = "Z")
 	private boolean aBoolean81 = true;
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "Q", descriptor = "Lclient!ek;")
+	@OriginalMember(owner = "client!dc", name = "Q", descriptor = "Lclient!ek;")
 	private SoftwareIndexedSprite sprite2 = null;
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "T", descriptor = "I")
+	@OriginalMember(owner = "client!dc", name = "T", descriptor = "I")
 	private final int anInt1311 = -32768;
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "eb", descriptor = "I")
+	@OriginalMember(owner = "client!dc", name = "eb", descriptor = "I")
 	private int anInt1319 = 0;
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "gb", descriptor = "I")
+	@OriginalMember(owner = "client!dc", name = "gb", descriptor = "I")
 	private int anInt1321 = -1;
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "ib", descriptor = "I")
+	@OriginalMember(owner = "client!dc", name = "ib", descriptor = "I")
 	private int anInt1322 = -1;
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "H", descriptor = "I")
+	@OriginalMember(owner = "client!dc", name = "H", descriptor = "I")
 	private final int anInt1303;
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "w", descriptor = "I")
+	@OriginalMember(owner = "client!dc", name = "w", descriptor = "I")
 	private final int anInt1295;
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "N", descriptor = "I")
+	@OriginalMember(owner = "client!dc", name = "N", descriptor = "I")
 	private final int anInt1308;
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "L", descriptor = "I")
+	@OriginalMember(owner = "client!dc", name = "L", descriptor = "I")
 	private final int anInt1307;
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "C", descriptor = "I")
+	@OriginalMember(owner = "client!dc", name = "C", descriptor = "I")
 	private final int anInt1299;
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "D", descriptor = "I")
+	@OriginalMember(owner = "client!dc", name = "D", descriptor = "I")
 	private final int anInt1300;
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "u", descriptor = "Lclient!tk;")
+	@OriginalMember(owner = "client!dc", name = "u", descriptor = "Lclient!tk;")
 	private SeqType aClass144_2;
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "y", descriptor = "I")
+	@OriginalMember(owner = "client!dc", name = "y", descriptor = "I")
 	private int anInt1297;
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "I", descriptor = "I")
+	@OriginalMember(owner = "client!dc", name = "I", descriptor = "I")
 	private int anInt1304;
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "bb", descriptor = "I")
+	@OriginalMember(owner = "client!dc", name = "bb", descriptor = "I")
 	private int anInt1317;
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "fb", descriptor = "I")
+	@OriginalMember(owner = "client!dc", name = "fb", descriptor = "I")
 	private int anInt1320;
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "<init>", descriptor = "(IIIIIIIZLclient!th;)V")
+	@OriginalMember(owner = "client!dc", name = "<init>", descriptor = "(IIIIIIIZLclient!th;)V")
 	public Loc(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7, @OriginalArg(8) Entity arg8) {
 		this.anInt1303 = arg3;
 		this.anInt1295 = arg2;
@@ -197,7 +197,7 @@ public final class Loc extends Entity {
 		ShadowManager.method4207(local215.sprite, local80 - arg3, local122, local88 - arg1);
 	}
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "a", descriptor = "(IIIII)V")
+	@OriginalMember(owner = "client!dc", name = "a", descriptor = "(IIIII)V")
 	@Override
 	public final void method4545(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		if (GlRenderer.enabled) {
@@ -207,7 +207,7 @@ public final class Loc extends Entity {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "a", descriptor = "(IIIIIIIIJILclient!ga;)V")
+	@OriginalMember(owner = "client!dc", name = "a", descriptor = "(IIIIIIIIJILclient!ga;)V")
 	@Override
 	public final void render(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
 		@Pc(3) Entity local3 = this.method1049();
@@ -216,7 +216,7 @@ public final class Loc extends Entity {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "c", descriptor = "(I)V")
+	@OriginalMember(owner = "client!dc", name = "c", descriptor = "(I)V")
 	public final void method1046() {
 		if (this.sprite2 != null) {
 			ShadowManager.method4207(this.sprite2, this.anInt1296, this.anInt1294, this.anInt1319);
@@ -226,12 +226,12 @@ public final class Loc extends Entity {
 		this.sprite2 = null;
 	}
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "finalize", descriptor = "()V")
+	@OriginalMember(owner = "client!dc", name = "finalize", descriptor = "()V")
 	@Override
 	public final void finalize() {
 	}
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "b", descriptor = "(III)V")
+	@OriginalMember(owner = "client!dc", name = "b", descriptor = "(III)V")
 	private void method1047(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		if (this.aClass144_2 == null) {
 			return;
@@ -281,7 +281,7 @@ public final class Loc extends Entity {
 		this.anInt1320 = client.loop - local10;
 	}
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "a", descriptor = "(ZI)Lclient!th;")
+	@OriginalMember(owner = "client!dc", name = "a", descriptor = "(ZI)Lclient!th;")
 	private Entity method1048(@OriginalArg(0) boolean arg0) {
 		@Pc(12) boolean local12 = SceneGraph.surfaceTileHeights != SceneGraph.tileHeights;
 		@Pc(19) LocType local19 = LocTypeList.get(this.anInt1299);
@@ -387,12 +387,12 @@ public final class Loc extends Entity {
 		return local389.model;
 	}
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "d", descriptor = "(I)Lclient!th;")
+	@OriginalMember(owner = "client!dc", name = "d", descriptor = "(I)Lclient!th;")
 	public final Entity method1049() {
 		return this.method1048(false);
 	}
 
-	@OriginalMember(owner = "runetek4.client!dc", name = "b", descriptor = "()I")
+	@OriginalMember(owner = "client!dc", name = "b", descriptor = "()I")
 	@Override
 	public final int getMinY() {
 		return this.anInt1311;

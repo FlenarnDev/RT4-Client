@@ -3,6 +3,7 @@ package com.jagex.runetek4;
 import java.util.Random;
 
 import com.jagex.runetek4.util.RandomUtils;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -43,7 +44,7 @@ public abstract class NoiseGenerator3D {
 		this.method3847();
 	}
 
-	@OriginalMember(owner = "runetek4.client!se", name = "a", descriptor = "(IIIIZ)I")
+	@OriginalMember(owner = "client!se", name = "a", descriptor = "(IIIIZ)I")
 	public static int method3891(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		@Pc(8) int local8 = arg3 & 0xF;
 		@Pc(29) int local29 = local8 >= 4 ? (local8 == 12 || local8 == 14 ? arg0 : arg1) : arg2;

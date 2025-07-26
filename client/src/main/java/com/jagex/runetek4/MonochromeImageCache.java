@@ -5,40 +5,43 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
-@OriginalClass("runetek4.client!nd")
+@OriginalClass("client!nd")
 public final class MonochromeImageCache {
 
-	@OriginalMember(owner = "runetek4.client!nd", name = "c", descriptor = "[B")
+	@OriginalMember(owner = "client!nd", name = "c", descriptor = "[B")
 	public static final byte[] aByteArray53 = new byte[32896];
-	@OriginalMember(owner = "runetek4.client!a", name = "b", descriptor = "[I")
+
+	@OriginalMember(owner = "client!a", name = "b", descriptor = "[I")
 	public static final int[] anIntArray1 = new int[4096];
+
 	@OriginalMember(owner = "client!bc", name = "N", descriptor = "Lclient!lb;")
 	public static final MonochromeImageCacheEntry entry = new MonochromeImageCacheEntry(0, 0);
 
-	@OriginalMember(owner = "runetek4.client!nd", name = "f", descriptor = "I")
+	@OriginalMember(owner = "client!nd", name = "f", descriptor = "I")
 	private int singleRow = -1;
 
-	@OriginalMember(owner = "runetek4.client!nd", name = "k", descriptor = "I")
+	@OriginalMember(owner = "client!nd", name = "k", descriptor = "I")
 	private int size = 0;
 
-	@OriginalMember(owner = "runetek4.client!nd", name = "g", descriptor = "Lclient!ih;")
+	@OriginalMember(owner = "client!nd", name = "g", descriptor = "Lclient!ih;")
 	private LinkedList recentlyUsed = new LinkedList();
 
-	@OriginalMember(owner = "runetek4.client!nd", name = "w", descriptor = "Z")
+	@OriginalMember(owner = "client!nd", name = "w", descriptor = "Z")
 	public boolean invalid = false;
 
-	@OriginalMember(owner = "runetek4.client!nd", name = "l", descriptor = "I")
+	@OriginalMember(owner = "client!nd", name = "l", descriptor = "I")
 	private final int height;
 
-	@OriginalMember(owner = "runetek4.client!nd", name = "i", descriptor = "I")
+	@OriginalMember(owner = "client!nd", name = "i", descriptor = "I")
 	private final int capacity;
 
-	@OriginalMember(owner = "runetek4.client!nd", name = "o", descriptor = "[Lclient!lb;")
+	@OriginalMember(owner = "client!nd", name = "o", descriptor = "[Lclient!lb;")
 	private MonochromeImageCacheEntry[] entries;
 
-	@OriginalMember(owner = "runetek4.client!nd", name = "a", descriptor = "[[[I")
+	@OriginalMember(owner = "client!nd", name = "a", descriptor = "[[[I")
 	private int[][][] pixels;
 
+	// TODO - figure out where this belongs
 	static {
 		@Pc(8) int local8 = 0;
 		for (@Pc(10) int local10 = 0; local10 < 256; local10++) {
@@ -52,7 +55,7 @@ public final class MonochromeImageCache {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!nd", name = "<init>", descriptor = "(III)V")
+	@OriginalMember(owner = "client!nd", name = "<init>", descriptor = "(III)V")
 	public MonochromeImageCache(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		this.height = arg1;
 		this.capacity = arg0;
@@ -60,7 +63,7 @@ public final class MonochromeImageCache {
 		this.pixels = new int[this.capacity][3][arg2];
 	}
 
-	@OriginalMember(owner = "runetek4.client!we", name = "a", descriptor = "(BI)I")
+	@OriginalMember(owner = "client!we", name = "a", descriptor = "(BI)I")
 	public static int fade(@OriginalArg(1) int t) {
 		@Pc(13) int depth = t * (t * t >> 12) >> 12;
 		@Pc(26) int x = t * 6 - 61440;
@@ -68,7 +71,7 @@ public final class MonochromeImageCache {
 		return depth * y >> 12;
 	}
 
-	@OriginalMember(owner = "runetek4.client!nd", name = "a", descriptor = "(B)[[[I")
+	@OriginalMember(owner = "client!nd", name = "a", descriptor = "(B)[[[I")
 	public final int[][][] method3168() {
 		if (this.height != this.capacity) {
 			throw new RuntimeException("Can only retrieve a full image cache");
@@ -79,7 +82,7 @@ public final class MonochromeImageCache {
 		return this.pixels;
 	}
 
-	@OriginalMember(owner = "runetek4.client!nd", name = "b", descriptor = "(B)V")
+	@OriginalMember(owner = "client!nd", name = "b", descriptor = "(B)V")
 	public final void clear() {
 		for (@Pc(7) int local7 = 0; local7 < this.capacity; local7++) {
 			this.pixels[local7][0] = null;
@@ -93,7 +96,7 @@ public final class MonochromeImageCache {
 		this.recentlyUsed = null;
 	}
 
-	@OriginalMember(owner = "runetek4.client!nd", name = "a", descriptor = "(BI)[[I")
+	@OriginalMember(owner = "client!nd", name = "a", descriptor = "(BI)[[I")
 	public final int[][] get(@OriginalArg(1) int arg0) {
 		if (this.capacity == this.height) {
 			this.invalid = this.entries[arg0] == null;

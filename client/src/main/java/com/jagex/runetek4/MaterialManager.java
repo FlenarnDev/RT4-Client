@@ -1,48 +1,69 @@
 package com.jagex.runetek4;
 
 import com.jagex.runetek4.client.Preferences;
+
 import com.jogamp.opengl.GL2;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 import java.nio.ByteBuffer;
 
+import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL12C.GL_TEXTURE_3D;
+import static org.lwjgl.opengl.GL12C.glTexImage3D;
+
 public class MaterialManager {
     @OriginalMember(owner = "client!dl", name = "c", descriptor = "I")
     public static int currentType = 0;
+
     @OriginalMember(owner = "client!je", name = "R", descriptor = "Z")
     public static boolean renderingUnderwater = false;
-    @OriginalMember(owner = "runetek4.client!aa", name = "t", descriptor = "[Lclient!pc;")
+
+    @OriginalMember(owner = "client!aa", name = "t", descriptor = "[Lclient!pc;")
     public static MaterialRenderer[] renderers;
-    @OriginalMember(owner = "runetek4.client!mh", name = "eb", descriptor = "I")
+
+    @OriginalMember(owner = "client!mh", name = "eb", descriptor = "I")
     public static int currentArg = 0;
-    @OriginalMember(owner = "runetek4.client!sj", name = "D", descriptor = "I")
+
+    @OriginalMember(owner = "client!sj", name = "D", descriptor = "I")
     public static int anInt5158;
+
     @OriginalMember(owner = "client!ej", name = "X", descriptor = "I")
     public static int anInt1815;
-    @OriginalMember(owner = "runetek4.client!uj", name = "H", descriptor = "I")
+
+    @OriginalMember(owner = "client!uj", name = "H", descriptor = "I")
     public static int anInt5559;
+
     @OriginalMember(owner = "client!bb", name = "M", descriptor = "I")
     public static int anInt406;
-    @OriginalMember(owner = "runetek4.client!qc", name = "cb", descriptor = "I")
+
+    @OriginalMember(owner = "client!qc", name = "cb", descriptor = "I")
     public static int anInt4675;
-    @OriginalMember(owner = "runetek4.client!lm", name = "e", descriptor = "Z")
+
+    @OriginalMember(owner = "client!lm", name = "e", descriptor = "Z")
     public static boolean allows3DTextureMapping;
-    @OriginalMember(owner = "runetek4.client!lm", name = "a", descriptor = "[I")
+
+    @OriginalMember(owner = "client!lm", name = "a", descriptor = "[I")
     public static int[] waterfallTextures = null;
-    @OriginalMember(owner = "runetek4.client!lm", name = "b", descriptor = "[I")
+
+    @OriginalMember(owner = "client!lm", name = "b", descriptor = "[I")
     public static int[] anIntArray341 = null;
-    @OriginalMember(owner = "runetek4.client!lm", name = "f", descriptor = "I")
+
+    @OriginalMember(owner = "client!lm", name = "f", descriptor = "I")
     public static int texture3D = -1;
-    @OriginalMember(owner = "runetek4.client!lm", name = "g", descriptor = "I")
+
+    @OriginalMember(owner = "client!lm", name = "g", descriptor = "I")
     public static int waterfallTextureId = -1;
-    @OriginalMember(owner = "runetek4.client!lm", name = "c", descriptor = "Ljava/nio/ByteBuffer;")
+
+    @OriginalMember(owner = "client!lm", name = "c", descriptor = "Ljava/nio/ByteBuffer;")
     static ByteBuffer aByteBuffer6;
-    @OriginalMember(owner = "runetek4.client!lm", name = "d", descriptor = "Ljava/nio/ByteBuffer;")
+
+    @OriginalMember(owner = "client!lm", name = "d", descriptor = "Ljava/nio/ByteBuffer;")
     static ByteBuffer textureBuffer;
 
-    @OriginalMember(owner = "runetek4.client!lm", name = "a", descriptor = "()V")
+    @OriginalMember(owner = "client!lm", name = "a", descriptor = "()V")
     public static void method2807() {
         @Pc(11) byte[] local11;
         if (textureBuffer == null) {
@@ -90,13 +111,13 @@ public class MaterialManager {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!nj", name = "a", descriptor = "(I)V")
+    @OriginalMember(owner = "client!nj", name = "a", descriptor = "(I)V")
     public static void quit() {
         renderers = null;
         method2808();
     }
 
-    @OriginalMember(owner = "runetek4.client!te", name = "e", descriptor = "(I)V")
+    @OriginalMember(owner = "client!te", name = "e", descriptor = "(I)V")
     public static void init() {
         method2809();
         renderers = new MaterialRenderer[7];
@@ -108,7 +129,7 @@ public class MaterialManager {
         renderers[6] = new UnlitMaterialRenderer();
     }
 
-    @OriginalMember(owner = "runetek4.client!ka", name = "b", descriptor = "(II)V")
+    @OriginalMember(owner = "client!ka", name = "b", descriptor = "(II)V")
     public static void resetArgument(@OriginalArg(1) int arg0) {
         if (arg0 == currentType) {
             @Pc(12) MaterialRenderer local12 = renderers[arg0];
@@ -121,7 +142,7 @@ public class MaterialManager {
         return currentType == 0 ? 0 : renderers[currentType].getFlags();
     }
 
-    @OriginalMember(owner = "runetek4.client!lm", name = "b", descriptor = "()V")
+    @OriginalMember(owner = "client!lm", name = "b", descriptor = "()V")
     public static void method2808() {
         @Pc(4) GL2 local4;
         @Pc(11) int[] local11;
@@ -153,7 +174,7 @@ public class MaterialManager {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!lm", name = "c", descriptor = "()V")
+    @OriginalMember(owner = "client!lm", name = "c", descriptor = "()V")
     public static void method2809() {
         allows3DTextureMapping = GlRenderer.extTexture3dSupported;
         method2807();
@@ -161,17 +182,17 @@ public class MaterialManager {
         method2812();
     }
 
-    @OriginalMember(owner = "runetek4.client!lm", name = "e", descriptor = "()V")
+    @OriginalMember(owner = "client!lm", name = "e", descriptor = "()V")
     private static void method2811() {
         @Pc(1) GL2 local1 = GlRenderer.gl;
         if (allows3DTextureMapping) {
             @Pc(6) int[] local6 = new int[1];
-            local1.glGenTextures(1, local6, 0);
-            local1.glBindTexture(GL2.GL_TEXTURE_3D, local6[0]);
+            glGenTextures(local6);
+            glBindTexture(GL_TEXTURE_3D, local6[0]);
             textureBuffer.position(0);
-            local1.glTexImage3D(GL2.GL_TEXTURE_3D, 0, GL2.GL_LUMINANCE_ALPHA, 64, 64, 64, 0, GL2.GL_LUMINANCE_ALPHA, GL2.GL_UNSIGNED_BYTE, textureBuffer);
-            local1.glTexParameteri(GL2.GL_TEXTURE_3D, GL2.GL_TEXTURE_MIN_FILTER, GL2.GL_LINEAR);
-            local1.glTexParameteri(GL2.GL_TEXTURE_3D, GL2.GL_TEXTURE_MAG_FILTER, GL2.GL_LINEAR);
+            glTexImage3D(GL_TEXTURE_3D, 0, GL_LUMINANCE_ALPHA, 64, 64, 64, 0, GL_LUMINANCE_ALPHA, GL_UNSIGNED_BYTE, textureBuffer);
+            glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+            glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
             texture3D = local6[0];
             GlCleaner.oncard_texture += textureBuffer.limit() * 2;
             return;
@@ -188,7 +209,7 @@ public class MaterialManager {
         GlCleaner.oncard_texture += textureBuffer.limit() * 2;
     }
 
-    @OriginalMember(owner = "runetek4.client!lm", name = "f", descriptor = "()V")
+    @OriginalMember(owner = "client!lm", name = "f", descriptor = "()V")
     private static void method2812() {
         @Pc(1) GL2 local1 = GlRenderer.gl;
         if (allows3DTextureMapping) {
@@ -215,7 +236,7 @@ public class MaterialManager {
         GlCleaner.oncard_texture += aByteBuffer6.limit() * 2;
     }
 
-    @OriginalMember(owner = "runetek4.client!ld", name = "a", descriptor = "(IIIIZI)V")
+    @OriginalMember(owner = "client!ld", name = "a", descriptor = "(IIIIZI)V")
     public static void method2731(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(5) int arg4) {
         anInt5158 = arg1;
         anInt1815 = arg4;
@@ -224,7 +245,7 @@ public class MaterialManager {
         anInt4675 = arg2;
     }
 
-    @OriginalMember(owner = "runetek4.client!lh", name = "b", descriptor = "(II)V")
+    @OriginalMember(owner = "client!lh", name = "b", descriptor = "(II)V")
     public static void method2761(@OriginalArg(0) int arg0) {
         UnderwaterMaterialRenderer.anInt3241 = arg0;
         resetArgument(3);
