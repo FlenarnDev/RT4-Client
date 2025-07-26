@@ -5,19 +5,19 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
-@OriginalClass("runetek4.client!fi")
+@OriginalClass("client!fi")
 public final class HuffmanCodec {
 
-	@OriginalMember(owner = "runetek4.client!fi", name = "b", descriptor = "[I")
+	@OriginalMember(owner = "client!fi", name = "b", descriptor = "[I")
 	private int[] symbolTree;
 
-	@OriginalMember(owner = "runetek4.client!fi", name = "h", descriptor = "[I")
+	@OriginalMember(owner = "client!fi", name = "h", descriptor = "[I")
 	private final int[] codewords;
 
-	@OriginalMember(owner = "runetek4.client!fi", name = "e", descriptor = "[B")
+	@OriginalMember(owner = "client!fi", name = "e", descriptor = "[B")
 	private final byte[] bits;
 
-	@OriginalMember(owner = "runetek4.client!fi", name = "<init>", descriptor = "([B)V")
+	@OriginalMember(owner = "client!fi", name = "<init>", descriptor = "([B)V")
 	public HuffmanCodec(@OriginalArg(0) byte[] bytes) {
 		@Pc(6) int[] nextCodewords = new int[33];
 		@Pc(9) int symbols = bytes.length;
@@ -85,7 +85,7 @@ public final class HuffmanCodec {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!fi", name = "a", descriptor = "(II[B[BII)I")
+	@OriginalMember(owner = "client!fi", name = "a", descriptor = "(II[B[BII)I")
 	public final int encode(@OriginalArg(0) int arg0, @OriginalArg(2) byte[] arg1, @OriginalArg(3) byte[] arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		@Pc(5) int local5 = arg0;
 		@Pc(11) int local11 = 0;
@@ -129,7 +129,7 @@ public final class HuffmanCodec {
 		return (local15 + 7 >> 3) - arg4;
 	}
 
-	@OriginalMember(owner = "runetek4.client!fi", name = "a", descriptor = "(II[BI[BI)I")
+	@OriginalMember(owner = "client!fi", name = "a", descriptor = "(II[BI[BI)I")
 	public final int decode(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte[] arg2, @OriginalArg(4) byte[] arg3, @OriginalArg(5) int arg4) {
 		if (arg1 == 0) {
 			return 0;

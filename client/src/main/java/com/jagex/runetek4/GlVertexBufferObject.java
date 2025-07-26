@@ -2,7 +2,6 @@ package com.jagex.runetek4;
 
 import java.nio.ByteBuffer;
 
-
 import static org.lwjgl.opengl.GL15.*;
 
 import org.openrs2.deob.annotation.OriginalArg;

@@ -7,7 +7,9 @@ import com.jagex.runetek4.core.io.Packet;
 import com.jagex.runetek4.util.ArrayUtils;
 import com.jagex.runetek4.util.ColorUtils;
 import com.jagex.runetek4.util.MathUtils;
+
 import com.jogamp.opengl.*;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -18,49 +20,71 @@ public final class GlModel extends Model {
 
 	@OriginalMember(owner = "client!tf", name = "G", descriptor = "Z")
 	public static boolean arbVboSupported;
-	@OriginalMember(owner = "runetek4.client!td", name = "D", descriptor = "Lclient!wa;")
+
+	@OriginalMember(owner = "client!td", name = "D", descriptor = "Lclient!wa;")
 	public static Packet tempBuffer = new Packet(10000);
-	@OriginalMember(owner = "runetek4.client!td", name = "bb", descriptor = "Lclient!td;")
+
+	@OriginalMember(owner = "client!td", name = "bb", descriptor = "Lclient!td;")
 	public static GlModel aClass8_Sub1_Sub1_1 = new GlModel();
-	@OriginalMember(owner = "runetek4.client!td", name = "jb", descriptor = "Lclient!td;")
+
+	@OriginalMember(owner = "client!td", name = "jb", descriptor = "Lclient!td;")
 	public static GlModel aClass8_Sub1_Sub1_2 = new GlModel();
-	@OriginalMember(owner = "runetek4.client!td", name = "mb", descriptor = "Lclient!td;")
+
+	@OriginalMember(owner = "client!td", name = "mb", descriptor = "Lclient!td;")
 	public static GlModel aClass8_Sub1_Sub1_3 = new GlModel();
-	@OriginalMember(owner = "runetek4.client!td", name = "nb", descriptor = "Lclient!td;")
+
+	@OriginalMember(owner = "client!td", name = "nb", descriptor = "Lclient!td;")
 	public static GlModel aClass8_Sub1_Sub1_4 = new GlModel();
-	@OriginalMember(owner = "runetek4.client!td", name = "ob", descriptor = "Lclient!td;")
+
+	@OriginalMember(owner = "client!td", name = "ob", descriptor = "Lclient!td;")
 	public static GlModel aClass8_Sub1_Sub1_5 = new GlModel();
-	@OriginalMember(owner = "runetek4.client!td", name = "pb", descriptor = "Lclient!td;")
+
+	@OriginalMember(owner = "client!td", name = "pb", descriptor = "Lclient!td;")
 	public static GlModel aClass8_Sub1_Sub1_6 = new GlModel();
-	@OriginalMember(owner = "runetek4.client!td", name = "qb", descriptor = "[I")
+
+	@OriginalMember(owner = "client!td", name = "qb", descriptor = "[I")
 	public static int[] anIntArray467 = new int[1];
-	@OriginalMember(owner = "runetek4.client!td", name = "ub", descriptor = "[I")
+
+	@OriginalMember(owner = "client!td", name = "ub", descriptor = "[I")
 	public static int[] anIntArray468 = new int[1];
-	@OriginalMember(owner = "runetek4.client!td", name = "Bb", descriptor = "Z")
+
+	@OriginalMember(owner = "client!td", name = "Bb", descriptor = "Z")
 	public static boolean aBoolean260 = false;
+
 	@OriginalMember(owner = "runetek4.client!td", name = "Ab", descriptor = "F")
 	public static float aFloat29;
-	@OriginalMember(owner = "runetek4.client!td", name = "G", descriptor = "[J")
+
+	@OriginalMember(owner = "client!td", name = "G", descriptor = "[J")
 	public static long[] aLongArray10;
-	@OriginalMember(owner = "runetek4.client!td", name = "T", descriptor = "Ljava/nio/ByteBuffer;")
+
+	@OriginalMember(owner = "client!td", name = "T", descriptor = "Ljava/nio/ByteBuffer;")
 	public static ByteBuffer aByteBuffer9;
-	@OriginalMember(owner = "runetek4.client!td", name = "rb", descriptor = "F")
+
+	@OriginalMember(owner = "client!td", name = "rb", descriptor = "F")
 	public static float aFloat24;
-	@OriginalMember(owner = "runetek4.client!td", name = "sb", descriptor = "I")
+
+	@OriginalMember(owner = "client!td", name = "sb", descriptor = "I")
 	public static int anInt5298;
-	@OriginalMember(owner = "runetek4.client!td", name = "tb", descriptor = "F")
+
+	@OriginalMember(owner = "client!td", name = "tb", descriptor = "F")
 	public static float aFloat25;
-	@OriginalMember(owner = "runetek4.client!td", name = "vb", descriptor = "I")
+
+	@OriginalMember(owner = "client!td", name = "vb", descriptor = "I")
 	public static int anInt5299;
-	@OriginalMember(owner = "runetek4.client!td", name = "wb", descriptor = "F")
+
+	@OriginalMember(owner = "client!td", name = "wb", descriptor = "F")
 	public static float aFloat26;
-	@OriginalMember(owner = "runetek4.client!td", name = "xb", descriptor = "F")
+
+	@OriginalMember(owner = "client!td", name = "xb", descriptor = "F")
 	public static float aFloat27;
-	@OriginalMember(owner = "runetek4.client!td", name = "yb", descriptor = "I")
+
+	@OriginalMember(owner = "client!td", name = "yb", descriptor = "I")
 	public static int anInt5300;
-	@OriginalMember(owner = "runetek4.client!td", name = "zb", descriptor = "F")
+
+	@OriginalMember(owner = "client!td", name = "zb", descriptor = "F")
 	public static float aFloat28;
-	@OriginalMember(owner = "runetek4.client!lk", name = "V", descriptor = "I")
+
+	@OriginalMember(owner = "client!lk", name = "V", descriptor = "I")
 	public static int anInt3582 = 0;
 
 	@OriginalMember(owner = "client!td", name = "t", descriptor = "[S")
@@ -670,7 +694,7 @@ public final class GlModel extends Model {
 		this.vertexT = ArrayUtils.copyOf(this.vertexT, this.anInt5296);
 	}
 
-	@OriginalMember(owner = "runetek4.client!td", name = "v", descriptor = "()V")
+	@OriginalMember(owner = "client!td", name = "v", descriptor = "()V")
 	public static void method4120() {
 		aClass8_Sub1_Sub1_1 = new GlModel();
 		aClass8_Sub1_Sub1_2 = new GlModel();
@@ -680,7 +704,7 @@ public final class GlModel extends Model {
 		aClass8_Sub1_Sub1_6 = new GlModel();
 	}
 
-	@OriginalMember(owner = "runetek4.client!td", name = "a", descriptor = "(IIIIFFF)[F")
+	@OriginalMember(owner = "client!td", name = "a", descriptor = "(IIIIFFF)[F")
 	public static float[] method4097(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) float arg4, @OriginalArg(5) float arg5, @OriginalArg(6) float arg6) {
 		@Pc(2) float[] local2 = new float[9];
 		@Pc(5) float[] local5 = new float[9];
@@ -740,7 +764,7 @@ public final class GlModel extends Model {
 		return local5;
 	}
 
-	@OriginalMember(owner = "runetek4.client!td", name = "a", descriptor = "(IIIIII[FFIF)V")
+	@OriginalMember(owner = "client!td", name = "a", descriptor = "(IIIIII[FFIF)V")
 	public static void method4095(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) float[] arg6, @OriginalArg(7) float arg7, @OriginalArg(8) int arg8, @OriginalArg(9) float arg9) {
 		@Pc(3) int local3 = arg0 - arg3;
 		@Pc(7) int local7 = arg1 - arg4;
@@ -770,7 +794,7 @@ public final class GlModel extends Model {
 		aFloat28 = local99;
 	}
 
-	@OriginalMember(owner = "runetek4.client!td", name = "a", descriptor = "(FFF)I")
+	@OriginalMember(owner = "client!td", name = "a", descriptor = "(FFF)I")
 	public static int method4092(@OriginalArg(0) float arg0, @OriginalArg(1) float arg1, @OriginalArg(2) float arg2) {
 		@Pc(8) float local8 = arg0 < 0.0F ? -arg0 : arg0;
 		@Pc(17) float local17 = arg1 < 0.0F ? -arg1 : arg1;
@@ -786,7 +810,7 @@ public final class GlModel extends Model {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!td", name = "a", descriptor = "(IIIIIII[FIFFF)V")
+	@OriginalMember(owner = "client!td", name = "a", descriptor = "(IIIIIII[FIFFF)V")
 	public static void method4104(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) float[] arg7, @OriginalArg(8) int arg8, @OriginalArg(9) float arg9, @OriginalArg(10) float arg10, @OriginalArg(11) float arg11) {
 		@Pc(3) int local3 = arg0 - arg3;
 		@Pc(7) int local7 = arg1 - arg4;
@@ -832,7 +856,7 @@ public final class GlModel extends Model {
 		aFloat24 = local89;
 	}
 
-	@OriginalMember(owner = "runetek4.client!td", name = "a", descriptor = "(IIIIII[FIF)V")
+	@OriginalMember(owner = "client!td", name = "a", descriptor = "(IIIIII[FIF)V")
 	public static void method4101(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) float[] arg6, @OriginalArg(7) int arg7, @OriginalArg(8) float arg8) {
 		@Pc(3) int local3 = arg0 - arg3;
 		@Pc(7) int local7 = arg1 - arg4;
@@ -860,7 +884,7 @@ public final class GlModel extends Model {
 		aFloat25 = local113;
 	}
 
-	@OriginalMember(owner = "runetek4.client!td", name = "a", descriptor = "(ISIB)I")
+	@OriginalMember(owner = "client!td", name = "a", descriptor = "(ISIB)I")
 	public static int method4096(@OriginalArg(0) int arg0, @OriginalArg(1) short arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte arg3) {
 		@Pc(5) int local5 = Rasterizer.palette[ColorUtils.multiplyLightness2(arg0, arg2)];
 		if (arg1 != -1) {
@@ -903,7 +927,7 @@ public final class GlModel extends Model {
 		return (local5 << 8) + (255 - (arg3 & 0xFF));
 	}
 
-	@OriginalMember(owner = "runetek4.client!td", name = "a", descriptor = "(ZZZ)Lclient!ak;")
+	@OriginalMember(owner = "client!td", name = "a", descriptor = "(ZZZ)Lclient!ak;")
 	@Override
 	public final Model method4560(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
 		return this.method4114(arg0, arg1, arg2, aClass8_Sub1_Sub1_4, aClass8_Sub1_Sub1_3);

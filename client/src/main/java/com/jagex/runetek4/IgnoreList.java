@@ -5,15 +5,16 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 public class IgnoreList {
-    @OriginalMember(owner = "runetek4.client!pf", name = "h", descriptor = "[J")
+    @OriginalMember(owner = "client!pf", name = "h", descriptor = "[J")
     public static final long[] encodedIgnores = new long[100];
-    @OriginalMember(owner = "runetek4.client!pi", name = "V", descriptor = "[Lclient!na;")
+
+    @OriginalMember(owner = "client!pi", name = "V", descriptor = "[Lclient!na;")
     public static final JString[] ignoreNames = new JString[100];
 
-    @OriginalMember(owner = "runetek4.client!cl", name = "Z", descriptor = "I")
+    @OriginalMember(owner = "client!cl", name = "Z", descriptor = "I")
     public static int ignoreCount = 0;
 
-    @OriginalMember(owner = "runetek4.client!te", name = "b", descriptor = "(Lclient!na;I)Z")
+    @OriginalMember(owner = "client!te", name = "b", descriptor = "(Lclient!na;I)Z")
     public static boolean contains(@OriginalArg(0) JString arg0) {
         if (arg0 == null) {
             return false;
@@ -26,7 +27,7 @@ public class IgnoreList {
         return false;
     }
 
-    @OriginalMember(owner = "runetek4.client!la", name = "a", descriptor = "(IJ)V")
+    @OriginalMember(owner = "client!la", name = "a", descriptor = "(IJ)V")
     public static void addIgnore(@OriginalArg(1) long username) {
         if (username == 0L) {
             return;

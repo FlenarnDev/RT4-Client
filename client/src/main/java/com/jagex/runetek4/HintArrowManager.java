@@ -7,25 +7,25 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 public class HintArrowManager {
-    @OriginalMember(owner = "runetek4.client!ih", name = "l", descriptor = "Lclient!n;")
+    @OriginalMember(owner = "client!ih", name = "l", descriptor = "Lclient!n;")
     public static final SoftLruHashTable models = new SoftLruHashTable(4);
 
-    @OriginalMember(owner = "runetek4.client!mh", name = "c", descriptor = "(II)V")
+    @OriginalMember(owner = "client!mh", name = "c", descriptor = "(II)V")
     public static void clean() {
         models.clean(5);
     }
 
-    @OriginalMember(owner = "runetek4.client!og", name = "a", descriptor = "(I)V")
+    @OriginalMember(owner = "client!og", name = "a", descriptor = "(I)V")
     public static void removeSoft() {
         models.removeSoft();
     }
 
-    @OriginalMember(owner = "runetek4.client!oi", name = "b", descriptor = "(I)V")
+    @OriginalMember(owner = "client!oi", name = "b", descriptor = "(I)V")
     public static void clear() {
         models.clean();
     }
 
-    @OriginalMember(owner = "runetek4.client!rm", name = "a", descriptor = "(ZIIIILclient!ak;I)Lclient!ak;")
+    @OriginalMember(owner = "client!rm", name = "a", descriptor = "(ZIIIILclient!ak;I)Lclient!ak;")
     public static Model getModel(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) Model arg4, @OriginalArg(6) int arg5) {
         @Pc(4) long local4 = (long) arg2;
         @Pc(10) Model model = (Model) models.get(local4);

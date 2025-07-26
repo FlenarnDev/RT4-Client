@@ -41,28 +41,28 @@ public final class GlTexture extends SecondaryNode {
 	@OriginalMember(owner = "client!uh", name = "U", descriptor = "Z")
 	private final boolean aBoolean286;
 
-	@OriginalMember(owner = "runetek4.client!uh", name = "jb", descriptor = "Z")
+	@OriginalMember(owner = "client!uh", name = "jb", descriptor = "Z")
 	private final boolean aBoolean288;
 
-	@OriginalMember(owner = "runetek4.client!uh", name = "Q", descriptor = "Z")
+	@OriginalMember(owner = "client!uh", name = "Q", descriptor = "Z")
 	private final boolean aBoolean285;
 
-	@OriginalMember(owner = "runetek4.client!uh", name = "J", descriptor = "Z")
+	@OriginalMember(owner = "client!uh", name = "J", descriptor = "Z")
 	private final boolean aBoolean284;
 
-	@OriginalMember(owner = "runetek4.client!uh", name = "L", descriptor = "I")
+	@OriginalMember(owner = "client!uh", name = "L", descriptor = "I")
 	private final int anInt5485;
 
-	@OriginalMember(owner = "runetek4.client!uh", name = "hb", descriptor = "I")
+	@OriginalMember(owner = "client!uh", name = "hb", descriptor = "I")
 	private final int anInt5497;
 
-	@OriginalMember(owner = "runetek4.client!uh", name = "M", descriptor = "I")
+	@OriginalMember(owner = "client!uh", name = "M", descriptor = "I")
 	private final int anInt5486;
 
-	@OriginalMember(owner = "runetek4.client!uh", name = "S", descriptor = "I")
+	@OriginalMember(owner = "client!uh", name = "S", descriptor = "I")
 	private final int anInt5489;
 
-	@OriginalMember(owner = "runetek4.client!uh", name = "<init>", descriptor = "(Lclient!wa;)V")
+	@OriginalMember(owner = "client!uh", name = "<init>", descriptor = "(Lclient!wa;)V")
 	public GlTexture(@OriginalArg(0) Packet arg0) {
 		this.aClass88_1 = new Texture(arg0);
 		this.aBoolean286 = arg0.g1() == 1;
@@ -86,7 +86,7 @@ public final class GlTexture extends SecondaryNode {
 		this.anInt5489 = local82 >> 4 & 0xF;
 	}
 
-	@OriginalMember(owner = "runetek4.client!uh", name = "a", descriptor = "(Lclient!m;IFLclient!ve;Z)[I")
+	@OriginalMember(owner = "client!uh", name = "a", descriptor = "(Lclient!m;IFLclient!ve;Z)[I")
 	public final int[] method4295(@OriginalArg(0) TextureProvider arg0, @OriginalArg(2) float arg1, @OriginalArg(3) Js5 arg2, @OriginalArg(4) boolean arg3) {
 		if (this.anIntArray481 == null || this.aFloat35 != arg1) {
 			if (!this.aClass88_1.isReady(arg0, arg2)) {
@@ -175,7 +175,7 @@ public final class GlTexture extends SecondaryNode {
 		return this.anIntArray481;
 	}
 
-	@OriginalMember(owner = "runetek4.client!uh", name = "a", descriptor = "(Lclient!ve;Lclient!m;IZ)Z")
+	@OriginalMember(owner = "client!uh", name = "a", descriptor = "(Lclient!ve;Lclient!m;IZ)Z")
 	public final boolean method4296(@OriginalArg(0) Js5 arg0, @OriginalArg(1) TextureProvider arg1, @OriginalArg(3) boolean arg2) {
 		if (!this.aClass88_1.isReady(arg1, arg0)) {
 			return false;
@@ -254,7 +254,7 @@ public final class GlTexture extends SecondaryNode {
 		return true;
 	}
 
-	@OriginalMember(owner = "runetek4.client!uh", name = "a", descriptor = "(ZZLclient!m;Lclient!ve;)[I")
+	@OriginalMember(owner = "client!uh", name = "a", descriptor = "(ZZLclient!m;Lclient!ve;)[I")
 	public final int[] method4297(@OriginalArg(1) boolean arg0, @OriginalArg(2) TextureProvider arg1, @OriginalArg(3) Js5 arg2) {
 		if (this.aClass88_1.isReady(arg1, arg2)) {
 			@Pc(24) int local24 = arg0 ? 64 : 128;
@@ -264,12 +264,12 @@ public final class GlTexture extends SecondaryNode {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!uh", name = "a", descriptor = "(ILclient!m;Lclient!ve;)Z")
+	@OriginalMember(owner = "client!uh", name = "a", descriptor = "(ILclient!m;Lclient!ve;)Z")
 	public final boolean method4299(@OriginalArg(1) TextureProvider arg0, @OriginalArg(2) Js5 arg1) {
 		return this.aClass88_1.isReady(arg0, arg1);
 	}
 
-	@OriginalMember(owner = "runetek4.client!uh", name = "a", descriptor = "(IB)V")
+	@OriginalMember(owner = "client!uh", name = "a", descriptor = "(IB)V")
 	public final void method4300(@OriginalArg(0) int arg0) {
 		if (this.anIntArray481 == null || this.anInt5497 == 0 && this.anInt5485 == 0) {
 			return;
@@ -296,7 +296,7 @@ public final class GlTexture extends SecondaryNode {
 		anIntArray372 = local125;
 	}
 
-	@OriginalMember(owner = "runetek4.client!uh", name = "finalize", descriptor = "()V")
+	@OriginalMember(owner = "client!uh", name = "finalize", descriptor = "()V")
 	@Override
 	public final void finalize() throws Throwable {
 		if (this.textureId != -1) {

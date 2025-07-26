@@ -9,22 +9,31 @@ import org.openrs2.deob.annotation.Pc;
 public class GlCleaner {
     @OriginalMember(owner = "client!fa", name = "b", descriptor = "Lclient!ih;")
     static final LinkedList aClass69_48 = new LinkedList();
+
     @OriginalMember(owner = "client!fa", name = "g", descriptor = "Lclient!ih;")
     static final LinkedList aClass69_49 = new LinkedList();
+
     @OriginalMember(owner = "client!fa", name = "h", descriptor = "Lclient!ih;")
     static final LinkedList aClass69_50 = new LinkedList();
+
     @OriginalMember(owner = "client!fa", name = "i", descriptor = "Lclient!ih;")
     static final LinkedList aClass69_51 = new LinkedList();
+
     @OriginalMember(owner = "client!fa", name = "j", descriptor = "[I")
     private static final int[] anIntArray151 = new int[1000];
+
     @OriginalMember(owner = "client!fa", name = "e", descriptor = "I")
     public static int oncard_2d = 0;
+
     @OriginalMember(owner = "client!fa", name = "c", descriptor = "I")
     public static int contextId = 0;
+
     @OriginalMember(owner = "client!fa", name = "f", descriptor = "I")
     public static int oncard_geometry = 0;
+
     @OriginalMember(owner = "client!fa", name = "a", descriptor = "I")
     public static int oncard_texture = 0;
+
     @OriginalMember(owner = "client!fa", name = "d", descriptor = "J")
     private static long aLong71 = 0L;
 
