@@ -55,7 +55,7 @@ public class Find {
         method3656(local113, results);
     }
 
-    @OriginalMember(owner = "runetek4.client!me", name = "a", descriptor = "(ZLclient!na;I)V")
+    @OriginalMember(owner = "client!me", name = "a", descriptor = "(ZLclient!na;I)V")
     public static void search(@OriginalArg(0) boolean arg0, @OriginalArg(1) JString arg1) {
         @Pc(8) short[] local8 = new short[16];
         @Pc(12) JString local12 = arg1.toLowerCase();
@@ -88,7 +88,7 @@ public class Find {
         method3656(local117, results);
     }
 
-    @OriginalMember(owner = "runetek4.client!qg", name = "a", descriptor = "([Lclient!na;[SI)V")
+    @OriginalMember(owner = "client!qg", name = "a", descriptor = "([Lclient!na;[SI)V")
     public static void method3656(@OriginalArg(0) JString[] arg0, @OriginalArg(1) short[] arg1) {
         method1307(arg1, arg0.length - 1, arg0, 0);
     }

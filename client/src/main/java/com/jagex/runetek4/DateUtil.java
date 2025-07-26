@@ -9,71 +9,71 @@ import java.util.Date;
 import java.util.TimeZone;
 
 public class DateUtil {
-    @OriginalMember(owner = "runetek4.client!cl", name = "K", descriptor = "Ljava/util/Calendar;")
+    @OriginalMember(owner = "client!cl", name = "K", descriptor = "Ljava/util/Calendar;")
     public static final Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
 
-    @OriginalMember(owner = "runetek4.client!km", name = "Gc", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "client!km", name = "Gc", descriptor = "Lclient!na;")
     static final JString JAN = JString.parse("Jan");
 
-    @OriginalMember(owner = "runetek4.client!km", name = "Hc", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "client!km", name = "Hc", descriptor = "Lclient!na;")
     static final JString FEB = JString.parse("Feb");
 
-    @OriginalMember(owner = "runetek4.client!km", name = "zc", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "client!km", name = "zc", descriptor = "Lclient!na;")
     static final JString MAR = JString.parse("Mar");
 
-    @OriginalMember(owner = "runetek4.client!km", name = "Tc", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "client!km", name = "Tc", descriptor = "Lclient!na;")
     static final JString APR = JString.parse("Apr");
 
-    @OriginalMember(owner = "runetek4.client!km", name = "xc", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "client!km", name = "xc", descriptor = "Lclient!na;")
     static final JString MAY = JString.parse("May");
 
-    @OriginalMember(owner = "runetek4.client!km", name = "Wc", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "client!km", name = "Wc", descriptor = "Lclient!na;")
     static final JString JUN = JString.parse("Jun");
 
-    @OriginalMember(owner = "runetek4.client!km", name = "vc", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "client!km", name = "vc", descriptor = "Lclient!na;")
     static final JString JUL = JString.parse("Jul");
 
-    @OriginalMember(owner = "runetek4.client!km", name = "Qc", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "client!km", name = "Qc", descriptor = "Lclient!na;")
     static final JString AUG = JString.parse("Aug");
 
-    @OriginalMember(owner = "runetek4.client!km", name = "cd", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "client!km", name = "cd", descriptor = "Lclient!na;")
     static final JString SEP = JString.parse("Sep");
 
-    @OriginalMember(owner = "runetek4.client!km", name = "dd", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "client!km", name = "dd", descriptor = "Lclient!na;")
     static final JString OCT = JString.parse("Oct");
 
-    @OriginalMember(owner = "runetek4.client!km", name = "yc", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "client!km", name = "yc", descriptor = "Lclient!na;")
     static final JString NOV = JString.parse("Nov");
 
-    @OriginalMember(owner = "runetek4.client!km", name = "tc", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "client!km", name = "tc", descriptor = "Lclient!na;")
     static final JString DEC = JString.parse("Dec");
 
-    @OriginalMember(owner = "runetek4.client!km", name = "Ac", descriptor = "[Lclient!na;")
+    @OriginalMember(owner = "client!km", name = "Ac", descriptor = "[Lclient!na;")
     public static final JString[] MONTHS = new JString[] {JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC};
 
 
-    @OriginalMember(owner = "runetek4.client!rl", name = "U", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "client!rl", name = "U", descriptor = "Lclient!na;")
     static final JString MON = JString.parse("Mon");
 
-    @OriginalMember(owner = "runetek4.client!rl", name = "cb", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "client!rl", name = "cb", descriptor = "Lclient!na;")
     static final JString TUE = JString.parse("Tue");
 
-    @OriginalMember(owner = "runetek4.client!rl", name = "ab", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "client!rl", name = "ab", descriptor = "Lclient!na;")
     static final JString WED = JString.parse("Wed");
 
-    @OriginalMember(owner = "runetek4.client!rl", name = "bb", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "client!rl", name = "bb", descriptor = "Lclient!na;")
     static final JString THU = JString.parse("Thu");
 
-    @OriginalMember(owner = "runetek4.client!rl", name = "W", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "client!rl", name = "W", descriptor = "Lclient!na;")
     static final JString FRI = JString.parse("Fri");
 
-    @OriginalMember(owner = "runetek4.client!rl", name = "T", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "client!rl", name = "T", descriptor = "Lclient!na;")
     static final JString SAT = JString.parse("Sat");
 
-    @OriginalMember(owner = "runetek4.client!rl", name = "db", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "client!rl", name = "db", descriptor = "Lclient!na;")
     static final JString SUN = JString.parse("Sun");
 
-    @OriginalMember(owner = "runetek4.client!rl", name = "Y", descriptor = "[Lclient!na;")
+    @OriginalMember(owner = "client!rl", name = "Y", descriptor = "[Lclient!na;")
     public static final JString[] DAYS = new JString[] {SUN, MON, TUE, WED, THU, FRI, SAT};
 
     @OriginalMember(owner = "client!ck", name = "T", descriptor = "Lclient!na;")

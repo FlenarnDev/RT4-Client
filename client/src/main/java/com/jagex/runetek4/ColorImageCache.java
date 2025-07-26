@@ -5,7 +5,7 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
-@OriginalClass("runetek4.client!pf")
+@OriginalClass("client!pf")
 public final class ColorImageCache {
 
 	@OriginalMember(owner = "client!ib", name = "c", descriptor = "Lclient!qi;")

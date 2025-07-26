@@ -1,19 +1,24 @@
 package com.jagex.runetek4;
 
 import com.jagex.runetek4.client.Preferences;
+
 import com.jagex.runetek4.config.types.flu.FluType;
 import com.jagex.runetek4.config.types.flu.FluTypeList;
 import com.jagex.runetek4.config.types.light.LightTypeList;
 import com.jagex.runetek4.config.types.loc.LocTypeList;
-import com.jagex.runetek4.core.datastruct.HashTable;
-import com.jagex.runetek4.core.io.Packet;
 import com.jagex.runetek4.config.types.loc.LocType;
 import com.jagex.runetek4.config.types.light.LightType;
+
+import com.jagex.runetek4.core.datastruct.HashTable;
+import com.jagex.runetek4.core.io.Packet;
+
 import com.jagex.runetek4.scene.Scenery;
 import com.jagex.runetek4.scene.tile.*;
+
 import com.jagex.runetek4.util.ArrayUtils;
 import com.jagex.runetek4.util.ColorUtils;
 import com.jagex.runetek4.util.MathUtils;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -24,81 +29,100 @@ public class SceneGraph {
     @OriginalMember(owner = "client!bb", name = "g", descriptor = "[[[B")
     public static final byte[][][] renderFlags = new byte[4][104][104];
 
-    @OriginalMember(owner = "runetek4.client!rj", name = "U", descriptor = "Lclient!ih;")
+    @OriginalMember(owner = "client!rj", name = "U", descriptor = "Lclient!ih;")
     public static final LinkedList projectiles = new LinkedList();
 
-    @OriginalMember(owner = "runetek4.client!hk", name = "W", descriptor = "Lclient!ih;")
+    @OriginalMember(owner = "client!hk", name = "W", descriptor = "Lclient!ih;")
     public static final LinkedList spotanims = new LinkedList();
 
-    @OriginalMember(owner = "runetek4.client!mi", name = "Y", descriptor = "[[[Lclient!ih;")
+    @OriginalMember(owner = "client!mi", name = "Y", descriptor = "[[[Lclient!ih;")
     public static final LinkedList[][][] objStacks = new LinkedList[4][104][104];
 
-    @OriginalMember(owner = "runetek4.client!te", name = "B", descriptor = "[I")
+    @OriginalMember(owner = "client!te", name = "B", descriptor = "[I")
     public static final int[] WALL_DECORATION_ROTATION_FORWARD_Z = new int[] { 0, -1, 0, 1 };
 
     @OriginalMember(owner = "client!fb", name = "q", descriptor = "[I")
     public static final int[] anIntArray154 = new int[] { -1, -1, 1, 1 };
 
-    @OriginalMember(owner = "runetek4.client!j", name = "O", descriptor = "[I")
+    @OriginalMember(owner = "client!j", name = "O", descriptor = "[I")
     public static final int[] anIntArray565 = new int[] { 1, -1, -1, 1 };
 
-    @OriginalMember(owner = "runetek4.client!vl", name = "e", descriptor = "[I")
+    @OriginalMember(owner = "client!vl", name = "e", descriptor = "[I")
     public static final int[] ROTATION_WALL_TYPE = new int[] { 1, 2, 4, 8 };
 
-    @OriginalMember(owner = "runetek4.client!pg", name = "T", descriptor = "[I")
+    @OriginalMember(owner = "client!pg", name = "T", descriptor = "[I")
     public static final int[] BACK_WALL_TYPES = new int[] { 76, 8, 137, 4, 0, 1, 38, 2, 19 };
+
     @OriginalMember(owner = "client!ec", name = "B", descriptor = "[[I")
     public static final int[][] anIntArrayArray8 = new int[][] { new int[0], { 128, 0, 128, 128, 0, 128 }, { 0, 0, 128, 0, 128, 128, 64, 128 }, { 0, 128, 0, 0, 128, 0, 64, 128 }, { 0, 0, 64, 128, 0, 128 }, { 128, 128, 64, 128, 128, 0 }, { 64, 0, 128, 0, 128, 128, 64, 128 }, { 128, 0, 128, 128, 0, 128, 0, 64, 64, 0 }, { 0, 0, 64, 0, 0, 64 }, { 0, 0, 128, 0, 128, 128, 64, 96, 32, 64 }, { 0, 128, 0, 0, 32, 64, 64, 96, 128, 128 }, { 0, 128, 0, 0, 32, 32, 96, 32, 128, 0, 128, 128 } };
+
     @OriginalMember(owner = "client!ck", name = "d", descriptor = "[I")
     public static final int[] WALL_DECORATION_ROTATION_FORWARD_X = new int[] { 1, 0, -1, 0 };
-    @OriginalMember(owner = "runetek4.client!ka", name = "t", descriptor = "[I")
+
+    @OriginalMember(owner = "client!ka", name = "t", descriptor = "[I")
     public static final int[] WALL_CORNER_TYPE_16_BLOCK_LOC_SPANS = new int[] { 0, 0, 2, 0, 0, 2, 1, 1, 0 };
-    @OriginalMember(owner = "runetek4.client!uj", name = "A", descriptor = "[I")
+
+    @OriginalMember(owner = "client!uj", name = "A", descriptor = "[I")
     public static final int[] WALL_CORNER_TYPE_32_BLOCK_LOC_SPANS = new int[] { 2, 0, 0, 2, 0, 0, 0, 4, 4 };
+
     @OriginalMember(owner = "client!gm", name = "gb", descriptor = "[I")
     public static final int[] WALL_CORNER_TYPE_64_BLOCK_LOC_SPANS = new int[] { 0, 4, 4, 8, 0, 0, 8, 0, 0 };
-    @OriginalMember(owner = "runetek4.client!kd", name = "sb", descriptor = "[I")
+
+    @OriginalMember(owner = "client!kd", name = "sb", descriptor = "[I")
     public static final int[] WALL_CORNER_TYPE_128_BLOCK_LOC_SPANS = new int[] { 1, 1, 0, 0, 0, 8, 0, 0, 8 };
-    @OriginalMember(owner = "runetek4.client!hb", name = "t", descriptor = "[I")
+
+    @OriginalMember(owner = "client!hb", name = "t", descriptor = "[I")
     public static final int[] DIRECTION_ALLOW_WALL_CORNER_TYPE = new int[] { 160, 192, 80, 96, 0, 144, 80, 48, 160 };
-    @OriginalMember(owner = "runetek4.client!km", name = "Rc", descriptor = "[I")
+
+    @OriginalMember(owner = "client!km", name = "Rc", descriptor = "[I")
     public static final int[] FRONT_WALL_TYPES = new int[] { 19, 55, 38, 155, 255, 110, 137, 205, 76 };
+
     @OriginalMember(owner = "client!fh", name = "U", descriptor = "[[Z")
     public static final boolean[][] aBooleanArrayArray2 = new boolean[][] { new boolean[0], { true, false, true }, { true, false, false, true }, { false, false, true, true }, { true, true, false }, { false, true, true }, { true, false, false, true }, { false, false, false, true, true }, { false, true, true }, { true, false, true, true, true }, { false, true, true, true, true }, { false, true, true, true, true, false } };
+
     @OriginalMember(owner = "client!fg", name = "d", descriptor = "[I")
     public static final int[] anIntArray159 = new int[6];
+
     @OriginalMember(owner = "client!fg", name = "l", descriptor = "[I")
     public static final int[] anIntArray164 = new int[6];
+
     @OriginalMember(owner = "client!fg", name = "m", descriptor = "[I")
     public static final int[] anIntArray165 = new int[6];
+
     @OriginalMember(owner = "client!fg", name = "r", descriptor = "[I")
     public static final int[] tmpViewspaceZ = new int[6];
+
     @OriginalMember(owner = "client!fg", name = "t", descriptor = "[I")
     public static final int[] anIntArray170 = new int[6];
+
     @OriginalMember(owner = "client!ah", name = "p", descriptor = "Lclient!ih;")
     public static final LinkedList drawTileQueue = new LinkedList();
+
     @OriginalMember(owner = "client!sh", name = "i", descriptor = "[[I")
     public static final int[][] anIntArrayArray35 = new int[][] { { 0, 128, 0, 0, 128, 0, 128, 128 }, { 0, 128, 0, 0, 128, 0 }, { 0, 0, 64, 128, 0, 128 }, { 128, 128, 64, 128, 128, 0 }, { 0, 0, 128, 0, 128, 128, 64, 128 }, { 0, 128, 0, 0, 128, 0, 64, 128 }, { 64, 128, 0, 128, 0, 0, 64, 0 }, { 0, 0, 64, 0, 0, 64 }, { 128, 0, 128, 128, 0, 128, 0, 64, 64, 0 }, { 0, 128, 0, 0, 32, 64, 64, 96, 128, 128 }, { 0, 0, 128, 0, 128, 128, 64, 96, 32, 64 }, { 0, 0, 128, 0, 96, 32, 32, 32 } };
+
     @OriginalMember(owner = "client!gf", name = "S", descriptor = "[I")
     public static final int[] anIntArray419 = new int[] { 0, 2, 2, 2, 1, 1, 2, 2, 1, 3, 1, 1 };
-    @OriginalMember(owner = "runetek4.client!kc", name = "s", descriptor = "[I")
+
+    @OriginalMember(owner = "client!kc", name = "s", descriptor = "[I")
     public static final int[] anIntArray300 = new int[] { 1, 1, 1, 1, 4, 1, 1, 5, 6, 1, 5, 0, 7, 0, 4, 1, 7, 2, 1, 1, 6, 1, 1, 3, 6, 1, 7, 0, 0, 6, 7, 0, 1, 7, 6, 1, 1, 1, 5, 4, 3, 2, 1, 1, 0, 4, 1, 5 };
-    @OriginalMember(owner = "runetek4.client!wi", name = "hb", descriptor = "[[Z")
+
+    @OriginalMember(owner = "client!wi", name = "hb", descriptor = "[[Z")
     public static final boolean[][] aBooleanArrayArray4 = new boolean[][] { { true, true, true }, { false, false }, { false, true }, { true, false }, { false, true, true }, { true, false, true }, { false, true, false }, { true, false, false } };
 
-    @OriginalMember(owner = "runetek4.client!gj", name = "m", descriptor = "[[[I")
+    @OriginalMember(owner = "client!gj", name = "m", descriptor = "[[[I")
     public static int[][][] tileHeights;
 
-    @OriginalMember(owner = "runetek4.client!sm", name = "e", descriptor = "[[[B")
+    @OriginalMember(owner = "client!sm", name = "e", descriptor = "[[[B")
     public static byte[][][] aByteArrayArrayArray13;
 
-    @OriginalMember(owner = "runetek4.client!id", name = "i", descriptor = "[[[I")
+    @OriginalMember(owner = "client!id", name = "i", descriptor = "[[[I")
     public static int[][][] surfaceTileHeights;
 
     @OriginalMember(owner = "client!gn", name = "d", descriptor = "Z")
     public static boolean aBoolean130 = false;
 
-    @OriginalMember(owner = "runetek4.client!sj", name = "u", descriptor = "Z")
+    @OriginalMember(owner = "client!sj", name = "u", descriptor = "Z")
     public static boolean dynamicMapRegion = false;
 
     @OriginalMember(owner = "client!gf", name = "R", descriptor = "I")
@@ -110,123 +134,175 @@ public class SceneGraph {
     @OriginalMember(owner = "client!dc", name = "ab", descriptor = "I")
     public static int centralPlane = 0;
 
-    @OriginalMember(owner = "runetek4.client!lg", name = "k", descriptor = "I")
+    @OriginalMember(owner = "client!lg", name = "k", descriptor = "I")
     public static int firstVisibleLevel = 99;
 
-    @OriginalMember(owner = "runetek4.client!kc", name = "o", descriptor = "[[[Lclient!bj;")
+    @OriginalMember(owner = "client!kc", name = "o", descriptor = "[[[Lclient!bj;")
     public static Tile[][][] tiles;
 
-    @OriginalMember(owner = "client!runetek4.client", name = "kb", descriptor = "[[Lclient!hg;")
+    @OriginalMember(owner = "client!client", name = "kb", descriptor = "[[Lclient!hg;")
     public static GlTile[][] surfaceHdTiles;
 
-    @OriginalMember(owner = "runetek4.client!ja", name = "q", descriptor = "I")
+    @OriginalMember(owner = "client!ja", name = "q", descriptor = "I")
     public static int currentChunkX;
 
-    @OriginalMember(owner = "runetek4.client!og", name = "b", descriptor = "I")
+    @OriginalMember(owner = "client!og", name = "b", descriptor = "I")
     public static int currentChunkZ;
-    @OriginalMember(owner = "runetek4.client!tg", name = "g", descriptor = "[[[B")
+
+    @OriginalMember(owner = "client!tg", name = "g", descriptor = "[[[B")
     public static byte[][][] tileOverlays;
-    @OriginalMember(owner = "runetek4.client!n", name = "h", descriptor = "[[[B")
+
+    @OriginalMember(owner = "client!n", name = "h", descriptor = "[[[B")
     public static byte[][][] tileShapes;
-    @OriginalMember(owner = "runetek4.client!ac", name = "e", descriptor = "[[[B")
+
+    @OriginalMember(owner = "client!ac", name = "e", descriptor = "[[[B")
     public static byte[][][] tileAngles;
-    @OriginalMember(owner = "runetek4.client!ui", name = "eb", descriptor = "[[[B")
+
+    @OriginalMember(owner = "client!ui", name = "eb", descriptor = "[[[B")
     public static byte[][][] tileUnderlays;
+
     @OriginalMember(owner = "client!em", name = "t", descriptor = "[[[I")
     public static int[][][] occludeFlags;
-    @OriginalMember(owner = "runetek4.client!ka", name = "r", descriptor = "[I")
+
+    @OriginalMember(owner = "client!ka", name = "r", descriptor = "[I")
     public static int[] rowCount;
-    @OriginalMember(owner = "runetek4.client!ug", name = "d", descriptor = "[I")
+
+    @OriginalMember(owner = "client!ug", name = "d", descriptor = "[I")
     public static int[] rowChroma;
-    @OriginalMember(owner = "runetek4.client!l", name = "l", descriptor = "[I")
+
+    @OriginalMember(owner = "client!l", name = "l", descriptor = "[I")
     public static int[] rowSaturation;
-    @OriginalMember(owner = "runetek4.client!s", name = "i", descriptor = "[I")
+
+    @OriginalMember(owner = "client!s", name = "i", descriptor = "[I")
     public static int[] rowWeightedHue;
-    @OriginalMember(owner = "runetek4.client!jd", name = "d", descriptor = "[[[B")
+
+    @OriginalMember(owner = "client!jd", name = "d", descriptor = "[[[B")
     public static byte[][][] shadowmap;
-    @OriginalMember(owner = "runetek4.client!wk", name = "v", descriptor = "[I")
+
+    @OriginalMember(owner = "client!wk", name = "v", descriptor = "[I")
     public static int[] rowLightness;
-    @OriginalMember(owner = "runetek4.client!ub", name = "h", descriptor = "[Lclient!pe;")
+
+    @OriginalMember(owner = "client!ub", name = "h", descriptor = "[Lclient!pe;")
     public static SceneGraph_Class120[] aSceneGraphClass120Array2;
-    @OriginalMember(owner = "runetek4.client!rh", name = "k", descriptor = "I")
+
+    @OriginalMember(owner = "client!rh", name = "k", descriptor = "I")
     public static int anInt4870 = 0;
+
     @OriginalMember(owner = "client!bl", name = "T", descriptor = "I")
     public static int sceneryLen = 0;
-    @OriginalMember(owner = "runetek4.client!pm", name = "cb", descriptor = "[[[Lclient!bj;")
+
+    @OriginalMember(owner = "client!pm", name = "cb", descriptor = "[[[Lclient!bj;")
     public static Tile[][][] surfaceGroundTiles;
-    @OriginalMember(owner = "runetek4.client!wh", name = "c", descriptor = "[[[Lclient!bj;")
+
+    @OriginalMember(owner = "client!wh", name = "c", descriptor = "[[[Lclient!bj;")
     public static Tile[][][] underWaterGroundTiles;
-    @OriginalMember(owner = "runetek4.client!pk", name = "R", descriptor = "[[Lclient!hg;")
+
+    @OriginalMember(owner = "client!pk", name = "R", descriptor = "[[Lclient!hg;")
     public static GlTile[][] underWaterHdTiles;
-    @OriginalMember(owner = "runetek4.client!hc", name = "O", descriptor = "[Lclient!pe;")
+
+    @OriginalMember(owner = "client!hc", name = "O", descriptor = "[Lclient!pe;")
     public static SceneGraph_Class120[] aSceneGraphClass120Array1;
-    @OriginalMember(owner = "runetek4.client!ma", name = "i", descriptor = "I")
+
+    @OriginalMember(owner = "client!ma", name = "i", descriptor = "I")
     public static int width;
-    @OriginalMember(owner = "runetek4.client!hk", name = "Y", descriptor = "I")
+
+    @OriginalMember(owner = "client!hk", name = "Y", descriptor = "I")
     public static int length;
+
     @OriginalMember(owner = "client!cd", name = "s", descriptor = "I")
     public static int anInt917;
-    @OriginalMember(owner = "runetek4.client!tk", name = "D", descriptor = "[Lclient!ec;")
+
+    @OriginalMember(owner = "client!tk", name = "D", descriptor = "[Lclient!ec;")
     public static Scenery[] scenery;
+
     @OriginalMember(owner = "client!c", name = "bb", descriptor = "[Lclient!ec;")
     public static Scenery[] aClass31Array2;
+
     @OriginalMember(owner = "client!gf", name = "O", descriptor = "[[[I")
     public static int[][][] underwaterTileHeights;
-    @OriginalMember(owner = "runetek4.client!oj", name = "E", descriptor = "[[Lclient!hg;")
+
+    @OriginalMember(owner = "client!oj", name = "E", descriptor = "[[Lclient!hg;")
     public static GlTile[][] underwaterHdTiles;
-    @OriginalMember(owner = "runetek4.client!jm", name = "r", descriptor = "I")
+
+    @OriginalMember(owner = "client!jm", name = "r", descriptor = "I")
     public static int levels;
-    @OriginalMember(owner = "runetek4.client!wi", name = "db", descriptor = "I")
+
+    @OriginalMember(owner = "client!wi", name = "db", descriptor = "I")
     public static int visibility;
+
     @OriginalMember(owner = "client!f", name = "ab", descriptor = "[[I")
     public static int[][] anIntArrayArray11;
-    @OriginalMember(owner = "runetek4.client!la", name = "i", descriptor = "[[[I")
+
+    @OriginalMember(owner = "client!la", name = "i", descriptor = "[[[I")
     public static int[][][] anIntArrayArrayArray12;
+
     @OriginalMember(owner = "client!dl", name = "h", descriptor = "[[Z")
     public static boolean[][] aBooleanArrayArray1;
-    @OriginalMember(owner = "runetek4.client!ha", name = "k", descriptor = "[[Z")
+
+    @OriginalMember(owner = "client!ha", name = "k", descriptor = "[[Z")
     public static boolean[][] aBooleanArrayArray3;
+
     @OriginalMember(owner = "client!gm", name = "R", descriptor = "I")
     public static int anInt2293 = (int) (Math.random() * 17.0D) - 8;
-    @OriginalMember(owner = "runetek4.client!ok", name = "c", descriptor = "I")
+
+    @OriginalMember(owner = "client!ok", name = "c", descriptor = "I")
     public static int anInt4272 = (int) (Math.random() * 33.0D) - 16;
-    @OriginalMember(owner = "runetek4.client!rj", name = "R", descriptor = "I")
+
+    @OriginalMember(owner = "client!rj", name = "R", descriptor = "I")
     public static int eyeZ;
-    @OriginalMember(owner = "runetek4.client!pi", name = "U", descriptor = "I")
+
+    @OriginalMember(owner = "client!pi", name = "U", descriptor = "I")
     public static int anInt4539;
-    @OriginalMember(owner = "runetek4.client!sk", name = "mb", descriptor = "I")
+
+    @OriginalMember(owner = "client!sk", name = "mb", descriptor = "I")
     public static int anInt5205;
+
     @OriginalMember(owner = "client!bl", name = "X", descriptor = "I")
     public static int anInt730 = -1;
+
     @OriginalMember(owner = "client!aj", name = "Z", descriptor = "[I")
     public static int[] anIntArray8;
-    @OriginalMember(owner = "runetek4.client!jg", name = "a", descriptor = "I")
+
+    @OriginalMember(owner = "client!jg", name = "a", descriptor = "I")
     public static int anInt3038;
-    @OriginalMember(owner = "runetek4.client!ma", name = "z", descriptor = "I")
+
+    @OriginalMember(owner = "client!ma", name = "z", descriptor = "I")
     public static int anInt3604 = -1;
-    @OriginalMember(owner = "runetek4.client!ig", name = "i", descriptor = "I")
+
+    @OriginalMember(owner = "client!ig", name = "i", descriptor = "I")
     public static int anInt2886;
-    @OriginalMember(owner = "runetek4.client!k", name = "l", descriptor = "[I")
+
+    @OriginalMember(owner = "client!k", name = "l", descriptor = "[I")
     public static int[] anIntArray292;
-    @OriginalMember(owner = "runetek4.client!ta", name = "o", descriptor = "[I")
+
+    @OriginalMember(owner = "client!ta", name = "o", descriptor = "[I")
     public static int[] anIntArray454;
-    @OriginalMember(owner = "runetek4.client!qk", name = "c", descriptor = "[I")
+
+    @OriginalMember(owner = "client!qk", name = "c", descriptor = "[I")
     public static int[] anIntArray427;
-    @OriginalMember(owner = "runetek4.client!hh", name = "p", descriptor = "[I")
+
+    @OriginalMember(owner = "client!hh", name = "p", descriptor = "[I")
     public static int[] anIntArray234;
-    @OriginalMember(owner = "runetek4.client!ml", name = "K", descriptor = "I")
+
+    @OriginalMember(owner = "client!ml", name = "K", descriptor = "I")
     public static int eyeY;
-    @OriginalMember(owner = "runetek4.client!nd", name = "s", descriptor = "I")
+
+    @OriginalMember(owner = "client!nd", name = "s", descriptor = "I")
     public static int eyeTileX;
-    @OriginalMember(owner = "runetek4.client!lj", name = "B", descriptor = "I")
+
+    @OriginalMember(owner = "client!lj", name = "B", descriptor = "I")
     public static int eyeX;
-    @OriginalMember(owner = "runetek4.client!tb", name = "Q", descriptor = "I")
+
+    @OriginalMember(owner = "client!tb", name = "Q", descriptor = "I")
     public static int anInt5276 = 0;
+
     @OriginalMember(owner = "client!bc", name = "Z", descriptor = "I")
     public static int anInt437;
-    @OriginalMember(owner = "runetek4.client!rc", name = "p", descriptor = "I")
+
+    @OriginalMember(owner = "client!rc", name = "p", descriptor = "I")
     public static int anInt1142 = 0;
-    @OriginalMember(owner = "runetek4.client!gg", name = "Z", descriptor = "I")
+
+    @OriginalMember(owner = "client!gg", name = "Z", descriptor = "I")
     public static int anInt2222;
 
     @OriginalMember(owner = "client!fc", name = "a", descriptor = "()V")
@@ -273,13 +349,13 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!vf", name = "a", descriptor = "(III)Lclient!jh;")
+    @OriginalMember(owner = "client!vf", name = "a", descriptor = "(III)Lclient!jh;")
     public static Wall getWall(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
         @Pc(7) Tile tile = tiles[level][x][z];
         return tile == null ? null : tile.wall;
     }
 
-    @OriginalMember(owner = "runetek4.client!kf", name = "b", descriptor = "(III)Lclient!ec;")
+    @OriginalMember(owner = "client!kf", name = "b", descriptor = "(III)Lclient!ec;")
     public static Scenery getScenery(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
         @Pc(7) Tile tile = tiles[level][x][z];
         if (tile == null) {
@@ -294,13 +370,13 @@ public class SceneGraph {
         return null;
     }
 
-    @OriginalMember(owner = "runetek4.client!wa", name = "a", descriptor = "(III)Lclient!bm;")
+    @OriginalMember(owner = "client!wa", name = "a", descriptor = "(III)Lclient!bm;")
     public static GroundDecor getGroundDecor(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
         @Pc(7) Tile local7 = tiles[arg0][arg1][arg2];
         return local7 == null || local7.groundDecor == null ? null : local7.groundDecor;
     }
 
-    @OriginalMember(owner = "runetek4.client!ql", name = "a", descriptor = "(IIII)I")
+    @OriginalMember(owner = "client!ql", name = "a", descriptor = "(IIII)I")
     public static int getTileHeight(@OriginalArg(0) int level, @OriginalArg(2) int xFine, @OriginalArg(3) int zFine) {
         if (tileHeights == null) {
             return 0;
@@ -321,7 +397,7 @@ public class SceneGraph {
         return zFine2 * heightZ0 + (128 - zFine2) * heightZ1 >> 7;
     }
 
-    @OriginalMember(owner = "runetek4.client!ge", name = "a", descriptor = "(IIIIIIII)V")
+    @OriginalMember(owner = "client!ge", name = "a", descriptor = "(IIIIIIII)V")
     public static void method1698(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
         if (arg1 < 1 || arg4 < 1 || arg1 > 102 || arg4 > 102) {
             return;
@@ -349,19 +425,19 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!vj", name = "a", descriptor = "(III)J")
+    @OriginalMember(owner = "client!vj", name = "a", descriptor = "(III)J")
     public static long getWallKey(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
         @Pc(7) Tile tile = tiles[level][x][z];
         return tile == null || tile.wall == null ? 0L : tile.wall.key;
     }
 
-    @OriginalMember(owner = "runetek4.client!l", name = "a", descriptor = "(III)J")
+    @OriginalMember(owner = "client!l", name = "a", descriptor = "(III)J")
     public static long getWallDecorKey(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
         @Pc(7) Tile tile = tiles[level][x][z];
         return tile == null || tile.wallDecor == null ? 0L : tile.wallDecor.key;
     }
 
-    @OriginalMember(owner = "runetek4.client!cl", name = "a", descriptor = "(III)J")
+    @OriginalMember(owner = "client!cl", name = "a", descriptor = "(III)J")
     public static long getSceneryKey(@OriginalArg(0) int arg0, @OriginalArg(1) int x, @OriginalArg(2) int z) {
         @Pc(7) Tile tile = tiles[arg0][x][z];
         if (tile == null) {
@@ -404,7 +480,7 @@ public class SceneGraph {
         tiles[3][arg0][arg1] = null;
     }
 
-    @OriginalMember(owner = "runetek4.client!jk", name = "a", descriptor = "(IZ[BII[Lclient!mj;)V")
+    @OriginalMember(owner = "client!jk", name = "a", descriptor = "(IZ[BII[Lclient!mj;)V")
     public static void readLocs(@OriginalArg(0) int arg0, @OriginalArg(1) boolean highmem, @OriginalArg(2) byte[] data, @OriginalArg(3) int arg3, @OriginalArg(5) CollisionMap[] arg4) {
         @Pc(10) Packet packet = new Packet(data);
         @Pc(12) int local12 = -1;
@@ -575,7 +651,7 @@ public class SceneGraph {
                     for (underlayId = 1; underlayId < 103; underlayId++) {
                         dz = tileHeights[level][underlayId][z + 1] - tileHeights[level][underlayId][z - 1];
                         dx = tileHeights[level][underlayId + 1][z] - tileHeights[level][underlayId - 1][z];
-                        len = (int) Math.sqrt((double) (dx * dx + dz * dz + 65536));
+                        len = (int) Math.sqrt(dx * dx + dz * dz + 65536);
                         normalZ = (dz << 8) / len;
                         normalY = -65536 / len;
                         normalX = (dx << 8) / len;
@@ -595,13 +671,13 @@ public class SceneGraph {
                 z0 = (int) FogManager.light0Position[0];
                 x0 = (int) FogManager.light0Position[1];
                 z = (int) FogManager.light0Position[2];
-                underlayId = (int) Math.sqrt((double) (x0 * x0 + z0 * z0 + z * z));
+                underlayId = (int) Math.sqrt(x0 * x0 + z0 * z0 + z * z);
                 local200 = underlayId * 1024 >> 8;
                 for (dx = 1; dx < 103; dx++) {
                     for (dz = 1; dz < 103; dz++) {
                         normalX = tileHeights[level][dz + 1][dx] - tileHeights[level][dz - 1][dx];
                         normalY = tileHeights[level][dz][dx + 1] - tileHeights[level][dz][dx - 1];
-                        normalZ = (int) Math.sqrt((double) (normalX * normalX + normalY * normalY + 65536));
+                        normalZ = (int) Math.sqrt(normalX * normalX + normalY * normalY + 65536);
                         local273 = (normalX << 8) / normalZ;
                         local322 = (local159[dz][dx + 1] >> 3) + (local159[dz][dx - 1] >> 2) + (local159[dz - 1][dx] >> 2) + (local159[dz + 1][dx] >> 3) + (local159[dz][dx] >> 1);
                         local326 = -65536 / normalZ;
@@ -976,12 +1052,12 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!km", name = "f", descriptor = "(I)Z")
+    @OriginalMember(owner = "client!km", name = "f", descriptor = "(I)Z")
     public static boolean allLevelsAreVisible() {
         return GlRenderer.enabled ? true : Preferences.lowmem;
     }
 
-    @OriginalMember(owner = "runetek4.client!lg", name = "a", descriptor = "(I)V")
+    @OriginalMember(owner = "client!lg", name = "a", descriptor = "(I)V")
     public static void method2750(@OriginalArg(0) int arg0) {
         anInt5276 = arg0;
         for (@Pc(3) int local3 = 0; local3 < width; local3++) {
@@ -993,7 +1069,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!ib", name = "b", descriptor = "(I)V")
+    @OriginalMember(owner = "client!ib", name = "b", descriptor = "(I)V")
     public static void unload() {
         rowChroma = null;
         occludeFlags = null;
@@ -1008,7 +1084,7 @@ public class SceneGraph {
         rowLightness = null;
     }
 
-    @OriginalMember(owner = "runetek4.client!wj", name = "a", descriptor = "(Z)V")
+    @OriginalMember(owner = "client!wj", name = "a", descriptor = "(Z)V")
     public static void setUnderwater(@OriginalArg(0) boolean underwater) {
         if (underwater) {
             tiles = underWaterGroundTiles;
@@ -1022,7 +1098,7 @@ public class SceneGraph {
         levels = tiles.length;
     }
 
-    @OriginalMember(owner = "runetek4.client!p", name = "a", descriptor = "(IZIZLclient!mj;IIIBII)V")
+    @OriginalMember(owner = "client!p", name = "a", descriptor = "(IZIZLclient!mj;IIIBII)V")
     public static void addLoc(@OriginalArg(0) int currentlevel, @OriginalArg(1) boolean lowmem, @OriginalArg(2) int level, @OriginalArg(3) boolean highmem, @OriginalArg(4) CollisionMap collision, @OriginalArg(5) int arg5, @OriginalArg(6) int shape, @OriginalArg(7) int x, @OriginalArg(9) int z, @OriginalArg(10) int rotation) {
         if (lowmem && !allLevelsAreVisible() && (renderFlags[0][x][z] & 0x2) == 0) {
             if ((renderFlags[level][x][z] & 0x10) != 0) {
@@ -1468,7 +1544,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!wa", name = "a", descriptor = "([Lclient!mj;ZIIIII[B)V")
+    @OriginalMember(owner = "client!wa", name = "a", descriptor = "([Lclient!mj;ZIIIII[B)V")
     public static void method2203(@OriginalArg(0) CollisionMap[] arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) byte[] arg6) {
         @Pc(14) int local14;
         @Pc(21) int local21;
@@ -1656,7 +1732,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!v", name = "a", descriptor = "(IIIJ)Z")
+    @OriginalMember(owner = "client!v", name = "a", descriptor = "(IIIJ)Z")
     public static boolean isLocValid(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) long arg3) {
         @Pc(7) Tile tile = tiles[arg0][arg1][arg2];
         if (tile == null) {
@@ -1677,7 +1753,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!pb", name = "b", descriptor = "(III)Lclient!jj;")
+    @OriginalMember(owner = "client!pb", name = "b", descriptor = "(III)Lclient!jj;")
     public static ObjStackEntity removeObjStack(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
         @Pc(7) Tile tile = tiles[level][x][z];
         if (tile == null) {
@@ -1689,7 +1765,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!ih", name = "a", descriptor = "(III)Lclient!jh;")
+    @OriginalMember(owner = "client!ih", name = "a", descriptor = "(III)Lclient!jh;")
     public static Wall removeWall(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
         @Pc(7) Tile tile = tiles[level][x][z];
         if (tile == null) {
@@ -1707,7 +1783,7 @@ public class SceneGraph {
         return tile == null ? null : tile.wallDecor;
     }
 
-    @OriginalMember(owner = "runetek4.client!um", name = "c", descriptor = "(III)Z")
+    @OriginalMember(owner = "client!um", name = "c", descriptor = "(III)Z")
     public static boolean method4394(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
         for (@Pc(1) int local1 = 0; local1 < anInt4870; local1++) {
             @Pc(8) SceneGraph_Class120 local8 = aSceneGraphClass120Array2[local1];
@@ -1776,7 +1852,7 @@ public class SceneGraph {
         return false;
     }
 
-    @OriginalMember(owner = "runetek4.client!wj", name = "a", descriptor = "(IIZLclient!wa;IIBII)V")
+    @OriginalMember(owner = "client!wj", name = "a", descriptor = "(IIZLclient!wa;IIBII)V")
     public static void readTile(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Packet packet, @OriginalArg(4) int z, @OriginalArg(5) int x, @OriginalArg(7) int arg6, @OriginalArg(8) int level) {
         @Pc(32) int opcode;
         if (x < 0 || x >= 104 || z < 0 || z >= 104) {
@@ -1838,7 +1914,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!hd", name = "a", descriptor = "(IIIIIIII)V")
+    @OriginalMember(owner = "client!hd", name = "a", descriptor = "(IIIIIIII)V")
     public static void method1881(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
         if (arg5 < 0 || arg3 < 0 || arg5 >= 103 || arg3 >= 103) {
             return;
@@ -1889,7 +1965,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!nh", name = "a", descriptor = "(IIIILclient!th;JZ)V")
+    @OriginalMember(owner = "client!nh", name = "a", descriptor = "(IIIILclient!th;JZ)V")
     public static void setGroundDecor(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) Entity entity, @OriginalArg(5) long arg5, @OriginalArg(6) boolean arg6) {
         if (entity == null) {
             return;
@@ -1907,7 +1983,7 @@ public class SceneGraph {
         tiles[level][x][z].groundDecor = groundDecor;
     }
 
-    @OriginalMember(owner = "runetek4.client!ia", name = "a", descriptor = "(IB)I")
+    @OriginalMember(owner = "client!ia", name = "a", descriptor = "(IB)I")
     public static int method2251(@OriginalArg(0) int arg0) {
         @Pc(11) int local11 = arg0 & 0x3F;
         @Pc(17) int local17 = arg0 >> 6 & 0x3;
@@ -1941,7 +2017,7 @@ public class SceneGraph {
         return 0;
     }
 
-    @OriginalMember(owner = "runetek4.client!vf", name = "a", descriptor = "(IIIILclient!th;Lclient!th;IIJ)V")
+    @OriginalMember(owner = "client!vf", name = "a", descriptor = "(IIIILclient!th;Lclient!th;IIJ)V")
     public static void addWall(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) Entity primary, @OriginalArg(5) Entity secondary, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8) {
         if (primary == null && secondary == null) {
             return;
@@ -1975,7 +2051,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!dk", name = "a", descriptor = "(III)Lclient!ec;")
+    @OriginalMember(owner = "client!dk", name = "a", descriptor = "(III)Lclient!ec;")
     public static Scenery removeScenery(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
         @Pc(7) Tile tile = tiles[level][x][z];
         if (tile == null) {
@@ -1991,7 +2067,7 @@ public class SceneGraph {
         return null;
     }
 
-    @OriginalMember(owner = "runetek4.client!vl", name = "a", descriptor = "(III)Lclient!bm;")
+    @OriginalMember(owner = "client!vl", name = "a", descriptor = "(III)Lclient!bm;")
     public static GroundDecor removeGroundDecor(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z) {
         @Pc(7) Tile tile = tiles[level][x][z];
         if (tile == null) {
@@ -2003,7 +2079,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!vk", name = "a", descriptor = "(Lclient!ec;)V")
+    @OriginalMember(owner = "client!vk", name = "a", descriptor = "(Lclient!ec;)V")
     public static void removeScenery(@OriginalArg(0) Scenery scenery) {
         for (@Pc(2) int x = scenery.xMin; x <= scenery.xMax; x++) {
             for (@Pc(9) int z = scenery.zMin; z <= scenery.zMax; z++) {
@@ -2030,12 +2106,12 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!ih", name = "a", descriptor = "(I[Lclient!hg;)V")
+    @OriginalMember(owner = "client!ih", name = "a", descriptor = "(I[Lclient!hg;)V")
     public static void method2280(@OriginalArg(0) int arg0, @OriginalArg(1) GlTile[] arg1) {
         underwaterHdTiles[arg0] = arg1;
     }
 
-    @OriginalMember(owner = "runetek4.client!ob", name = "a", descriptor = "(IIIIIIIIIIIIIIIIIIII)V")
+    @OriginalMember(owner = "client!ob", name = "a", descriptor = "(IIIIIIIIIIIIIIIIIIII)V")
     public static void setTile(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int arg11, @OriginalArg(12) int arg12, @OriginalArg(13) int arg13, @OriginalArg(14) int arg14, @OriginalArg(15) int arg15, @OriginalArg(16) int arg16, @OriginalArg(17) int arg17, @OriginalArg(18) int arg18, @OriginalArg(19) int arg19) {
         @Pc(12) PlainTile tile;
         @Pc(14) int level0;
@@ -2066,7 +2142,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!rm", name = "a", descriptor = "(III)V")
+    @OriginalMember(owner = "client!rm", name = "a", descriptor = "(III)V")
     public static void method3801() {
         for (@Pc(1) int level = 0; level < levels; level++) {
             for (@Pc(6) int x = 0; x < width; x++) {
@@ -2101,7 +2177,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!ib", name = "a", descriptor = "(IIIIIIIILclient!th;IZJ)Z")
+    @OriginalMember(owner = "client!ib", name = "a", descriptor = "(IIIIIIIILclient!th;IZJ)Z")
     public static boolean addLoc(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) Entity arg8, @OriginalArg(9) int arg9, @OriginalArg(10) boolean arg10, @OriginalArg(11) long arg11) {
         @Pc(6) boolean local6 = tileHeights == underwaterTileHeights;
         @Pc(8) int local8 = 0;
@@ -2356,7 +2432,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!hc", name = "a", descriptor = "(IIIILclient!th;Lclient!th;IIIIJ)V")
+    @OriginalMember(owner = "client!hc", name = "a", descriptor = "(IIIILclient!th;Lclient!th;IIIIJ)V")
     public static void addWallDecoration(@OriginalArg(0) int level, @OriginalArg(1) int x, @OriginalArg(2) int z, @OriginalArg(3) int arg3, @OriginalArg(4) Entity primary, @OriginalArg(5) Entity arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) long arg10) {
         if (primary == null) {
             return;
@@ -2380,7 +2456,7 @@ public class SceneGraph {
         tiles[level][x][z].wallDecor = wallDecor;
     }
 
-    @OriginalMember(owner = "runetek4.client!ub", name = "a", descriptor = "(Lclient!bj;Z)V")
+    @OriginalMember(owner = "client!ub", name = "a", descriptor = "(Lclient!bj;Z)V")
     public static void method4245(@OriginalArg(0) Tile arg0, @OriginalArg(1) boolean arg1) {
         drawTileQueue.addTail(arg0);
         while (true) {
@@ -3013,7 +3089,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!wh", name = "a", descriptor = "(IIII)Z")
+    @OriginalMember(owner = "client!wh", name = "a", descriptor = "(IIII)Z")
     public static boolean visible(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
         if (method187(arg0, arg1, arg2)) {
             @Pc(10) int local10 = arg1 << 7;
@@ -3024,7 +3100,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!vd", name = "b", descriptor = "(IIII)Z")
+    @OriginalMember(owner = "client!vd", name = "b", descriptor = "(IIII)Z")
     public static boolean wallVisible(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
         if (!method187(arg0, arg1, arg2)) {
             return false;
@@ -3162,7 +3238,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!vh", name = "a", descriptor = "(Lclient!th;III)V")
+    @OriginalMember(owner = "client!vh", name = "a", descriptor = "(Lclient!th;III)V")
     public static void method3574(@OriginalArg(0) Entity arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
         @Pc(12) Tile local12;
         if (arg2 < width) {
@@ -3191,7 +3267,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!mf", name = "a", descriptor = "(IIIII[[[B[I[I[I[I[IIBII)V")
+    @OriginalMember(owner = "client!mf", name = "a", descriptor = "(IIIII[[[B[I[I[I[I[IIBII)V")
     public static void method2954(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) byte[][][] arg5, @OriginalArg(6) int[] arg6, @OriginalArg(7) int[] arg7, @OriginalArg(8) int[] arg8, @OriginalArg(9) int[] arg9, @OriginalArg(10) int[] arg10, @OriginalArg(11) int arg11, @OriginalArg(12) byte arg12, @OriginalArg(13) int arg13, @OriginalArg(14) int arg14) {
         if (arg0 < 0) {
             arg0 = 0;
@@ -3368,7 +3444,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!s", name = "a", descriptor = "([[F[[B[[B[Lclient!gi;II[[F[[B[[B[[II[[F)V")
+    @OriginalMember(owner = "client!s", name = "a", descriptor = "([[F[[B[[B[Lclient!gi;II[[F[[B[[B[[II[[F)V")
     public static void method3393(@OriginalArg(0) float[][] arg0, @OriginalArg(1) byte[][] arg1, @OriginalArg(2) byte[][] arg2, @OriginalArg(3) Light[] arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) float[][] arg6, @OriginalArg(7) byte[][] arg7, @OriginalArg(8) byte[][] arg8, @OriginalArg(9) int[][] arg9, @OriginalArg(11) float[][] arg10) {
         for (@Pc(7) int local7 = 0; local7 < arg5; local7++) {
             @Pc(18) Light local18 = arg3[local7];
@@ -3642,7 +3718,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!pi", name = "a", descriptor = "([[[B[[B[[B[[I[[F[[I[[B[[B[[FI[[F[[I[[I[[II)[Lclient!hg;")
+    @OriginalMember(owner = "client!pi", name = "a", descriptor = "([[[B[[B[[B[[I[[F[[I[[B[[B[[FI[[F[[I[[I[[II)[Lclient!hg;")
     public static GlTile[] method3501(@OriginalArg(0) byte[][][] arg0, @OriginalArg(1) byte[][] arg1, @OriginalArg(2) byte[][] arg2, @OriginalArg(3) int[][] arg3, @OriginalArg(4) float[][] arg4, @OriginalArg(5) int[][] arg5, @OriginalArg(6) byte[][] arg6, @OriginalArg(7) byte[][] arg7, @OriginalArg(8) float[][] arg8, @OriginalArg(9) int arg9, @OriginalArg(10) float[][] arg10, @OriginalArg(11) int[][] arg11, @OriginalArg(12) int[][] arg12, @OriginalArg(13) int[][] arg13) {
         @Pc(9) int[][] local9 = new int[105][105];
         @Pc(16) int local16;
@@ -3866,7 +3942,7 @@ public class SceneGraph {
         return local1348;
     }
 
-    @OriginalMember(owner = "runetek4.client!ec", name = "a", descriptor = "([[IZILclient!hg;[IIIIZ[[FZI[[FIIIZ[[I[[FBI[Z)V")
+    @OriginalMember(owner = "client!ec", name = "a", descriptor = "([[IZILclient!hg;[IIIIZ[[FZI[[FIIIZ[[I[[FBI[Z)V")
     public static void method1291(@OriginalArg(0) int[][] arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2, @OriginalArg(3) GlTile arg3, @OriginalArg(4) int[] arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) boolean arg8, @OriginalArg(9) float[][] arg9, @OriginalArg(10) boolean arg10, @OriginalArg(12) float[][] arg11, @OriginalArg(13) int arg12, @OriginalArg(14) int arg13, @OriginalArg(15) int arg14, @OriginalArg(16) boolean arg15, @OriginalArg(17) int[][] arg16, @OriginalArg(18) float[][] arg17, @OriginalArg(19) byte arg18, @OriginalArg(20) int arg19, @OriginalArg(21) boolean[] arg20) {
         @Pc(11) int local11 = (arg2 << 8) + (arg1 ? 255 : 0);
         @Pc(25) int local25 = (arg8 ? 255 : 0) + (arg14 << 8);
@@ -3882,7 +3958,7 @@ public class SceneGraph {
         arg3.method1945(arg6, arg7, arg5, local31, null, false);
     }
 
-    @OriginalMember(owner = "runetek4.client!af", name = "a", descriptor = "(IIIIIILclient!th;IJ)Z")
+    @OriginalMember(owner = "client!af", name = "a", descriptor = "(IIIIIILclient!th;IJ)Z")
     public static boolean method35(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) Entity arg6, @OriginalArg(8) long arg7) {
         if (arg6 == null) {
             return true;
@@ -3893,7 +3969,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!ac", name = "a", descriptor = "(IIII)I")
+    @OriginalMember(owner = "client!ac", name = "a", descriptor = "(IIII)I")
     public static int getRenderLevel(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
         if ((renderFlags[arg2][arg1][arg0] & 0x8) == 0) {
             return arg2 <= 0 || (renderFlags[1][arg1][arg0] & 0x2) == 0 ? arg2 : arg2 - 1;
@@ -3902,7 +3978,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!ke", name = "a", descriptor = "(Lclient!rh;IIIIIIIZ)V")
+    @OriginalMember(owner = "client!ke", name = "a", descriptor = "(Lclient!rh;IIIIIIIZ)V")
     public static void method2610(@OriginalArg(0) PlainTile arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) boolean arg8) {
         @Pc(6) int local6;
         @Pc(7) int local7 = local6 = (arg6 << 7) - eyeX;
@@ -4031,7 +4107,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!mj", name = "a", descriptor = "(IIIII)Z")
+    @OriginalMember(owner = "client!mj", name = "a", descriptor = "(IIIII)Z")
     public static boolean method3049(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
         @Pc(9) int local9 = arg3 * anInt5205 + arg0 * anInt2222 >> 16;
         @Pc(19) int local19 = arg3 * anInt2222 - arg0 * anInt5205 >> 16;
@@ -4064,7 +4140,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!kd", name = "a", descriptor = "([[F[[II[[FI[ILclient!fj;BLclient!gi;[[FI)V")
+    @OriginalMember(owner = "client!kd", name = "a", descriptor = "([[F[[II[[FI[ILclient!fj;BLclient!gi;[[FI)V")
     public static void method2578(@OriginalArg(0) float[][] arg0, @OriginalArg(1) int[][] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) float[][] arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int[] arg5, @OriginalArg(6) Class45 arg6, @OriginalArg(8) Light arg7, @OriginalArg(9) float[][] arg8, @OriginalArg(10) int arg9) {
         @Pc(7) int[] local7 = new int[arg5.length / 2];
         for (@Pc(13) int local13 = 0; local13 < local7.length; local13++) {
@@ -4129,7 +4205,7 @@ public class SceneGraph {
         arg6.method1557(local7);
     }
 
-    @OriginalMember(owner = "runetek4.client!jj", name = "a", descriptor = "()V")
+    @OriginalMember(owner = "client!jj", name = "a", descriptor = "()V")
     public static void method2419() {
         anInt4870 = 0;
         label194: for (@Pc(3) int local3 = 0; local3 < anInt917; local3++) {
@@ -4279,7 +4355,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!lh", name = "a", descriptor = "(Lclient!fg;IIIIIIZ)V")
+    @OriginalMember(owner = "client!lh", name = "a", descriptor = "(Lclient!fg;IIIIIIZ)V")
     public static void drawTileOverlay(@OriginalArg(0) ShapedTile overlay, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7) {
         @Pc(3) int vertexCount = overlay.anIntArray168.length;
         @Pc(5) int i;
@@ -4345,7 +4421,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!a", name = "a", descriptor = "([[F[[F[[II[[F[[B[[II[[B[[B[[B[[[B)[Lclient!hg;")
+    @OriginalMember(owner = "client!a", name = "a", descriptor = "([[F[[F[[II[[F[[B[[II[[B[[B[[B[[[B)[Lclient!hg;")
     public static GlTile[] method2(@OriginalArg(0) float[][] arg0, @OriginalArg(1) float[][] arg1, @OriginalArg(2) int[][] arg2, @OriginalArg(3) int arg3, @OriginalArg(4) float[][] arg4, @OriginalArg(5) byte[][] arg5, @OriginalArg(6) int[][] arg6, @OriginalArg(8) byte[][] arg7, @OriginalArg(9) byte[][] arg8, @OriginalArg(10) byte[][] arg9, @OriginalArg(11) byte[][][] arg10) {
         @Pc(10) HashTable local10 = new HashTable(128);
         @Pc(12) int local12;
@@ -4851,7 +4927,7 @@ public class SceneGraph {
         return local2823;
     }
 
-    @OriginalMember(owner = "runetek4.client!tk", name = "a", descriptor = "(Lclient!sc;ZLclient!wl;)Lclient!hg;")
+    @OriginalMember(owner = "client!tk", name = "a", descriptor = "(Lclient!sc;ZLclient!wl;)Lclient!hg;")
     public static GlTile method4212(@OriginalArg(0) HashTable arg0, @OriginalArg(2) FloType arg1) {
         @Pc(23) long local23 = (long) ((arg1.material + 1 << 16) + arg1.materialScale) + ((long) arg1.textureBrightness << 56) + ((long) arg1.waterColor << 32);
         @Pc(38) GlTile local38 = (GlTile) arg0.get(local23);
@@ -5020,7 +5096,7 @@ public class SceneGraph {
         arg14.method1945(arg7, arg3, arg11, local39, local87, false);
     }
 
-    @OriginalMember(owner = "runetek4.client!ql", name = "a", descriptor = "(IFII[[I[[II[[FIBIZLclient!hg;[[FII[[FI)I")
+    @OriginalMember(owner = "client!ql", name = "a", descriptor = "(IFII[[I[[II[[FIBIZLclient!hg;[[FII[[FI)I")
     public static int method3683(@OriginalArg(0) int arg0, @OriginalArg(1) float arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int[][] arg4, @OriginalArg(5) int[][] arg5, @OriginalArg(6) int arg6, @OriginalArg(7) float[][] arg7, @OriginalArg(8) int arg8, @OriginalArg(10) int arg9, @OriginalArg(11) boolean arg10, @OriginalArg(12) GlTile arg11, @OriginalArg(13) float[][] arg12, @OriginalArg(14) int arg13, @OriginalArg(15) int arg14, @OriginalArg(16) float[][] arg15, @OriginalArg(17) int arg16) {
         @Pc(20) int local20;
         if (arg9 == 1) {
@@ -5087,7 +5163,7 @@ public class SceneGraph {
         return arg11.method1941(local420, local413, local405, local78, local66, local72, arg10 ? local80 & 0xFFFFFF00 : local80, arg4 == null ? 0.0F : (float) (local413 - method3361(arg14, arg13, arg4, arg6, arg16)) / arg1);
     }
 
-    @OriginalMember(owner = "runetek4.client!oj", name = "a", descriptor = "(IBI[[III)I")
+    @OriginalMember(owner = "client!oj", name = "a", descriptor = "(IBI[[III)I")
     public static int method3361(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int[][] arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
         @Pc(25) int local25 = arg0 * arg2[arg3 + 1][arg1] + (128 - arg0) * arg2[arg3][arg1] >> 7;
         @Pc(52) int local52 = arg2[arg3][arg1 + 1] * (128 - arg0) + arg2[arg3 + 1][arg1 + 1] * arg0 >> 7;
@@ -5106,7 +5182,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!tm", name = "a", descriptor = "(III[Lclient!mj;IB[BIIIZ)V")
+    @OriginalMember(owner = "client!tm", name = "a", descriptor = "(III[Lclient!mj;IB[BIIIZ)V")
     public static void method4228(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) CollisionMap[] arg3, @OriginalArg(4) int arg4, @OriginalArg(6) byte[] arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8, @OriginalArg(10) boolean arg9) {
         @Pc(17) int local17;
         if (!arg9) {
@@ -5264,7 +5340,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!rg", name = "a", descriptor = "(IZII)I")
+    @OriginalMember(owner = "client!rg", name = "a", descriptor = "(IZII)I")
     public static int rotateX(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
         @Pc(3) int local3 = arg0 & 0x3;
         if (local3 == 0) {
@@ -5278,7 +5354,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!qg", name = "a", descriptor = "(IBII)I")
+    @OriginalMember(owner = "client!qg", name = "a", descriptor = "(IBII)I")
     public static int rotateZ(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
         @Pc(3) int local3 = arg0 & 0x3;
         if (local3 == 0) {
@@ -5292,7 +5368,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!qi", name = "a", descriptor = "(IIBI)I")
+    @OriginalMember(owner = "client!qi", name = "a", descriptor = "(IIBI)I")
     public static int rotateXFine(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
         @Pc(3) int local3 = arg0 & 0x3;
         if (local3 == 0) {
@@ -5306,7 +5382,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!ol", name = "a", descriptor = "(IIZI)I")
+    @OriginalMember(owner = "client!ol", name = "a", descriptor = "(IIZI)I")
     public static int rotateZFine(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
         @Pc(3) int local3 = arg1 & 0x3;
         if (local3 == 0) {
@@ -5320,7 +5396,7 @@ public class SceneGraph {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!uc", name = "a", descriptor = "(III[[[BIBII)V")
+    @OriginalMember(owner = "client!uc", name = "a", descriptor = "(III[[[BIBII)V")
     public static void method3292(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte[][][] arg3, @OriginalArg(4) int arg4, @OriginalArg(5) byte arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
         anInt437++;
         anInt1142 = 0;

@@ -244,6 +244,7 @@ public class GlSprite extends Sprite {
 		glTranslatef((float) local5, (float) (GlRenderer.canvasHeight - local10), 0.0F);
 		glCallList(this.anInt1871);
 		glLoadIdentity();
+		GlCleaner.clear();
 	}
 
 	@OriginalMember(owner = "client!cf", name = "b", descriptor = "(IIIIII)V")
