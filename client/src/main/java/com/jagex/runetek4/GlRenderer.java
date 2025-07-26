@@ -882,20 +882,14 @@ public final class GlRenderer {
 
 	@OriginalMember(owner = "client!tf", name = "s", descriptor = "()V")
 	private static void genTextures() {
-		IntBuffer textureIdBuffer = BufferUtils.createIntBuffer(1);
-		glGenTextures(textureIdBuffer);
-		anInt5328 = textureIdBuffer.get(0);
-
 		// Bind texture
-		glBindTexture(GL_TEXTURE_2D, anInt5328);
+		glBindTexture(GL_TEXTURE_2D, glGenTextures());
 
 		IntBuffer texData = BufferUtils.createIntBuffer(1);
 		texData.put(0xFFFFFFFF).flip();
 
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, 1, 1, 0, GL_RGBA, GL_UNSIGNED_BYTE, texData);
-
+		glTexImage2D(GL_TEXTURE_2D, 0, 4, 1, 1, 0, GL_RGBA, GL_UNSIGNED_BYTE, texData);
 		glFinish();
-
 		LightingManager.init();
 		MaterialManager.init();
 	}
