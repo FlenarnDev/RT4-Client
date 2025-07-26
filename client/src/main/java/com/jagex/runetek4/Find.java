@@ -2,18 +2,22 @@ package com.jagex.runetek4;
 
 import com.jagex.runetek4.config.types.obj.ObjType;
 import com.jagex.runetek4.config.types.obj.ObjTypeList;
+
 import com.jagex.runetek4.config.types.quickchat.QuickChatPhraseTypeList;
 import com.jagex.runetek4.config.types.quickchat.QuickChatPhraseType;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 public class Find {
-    @OriginalMember(owner = "runetek4.client!nf", name = "c", descriptor = "[S")
+    @OriginalMember(owner = "client!nf", name = "c", descriptor = "[S")
     public static short[] results;
+
     @OriginalMember(owner = "client!fe", name = "x", descriptor = "I")
     public static int size;
-    @OriginalMember(owner = "runetek4.client!ii", name = "l", descriptor = "I")
+
+    @OriginalMember(owner = "client!ii", name = "l", descriptor = "I")
     public static int index;
 
     @OriginalMember(owner = "client!bn", name = "a", descriptor = "(BZLclient!na;)V")

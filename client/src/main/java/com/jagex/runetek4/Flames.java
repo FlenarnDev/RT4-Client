@@ -1,8 +1,11 @@
 package com.jagex.runetek4;
 
 import com.jagex.runetek4.cache.media.SoftwareSprite;
+
 import com.jagex.runetek4.client.client;
+
 import com.jagex.runetek4.js5.Js5;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -11,10 +14,10 @@ public class Flames {
     @OriginalMember(owner = "client!bb", name = "m", descriptor = "Lclient!na;")
     public static final JString RUNES = JString.parse("runes");
 
-    @OriginalMember(owner = "runetek4.client!se", name = "t", descriptor = "[I")
+    @OriginalMember(owner = "client!se", name = "t", descriptor = "[I")
     public static final int[] flameGradientSource = new int[] { 12543016, 15504954, 15914854, 16773818 };
 
-    @OriginalMember(owner = "runetek4.client!cl", name = "ab", descriptor = "[I")
+    @OriginalMember(owner = "client!cl", name = "ab", descriptor = "[I")
     public static final int[] flameShiftX = new int[256];
 
     @OriginalMember(owner = "client!km", name = "Yc", descriptor = "I")
@@ -35,22 +38,22 @@ public class Flames {
     @OriginalMember(owner = "client!t", name = "G", descriptor = "[Lclient!ek;")
     public static SoftwareIndexedSprite[] runes;
 
-    @OriginalMember(owner = "runetek4.client!wb", name = "b", descriptor = "[I")
+    @OriginalMember(owner = "client!wb", name = "b", descriptor = "[I")
     public static int[] flameBuffer1;
 
-    @OriginalMember(owner = "runetek4.client!vg", name = "e", descriptor = "[I")
+    @OriginalMember(owner = "client!vg", name = "e", descriptor = "[I")
     public static int[] flameBuffer2;
 
-    @OriginalMember(owner = "runetek4.client!ri", name = "d", descriptor = "[I")
+    @OriginalMember(owner = "client!ri", name = "d", descriptor = "[I")
     public static int[] flameIntensityBuffer;
 
-    @OriginalMember(owner = "runetek4.client!i", name = "ec", descriptor = "[I")
+    @OriginalMember(owner = "client!i", name = "ec", descriptor = "[I")
     public static int[] flameIntensity;
 
-    @OriginalMember(owner = "runetek4.client!a", name = "i", descriptor = "I")
+    @OriginalMember(owner = "client!a", name = "i", descriptor = "I")
     public static int anInt6 = 0;
 
-    @OriginalMember(owner = "runetek4.client!sf", name = "i", descriptor = "I")
+    @OriginalMember(owner = "client!sf", name = "i", descriptor = "I")
     public static int anInt5084 = 0;
 
     @OriginalMember(owner = "client!sk", name = "a", descriptor = "(Lclient!ve;I)Z")
@@ -245,7 +248,7 @@ public class Flames {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!lf", name = "a", descriptor = "(ILclient!ve;)V")
+    @OriginalMember(owner = "client!lf", name = "a", descriptor = "(ILclient!ve;)V")
     public static void load(@OriginalArg(1) Js5 arg0) {
         runes = SpriteLoader.loadSoftwareIndexedSpritesAutoDetect(runesID, arg0);
         flameGradient = new int[256];

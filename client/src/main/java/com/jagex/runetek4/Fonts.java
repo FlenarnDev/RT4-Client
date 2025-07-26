@@ -1,8 +1,11 @@
 package com.jagex.runetek4;
 
 import com.jagex.runetek4.cache.media.Font;
+
 import com.jagex.runetek4.client.GameShell;
+
 import com.jagex.runetek4.js5.Js5;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -61,7 +64,7 @@ public class Fonts {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!ld", name = "a", descriptor = "(B)I")
+    @OriginalMember(owner = "client!ld", name = "a", descriptor = "(B)I")
     public static int getTotal() {
         return 6;
     }

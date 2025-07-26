@@ -11,7 +11,7 @@ import com.jagex.runetek4.core.io.Packet;
 public final class FloType {
 
 	@OriginalMember(owner = "client!ca", name = "db", descriptor = "I")
-	public static int anInt865 = 0;
+	public static int worldMapCheckerboardFloId = 0;
 
 	@OriginalMember(owner = "client!wl", name = "j", descriptor = "Z")
 	public boolean blend = false;
@@ -50,12 +50,12 @@ public final class FloType {
 			if (opcode == 0) {
 				return;
 			}
-			this.decode(opcode, packet, id);
+			this.decode(packet, id, opcode);
 		}
 	}
 
 	@OriginalMember(owner = "client!wl", name = "a", descriptor = "(IILclient!wa;I)V")
-	private void decode(@OriginalArg(1) int opcode, @OriginalArg(2) Packet packet, @OriginalArg(3) int arg2) {
+	private void decode(@OriginalArg(2) Packet packet, @OriginalArg(3) int id, @OriginalArg(1) int opcode) {
 		if (opcode == 1) {
 			this.baseColor = convertColor(packet.g3());
 		} else if (opcode == 2) {
@@ -70,7 +70,7 @@ public final class FloType {
 		} else if (opcode == 7) {
 			this.secondaryColor = convertColor(packet.g3());
 		} else if (opcode == 8) {
-			anInt865 = arg2;
+			worldMapCheckerboardFloId = id;
 		} else if (opcode == 9) {
 			this.materialScale = packet.g2();
 		} else if (opcode == 10) {

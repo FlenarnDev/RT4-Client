@@ -711,7 +711,7 @@ public final class GlRenderer {
 		glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE); // Window will be resizable.
 
 		// Create the window
-		LWJGLWindow = glfwCreateWindow(300, 300, "Runescape", NULL, NULL);
+		LWJGLWindow = glfwCreateWindow(1024, 1024, "Runescape", NULL, NULL);
 		if (LWJGLWindow == NULL) {
 			throw new IllegalStateException("Unable to create the GLFW window");
 		}

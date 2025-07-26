@@ -1105,7 +1105,7 @@ public class WorldMap {
                                 if (currentMap.backgroundColor != -1) {
                                     local312 = currentMap.backgroundColor;
                                 } else if ((local211 + arg2 & 0x4) == (arg5 + local32 & 0x4)) {
-                                    local312 = overlayColors[FloType.anInt865 + 1];
+                                    local312 = overlayColors[FloType.worldMapCheckerboardFloId + 1];
                                 } else {
                                     local312 = 4936552;
                                 }
@@ -1222,7 +1222,7 @@ public class WorldMap {
                         if (currentMap.backgroundColor != -1) {
                             local104 = currentMap.backgroundColor;
                         } else if ((local32 + arg5 & 0x4) == (local90 + arg2 & 0x4)) {
-                            local104 = overlayColors[FloType.anInt865 + 1];
+                            local104 = overlayColors[FloType.worldMapCheckerboardFloId + 1];
                         } else {
                             local104 = 4936552;
                         }

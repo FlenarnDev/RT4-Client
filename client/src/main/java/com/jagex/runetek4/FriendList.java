@@ -6,22 +6,22 @@ import org.openrs2.deob.annotation.Pc;
 
 public class FriendList {
 
-    @OriginalMember(owner = "runetek4.client!hd", name = "g", descriptor = "[J")
+    @OriginalMember(owner = "client!hd", name = "g", descriptor = "[J")
     public static final long[] encodedUsernames = new long[200];
 
-    @OriginalMember(owner = "runetek4.client!rg", name = "r", descriptor = "[Lclient!na;")
+    @OriginalMember(owner = "client!rg", name = "r", descriptor = "[Lclient!na;")
     public static final JString[] worldNames = new JString[200];
 
-    @OriginalMember(owner = "runetek4.client!ic", name = "l", descriptor = "[I")
+    @OriginalMember(owner = "client!ic", name = "l", descriptor = "[I")
     public static final int[] ranks = new int[200];
 
-    @OriginalMember(owner = "runetek4.client!ia", name = "d", descriptor = "[I")
+    @OriginalMember(owner = "client!ia", name = "d", descriptor = "[I")
     public static final int[] friendWorlds = new int[200];
 
-    @OriginalMember(owner = "runetek4.client!jh", name = "b", descriptor = "[Lclient!na;")
+    @OriginalMember(owner = "client!jh", name = "b", descriptor = "[Lclient!na;")
     public static final JString[] friendUsernames = new JString[200];
 
-    @OriginalMember(owner = "runetek4.client!ab", name = "c", descriptor = "[Z")
+    @OriginalMember(owner = "client!ab", name = "c", descriptor = "[Z")
     public static final boolean[] friendGame = new boolean[200];
 
     @OriginalMember(owner = "client!nc", name = "m", descriptor = "I")
@@ -30,10 +30,10 @@ public class FriendList {
     @OriginalMember(owner = "client!al", name = "m", descriptor = "I")
     public static int friendCount = 0;
 
-    @OriginalMember(owner = "runetek4.client!p", name = "d", descriptor = "I")
+    @OriginalMember(owner = "client!p", name = "d", descriptor = "I")
     public static int transmitAt = 0;
 
-    @OriginalMember(owner = "runetek4.client!hj", name = "a", descriptor = "(Lclient!na;B)Z")
+    @OriginalMember(owner = "client!hj", name = "a", descriptor = "(Lclient!na;B)Z")
     public static boolean contains(@OriginalArg(0) JString username) {
         if (username == null) {
             return false;
@@ -89,7 +89,7 @@ public class FriendList {
         Protocol.outboundBuffer.p8(username);
     }
 
-    @OriginalMember(owner = "runetek4.client!pi", name = "a", descriptor = "(JI)V")
+    @OriginalMember(owner = "client!pi", name = "a", descriptor = "(JI)V")
     public static void removeFriend(@OriginalArg(0) long username) {
         if (username == 0L) {
             return;
@@ -113,14 +113,14 @@ public class FriendList {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!ni", name = "a", descriptor = "(ILclient!na;I)V")
+    @OriginalMember(owner = "client!ni", name = "a", descriptor = "(ILclient!na;I)V")
     public static void setRank(@OriginalArg(1) JString arg0, @OriginalArg(2) int arg1) {
         Protocol.outboundBuffer.pIsaac1(188);
         Protocol.outboundBuffer.p1b_alt1(arg1);
         Protocol.outboundBuffer.p8(arg0.encode37());
     }
 
-    @OriginalMember(owner = "runetek4.client!ac", name = "a", descriptor = "(Lclient!na;I)I")
+    @OriginalMember(owner = "client!ac", name = "a", descriptor = "(Lclient!na;I)I")
     public static int indexOf(@OriginalArg(0) JString arg0) {
         if (arg0 == null) {
             return -1;
