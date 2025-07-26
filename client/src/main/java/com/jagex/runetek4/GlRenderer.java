@@ -10,14 +10,17 @@ import com.jagex.runetek4.util.ThreadUtils;
 import com.jogamp.nativewindow.awt.AWTGraphicsConfiguration;
 import com.jogamp.nativewindow.awt.JAWTWindow;
 import com.jogamp.opengl.*;
-import com.jogamp.opengl.GLCapabilities;
 import jogamp.newt.awt.NewtFactoryAWT;
-import org.lwjgl.opengl.GL;
-import org.lwjgl.glfw.GLFWErrorCallback;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
+import org.lwjgl.opengl.GL;
+import org.lwjgl.glfw.GLFWErrorCallback;
+
+import static org.lwjgl.opengl.GL20.GL_MAX_TEXTURE_COORDS;
+import static org.lwjgl.opengl.GL20.GL_MAX_TEXTURE_IMAGE_UNITS;
 import org.lwjgl.*;
 import org.lwjgl.glfw.*;
 import org.lwjgl.system.*;
@@ -224,7 +227,7 @@ public final class GlRenderer {
 			//drawable.swapBuffers();
 
 			if (!glfwWindowShouldClose(LWJGLWindow)) {
-				glfwSwapBuffers(LWJGLWindow); // Swap the color buffers
+				glfwSwapBuffers(LWJGLWindow);
 
 				glfwPollEvents();
 			}
@@ -310,7 +313,7 @@ public final class GlRenderer {
 
 	@OriginalMember(owner = "client!tf", name = "g", descriptor = "()V")
 	public static void enableDepthMask() {
-		gl.glDepthMask(true);
+		glDepthMask(true);
 	}
 
 	@OriginalMember(owner = "client!tf", name = "b", descriptor = "(Z)V")
@@ -328,11 +331,16 @@ public final class GlRenderer {
 
 	@OriginalMember(owner = "client!tf", name = "h", descriptor = "()V")
 	public static void draw() {
-		@Pc(2) int[] ints = new int[2];
 
-		// These first two are special, need more research.
-		gl.glGetIntegerv(GL_DRAW_BUFFER, ints, 0);
-		gl.glGetIntegerv(GL_READ_BUFFER, ints, 1);
+		IntBuffer drawBuffer = BufferUtils.createIntBuffer(1);
+		IntBuffer readBuffer = BufferUtils.createIntBuffer(1);
+
+		glGetIntegerv(GL_DRAW_BUFFER, drawBuffer);
+		glGetIntegerv(GL_READ_BUFFER, readBuffer);
+
+		@Pc(2) int[] ints = new int[2];
+		ints[0] = drawBuffer.get(0);
+		ints[1] = readBuffer.get(0);
 
 		glDrawBuffer(GL_BACK_LEFT);
 		glReadBuffer(GL_FRONT_LEFT);
@@ -444,18 +452,23 @@ public final class GlRenderer {
 		if (GlRenderer.version < 12) {
 			result |= 0x2;
 		}
-		if (!gl.isExtensionAvailable("GL_ARB_multitexture")) {
+
+		org.lwjgl.opengl.GLCapabilities capabilities = GL.getCapabilities();
+
+		if (!capabilities.GL_ARB_multitexture) {
 			result |= 0x8;
 		}
-		if (!gl.isExtensionAvailable("GL_ARB_texture_env_combine")) {
+
+		if (!capabilities.GL_ARB_texture_env_combine) {
 			result |= 0x20;
 		}
+
 		@Pc(100) int[] data = new int[1];
-		glGetIntegerv(GL2.GL_MAX_TEXTURE_UNITS, data);
+		glGetIntegerv(GL_MAX_TEXTURE_UNITS, data);
 		maxTextureUnits = data[0];
-		glGetIntegerv(GL2.GL_MAX_TEXTURE_COORDS, data);
+		glGetIntegerv(GL_MAX_TEXTURE_COORDS, data);
 		maxTextureCoords = data[0];
-		glGetIntegerv(GL2.GL_MAX_TEXTURE_IMAGE_UNITS, data);
+		glGetIntegerv(GL_MAX_TEXTURE_IMAGE_UNITS, data);
 		maxTextureImageUnits = data[0];
 		if (maxTextureUnits < 2 || maxTextureCoords < 2 || maxTextureImageUnits < 2) {
 			result |= 0x10;
@@ -464,10 +477,10 @@ public final class GlRenderer {
 			return result;
 		}
 		bigEndian = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN;
-		arbVboSupported = gl.isExtensionAvailable("GL_ARB_vertex_buffer_object");
-		arbMultisampleSupported = gl.isExtensionAvailable("GL_ARB_multisample");
-		arbTextureCubeMapSupported = gl.isExtensionAvailable("GL_ARB_texture_cube_map");
-		arbVertexProgramSupported = gl.isExtensionAvailable("GL_ARB_vertex_program");
+		arbVboSupported = capabilities.GL_ARB_vertex_buffer_object;
+		arbMultisampleSupported = capabilities.GL_ARB_multisample;
+		arbTextureCubeMapSupported = capabilities.GL_ARB_texture_cube_map;
+		arbVertexProgramSupported = capabilities.GL_ARB_vertex_program;
 		extTexture3dSupported = gl.isExtensionAvailable("GL_EXT_texture3D");
 		@Pc(176) JString renderer = JString.convertStringToJString(GlRenderer.renderer).toLowerCase();
 		if (renderer.indexOf(RADEON) != -1) {
@@ -508,15 +521,13 @@ public final class GlRenderer {
 	public static void quit() {
 		if (gl != null) {
 			try {
-				MaterialManager.quit(); // MaterialManager
+				MaterialManager.quit();
 			} catch (@Pc(5) Throwable local5) {
 			}
 
-			// Release LWJGL
 			glfwFreeCallbacks(LWJGLWindow);
 			glfwDestroyWindow(LWJGLWindow);
 
-			// Terminate GLFW and error callback.
 			glfwTerminate();
 			glfwSetErrorCallback(null).free();
 		}
@@ -559,7 +570,7 @@ public final class GlRenderer {
 	public static void translateTextureMatrix(@OriginalArg(0) float x, @OriginalArg(1) float y, @OriginalArg(2) float z) {
 		glMatrixMode(GL_TEXTURE);
 		if (textureMatrixModified) {
-			gl.glLoadIdentity();
+			glLoadIdentity();
 		}
 		glTranslatef(x, y, z);
 		glMatrixMode(GL_MODELVIEW);
@@ -740,7 +751,7 @@ public final class GlRenderer {
 
 	@OriginalMember(owner = "client!tf", name = "q", descriptor = "()V")
 	public static void disableDepthMask() {
-		gl.glDepthMask(false);
+		glDepthMask(false);
 	}
 
 	@OriginalMember(owner = "client!tf", name = "r", descriptor = "()F")
@@ -805,6 +816,7 @@ public final class GlRenderer {
 			initLWJGL();
 
             gl = GLContext.getCurrentGL().getGL2();
+
 			glLineWidth((float) GameShell.canvasScale);
 			enabled = true;
 			canvasWidth = canvas.getSize().width;
@@ -858,7 +870,7 @@ public final class GlRenderer {
 
 	@OriginalMember(owner = "client!gi", name = "b", descriptor = "()V")
 	private static void resizeViewport() {
-		gl.glViewport((int) (leftMargin * GameShell.canvasScale + GameShell.subpixelX), (int) (topMargin * GameShell.canvasScale + GameShell.subpixelY),
+		glViewport((int) (leftMargin * GameShell.canvasScale + GameShell.subpixelX), (int) (topMargin * GameShell.canvasScale + GameShell.subpixelY),
 				(int) (viewportWidth * GameShell.canvasScale + GameShell.subpixelX), (int) (viewportHeight * GameShell.canvasScale + GameShell.subpixelY));
 	}
 
