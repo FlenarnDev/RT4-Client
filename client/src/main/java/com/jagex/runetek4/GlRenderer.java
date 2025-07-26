@@ -186,6 +186,11 @@ public final class GlRenderer {
 
 	public static int viewportHeight;
 
+	public static void glDrawElementsWrapper(int mode, int count, int type, java.nio.Buffer buffer) {
+		long pointer = MemoryUtil.memAddress(buffer);
+		glDrawElements(mode, count, type, pointer);
+	}
+
 	@OriginalMember(owner = "client!tf", name = "a", descriptor = "(IIII)V")
 	public static void method4148(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		setupViewTransformations(0, 0, canvasWidth, canvasHeight, arg0, arg1, 0.0F, 0.0F, arg2, arg3);

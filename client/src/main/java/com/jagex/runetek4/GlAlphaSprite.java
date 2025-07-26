@@ -4,11 +4,13 @@ import java.nio.ByteBuffer;
 
 import com.jagex.runetek4.cache.media.SoftwareSprite;
 import com.jagex.runetek4.util.IntUtils;
-import com.jogamp.opengl.*;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import static org.lwjgl.opengl.GL11.*;
 
 @OriginalClass(".client!el")
 public final class GlAlphaSprite extends GlSprite {
@@ -47,14 +49,11 @@ public final class GlAlphaSprite extends GlSprite {
 			local22 += local32;
 		}
 		@Pc(94) ByteBuffer local94 = ByteBuffer.wrap(local20);
-		@Pc(96) GL2 local96 = GlRenderer.gl;
 		if (this.textureId == -1) {
-			@Pc(103) int[] local103 = new int[1];
-			local96.glGenTextures(1, local103, 0);
-			this.textureId = local103[0];
+			this.textureId = glGenTextures();
 		}
 		GlRenderer.setTextureId(this.textureId);
-		local96.glTexImage2D(GL2.GL_TEXTURE_2D, 0, GL2.GL_RGBA, this.powerOfTwoWidth, this.powerOfTwoHeight, 0, GL2.GL_RGBA, GL2.GL_UNSIGNED_BYTE, local94);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, this.powerOfTwoWidth, this.powerOfTwoHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, local94);
 		GlCleaner.oncard_2d += local94.limit() - this.anInt1869;
 		this.anInt1869 = local94.limit();
 	}

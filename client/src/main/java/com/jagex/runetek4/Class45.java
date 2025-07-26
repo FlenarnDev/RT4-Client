@@ -6,7 +6,11 @@ import com.jagex.runetek4.core.datastruct.IntWrapper;
 import com.jagex.runetek4.core.datastruct.HashTable;
 import com.jagex.runetek4.core.io.Packet;
 import com.jagex.runetek4.util.IntUtils;
-import com.jogamp.opengl.*;
+
+import static org.lwjgl.opengl.GL20.*;
+
+import static com.jagex.runetek4.GlRenderer.glDrawElementsWrapper;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -78,7 +82,7 @@ public final class Class45 {
 		@Pc(37) float local37 = (float) (arg0.x - arg1);
 		@Pc(43) float local43 = (float) (arg0.y - arg2);
 		@Pc(49) float local49 = (float) (arg0.z - arg3);
-		@Pc(64) float local64 = (float) Math.sqrt((double) (local37 * local37 + local43 * local43 + local49 * local49));
+		@Pc(64) float local64 = (float) Math.sqrt(local37 * local37 + local43 * local43 + local49 * local49);
 		@Pc(68) float local68 = 1.0F / local64;
 		@Pc(72) float local72 = local37 * local68;
 		@Pc(76) float local76 = local43 * local68;
@@ -189,22 +193,22 @@ public final class Class45 {
 
 	@OriginalMember(owner = "client!fj", name = "c", descriptor = "()V")
 	public final void method1556() {
-		@Pc(1) GL2 local1 = GlRenderer.gl;
 		if (GlRenderer.arbVboSupported) {
 			this.aClass155_1.bindArray();
-			local1.glInterleavedArrays(GL2.GL_C4UB_V3F, 16, 0L);
+			glInterleavedArrays(GL_C4UB_V3F, 16, 0L);
 			GlRenderer.normalArrayEnabled = false;
 			this.aClass155_2.bindElementArray();
-			local1.glDrawElements(GL2.GL_TRIANGLES, this.anInt2018, GL2.GL_UNSIGNED_INT, 0L);
+			glDrawElements(GL_TRIANGLES, this.anInt2018, GL_UNSIGNED_INT, 0L);
 			return;
 		}
+
 		if (GlRenderer.arbVboSupported) {
-			local1.glBindBuffer(GL2.GL_ARRAY_BUFFER, 0);
-			local1.glBindBuffer(GL2.GL_ELEMENT_ARRAY_BUFFER, 0);
+			glBindBuffer(GL_ARRAY_BUFFER, 0);
+			glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 		}
-		local1.glInterleavedArrays(GL2.GL_C4UB_V3F, 16, this.aByteBuffer1);
+		glInterleavedArrays(GL_C4UB_V3F, 16, this.aByteBuffer1);
 		GlRenderer.normalArrayEnabled = false;
-		local1.glDrawElements(GL2.GL_TRIANGLES, this.anInt2018, GL2.GL_UNSIGNED_INT, this.aByteBuffer2);
+		glDrawElementsWrapper(GL_TRIANGLES, this.anInt2018, GL_UNSIGNED_INT, this.aByteBuffer2);
 	}
 
 	@OriginalMember(owner = "client!fj", name = "a", descriptor = "([I)V")

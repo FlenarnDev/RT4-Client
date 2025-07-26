@@ -1,10 +1,17 @@
 package com.jagex.runetek4;
 
 import com.jagex.runetek4.core.datastruct.IntWrapper;
-import com.jogamp.opengl.GL2;
+
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL15;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import static org.lwjgl.opengl.GL11.glDeleteLists;
+import static org.lwjgl.opengl.GL11.glDeleteTextures;
+import static org.lwjgl.opengl.GL15.glDeleteBuffers;
 
 public class GlCleaner {
     @OriginalMember(owner = "client!fa", name = "b", descriptor = "Lclient!ih;")
@@ -39,13 +46,12 @@ public class GlCleaner {
 
     @OriginalMember(owner = "client!fa", name = "c", descriptor = "()V")
     public static synchronized void process() {
-        @Pc(1) GL2 local1 = GlRenderer.gl;
         @Pc(3) int local3 = 0;
         while (true) {
             @Pc(8) IntWrapper local8 = (IntWrapper) aClass69_48.removeHead();
             if (local8 == null) {
                 if (local3 > 0) {
-                    local1.glDeleteBuffers(local3, anIntArray151, 0);
+                    glDeleteBuffers(anIntArray151);
                     local3 = 0;
                 }
                 while (true) {
@@ -55,7 +61,7 @@ public class GlCleaner {
                             local8 = (IntWrapper) aClass69_50.removeHead();
                             if (local8 == null) {
                                 if (local3 > 0) {
-                                    local1.glDeleteTextures(local3, anIntArray151, 0);
+                                    glDeleteTextures(anIntArray151);
                                 }
                                 while (true) {
                                     local8 = (IntWrapper) aClass69_51.removeHead();
@@ -67,13 +73,13 @@ public class GlCleaner {
                                         return;
                                     }
                                     @Pc(126) int local126 = (int) local8.nodeId;
-                                    local1.glDeleteLists(local126, 1);
+                                    glDeleteLists(local126, 1);
                                 }
                             }
                             anIntArray151[local3++] = (int) local8.nodeId;
                             oncard_texture -= local8.value;
                             if (local3 == 1000) {
-                                local1.glDeleteTextures(local3, anIntArray151, 0);
+                                glDeleteTextures(anIntArray151);
                                 local3 = 0;
                             }
                         }
@@ -81,7 +87,7 @@ public class GlCleaner {
                     anIntArray151[local3++] = (int) local8.nodeId;
                     oncard_2d -= local8.value;
                     if (local3 == 1000) {
-                        local1.glDeleteTextures(local3, anIntArray151, 0);
+                        glDeleteTextures(anIntArray151);
                         local3 = 0;
                     }
                 }
@@ -89,7 +95,7 @@ public class GlCleaner {
             anIntArray151[local3++] = (int) local8.nodeId;
             oncard_geometry -= local8.value;
             if (local3 == 1000) {
-                local1.glDeleteBuffers(local3, anIntArray151, 0);
+                glDeleteBuffers(anIntArray151);
                 local3 = 0;
             }
         }

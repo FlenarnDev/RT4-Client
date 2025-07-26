@@ -5,7 +5,14 @@ import java.nio.ByteBuffer;
 import com.jagex.runetek4.node.SecondaryNode;
 import com.jagex.runetek4.core.io.Packet;
 import com.jagex.runetek4.js5.Js5;
-import com.jogamp.opengl.*;
+
+import org.lwjgl.BufferUtils;
+
+import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL12.GL_CLAMP_TO_EDGE;
+import static org.lwjgl.opengl.GL30.glGenerateMipmap;
+import static org.lwjgl.opengl.GL42.glTexStorage2D;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -180,43 +187,41 @@ public final class GlTexture extends SecondaryNode {
 		if (!this.aClass88_1.isReady(arg1, arg0)) {
 			return false;
 		}
-		@Pc(22) GL2 gl = GlRenderer.gl;
 		@Pc(28) int size = arg2 ? 64 : 128;
 		@Pc(31) int local31 = MaterialManager.getFlags();
 		if ((local31 & 0x1) == 0) {
 			if (this.textureId == -1) {
-				@Pc(53) int[] temp = new int[1];
-				gl.glGenTextures(1, temp, 0);
 				this.anInt5492 = GlCleaner.contextId;
-				this.textureId = temp[0];
+				this.textureId = glGenTextures();
 				GlRenderer.setTextureId(this.textureId);
-				@Pc(82) ByteBuffer pixels = ByteBuffer.wrap(this.aClass88_1.method2728(size, size, this.aBoolean288, arg1, 0.7D, arg0));
-				if (this.anInt5489 == 2) {
-					// Old GLU Code
-					//@Pc(201) GLUgl2es1 local201 = new GLUgl2es1();
-					//local28.gluBuild2DMipmaps(3553, 6408, local28, local28, 6408, 5121, pixels);
-					//gl.glTexParameteri(GL2.GL_TEXTURE_2D, GL2.GL_TEXTURE_MIN_FILTER, GL2.GL_LINEAR_MIPMAP_LINEAR);
-					//gl.glTexParameteri(GL2.GL_TEXTURE_2D, GL2.GL_TEXTURE_MAG_FILTER, GL2.GL_LINEAR);
+				@Pc(82) ByteBuffer pixels = BufferUtils.createByteBuffer(this.aClass88_1.method2728(size, size, this.aBoolean288, arg1, 0.7D, arg0).length);
 
-					// New Code OpenGL 4+ w/ texStorage
+				// Is it really necessary to add both instances of the buffer?
+				pixels.put(this.aClass88_1.method2728(size, size, this.aBoolean288, arg1, 0.7D, arg0));
+				pixels.flip();
+
+				if (this.anInt5489 == 2) {
 					int num_mipmaps = 4;
-					gl.glTexStorage2D(GL2.GL_TEXTURE_2D, num_mipmaps, GL2.GL_RGBA8, size, size);
-					gl.glTexSubImage2D(GL2.GL_TEXTURE_2D, 0, 0, 0, size, size, GL2.GL_RGBA, GL2.GL_UNSIGNED_BYTE, pixels);
-					gl.glGenerateMipmap(GL2.GL_TEXTURE_2D);
-					gl.glTexParameteri(GL2.GL_TEXTURE_2D, GL2.GL_TEXTURE_WRAP_S, GL2.GL_REPEAT);
-					gl.glTexParameteri(GL2.GL_TEXTURE_2D, GL2.GL_TEXTURE_WRAP_T, GL2.GL_REPEAT);
-					gl.glTexParameteri(GL2.GL_TEXTURE_2D, GL2.GL_TEXTURE_MAG_FILTER, GL2.GL_LINEAR);
-					gl.glTexParameteri(GL2.GL_TEXTURE_2D, GL2.GL_TEXTURE_MIN_FILTER, GL2.GL_LINEAR_MIPMAP_LINEAR);
+					glTexStorage2D(GL_TEXTURE_2D, num_mipmaps, GL_RGBA8, size, size);
+
+					glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+					glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+					glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+					glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+
+					glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, size, size, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
+					glGenerateMipmap(GL_TEXTURE_2D);
+
 					GlCleaner.oncard_texture += pixels.limit() * 4 / 3 - this.textureSize;
 					this.textureSize = pixels.limit() * 4 / 3;
 				} else if (this.anInt5489 == 1) {
 					@Pc(129) int local129 = 0;
 					while (true) {
-						gl.glTexImage2D(GL2.GL_TEXTURE_2D, local129++, GL2.GL_RGBA, size, size, 0, GL2.GL_RGBA, GL2.GL_UNSIGNED_BYTE, pixels);
+						glTexImage2D(GL_TEXTURE_2D, local129++, GL_RGBA, size, size, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
 						size >>= 0x1;
 						if (size == 0) {
-							gl.glTexParameteri(GL2.GL_TEXTURE_2D, GL2.GL_TEXTURE_MIN_FILTER, GL2.GL_LINEAR_MIPMAP_LINEAR);
-							gl.glTexParameteri(GL2.GL_TEXTURE_2D, GL2.GL_TEXTURE_MAG_FILTER, GL2.GL_LINEAR);
+							glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+							glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 							GlCleaner.oncard_texture += pixels.limit() * 4 / 3 - this.textureSize;
 							this.textureSize = pixels.limit() * 4 / 3;
 							break;
@@ -224,14 +229,14 @@ public final class GlTexture extends SecondaryNode {
 						pixels = ByteBuffer.wrap(this.aClass88_1.method2728(size, size, this.aBoolean288, arg1, 0.7D, arg0));
 					}
 				} else {
-					gl.glTexImage2D(GL2.GL_TEXTURE_2D, 0, GL2.GL_RGBA, size, size, 0, GL2.GL_RGBA, GL2.GL_UNSIGNED_BYTE, pixels);
-					gl.glTexParameteri(GL2.GL_TEXTURE_2D, GL2.GL_TEXTURE_MIN_FILTER, GL2.GL_LINEAR);
-					gl.glTexParameteri(GL2.GL_TEXTURE_2D, GL2.GL_TEXTURE_MAG_FILTER, GL2.GL_LINEAR);
+					glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, size, size, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
+					glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+					glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 					GlCleaner.oncard_texture += pixels.limit() - this.textureSize;
 					this.textureSize = pixels.limit();
 				}
-				gl.glTexParameteri(GL2.GL_TEXTURE_2D, GL2.GL_TEXTURE_WRAP_S, this.aBoolean285 ? GL2.GL_REPEAT : GL2.GL_CLAMP_TO_EDGE);
-				gl.glTexParameteri(GL2.GL_TEXTURE_2D, GL2.GL_TEXTURE_WRAP_T, this.aBoolean284 ? GL2.GL_REPEAT : GL2.GL_CLAMP_TO_EDGE);
+				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, this.aBoolean285 ? GL_REPEAT : GL_CLAMP_TO_EDGE);
+				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, this.aBoolean284 ? GL_REPEAT : GL_CLAMP_TO_EDGE);
 			} else {
 				GlRenderer.setTextureId(this.textureId);
 			}
