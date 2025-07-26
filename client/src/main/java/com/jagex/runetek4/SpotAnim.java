@@ -4,54 +4,55 @@ import com.jagex.runetek4.config.types.spotanim.SpotAnimType;
 import com.jagex.runetek4.config.types.seq.SeqTypeList;
 import com.jagex.runetek4.config.types.spotanim.SpotAnimTypeList;
 import com.jagex.runetek4.config.types.seq.SeqType;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
-@OriginalClass("runetek4.client!bh")
+@OriginalClass("client!bh")
 public final class SpotAnim extends Entity {
 
-	@OriginalMember(owner = "runetek4.client!bh", name = "y", descriptor = "Lclient!ga;")
+	@OriginalMember(owner = "client!bh", name = "y", descriptor = "Lclient!ga;")
 	private ParticleSystem aClass47_Sub1_1;
 
-	@OriginalMember(owner = "runetek4.client!bh", name = "B", descriptor = "I")
+	@OriginalMember(owner = "client!bh", name = "B", descriptor = "I")
 	private int anInt593 = 0;
 
-	@OriginalMember(owner = "runetek4.client!bh", name = "O", descriptor = "I")
+	@OriginalMember(owner = "client!bh", name = "O", descriptor = "I")
 	private final int anInt602 = -1;
 
-	@OriginalMember(owner = "runetek4.client!bh", name = "P", descriptor = "I")
+	@OriginalMember(owner = "client!bh", name = "P", descriptor = "I")
 	private int anInt603 = -32768;
 
-	@OriginalMember(owner = "runetek4.client!bh", name = "T", descriptor = "Z")
+	@OriginalMember(owner = "client!bh", name = "T", descriptor = "Z")
 	public boolean seqComplete = false;
 
-	@OriginalMember(owner = "runetek4.client!bh", name = "U", descriptor = "I")
+	@OriginalMember(owner = "client!bh", name = "U", descriptor = "I")
 	private int anInt607 = 0;
 
-	@OriginalMember(owner = "runetek4.client!bh", name = "I", descriptor = "I")
+	@OriginalMember(owner = "client!bh", name = "I", descriptor = "I")
 	public final int z;
 
-	@OriginalMember(owner = "runetek4.client!bh", name = "Q", descriptor = "I")
+	@OriginalMember(owner = "client!bh", name = "Q", descriptor = "I")
 	public final int x;
 
-	@OriginalMember(owner = "runetek4.client!bh", name = "S", descriptor = "I")
+	@OriginalMember(owner = "client!bh", name = "S", descriptor = "I")
 	public final int level;
 
-	@OriginalMember(owner = "runetek4.client!bh", name = "w", descriptor = "I")
+	@OriginalMember(owner = "client!bh", name = "w", descriptor = "I")
 	public final int startCycle;
 
-	@OriginalMember(owner = "runetek4.client!bh", name = "F", descriptor = "I")
+	@OriginalMember(owner = "client!bh", name = "F", descriptor = "I")
 	private final int anInt596;
 
-	@OriginalMember(owner = "runetek4.client!bh", name = "K", descriptor = "I")
+	@OriginalMember(owner = "client!bh", name = "K", descriptor = "I")
 	public final int anInt599;
 
-	@OriginalMember(owner = "runetek4.client!bh", name = "J", descriptor = "Lclient!tk;")
+	@OriginalMember(owner = "client!bh", name = "J", descriptor = "Lclient!tk;")
 	private SeqType aClass144_1;
 
-	@OriginalMember(owner = "runetek4.client!bh", name = "<init>", descriptor = "(IIIIIII)V")
+	@OriginalMember(owner = "client!bh", name = "<init>", descriptor = "(IIIIIII)V")
 	public SpotAnim(@OriginalArg(0) int arg0, @OriginalArg(1) int level, @OriginalArg(2) int x, @OriginalArg(3) int z, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
 		this.z = z;
 		this.x = x;
@@ -68,7 +69,7 @@ public final class SpotAnim extends Entity {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!bh", name = "b", descriptor = "(Z)Lclient!ak;")
+	@OriginalMember(owner = "client!bh", name = "b", descriptor = "(Z)Lclient!ak;")
 	private Model method552() {
 		@Pc(8) SpotAnimType local8 = SpotAnimTypeList.get(this.anInt596);
 		@Pc(26) Model local26;
@@ -80,13 +81,13 @@ public final class SpotAnim extends Entity {
 		return local26 == null ? null : local26;
 	}
 
-	@OriginalMember(owner = "runetek4.client!bh", name = "b", descriptor = "()I")
+	@OriginalMember(owner = "client!bh", name = "b", descriptor = "()I")
 	@Override
 	public final int getMinY() {
 		return this.anInt603;
 	}
 
-	@OriginalMember(owner = "runetek4.client!bh", name = "a", descriptor = "(IIIIIIIIJILclient!ga;)V")
+	@OriginalMember(owner = "client!bh", name = "a", descriptor = "(IIIIIIIIJILclient!ga;)V")
 	@Override
 	public final void render(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) long arg8, @OriginalArg(9) int arg9, @OriginalArg(10) ParticleSystem arg10) {
 		@Pc(7) Model local7 = this.method552();
@@ -96,7 +97,7 @@ public final class SpotAnim extends Entity {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!bh", name = "a", descriptor = "(ZI)V")
+	@OriginalMember(owner = "client!bh", name = "a", descriptor = "(ZI)V")
 	public final void update(@OriginalArg(1) int arg0) {
 		if (this.seqComplete) {
 			return;
@@ -112,7 +113,7 @@ public final class SpotAnim extends Entity {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!bh", name = "a", descriptor = "(IIIII)V")
+	@OriginalMember(owner = "client!bh", name = "a", descriptor = "(IIIII)V")
 	@Override
 	public final void method4545(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 	}

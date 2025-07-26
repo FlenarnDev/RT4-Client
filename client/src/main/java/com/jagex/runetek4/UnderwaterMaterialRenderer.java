@@ -3,31 +3,37 @@ package com.jagex.runetek4;
 import java.nio.ByteBuffer;
 
 import com.jagex.runetek4.util.ColorUtils;
+
 import com.jogamp.opengl.*;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
-@OriginalClass("runetek4.client!wg")
+import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL13.*;
+import static org.lwjgl.opengl.GL15.*;
+
+@OriginalClass("client!wg")
 public final class UnderwaterMaterialRenderer implements MaterialRenderer {
 
-	@OriginalMember(owner = "runetek4.client!nh", name = "Z", descriptor = "I")
+	@OriginalMember(owner = "client!nh", name = "Z", descriptor = "I")
 	public static int anInt3241 = 128;
 
-	@OriginalMember(owner = "runetek4.client!wg", name = "b", descriptor = "Z")
+	@OriginalMember(owner = "client!wg", name = "b", descriptor = "Z")
 	public static boolean aBoolean308 = false;
 
-	@OriginalMember(owner = "runetek4.client!wg", name = "c", descriptor = "I")
+	@OriginalMember(owner = "client!wg", name = "c", descriptor = "I")
 	private int textureId = -1;
 
-	@OriginalMember(owner = "runetek4.client!wg", name = "a", descriptor = "[F")
+	@OriginalMember(owner = "client!wg", name = "a", descriptor = "[F")
 	private final float[] tempVertex = new float[4];
 
-	@OriginalMember(owner = "runetek4.client!wg", name = "d", descriptor = "I")
+	@OriginalMember(owner = "client!wg", name = "d", descriptor = "I")
 	private int listId = -1;
 
-	@OriginalMember(owner = "runetek4.client!wg", name = "<init>", descriptor = "()V")
+	@OriginalMember(owner = "client!wg", name = "<init>", descriptor = "()V")
 	public UnderwaterMaterialRenderer() {
 		if (GlRenderer.maxTextureUnits >= 2) {
 			@Pc(17) int[] temp = new int[1];
@@ -49,112 +55,108 @@ public final class UnderwaterMaterialRenderer implements MaterialRenderer {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!wg", name = "e", descriptor = "()I")
+	@OriginalMember(owner = "client!wg", name = "e", descriptor = "()I")
 	public static int method4607() {
 		return aBoolean308 ? 33986 : 33985;
 	}
 
-	@OriginalMember(owner = "runetek4.client!wg", name = "f", descriptor = "()V")
+	@OriginalMember(owner = "client!wg", name = "f", descriptor = "()V")
 	public static void method4608() {
-		@Pc(1) GL2 gl = GlRenderer.gl;
-		gl.glClientActiveTexture(method4607());
-		gl.glDisableClientState(GL2.GL_TEXTURE_COORD_ARRAY);
-		gl.glClientActiveTexture(GL2.GL_TEXTURE0);
+		glClientActiveTexture(method4607());
+		glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+		glClientActiveTexture(GL_TEXTURE0);
 	}
 
-	@OriginalMember(owner = "runetek4.client!wg", name = "g", descriptor = "()V")
+	@OriginalMember(owner = "client!wg", name = "g", descriptor = "()V")
 	public static void method4609() {
-		@Pc(1) GL2 gl = GlRenderer.gl;
-		gl.glClientActiveTexture(method4607());
-		gl.glEnableClientState(GL2.GL_TEXTURE_COORD_ARRAY);
-		gl.glClientActiveTexture(GL2.GL_TEXTURE0);
+		glClientActiveTexture(method4607());
+		glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+		glClientActiveTexture(GL_TEXTURE0);
 	}
 
-	@OriginalMember(owner = "runetek4.client!mf", name = "a", descriptor = "()V")
+	@OriginalMember(owner = "client!mf", name = "a", descriptor = "()V")
 	public static void method2959() {
-		@Pc(1) GL2 gl = GlRenderer.gl;
-		gl.glDisableClientState(GL2.GL_COLOR_ARRAY);
+		glDisableClientState(GL_COLOR_ARRAY);
 		GlRenderer.setLightingEnabled(false);
-		gl.glDisable(GL2.GL_DEPTH_TEST);
-		gl.glPushAttrib(GL2.GL_FOG_BIT);
-		gl.glFogf(GL2.GL_FOG_START, 3072.0F);
+		glDisable(GL_DEPTH_TEST);
+		glPushAttrib(GL_FOG_BIT);
+		glFogf(GL_FOG_START, 3072.0F);
 		GlRenderer.disableDepthMask();
-		for (@Pc(19) int local19 = 0; local19 < SceneGraph.surfaceHdTiles[0].length; local19++) {
-			@Pc(31) GlTile local31 = SceneGraph.surfaceHdTiles[0][local19];
-			if (local31.texture >= 0 && Rasterizer.textureProvider.getMaterialType(local31.texture) == 4) {
-				gl.glColor4fv(ColorUtils.getRgbFloat(local31.underwaterColor), 0);
-				@Pc(57) float local57 = 201.5F - (local31.blend ? 1.0F : 0.5F);
-				local31.method1944(SceneGraph.tiles, local57, true);
+		for (@Pc(19) int i = 0; i < SceneGraph.surfaceHdTiles[0].length; i++) {
+			@Pc(31) GlTile glTile = SceneGraph.surfaceHdTiles[0][i];
+			if (glTile.texture >= 0 && Rasterizer.textureProvider.getMaterialType(glTile.texture) == 4) {
+				glColor4fv(ColorUtils.getRgbFloat(glTile.underwaterColor));
+				@Pc(57) float local57 = 201.5F - (glTile.blend ? 1.0F : 0.5F);
+				glTile.method1944(SceneGraph.tiles, local57, true);
 			}
 		}
-		gl.glEnableClientState(GL2.GL_COLOR_ARRAY);
+		glEnableClientState(GL_COLOR_ARRAY);
 		GlRenderer.restoreLighting();
-		gl.glEnable(GL2.GL_DEPTH_TEST);
-		gl.glPopAttrib();
+		glEnable(GL_DEPTH_TEST);
+		glPopAttrib();
 		GlRenderer.enableDepthMask();
 	}
 
-	@OriginalMember(owner = "runetek4.client!wg", name = "d", descriptor = "()V")
+	@OriginalMember(owner = "client!wg", name = "d", descriptor = "()V")
 	private void createLists() {
-		@Pc(1) GL2 gl = GlRenderer.gl;
-		this.listId = gl.glGenLists(2);
-		gl.glNewList(this.listId, GL2.GL_COMPILE);
-		gl.glActiveTexture(GL2.GL_TEXTURE1);
+		this.listId = glGenLists(2);
+		glNewList(this.listId, GL2.GL_COMPILE);
+		glActiveTexture(GL2.GL_TEXTURE1);
 		if (aBoolean308) {
-			gl.glBindTexture(GL2.GL_TEXTURE_3D, MaterialManager.texture3D);
-			gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_RGB, GL2.GL_ADD);
-			gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_OPERAND0_RGB, GL2.GL_SRC_COLOR);
-			gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_ALPHA, GL2.GL_REPLACE);
-			gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_SRC0_ALPHA, GL2.GL_PREVIOUS);
-			gl.glTexGeni(GL2.GL_S, GL2.GL_TEXTURE_GEN_MODE, GL2.GL_EYE_LINEAR);
-			gl.glTexGeni(GL2.GL_R, GL2.GL_TEXTURE_GEN_MODE, GL2.GL_EYE_LINEAR);
-			gl.glTexGeni(GL2.GL_T, GL2.GL_TEXTURE_GEN_MODE, GL2.GL_EYE_LINEAR);
-			gl.glTexGeni(GL2.GL_Q, GL2.GL_TEXTURE_GEN_MODE, GL2.GL_OBJECT_LINEAR);
-			gl.glTexGenfv(GL2.GL_Q, GL2.GL_OBJECT_PLANE, new float[] { 0.0F, 0.0F, 0.0F, 1.0F }, 0);
-			gl.glEnable(GL2.GL_TEXTURE_GEN_S);
-			gl.glEnable(GL2.GL_TEXTURE_GEN_T);
-			gl.glEnable(GL2.GL_TEXTURE_GEN_R);
-			gl.glEnable(GL2.GL_TEXTURE_GEN_Q);
-			gl.glEnable(GL2.GL_TEXTURE_3D);
-			gl.glActiveTexture(GL2.GL_TEXTURE2);
-			gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_TEXTURE_ENV_MODE, GL2.GL_COMBINE);
+			glBindTexture(GL_TEXTURE_3D, MaterialManager.texture3D);
+			glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_RGB, GL_ADD);
+			glTexEnvi(GL_TEXTURE_ENV, GL_OPERAND0_RGB, GL_SRC_COLOR);
+			glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_ALPHA, GL_REPLACE);
+			glTexEnvi(GL_TEXTURE_ENV, GL_SRC0_ALPHA, GL_PREVIOUS);
+			glTexGeni(GL_S, GL_TEXTURE_GEN_MODE, GL_EYE_LINEAR);
+			glTexGeni(GL_R, GL_TEXTURE_GEN_MODE, GL_EYE_LINEAR);
+			glTexGeni(GL_T, GL_TEXTURE_GEN_MODE, GL_EYE_LINEAR);
+			glTexGeni(GL_Q, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);
+			glTexGenfv(GL_Q, GL_OBJECT_PLANE, new float[] { 0.0F, 0.0F, 0.0F, 1.0F });
+			glEnable(GL_TEXTURE_GEN_S);
+			glEnable(GL_TEXTURE_GEN_T);
+			glEnable(GL_TEXTURE_GEN_R);
+			glEnable(GL_TEXTURE_GEN_Q);
+			glEnable(GL_TEXTURE_3D);
+			glActiveTexture(GL_TEXTURE2);
+			glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_COMBINE);
 		}
-		gl.glBindTexture(GL2.GL_TEXTURE_1D, this.textureId);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_RGB, GL2.GL_INTERPOLATE);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_SRC0_RGB, GL2.GL_CONSTANT);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_SRC2_RGB, GL2.GL_TEXTURE);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_ALPHA, GL2.GL_REPLACE);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_SRC0_ALPHA, GL2.GL_PREVIOUS);
-		gl.glTexGeni(GL2.GL_S, GL2.GL_TEXTURE_GEN_MODE, GL2.GL_EYE_LINEAR);
-		gl.glEnable(GL2.GL_TEXTURE_1D);
-		gl.glEnable(GL2.GL_TEXTURE_GEN_S);
-		gl.glActiveTexture(GL2.GL_TEXTURE0);
-		gl.glEndList();
-		gl.glNewList(this.listId + 1, GL2.GL_COMPILE);
-		gl.glActiveTexture(GL2.GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_1D, this.textureId);
+		glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_RGB, GL_INTERPOLATE);
+		glTexEnvi(GL_TEXTURE_ENV, GL_SRC0_RGB, GL_CONSTANT);
+		glTexEnvi(GL_TEXTURE_ENV, GL_SRC2_RGB, GL_TEXTURE);
+		glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_ALPHA, GL_REPLACE);
+		glTexEnvi(GL_TEXTURE_ENV, GL_SRC0_ALPHA, GL_PREVIOUS);
+		glTexGeni(GL_S, GL_TEXTURE_GEN_MODE, GL_EYE_LINEAR);
+		glEnable(GL_TEXTURE_1D);
+		glEnable(GL_TEXTURE_GEN_S);
+		glActiveTexture(GL_TEXTURE0);
+		glEndList();
+		glNewList(this.listId + 1, GL_COMPILE);
+		glActiveTexture(GL_TEXTURE1);
 		if (aBoolean308) {
-			gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_RGB, GL2.GL_MODULATE);
-			gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_OPERAND0_RGB, GL2.GL_SRC_COLOR);
-			gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_ALPHA, GL2.GL_MODULATE);
-			gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_SRC0_ALPHA, GL2.GL_TEXTURE);
-			gl.glDisable(GL2.GL_TEXTURE_GEN_S);
-			gl.glDisable(GL2.GL_TEXTURE_GEN_T);
-			gl.glDisable(GL2.GL_TEXTURE_GEN_R);
-			gl.glDisable(GL2.GL_TEXTURE_GEN_Q);
-			gl.glDisable(GL2.GL_TEXTURE_3D);
-			gl.glActiveTexture(GL2.GL_TEXTURE2);
-			gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_TEXTURE_ENV_MODE, GL2.GL_MODULATE);
+			glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_RGB, GL_MODULATE);
+			glTexEnvi(GL_TEXTURE_ENV, GL_OPERAND0_RGB, GL_SRC_COLOR);
+			glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_ALPHA, GL_MODULATE);
+			glTexEnvi(GL_TEXTURE_ENV, GL_SRC0_ALPHA, GL_TEXTURE);
+			glDisable(GL_TEXTURE_GEN_S);
+			glDisable(GL_TEXTURE_GEN_T);
+			glDisable(GL_TEXTURE_GEN_R);
+			glDisable(GL_TEXTURE_GEN_Q);
+			glDisable(GL_TEXTURE_3D);
+			glActiveTexture(GL_TEXTURE2);
+			glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 		}
-		gl.glTexEnvfv(GL2.GL_TEXTURE_ENV, GL2.GL_TEXTURE_ENV_COLOR, new float[] { 0.0F, 1.0F, 0.0F, 1.0F }, 0);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_RGB, GL2.GL_MODULATE);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_SRC0_RGB, GL2.GL_TEXTURE);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_SRC2_RGB, GL2.GL_CONSTANT);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_COMBINE_ALPHA, GL2.GL_MODULATE);
-		gl.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_SRC0_ALPHA, GL2.GL_TEXTURE);
-		gl.glDisable(GL2.GL_TEXTURE_1D);
-		gl.glDisable(GL2.GL_TEXTURE_GEN_S);
-		gl.glActiveTexture(GL2.GL_TEXTURE0);
-		gl.glEndList();
+		glTexEnvfv(GL_TEXTURE_ENV, GL_TEXTURE_ENV_COLOR, new float[] { 0.0F, 1.0F, 0.0F, 1.0F });
+		glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_RGB, GL_MODULATE);
+		glTexEnvi(GL_TEXTURE_ENV, GL_SRC0_RGB, GL_TEXTURE);
+		glTexEnvi(GL_TEXTURE_ENV, GL_SRC2_RGB, GL_CONSTANT);
+		glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_ALPHA, GL_MODULATE);
+		glTexEnvi(GL_TEXTURE_ENV, GL_SRC0_ALPHA, GL_TEXTURE);
+		glDisable(GL_TEXTURE_1D);
+		glDisable(GL_TEXTURE_GEN_S);
+		glActiveTexture(GL_TEXTURE0);
+		glEndList();
 	}
 
 	@OriginalMember(owner = "runetek4.client!wg", name = "b", descriptor = "()V")

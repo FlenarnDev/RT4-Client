@@ -4,17 +4,27 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
 import com.jagex.runetek4.client.Preferences;
+
 import com.jagex.runetek4.core.datastruct.IntWrapper;
 import com.jagex.runetek4.core.datastruct.HashTable;
-import com.jagex.runetek4.node.Node;
 import com.jagex.runetek4.core.io.Packet;
+
+import com.jagex.runetek4.node.Node;
+
 import com.jagex.runetek4.scene.tile.Tile;
+
 import com.jagex.runetek4.util.IntUtils;
-import com.jogamp.opengl.*;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import static com.jagex.runetek4.GlRenderer.glDrawElementsWrapper;
+import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL13.GL_TEXTURE0;
+import static org.lwjgl.opengl.GL13.glClientActiveTexture;
+import static org.lwjgl.opengl.GL15.*;
 
 @OriginalClass("client!hg")
 public final class GlTile extends Node {
@@ -305,7 +315,6 @@ public final class GlTile extends Node {
 		if (aClass3_Sub15_3.offset == 0 && aClass3_Sub15_2.offset == 0) {
 			return;
 		}
-		@Pc(257) GL2 local257 = GlRenderer.gl;
 		if (this.texture == -1 || arg2) {
 			GlRenderer.setTextureId(-1);
 			MaterialManager.setMaterial(0, 0);
@@ -315,40 +324,40 @@ public final class GlTile extends Node {
 		@Pc(282) int local282 = this.aBoolean139 ? 40 : 36;
 		if (this.aClass155_3 == null) {
 			if (GlRenderer.arbVboSupported) {
-				local257.glBindBuffer(GL2.GL_ARRAY_BUFFER, 0);
+				glBindBuffer(GL_ARRAY_BUFFER, 0);
 			}
 			this.aByteBuffer3.position(0);
-			local257.glVertexPointer(3, GL2.GL_FLOAT, local282, this.aByteBuffer3);
+			glVertexPointer(3, GL_FLOAT, local282, this.aByteBuffer3);
 			this.aByteBuffer3.position(12);
-			local257.glColorPointer(4, GL2.GL_UNSIGNED_BYTE, local282, this.aByteBuffer3);
+			glColorPointer(4, GL_UNSIGNED_BYTE, local282, this.aByteBuffer3);
 			if (Preferences.highDetailLighting) {
 				this.aByteBuffer3.position(16);
-				local257.glNormalPointer(GL2.GL_FLOAT, local282, this.aByteBuffer3);
+				glNormalPointer(GL_FLOAT, local282, this.aByteBuffer3);
 			}
 			this.aByteBuffer3.position(28);
-			local257.glTexCoordPointer(2, GL2.GL_FLOAT, local282, this.aByteBuffer3);
+			glTexCoordPointer(2, GL_FLOAT, local282, this.aByteBuffer3);
 			if (this.aBoolean139) {
-				local257.glClientActiveTexture(UnderwaterMaterialRenderer.method4607());
+				glClientActiveTexture(UnderwaterMaterialRenderer.method4607());
 				this.aByteBuffer3.position(36);
-				local257.glTexCoordPointer(1, GL2.GL_FLOAT, local282, this.aByteBuffer3);
-				local257.glClientActiveTexture(GL2.GL_TEXTURE0);
+				glTexCoordPointer(1, GL_FLOAT, local282, this.aByteBuffer3);
+				glClientActiveTexture(GL_TEXTURE0);
 			}
 		} else {
 			this.aClass155_3.bindArray();
-			local257.glVertexPointer(3, GL2.GL_FLOAT, local282, 0L);
-			local257.glColorPointer(4, GL2.GL_UNSIGNED_BYTE, local282, 12L);
+			glVertexPointer(3, GL_FLOAT, local282, 0L);
+			glColorPointer(4, GL_UNSIGNED_BYTE, local282, 12L);
 			if (Preferences.highDetailLighting) {
-				local257.glNormalPointer(GL2.GL_FLOAT, local282, 16L);
+				glNormalPointer(GL_FLOAT, local282, 16L);
 			}
-			local257.glTexCoordPointer(2, GL2.GL_FLOAT, local282, 28L);
+			glTexCoordPointer(2, GL_FLOAT, local282, 28L);
 			if (this.aBoolean139) {
-				local257.glClientActiveTexture(UnderwaterMaterialRenderer.method4607());
-				local257.glTexCoordPointer(1, GL2.GL_FLOAT, local282, 36L);
-				local257.glClientActiveTexture(GL2.GL_TEXTURE0);
+				glClientActiveTexture(UnderwaterMaterialRenderer.method4607());
+				glTexCoordPointer(1, GL_FLOAT, local282, 36L);
+				glClientActiveTexture(GL_TEXTURE0);
 			}
 		}
 		if (GlRenderer.arbVboSupported) {
-			local257.glBindBuffer(GL2.GL_ELEMENT_ARRAY_BUFFER, 0);
+			glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 		}
 		if (aClass3_Sub15_3.offset != 0) {
 			if (aByteBuffer5 == null || aByteBuffer5.capacity() < aClass3_Sub15_3.offset) {
@@ -359,7 +368,7 @@ public final class GlTile extends Node {
 			aByteBuffer5.put(aClass3_Sub15_3.data, 0, aClass3_Sub15_3.offset);
 			aByteBuffer5.flip();
 			GlRenderer.configureFixedDepthAdjustment(arg1);
-			local257.glDrawElements(GL2.GL_TRIANGLES, aClass3_Sub15_3.offset / 4, GL2.GL_UNSIGNED_INT, aByteBuffer5);
+			glDrawElementsWrapper(GL_TRIANGLES, aClass3_Sub15_3.offset / 4, GL_UNSIGNED_INT, aByteBuffer5);
 		}
 		if (aClass3_Sub15_2.offset == 0) {
 			return;
@@ -373,7 +382,7 @@ public final class GlTile extends Node {
 		aByteBuffer4.flip();
 		GlRenderer.configureFixedDepthAdjustment(arg1 - 100.0F);
 		GlRenderer.disableDepthMask();
-		local257.glDrawElements(GL2.GL_TRIANGLES, aClass3_Sub15_2.offset / 4, GL2.GL_UNSIGNED_INT, aByteBuffer4);
+		glDrawElementsWrapper(GL_TRIANGLES, aClass3_Sub15_2.offset / 4, GL_UNSIGNED_INT, aByteBuffer4);
 		GlRenderer.enableDepthMask();
 	}
 

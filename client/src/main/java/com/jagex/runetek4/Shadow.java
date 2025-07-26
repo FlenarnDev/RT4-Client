@@ -14,6 +14,7 @@ import org.openrs2.deob.annotation.Pc;
 
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL12.GL_CLAMP_TO_EDGE;
+import static org.lwjgl.opengl.GL15.*;
 
 @OriginalClass("client!wm")
 public final class Shadow {
@@ -167,33 +168,33 @@ public final class Shadow {
 		@Pc(148) ByteBuffer local148 = ByteBuffer.wrap(pixels);
 		local148.limit(16384);
 		GlRenderer.setTextureId(this.anInt5901);
-		gl.glTexImage2D(GL2.GL_TEXTURE_2D, 0, GL2.GL_ALPHA, 128, 128, 0, GL2.GL_ALPHA, GL2.GL_UNSIGNED_BYTE, local148);
+		gl.glTexImage2D(GL_TEXTURE_2D, 0, GL_ALPHA, 128, 128, 0, GL_ALPHA, GL_UNSIGNED_BYTE, local148);
 		return true;
 	}
 
-	@OriginalMember(owner = "runetek4.client!wm", name = "b", descriptor = "()V")
+	@OriginalMember(owner = "client!wm", name = "b", descriptor = "()V")
 	public final void method4679() {
 		@Pc(1) GL2 gl = GlRenderer.gl;
 		GlRenderer.setTextureId(this.anInt5901);
 		if (this.aClass155_7 == null) {
 			if (GlRenderer.arbVboSupported) {
-				gl.glBindBuffer(GL2.GL_ARRAY_BUFFER, 0);
+				glBindBuffer(GL_ARRAY_BUFFER, 0);
 			}
-			gl.glInterleavedArrays(GL2.GL_T2F_V3F, 20, this.aByteBuffer12);
+			glInterleavedArrays(GL_T2F_V3F, 20, this.aByteBuffer12);
 			GlRenderer.normalArrayEnabled = false;
 		} else {
 			this.aClass155_7.bindArray();
-			gl.glInterleavedArrays(GL2.GL_T2F_V3F, 20, 0L);
+			glInterleavedArrays(GL_T2F_V3F, 20, 0L);
 			GlRenderer.normalArrayEnabled = false;
 		}
 		if (this.aClass155_6 == null) {
 			if (GlRenderer.arbVboSupported) {
-				gl.glBindBuffer(GL2.GL_ELEMENT_ARRAY_BUFFER, 0);
+				glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 			}
-			gl.glDrawElements(GL2.GL_TRIANGLES, 384, GL2.GL_UNSIGNED_INT, this.aByteBuffer11);
+			gl.glDrawElements(GL_TRIANGLES, 384, GL2.GL_UNSIGNED_INT, this.aByteBuffer11);
 		} else {
 			this.aClass155_6.bindElementArray();
-			gl.glDrawElements(GL2.GL_TRIANGLES, 384, GL2.GL_UNSIGNED_INT, 0L);
+			glDrawElements(GL_TRIANGLES, 384, GL_UNSIGNED_INT, 0L);
 		}
 	}
 }

@@ -1,28 +1,32 @@
 package com.jagex.runetek4;
 
-import com.jogamp.opengl.GL2;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
+import static org.lwjgl.opengl.GL11.*;
+
 public class ShadowManager {
-    @OriginalMember(owner = "runetek4.client!tj", name = "a", descriptor = "Lclient!ek;")
+    @OriginalMember(owner = "client!tj", name = "a", descriptor = "Lclient!ek;")
     public static SoftwareIndexedSprite shadowMapImage;
-    @OriginalMember(owner = "runetek4.client!tj", name = "b", descriptor = "[[Lclient!wm;")
+
+    @OriginalMember(owner = "client!tj", name = "b", descriptor = "[[Lclient!wm;")
     public static Shadow[][] shadows;
-    @OriginalMember(owner = "runetek4.client!tj", name = "c", descriptor = "I")
+
+    @OriginalMember(owner = "client!tj", name = "c", descriptor = "I")
     static int anInt5345;
-    @OriginalMember(owner = "runetek4.client!tj", name = "e", descriptor = "I")
+
+    @OriginalMember(owner = "client!tj", name = "e", descriptor = "I")
     static int anInt5346;
 
-    @OriginalMember(owner = "runetek4.client!tj", name = "a", descriptor = "()V")
+    @OriginalMember(owner = "client!tj", name = "a", descriptor = "()V")
     public static void method4203() {
         shadowMapImage = null;
         Sprites.floorShadows = null;
         shadows = null;
     }
 
-    @OriginalMember(owner = "runetek4.client!tj", name = "a", descriptor = "(II)V")
+    @OriginalMember(owner = "client!tj", name = "a", descriptor = "(II)V")
     public static void method4201() {
         anInt5346 = 13;
         anInt5345 = 13;
@@ -35,7 +39,7 @@ public class ShadowManager {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!tj", name = "a", descriptor = "([B[BIIIIII)V")
+    @OriginalMember(owner = "client!tj", name = "a", descriptor = "([B[BIIIIII)V")
     private static void method4195(@OriginalArg(0) byte[] arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
         @Pc(4) int local4 = -(arg4 >> 2);
         @Pc(9) int local9 = -(arg4 & 0x3);
@@ -61,7 +65,7 @@ public class ShadowManager {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!tj", name = "a", descriptor = "(IIII)V")
+    @OriginalMember(owner = "client!tj", name = "a", descriptor = "(IIII)V")
     static void method4196(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
         @Pc(5) int local5 = arg0 - 1 >> 7;
         @Pc(15) int local15 = arg0 + arg2 - 1 - 1 >> 7;
@@ -74,7 +78,7 @@ public class ShadowManager {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!tj", name = "c", descriptor = "(Lclient!ek;Lclient!ek;II)V")
+    @OriginalMember(owner = "client!tj", name = "c", descriptor = "(Lclient!ek;Lclient!ek;II)V")
     private static void method4202(@OriginalArg(0) SoftwareIndexedSprite arg0, @OriginalArg(1) SoftwareIndexedSprite arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
         arg2 += arg0.xOffset;
         arg3 += arg0.yOffset;
@@ -117,7 +121,7 @@ public class ShadowManager {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!tj", name = "a", descriptor = "(Lclient!ek;III)V")
+    @OriginalMember(owner = "client!tj", name = "a", descriptor = "(Lclient!ek;III)V")
     public static void method4207(@OriginalArg(0) SoftwareIndexedSprite arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
         if (arg0 != null) {
             @Pc(12) int local12 = arg1 - (arg2 * FogManager.lightX >> 8) >> 3;
@@ -126,7 +130,7 @@ public class ShadowManager {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!tj", name = "a", descriptor = "([BIIIII)Z")
+    @OriginalMember(owner = "client!tj", name = "a", descriptor = "([BIIIII)Z")
     private static boolean method4199(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
         @Pc(3) int local3 = arg2 % 8;
         @Pc(9) int local9;
@@ -153,7 +157,7 @@ public class ShadowManager {
         return false;
     }
 
-    @OriginalMember(owner = "runetek4.client!tj", name = "b", descriptor = "(Lclient!ek;Lclient!ek;II)Z")
+    @OriginalMember(owner = "client!tj", name = "b", descriptor = "(Lclient!ek;Lclient!ek;II)Z")
     private static boolean method4200(@OriginalArg(0) SoftwareIndexedSprite arg0, @OriginalArg(1) SoftwareIndexedSprite arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
         arg2 += arg0.xOffset;
         arg3 += arg0.yOffset;
@@ -193,7 +197,7 @@ public class ShadowManager {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!tj", name = "b", descriptor = "(Lclient!ek;III)Z")
+    @OriginalMember(owner = "client!tj", name = "b", descriptor = "(Lclient!ek;III)Z")
     public static boolean method4209(@OriginalArg(0) SoftwareIndexedSprite arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
         if (arg0 == null) {
             return false;
@@ -204,7 +208,7 @@ public class ShadowManager {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!tj", name = "a", descriptor = "(Lclient!ek;Lclient!ek;II)V")
+    @OriginalMember(owner = "client!tj", name = "a", descriptor = "(Lclient!ek;Lclient!ek;II)V")
     static void method4194(@OriginalArg(0) SoftwareIndexedSprite arg0, @OriginalArg(1) SoftwareIndexedSprite arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
         arg2 += arg0.xOffset;
         arg3 += arg0.yOffset;
@@ -247,7 +251,7 @@ public class ShadowManager {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!tj", name = "b", descriptor = "([B[BIIIIII)V")
+    @OriginalMember(owner = "client!tj", name = "b", descriptor = "([B[BIIIIII)V")
     private static void method4204(@OriginalArg(0) byte[] arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
         @Pc(4) int local4 = -(arg4 >> 2);
         @Pc(9) int local9 = -(arg4 & 0x3);
@@ -273,7 +277,7 @@ public class ShadowManager {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!tj", name = "a", descriptor = "(IIZZIIIIII)V")
+    @OriginalMember(owner = "client!tj", name = "a", descriptor = "(IIZZIIIIII)V")
     public static void method4197(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9) {
         if (arg2 && arg3 || (arg2 && arg0 == 1 || arg3 && arg0 == 0)) {
             return;
@@ -290,7 +294,7 @@ public class ShadowManager {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!tj", name = "a", descriptor = "([B[BIIIII)V")
+    @OriginalMember(owner = "client!tj", name = "a", descriptor = "([B[BIIIII)V")
     private static void method4206(@OriginalArg(0) byte[] arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
         for (@Pc(1) int local1 = -16; local1 < 0; local1++) {
             for (@Pc(5) int local5 = -4; local5 < 0; local5++) {
@@ -312,7 +316,7 @@ public class ShadowManager {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!tj", name = "b", descriptor = "([B[BIIIII)V")
+    @OriginalMember(owner = "client!tj", name = "b", descriptor = "([B[BIIIII)V")
     private static void method4208(@OriginalArg(0) byte[] arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
         for (@Pc(1) int local1 = -16; local1 < 0; local1++) {
             for (@Pc(5) int local5 = -4; local5 < 0; local5++) {
@@ -334,7 +338,7 @@ public class ShadowManager {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!tj", name = "a", descriptor = "(Lclient!ek;Lclient!ek;IIIZ)V")
+    @OriginalMember(owner = "client!tj", name = "a", descriptor = "(Lclient!ek;Lclient!ek;IIIZ)V")
     private static void method4210(@OriginalArg(0) SoftwareIndexedSprite arg0, @OriginalArg(1) SoftwareIndexedSprite arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5) {
         if (arg2 <= 0 || arg3 <= 0 || arg2 + 16 >= arg1.width || arg3 + 16 >= arg1.height) {
             return;
@@ -369,15 +373,14 @@ public class ShadowManager {
         method4196(arg2, arg3, 16, 16);
     }
 
-    @OriginalMember(owner = "runetek4.client!tj", name = "a", descriptor = "(IIII[[Z[[I)V")
+    @OriginalMember(owner = "client!tj", name = "a", descriptor = "(IIII[[Z[[I)V")
     public static void method4198(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean[][] arg4, @OriginalArg(5) int[][] arg5) {
-        @Pc(1) GL2 gl = GlRenderer.gl;
         GlRenderer.setTextureCombineRgbMode(1);
         GlRenderer.setTextureCombineAlphaMode(1);
         GlRenderer.resetTextureMatrix();
         GlRenderer.setLightingEnabled(false);
         MaterialManager.setMaterial(0, 0);
-        gl.glDepthMask(false);
+        glDepthMask(false);
         for (@Pc(17) int local17 = 0; local17 < anInt5346; local17++) {
             label52: for (@Pc(22) int local22 = 0; local22 < anInt5345; local22++) {
                 for (@Pc(29) int local29 = local17 * 8; local29 < local17 * 8 + 8; local29++) {
@@ -389,10 +392,10 @@ public class ShadowManager {
                                     local89.method4677(shadowMapImage, local17, local22);
                                     local89.outputToSprite = false;
                                 }
-                                gl.glPushMatrix();
-                                gl.glTranslatef((float) (local17 * 1024), 0.0F, (float) (local22 * 1024));
+                                glPushMatrix();
+                                glTranslatef((float) (local17 * 1024), 0.0F, (float) (local22 * 1024));
                                 local89.method4679();
-                                gl.glPopMatrix();
+                                glPopMatrix();
                                 continue label52;
                             }
                         }
@@ -400,12 +403,12 @@ public class ShadowManager {
                 }
             }
         }
-        gl.glEnableClientState(GL2.GL_COLOR_ARRAY);
-        gl.glDepthMask(true);
+        glEnableClientState(GL_COLOR_ARRAY);
+        glDepthMask(true);
         GlRenderer.restoreLighting();
     }
 
-    @OriginalMember(owner = "runetek4.client!tj", name = "c", descriptor = "(Lclient!ek;III)V")
+    @OriginalMember(owner = "client!tj", name = "c", descriptor = "(Lclient!ek;III)V")
     public static void method4211(@OriginalArg(0) SoftwareIndexedSprite arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
         if (arg0 != null) {
             @Pc(12) int local12 = arg1 - (arg2 * FogManager.lightX >> 8) >> 3;

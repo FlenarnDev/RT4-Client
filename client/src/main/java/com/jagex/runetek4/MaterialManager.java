@@ -178,12 +178,12 @@ public class MaterialManager {
     public static void method2809() {
         allows3DTextureMapping = GlRenderer.extTexture3dSupported;
         method2807();
-        method2811();
-        method2812();
+        initializeTextureMapping();
+        waterfallInit();
     }
 
     @OriginalMember(owner = "client!lm", name = "e", descriptor = "()V")
-    private static void method2811() {
+    private static void initializeTextureMapping() {
         @Pc(1) GL2 local1 = GlRenderer.gl;
         if (allows3DTextureMapping) {
             @Pc(6) int[] local6 = new int[1];
@@ -210,7 +210,7 @@ public class MaterialManager {
     }
 
     @OriginalMember(owner = "client!lm", name = "f", descriptor = "()V")
-    private static void method2812() {
+    private static void waterfallInit() {
         @Pc(1) GL2 local1 = GlRenderer.gl;
         if (allows3DTextureMapping) {
             @Pc(6) int[] local6 = new int[1];

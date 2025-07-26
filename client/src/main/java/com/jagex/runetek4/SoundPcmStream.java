@@ -2,60 +2,61 @@ package com.jagex.runetek4;
 
 import com.jagex.runetek4.audio.AudioChannel;
 import com.jagex.runetek4.audio.pcm.PcmSound;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
-@OriginalClass("runetek4.client!b")
+@OriginalClass("client!b")
 public final class SoundPcmStream extends PcmStream {
 
-	@OriginalMember(owner = "runetek4.client!b", name = "v", descriptor = "I")
+	@OriginalMember(owner = "client!b", name = "v", descriptor = "I")
 	public int anInt344;
 
-	@OriginalMember(owner = "runetek4.client!b", name = "y", descriptor = "I")
+	@OriginalMember(owner = "client!b", name = "y", descriptor = "I")
 	public int anInt347;
 
-	@OriginalMember(owner = "runetek4.client!b", name = "z", descriptor = "I")
+	@OriginalMember(owner = "client!b", name = "z", descriptor = "I")
 	public int anInt348;
 
-	@OriginalMember(owner = "runetek4.client!b", name = "C", descriptor = "I")
+	@OriginalMember(owner = "client!b", name = "C", descriptor = "I")
 	private int anInt350;
 
-	@OriginalMember(owner = "runetek4.client!b", name = "D", descriptor = "I")
+	@OriginalMember(owner = "client!b", name = "D", descriptor = "I")
 	private int anInt351;
 
-	@OriginalMember(owner = "runetek4.client!b", name = "E", descriptor = "I")
+	@OriginalMember(owner = "client!b", name = "E", descriptor = "I")
 	public int anInt352;
 
-	@OriginalMember(owner = "runetek4.client!b", name = "G", descriptor = "I")
+	@OriginalMember(owner = "client!b", name = "G", descriptor = "I")
 	public int anInt354;
 
-	@OriginalMember(owner = "runetek4.client!b", name = "H", descriptor = "I")
+	@OriginalMember(owner = "client!b", name = "H", descriptor = "I")
 	public int anInt355;
 
-	@OriginalMember(owner = "runetek4.client!b", name = "w", descriptor = "I")
+	@OriginalMember(owner = "client!b", name = "w", descriptor = "I")
 	private final int start;
 
-	@OriginalMember(owner = "runetek4.client!b", name = "F", descriptor = "I")
+	@OriginalMember(owner = "client!b", name = "F", descriptor = "I")
 	private final int end;
 
-	@OriginalMember(owner = "runetek4.client!b", name = "A", descriptor = "Z")
+	@OriginalMember(owner = "client!b", name = "A", descriptor = "Z")
 	private final boolean aBoolean14;
 
-	@OriginalMember(owner = "runetek4.client!b", name = "t", descriptor = "I")
+	@OriginalMember(owner = "client!b", name = "t", descriptor = "I")
 	private int anInt342;
 
-	@OriginalMember(owner = "runetek4.client!b", name = "u", descriptor = "I")
+	@OriginalMember(owner = "client!b", name = "u", descriptor = "I")
 	private int volume;
 
-	@OriginalMember(owner = "runetek4.client!b", name = "B", descriptor = "I")
+	@OriginalMember(owner = "client!b", name = "B", descriptor = "I")
 	private int pan;
 
-	@OriginalMember(owner = "runetek4.client!b", name = "x", descriptor = "I")
+	@OriginalMember(owner = "client!b", name = "x", descriptor = "I")
 	public int anInt346;
 
-	@OriginalMember(owner = "runetek4.client!b", name = "<init>", descriptor = "(Lclient!kj;II)V")
+	@OriginalMember(owner = "client!b", name = "<init>", descriptor = "(Lclient!kj;II)V")
 	public SoundPcmStream(@OriginalArg(0) PcmSound sound, @OriginalArg(1) int arg1, @OriginalArg(2) int volume) {
 		this.sound = sound;
 		this.start = sound.start;
@@ -68,7 +69,7 @@ public final class SoundPcmStream extends PcmStream {
 		this.method416();
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "<init>", descriptor = "(Lclient!kj;III)V")
+	@OriginalMember(owner = "client!b", name = "<init>", descriptor = "(Lclient!kj;III)V")
 	public SoundPcmStream(@OriginalArg(0) PcmSound sound, @OriginalArg(1) int arg1, @OriginalArg(2) int volume, @OriginalArg(3) int pan) {
 		this.sound = sound;
 		this.start = sound.start;
@@ -81,17 +82,17 @@ public final class SoundPcmStream extends PcmStream {
 		this.method416();
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "a", descriptor = "(Lclient!kj;III)Lclient!b;")
+	@OriginalMember(owner = "client!b", name = "a", descriptor = "(Lclient!kj;III)Lclient!b;")
 	public static SoundPcmStream create(@OriginalArg(0) PcmSound arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		return arg0.samples == null || arg0.samples.length == 0 ? null : new SoundPcmStream(arg0, arg1, arg2, arg3);
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "a", descriptor = "(Lclient!kj;II)Lclient!b;")
+	@OriginalMember(owner = "client!b", name = "a", descriptor = "(Lclient!kj;II)Lclient!b;")
 	public static SoundPcmStream create(@OriginalArg(0) PcmSound sound, @OriginalArg(2) int volume) {
 		return sound.samples == null || sound.samples.length == 0 ? null : new SoundPcmStream(sound, (int) ((long) sound.rate * 256L * (long) 100 / (long) (AudioChannel.sampleRate * 100)), volume << 6);
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "a", descriptor = "(I[B[IIIIIIIILclient!b;)I")
+	@OriginalMember(owner = "client!b", name = "a", descriptor = "(I[B[IIIIIIIILclient!b;)I")
 	public static int method387(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(8) int arg6, @OriginalArg(9) int arg7, @OriginalArg(10) SoundPcmStream arg8) {
 		arg2 >>= 0x8;
 		@Pc(7) int local7 = arg7 >> 8;
@@ -144,7 +145,7 @@ public final class SoundPcmStream extends PcmStream {
 		return arg3 >> 1;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "a", descriptor = "(II[B[IIIIIIIIIILclient!b;II)I")
+	@OriginalMember(owner = "client!b", name = "a", descriptor = "(II[B[IIIIIIIIIILclient!b;II)I")
 	public static int method388(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(8) int arg6, @OriginalArg(9) int arg7, @OriginalArg(11) int arg8, @OriginalArg(12) int arg9, @OriginalArg(13) SoundPcmStream arg10, @OriginalArg(14) int arg11, @OriginalArg(15) int arg12) {
 		arg10.anInt348 -= arg10.anInt344 * arg3;
 		@Pc(23) int local23;
@@ -196,7 +197,7 @@ public final class SoundPcmStream extends PcmStream {
 		return local65;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "a", descriptor = "(II[B[IIIIIIIILclient!b;II)I")
+	@OriginalMember(owner = "client!b", name = "a", descriptor = "(II[B[IIIIIIIILclient!b;II)I")
 	public static int method389(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) int arg7, @OriginalArg(11) SoundPcmStream arg8, @OriginalArg(12) int arg9, @OriginalArg(13) int arg10) {
 		arg8.anInt355 -= arg8.anInt347 * arg3;
 		arg8.anInt352 -= arg8.anInt354 * arg3;
@@ -231,7 +232,7 @@ public final class SoundPcmStream extends PcmStream {
 		return arg3;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "a", descriptor = "(II[B[IIIIIIILclient!b;II)I")
+	@OriginalMember(owner = "client!b", name = "a", descriptor = "(II[B[IIIIIIILclient!b;II)I")
 	public static int method390(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(8) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) SoundPcmStream arg7, @OriginalArg(11) int arg8, @OriginalArg(12) int arg9) {
 		@Pc(14) int local14;
 		if (arg8 == 0 || (local14 = arg3 + (arg6 + arg8 + 256 - arg2) / arg8) > arg5) {
@@ -257,7 +258,7 @@ public final class SoundPcmStream extends PcmStream {
 		return arg3;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "a", descriptor = "([B[IIIIIIILclient!b;)I")
+	@OriginalMember(owner = "client!b", name = "a", descriptor = "([B[IIIIIIILclient!b;)I")
 	public static int method391(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) SoundPcmStream arg7) {
 		arg2 >>= 0x8;
 		@Pc(7) int local7 = arg6 >> 8;
@@ -295,7 +296,7 @@ public final class SoundPcmStream extends PcmStream {
 		return arg3;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "a", descriptor = "(I[B[IIIIIIIIIILclient!b;)I")
+	@OriginalMember(owner = "client!b", name = "a", descriptor = "(I[B[IIIIIIIIIILclient!b;)I")
 	public static int method393(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(10) int arg8, @OriginalArg(11) int arg9, @OriginalArg(12) SoundPcmStream arg10) {
 		arg2 >>= 0x8;
 		@Pc(7) int local7 = arg9 >> 8;
@@ -363,7 +364,7 @@ public final class SoundPcmStream extends PcmStream {
 		return arg3 >> 1;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "a", descriptor = "([B[IIIIIIIILclient!b;)I")
+	@OriginalMember(owner = "client!b", name = "a", descriptor = "([B[IIIIIIIILclient!b;)I")
 	public static int method394(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) SoundPcmStream arg8) {
 		arg2 >>= 0x8;
 		@Pc(7) int local7 = arg7 >> 8;
@@ -410,7 +411,7 @@ public final class SoundPcmStream extends PcmStream {
 		return arg3;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "b", descriptor = "([B[IIIIIIIILclient!b;)I")
+	@OriginalMember(owner = "client!b", name = "b", descriptor = "([B[IIIIIIIILclient!b;)I")
 	public static int method395(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) SoundPcmStream arg8) {
 		arg2 >>= 0x8;
 		@Pc(7) int local7 = arg7 >> 8;
@@ -457,7 +458,7 @@ public final class SoundPcmStream extends PcmStream {
 		return arg3;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "b", descriptor = "(II[B[IIIIIIIILclient!b;II)I")
+	@OriginalMember(owner = "client!b", name = "b", descriptor = "(II[B[IIIIIIIILclient!b;II)I")
 	public static int method400(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) int arg7, @OriginalArg(11) SoundPcmStream arg8, @OriginalArg(12) int arg9, @OriginalArg(13) int arg10) {
 		@Pc(14) int local14;
 		if (arg9 == 0 || (local14 = arg3 + (arg7 + arg9 - arg2 - 257) / arg9) > arg6) {
@@ -500,7 +501,7 @@ public final class SoundPcmStream extends PcmStream {
 		return arg3 >> 1;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "b", descriptor = "(II[B[IIIIIIILclient!b;II)I")
+	@OriginalMember(owner = "client!b", name = "b", descriptor = "(II[B[IIIIIIILclient!b;II)I")
 	public static int method422(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(8) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) SoundPcmStream arg7, @OriginalArg(11) int arg8, @OriginalArg(12) int arg9) {
 		@Pc(14) int local14;
 		if (arg8 == 0 || (local14 = arg3 + (arg6 + arg8 - arg2 - 257) / arg8) > arg5) {
@@ -528,17 +529,17 @@ public final class SoundPcmStream extends PcmStream {
 		return arg3;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "e", descriptor = "(II)I")
+	@OriginalMember(owner = "client!b", name = "e", descriptor = "(II)I")
 	public static int method421(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		return arg1 < 0 ? -arg0 : (int) ((double) arg0 * Math.sqrt((double) arg1 * 1.220703125E-4D) + 0.5D);
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "d", descriptor = "(II)I")
+	@OriginalMember(owner = "client!b", name = "d", descriptor = "(II)I")
 	public static int method419(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		return arg1 < 0 ? arg0 : (int) ((double) arg0 * Math.sqrt((double) (16384 - arg1) * 1.220703125E-4D) + 0.5D);
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "d", descriptor = "(II[B[IIIIIIIILclient!b;II)I")
+	@OriginalMember(owner = "client!b", name = "d", descriptor = "(II[B[IIIIIIIILclient!b;II)I")
 	public static int method420(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) int arg7, @OriginalArg(11) SoundPcmStream arg8, @OriginalArg(12) int arg9, @OriginalArg(13) int arg10) {
 		@Pc(14) int local14;
 		if (arg9 == 0 || (local14 = arg3 + (arg7 + arg9 + 256 - arg2) / arg9) > arg6) {
@@ -579,7 +580,7 @@ public final class SoundPcmStream extends PcmStream {
 		return arg3 >> 1;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "b", descriptor = "([B[IIIIIIILclient!b;)I")
+	@OriginalMember(owner = "client!b", name = "b", descriptor = "([B[IIIIIIILclient!b;)I")
 	public static int method413(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) SoundPcmStream arg7) {
 		arg2 >>= 0x8;
 		@Pc(7) int local7 = arg6 >> 8;
@@ -617,7 +618,7 @@ public final class SoundPcmStream extends PcmStream {
 		return arg3;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "c", descriptor = "(II[B[IIIIIIIILclient!b;II)I")
+	@OriginalMember(owner = "client!b", name = "c", descriptor = "(II[B[IIIIIIIILclient!b;II)I")
 	public static int method415(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) int arg7, @OriginalArg(11) SoundPcmStream arg8, @OriginalArg(12) int arg9, @OriginalArg(13) int arg10) {
 		arg8.anInt355 -= arg8.anInt347 * arg3;
 		arg8.anInt352 -= arg8.anInt354 * arg3;
@@ -650,7 +651,7 @@ public final class SoundPcmStream extends PcmStream {
 		return arg3;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "b", descriptor = "(I[B[IIIIIIIILclient!b;)I")
+	@OriginalMember(owner = "client!b", name = "b", descriptor = "(I[B[IIIIIIIILclient!b;)I")
 	public static int method414(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(8) int arg6, @OriginalArg(9) int arg7, @OriginalArg(10) SoundPcmStream arg8) {
 		arg2 >>= 0x8;
 		@Pc(7) int local7 = arg7 >> 8;
@@ -703,7 +704,7 @@ public final class SoundPcmStream extends PcmStream {
 		return arg3 >> 1;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "b", descriptor = "(II[B[IIIIIIIIIILclient!b;II)I")
+	@OriginalMember(owner = "client!b", name = "b", descriptor = "(II[B[IIIIIIIIIILclient!b;II)I")
 	public static int method407(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(8) int arg6, @OriginalArg(9) int arg7, @OriginalArg(11) int arg8, @OriginalArg(12) int arg9, @OriginalArg(13) SoundPcmStream arg10, @OriginalArg(14) int arg11, @OriginalArg(15) int arg12) {
 		arg10.anInt348 -= arg10.anInt344 * arg3;
 		@Pc(23) int local23;
@@ -753,7 +754,7 @@ public final class SoundPcmStream extends PcmStream {
 		return local65;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "b", descriptor = "(I[B[IIIIIIIIIILclient!b;)I")
+	@OriginalMember(owner = "client!b", name = "b", descriptor = "(I[B[IIIIIIIIIILclient!b;)I")
 	public static int method402(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(10) int arg8, @OriginalArg(11) int arg9, @OriginalArg(12) SoundPcmStream arg10) {
 		arg2 >>= 0x8;
 		@Pc(7) int local7 = arg9 >> 8;
@@ -821,7 +822,7 @@ public final class SoundPcmStream extends PcmStream {
 		return arg3 >> 1;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "b", descriptor = "([III)V")
+	@OriginalMember(owner = "client!b", name = "b", descriptor = "([III)V")
 	@Override
 	public final synchronized void read(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (this.volume == 0 && this.anInt351 == 0) {
@@ -979,7 +980,7 @@ public final class SoundPcmStream extends PcmStream {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "e", descriptor = "()Z")
+	@OriginalMember(owner = "client!b", name = "e", descriptor = "()Z")
 	private boolean method383() {
 		@Pc(2) int local2 = this.volume;
 		@Pc(10) int local10;
@@ -1040,7 +1041,7 @@ public final class SoundPcmStream extends PcmStream {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "d", descriptor = "(I)V")
+	@OriginalMember(owner = "client!b", name = "d", descriptor = "(I)V")
 	public final synchronized void method384(@OriginalArg(0) int arg0) {
 		if (arg0 == 0) {
 			this.method397();
@@ -1078,7 +1079,7 @@ public final class SoundPcmStream extends PcmStream {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "a", descriptor = "([IIIII)I")
+	@OriginalMember(owner = "client!b", name = "a", descriptor = "([IIIII)I")
 	private int method385(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		while (true) {
 			if (this.anInt351 > 0) {
@@ -1120,12 +1121,12 @@ public final class SoundPcmStream extends PcmStream {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "e", descriptor = "(I)V")
+	@OriginalMember(owner = "client!b", name = "e", descriptor = "(I)V")
 	public final synchronized void setVolume(@OriginalArg(0) int arg0) {
 		this.method408(arg0 << 6, this.getPan());
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "c", descriptor = "()I")
+	@OriginalMember(owner = "client!b", name = "c", descriptor = "()I")
 	@Override
 	public final int method4407() {
 		@Pc(6) int local6 = this.anInt348 * 3 >> 6;
@@ -1138,18 +1139,18 @@ public final class SoundPcmStream extends PcmStream {
 		return local6 > 255 ? 255 : local6;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "a", descriptor = "()I")
+	@OriginalMember(owner = "client!b", name = "a", descriptor = "()I")
 	@Override
 	public final int method4404() {
 		return this.volume == 0 && this.anInt351 == 0 ? 0 : 1;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "f", descriptor = "()I")
+	@OriginalMember(owner = "client!b", name = "f", descriptor = "()I")
 	public final synchronized int getVolume() {
 		return this.volume == Integer.MIN_VALUE ? 0 : this.volume;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "c", descriptor = "(I)V")
+	@OriginalMember(owner = "client!b", name = "c", descriptor = "(I)V")
 	@Override
 	public final synchronized void skip(@OriginalArg(0) int arg0) {
 		if (this.anInt351 > 0) {
@@ -1295,28 +1296,28 @@ public final class SoundPcmStream extends PcmStream {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "f", descriptor = "(I)V")
+	@OriginalMember(owner = "client!b", name = "f", descriptor = "(I)V")
 	public final synchronized void setLoops(@OriginalArg(0) int arg0) {
 		this.anInt350 = arg0;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "g", descriptor = "(I)V")
+	@OriginalMember(owner = "client!b", name = "g", descriptor = "(I)V")
 	private synchronized void method397() {
 		this.method408(0, this.getPan());
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "b", descriptor = "(II)V")
+	@OriginalMember(owner = "client!b", name = "b", descriptor = "(II)V")
 	public final synchronized void method398(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		this.method417(arg0, arg1, this.getPan());
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "b", descriptor = "()Lclient!qb;")
+	@OriginalMember(owner = "client!b", name = "b", descriptor = "()Lclient!qb;")
 	@Override
 	public final PcmStream firstSubStream() {
 		return null;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "h", descriptor = "(I)V")
+	@OriginalMember(owner = "client!b", name = "h", descriptor = "(I)V")
 	public final synchronized void method401(@OriginalArg(0) int arg0) {
 		@Pc(7) int local7 = ((PcmSound) this.sound).samples.length << 8;
 		if (arg0 < -1) {
@@ -1328,7 +1329,7 @@ public final class SoundPcmStream extends PcmStream {
 		this.anInt346 = arg0;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "b", descriptor = "([IIIII)I")
+	@OriginalMember(owner = "client!b", name = "b", descriptor = "([IIIII)I")
 	private int method403(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		while (true) {
 			if (this.anInt351 > 0) {
@@ -1370,12 +1371,12 @@ public final class SoundPcmStream extends PcmStream {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "g", descriptor = "()I")
+	@OriginalMember(owner = "client!b", name = "g", descriptor = "()I")
 	public final synchronized int method405() {
 		return this.anInt342 < 0 ? -this.anInt342 : this.anInt342;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "h", descriptor = "()V")
+	@OriginalMember(owner = "client!b", name = "h", descriptor = "()V")
 	private void method406() {
 		if (this.anInt351 == 0) {
 			return;
@@ -1387,7 +1388,7 @@ public final class SoundPcmStream extends PcmStream {
 		this.method416();
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "c", descriptor = "(II)V")
+	@OriginalMember(owner = "client!b", name = "c", descriptor = "(II)V")
 	private synchronized void method408(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		this.volume = arg0;
 		this.pan = arg1;
@@ -1395,13 +1396,13 @@ public final class SoundPcmStream extends PcmStream {
 		this.method416();
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "a", descriptor = "(Z)V")
+	@OriginalMember(owner = "client!b", name = "a", descriptor = "(Z)V")
 	public final synchronized void method409() {
 		this.anInt342 = (this.anInt342 ^ this.anInt342 >> 31) + (this.anInt342 >>> 31);
 		this.anInt342 = -this.anInt342;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "i", descriptor = "(I)V")
+	@OriginalMember(owner = "client!b", name = "i", descriptor = "(I)V")
 	public final synchronized void method410(@OriginalArg(0) int arg0) {
 		if (this.anInt342 < 0) {
 			this.anInt342 = -arg0;
@@ -1410,24 +1411,24 @@ public final class SoundPcmStream extends PcmStream {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "i", descriptor = "()Z")
+	@OriginalMember(owner = "client!b", name = "i", descriptor = "()Z")
 	public final boolean method411() {
 		return this.anInt346 < 0 || this.anInt346 >= ((PcmSound) this.sound).samples.length << 8;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "j", descriptor = "()Z")
+	@OriginalMember(owner = "client!b", name = "j", descriptor = "()Z")
 	public final boolean method412() {
 		return this.anInt351 != 0;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "k", descriptor = "()V")
+	@OriginalMember(owner = "client!b", name = "k", descriptor = "()V")
 	private void method416() {
 		this.anInt348 = this.volume;
 		this.anInt355 = method419(this.volume, this.pan);
 		this.anInt352 = method421(this.volume, this.pan);
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "a", descriptor = "(III)V")
+	@OriginalMember(owner = "client!b", name = "a", descriptor = "(III)V")
 	public final synchronized void method417(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg0 == 0) {
 			this.method408(arg1, arg2);
@@ -1466,12 +1467,12 @@ public final class SoundPcmStream extends PcmStream {
 		this.anInt354 = (local14 - this.anInt352) / arg0;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "l", descriptor = "()I")
+	@OriginalMember(owner = "client!b", name = "l", descriptor = "()I")
 	public final synchronized int getPan() {
 		return this.pan < 0 ? -1 : this.pan;
 	}
 
-	@OriginalMember(owner = "runetek4.client!b", name = "d", descriptor = "()Lclient!qb;")
+	@OriginalMember(owner = "client!b", name = "d", descriptor = "()Lclient!qb;")
 	@Override
 	public final PcmStream nextSubStream() {
 		return null;

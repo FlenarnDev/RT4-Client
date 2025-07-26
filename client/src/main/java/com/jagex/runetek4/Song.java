@@ -1,25 +1,30 @@
 package com.jagex.runetek4;
 
 import com.jagex.runetek4.audio.midi.MidiDecoder;
+
 import com.jagex.runetek4.core.datastruct.HashTable;
+
 import com.jagex.runetek4.js5.Js5;
+
 import com.jagex.runetek4.node.Node;
+
 import com.jagex.runetek4.core.io.Packet;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
-@OriginalClass("runetek4.client!rf")
+@OriginalClass("client!rf")
 public final class Song extends Node {
 
-	@OriginalMember(owner = "runetek4.client!rf", name = "p", descriptor = "Lclient!sc;")
+	@OriginalMember(owner = "client!rf", name = "p", descriptor = "Lclient!sc;")
 	public HashTable programs;
 
-	@OriginalMember(owner = "runetek4.client!rf", name = "q", descriptor = "[B")
+	@OriginalMember(owner = "client!rf", name = "q", descriptor = "[B")
 	public final byte[] midiBytes;
 
-	@OriginalMember(owner = "runetek4.client!rf", name = "<init>", descriptor = "(Lclient!wa;)V")
+	@OriginalMember(owner = "client!rf", name = "<init>", descriptor = "(Lclient!wa;)V")
 	public Song(@OriginalArg(0) Packet in) {
 		in.offset = in.data.length - 3;
 		@Pc(12) int tracks = in.g1();
@@ -304,18 +309,18 @@ public final class Song extends Node {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!rf", name = "a", descriptor = "(Lclient!ve;II)Lclient!rf;")
+	@OriginalMember(owner = "client!rf", name = "a", descriptor = "(Lclient!ve;II)Lclient!rf;")
 	public static Song create(@OriginalArg(0) Js5 archive, @OriginalArg(1) int group, @OriginalArg(2) int file) {
 		@Pc(5) byte[] bytes = archive.getfile(group, file);
 		return bytes == null ? null : new Song(new Packet(bytes));
 	}
 
-	@OriginalMember(owner = "runetek4.client!rf", name = "a", descriptor = "()V")
+	@OriginalMember(owner = "client!rf", name = "a", descriptor = "()V")
 	public final void releasePrograms() {
 		this.programs = null;
 	}
 
-	@OriginalMember(owner = "runetek4.client!rf", name = "b", descriptor = "()V")
+	@OriginalMember(owner = "client!rf", name = "b", descriptor = "()V")
 	public final void createPrograms() {
 		if (this.programs != null) {
 			return;

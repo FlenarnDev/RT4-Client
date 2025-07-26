@@ -3,35 +3,37 @@ package com.jagex.runetek4;
 import com.jagex.runetek4.audio.SynthSound;
 import com.jagex.runetek4.audio.pcm.PcmSound;
 import com.jagex.runetek4.audio.vorbis.VorbisSound;
+
 import com.jagex.runetek4.core.datastruct.HashTable;
 import com.jagex.runetek4.js5.Js5;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
-@OriginalClass("runetek4.client!le")
+@OriginalClass("client!le")
 public final class SoundBank {
 
-	@OriginalMember(owner = "runetek4.client!le", name = "d", descriptor = "Lclient!sc;")
+	@OriginalMember(owner = "client!le", name = "d", descriptor = "Lclient!sc;")
 	private final HashTable vorbisCache = new HashTable(256);
 
-	@OriginalMember(owner = "runetek4.client!le", name = "l", descriptor = "Lclient!sc;")
+	@OriginalMember(owner = "client!le", name = "l", descriptor = "Lclient!sc;")
 	private final HashTable cache = new HashTable(256);
 
-	@OriginalMember(owner = "runetek4.client!le", name = "b", descriptor = "Lclient!ve;")
+	@OriginalMember(owner = "client!le", name = "b", descriptor = "Lclient!ve;")
 	private final Js5 synthArchive;
 
-	@OriginalMember(owner = "runetek4.client!le", name = "i", descriptor = "Lclient!ve;")
+	@OriginalMember(owner = "client!le", name = "i", descriptor = "Lclient!ve;")
 	private final Js5 vorbisArchive;
 
-	@OriginalMember(owner = "runetek4.client!le", name = "<init>", descriptor = "(Lclient!ve;Lclient!ve;)V")
+	@OriginalMember(owner = "client!le", name = "<init>", descriptor = "(Lclient!ve;Lclient!ve;)V")
 	public SoundBank(@OriginalArg(0) Js5 synthArchive, @OriginalArg(1) Js5 vorbisArchive) {
 		this.synthArchive = synthArchive;
 		this.vorbisArchive = vorbisArchive;
 	}
 
-	@OriginalMember(owner = "runetek4.client!le", name = "a", descriptor = "([IIII)Lclient!kj;")
+	@OriginalMember(owner = "client!le", name = "a", descriptor = "([IIII)Lclient!kj;")
 	private PcmSound getSynthSound(@OriginalArg(0) int[] samplingRates, @OriginalArg(2) int group, @OriginalArg(3) int file) {
 		@Pc(21) int key1 = file ^ (group >>> 12 | group << 4 & 0xFFF3);
 		@Pc(27) int key2 = key1 | group << 16;
@@ -55,7 +57,7 @@ public final class SoundBank {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!le", name = "a", descriptor = "(II[I)Lclient!kj;")
+	@OriginalMember(owner = "client!le", name = "a", descriptor = "(II[I)Lclient!kj;")
 	public final PcmSound getSynthSound(@OriginalArg(0) int id, @OriginalArg(2) int[] samplingRates) {
 		if (this.synthArchive.capacity() == 1) {
 			return this.getSynthSound(samplingRates, 0, id);
@@ -66,7 +68,7 @@ public final class SoundBank {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!le", name = "a", descriptor = "(I[IIB)Lclient!kj;")
+	@OriginalMember(owner = "client!le", name = "a", descriptor = "(I[IIB)Lclient!kj;")
 	private PcmSound getVorbisSound(@OriginalArg(0) int group, @OriginalArg(1) int[] samplingRates, @OriginalArg(2) int file) {
 		@Pc(15) int key1 = file ^ (group >>> 12 | group << 4 & 0xFFF3);
 		@Pc(21) int key2 = key1 | group << 16;
@@ -96,7 +98,7 @@ public final class SoundBank {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!le", name = "b", descriptor = "(II[I)Lclient!kj;")
+	@OriginalMember(owner = "client!le", name = "b", descriptor = "(II[I)Lclient!kj;")
 	public final PcmSound getVorbisSound(@OriginalArg(1) int id, @OriginalArg(2) int[] samplingRates) {
 		if (this.vorbisArchive.capacity() == 1) {
 			return this.getVorbisSound(0, samplingRates, id);

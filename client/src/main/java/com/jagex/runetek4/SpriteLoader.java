@@ -2,46 +2,58 @@ package com.jagex.runetek4;
 
 import com.jagex.runetek4.cache.media.SoftwareSprite;
 import com.jagex.runetek4.core.io.Packet;
+
 import com.jagex.runetek4.js5.Js5;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 public class SpriteLoader {
-    @OriginalMember(owner = "runetek4.client!wf", name = "b", descriptor = "[I")
+    @OriginalMember(owner = "client!wf", name = "b", descriptor = "[I")
     public static int[] xOffsets;
-    @OriginalMember(owner = "runetek4.client!wa", name = "z", descriptor = "[I")
+
+    @OriginalMember(owner = "client!wa", name = "z", descriptor = "[I")
     public static int[] yOffsets;
-    @OriginalMember(owner = "runetek4.client!uj", name = "x", descriptor = "[I")
+
+    @OriginalMember(owner = "client!uj", name = "x", descriptor = "[I")
     public static int[] innerWidths;
+
     @OriginalMember(owner = "client!ca", name = "Y", descriptor = "[I")
     public static int[] innerHeights;
+
     @OriginalMember(owner = "client!ah", name = "l", descriptor = "[[B")
     public static byte[][] pixels;
-    @OriginalMember(owner = "runetek4.client!vc", name = "R", descriptor = "[I")
+
+    @OriginalMember(owner = "client!vc", name = "R", descriptor = "[I")
     public static int[] palette;
-    @OriginalMember(owner = "runetek4.client!nb", name = "h", descriptor = "I")
+
+    @OriginalMember(owner = "client!nb", name = "h", descriptor = "I")
     public static int frames;
+
     @OriginalMember(owner = "client!fb", name = "n", descriptor = "[[B")
     public static byte[][] alpha;
-    @OriginalMember(owner = "runetek4.client!mi", name = "W", descriptor = "[Z")
+
+    @OriginalMember(owner = "client!mi", name = "W", descriptor = "[Z")
     public static boolean[] hasAlpha;
-    @OriginalMember(owner = "runetek4.client!jk", name = "x", descriptor = "I")
+
+    @OriginalMember(owner = "client!jk", name = "x", descriptor = "I")
     public static int width;
-    @OriginalMember(owner = "runetek4.client!sg", name = "h", descriptor = "I")
+
+    @OriginalMember(owner = "client!sg", name = "h", descriptor = "I")
     public static int height;
 
-    @OriginalMember(owner = "runetek4.client!lk", name = "a", descriptor = "(IIBLclient!ve;)Lclient!qf;")
+    @OriginalMember(owner = "client!lk", name = "a", descriptor = "(IIBLclient!ve;)Lclient!qf;")
     public static Sprite loadSprites(@OriginalArg(1) int arg0, @OriginalArg(3) Js5 arg1) {
         return decode(arg1, 0, arg0) ? method1764() : null;
     }
 
-    @OriginalMember(owner = "runetek4.client!gd", name = "a", descriptor = "(ILclient!ve;II)Lclient!mm;")
+    @OriginalMember(owner = "client!gd", name = "a", descriptor = "(ILclient!ve;II)Lclient!mm;")
     public static SoftwareSprite loadSoftwareSprite(@OriginalArg(0) int arg0, @OriginalArg(1) Js5 arg1, @OriginalArg(3) int arg2) {
         return decode(arg1, arg0, arg2) ? method3537() : null;
     }
 
-    @OriginalMember(owner = "runetek4.client!ml", name = "a", descriptor = "(BILclient!ve;)[Lclient!ek;")
+    @OriginalMember(owner = "client!ml", name = "a", descriptor = "(BILclient!ve;)[Lclient!ek;")
     public static SoftwareIndexedSprite[] loadSoftwareIndexedSpritesAutoDetect(@OriginalArg(1) int arg0, @OriginalArg(2) Js5 arg1) {
         return method4346(arg1, arg0) ? createSoftwareIndexedSprites() : null;
     }
@@ -56,7 +68,7 @@ public class SpriteLoader {
         palette = null;
     }
 
-    @OriginalMember(owner = "runetek4.client!ta", name = "a", descriptor = "(Lclient!ve;III)Z")
+    @OriginalMember(owner = "client!ta", name = "a", descriptor = "(Lclient!ve;III)Z")
     public static boolean decode(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
         @Pc(9) byte[] local9 = arg0.getfile(arg2, arg1);
         if (local9 == null) {
@@ -67,7 +79,7 @@ public class SpriteLoader {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!na", name = "a", descriptor = "(IZILclient!ve;)Lclient!ek;")
+    @OriginalMember(owner = "client!na", name = "a", descriptor = "(IZILclient!ve;)Lclient!ek;")
     public static SoftwareIndexedSprite loadSoftwareIndexedSprite(@OriginalArg(2) int arg0, @OriginalArg(3) Js5 arg1) {
         return decode(arg1, 0, arg0) ? method2619() : null;
     }
@@ -77,7 +89,7 @@ public class SpriteLoader {
         return decode(arg1, 0, arg0) ? createSoftwareIndexedSprites() : null;
     }
 
-    @OriginalMember(owner = "runetek4.client!jg", name = "a", descriptor = "(I)[Lclient!ek;")
+    @OriginalMember(owner = "client!jg", name = "a", descriptor = "(I)[Lclient!ek;")
     public static SoftwareIndexedSprite[] createSoftwareIndexedSprites() {
         @Pc(2) SoftwareIndexedSprite[] sprites = new SoftwareIndexedSprite[frames];
         for (@Pc(8) int local8 = 0; local8 < frames; local8++) {
@@ -176,27 +188,27 @@ public class SpriteLoader {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!ra", name = "a", descriptor = "(IBILclient!ve;)[Lclient!qf;")
+    @OriginalMember(owner = "client!ra", name = "a", descriptor = "(IBILclient!ve;)[Lclient!qf;")
     public static Sprite[] loadAlphaSprites(@OriginalArg(2) int arg0, @OriginalArg(3) Js5 arg1) {
         return decode(arg1, 0, arg0) ? method3730() : null;
     }
 
-    @OriginalMember(owner = "runetek4.client!vj", name = "a", descriptor = "(IIILclient!ve;)[Lclient!mm;")
+    @OriginalMember(owner = "client!vj", name = "a", descriptor = "(IIILclient!ve;)[Lclient!mm;")
     public static SoftwareSprite[] loadSoftwareSprites(@OriginalArg(2) int arg0, @OriginalArg(3) Js5 arg1) {
         return decode(arg1, 0, arg0) ? method474() : null;
     }
 
-    @OriginalMember(owner = "runetek4.client!lg", name = "a", descriptor = "(Lclient!ve;BII)[Lclient!ok;")
+    @OriginalMember(owner = "client!lg", name = "a", descriptor = "(Lclient!ve;BII)[Lclient!ok;")
     public static IndexedSprite[] loadIndexedSprites(@OriginalArg(0) Js5 arg0, @OriginalArg(3) int arg1) {
         return decode(arg0, 0, arg1) ? method4331() : null;
     }
 
-    @OriginalMember(owner = "runetek4.client!kd", name = "a", descriptor = "(IIILclient!ve;)[Lclient!qf;")
+    @OriginalMember(owner = "client!kd", name = "a", descriptor = "(IIILclient!ve;)[Lclient!qf;")
     public static Sprite[] method2580(@OriginalArg(2) int arg0, @OriginalArg(3) Js5 arg1) {
         return decode(arg1, 0, arg0) ? method870() : null;
     }
 
-    @OriginalMember(owner = "runetek4.client!re", name = "b", descriptor = "(I)[Lclient!qf;")
+    @OriginalMember(owner = "client!re", name = "b", descriptor = "(I)[Lclient!qf;")
     public static Sprite[] method3730() {
         @Pc(14) Sprite[] local14 = new Sprite[frames];
         for (@Pc(16) int local16 = 0; local16 < frames; local16++) {
@@ -245,7 +257,7 @@ public class SpriteLoader {
         return local4;
     }
 
-    @OriginalMember(owner = "runetek4.client!pl", name = "a", descriptor = "(I)Lclient!mm;")
+    @OriginalMember(owner = "client!pl", name = "a", descriptor = "(I)Lclient!mm;")
     public static SoftwareSprite method3537() {
         @Pc(13) int local13 = innerWidths[0] * innerHeights[0];
         @Pc(17) byte[] local17 = pixels[0];
@@ -258,7 +270,7 @@ public class SpriteLoader {
         return local57;
     }
 
-    @OriginalMember(owner = "runetek4.client!ui", name = "h", descriptor = "(I)[Lclient!ok;")
+    @OriginalMember(owner = "client!ui", name = "h", descriptor = "(I)[Lclient!ok;")
     public static IndexedSprite[] method4331() {
         @Pc(8) IndexedSprite[] local8 = new IndexedSprite[frames];
         for (@Pc(10) int local10 = 0; local10 < frames; local10++) {
@@ -272,7 +284,7 @@ public class SpriteLoader {
         return local8;
     }
 
-    @OriginalMember(owner = "runetek4.client!cj", name = "a", descriptor = "(I)[Lclient!qf;")
+    @OriginalMember(owner = "client!cj", name = "a", descriptor = "(I)[Lclient!qf;")
     public static Sprite[] method870() {
         @Pc(6) Sprite[] local6 = new Sprite[frames];
         for (@Pc(15) int local15 = 0; local15 < frames; local15++) {
@@ -310,7 +322,7 @@ public class SpriteLoader {
         return local69;
     }
 
-    @OriginalMember(owner = "runetek4.client!uj", name = "a", descriptor = "(BLclient!ve;I)Z")
+    @OriginalMember(owner = "client!uj", name = "a", descriptor = "(BLclient!ve;I)Z")
     public static boolean method4346(@OriginalArg(1) Js5 arg0, @OriginalArg(2) int arg1) {
         @Pc(13) byte[] local13 = arg0.method4500(arg1);
         if (local13 == null) {
@@ -326,12 +338,12 @@ public class SpriteLoader {
         return method4346(arg1, arg0) ? method4614() : null;
     }
 
-    @OriginalMember(owner = "runetek4.client!kc", name = "a", descriptor = "(ILclient!ve;I)Lclient!qf;")
+    @OriginalMember(owner = "client!kc", name = "a", descriptor = "(ILclient!ve;I)Lclient!qf;")
     public static Sprite loadSpriteAutoDetect(@OriginalArg(1) Js5 arg0, @OriginalArg(2) int arg1) {
         return method4346(arg0, arg1) ? method1764() : null;
     }
 
-    @OriginalMember(owner = "runetek4.client!wh", name = "b", descriptor = "(B)Lclient!ok;")
+    @OriginalMember(owner = "client!wh", name = "b", descriptor = "(B)Lclient!ok;")
     public static IndexedSprite method4614() {
         @Pc(27) IndexedSprite local27;
         if (GlRenderer.enabled) {
@@ -343,12 +355,12 @@ public class SpriteLoader {
         return local27;
     }
 
-    @OriginalMember(owner = "runetek4.client!na", name = "a", descriptor = "(Lclient!ve;IZ)Lclient!mm;")
+    @OriginalMember(owner = "client!na", name = "a", descriptor = "(Lclient!ve;IZ)Lclient!mm;")
     public static SoftwareSprite loadSoftwareSpriteAutoDetect(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
         return method4346(arg0, arg1) ? method3537() : null;
     }
 
-    @OriginalMember(owner = "runetek4.client!kh", name = "a", descriptor = "(B)Lclient!ek;")
+    @OriginalMember(owner = "client!kh", name = "a", descriptor = "(B)Lclient!ek;")
     public static SoftwareIndexedSprite method2619() {
         @Pc(25) SoftwareIndexedSprite local25 = new SoftwareIndexedSprite(width, height, xOffsets[0], yOffsets[0], innerWidths[0], innerHeights[0], pixels[0], palette);
         clear();

@@ -4,7 +4,9 @@ import com.jagex.runetek4.config.types.varp.VarpType;
 import com.jagex.runetek4.config.types.varbit.VarbitType;
 import com.jagex.runetek4.config.types.varbit.VarBitTypeList;
 import com.jagex.runetek4.config.types.varp.VarpTypeList;
+
 import com.jagex.runetek4.core.datastruct.HashTable;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -13,23 +15,32 @@ public class VarpDomain {
 
     @OriginalMember(owner = "client!gj", name = "q", descriptor = "[I")
     public static final int[] updatedVarps = new int[32];
-    @OriginalMember(owner = "runetek4.client!ic", name = "e", descriptor = "[I")
+
+    @OriginalMember(owner = "client!ic", name = "e", descriptor = "[I")
     public static final int[] serverVarps = new int[2500];
+
     @OriginalMember(owner = "client!ah", name = "j", descriptor = "[I")
     public static final int[] activeVarps = new int[2500];
-    @OriginalMember(owner = "runetek4.client!uj", name = "s", descriptor = "Lclient!na;")
+
+    @OriginalMember(owner = "client!uj", name = "s", descriptor = "Lclient!na;")
     public static final JString NULL = JString.parse("null");
-    @OriginalMember(owner = "runetek4.client!ea", name = "s", descriptor = "[I")
+
+    @OriginalMember(owner = "client!ea", name = "s", descriptor = "[I")
     public static final int[] varbitMasks = new int[32];
+
     @OriginalMember(owner = "client!fi", name = "n", descriptor = "I")
     public static int updatedVarpsWriterIndex = 0;
-    @OriginalMember(owner = "runetek4.client!qc", name = "K", descriptor = "Lclient!sc;")
+
+    @OriginalMember(owner = "client!qc", name = "K", descriptor = "Lclient!sc;")
     public static HashTable pendingUpdates = new HashTable(16);
+
     @OriginalMember(owner = "client!ge", name = "m", descriptor = "I")
     public static int chatEffectsDisabled = 0;
-    @OriginalMember(owner = "runetek4.client!jb", name = "n", descriptor = "I")
+
+    @OriginalMember(owner = "client!jb", name = "n", descriptor = "I")
     public static int oneMouseButton = 0;
-    @OriginalMember(owner = "runetek4.client!oe", name = "b", descriptor = "I")
+
+    @OriginalMember(owner = "client!oe", name = "b", descriptor = "I")
     public static int bankInsertMode = 0;
 
     @OriginalMember(owner = "client!aj", name = "i", descriptor = "(I)V")
@@ -64,7 +75,7 @@ public class VarpDomain {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!nh", name = "a", descriptor = "(BII)V")
+    @OriginalMember(owner = "client!nh", name = "a", descriptor = "(BII)V")
     public static void setVarpServer(@OriginalArg(1) int value, @OriginalArg(2) int id) {
         serverVarps[id] = value;
         @Pc(20) LongNode node = (LongNode) pendingUpdates.get((long) id);
@@ -76,7 +87,7 @@ public class VarpDomain {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!qg", name = "a", descriptor = "(IZI)V")
+    @OriginalMember(owner = "client!qg", name = "a", descriptor = "(IZI)V")
     public static void setVarbitClient(@OriginalArg(0) int arg0, @OriginalArg(2) int value) {
         @Pc(7) VarbitType type = VarBitTypeList.get(arg0);
         @Pc(10) int end = type.endBit;
@@ -107,7 +118,7 @@ public class VarpDomain {
         return -1;
     }
 
-    @OriginalMember(owner = "runetek4.client!li", name = "a", descriptor = "(III)V")
+    @OriginalMember(owner = "client!li", name = "a", descriptor = "(III)V")
     public static void setVarpClient(@OriginalArg(0) int id, @OriginalArg(2) int value) {
         activeVarps[id] = value;
         @Pc(21) LongNode node = (LongNode) pendingUpdates.get((long) id);
@@ -119,7 +130,7 @@ public class VarpDomain {
         }
     }
 
-    @OriginalMember(owner = "runetek4.client!wd", name = "a", descriptor = "(BII)V")
+    @OriginalMember(owner = "client!wd", name = "a", descriptor = "(BII)V")
     public static void setVarbitServer(@OriginalArg(1) int value, @OriginalArg(2) int arg1) {
         @Pc(14) VarbitType type = VarBitTypeList.get(arg1);
         @Pc(17) int varp = type.baseVar;
@@ -133,7 +144,7 @@ public class VarpDomain {
         setVarpServer(value << start & mask | ~mask & serverVarps[varp], varp);
     }
 
-    @OriginalMember(owner = "runetek4.client!me", name = "a", descriptor = "(II)I")
+    @OriginalMember(owner = "client!me", name = "a", descriptor = "(II)I")
     public static int getVarbitValue(@OriginalArg(1) int varbitId) {
         @Pc(13) VarbitType type = VarBitTypeList.get(varbitId);
         @Pc(16) int varp = type.baseVar;
