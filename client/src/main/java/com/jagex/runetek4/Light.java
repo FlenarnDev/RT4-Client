@@ -1,8 +1,11 @@
 package com.jagex.runetek4;
 
 import com.jagex.runetek4.core.io.Packet;
+
 import com.jagex.runetek4.textureops.TextureOpPerlinNoise;
+
 import com.jagex.runetek4.util.MathUtils;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -21,7 +24,7 @@ public final class Light {
 	private int alphaMax;
 
 	@OriginalMember(owner = "client!gi", name = "e", descriptor = "I")
-	private int anInt2233;
+	private int function;
 
 	@OriginalMember(owner = "client!gi", name = "i", descriptor = "I")
 	public int y;
@@ -39,7 +42,7 @@ public final class Light {
 	public int level;
 
 	@OriginalMember(owner = "client!gi", name = "t", descriptor = "I")
-	public final int anInt2243;
+	public final int functionPreset;
 
 	@OriginalMember(owner = "client!gi", name = "u", descriptor = "[S")
 	public final short[] aShortArray30;
@@ -51,7 +54,7 @@ public final class Light {
 	public int z;
 
 	@OriginalMember(owner = "client!gi", name = "y", descriptor = "I")
-	private int anInt2246;
+	private int frequency;
 
 	@OriginalMember(owner = "client!gi", name = "z", descriptor = "F")
 	public float attenuation;
@@ -66,7 +69,7 @@ public final class Light {
 	public final int color;
 
 	@OriginalMember(owner = "client!gi", name = "E", descriptor = "I")
-	private final int anInt2249;
+	private final int phase;
 
 	@OriginalMember(owner = "client!gi", name = "g", descriptor = "Z")
 	public boolean doesNotInteractWithLight = false;
@@ -89,33 +92,33 @@ public final class Light {
 		this.radius = packet.g1();
 		this.method1763();
 		this.aShortArray30 = new short[this.radius * 2 + 1];
-		@Pc(87) int local87;
-		for (local87 = 0; local87 < this.aShortArray30.length; local87++) {
-			this.aShortArray30[local87] = (short) packet.g2();
+		@Pc(87) int i;
+		for (i = 0; i < this.aShortArray30.length; i++) {
+			this.aShortArray30[i] = (short) packet.g2();
 		}
 		this.color = Rasterizer.palette[packet.g2()];
-		local87 = packet.g1();
-		this.anInt2249 = (local87 & 0xE0) << 3;
-		this.anInt2243 = local87 & 0x1F;
-		if (this.anInt2243 != 31) {
-			this.method1766();
+		int functionPresetAndPhase = packet.g1();
+		this.phase = (functionPresetAndPhase & 0xE0) << 3;
+		this.functionPreset = functionPresetAndPhase & 0x1F;
+		if (this.functionPreset != 31) {
+			this.setFunctionPreset();
 		}
 	}
 
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(ZIIIIFII)[I")
 	public static int[] createNoise(@OriginalArg(5) float arg0) {
-		@Pc(11) int[] local11 = new int[2048];
-		@Pc(15) TextureOpPerlinNoise local15 = new TextureOpPerlinNoise();
-		local15.anInt646 = 8;
-		local15.anInt642 = 4;
-		local15.anInt650 = 35;
-		local15.anInt641 = 8;
-		local15.anInt648 = (int) (arg0 * 4096.0F);
-		local15.aBoolean44 = true;
-		local15.postDecode();
+		@Pc(11) int[] noise = new int[2048];
+		@Pc(15) TextureOpPerlinNoise op = new TextureOpPerlinNoise();
+		op.anInt646 = 8;
+		op.anInt642 = 4;
+		op.seed = 35;
+		op.anInt641 = 8;
+		op.anInt648 = (int) (arg0 * 4096.0F);
+		op.aBoolean44 = true;
+		op.postDecode();
 		Texture.setSize(1, 2048);
-		local15.method584(0, local11);
-		return local11;
+		op.method584(0, noise);
+		return noise;
 	}
 
 	@OriginalMember(owner = "client!gk", name = "b", descriptor = "(B)V")
@@ -125,10 +128,10 @@ public final class Light {
 
 	@OriginalMember(owner = "client!gi", name = "a", descriptor = "(BIIII)V")
 	public final void method1762(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		this.anInt2233 = arg0;
+		this.function = arg0;
 		this.alphaMin = arg2;
 		this.alphaMax = arg3;
-		this.anInt2246 = arg1;
+		this.frequency = arg1;
 	}
 
 	@OriginalMember(owner = "client!gi", name = "a", descriptor = "(I)V")
@@ -139,8 +142,8 @@ public final class Light {
 
 	@OriginalMember(owner = "client!gi", name = "a", descriptor = "(ZII)V")
 	public final void method1765(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1) {
-		@Pc(26) int local26 = this.anInt2249 + arg1 * this.anInt2246 / 50 & 0x7FF;
-		@Pc(29) int local29 = this.anInt2233;
+		@Pc(26) int local26 = this.phase + arg1 * this.frequency / 50 & 0x7FF;
+		@Pc(29) int local29 = this.function;
 		@Pc(62) int local62;
 		if (local29 == 1) {
 			local62 = (MathUtils.sin[local26] >> 6) + 1024;
@@ -166,88 +169,88 @@ public final class Light {
 	}
 
 	@OriginalMember(owner = "client!gi", name = "c", descriptor = "(I)V")
-	private void method1766() {
-		@Pc(4) int local4 = this.anInt2243;
-		if (local4 == 2) {
+	private void setFunctionPreset() {
+		@Pc(4) int preset = this.functionPreset;
+		if (preset == 2) {
 			this.alphaMin = 2048;
 			this.alphaMax = 0;
-			this.anInt2233 = 1;
-			this.anInt2246 = 2048;
-		} else if (local4 == 3) {
+			this.function = 1;
+			this.frequency = 2048;
+		} else if (preset == 3) {
 			this.alphaMax = 0;
-			this.anInt2246 = 4096;
-			this.anInt2233 = 1;
+			this.frequency = 4096;
+			this.function = 1;
 			this.alphaMin = 2048;
-		} else if (local4 == 4) {
+		} else if (preset == 4) {
 			this.alphaMax = 0;
 			this.alphaMin = 2048;
-			this.anInt2233 = 4;
-			this.anInt2246 = 2048;
-		} else if (local4 == 5) {
-			this.anInt2233 = 4;
+			this.function = 4;
+			this.frequency = 2048;
+		} else if (preset == 5) {
+			this.function = 4;
 			this.alphaMin = 2048;
-			this.anInt2246 = 8192;
+			this.frequency = 8192;
 			this.alphaMax = 0;
-		} else if (local4 == 12) {
+		} else if (preset == 12) {
 			this.alphaMin = 2048;
-			this.anInt2233 = 2;
-			this.anInt2246 = 2048;
+			this.function = 2;
+			this.frequency = 2048;
 			this.alphaMax = 0;
-		} else if (local4 == 13) {
-			this.anInt2246 = 8192;
+		} else if (preset == 13) {
+			this.frequency = 8192;
 			this.alphaMin = 2048;
-			this.anInt2233 = 2;
+			this.function = 2;
 			this.alphaMax = 0;
-		} else if (local4 == 10) {
+		} else if (preset == 10) {
 			this.alphaMin = 512;
-			this.anInt2233 = 3;
+			this.function = 3;
 			this.alphaMax = 1536;
-			this.anInt2246 = 2048;
-		} else if (local4 == 11) {
-			this.anInt2233 = 3;
-			this.anInt2246 = 4096;
+			this.frequency = 2048;
+		} else if (preset == 11) {
+			this.function = 3;
+			this.frequency = 4096;
 			this.alphaMin = 512;
 			this.alphaMax = 1536;
-		} else if (local4 == 6) {
+		} else if (preset == 6) {
 			this.alphaMin = 768;
 			this.alphaMax = 1280;
-			this.anInt2233 = 3;
-			this.anInt2246 = 2048;
-		} else if (local4 == 7) {
+			this.function = 3;
+			this.frequency = 2048;
+		} else if (preset == 7) {
 			this.alphaMin = 768;
 			this.alphaMax = 1280;
-			this.anInt2246 = 4096;
-			this.anInt2233 = 3;
-		} else if (local4 == 8) {
-			this.anInt2246 = 2048;
-			this.anInt2233 = 3;
+			this.frequency = 4096;
+			this.function = 3;
+		} else if (preset == 8) {
+			this.frequency = 2048;
+			this.function = 3;
 			this.alphaMin = 1024;
 			this.alphaMax = 1024;
-		} else if (local4 == 9) {
-			this.anInt2246 = 4096;
+		} else if (preset == 9) {
+			this.frequency = 4096;
 			this.alphaMax = 1024;
 			this.alphaMin = 1024;
-			this.anInt2233 = 3;
-		} else if (local4 == 14) {
-			this.anInt2246 = 2048;
+			this.function = 3;
+		} else if (preset == 14) {
+			this.frequency = 2048;
 			this.alphaMax = 1280;
-			this.anInt2233 = 1;
+			this.function = 1;
 			this.alphaMin = 768;
-		} else if (local4 == 15) {
+		} else if (preset == 15) {
 			this.alphaMin = 512;
-			this.anInt2246 = 4096;
+			this.frequency = 4096;
 			this.alphaMax = 1536;
-			this.anInt2233 = 1;
-		} else if (local4 == 16) {
-			this.anInt2246 = 8192;
+			this.function = 1;
+		} else if (preset == 16) {
+			this.frequency = 8192;
 			this.alphaMax = 1792;
-			this.anInt2233 = 1;
+			this.function = 1;
 			this.alphaMin = 256;
 		} else {
-			this.anInt2246 = 2048;
+			this.frequency = 2048;
 			this.alphaMax = 0;
 			this.alphaMin = 2048;
-			this.anInt2233 = 0;
+			this.function = 0;
 		}
 	}
 }

@@ -3,13 +3,14 @@ package com.jagex.runetek4;
 import com.jagex.runetek4.client.Preferences;
 import com.jagex.runetek4.scene.tile.Tile;
 
-import com.jogamp.opengl.GL2;
-
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
-import static com.jogamp.opengl.fixedfunc.GLLightingFunc.GL_LIGHT4;
+import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL13.GL_CONSTANT;
+import static org.lwjgl.opengl.GL13.GL_OPERAND0_RGB;
+import static org.lwjgl.opengl.GL15.GL_SRC0_RGB;
 
 public class LightingManager {
     @OriginalMember(owner = "client!jf", name = "b", descriptor = "[F")
@@ -80,20 +81,18 @@ public class LightingManager {
         if (enabledLights[i]) {
             enabledLights[i] = false;
             @Pc(14) int lights = i + GL_LIGHT4;
-            @Pc(16) GL2 gl = GlRenderer.gl;
-            gl.glDisable(lights);
+            glDisable(lights);
         }
     }
 
     @OriginalMember(owner = "client!jf", name = "e", descriptor = "()V")
     public static void resetLightningState() {
-        @Pc(1) GL2 local1 = GlRenderer.gl;
         @Pc(3) int lightIndex;
         for (lightIndex = 0; lightIndex < 4; lightIndex++) {
             @Pc(10) int glLightIndex = lightIndex + GL_LIGHT4; // Might need to be GL_LIGHT0?
-            local1.glLightfv(glLightIndex, GL2.GL_AMBIENT, new float[] { 0.0F, 0.0F, 0.0F, 1.0F }, 0);
-            local1.glLightf(glLightIndex, GL2.GL_LINEAR_ATTENUATION, 0.0F);
-            local1.glLightf(glLightIndex, GL2.GL_CONSTANT_ATTENUATION, 0.0F);
+            glLightfv(glLightIndex, GL_AMBIENT, new float[] { 0.0F, 0.0F, 0.0F, 1.0F });
+            glLightf(glLightIndex, GL_LINEAR_ATTENUATION, 0.0F);
+            glLightf(glLightIndex, GL_CONSTANT_ATTENUATION, 0.0F);
         }
         for (lightIndex = 0; lightIndex < 4; lightIndex++) {
             activeLightIds[lightIndex] = -1;
@@ -198,17 +197,16 @@ public class LightingManager {
     @OriginalMember(owner = "client!jf", name = "a", descriptor = "(ILclient!gi;III)V")
     static void enableLight(@OriginalArg(0) int lightIndex, @OriginalArg(1) Light light, @OriginalArg(2) int cameraX, @OriginalArg(3) int cameraY, @OriginalArg(4) int cameraZ) {
         @Pc(5) int glLight = lightIndex + GL_LIGHT4;
-        @Pc(7) GL2 gl = GlRenderer.gl;
         if (!enabledLights[lightIndex]) {
-            gl.glEnable(glLight);
+            glEnable(glLight);
             enabledLights[lightIndex] = true;
         }
-        gl.glLightf(glLight, GL2.GL_QUADRATIC_ATTENUATION, light.attenuation);
-        gl.glLightfv(glLight, GL2.GL_DIFFUSE, light.diffuse, 0);
+        glLightf(glLight, GL_QUADRATIC_ATTENUATION, light.attenuation);
+        glLightfv(glLight, GL_DIFFUSE, light.diffuse);
         lightPosition[0] = light.x - cameraX;
         lightPosition[1] = light.y - cameraY;
         lightPosition[2] = light.z - cameraZ;
-        gl.glLightfv(glLight, GL2.GL_POSITION, lightPosition, 0);
+        glLightfv(glLight, GL_POSITION, lightPosition);
     }
 
     @OriginalMember(owner = "client!jf", name = "a", descriptor = "(Lclient!gi;)V")
@@ -409,17 +407,16 @@ public class LightingManager {
         if (!Preferences.highDetailLighting) {
             return;
         }
-        @Pc(4) GL2 local4 = GlRenderer.gl;
         MaterialManager.setMaterial(0, 0);
         GlRenderer.setTextureCombineRgbMode(0);
         GlRenderer.resetTextureMatrix();
         GlRenderer.setTextureId(GlRenderer.anInt5328);
-        local4.glDepthMask(false);
+        glDepthMask(false);
         GlRenderer.setLightingEnabled(false);
-        local4.glBlendFunc(GL2.GL_DST_COLOR, GL2.GL_ONE);
-        local4.glFogfv(GL2.GL_FOG_COLOR, new float[] { 0.0F, 0.0F, 0.0F, 0.0F }, 0);
-        local4.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_SRC0_RGB, GL2.GL_CONSTANT);
-        local4.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_OPERAND0_RGB, GL2.GL_SRC_ALPHA);
+        glBlendFunc(GL_DST_COLOR, GL_ONE);
+        glFogfv(GL_FOG_COLOR, new float[] { 0.0F, 0.0F, 0.0F, 0.0F });
+        glTexEnvi(GL_TEXTURE_ENV, GL_SRC0_RGB, GL_CONSTANT);
+        glTexEnvi(GL_TEXTURE_ENV, GL_OPERAND0_RGB, GL_SRC_ALPHA);
         label71:
         for (@Pc(56) int i = 0; i < lightCount; i++) {
             @Pc(63) Light light = lights[i];
@@ -458,7 +455,7 @@ public class LightingManager {
                         }
                         if (lightLevel < 0 || localTile != null && localTile.aBoolean45) {
                             GlRenderer.configureFixedDepthAdjustment(201.5F - (float) light.level * 50.0F - 1.5F);
-                            local4.glTexEnvfv(GL2.GL_TEXTURE_ENV, GL2.GL_TEXTURE_ENV_COLOR, new float[] { 0.0F, 0.0F, 0.0F, light.alpha}, 0);
+                            glTexEnvfv(GL_TEXTURE_ENV, GL_TEXTURE_ENV_COLOR, new float[] { 0.0F, 0.0F, 0.0F, light.alpha});
                             light.aClass45_1.method1556();
                             continue label71;
                         }
@@ -466,12 +463,12 @@ public class LightingManager {
                 }
             }
         }
-        local4.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_SRC0_RGB, GL2.GL_TEXTURE);
-        local4.glTexEnvi(GL2.GL_TEXTURE_ENV, GL2.GL_OPERAND0_RGB, GL2.GL_SRC_COLOR);
-        local4.glBlendFunc(GL2.GL_SRC_ALPHA, GL2.GL_ONE_MINUS_SRC_ALPHA);
-        local4.glDepthMask(true);
-        local4.glFogfv(GL2.GL_FOG_COLOR, FogManager.fogColor, 0);
-        local4.glEnableClientState(GL2.GL_TEXTURE_COORD_ARRAY);
+        glTexEnvi(GL_TEXTURE_ENV, GL_SRC0_RGB, GL_TEXTURE);
+        glTexEnvi(GL_TEXTURE_ENV, GL_OPERAND0_RGB, GL_SRC_COLOR);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        glDepthMask(true);
+        glFogfv(GL_FOG_COLOR, FogManager.fogColor);
+        glEnableClientState(GL_TEXTURE_COORD_ARRAY);
         GlRenderer.restoreLighting();
     }
 

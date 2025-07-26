@@ -5,8 +5,6 @@ import java.nio.ByteOrder;
 
 import com.jagex.runetek4.core.io.Packet;
 
-import com.jogamp.opengl.*;
-
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -164,17 +162,17 @@ public final class Shadow {
 			}
 			local19 += local5 - 128;
 		}
-		@Pc(145) GL2 gl = GlRenderer.gl;
-		@Pc(148) ByteBuffer local148 = ByteBuffer.wrap(pixels);
-		local148.limit(16384);
+		@Pc(148) ByteBuffer local148 = ByteBuffer.allocateDirect(128 * 128);
+		local148.put(pixels);
+		local148.flip();
+
 		GlRenderer.setTextureId(this.anInt5901);
-		gl.glTexImage2D(GL_TEXTURE_2D, 0, GL_ALPHA, 128, 128, 0, GL_ALPHA, GL_UNSIGNED_BYTE, local148);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_ALPHA, 128, 128, 0, GL_ALPHA, GL_UNSIGNED_BYTE, local148);
 		return true;
 	}
 
 	@OriginalMember(owner = "client!wm", name = "b", descriptor = "()V")
 	public final void method4679() {
-		@Pc(1) GL2 gl = GlRenderer.gl;
 		GlRenderer.setTextureId(this.anInt5901);
 		if (this.aClass155_7 == null) {
 			if (GlRenderer.arbVboSupported) {
@@ -191,7 +189,7 @@ public final class Shadow {
 			if (GlRenderer.arbVboSupported) {
 				glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 			}
-			gl.glDrawElements(GL_TRIANGLES, 384, GL2.GL_UNSIGNED_INT, this.aByteBuffer11);
+			GlRenderer.glDrawElementsWrapper(GL_TRIANGLES, 384, GL_UNSIGNED_INT, this.aByteBuffer11);
 		} else {
 			this.aClass155_6.bindElementArray();
 			glDrawElements(GL_TRIANGLES, 384, GL_UNSIGNED_INT, 0L);

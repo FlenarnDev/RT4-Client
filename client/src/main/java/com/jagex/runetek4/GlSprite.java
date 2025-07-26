@@ -55,14 +55,14 @@ public class GlSprite extends Sprite {
 	}
 
 	@OriginalMember(owner = "client!cf", name = "<init>", descriptor = "(Lclient!mm;)V")
-	public GlSprite(@OriginalArg(0) SoftwareSprite arg0) {
-		this.innerWidth = arg0.innerWidth;
-		this.innerHeight = arg0.innerHeight;
-		this.xOffset = arg0.xOffset;
-		this.yOffset = arg0.yOffset;
-		this.width = arg0.width;
-		this.height = arg0.height;
-		this.method1430(arg0.pixels);
+	public GlSprite(@OriginalArg(0) SoftwareSprite softwareSprite) {
+		this.innerWidth = softwareSprite.innerWidth;
+		this.innerHeight = softwareSprite.innerHeight;
+		this.xOffset = softwareSprite.xOffset;
+		this.yOffset = softwareSprite.yOffset;
+		this.width = softwareSprite.width;
+		this.height = softwareSprite.height;
+		this.method1430(softwareSprite.pixels);
 		this.method1431();
 	}
 

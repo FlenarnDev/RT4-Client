@@ -36,7 +36,7 @@ public final class TextureOpPerlinNoise extends TextureOp {
 	public int anInt642 = 4;
 
 	@OriginalMember(owner = "runetek4.client!bi", name = "mb", descriptor = "I")
-	public int anInt650 = 0;
+	public int seed = 0;
 
 	@OriginalMember(owner = "runetek4.client!bi", name = "<init>", descriptor = "()V")
 	public TextureOpPerlinNoise() {
@@ -148,7 +148,7 @@ public final class TextureOpPerlinNoise extends TextureOp {
 	@OriginalMember(owner = "runetek4.client!bi", name = "e", descriptor = "(I)V")
 	@Override
 	public final void postDecode() {
-		this.aByteArray10 = TextureOpVoronoiNoise.method1837(this.anInt650);
+		this.aByteArray10 = TextureOpVoronoiNoise.method1837(this.seed);
 		this.method589();
 		for (@Pc(15) int local15 = this.anInt642 - 1; local15 >= 1; local15--) {
 			@Pc(23) short local23 = this.aShortArray4[local15];
@@ -177,7 +177,7 @@ public final class TextureOpPerlinNoise extends TextureOp {
 		} else if (code == 3) {
 			this.anInt646 = this.anInt641 = packet.g1();
 		} else if (code == 4) {
-			this.anInt650 = packet.g1();
+			this.seed = packet.g1();
 		} else if (code == 5) {
 			this.anInt646 = packet.g1();
 		} else if (code == 6) {

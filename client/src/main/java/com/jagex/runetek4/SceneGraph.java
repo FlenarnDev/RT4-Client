@@ -1623,7 +1623,7 @@ public class SceneGraph {
                 } while (local515 <= 0);
                 for (local243 = 0; local243 < local515; local243++) {
                     @Pc(529) Light local529 = new Light(local95);
-                    if (local529.anInt2243 == 31) {
+                    if (local529.functionPreset == 31) {
                         @Pc(541) LightType local541 = LightTypeList.get(local95.g2());
                         local529.method1762(local541.anInt2865, local541.anInt2873, local541.anInt2867, local541.anInt2872);
                     }
@@ -5232,7 +5232,7 @@ public class SceneGraph {
                 } while (local497 <= 0);
                 for (local232 = 0; local232 < local497; local232++) {
                     @Pc(517) Light local517 = new Light(local96);
-                    if (local517.anInt2243 == 31) {
+                    if (local517.functionPreset == 31) {
                         @Pc(529) LightType local529 = LightTypeList.get(local96.g2());
                         local517.method1762(local529.anInt2865, local529.anInt2873, local529.anInt2867, local529.anInt2872);
                     }
