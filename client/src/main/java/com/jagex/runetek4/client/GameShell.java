@@ -12,6 +12,7 @@ import com.jagex.runetek4.DisplayMode;
 import com.jagex.runetek4.core.utils.Timer;
 import com.jagex.runetek4.util.SignLink;
 import com.jagex.runetek4.util.ThreadUtils;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -22,72 +23,106 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 
 	@OriginalMember(owner = "client!sh", name = "l", descriptor = "[J")
 	public static final long[] logicTimes = new long[32];
+
 	@OriginalMember(owner = "client!ah", name = "k", descriptor = "[J")
 	public static final long[] redrawTimes = new long[32];
+
 	@OriginalMember(owner = "client!fk", name = "l", descriptor = "Lsignlink!ll;")
     public static SignLink signLink;
+
     @OriginalMember(owner = "client!md", name = "L", descriptor = "Ljava/awt/Canvas;")
     public static Canvas canvas;
+
 	@OriginalMember(owner = "client!fh", name = "Y", descriptor = "Ljava/awt/Frame;")
 	public static Frame fullScreenFrame;
+
 	@OriginalMember(owner = "client!d", name = "Y", descriptor = "Ljava/awt/Frame;")
 	public static Frame frame;
+
 	@OriginalMember(owner = "client!fl", name = "U", descriptor = "I")
 	public static int frameWidth;
+
 	@OriginalMember(owner = "client!jh", name = "c", descriptor = "I")
 	public static int frameHeight;
+
 	@OriginalMember(owner = "client!dl", name = "d", descriptor = "I")
 	public static int canvasWidth;
+
 	@OriginalMember(owner = "client!uj", name = "B", descriptor = "I")
 	public static int canvasHeigth;
+
 	@OriginalMember(owner = "client!lf", name = "f", descriptor = "I")
 	public static int leftMargin = 0;
+
 	@OriginalMember(owner = "client!od", name = "e", descriptor = "I")
 	public static int topMargin = 0;
+
 	@OriginalMember(owner = "client!ca", name = "ab", descriptor = "Z")
 	public static boolean focus;
+
 	@OriginalMember(owner = "client!eh", name = "a", descriptor = "Z")
 	public static boolean shutdown = false;
-	@OriginalMember(owner = "runetek4.client!t", name = "m", descriptor = "Z")
+
+	@OriginalMember(owner = "client!t", name = "m", descriptor = "Z")
 	public static volatile boolean focus_in = true;
+
 	@OriginalMember(owner = "client!fh", name = "P", descriptor = "Z")
 	public static volatile boolean fullredraw = true;
-	@OriginalMember(owner = "runetek4.client!cl", name = "bb", descriptor = "Z")
+
+	@OriginalMember(owner = "client!cl", name = "bb", descriptor = "Z")
 	public static volatile boolean canvasReplaceRecommended = false;
-	@OriginalMember(owner = "runetek4.client!tk", name = "c", descriptor = "J")
+
+	@OriginalMember(owner = "client!tk", name = "c", descriptor = "J")
 	public static volatile long lastCanvasReplace = 0L;
-	@OriginalMember(owner = "runetek4.client!sj", name = "F", descriptor = "Lclient!rc;")
+
+	@OriginalMember(owner = "client!sj", name = "F", descriptor = "Lclient!rc;")
 	public static GameShell instance = null;
-	@OriginalMember(owner = "runetek4.client!ve", name = "F", descriptor = "I")
+
+	@OriginalMember(owner = "client!ve", name = "F", descriptor = "I")
 	public static int logicTimePointer;
-	@OriginalMember(owner = "runetek4.client!kd", name = "pb", descriptor = "I")
+
+	@OriginalMember(owner = "client!kd", name = "pb", descriptor = "I")
 	public static int clientBuild;
-	@OriginalMember(owner = "runetek4.client!tc", name = "f", descriptor = "Z")
+
+	@OriginalMember(owner = "client!tc", name = "f", descriptor = "Z")
 	public static boolean isJava5OrLater = false;
-	@OriginalMember(owner = "runetek4.client!sf", name = "d", descriptor = "I")
+
+	@OriginalMember(owner = "client!sf", name = "d", descriptor = "I")
 	public static int minimumDelay = 1;
+
 	@OriginalMember(owner = "client!ba", name = "B", descriptor = "I")
 	public static int VARIABLE_RENDER_RATE = 20;
+
 	@OriginalMember(owner = "client!cm", name = "b", descriptor = "Ljava/lang/Thread;")
 	public static Thread thread;
+
 	@OriginalMember(owner = "client!fl", name = "w", descriptor = "J")
 	public static long killtime = 0L;
-	@OriginalMember(owner = "runetek4.client!da", name = "M", descriptor = "Z")
+
+	@OriginalMember(owner = "client!da", name = "M", descriptor = "Z")
 	public static boolean openWindowJavaScript;
+
 	@OriginalMember(owner = "client!fi", name = "l", descriptor = "I")
 	public static int instances = 0;
-	@OriginalMember(owner = "runetek4.client!qe", name = "v", descriptor = "Lclient!s;")
+
+	@OriginalMember(owner = "client!qe", name = "v", descriptor = "Lclient!s;")
 	public static Timer timer;
-	@OriginalMember(owner = "runetek4.client!sg", name = "p", descriptor = "I")
+
+	@OriginalMember(owner = "client!sg", name = "p", descriptor = "I")
 	public static int logicCycles;
-	@OriginalMember(owner = "runetek4.client!ii", name = "i", descriptor = "I")
+
+	@OriginalMember(owner = "client!ii", name = "i", descriptor = "I")
 	public static int redrawTimePointer;
-	@OriginalMember(owner = "runetek4.client!ol", name = "fb", descriptor = "I")
+
+	@OriginalMember(owner = "client!ol", name = "fb", descriptor = "I")
 	public static int partialRedraws = 500;
-	@OriginalMember(owner = "runetek4.client!tk", name = "v", descriptor = "I")
+
+	@OriginalMember(owner = "client!tk", name = "v", descriptor = "I")
 	public static int fps = 0;
-	@OriginalMember(owner = "runetek4.client!te", name = "C", descriptor = "I")
+
+	@OriginalMember(owner = "client!te", name = "C", descriptor = "I")
 	public static int maxMemory = 64;
+
 	@OriginalMember(owner = "client!rc", name = "b", descriptor = "Z")
 	private boolean error = false;
 
@@ -96,10 +131,6 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	public static double subpixelX = 0.5d;
 
 	public static double subpixelY = 0.5d;
-
-	public static long updateDelta = 0;
-
-	public static long renderDelta = 0;
 
 	@OriginalMember(owner = "client!rc", name = "providesignlink", descriptor = "(Lsignlink!ll;)V")
 	public static void providesignlink(@OriginalArg(0) SignLink signlink) {
@@ -143,7 +174,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 		maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1048576L) + 1;
 	}
 
-	@OriginalMember(owner = "runetek4.client!qh", name = "a", descriptor = "(Z)V")
+	@OriginalMember(owner = "client!qh", name = "a", descriptor = "(Z)V")
 	public static void method3662() {
 		@Pc(8) Container local8;
 		if (fullScreenFrame != null) {
@@ -188,7 +219,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 		method2704();
 	}
 
-	@OriginalMember(owner = "runetek4.client!l", name = "b", descriptor = "(I)V")
+	@OriginalMember(owner = "client!l", name = "b", descriptor = "(I)V")
 	public static void method2704() {
 		@Pc(7) int local7 = topMargin;
 		@Pc(9) int local9 = leftMargin;

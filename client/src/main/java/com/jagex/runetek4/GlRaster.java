@@ -230,7 +230,7 @@ public class GlRaster {
 
     @OriginalMember(owner = "client!dj", name = "d", descriptor = "()V")
     public static void clear() {
-        GlRenderer.gl.glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
+        glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
     }
 
     @OriginalMember(owner = "client!dj", name = "a", descriptor = "([IIIII)V")

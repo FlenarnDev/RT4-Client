@@ -1,14 +1,21 @@
 package com.jagex.runetek4;
 
 import com.jagex.runetek4.core.io.Packet;
-import com.jogamp.opengl.GL2;
+
+import org.lwjgl.BufferUtils;
+import org.lwjgl.opengl.GL;
+import org.lwjgl.opengl.GLCapabilities;
+
+import static org.lwjgl.opengl.GL11.glGetFloatv;
+import static org.lwjgl.opengl.GL14.*;
+
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 import java.nio.FloatBuffer;
 
-@OriginalClass("runetek4.client!ga")
+@OriginalClass("client!ga")
 public final class ParticleSystem extends ParticleNode {
 
 	static {
@@ -16,22 +23,23 @@ public final class ParticleSystem extends ParticleNode {
 		new Packet(131056);
 	}
 
-	@OriginalMember(owner = "runetek4.client!ga", name = "a", descriptor = "()V")
+	@OriginalMember(owner = "client!ga", name = "a", descriptor = "()V")
 	public static void load() {
-		@Pc(1) GL2 gl = GlRenderer.gl;
-		if (gl.isExtensionAvailable("GL_ARB_point_parameters")) {
+		GLCapabilities caps = GL.getCapabilities();
+
+		if (caps.GL_ARB_point_parameters) {
 			@Pc(20) float[] coefficients = new float[] { 1.0F, 0.0F, 5.0E-4F };
-			gl.glPointParameterfv(GL2.GL_POINT_DISTANCE_ATTENUATION, coefficients, 0);
-			@Pc(28) FloatBuffer buffer = FloatBuffer.allocate(1);
-			gl.glGetFloatv(GL2.GL_POINT_SIZE_MAX, buffer);
+			glPointParameterfv(GL_POINT_DISTANCE_ATTENUATION, coefficients);
+			@Pc(28) FloatBuffer buffer = BufferUtils.createFloatBuffer(1);
+			glGetFloatv(GL_POINT_SIZE_MAX, buffer);
 			@Pc(36) float pointSizeMax = buffer.get(0);
 			if (pointSizeMax > 1024.0F) {
 				pointSizeMax = 1024.0F;
 			}
-			gl.glPointParameterf(GL2.GL_POINT_SIZE_MIN, 1.0F);
-			gl.glPointParameterf(GL2.GL_POINT_SIZE_MAX, pointSizeMax);
+			glPointParameterf(GL_POINT_SIZE_MIN, 1.0F);
+			glPointParameterf(GL_POINT_SIZE_MAX, pointSizeMax);
 		}
-		if (gl.isExtensionAvailable("GL_ARB_point_sprite")) {
+		if (caps.GL_ARB_point_sprite) {
 		}
 	}
 
@@ -39,7 +47,7 @@ public final class ParticleSystem extends ParticleNode {
 	public static void quit() {
 	}
 
-	@OriginalMember(owner = "runetek4.client!ga", name = "d", descriptor = "()V")
+	@OriginalMember(owner = "client!ga", name = "d", descriptor = "()V")
 	public final void method1646() {
 	}
 }

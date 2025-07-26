@@ -6,8 +6,6 @@ import com.jagex.runetek4.cache.media.Font;
 
 import com.jagex.runetek4.util.IntUtils;
 
-import com.jogamp.opengl.*;
-
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -78,7 +76,6 @@ public final class GlFont extends Font {
 	@OriginalMember(owner = "client!mb", name = "a", descriptor = "(IIIIIIZ)V")
 	@Override
 	protected void renderGlyph(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
-		@Pc(4) GL2 gl;
 		if (masked == null) {
 			GlRenderer.setupRgbAlphaMode0Rendering();
 			GlRenderer.setTextureId(this.textureId);
@@ -89,7 +86,6 @@ public final class GlFont extends Font {
 			return;
 		}
 		GlRenderer.setupRgbAlphaMode0Rendering();
-		gl = GlRenderer.gl;
 		glColor3ub((byte) (arg5 >> 16), (byte) (arg5 >> 8), (byte) arg5);
 		glTranslatef((float) arg1, (float) (GlRenderer.canvasHeight - arg2), 0.0F);
 		@Pc(32) float local32 = (float) (arg0 % 16) / 16.0F;
@@ -207,19 +203,20 @@ public final class GlFont extends Font {
 				local92 += (this.powerOfTwoSize - local104) * 2;
 			}
 		}
-		@Pc(153) ByteBuffer local153 = ByteBuffer.wrap(local66);
-		@Pc(155) GL2 local155 = GlRenderer.gl;
+		@Pc(153) ByteBuffer local153 = ByteBuffer.allocateDirect(local66.length);
+		local153.put(local66);
+		local153.flip();
 		if (this.textureId == -1) {
 			@Pc(162) int[] temp = new int[1];
-			local155.glGenTextures(1, temp, 0);
+			glGenTextures(temp);
 			this.textureId = temp[0];
 			this.contextId = GlCleaner.contextId;
 		}
 		GlRenderer.setTextureId(this.textureId);
-		local155.glTexImage2D(GL2.GL_TEXTURE_2D, 0, GL2.GL_LUMINANCE_ALPHA, this.powerOfTwoSize, this.powerOfTwoSize, 0, GL2.GL_LUMINANCE_ALPHA, GL2.GL_UNSIGNED_BYTE, local153);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_LUMINANCE_ALPHA, this.powerOfTwoSize, this.powerOfTwoSize, 0, GL_LUMINANCE_ALPHA, GL_UNSIGNED_BYTE, local153);
 		GlCleaner.oncard_2d += local153.limit() - this.size;
 		this.size = local153.limit();
-		local155.glTexParameteri(GL2.GL_TEXTURE_2D, GL2.GL_TEXTURE_MIN_FILTER, GL2.GL_NEAREST);
-		local155.glTexParameteri(GL2.GL_TEXTURE_2D, GL2.GL_TEXTURE_MAG_FILTER, GL2.GL_NEAREST);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	}
 }

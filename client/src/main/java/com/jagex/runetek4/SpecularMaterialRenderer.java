@@ -4,7 +4,6 @@ import java.nio.ByteBuffer;
 
 import com.jagex.runetek4.client.Preferences;
 
-import com.jogamp.opengl.*;
 
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
@@ -56,7 +55,6 @@ public final class SpecularMaterialRenderer implements MaterialRenderer {
 
 	@OriginalMember(owner = "client!vm", name = "d", descriptor = "()V")
 	private void method4535() {
-		@Pc(1) GL2 gl = GlRenderer.gl;
 		this.anInt5777 = glGenLists(2);
 		glNewList(this.anInt5777, GL_COMPILE);
 		if (this.anIntArray519 == null) {
@@ -73,23 +71,23 @@ public final class SpecularMaterialRenderer implements MaterialRenderer {
 			glMatrixMode(GL_TEXTURE);
 			glLoadIdentity();
 			glRotatef(22.5F, 1.0F, 0.0F, 0.0F);
-			glMatrixMode(GL2.GL_MODELVIEW);
+			glMatrixMode(GL_MODELVIEW);
 			if (this.aBoolean301) {
 				glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_RGB, GL_ADD);
 				glTexEnvi(GL_TEXTURE_ENV, GL_OPERAND0_RGB, GL_SRC_ALPHA);
 				glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_ALPHA, GL_REPLACE);
 				glTexEnvi(GL_TEXTURE_ENV, GL_SRC0_ALPHA, GL_PRIMARY_COLOR);
 			} else {
-				gl.glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_RGB, GL_REPLACE);
-				gl.glTexEnvi(GL_TEXTURE_ENV, GL_SRC0_RGB, GL_PREVIOUS);
-				gl.glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_ALPHA, GL_MODULATE);
-				gl.glActiveTexture(GL_TEXTURE2);
-				gl.glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_COMBINE);
-				gl.glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_RGB, GL_ADD);
-				gl.glTexEnvi(GL_TEXTURE_ENV, GL_SRC0_RGB, GL_PREVIOUS);
-				gl.glTexEnvi(GL_TEXTURE_ENV, GL_SRC1_RGB, GL_PREVIOUS);
-				gl.glTexEnvi(GL_TEXTURE_ENV, GL_OPERAND1_RGB, GL_SRC_ALPHA);
-				gl.glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_ALPHA, GL_REPLACE);
+				glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_RGB, GL_REPLACE);
+				glTexEnvi(GL_TEXTURE_ENV, GL_SRC0_RGB, GL_PREVIOUS);
+				glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_ALPHA, GL_MODULATE);
+				glActiveTexture(GL_TEXTURE2);
+				glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_COMBINE);
+				glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_RGB, GL_ADD);
+				glTexEnvi(GL_TEXTURE_ENV, GL_SRC0_RGB, GL_PREVIOUS);
+				glTexEnvi(GL_TEXTURE_ENV, GL_SRC1_RGB, GL_PREVIOUS);
+				glTexEnvi(GL_TEXTURE_ENV, GL_OPERAND1_RGB, GL_SRC_ALPHA);
+				glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_ALPHA, GL_REPLACE);
 				glTexEnvi(GL_TEXTURE_ENV, GL_SRC0_ALPHA, GL_PRIMARY_COLOR);
 				glBindTexture(GL_TEXTURE_2D, GlRenderer.anInt5328);
 				glEnable(GL_TEXTURE_2D);
@@ -168,12 +166,13 @@ public final class SpecularMaterialRenderer implements MaterialRenderer {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!vm", name = "e", descriptor = "()V")
+	@OriginalMember(owner = "client!vm", name = "e", descriptor = "()V")
 	private void method4536() {
-		@Pc(1) GL2 gl = GlRenderer.gl;
 		if (this.anIntArray519 == null) {
 			this.anIntArray519 = new int[3];
-			gl.glGenTextures(3, this.anIntArray519, 0);
+			for (int i = 0; i < 3; i++) {
+				this.anIntArray519[i] = glGenTextures();
+			}
 		}
 		@Pc(19) byte[] local19 = new byte[4096];
 		@Pc(22) byte[] local22 = new byte[4096];
@@ -228,12 +227,12 @@ public final class SpecularMaterialRenderer implements MaterialRenderer {
 					local32++;
 				}
 			}
-			gl.glBindTexture(GL2.GL_TEXTURE_CUBE_MAP, this.anIntArray519[0]);
-			gl.glTexImage2D(local27 + GL2.GL_TEXTURE_CUBE_MAP_POSITIVE_X, 0, GL2.GL_ALPHA, 64, 64, 0, GL2.GL_ALPHA, GL2.GL_UNSIGNED_BYTE, ByteBuffer.wrap(local22));
-			gl.glBindTexture(GL2.GL_TEXTURE_CUBE_MAP, this.anIntArray519[1]);
-			gl.glTexImage2D(local27 + GL2.GL_TEXTURE_CUBE_MAP_POSITIVE_X, 0, GL2.GL_ALPHA, 64, 64, 0, GL2.GL_ALPHA, GL2.GL_UNSIGNED_BYTE, ByteBuffer.wrap(local25));
-			gl.glBindTexture(GL2.GL_TEXTURE_CUBE_MAP, this.anIntArray519[2]);
-			gl.glTexImage2D(local27 + GL2.GL_TEXTURE_CUBE_MAP_POSITIVE_X, 0, GL2.GL_ALPHA, 64, 64, 0, GL2.GL_ALPHA, GL2.GL_UNSIGNED_BYTE, ByteBuffer.wrap(local19));
+			glBindTexture(GL_TEXTURE_CUBE_MAP, this.anIntArray519[0]);
+			glTexImage2D(local27 + GL_TEXTURE_CUBE_MAP_POSITIVE_X, 0, GL_ALPHA, 64, 64, 0, GL_ALPHA, GL_UNSIGNED_BYTE, ByteBuffer.wrap(local22));
+			glBindTexture(GL_TEXTURE_CUBE_MAP, this.anIntArray519[1]);
+			glTexImage2D(local27 + GL_TEXTURE_CUBE_MAP_POSITIVE_X, 0, GL_ALPHA, 64, 64, 0, GL_ALPHA, GL_UNSIGNED_BYTE, ByteBuffer.wrap(local25));
+			glBindTexture(GL_TEXTURE_CUBE_MAP, this.anIntArray519[2]);
+			glTexImage2D(local27 + GL_TEXTURE_CUBE_MAP_POSITIVE_X, 0, GL_ALPHA, 64, 64, 0, GL_ALPHA, GL_UNSIGNED_BYTE, ByteBuffer.wrap(local19));
 			GlCleaner.oncard_texture += 12288;
 		}
 	}

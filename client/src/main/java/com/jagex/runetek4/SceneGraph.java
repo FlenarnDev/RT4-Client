@@ -14,10 +14,11 @@ import com.jagex.runetek4.scene.tile.*;
 import com.jagex.runetek4.util.ArrayUtils;
 import com.jagex.runetek4.util.ColorUtils;
 import com.jagex.runetek4.util.MathUtils;
-import com.jogamp.opengl.GL2;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import static org.lwjgl.opengl.GL11.*;
 
 public class SceneGraph {
     @OriginalMember(owner = "client!bb", name = "g", descriptor = "[[[B")
@@ -5382,11 +5383,10 @@ public class SceneGraph {
         }
         @Pc(240) boolean local240 = tileHeights == underwaterTileHeights;
         if (GlRenderer.enabled) {
-            @Pc(244) GL2 local244 = GlRenderer.gl;
-            local244.glPushMatrix();
-            local244.glTranslatef((float) -arg0, (float) -arg1, (float) -arg2);
+            glPushMatrix();
+            glTranslatef((float) -arg0, (float) -arg1, (float) -arg2);
             if (local240) {
-                UnderwaterMaterialRenderer.method2959();
+                UnderwaterMaterialRenderer.applyFogFade();
                 MaterialManager.setMaterial(-1, 3);
                 MaterialManager.renderingUnderwater = true;
                 UnderwaterMaterialRenderer.method4609();
@@ -5425,7 +5425,7 @@ public class SceneGraph {
                     local32++;
                 }
             }
-            local244.glPopMatrix();
+            glPopMatrix();
         }
         @Pc(434) int local434;
         @Pc(438) int local438;

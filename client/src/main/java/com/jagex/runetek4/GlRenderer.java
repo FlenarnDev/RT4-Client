@@ -12,6 +12,8 @@ import com.jogamp.nativewindow.awt.JAWTWindow;
 import com.jogamp.opengl.*;
 import jogamp.newt.awt.NewtFactoryAWT;
 
+import static com.jagex.runetek4.client.GameShell.canvas;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -19,8 +21,6 @@ import org.openrs2.deob.annotation.Pc;
 import org.lwjgl.opengl.GL;
 import org.lwjgl.glfw.GLFWErrorCallback;
 
-import static org.lwjgl.opengl.GL20.GL_MAX_TEXTURE_COORDS;
-import static org.lwjgl.opengl.GL20.GL_MAX_TEXTURE_IMAGE_UNITS;
 import org.lwjgl.*;
 import org.lwjgl.glfw.*;
 import org.lwjgl.system.*;
@@ -32,6 +32,8 @@ import static org.lwjgl.opengl.GL13.*;
 import static org.lwjgl.opengl.GL13C.glActiveTexture;
 import static org.lwjgl.system.MemoryStack.*;
 import static org.lwjgl.system.MemoryUtil.*;
+import static org.lwjgl.opengl.GL20.GL_MAX_TEXTURE_COORDS;
+import static org.lwjgl.opengl.GL20.GL_MAX_TEXTURE_IMAGE_UNITS;
 
 public final class GlRenderer {
 
@@ -224,14 +226,11 @@ public final class GlRenderer {
 	@OriginalMember(owner = "client!tf", name = "d", descriptor = "()V")
 	public static void swapBuffers() {
 		try {
-			//drawable.swapBuffers();
-
 			if (!glfwWindowShouldClose(LWJGLWindow)) {
 				glfwSwapBuffers(LWJGLWindow);
 
 				glfwPollEvents();
 			}
-
 		} catch (@Pc(3) Exception local3) {
 		}
 	}
@@ -285,7 +284,7 @@ public final class GlRenderer {
 		glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_RGB, GL_MODULATE);
 		glTexEnvi(GL_TEXTURE_ENV, GL_COMBINE_ALPHA, GL_MODULATE);
 		glActiveTexture(GL_TEXTURE0);
-		gl.setSwapInterval(0);
+		//gl.setSwapInterval(0);
 		glClearColor(0.0F, 0.0F, 0.0F, 0.0F);
 		glShadeModel(GL_SMOOTH);
 		glClearDepth(1.0D);
@@ -711,7 +710,7 @@ public final class GlRenderer {
 		glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE); // Window will be resizable.
 
 		// Create the window
-		LWJGLWindow = glfwCreateWindow(1024, 1024, "Runescape", NULL, NULL);
+		LWJGLWindow = glfwCreateWindow(canvas.getWidth(), canvas.getHeight(), "Runescape", 0, 0);
 		if (LWJGLWindow == NULL) {
 			throw new IllegalStateException("Unable to create the GLFW window");
 		}
@@ -734,7 +733,7 @@ public final class GlRenderer {
 			GLFWVidMode vidMode = glfwGetVideoMode(glfwGetPrimaryMonitor());
 
 			// Center the window properly
-			glfwSetWindowPos(LWJGLWindow, (vidMode.width() - width.get(0)) / 2, vidMode.height() - height.get(0) / 2);
+			glfwSetWindowPos(LWJGLWindow, (vidMode.width() - width.get(0)) / 2, (vidMode.height() - height.get(0)) / 2);
 
 			// Make the OpenGL context current.
 			glfwMakeContextCurrent(LWJGLWindow);
@@ -746,6 +745,7 @@ public final class GlRenderer {
 			glfwShowWindow(LWJGLWindow);
 
 			GL.createCapabilities();
+			GLFW.glfwSwapBuffers(LWJGLWindow);
 		}
 	}
 
@@ -766,58 +766,16 @@ public final class GlRenderer {
 				return -1;
 			}
 
-			// Create JOGL
-			GLProfile profile = GLProfile.get(GLProfile.GL3bc);
-
-			@Pc(8) GLCapabilities capabilities = new GLCapabilities(profile);
-			if (numSamples > 0) {
-				capabilities.setSampleBuffers(true);
-				capabilities.setNumSamples(numSamples);
-			}
-
-			@Pc(18) GLDrawableFactory factory = GLDrawableFactory.getFactory(profile);
-			AWTGraphicsConfiguration config = AWTGraphicsConfiguration.create(canvas.getGraphicsConfiguration(), capabilities, capabilities);
-			window = NewtFactoryAWT.getNativeWindow(canvas, config);
-
-			if (!window.getLock().isLocked()) {
-				window.lockSurface();
-			}
-
-			try {
-				drawable = factory.createGLDrawable(window);
-				drawable.setRealized(true);
-			} finally {
-				window.unlockSurface();
-			}
-
 			@Pc(29) int swapBuffersAttempts = 0;
-			@Pc(36) int result;
-			while (true) {
-				context = drawable.createContext(null);
-				try {
-					result = context.makeCurrent();
-					if (result != 0) {
-						break;
-					}
-				} catch (@Pc(41) Exception local41) {
-				}
-				if (swapBuffersAttempts++ > 5) {
-					return -2;
-				}
-				ThreadUtils.sleep(100L);
-			}
-
-			if (window.getLock().isLocked()) {
-				window.unlockSurface();
-			}
 
 			// Create LWJGL
 			System.out.println("Hello from LWJGL version: " + Version.getVersion() + "!");
 			initLWJGL();
 
-            gl = GLContext.getCurrentGL().getGL2();
+            //gl = GLContext.getCurrentGL().getGL2();
 
 			glLineWidth((float) GameShell.canvasScale);
+
 			enabled = true;
 			canvasWidth = canvas.getSize().width;
 			canvasHeight = canvas.getSize().height;
@@ -826,16 +784,14 @@ public final class GlRenderer {
 
 			if (LWJGLWindow == 0) {
 				quit();
-				return result;
 			}
 
 			genTextures();
 			resetOpenGLState();
 			glClear(GL_COLOR_BUFFER_BIT);
-			swapBuffersAttempts = 0;
 			while (true) {
 				try {
-					drawable.swapBuffers();
+					swapBuffers();
 					break;
 				} catch (@Pc(86) Exception ex) {
 					if (swapBuffersAttempts++ > 5) {

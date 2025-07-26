@@ -148,7 +148,7 @@ public final class WaterMaterialRenderer implements MaterialRenderer {
 	@OriginalMember(owner = "client!pd", name = "a", descriptor = "()V")
 	@Override
 	public void unbind() {
-		GlRenderer.gl.glCallList(this.anInt4440 + 1);
+		glCallList(this.anInt4440 + 1);
 	}
 
 	@OriginalMember(owner = "client!pd", name = "a", descriptor = "(I)V")

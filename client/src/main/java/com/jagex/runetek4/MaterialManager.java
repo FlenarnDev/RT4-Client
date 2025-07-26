@@ -2,7 +2,6 @@ package com.jagex.runetek4;
 
 import com.jagex.runetek4.client.Preferences;
 
-import com.jogamp.opengl.GL2;
 
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -144,31 +143,27 @@ public class MaterialManager {
 
     @OriginalMember(owner = "client!lm", name = "b", descriptor = "()V")
     public static void method2808() {
-        @Pc(4) GL2 local4;
-        @Pc(11) int[] local11;
         if (texture3D != -1) {
-            local4 = GlRenderer.gl;
-            local11 = new int[] {texture3D};
-            local4.glDeleteTextures(1, local11, 0);
+            glDeleteTextures(texture3D);
             texture3D = -1;
             GlCleaner.oncard_texture -= textureBuffer.limit() * 2;
         }
         if (anIntArray341 != null) {
-            local4 = GlRenderer.gl;
-            local4.glDeleteTextures(64, anIntArray341, 0);
+            for (int textureId : anIntArray341) {
+                glDeleteTextures(textureId);
+            }
             anIntArray341 = null;
             GlCleaner.oncard_texture -= textureBuffer.limit() * 2;
         }
         if (waterfallTextureId != -1) {
-            local4 = GlRenderer.gl;
-            local11 = new int[] {waterfallTextureId};
-            local4.glDeleteTextures(1, local11, 0);
+            glDeleteTextures(waterfallTextureId);
             waterfallTextureId = -1;
             GlCleaner.oncard_texture -= aByteBuffer6.limit() * 2;
         }
         if (waterfallTextures != null) {
-            local4 = GlRenderer.gl;
-            local4.glDeleteTextures(64, waterfallTextures, 0);
+            for (int textureId : waterfallTextures) {
+                glDeleteTextures(textureId);
+            }
             waterfallTextures = null;
             GlCleaner.oncard_texture -= aByteBuffer6.limit() * 2;
         }
@@ -184,7 +179,6 @@ public class MaterialManager {
 
     @OriginalMember(owner = "client!lm", name = "e", descriptor = "()V")
     private static void initializeTextureMapping() {
-        @Pc(1) GL2 local1 = GlRenderer.gl;
         if (allows3DTextureMapping) {
             @Pc(6) int[] local6 = new int[1];
             glGenTextures(local6);
@@ -198,40 +192,42 @@ public class MaterialManager {
             return;
         }
         anIntArray341 = new int[64];
-        local1.glGenTextures(64, anIntArray341, 0);
+
+        //local1.glGenTextures(64, anIntArray341, 0);
         for (@Pc(65) int local65 = 0; local65 < 64; local65++) {
-            GlRenderer.setTextureId(anIntArray341[local65]);
+            anIntArray341[local65] = glGenTextures();
+            glBindTexture(GL_TEXTURE_2D, anIntArray341[local65]);
+
             textureBuffer.position(local65 * 64 * 64 * 2);
-            local1.glTexImage2D(GL2.GL_TEXTURE_2D, 0, GL2.GL_LUMINANCE_ALPHA, 64, 64, 0, GL2.GL_LUMINANCE_ALPHA, GL2.GL_UNSIGNED_BYTE, textureBuffer);
-            local1.glTexParameteri(GL2.GL_TEXTURE_2D, GL2.GL_TEXTURE_MIN_FILTER, GL2.GL_LINEAR);
-            local1.glTexParameteri(GL2.GL_TEXTURE_2D, GL2.GL_TEXTURE_MAG_FILTER, GL2.GL_LINEAR);
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_LUMINANCE_ALPHA, 64, 64, 0, GL_LUMINANCE_ALPHA, GL_UNSIGNED_BYTE, textureBuffer);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
         }
         GlCleaner.oncard_texture += textureBuffer.limit() * 2;
     }
 
     @OriginalMember(owner = "client!lm", name = "f", descriptor = "()V")
     private static void waterfallInit() {
-        @Pc(1) GL2 local1 = GlRenderer.gl;
         if (allows3DTextureMapping) {
             @Pc(6) int[] local6 = new int[1];
-            local1.glGenTextures(1, local6, 0);
-            local1.glBindTexture(GL2.GL_TEXTURE_3D, local6[0]);
+            glGenTextures(local6);
+            glBindTexture(GL_TEXTURE_3D, local6[0]);
             aByteBuffer6.position(0);
-            local1.glTexImage3D(GL2.GL_TEXTURE_3D, 0, GL2.GL_LUMINANCE_ALPHA, 64, 64, 64, 0, GL2.GL_LUMINANCE_ALPHA, GL2.GL_UNSIGNED_BYTE, aByteBuffer6);
-            local1.glTexParameteri(GL2.GL_TEXTURE_3D, GL2.GL_TEXTURE_MIN_FILTER, GL2.GL_LINEAR);
-            local1.glTexParameteri(GL2.GL_TEXTURE_3D, GL2.GL_TEXTURE_MAG_FILTER, GL2.GL_LINEAR);
+            glTexImage3D(GL_TEXTURE_3D, 0, GL_LUMINANCE_ALPHA, 64, 64, 64, 0, GL_LUMINANCE_ALPHA, GL_UNSIGNED_BYTE, aByteBuffer6);
+            glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+            glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
             waterfallTextureId = local6[0];
             GlCleaner.oncard_texture += aByteBuffer6.limit() * 2;
             return;
         }
         waterfallTextures = new int[64];
-        local1.glGenTextures(64, waterfallTextures, 0);
         for (@Pc(65) int local65 = 0; local65 < 64; local65++) {
-            GlRenderer.setTextureId(waterfallTextures[local65]);
+            waterfallTextures[local65] = glGenTextures();
+            glBindTexture(GL_TEXTURE_2D, waterfallTextures[local65]);
             aByteBuffer6.position(local65 * 64 * 64 * 2);
-            local1.glTexImage2D(GL2.GL_TEXTURE_2D, 0, GL2.GL_LUMINANCE_ALPHA, 64, 64, 0, GL2.GL_LUMINANCE_ALPHA, GL2.GL_UNSIGNED_BYTE, aByteBuffer6);
-            local1.glTexParameteri(GL2.GL_TEXTURE_2D, GL2.GL_TEXTURE_MIN_FILTER, GL2.GL_LINEAR);
-            local1.glTexParameteri(GL2.GL_TEXTURE_2D, GL2.GL_TEXTURE_MAG_FILTER, GL2.GL_LINEAR);
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_LUMINANCE_ALPHA, 64, 64, 0, GL_LUMINANCE_ALPHA, GL_UNSIGNED_BYTE, aByteBuffer6);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
         }
         GlCleaner.oncard_texture += aByteBuffer6.limit() * 2;
     }
