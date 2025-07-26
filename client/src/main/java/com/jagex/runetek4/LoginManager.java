@@ -494,7 +494,7 @@ public class LoginManager {
             }
         }
         if (GlRenderer.enabled) {
-            LightingManager.method2404();
+            LightingManager.clearLightningGraph();
         }
         if (GlRenderer.enabled) {
             FogManager.setDefaultChunksAtmosphere();

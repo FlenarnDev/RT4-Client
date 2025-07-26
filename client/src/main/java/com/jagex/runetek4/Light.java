@@ -8,72 +8,73 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
-@OriginalClass("runetek4.client!gi")
+@OriginalClass("client!gi")
 public final class Light {
 
 	@OriginalMember(owner = "client!f", name = "P", descriptor = "[I")
 	public static int[] NOISE;
-	@OriginalMember(owner = "runetek4.client!gi", name = "a", descriptor = "Z")
+
+	@OriginalMember(owner = "client!gi", name = "a", descriptor = "Z")
 	public final boolean aBoolean124;
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "d", descriptor = "I")
+	@OriginalMember(owner = "client!gi", name = "d", descriptor = "I")
 	private int alphaMax;
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "e", descriptor = "I")
+	@OriginalMember(owner = "client!gi", name = "e", descriptor = "I")
 	private int anInt2233;
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "i", descriptor = "I")
+	@OriginalMember(owner = "client!gi", name = "i", descriptor = "I")
 	public int y;
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "j", descriptor = "I")
+	@OriginalMember(owner = "client!gi", name = "j", descriptor = "I")
 	public final int radius;
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "p", descriptor = "I")
+	@OriginalMember(owner = "client!gi", name = "p", descriptor = "I")
 	private int alphaMin;
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "q", descriptor = "I")
+	@OriginalMember(owner = "client!gi", name = "q", descriptor = "I")
 	public int x;
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "r", descriptor = "I")
+	@OriginalMember(owner = "client!gi", name = "r", descriptor = "I")
 	public int level;
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "t", descriptor = "I")
+	@OriginalMember(owner = "client!gi", name = "t", descriptor = "I")
 	public final int anInt2243;
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "u", descriptor = "[S")
+	@OriginalMember(owner = "client!gi", name = "u", descriptor = "[S")
 	public final short[] aShortArray30;
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "w", descriptor = "F")
+	@OriginalMember(owner = "client!gi", name = "w", descriptor = "F")
 	public float alpha;
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "x", descriptor = "I")
+	@OriginalMember(owner = "client!gi", name = "x", descriptor = "I")
 	public int z;
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "y", descriptor = "I")
+	@OriginalMember(owner = "client!gi", name = "y", descriptor = "I")
 	private int anInt2246;
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "z", descriptor = "F")
-	public float aFloat9;
+	@OriginalMember(owner = "client!gi", name = "z", descriptor = "F")
+	public float attenuation;
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "A", descriptor = "Z")
+	@OriginalMember(owner = "client!gi", name = "A", descriptor = "Z")
 	public final boolean aBoolean126;
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "B", descriptor = "Lclient!fj;")
+	@OriginalMember(owner = "client!gi", name = "B", descriptor = "Lclient!fj;")
 	public Class45 aClass45_1;
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "C", descriptor = "I")
+	@OriginalMember(owner = "client!gi", name = "C", descriptor = "I")
 	public final int color;
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "E", descriptor = "I")
+	@OriginalMember(owner = "client!gi", name = "E", descriptor = "I")
 	private final int anInt2249;
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "g", descriptor = "Z")
-	public boolean aBoolean125 = false;
+	@OriginalMember(owner = "client!gi", name = "g", descriptor = "Z")
+	public boolean doesNotInteractWithLight = false;
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "I", descriptor = "[F")
+	@OriginalMember(owner = "client!gi", name = "I", descriptor = "[F")
 	public final float[] diffuse = new float[4];
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "<init>", descriptor = "(Lclient!wa;)V")
+	@OriginalMember(owner = "client!gi", name = "<init>", descriptor = "(Lclient!wa;)V")
 	public Light(@OriginalArg(0) Packet packet) {
 		if (NOISE == null) {
 			init();
@@ -101,7 +102,7 @@ public final class Light {
 		}
 	}
 
-	@OriginalMember(owner = "runetek4.client!qk", name = "a", descriptor = "(ZIIIIFII)[I")
+	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(ZIIIIFII)[I")
 	public static int[] createNoise(@OriginalArg(5) float arg0) {
 		@Pc(11) int[] local11 = new int[2048];
 		@Pc(15) TextureOpPerlinNoise local15 = new TextureOpPerlinNoise();
@@ -122,7 +123,7 @@ public final class Light {
 		NOISE = createNoise(0.4F);
 	}
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "a", descriptor = "(BIIII)V")
+	@OriginalMember(owner = "client!gi", name = "a", descriptor = "(BIIII)V")
 	public final void method1762(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		this.anInt2233 = arg0;
 		this.alphaMin = arg2;
@@ -130,13 +131,13 @@ public final class Light {
 		this.anInt2246 = arg1;
 	}
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "a", descriptor = "(I)V")
+	@OriginalMember(owner = "client!gi", name = "a", descriptor = "(I)V")
 	private void method1763() {
 		@Pc(10) int local10 = (this.radius << 7) + 64;
-		this.aFloat9 = 1.0F / (float) (local10 * local10);
+		this.attenuation = 1.0F / (float) (local10 * local10);
 	}
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "a", descriptor = "(ZII)V")
+	@OriginalMember(owner = "client!gi", name = "a", descriptor = "(ZII)V")
 	public final void method1765(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1) {
 		@Pc(26) int local26 = this.anInt2249 + arg1 * this.anInt2246 / 50 & 0x7FF;
 		@Pc(29) int local29 = this.anInt2233;
@@ -164,7 +165,7 @@ public final class Light {
 		this.diffuse[1] = (float) (this.color >> 8 & 0xFF) * local123;
 	}
 
-	@OriginalMember(owner = "runetek4.client!gi", name = "c", descriptor = "(I)V")
+	@OriginalMember(owner = "client!gi", name = "c", descriptor = "(I)V")
 	private void method1766() {
 		@Pc(4) int local4 = this.anInt2243;
 		if (local4 == 2) {

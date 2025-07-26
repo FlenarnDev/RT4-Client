@@ -19,8 +19,8 @@ public class IgnoreList {
         if (arg0 == null) {
             return false;
         }
-        for (@Pc(11) int local11 = 0; local11 < ignoreCount; local11++) {
-            if (arg0.equalsIgnoreCase(ignoreNames[local11])) {
+        for (@Pc(11) int i = 0; i < ignoreCount; i++) {
+            if (arg0.equalsIgnoreCase(ignoreNames[i])) {
                 return true;
             }
         }

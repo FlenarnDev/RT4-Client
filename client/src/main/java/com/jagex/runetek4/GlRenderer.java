@@ -353,11 +353,6 @@ public final class GlRenderer {
 		depthTestEnabled = enabled;
 	}
 
-	@OriginalMember(owner = "client!tf", name = "a", descriptor = "(F)V")
-	public static void method4159(@OriginalArg(0) float arg0) {
-		configureDepthAdjustment(3000.0F, arg0 * 1.5F);
-	}
-
 	@OriginalMember(owner = "client!tf", name = "h", descriptor = "()V")
 	public static void draw() {
 		@Pc(2) int[] ints = new int[2];
@@ -911,6 +906,11 @@ public final class GlRenderer {
 		glLoadIdentity();
 		glRotatef(180.0F, 1.0F, 0.0F, 0.0F);
 		isOrthoViewConfigured = false;
+	}
+
+	@OriginalMember(owner = "client!tf", name = "a", descriptor = "(F)V")
+	public static void configureFixedDepthAdjustment(@OriginalArg(0) float multiplier) {
+		configureDepthAdjustment(3000.0F, multiplier * 1.5F);
 	}
 
 	@OriginalMember(owner = "client!tf", name = "d", descriptor = "(I)V")
