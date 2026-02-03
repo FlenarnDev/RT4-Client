@@ -18,7 +18,7 @@ public final class client extends GameShell {
 		try {
 			if (arg0.length != 4) {
 				arg0 = new String[4];
-				arg0[0] = "0";
+				arg0[0] = "1";
 				arg0[1] = "live";
 				arg0[2] = "english";
 				arg0[3] = "game0";
