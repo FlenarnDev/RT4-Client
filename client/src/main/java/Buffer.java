@@ -497,10 +497,17 @@ public class Buffer extends Node {
 		this.gBytes(len, plaintextBytes);
 		@Pc(23) BigInteger plaintext = new BigInteger(plaintextBytes);
 		@Pc(28) BigInteger ciphertext = plaintext.modPow(exp, mod);
-		@Pc(38) byte[] ciphertextBytes = ciphertext.toByteArray();
-		this.offset = 0;
-		this.p1(ciphertextBytes.length);
-		this.pBytes(ciphertextBytes, ciphertextBytes.length);
+		// TODO remove once not needed for dev purposes anymore
+        byte[] ciphertextBytes;
+        if (client.useRsa) {
+            ciphertextBytes = ciphertext.toByteArray();
+        } else {
+            ciphertextBytes = plaintext.toByteArray();
+        }
+
+        this.offset = 0;
+        this.p1(ciphertextBytes.length);
+        this.pBytes(ciphertextBytes, ciphertextBytes.length);
 	}
 
 	@OriginalMember(owner = "client!wa", name = "a", descriptor = "(IF)V")

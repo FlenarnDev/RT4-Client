@@ -42,3 +42,21 @@ jar {
     }
     from { configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
 }
+
+tasks.register('runDev', JavaExec) {
+    group = "application"
+
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = mainClassName
+
+    args = ['1', 'wip', 'english', 'game0', 'no-rsa', 'no-isaac', 'world=1']
+}
+
+tasks.register('runDevRsaIsaac', JavaExec) {
+    group = "application"
+
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = mainClassName
+
+    args = ['1', 'wip', 'english', 'game0', 'world=1']
+}

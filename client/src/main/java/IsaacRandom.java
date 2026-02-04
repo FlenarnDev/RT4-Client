@@ -157,12 +157,10 @@ public final class IsaacRandom {
 		this.anInt2916 = 256;
 	}
 
+	// TODO remove once not needed for dev purposes anymore
 	@OriginalMember(owner = "client!ij", name = "a", descriptor = "(I)I")
 	public final int method2295() {
-		// TODO - Add proper support server side.
-		boolean useIsaac = false;
-
-		if (useIsaac) {
+		if (client.useIsaac) {
 			if (this.anInt2916-- == 0) {
 				this.method2296();
 				this.anInt2916 = 255;
