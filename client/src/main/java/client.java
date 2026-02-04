@@ -13,10 +13,15 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("client!client")
 public final class client extends GameShell {
 
+    // TODO remove once not needed for dev purposes anymore
+    public static boolean useRsa = true;
+    public static boolean useIsaac = true;
+    public static int defaultWorld = -1;
+
 	@OriginalMember(owner = "client!client", name = "main", descriptor = "([Ljava/lang/String;)V")
 	public static void main(@OriginalArg(0) String[] arg0) {
 		try {
-			if (arg0.length != 4) {
+			if (arg0.length == 0) {
 				arg0 = new String[4];
 				arg0[0] = "1";
 				arg0[1] = "live";
@@ -61,6 +66,23 @@ public final class client extends GameShell {
 			} else {
 				Static131.method2577("game");
 			}
+
+            // TODO remove once not needed for dev purposes anymore
+            for (int i = 4; i < arg0.length; i++) {
+                String arg = arg0[i];
+                if (arg.equals("no-rsa")) {
+                    useRsa = false;
+                } else if (arg.equals("rsa")) {
+                    useRsa = true;
+                } else if (arg.equals("no-isaac")) {
+                    useIsaac = false;
+                } else if (arg.equals("isaac")) {
+                    useIsaac = true;
+                } else if (arg.startsWith("world=")) {
+                    defaultWorld = Integer.parseInt(arg.substring(6));
+                }
+            }
+
 			Static279.anInt5880 = 0;
 			Static178.aBoolean203 = false;
 			Static204.anInt4760 = 0;
@@ -345,6 +367,10 @@ public final class client extends GameShell {
 			Static143.worldListHostname = "127.0.0.1";
 			Static97.worldListAlternatePort = Static187.worldListId + 50000;
 			Static249.worldListDefaultPort = Static187.worldListId + 40000;
+        } else if (Static83.modeWhere == 3) {
+            Static143.worldListHostname = "127.0.0.1";
+            Static97.worldListAlternatePort = Static187.worldListId + 50000;
+            Static249.worldListDefaultPort = Static187.worldListId + 40000;
 		}
 		if (Static266.game == 1) {
 			Static172.shiftClick = true;
@@ -369,6 +395,14 @@ public final class client extends GameShell {
 		if ((SignLink.anInt5928 == 3 && Static83.modeWhere != 2)) {
 			Static125.worldId = Static187.worldListId;
 		}
+
+        // TODO remove once not needed for dev purposes anymore
+        if (defaultWorld != -1) {
+            Static125.worldId = defaultWorld;
+        } else if (!useRsa) {
+            Static125.worldId = Static187.worldListId;
+        }
+
 		Static156.init(); // keyboard
 		Static19.start(Static154.canvas); // keyboard
 		Static88.start(Static154.canvas); // mouse
