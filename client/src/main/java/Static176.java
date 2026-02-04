@@ -36,9 +36,9 @@ public final class Static176 {
 			Static60.hostname = new String(local31, 0, local31.length);
 			Static125.worldId = local3.anInt382;
 			if (Static83.modeWhere != 0) {
-				Static271.defaultPort = Static125.worldId + 43594; // 40000;
+				Static271.defaultPort = Static125.worldId + 40000;
 				Static209.port = Static271.defaultPort;
-				Static55.alternatePort = Static125.worldId + 43594; // 50000;
+				Static55.alternatePort = Static125.worldId + 50000;
 			}
 			return true;
 		} else {
