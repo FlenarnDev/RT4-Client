@@ -3,7 +3,7 @@ plugins {
     id 'application'
 }
 
-mainClassName = 'client'
+mainClassName = 'com.jagex3.client.Client'
 version = '1.0.0'
 
 sourceCompatibility = 1.8
