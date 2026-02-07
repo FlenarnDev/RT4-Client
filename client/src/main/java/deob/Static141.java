@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -18,10 +19,7 @@ public final class Static141 {
 	@OriginalMember(owner = "com.jagex3.client.client!lb", name = "u", descriptor = "I")
 	public static int anInt3469 = 0;
 
-	@OriginalMember(owner = "com.jagex3.client.client!lb", name = "v", descriptor = "I")
-	public static int anInt3470 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!lb", name = "A", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!lb", name = "A", descriptor = "I")
 	public static int anInt3474 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!lb", name = "d", descriptor = "(B)V")
@@ -65,13 +63,13 @@ public final class Static141 {
 		Static92.aClass3_Sub2_Sub1_6 = null;
 		Static165.aClass3_Sub2_Sub1_8 = null;
 		Static181.aClass3_Sub2_Sub1_9 = null;
-		if (Static244.anInt5370 == 5) {
+		if (Client.state == 5) {
 			Static181.method3344(Static209.aClass153_86);
 		}
-		if (Static244.anInt5370 == 10) {
+		if (Client.state == 10) {
 			Static73.method1596(false);
 		}
-		if (Static244.anInt5370 == 30) {
+		if (Client.state == 30) {
 			Static196.method3534(25);
 		}
 	}

@@ -1,6 +1,7 @@
 package deob;
 
 import com.jagex.signlink.SignLink;
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -34,26 +35,26 @@ public final class Static176 {
 		@Pc(3) World local3 = Static54.method1310(arg0);
 		if (local3 == null) {
 			return false;
-		} else if (SignLink.anInt5928 == 1 || SignLink.anInt5928 == 2 || Static83.modeWhere == 2) {
+		} else if (SignLink.anInt5928 == 1 || SignLink.anInt5928 == 2 || Client.modeWhere == 2) {
 			@Pc(31) byte[] local31 = local3.aClass100_71.method3148();
-			Static60.hostname = new String(local31, 0, local31.length);
+			Client.loginHost = new String(local31, 0, local31.length);
 			Static125.worldId = local3.anInt382;
-			if (Static83.modeWhere != 0) {
+			if (Client.modeWhere != 0) {
 				Static271.defaultPort = Static125.worldId + 40000;
-				Static209.port = Static271.defaultPort;
+				Client.loginPort = Static271.defaultPort;
 				Static55.alternatePort = Static125.worldId + 50000;
 			}
 			return true;
 		} else {
 			@Pc(62) JagString local62 = Static211.aClass100_230;
-			if (Static83.modeWhere != 0) {
+			if (Client.modeWhere != 0) {
 				local62 = Static34.method882(new JagString[] { Static31.aClass100_193, Static123.method2423(local3.anInt382 + 7000) });
 			}
 			@Pc(89) JagString local89 = Static211.aClass100_230;
 			if (Static47.aClass100_991 != null) {
 				local89 = Static34.method882(new JagString[] { Static167.aClass100_783, Static47.aClass100_991 });
 			}
-			@Pc(182) JagString local182 = Static34.method882(new JagString[] { Static115.aClass100_582, local3.aClass100_71, local62, Static279.aClass100_1107, Static123.method2423(Static141.anInt3470), aClass100_801, Static123.method2423(Static204.anInt4760), local89, Static139.aClass100_659, Static150.aBoolean175 ? Static30.aClass100_184 : Static260.aClass100_945, Static60.aClass100_420, Static233.aBoolean254 ? Static30.aClass100_184 : Static260.aClass100_945, Static198.aClass100_260, Static249.aBoolean282 ? Static30.aClass100_184 : Static260.aClass100_945 });
+			@Pc(182) JagString local182 = Static34.method882(new JagString[] { Static115.aClass100_582, local3.aClass100_71, local62, Static279.aClass100_1107, Static123.method2423(Client.lang), aClass100_801, Static123.method2423(Static204.anInt4760), local89, Static139.aClass100_659, Client.js ? Static30.aClass100_184 : Static260.aClass100_945, Static60.aClass100_420, Static233.aBoolean254 ? Static30.aClass100_184 : Static260.aClass100_945, Static198.aClass100_260, Client.advertSuppressed ? Static30.aClass100_184 : Static260.aClass100_945 });
 			try {
 				Static215.aClient1.getAppletContext().showDocument(local182.method3107(), "_self");
 				return true;
@@ -82,7 +83,7 @@ public final class Static176 {
 					Static98.method1966(Static246.anInt5393, 0L, Static225.aClass100_961, local33, (short) 11, Static102.aClass100_545, local47);
 				}
 			} else {
-				if (Static266.game == 1) {
+				if (Client.modegame == 1) {
 					Static98.method1966(-1, 0L, Static186.aClass100_827, local33, (short) 36, LocalizedText.FACEHERE, local47);
 				}
 				Static98.method1966(-1, 0L, Static186.aClass100_827, local33, (short) 60, Static195.aClass100_859, local47);

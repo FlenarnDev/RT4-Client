@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -26,10 +27,10 @@ public final class Static145 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!lf", name = "a", descriptor = "(I)V")
 	public static void method2742() {
-		if (Static244.anInt5370 == 10 && GlRenderer.enabled) {
+		if (Client.state == 10 && GlRenderer.enabled) {
 			Static196.method3534(28);
 		}
-		if (Static244.anInt5370 == 30) {
+		if (Client.state == 30) {
 			Static196.method3534(25);
 		}
 	}

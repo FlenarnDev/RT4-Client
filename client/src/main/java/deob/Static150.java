@@ -9,17 +9,14 @@ public final class Static150 {
 	@OriginalMember(owner = "com.jagex3.client.client!lk", name = "J", descriptor = "Lclient!na;")
 	public static final JagString aClass100_687 = Static28.parse(")4p=");
 
-	@OriginalMember(owner = "com.jagex3.client.client!lk", name = "U", descriptor = "Z")
-	public static boolean aBoolean175 = false;
-
-	@OriginalMember(owner = "com.jagex3.client.client!lk", name = "V", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!lk", name = "V", descriptor = "I")
 	public static int anInt3582 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!lk", name = "Z", descriptor = "I")
 	public static int clickButton = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!lk", name = "a", descriptor = "(ILclient!ve;)I")
-	public static int method2797(@OriginalArg(1) Js5 arg0) {
+	public static int ready(@OriginalArg(1) Js5 arg0) {
 		@Pc(1) int local1 = 0;
 		if (arg0.method4506(Static262.anInt5754)) {
 			local1++;

@@ -16,7 +16,7 @@ public final class Static199 {
 	public static HashTable aClass133_20 = new HashTable(16);
 
 	@OriginalMember(owner = "com.jagex3.client.client!qc", name = "P", descriptor = "I")
-	public static int anInt4670 = 10;
+	public static int loadPos = 10;
 
 	@OriginalMember(owner = "com.jagex3.client.client!qc", name = "U", descriptor = "I")
 	public static int anInt4672 = 0;

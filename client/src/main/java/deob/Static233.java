@@ -9,6 +9,8 @@ import java.io.StreamCorruptedException;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -110,7 +112,7 @@ public final class Static233 {
 							@Pc(99) int local99 = local89 / 8 + (local83 / 8 << 8);
 							for (@Pc(101) int local101 = 0; local101 < Static238.anIntArray470.length; local101++) {
 								if (Static238.anIntArray470[local101] == local99 && local21[local101] != null) {
-									Static217.method3771(Static148.aClass97Array1, local29, local21[local101], local67, local77, local36 * 8, local43 * 8, arg0, (local83 & 0x7) * 8, (local89 & 0x7) * 8);
+									Static217.method3771(Client.levelCollisionMap, local29, local21[local101], local67, local77, local36 * 8, local43 * 8, arg0, (local83 & 0x7) * 8, (local89 & 0x7) * 8);
 									break;
 								}
 							}

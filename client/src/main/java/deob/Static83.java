@@ -15,10 +15,7 @@ public final class Static83 {
 	@OriginalMember(owner = "com.jagex3.client.client!gj", name = "r", descriptor = "F")
 	public static float aFloat3;
 
-	@OriginalMember(owner = "com.jagex3.client.client!gj", name = "b", descriptor = "I")
-	public static int modeWhere = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!gj", name = "d", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!gj", name = "d", descriptor = "I")
 	public static int anInt372 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!gj", name = "p", descriptor = "Lclient!n;")

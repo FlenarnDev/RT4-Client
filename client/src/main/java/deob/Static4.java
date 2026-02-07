@@ -3,6 +3,7 @@ package deob;
 import java.io.IOException;
 
 import com.jagex.signlink.SignLink;
+import com.jagex3.client.GameShell;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -12,10 +13,7 @@ public final class Static4 {
 	@OriginalMember(owner = "com.jagex3.client.client!ac", name = "e", descriptor = "[[[B")
 	public static byte[][][] aByteArrayArrayArray1;
 
-	@OriginalMember(owner = "com.jagex3.client.client!ac", name = "c", descriptor = "I")
-	public static int js5ConnectState = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ac", name = "i", descriptor = "Lclient!ih;")
+    @OriginalMember(owner = "com.jagex3.client.client!ac", name = "i", descriptor = "Lclient!ih;")
 	public static final LinkedList aClass69_2 = new LinkedList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!ac", name = "k", descriptor = "S")
@@ -402,7 +400,7 @@ public final class Static4 {
 				return true;
 			} else if (Static164.anInt3985 == 164) {
 				local133 = Static57.aClass3_Sub15_Sub1_3.g4rme();
-				Static232.aClass212_5 = Static71.signLink.method5128(local133);
+				Static232.aClass212_5 = GameShell.signLink.method5128(local133);
 				Static164.anInt3985 = -1;
 				return true;
 			} else if (Static164.anInt3985 == 225) {
@@ -987,7 +985,7 @@ public final class Static4 {
 								Static209.miscTransmitAt = Static119.transmitTimer;
 								return true;
 							} else if (Static164.anInt3985 == 114) {
-								Static202.method3654(Static71.signLink, Static57.aClass3_Sub15_Sub1_3, Static223.anInt5028);
+								Static202.method3654(GameShell.signLink, Static57.aClass3_Sub15_Sub1_3, Static223.anInt5028);
 								Static164.anInt3985 = -1;
 								return true;
 							} else if (Static164.anInt3985 == 65) {
@@ -1051,7 +1049,7 @@ public final class Static4 {
 								} else {
 									Static175.url = local156;
 									Static164.newTab = true;
-									Static33.openUrlRequest = Static71.signLink.method5131(new String(local156.method3148(), "ISO-8859-1"));
+									Static33.openUrlRequest = GameShell.signLink.method5131(new String(local156.method3148(), "ISO-8859-1"));
 								}
 								Static164.anInt3985 = -1;
 								return true;

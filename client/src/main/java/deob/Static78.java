@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -169,7 +170,7 @@ public final class Static78 {
 		}
 		Static28.method792(GlRenderer.enabled ? 28 : 25, local420);
 		for (local427 = 0; local427 < 4; local427++) {
-			Static148.aClass97Array1[local427].method3050();
+			Client.levelCollisionMap[local427].method3050();
 		}
 		for (local427 = 0; local427 < 4; local427++) {
 			for (local320 = 0; local320 < 104; local320++) {
@@ -222,7 +223,7 @@ public final class Static78 {
 		}
 		Static217.method3768();
 		Static7.method842(true);
-		Static45.method1169(Static148.aClass97Array1, false);
+		Static45.method1169(Client.levelCollisionMap, false);
 		if (GlRenderer.enabled) {
 			Static120.method2395();
 		}
@@ -254,7 +255,7 @@ public final class Static78 {
 			}
 			Static217.method3768();
 			Static7.method842(true);
-			Static45.method1169(Static148.aClass97Array1, true);
+			Static45.method1169(Client.levelCollisionMap, true);
 			Static7.method842(true);
 			Static105.method2255();
 			Static278.method4648(false);
@@ -276,7 +277,7 @@ public final class Static78 {
 		Static219.method3796();
 		Static217.method3768();
 		Static231.aBoolean252 = false;
-		if (Static39.aFrame1 != null && Static124.socket != null && Static244.anInt5370 == 25) {
+		if (Static39.aFrame1 != null && Static124.socket != null && Client.state == 25) {
 			Static6.outboundBuffer.p1isaac(20);
 			Static6.outboundBuffer.p4(1057001181);
 		}
@@ -294,7 +295,7 @@ public final class Static78 {
 				}
 			}
 		}
-		if (Static244.anInt5370 == 28) {
+		if (Client.state == 28) {
 			Static196.method3534(10);
 		} else {
 			Static196.method3534(30);

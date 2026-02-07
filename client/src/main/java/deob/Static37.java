@@ -1,6 +1,5 @@
 package deob;
 
-import com.jagex.signlink.PrivilegedRequest;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -16,10 +15,7 @@ public final class Static37 {
 	@OriginalMember(owner = "com.jagex3.client.client!cm", name = "c", descriptor = "I")
 	public static int anInt1176;
 
-	@OriginalMember(owner = "com.jagex3.client.client!cm", name = "f", descriptor = "Lsignlink!im;")
-	public static PrivilegedRequest js5SocketRequest;
-
-	@OriginalMember(owner = "com.jagex3.client.client!cm", name = "a", descriptor = "(ILclient!fe;)V")
+    @OriginalMember(owner = "com.jagex3.client.client!cm", name = "a", descriptor = "(ILclient!fe;)V")
 	public static void method949(@OriginalArg(1) PathingEntity arg0) {
 		if (arg0.anInt3376 == 0) {
 			return;

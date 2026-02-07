@@ -280,7 +280,7 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 				this.aClass69_17 = null;
 			}
 		}
-		if (!this.aBoolean37 || this.aLong20 > MonotonicClock.currentTimeMillis()) {
+		if (!this.aBoolean37 || this.aLong20 > MonotonicClock.currentTime()) {
 			return;
 		}
 		for (@Pc(331) Js5Request local331 = (Js5Request) this.aClass133_1.method3859(); local331 != null; local331 = (Js5Request) this.aClass133_1.method3861()) {
@@ -295,7 +295,7 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 				}
 			}
 		}
-		this.aLong20 = MonotonicClock.currentTimeMillis() + 1000L;
+		this.aLong20 = MonotonicClock.currentTime() + 1000L;
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!bg", name = "b", descriptor = "(II)I")

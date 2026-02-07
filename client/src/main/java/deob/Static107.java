@@ -64,7 +64,7 @@ public final class Static107 {
 			if (Static258.anInt5637 > 0 && Static60.aClass19_1 == null) {
 				Static60.aClass19_1 = new AudioThread();
 				Static60.aClass19_1.aClass213_1 = arg1;
-				arg1.method5130(Static258.anInt5637, Static60.aClass19_1);
+				arg1.threadreq(Static258.anInt5637, Static60.aClass19_1);
 			}
 			if (Static60.aClass19_1 != null) {
 				if (Static60.aClass19_1.aClass62Array1[arg3] != null) {
@@ -84,7 +84,7 @@ public final class Static107 {
 				if (Static258.anInt5637 > 0 && Static60.aClass19_1 == null) {
 					Static60.aClass19_1 = new AudioThread();
 					Static60.aClass19_1.aClass213_1 = arg1;
-					arg1.method5130(Static258.anInt5637, Static60.aClass19_1);
+					arg1.threadreq(Static258.anInt5637, Static60.aClass19_1);
 				}
 				if (Static60.aClass19_1 != null) {
 					if (Static60.aClass19_1.aClass62Array1[arg3] != null) {

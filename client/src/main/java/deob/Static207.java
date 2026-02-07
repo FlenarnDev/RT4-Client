@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.Socket;
 
 import com.jagex.signlink.MonotonicClock;
+import com.jagex3.client.GameShell;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -93,15 +94,15 @@ public final class Static207 {
 	public static int method3684() {
 		try {
 			if (Static82.anInt2231 == 0) {
-				if (MonotonicClock.currentTimeMillis() - 5000L < Static231.aLong174) {
+				if (MonotonicClock.currentTime() - 5000L < Static231.aLong174) {
 					return 0;
 				}
 				System.out.println(Static208.worldListPort);
-				Static72.aClass212_3 = Static71.signLink.openSocket(Static143.worldListHostname, Static208.worldListPort);
-				Static15.aLong18 = MonotonicClock.currentTimeMillis();
+				Static72.aClass212_3 = GameShell.signLink.socketreq(Static143.worldListHostname, Static208.worldListPort);
+				Static15.aLong18 = MonotonicClock.currentTime();
 				Static82.anInt2231 = 1;
 			}
-			if (Static15.aLong18 + 30000L < MonotonicClock.currentTimeMillis()) {
+			if (Static15.aLong18 + 30000L < MonotonicClock.currentTime()) {
 				return Static10.method347(1000);
 			}
 			@Pc(82) int local82;
@@ -113,7 +114,7 @@ public final class Static207 {
 				if (Static72.aClass212_3.status != 1) {
 					return -1;
 				}
-				Static124.socket = new BufferedSocket((Socket) Static72.aClass212_3.result, Static71.signLink);
+				Static124.socket = new BufferedSocket((Socket) Static72.aClass212_3.result, GameShell.signLink);
 				Static6.outboundBuffer.offset = 0;
 				Static72.aClass212_3 = null;
 				local82 = 0;
@@ -180,7 +181,7 @@ public final class Static207 {
 				Static127.anInt3132 = 0;
 				Static82.anInt2231 = 0;
 				Static229.aByteArray70 = null;
-				Static231.aLong174 = MonotonicClock.currentTimeMillis();
+				Static231.aLong174 = MonotonicClock.currentTime();
 				return 0;
 			} else {
 				return Static10.method347(1002);

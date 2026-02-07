@@ -6,6 +6,8 @@ import java.awt.Insets;
 
 import com.jagex.signlink.PrivilegedRequest;
 import com.jagex.signlink.SignLink;
+import com.jagex3.client.Client;
+import com.jagex3.client.GameShell;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -55,15 +57,15 @@ public final class Static197 {
 			GlRenderer.quit();
 		}
 		if (Static69.aFrame2 != null && (arg1 != 3 || arg4 != Static114.anInt5831 || arg5 != Static22.anInt729)) {
-			Static25.method714(Static69.aFrame2, Static71.signLink);
+			Static25.method714(Static69.aFrame2, GameShell.signLink);
 			Static69.aFrame2 = null;
 		}
 		if (arg1 == 3 && Static69.aFrame2 == null) {
-			Static69.aFrame2 = Static169.method3176(0, arg5, arg4, Static71.signLink);
+			Static69.aFrame2 = Static169.method3176(0, arg5, arg4, GameShell.signLink);
 			if (Static69.aFrame2 != null) {
 				Static22.anInt729 = arg5;
 				Static114.anInt5831 = arg4;
-				Static203.method3663(Static71.signLink);
+				Static203.method3663(GameShell.signLink);
 			}
 		}
 		if (arg1 == 3 && Static69.aFrame2 == null) {
@@ -74,7 +76,7 @@ public final class Static197 {
 		if (Static69.aFrame2 != null) {
 			local85 = Static69.aFrame2;
 		} else if (Static39.aFrame1 == null) {
-			local85 = Static71.signLink.anApplet2;
+			local85 = GameShell.signLink.anApplet2;
 		} else {
 			local85 = Static39.aFrame1;
 		}
@@ -131,7 +133,7 @@ public final class Static197 {
 				Static260.aClass27_2 = null;
 				Static260.aClass27_2 = Static131.method2579(Static254.anInt5554, Static48.anInt1448, Static154.canvas);
 				Static129.method2492();
-				if (Static244.anInt5370 == 5) {
+				if (Client.state == 5) {
 					Static182.method3359(true, Static280.aClass3_Sub2_Sub9_43);
 				} else {
 					Static114.method4636(false, LocalizedText.LOADING);
@@ -147,7 +149,7 @@ public final class Static197 {
 				} else {
 					Static260.aClass27_2 = null;
 				}
-				@Pc(300) PrivilegedRequest local300 = Static71.signLink.method5123(Static215.aClient1.getClass());
+				@Pc(300) PrivilegedRequest local300 = GameShell.signLink.method5123(Static215.aClient1.getClass());
 				while (local300.status == 0) {
 					Static231.sleep(100L);
 				}
@@ -207,7 +209,7 @@ public final class Static197 {
 		if (Static154.topLevelInterace != -1) {
 			Static210.method3712(true);
 		}
-		if (Static124.socket != null && (Static244.anInt5370 == 30 || Static244.anInt5370 == 25)) {
+		if (Static124.socket != null && (Client.state == 30 || Client.state == 25)) {
 			Static59.method1373();
 		}
 		for (@Pc(466) int local466 = 0; local466 < 100; local466++) {

@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Graphics;
 import java.awt.Insets;
+
+import com.jagex3.client.GameShell;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -48,7 +50,7 @@ public final class Static139 {
 			if (Static69.aFrame2 != null) {
 				local46 = Static69.aFrame2;
 			} else if (Static39.aFrame1 == null) {
-				local46 = Static71.signLink.anApplet2;
+				local46 = GameShell.signLink.anApplet2;
 			} else {
 				local46 = Static39.aFrame1;
 			}

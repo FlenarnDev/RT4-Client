@@ -34,7 +34,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ve", name = "a", descriptor = "(B)Z")
-	public final boolean method4475() {
+	public final boolean requestFullDownload() {
 		if (!this.method4484()) {
 			return false;
 		}
@@ -159,7 +159,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ve", name = "a", descriptor = "(Lclient!na;BLclient!na;)Z")
-	public final boolean method4487(@OriginalArg(0) JagString arg0, @OriginalArg(2) JagString arg1) {
+	public final boolean requestDownload(@OriginalArg(0) JagString arg0, @OriginalArg(2) JagString arg1) {
 		if (!this.method4484()) {
 			return false;
 		}

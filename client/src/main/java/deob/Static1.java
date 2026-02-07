@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -25,7 +26,7 @@ public final class Static1 {
 	public static final JagString aClass100_2 = Static28.parse("<col=ffffff> )4 ");
 
 	@OriginalMember(owner = "com.jagex3.client.client!a", name = "a", descriptor = "(Lclient!fi;I)V")
-	public static void method1(@OriginalArg(0) HuffmanCodec arg0) {
+	public static void setHuffman(@OriginalArg(0) HuffmanCodec arg0) {
 		Static62.aClass44_1 = arg0;
 	}
 
@@ -568,7 +569,7 @@ public final class Static1 {
 		@Pc(161) int local161 = arg0 + arg2 * Static109.anInt2882 / Static48.anInt1449;
 		@Pc(167) int local167 = arg2 * Static89.anInt2387 / Static48.anInt1449;
 		@Pc(169) int local169 = 16711680;
-		if (Static266.game == 1) {
+		if (Client.modegame == 1) {
 			local169 = 16777215;
 		}
 		if (GlRenderer.enabled) {

@@ -236,7 +236,7 @@ public final class Static104 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ia", name = "a", descriptor = "(I)I")
-	public static int method2252() {
+	public static int readyMax() {
 		return 2;
 	}
 }

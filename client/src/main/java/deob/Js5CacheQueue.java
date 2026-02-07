@@ -1,6 +1,7 @@
 package deob;
 
 import com.jagex.signlink.PrivilegedRequest;
+import com.jagex3.client.GameShell;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -23,7 +24,7 @@ public final class Js5CacheQueue implements Runnable {
 
 	@OriginalMember(owner = "com.jagex3.client.client!k", name = "<init>", descriptor = "()V")
 	public Js5CacheQueue() {
-		@Pc(20) PrivilegedRequest local20 = Static71.signLink.method5130(5, this);
+		@Pc(20) PrivilegedRequest local20 = GameShell.signLink.threadreq(5, this);
 		while (local20.status == 0) {
 			Static231.sleep(10L);
 		}

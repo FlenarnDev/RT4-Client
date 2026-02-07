@@ -9,10 +9,7 @@ public final class Static206 {
 	@OriginalMember(owner = "com.jagex3.client.client!qk", name = "c", descriptor = "[I")
 	public static int[] anIntArray427;
 
-	@OriginalMember(owner = "com.jagex3.client.client!qk", name = "g", descriptor = "Lclient!ma;")
-	public static BufferedSocket js5Socket;
-
-	@OriginalMember(owner = "com.jagex3.client.client!qk", name = "a", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!qk", name = "a", descriptor = "Lclient!na;")
 	public static final JagString aClass100_899 = Static28.parse("0(U");
 
 	@OriginalMember(owner = "com.jagex3.client.client!qk", name = "b", descriptor = "Lclient!na;")

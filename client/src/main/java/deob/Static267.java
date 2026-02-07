@@ -1,5 +1,7 @@
 package deob;
 
+import com.jagex3.client.Client;
+import com.jagex3.client.GameShell;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -47,9 +49,9 @@ public final class Static267 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!vl", name = "a", descriptor = "(I)Z")
 	public static boolean method4527() {
-		if (Static150.aBoolean175) {
+		if (Client.js) {
 			try {
-				return !((Boolean) Static119.aClass100_588.method3157(Static71.signLink.anApplet2));
+				return !((Boolean) Static119.aClass100_588.method3157(GameShell.signLink.anApplet2));
 			} catch (@Pc(21) Throwable local21) {
 			}
 		}

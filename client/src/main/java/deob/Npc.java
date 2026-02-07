@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -100,7 +101,7 @@ public final class Npc extends PathingEntity {
 	@OriginalMember(owner = "com.jagex3.client.client!km", name = "b", descriptor = "(I)I")
 	@Override
 	protected final int method2688() {
-		if (Static266.game != 0 && this.aClass96_1.anIntArray357 != null) {
+		if (Client.modegame != 0 && this.aClass96_1.anIntArray357 != null) {
 			@Pc(17) NpcType local17 = this.aClass96_1.method2932();
 			if (local17 != null && local17.anInt3737 != -1) {
 				return local17.anInt3737;

@@ -2,6 +2,9 @@ package deob;
 
 import java.awt.Point;
 import java.io.IOException;
+
+import com.jagex3.client.Client;
+import com.jagex3.client.GameShell;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -17,10 +20,7 @@ public final class Static81 {
 	@OriginalMember(owner = "com.jagex3.client.client!gg", name = "bb", descriptor = "I")
 	public static int anInt2223;
 
-	@OriginalMember(owner = "com.jagex3.client.client!gg", name = "U", descriptor = "I")
-	public static int modeWhat = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!gg", name = "W", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!gg", name = "W", descriptor = "Lclient!na;")
 	public static final JagString aClass100_475 = Static28.parse("null");
 
 	@OriginalMember(owner = "com.jagex3.client.client!gg", name = "Y", descriptor = "Lclient!na;")
@@ -43,12 +43,12 @@ public final class Static81 {
 			if (local28 == null) {
 				arg0 = -1;
 			} else {
-				Static71.signLink.method5113(local28.method301(), local28.anInt1860, Static154.canvas, new Point(local24.anInt2852, local24.anInt2850), local28.anInt1866);
+				GameShell.signLink.method5113(local28.method301(), local28.anInt1860, Static154.canvas, new Point(local24.anInt2852, local24.anInt2850), local28.anInt1866);
 				Static115.anInt2941 = arg0;
 			}
 		}
 		if (arg0 == -1 && Static115.anInt2941 != -1) {
-			Static71.signLink.method5113(null, -1, Static154.canvas, new Point(), -1);
+			GameShell.signLink.method5113(null, -1, Static154.canvas, new Point(), -1);
 			Static115.anInt2941 = -1;
 		}
 	}
@@ -111,11 +111,11 @@ public final class Static81 {
 		}
 		for (@Pc(34) int i = 0; i < 100 && Static10.readPacket(); i++) {
 		}
-		if (Static244.anInt5370 != 30) {
+		if (Client.state != 30) {
 			return;
 		}
 		Static233.loop(Static6.outboundBuffer); // deob.ReflectionCheck
-		@Pc(60) Object mouseRecorder = Static178.instance.lock;
+		@Pc(60) Object mouseRecorder = Client.mouseTracking.lock;
 		@Pc(86) int offset;
 		@Pc(79) int samples;
 		@Pc(88) int i;
@@ -125,16 +125,16 @@ public final class Static81 {
 		@Pc(189) int dy;
 		synchronized (mouseRecorder) {
 			if (!Static245.enabled) {
-				Static178.instance.samples = 0;
-			} else if (Static150.clickButton != 0 || Static178.instance.samples >= 40) {
+				Client.mouseTracking.samples = 0;
+			} else if (Static150.clickButton != 0 || Client.mouseTracking.samples >= 40) {
 				Static6.outboundBuffer.p1isaac(123);
 				samples = 0;
 				Static6.outboundBuffer.p1(0);
 				offset = Static6.outboundBuffer.offset;
-				for (i = 0; Static178.instance.samples > i && Static6.outboundBuffer.offset - offset < 240; i++) {
+				for (i = 0; Client.mouseTracking.samples > i && Static6.outboundBuffer.offset - offset < 240; i++) {
 					samples++;
-					y = Static178.instance.y[i];
-					x = Static178.instance.x[i];
+					y = Client.mouseTracking.y[i];
+					x = Client.mouseTracking.x[i];
 					if (y < 0) {
 						y = 0;
 					} else if (y > 65534) {
@@ -146,7 +146,7 @@ public final class Static81 {
 						x = 65534;
 					}
 					@Pc(142) boolean outsideWindow = false;
-					if (Static178.instance.y[i] == -1 && Static178.instance.x[i] == -1) {
+					if (Client.mouseTracking.y[i] == -1 && Client.mouseTracking.x[i] == -1) {
 						outsideWindow = true;
 						y = -1;
 						x = -1;
@@ -189,14 +189,14 @@ public final class Static81 {
 					}
 				}
 				Static6.outboundBuffer.p1len(Static6.outboundBuffer.offset - offset);
-				if (Static178.instance.samples > samples) {
-					Static178.instance.samples -= samples;
-					for (i = 0; i < Static178.instance.samples; i++) {
-						Static178.instance.x[i] = Static178.instance.x[samples + i];
-						Static178.instance.y[i] = Static178.instance.y[samples + i];
+				if (Client.mouseTracking.samples > samples) {
+					Client.mouseTracking.samples -= samples;
+					for (i = 0; i < Client.mouseTracking.samples; i++) {
+						Client.mouseTracking.x[i] = Client.mouseTracking.x[samples + i];
+						Client.mouseTracking.y[i] = Client.mouseTracking.y[samples + i];
 					}
 				} else {
-					Static178.instance.samples = 0;
+					Client.mouseTracking.samples = 0;
 				}
 			}
 		}
@@ -264,7 +264,7 @@ public final class Static81 {
 			Static18.sentToServer = true;
 		}
 		Static31.method846();
-		if (Static244.anInt5370 != 30) {
+		if (Client.state != 30) {
 			return;
 		}
 		Static251.loop(); // ChangeLocRequest

@@ -9,10 +9,7 @@ public final class Static60 {
 	@OriginalMember(owner = "com.jagex3.client.client!em", name = "t", descriptor = "[[[I")
 	public static int[][][] anIntArrayArrayArray6;
 
-	@OriginalMember(owner = "com.jagex3.client.client!em", name = "v", descriptor = "Ljava/lang/String;")
-	public static String hostname;
-
-	@OriginalMember(owner = "com.jagex3.client.client!em", name = "w", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!em", name = "w", descriptor = "I")
 	public static int anInt1892;
 
 	@OriginalMember(owner = "com.jagex3.client.client!em", name = "x", descriptor = "Lclient!cj;")

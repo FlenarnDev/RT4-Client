@@ -1,5 +1,7 @@
 package deob;
 
+import com.jagex3.client.Client;
+import com.jagex3.client.GameShell;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -20,9 +22,9 @@ public final class Static87 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!gn", name = "a", descriptor = "(Z)Z")
 	public static boolean method1802() {
-		if (Static150.aBoolean175) {
+		if (Client.js) {
 			try {
-				Static9.aClass100_35.method3157(Static71.signLink.anApplet2);
+				Static9.aClass100_35.method3157(GameShell.signLink.anApplet2);
 				return true;
 			} catch (@Pc(14) Throwable local14) {
 			}
@@ -86,7 +88,7 @@ public final class Static87 {
 			local53 = local9[local20];
 			if (local53 != null) {
 				Static107.method2261();
-				Static269.method2203(Static148.aClass97Array1, arg0, Static80.anInt4701 * 8 - 48, local49, local38, (Static52.anInt1695 - 6) * 8, local53);
+				Static269.method2203(Client.levelCollisionMap, arg0, Static80.anInt4701 * 8 - 48, local49, local38, (Static52.anInt1695 - 6) * 8, local53);
 			}
 		}
 		for (local20 = 0; local20 < local18; local20++) {
@@ -257,7 +259,7 @@ public final class Static87 {
 									}
 									continue;
 								}
-								if (Static266.game == 1) {
+								if (Client.modegame == 1) {
 									Static98.method1966(-1, 1L, Static186.aClass100_827, local563, (short) 36, LocalizedText.FACEHERE, local571);
 								}
 								Static98.method1966(-1, 1L, Static186.aClass100_827, local563, (short) 60, Static195.aClass100_859, local571);
