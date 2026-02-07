@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -140,7 +141,7 @@ public final class Static103 {
 		}
 		@Pc(560) boolean local560;
 		if (local23 == 18) {
-			if (Static266.game == 1) {
+			if (Client.modegame == 1) {
 				Static102.method2075(Static173.self.movementQueueZ[0], 0, 1, false, 0, local15, 1, 0, 2, local19, Static173.self.movementQueueX[0]);
 			} else {
 				local560 = Static102.method2075(Static173.self.movementQueueZ[0], 0, 0, false, 0, local15, 0, 0, 2, local19, Static173.self.movementQueueX[0]);
@@ -310,7 +311,7 @@ public final class Static103 {
 			Static250.anInt5444 = local15;
 		}
 		if (local23 == 21) {
-			if (Static266.game == 1) {
+			if (Client.modegame == 1) {
 				Static102.method2075(Static173.self.movementQueueZ[0], 0, 1, false, 0, local15, 1, 0, 2, local19, Static173.self.movementQueueX[0]);
 			} else {
 				local560 = Static102.method2075(Static173.self.movementQueueZ[0], 0, 0, false, 0, local15, 0, 0, 2, local19, Static173.self.movementQueueX[0]);
@@ -394,7 +395,7 @@ public final class Static103 {
 			}
 		}
 		if (local23 == 34) {
-			if (Static266.game == 1) {
+			if (Client.modegame == 1) {
 				Static102.method2075(Static173.self.movementQueueZ[0], 0, 1, false, 0, local15, 1, 0, 2, local19, Static173.self.movementQueueX[0]);
 			} else {
 				local560 = Static102.method2075(Static173.self.movementQueueZ[0], 0, 0, false, 0, local15, 0, 0, 2, local19, Static173.self.movementQueueX[0]);
@@ -543,7 +544,7 @@ public final class Static103 {
 			Static250.anInt5444 = local15;
 		}
 		if (local23 == 24) {
-			if (Static266.game == 1) {
+			if (Client.modegame == 1) {
 				Static102.method2075(Static173.self.movementQueueZ[0], 0, 1, false, 0, local15, 1, 0, 2, local19, Static173.self.movementQueueX[0]);
 			} else {
 				local560 = Static102.method2075(Static173.self.movementQueueZ[0], 0, 0, false, 0, local15, 0, 0, 2, local19, Static173.self.movementQueueX[0]);
@@ -688,7 +689,7 @@ public final class Static103 {
 			}
 		}
 		if (local23 == 20) {
-			if (Static266.game == 1) {
+			if (Client.modegame == 1) {
 				Static102.method2075(Static173.self.movementQueueZ[0], 0, 1, false, 0, local15, 1, 0, 2, local19, Static173.self.movementQueueX[0]);
 			} else {
 				local560 = Static102.method2075(Static173.self.movementQueueZ[0], 0, 0, false, 0, local15, 0, 0, 2, local19, Static173.self.movementQueueX[0]);

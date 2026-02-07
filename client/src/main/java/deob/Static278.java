@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -205,7 +206,7 @@ public final class Static278 {
 		Static65.method1500();
 		@Pc(19) int local19;
 		for (local19 = 0; local19 < 4; local19++) {
-			Static148.aClass97Array1[local19].method3050();
+			Client.levelCollisionMap[local19].method3050();
 		}
 		Static116.method2325(false);
 		System.gc();

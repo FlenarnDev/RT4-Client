@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -32,7 +33,7 @@ public final class Static6 {
 	public static void method84() {
 		Static65.method1500();
 		for (@Pc(9) int local9 = 0; local9 < 4; local9++) {
-			Static148.aClass97Array1[local9].method3050();
+			Client.levelCollisionMap[local9].method3050();
 		}
 		System.gc();
 	}

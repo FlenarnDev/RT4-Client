@@ -5,10 +5,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static22 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!bl", name = "P", descriptor = "I")
-	public static int js5ConnectDelay = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!bl", name = "Q", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!bl", name = "Q", descriptor = "I")
 	public static int anInt723 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!bl", name = "T", descriptor = "I")

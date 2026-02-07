@@ -20,10 +20,7 @@ public final class Static249 {
 	@OriginalMember(owner = "com.jagex3.client.client!ud", name = "Q", descriptor = "Lclient!na;")
 	public static final JagString aClass100_1039 = Static28.parse(" x ");
 
-	@OriginalMember(owner = "com.jagex3.client.client!ud", name = "S", descriptor = "Z")
-	public static boolean aBoolean282 = false;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ud", name = "T", descriptor = "[I")
+    @OriginalMember(owner = "com.jagex3.client.client!ud", name = "T", descriptor = "[I")
 	public static final int[] anIntArray478 = new int[32];
 
 	@OriginalMember(owner = "com.jagex3.client.client!ud", name = "a", descriptor = "(ILclient!be;)Z")

@@ -9,11 +9,8 @@ public final class Static244 {
 	@OriginalMember(owner = "com.jagex3.client.client!tl", name = "c", descriptor = "Lclient!n;")
 	public static final SoftLruHashTable aClass99_32 = new SoftLruHashTable(50);
 
-	@OriginalMember(owner = "com.jagex3.client.client!tl", name = "d", descriptor = "I")
-	public static int anInt5370 = 0;
 
-
-	@OriginalMember(owner = "com.jagex3.client.client!tl", name = "f", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!tl", name = "f", descriptor = "Lclient!na;")
 	public static final JagString aClass100_1014 = Static28.parse(":assist:");
 
 	@OriginalMember(owner = "com.jagex3.client.client!tl", name = "i", descriptor = "Lclient!na;")

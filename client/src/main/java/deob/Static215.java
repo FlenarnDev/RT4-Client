@@ -1,6 +1,6 @@
 package deob;
 
-import com.jagex3.client.client;
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static215 {
@@ -15,7 +15,7 @@ public final class Static215 {
 	public static Font aClass3_Sub2_Sub9_32;
 
 	@OriginalMember(owner = "com.jagex3.client.client!rh", name = "j", descriptor = "Lclient!com.jagex3.client.client;")
-	public static client aClient1;
+	public static Client aClient1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!rh", name = "e", descriptor = "Lclient!ce;")
 	public static final SecondaryLinkedList aClass16_9 = new SecondaryLinkedList();

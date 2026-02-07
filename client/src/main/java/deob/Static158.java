@@ -2,6 +2,9 @@ package deob;
 
 import java.io.IOException;
 import java.net.Socket;
+
+import com.jagex3.client.Client;
+import com.jagex3.client.GameShell;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
@@ -41,14 +44,14 @@ public final class Static158 {
 				Static179.anInt4261 = 1;
 				Static226.anInt5079 = 0;
 				Static57.anInt1758++;
-				if (Static209.port == Static271.defaultPort) {
-					Static209.port = Static55.alternatePort;
+				if (Client.loginPort == Static271.defaultPort) {
+					Client.loginPort = Static55.alternatePort;
 				} else {
-					Static209.port = Static271.defaultPort;
+					Client.loginPort = Static271.defaultPort;
 				}
 			}
 			if (Static179.anInt4261 == 1) {
-				Static72.aClass212_3 = Static71.signLink.openSocket(Static60.hostname, Static209.port);
+				Static72.aClass212_3 = GameShell.signLink.socketreq(Client.loginHost, Client.loginPort);
 				Static179.anInt4261 = 2;
 			}
 			@Pc(120) int local120;
@@ -59,7 +62,7 @@ public final class Static158 {
 				if (Static72.aClass212_3.status != 1) {
 					return;
 				}
-				Static124.socket = new BufferedSocket((Socket) Static72.aClass212_3.result, Static71.signLink);
+				Static124.socket = new BufferedSocket((Socket) Static72.aClass212_3.result, GameShell.signLink);
 				Static72.aClass212_3 = null;
 				Static124.socket.write(Static6.outboundBuffer.data, Static6.outboundBuffer.offset);
 				if (Static11.aClass62_1 != null) {
@@ -113,10 +116,10 @@ public final class Static158 {
 			}
 			if (Static57.anInt1758 < 1) {
 				Static57.anInt1758++;
-				if (Static271.defaultPort == Static209.port) {
-					Static209.port = Static55.alternatePort;
+				if (Static271.defaultPort == Client.loginPort) {
+					Client.loginPort = Static55.alternatePort;
 				} else {
-					Static209.port = Static271.defaultPort;
+					Client.loginPort = Static271.defaultPort;
 				}
 				Static226.anInt5079 = 0;
 				Static179.anInt4261 = 1;

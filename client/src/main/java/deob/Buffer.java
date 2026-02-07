@@ -2,7 +2,7 @@ package deob;
 
 import java.math.BigInteger;
 
-import com.jagex3.client.client;
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -503,7 +503,7 @@ public class Buffer extends Node {
 		@Pc(28) BigInteger ciphertext = plaintext.modPow(exp, mod);
 		// TODO remove once not needed for dev purposes anymore
         byte[] ciphertextBytes;
-        if (client.useRsa) {
+        if (Client.useRsa) {
             ciphertextBytes = ciphertext.toByteArray();
         } else {
             ciphertextBytes = plaintext.toByteArray();

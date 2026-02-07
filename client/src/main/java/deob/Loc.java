@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -236,7 +237,7 @@ public final class Loc extends Entity {
 			return null;
 		}
 		@Pc(69) int local69;
-		if (Static266.game != 0 && this.aBoolean80 && (this.aClass144_2 == null || this.aClass144_2 != null && this.aClass144_2.anInt5361 != local19.anInt4430)) {
+		if (Client.modegame != 0 && this.aBoolean80 && (this.aClass144_2 == null || this.aClass144_2 != null && this.aClass144_2.anInt5361 != local19.anInt4430)) {
 			local69 = local19.anInt4430;
 			if (local19.anInt4430 == -1) {
 				local69 = local22;

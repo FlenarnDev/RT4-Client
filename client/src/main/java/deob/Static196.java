@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -23,10 +24,10 @@ public final class Static196 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!pl", name = "a", descriptor = "(II)V")
 	public static void method3534(@OriginalArg(0) int arg0) {
-		if (Static244.anInt5370 == arg0) {
+		if (Client.state == arg0) {
 			return;
 		}
-		if (Static244.anInt5370 == 0) {
+		if (Client.state == 0) {
 			Static163.method3097();
 		}
 		if (arg0 == 40) {
@@ -53,7 +54,7 @@ public final class Static196 {
 		} else {
 			Static119.method2381();
 		}
-		@Pc(106) boolean local106 = Static244.anInt5370 == 5 || Static244.anInt5370 == 10 || Static244.anInt5370 == 28;
+		@Pc(106) boolean local106 = Client.state == 5 || Client.state == 10 || Client.state == 28;
 		if (local106 != local37) {
 			if (local37) {
 				Static221.anInt4363 = Static250.anInt5441;
@@ -71,7 +72,7 @@ public final class Static196 {
 		if (GlRenderer.enabled && (arg0 == 25 || arg0 == 28 || arg0 == 40)) {
 			GlRenderer.method4160();
 		}
-		Static244.anInt5370 = arg0;
+		Client.state = arg0;
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!pl", name = "a", descriptor = "(ZI)V")

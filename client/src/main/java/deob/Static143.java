@@ -36,7 +36,7 @@ public final class Static143 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ld", name = "a", descriptor = "(B)I")
-	public static int method2732() {
+	public static int readyMax() {
 		return 6;
 	}
 

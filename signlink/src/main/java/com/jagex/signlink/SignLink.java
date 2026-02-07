@@ -260,7 +260,7 @@ public final class SignLink implements Runnable {
 
 	@OriginalMember(owner = "signlink!ll", name = "a", descriptor = "(I)V")
 	public final void method5110() {
-		aLong1314 = MonotonicClock.currentTimeMillis() + 5000L;
+		aLong1314 = MonotonicClock.currentTime() + 5000L;
 	}
 
 	@OriginalMember(owner = "signlink!ll", name = "a", descriptor = "(Z)Z")
@@ -308,7 +308,7 @@ public final class SignLink implements Runnable {
 	}
 
 	@OriginalMember(owner = "signlink!ll", name = "a", descriptor = "(BLjava/lang/String;I)Lsignlink!im;")
-	public final PrivilegedRequest openSocket(@OriginalArg(1) String arg0, @OriginalArg(2) int arg1) {
+	public final PrivilegedRequest socketreq(@OriginalArg(1) String arg0, @OriginalArg(2) int arg1) {
 		return this.method5114(1, 0, arg0, arg1);
 	}
 
@@ -349,7 +349,7 @@ public final class SignLink implements Runnable {
 			try {
 				@Pc(45) int local45 = local16.anInt5924;
 				if (local45 == 1) {
-					if (aLong1314 > MonotonicClock.currentTimeMillis()) {
+					if (aLong1314 > MonotonicClock.currentTime()) {
 						throw new IOException();
 					}
 					local16.result = new Socket(InetAddress.getByName((String) local16.anObject7), local16.anInt5926);
@@ -360,7 +360,7 @@ public final class SignLink implements Runnable {
 					local813.setPriority(local16.anInt5926);
 					local16.result = local813;
 				} else if (local45 == 4) {
-					if (aLong1314 > MonotonicClock.currentTimeMillis()) {
+					if (aLong1314 > MonotonicClock.currentTime()) {
 						throw new IOException();
 					}
 					local16.result = new DataInputStream(((URL) local16.anObject7).openStream());
@@ -381,7 +381,7 @@ public final class SignLink implements Runnable {
 					} else {
 						@Pc(147) String local147;
 						if (local45 == 3) {
-							if (MonotonicClock.currentTimeMillis() < aLong1314) {
+							if (MonotonicClock.currentTime() < aLong1314) {
 								throw new IOException();
 							}
 							local147 = (local16.anInt5926 >> 24 & 0xFF) + "." + (local16.anInt5926 >> 16 & 0xFF) + "." + (local16.anInt5926 >> 8 & 0xFF) + "." + (local16.anInt5926 & 0xFF);
@@ -517,7 +517,7 @@ public final class SignLink implements Runnable {
 	}
 
 	@OriginalMember(owner = "signlink!ll", name = "a", descriptor = "(IILjava/lang/Runnable;)Lsignlink!im;")
-	public final PrivilegedRequest method5130(@OriginalArg(1) int arg0, @OriginalArg(2) Runnable arg1) {
+	public final PrivilegedRequest threadreq(@OriginalArg(1) int arg0, @OriginalArg(2) Runnable arg1) {
 		return this.method5114(2, 0, arg1, arg0);
 	}
 

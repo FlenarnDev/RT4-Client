@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -43,7 +44,7 @@ public final class Static243 {
 		Static204.anInt4762 = 0;
 		Static67.prevFocus = true;
 		Static183.prevClickTime = 0L;
-		Static178.instance.samples = 0;
+		Client.mouseTracking.samples = 0;
 		Static26.focus = true;
 		Static114.method4625();
 		Static49.anInt1462 = -1;

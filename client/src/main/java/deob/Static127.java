@@ -3,6 +3,8 @@ package deob;
 import java.io.UnsupportedEncodingException;
 
 import com.jagex.signlink.MonotonicClock;
+import com.jagex3.client.Client;
+import com.jagex3.client.GameShell;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -177,7 +179,7 @@ public final class Static127 {
 			if (local10 == null) {
 				return null;
 			}
-			if (local10.method1009() > MonotonicClock.currentTimeMillis()) {
+			if (local10.method1009() > MonotonicClock.currentTime()) {
 				return null;
 			}
 			local10.method4658();
@@ -291,7 +293,7 @@ public final class Static127 {
 				Static107.js5NetQueue.method2319();
 			}
 			if (arg0.method3111(Static165.aClass100_775)) {
-				Static71.signLink.method5110();
+				GameShell.signLink.method5110();
 				Static124.socket.method2833();
 				Static107.js5NetQueue.method2323();
 			}
@@ -323,17 +325,17 @@ public final class Static127 {
 				for (local18 = 0; local18 < 4; local18++) {
 					for (local38 = 1; local38 < 103; local38++) {
 						for (local117 = 1; local117 < 103; local117++) {
-							Static148.aClass97Array1[local18].anIntArrayArray30[local38][local117] = 0;
+							Client.levelCollisionMap[local18].anIntArrayArray30[local38][local117] = 0;
 						}
 					}
 				}
 			}
 			if (arg0.method3138(Static241.aClass100_1088)) {
 				Static76.method1645(arg0.method3136(15).method3132());
-				Static203.method3663(Static71.signLink);
+				Static203.method3663(GameShell.signLink);
 				Static18.sentToServer = false;
 			}
-			if (arg0.method3138(Static170.aClass100_623) && Static83.modeWhere != 0) {
+			if (arg0.method3138(Static170.aClass100_623) && Client.modeWhere != 0) {
 				Static115.method2312(arg0.method3136(6).method3132());
 			}
 			if (arg0.method3111(Static272.aClass100_990)) {

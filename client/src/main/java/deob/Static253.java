@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -124,7 +125,7 @@ public final class Static253 {
 			GlRenderer.method4173();
 			GlRenderer.setDepthTestEnabled(true);
 			GlRenderer.setFogEnabled(true);
-			if (Static244.anInt5370 == 10) {
+			if (Client.state == 10) {
 				local171 = Static103.method2235(Static178.anInt4247, Static134.anInt3302 >> 10, Static113.anInt4609, Static138.anInt3439 >> 10);
 			} else {
 				local171 = Static103.method2235(Static178.anInt4247, Static173.self.movementQueueZ[0] >> 3, Static113.anInt4609, Static173.self.movementQueueX[0] >> 3);

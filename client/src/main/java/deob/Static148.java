@@ -22,10 +22,7 @@ public final class Static148 {
 	@OriginalMember(owner = "com.jagex3.client.client!li", name = "x", descriptor = "I")
 	public static int anInt3535;
 
-	@OriginalMember(owner = "com.jagex3.client.client!li", name = "h", descriptor = "[Lclient!mj;")
-	public static final CollisionMap[] aClass97Array1 = new CollisionMap[4];
-
-	@OriginalMember(owner = "com.jagex3.client.client!li", name = "p", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!li", name = "p", descriptor = "Lclient!na;")
 	public static final JagString aClass100_677 = Static28.parse("::rebuild");
 
 	@OriginalMember(owner = "com.jagex3.client.client!li", name = "a", descriptor = "(ZI)V")
@@ -43,10 +40,10 @@ public final class Static148 {
 		Static7.anIntArray75[arg0] = arg1;
 		@Pc(21) LongNode local21 = (LongNode) Static199.aClass133_20.method3863((long) arg0);
 		if (local21 == null) {
-			local21 = new LongNode(MonotonicClock.currentTimeMillis() + 500L);
+			local21 = new LongNode(MonotonicClock.currentTime() + 500L);
 			Static199.aClass133_20.method3862(local21, (long) arg0);
 		} else {
-			local21.aLong55 = MonotonicClock.currentTimeMillis() + 500L;
+			local21.aLong55 = MonotonicClock.currentTime() + 500L;
 		}
 	}
 

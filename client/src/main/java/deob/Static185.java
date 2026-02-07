@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -23,8 +24,8 @@ public final class Static185 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!p", name = "a", descriptor = "(I)V")
 	public static void method3395() {
-		if (Static184.anInt4348 == 5) {
-			Static184.anInt4348 = 6;
+		if (Client.loginStep == 5) {
+			Client.loginStep = 6;
 		}
 	}
 

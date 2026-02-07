@@ -1,6 +1,8 @@
 package deob;
 
 import java.io.IOException;
+
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -34,7 +36,7 @@ public final class Static7 {
 	@OriginalMember(owner = "com.jagex3.client.client!ah", name = "a", descriptor = "(BZ)V")
 	public static void method842(@OriginalArg(1) boolean arg0) {
 		Static107.method2261();
-		if (Static244.anInt5370 != 30 && Static244.anInt5370 != 25) {
+		if (Client.state != 30 && Client.state != 25) {
 			return;
 		}
 		Static131.anInt3251++;

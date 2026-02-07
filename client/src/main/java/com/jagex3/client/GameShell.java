@@ -26,12 +26,14 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("com.jagex3.client.client!rc")
 public abstract class GameShell extends Applet implements Runnable, FocusListener, WindowListener {
 
-	@OriginalMember(owner = "com.jagex3.client.client!rc", name = "b", descriptor = "Z")
-	private boolean aBoolean71 = false;
+    @OriginalMember(owner = "com.jagex3.client.client!fk", name = "l", descriptor = "Lsignlink!ll;")
+    public static SignLink signLink;
+    @OriginalMember(owner = "com.jagex3.client.client!rc", name = "b", descriptor = "Z")
+	private boolean alreadyerrored = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!rc", name = "providesignlink", descriptor = "(Lsignlink!ll;)V")
 	public static void providesignlink(@OriginalArg(0) SignLink arg0) {
-		Static71.signLink = arg0;
+		signLink = arg0;
 		Static69.aClass213_4 = arg0;
 	}
 
@@ -64,7 +66,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	@Override
 	public final AppletContext getAppletContext() {
 		if (Static39.aFrame1 == null) {
-			return Static71.signLink == null || Static71.signLink.anApplet2 == this ? super.getAppletContext() : Static71.signLink.anApplet2.getAppletContext();
+			return signLink == null || signLink.anApplet2 == this ? super.getAppletContext() : signLink.anApplet2.getAppletContext();
 		} else {
 			return null;
 		}
@@ -82,8 +84,9 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	public final void windowClosed(@OriginalArg(0) WindowEvent arg0) {
 	}
 
+    // com.jagex.game.runetek6.client.GameShell3.checkhost
 	@OriginalMember(owner = "com.jagex3.client.client!rc", name = "b", descriptor = "(I)Z")
-	protected final boolean method925() {
+	protected final boolean checkhost() {
 		return true;
 	}
 
@@ -97,7 +100,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 		if (Static69.aFrame2 != null) {
 			local19 = Static69.aFrame2;
 		} else if (Static39.aFrame1 == null) {
-			local19 = Static71.signLink.anApplet2;
+			local19 = signLink.anApplet2;
 		} else {
 			local19 = Static39.aFrame1;
 		}
@@ -118,14 +121,14 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 		Static69.aBoolean115 = true;
 		Static26.focus = true;
 		Static35.aBoolean66 = false;
-		Static243.aLong178 = MonotonicClock.currentTimeMillis();
+		Static243.aLong178 = MonotonicClock.currentTime();
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!rc", name = "destroy", descriptor = "()V")
 	@Override
 	public final void destroy() {
 		if (Static230.anApplet_Sub1_1 == this && !Static58.aBoolean101) {
-			Static72.aLong74 = MonotonicClock.currentTimeMillis();
+			Static72.aLong74 = MonotonicClock.currentTime();
 			Static231.sleep(5000L);
 			Static69.aClass213_4 = null;
 			this.method931(false);
@@ -139,15 +142,15 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!rc", name = "a", descriptor = "(Ljava/lang/String;I)V")
-	protected final void method927(@OriginalArg(0) String arg0) {
-		if (this.aBoolean71) {
+	protected final void error(@OriginalArg(0) String err) {
+		if (this.alreadyerrored) {
 			return;
 		}
-		this.aBoolean71 = true;
-		System.out.println("error_game_" + arg0);
+		this.alreadyerrored = true;
+		System.out.println("error_game_" + err);
 		try {
-			this.getAppletContext().showDocument(new URL(this.getCodeBase(), "error_game_" + arg0 + ".ws"), "_top");
-		} catch (@Pc(47) Exception local47) {
+			this.getAppletContext().showDocument(new URL(this.getCodeBase(), "error_game_" + err + ".ws"), "_top");
+		} catch (@Pc(47) Exception ignore) {
 		}
 	}
 
@@ -161,7 +164,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	@Override
 	public final URL getDocumentBase() {
 		if (Static39.aFrame1 == null) {
-			return Static71.signLink == null || Static71.signLink.anApplet2 == this ? super.getDocumentBase() : Static71.signLink.anApplet2.getDocumentBase();
+			return signLink == null || signLink.anApplet2 == this ? super.getDocumentBase() : signLink.anApplet2.getDocumentBase();
 		} else {
 			return null;
 		}
@@ -174,7 +177,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			return;
 		}
 		Static69.aBoolean115 = true;
-		if (Static236.aBoolean256 && !GlRenderer.enabled && MonotonicClock.currentTimeMillis() - Static243.aLong178 > 1000L) {
+		if (Static236.aBoolean256 && !GlRenderer.enabled && MonotonicClock.currentTime() - Static243.aLong178 > 1000L) {
 			@Pc(29) Rectangle local29 = arg0.getClipBounds();
 			if (local29 == null || local29.width >= Static72.anInt2046 && Static122.anInt3045 <= local29.height) {
 				Static35.aBoolean66 = true;
@@ -195,8 +198,8 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			}
 			Static58.aBoolean101 = true;
 		}
-		if (Static71.signLink.anApplet2 != null) {
-			Static71.signLink.anApplet2.destroy();
+		if (signLink.anApplet2 != null) {
+			signLink.anApplet2.destroy();
 		}
 		try {
 			this.method928();
@@ -209,9 +212,9 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			} catch (@Pc(45) Exception local45) {
 			}
 		}
-		if (Static71.signLink != null) {
+		if (signLink != null) {
 			try {
-				Static71.signLink.method5124();
+				signLink.method5124();
 			} catch (@Pc(53) Exception local53) {
 			}
 		}
@@ -232,7 +235,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 
 	@OriginalMember(owner = "com.jagex3.client.client!rc", name = "b", descriptor = "(Z)V")
 	private void method932() {
-		@Pc(6) long local6 = MonotonicClock.currentTimeMillis();
+		@Pc(6) long local6 = MonotonicClock.currentTime();
 		@Pc(10) long local10 = Static228.aLongArray8[Static261.anInt5741];
 		Static228.aLongArray8[Static261.anInt5741] = local6;
 		Static261.anInt5741 = Static261.anInt5741 + 1 & 0x1F;
@@ -246,7 +249,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 
 	@OriginalMember(owner = "com.jagex3.client.client!rc", name = "e", descriptor = "(I)V")
 	private void method933() {
-		@Pc(2) long local2 = MonotonicClock.currentTimeMillis();
+		@Pc(2) long local2 = MonotonicClock.currentTime();
 		@Pc(6) long local6 = Static7.aLongArray2[Static111.anInt2903];
 		Static7.aLongArray2[Static111.anInt2903] = local2;
 		Static111.anInt2903 = Static111.anInt2903 + 1 & 0x1F;
@@ -276,7 +279,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	@Override
 	public final URL getCodeBase() {
 		if (Static39.aFrame1 == null) {
-			return Static71.signLink == null || Static71.signLink.anApplet2 == this ? super.getCodeBase() : Static71.signLink.anApplet2.getCodeBase();
+			return signLink == null || signLink.anApplet2 == this ? super.getCodeBase() : signLink.anApplet2.getCodeBase();
 		} else {
 			return null;
 		}
@@ -291,12 +294,12 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 				if (local12.indexOf("sun") != -1 || local12.indexOf("apple") != -1) {
 					@Pc(24) String local24 = SignLink.aString14;
 					if (local24.equals("1.1") || local24.startsWith("1.1.") || local24.equals("1.2") || local24.startsWith("1.2.")) {
-						this.method927("wrongjava");
+						this.error("wrongjava");
 						return;
 					}
 					Static226.anInt5081 = 5;
 				} else if (local12.indexOf("ibm") != -1 && (SignLink.aString14 == null || SignLink.aString14.equals("1.4.2"))) {
-					this.method927("wrongjava");
+					this.error("wrongjava");
 					return;
 				}
 			}
@@ -316,11 +319,11 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 					Static236.aBoolean256 = true;
 				}
 			}
-			if (Static71.signLink.anApplet2 != null) {
+			if (signLink.anApplet2 != null) {
 				@Pc(125) Method local125 = SignLink.aMethod5;
 				if (local125 != null) {
 					try {
-						local125.invoke(Static71.signLink.anApplet2, Boolean.TRUE);
+						local125.invoke(signLink.anApplet2, Boolean.TRUE);
 					} catch (@Pc(142) Throwable local142) {
 					}
 				}
@@ -330,17 +333,17 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			Static260.aClass27_2 = Static131.method2579(Static254.anInt5554, Static48.anInt1448, Static154.canvas);
 			this.method935();
 			Static200.aClass93_1 = Static70.method1547();
-			while (Static72.aLong74 == 0L || Static72.aLong74 > MonotonicClock.currentTimeMillis()) {
+			while (Static72.aLong74 == 0L || Static72.aLong74 > MonotonicClock.currentTime()) {
 				Static227.anInt5097 = Static200.aClass93_1.method3391(Static226.anInt5081, Static11.anInt386);
 				for (local76 = 0; local76 < Static227.anInt5097; local76++) {
 					this.method932();
 				}
 				this.method933();
-				Static140.method2708(Static71.signLink, Static154.canvas);
+				Static140.method2708(signLink, Static154.canvas);
 			}
 		} catch (@Pc(198) Exception local198) {
 			Static89.method1839(null, local198);
-			this.method927("crash");
+			this.error("crash");
 		}
 		this.method931(true);
 	}
@@ -349,7 +352,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	@Override
 	public final String getParameter(@OriginalArg(0) String arg0) {
 		if (Static39.aFrame1 == null) {
-			return Static71.signLink == null || Static71.signLink.anApplet2 == this ? super.getParameter(arg0) : Static71.signLink.anApplet2.getParameter(arg0);
+			return signLink == null || signLink.anApplet2 == this ? super.getParameter(arg0) : signLink.anApplet2.getParameter(arg0);
 		} else {
 			return null;
 		}
@@ -362,7 +365,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	@Override
 	public final void stop() {
 		if (Static230.anApplet_Sub1_1 == this && !Static58.aBoolean101) {
-			Static72.aLong74 = MonotonicClock.currentTimeMillis() + 4000L;
+			Static72.aLong74 = MonotonicClock.currentTime() + 4000L;
 		}
 	}
 
@@ -388,8 +391,8 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			Static39.aFrame1.toFront();
 			@Pc(44) Insets local44 = Static39.aFrame1.getInsets();
 			Static39.aFrame1.setSize(local44.left + Static72.anInt2046 + local44.right, local44.top + Static122.anInt3045 + local44.bottom);
-			Static69.aClass213_4 = Static71.signLink = new SignLink(null, arg0, arg1, 28);
-			@Pc(76) PrivilegedRequest local76 = Static71.signLink.method5130(1, this);
+			Static69.aClass213_4 = signLink = new SignLink(null, arg0, arg1, 28);
+			@Pc(76) PrivilegedRequest local76 = signLink.threadreq(1, this);
 			while (local76.status == 0) {
 				Static231.sleep(10L);
 			}
@@ -418,7 +421,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			if (Static230.anApplet_Sub1_1 != null) {
 				Static70.anInt2014++;
 				if (Static70.anInt2014 >= 3) {
-					this.method927("alreadyloaded");
+					this.error("alreadyloaded");
 					return;
 				}
 				this.getAppletContext().showDocument(this.getDocumentBase(), "_self");
@@ -438,17 +441,17 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			} else {
 				Static40.aBoolean78 = false;
 			}
-			if (Static71.signLink == null) {
-				Static69.aClass213_4 = Static71.signLink = new SignLink(this, arg0, null, 0);
+			if (signLink == null) {
+				Static69.aClass213_4 = signLink = new SignLink(this, arg0, null, 0);
 			}
-			@Pc(86) PrivilegedRequest local86 = Static71.signLink.method5130(1, this);
+			@Pc(86) PrivilegedRequest local86 = signLink.threadreq(1, this);
 			while (local86.status == 0) {
 				Static231.sleep(10L);
 			}
 			Static37.aThread1 = (Thread) local86.result;
 		} catch (@Pc(103) Exception local103) {
 			Static89.method1839(null, local103);
-			this.method927("crash");
+			this.error("crash");
 		}
 	}
 }

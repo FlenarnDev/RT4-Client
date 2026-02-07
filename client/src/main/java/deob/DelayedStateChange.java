@@ -27,7 +27,7 @@ public final class DelayedStateChange extends SecondaryNode {
 
 	@OriginalMember(owner = "com.jagex3.client.client!da", name = "a", descriptor = "(Z)V")
 	public final void method1007() {
-		this.aLong185 = MonotonicClock.currentTimeMillis() + 500L | Long.MIN_VALUE & this.aLong185;
+		this.aLong185 = MonotonicClock.currentTime() + 500L | Long.MIN_VALUE & this.aLong185;
 		Static140.aClass16_7.method798(this);
 	}
 

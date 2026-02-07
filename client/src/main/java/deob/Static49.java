@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -195,7 +196,7 @@ public final class Static49 {
 		Static231.anInt5202 = 0;
 		Static266.anInt5336 = -3;
 		Static92.anInt2430 = 0;
-		Static184.anInt4348 = 1;
+		Client.loginStep = 1;
 		Static276.anInt5816 = 0;
 		Static204.anInt4765 = -1;
 	}

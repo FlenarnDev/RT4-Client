@@ -1,6 +1,5 @@
 package deob;
 
-import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -13,10 +12,7 @@ public final class Static71 {
 	@OriginalMember(owner = "com.jagex3.client.client!fk", name = "j", descriptor = "[[I")
 	public static int[][] anIntArrayArray10;
 
-	@OriginalMember(owner = "com.jagex3.client.client!fk", name = "l", descriptor = "Lsignlink!ll;")
-	public static SignLink signLink;
-
-	@OriginalMember(owner = "com.jagex3.client.client!fk", name = "q", descriptor = "Lclient!uc;")
+    @OriginalMember(owner = "com.jagex3.client.client!fk", name = "q", descriptor = "Lclient!uc;")
 	public static MouseWheel mouseWheel;
 
 	@OriginalMember(owner = "com.jagex3.client.client!fk", name = "g", descriptor = "Z")

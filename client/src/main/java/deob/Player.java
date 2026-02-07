@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -181,7 +182,7 @@ public final class Player extends PathingEntity {
 			Static16.method501();
 		}
 		@Pc(102) int local102;
-		if (Static81.modeWhat != 0 && local79 < 50) {
+		if (Client.modeWhat != 0 && local79 < 50) {
 			local102 = 50 - local79;
 			while (Static105.anInt2863 < local102) {
 				Static51.aByteArrayArray8[Static105.anInt2863] = new byte[102400];

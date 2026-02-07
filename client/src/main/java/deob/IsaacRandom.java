@@ -1,6 +1,6 @@
 package deob;
 
-import com.jagex3.client.client;
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -163,7 +163,7 @@ public final class IsaacRandom {
 	// TODO remove once not needed for dev purposes anymore
 	@OriginalMember(owner = "com.jagex3.client.client!ij", name = "a", descriptor = "(I)I")
 	public final int method2295() {
-		if (client.useIsaac) {
+		if (Client.useIsaac) {
 			if (this.anInt2916-- == 0) {
 				this.method2296();
 				this.anInt2916 = 255;

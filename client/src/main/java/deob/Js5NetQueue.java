@@ -59,7 +59,7 @@ public final class Js5NetQueue {
 	public final boolean loop() {
 		@Pc(19) int local19;
 		if (this.aClass95_1 != null) {
-			@Pc(12) long local12 = MonotonicClock.currentTimeMillis();
+			@Pc(12) long local12 = MonotonicClock.currentTime();
 			local19 = (int) (local12 - this.aLong104);
 			this.aLong104 = local12;
 			if (local19 > 200) {
@@ -292,7 +292,7 @@ public final class Js5NetQueue {
 							}
 						}
 						this.anInt2962 = 0;
-						this.aLong104 = MonotonicClock.currentTimeMillis();
+						this.aLong104 = MonotonicClock.currentTime();
 						return;
 					}
 					this.aClass16_4.method798(local44);

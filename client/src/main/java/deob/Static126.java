@@ -15,7 +15,7 @@ public final class Static126 {
 	private static final JagString aClass100_603 = Static28.parse("");
 
 	@OriginalMember(owner = "com.jagex3.client.client!jm", name = "z", descriptor = "Lclient!na;")
-	public static JagString aClass100_602 = aClass100_603;
+	public static JagString loadString = aClass100_603;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jm", name = "a", descriptor = "(Z)V")
 	public static void method2460() {
