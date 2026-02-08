@@ -21,6 +21,12 @@ public final class Client extends GameShell {
 
     @OriginalMember(owner = "com.jagex3.client.client!li", name = "h", descriptor = "[Lclient!mj;")
     public static final CollisionMap[] levelCollisionMap = new CollisionMap[4];
+    @OriginalMember(owner = "com.jagex3.client.client!ag", name = "P", descriptor = "Lclient!i;")
+    public static final PacketBit out = new PacketBit(5000);
+    @OriginalMember(owner = "com.jagex3.client.client!bg", name = "g", descriptor = "Lclient!i;")
+    public static final PacketBit login = new PacketBit(5000);
+    @OriginalMember(owner = "com.jagex3.client.client!eg", name = "e", descriptor = "Lclient!i;")
+    public static final PacketBit in = new PacketBit(65536);
     // TODO remove once not needed for dev purposes anymore
     public static boolean useRsa = true;
     public static boolean useIsaac = true;
@@ -40,7 +46,7 @@ public final class Client extends GameShell {
     @OriginalMember(owner = "com.jagex3.client.client!vk", name = "n", descriptor = "I")
     public static int modegame = 0;
     @OriginalMember(owner = "com.jagex3.client.client!qk", name = "g", descriptor = "Lclient!ma;")
-    public static BufferedSocket js5Stream;
+    public static ClientStream js5Stream;
     @OriginalMember(owner = "com.jagex3.client.client!ac", name = "c", descriptor = "I")
     public static int js5ConnectState = 0;
     @OriginalMember(owner = "com.jagex3.client.client!rj", name = "Y", descriptor = "J")
@@ -61,6 +67,8 @@ public final class Client extends GameShell {
     public static MouseRecorder mouseTracking;
     @OriginalMember(owner = "com.jagex3.client.client!ol", name = "V", descriptor = "I")
     public static int loginStep = 0;
+    @OriginalMember(owner = "com.jagex3.client.client!jk", name = "B", descriptor = "Lclient!ma;")
+    public static ClientStream loginStream;
 
     @OriginalMember(owner = "com.jagex3.client.client!com.jagex3.client.client", name = "main", descriptor = "([Ljava/lang/String;)V")
 	public static void main(@OriginalArg(0) String[] args) {
@@ -136,7 +144,7 @@ public final class Client extends GameShell {
 			local146.method936(modeWhat + 32, "runescape");
 			Static39.aFrame1.setLocation(40, 40);
 		} catch (@Pc(167) Exception local167) {
-			Static89.method1839(null, local167);
+			Static89.report(null, local167);
 		}
 	}
 
@@ -266,11 +274,11 @@ public final class Client extends GameShell {
                 }
             }
             if (js5ConnectState == 2) {
-                js5Stream = new BufferedSocket((Socket) js5SocketReq.result, GameShell.signLink);
-                @Pc(194) Buffer buffer = new Buffer(5);
-                buffer.p1(15); // INIT_JS5REMOTE_CONNECTION
-                buffer.p4(530); // revision
-                js5Stream.write(buffer.data, 5);
+                js5Stream = new ClientStream((Socket) js5SocketReq.result, GameShell.signLink);
+                @Pc(194) Packet packet = new Packet(5);
+                packet.p1(15); // INIT_JS5REMOTE_CONNECTION
+                packet.p4(530); // revision
+                js5Stream.write(packet.data, 5);
                 js5ConnectState++;
                 js5ConnectTime = MonotonicClock.currentTime();
             }
@@ -641,9 +649,9 @@ public final class Client extends GameShell {
         }
         try {
             if (++Static92.anInt2430 > 2000) {
-                if (Static124.socket != null) {
-                    Static124.socket.method2834();
-                    Static124.socket = null;
+                if (loginStream != null) {
+                    loginStream.close();
+                    loginStream = null;
                 }
                 if (Static276.anInt5816 >= 1) {
                     Static266.anInt5336 = -5;
@@ -670,21 +678,21 @@ public final class Client extends GameShell {
                 if (Static72.aClass212_3.status != 1) {
                     return;
                 }
-                Static124.socket = new BufferedSocket((Socket) Static72.aClass212_3.result, signLink);
+                loginStream = new ClientStream((Socket) Static72.aClass212_3.result, signLink);
                 Static72.aClass212_3 = null;
                 @Pc(106) long local106 = Static101.aLong98 = Static186.username.encode37();
-                Static6.outboundBuffer.offset = 0;
-                Static6.outboundBuffer.p1(14); // INIT_GAME_CONNECTION
+                out.pos = 0;
+                out.p1(14); // INIT_GAME_CONNECTION
                 @Pc(120) int local120 = (int) (local106 >> 16 & 0x1FL);
-                Static6.outboundBuffer.p1(local120);
-                Static124.socket.write(Static6.outboundBuffer.data, 2);
+                out.p1(local120);
+                loginStream.write(out.data, 2);
                 if (Static11.aClass62_1 != null) {
                     Static11.aClass62_1.method3571();
                 }
                 if (Static147.aClass62_2 != null) {
                     Static147.aClass62_2.method3571();
                 }
-                @Pc(150) int local150 = Static124.socket.read();
+                @Pc(150) int local150 = loginStream.read();
                 if (Static11.aClass62_1 != null) {
                     Static11.aClass62_1.method3571();
                 }
@@ -694,97 +702,97 @@ public final class Client extends GameShell {
                 if (local150 != 0) {
                     Static266.anInt5336 = local150;
                     loginStep = 0;
-                    Static124.socket.method2834();
-                    Static124.socket = null;
+                    loginStream.close();
+                    loginStream = null;
                     return;
                 }
                 loginStep = 3;
             }
             if (loginStep == 3) {
-                if (Static124.socket.available() < 8) {
+                if (loginStream.available() < 8) {
                     return;
                 }
-                Static124.socket.method2827(0, 8, Static57.aClass3_Sub15_Sub1_3.data);
-                Static57.aClass3_Sub15_Sub1_3.offset = 0;
-                Static193.aLong147 = Static57.aClass3_Sub15_Sub1_3.g8();
+                loginStream.read(0, 8, in.data);
+                in.pos = 0;
+                Static193.aLong147 = in.g8();
                 @Pc(210) int[] seed = new int[4];
-                Static6.outboundBuffer.offset = 0;
+                out.pos = 0;
                 seed[2] = (int) (Static193.aLong147 >> 32);
                 seed[3] = (int) Static193.aLong147;
                 seed[1] = (int) (Math.random() * 9.9999999E7D);
                 seed[0] = (int) (Math.random() * 9.9999999E7D);
-                Static6.outboundBuffer.p1(10);
-                Static6.outboundBuffer.p4(seed[0]);
-                Static6.outboundBuffer.p4(seed[1]);
-                Static6.outboundBuffer.p4(seed[2]);
-                Static6.outboundBuffer.p4(seed[3]);
-                Static6.outboundBuffer.p8(Static186.username.encode37());
-                Static6.outboundBuffer.pjstr(Static186.password);
-                Static6.outboundBuffer.encryptRsa(Static86.RSA_EXPONENT, Static86.RSA_MODULUS);
-                Static17.aClass3_Sub15_Sub1_2.offset = 0;
+                out.p1(10);
+                out.p4(seed[0]);
+                out.p4(seed[1]);
+                out.p4(seed[2]);
+                out.p4(seed[3]);
+                out.p8(Static186.username.encode37());
+                out.pjstr(Static186.password);
+                out.rsaenc(Static86.RSA_EXPONENT, Static86.RSA_MODULUS);
+                login.pos = 0;
                 if (state == 40) {
-                    Static17.aClass3_Sub15_Sub1_2.p1(18);
+                    login.p1(18);
                 } else {
-                    Static17.aClass3_Sub15_Sub1_2.p1(16); // GAMELOGIN
+                    login.p1(16); // GAMELOGIN
                 }
 
-                Static17.aClass3_Sub15_Sub1_2.p2(Static6.outboundBuffer.offset + Static229.method3937(Static47.aClass100_991) + 159);
-                Static17.aClass3_Sub15_Sub1_2.p4(530);
-                Static17.aClass3_Sub15_Sub1_2.p1(Static5.anInt39);
-                Static17.aClass3_Sub15_Sub1_2.p1(advertSuppressed ? 1 : 0);
-                Static17.aClass3_Sub15_Sub1_2.p1(1);  // revision
-                Static17.aClass3_Sub15_Sub1_2.p1(Static144.method2736());
-                Static17.aClass3_Sub15_Sub1_2.p2(Static48.anInt1448);
-                Static17.aClass3_Sub15_Sub1_2.p2(Static254.anInt5554);
-                Static17.aClass3_Sub15_Sub1_2.p1(Static186.anInt4392);
-                Static140.method2705(Static17.aClass3_Sub15_Sub1_2);
-                Static17.aClass3_Sub15_Sub1_2.pjstr(Static47.aClass100_991);
-                Static17.aClass3_Sub15_Sub1_2.p4(Static204.anInt4760);
-                Static17.aClass3_Sub15_Sub1_2.p4(Static145.method2746());
+                login.p2(out.pos + Static229.method3937(Static47.aClass100_991) + 159);
+                login.p4(530);
+                login.p1(Static5.anInt39);
+                login.p1(advertSuppressed ? 1 : 0);
+                login.p1(1);  // revision
+                login.p1(Static144.method2736());
+                login.p2(Static48.anInt1448);
+                login.p2(Static254.anInt5554);
+                login.p1(Static186.anInt4392);
+                Static140.method2705(login);
+                login.pjstr(Static47.aClass100_991);
+                login.p4(Static204.anInt4760);
+                login.p4(Static145.method2746());
                 Static18.sentToServer = true;
-                Static17.aClass3_Sub15_Sub1_2.p2(Static189.anInt4443);
-                Static17.aClass3_Sub15_Sub1_2.p4(Static213.aClass153_88.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static249.aClass153_100.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static274.aClass153_90.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static41.aClass153_25.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static248.aClass153_75.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static26.aClass153_16.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static130.aClass153_47.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static267.aClass153_109.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static209.aClass153_86.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static195.aClass153_80.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static184.aClass153_78.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static214.aClass153_106.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static16.aClass153_9.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static261.aClass153_107.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static137.aClass153_49.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static138.aClass153_51.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static280.aClass153_110.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static138.aClass153_50.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static172.aClass153_71.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static171.aClass153_68.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static253.aClass153_104.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static122.aClass153_46.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static156.aClass153_59.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static227.aClass153_94.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static254.aClass153_105.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static28.aClass153_18.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static167.aClass153_63.method4480());
-                Static17.aClass3_Sub15_Sub1_2.p4(Static226.aClass153_93.method4480());
-                Static17.aClass3_Sub15_Sub1_2.pBytes(Static6.outboundBuffer.data, Static6.outboundBuffer.offset);
-                Static124.socket.write(Static17.aClass3_Sub15_Sub1_2.data, Static17.aClass3_Sub15_Sub1_2.offset);
-                Static6.outboundBuffer.method2240(seed);
-                for (@Pc(583) int local583 = 0; local583 < 4; local583++) {
-                    seed[local583] += 50;
+                login.p2(Static189.anInt4443);
+                login.p4(Static213.aClass153_88.getCrc());
+                login.p4(Static249.aClass153_100.getCrc());
+                login.p4(Static274.aClass153_90.getCrc());
+                login.p4(Static41.aClass153_25.getCrc());
+                login.p4(Static248.aClass153_75.getCrc());
+                login.p4(Static26.aClass153_16.getCrc());
+                login.p4(Static130.aClass153_47.getCrc());
+                login.p4(Static267.aClass153_109.getCrc());
+                login.p4(Static209.aClass153_86.getCrc());
+                login.p4(Static195.aClass153_80.getCrc());
+                login.p4(Static184.aClass153_78.getCrc());
+                login.p4(Static214.aClass153_106.getCrc());
+                login.p4(Static16.aClass153_9.getCrc());
+                login.p4(Static261.aClass153_107.getCrc());
+                login.p4(Static137.aClass153_49.getCrc());
+                login.p4(Static138.aClass153_51.getCrc());
+                login.p4(Static280.aClass153_110.getCrc());
+                login.p4(Static138.aClass153_50.getCrc());
+                login.p4(Static172.aClass153_71.getCrc());
+                login.p4(Static171.aClass153_68.getCrc());
+                login.p4(Static253.aClass153_104.getCrc());
+                login.p4(Static122.aClass153_46.getCrc());
+                login.p4(Static156.aClass153_59.getCrc());
+                login.p4(Static227.aClass153_94.getCrc());
+                login.p4(Static254.aClass153_105.getCrc());
+                login.p4(Static28.aClass153_18.getCrc());
+                login.p4(Static167.aClass153_63.getCrc());
+                login.p4(Static226.aClass153_93.getCrc());
+                login.pdata(out.data, out.pos);
+                loginStream.write(login.data, login.pos);
+                out.seed(seed);
+                for (@Pc(583) int i = 0; i < 4; i++) {
+                    seed[i] += 50;
                 }
-                Static57.aClass3_Sub15_Sub1_3.method2240(seed);
+                in.seed(seed);
                 loginStep = 4;
             }
             if (loginStep == 4) {
-                if (Static124.socket.available() < 1) {
+                if (loginStream.available() < 1) {
                     return;
                 }
-                @Pc(623) int local623 = Static124.socket.read();
+                @Pc(623) int local623 = loginStream.read();
                 if (local623 == 21) {
                     loginStep = 7;
                 } else if (local623 == 29) {
@@ -803,62 +811,62 @@ public final class Client extends GameShell {
                     loginStep = 1;
                     Static276.anInt5816++;
                     Static92.anInt2430 = 0;
-                    Static124.socket.method2834();
-                    Static124.socket = null;
+                    loginStream.close();
+                    loginStream = null;
                     return;
                 } else {
                     Static266.anInt5336 = local623;
                     loginStep = 0;
-                    Static124.socket.method2834();
-                    Static124.socket = null;
+                    loginStream.close();
+                    loginStream = null;
                     return;
                 }
             }
             if (loginStep == 6) {
-                Static6.outboundBuffer.offset = 0;
-                Static6.outboundBuffer.p1isaac(17);
-                Static124.socket.write(Static6.outboundBuffer.data, Static6.outboundBuffer.offset);
+                out.pos = 0;
+                out.p1isaac(17);
+                loginStream.write(out.data, out.pos);
                 loginStep = 4;
                 return;
             }
             if (loginStep == 7) {
-                if (Static124.socket.available() >= 1) {
-                    Static231.anInt5202 = (Static124.socket.read() + 3) * 60;
+                if (loginStream.available() >= 1) {
+                    Static231.anInt5202 = (loginStream.read() + 3) * 60;
                     loginStep = 0;
                     Static266.anInt5336 = 21;
-                    Static124.socket.method2834();
-                    Static124.socket = null;
+                    loginStream.close();
+                    loginStream = null;
                     return;
                 }
                 return;
             }
             if (loginStep == 10) {
-                if (Static124.socket.available() >= 1) {
-                    Static204.anInt4765 = Static124.socket.read();
+                if (loginStream.available() >= 1) {
+                    Static204.anInt4765 = loginStream.read();
                     loginStep = 0;
                     Static266.anInt5336 = 29;
-                    Static124.socket.method2834();
-                    Static124.socket = null;
+                    loginStream.close();
+                    loginStream = null;
                     return;
                 }
                 return;
             }
             if (loginStep == 8) {
-                if (Static124.socket.available() < 14) {
+                if (loginStream.available() < 14) {
                     return;
                 }
-                Static124.socket.method2827(0, 14, Static57.aClass3_Sub15_Sub1_3.data);
-                Static57.aClass3_Sub15_Sub1_3.offset = 0;
-                Static191.staffModLevel = Static57.aClass3_Sub15_Sub1_3.g1();
-                Static249.anInt5431 = Static57.aClass3_Sub15_Sub1_3.g1();
-                Static124.aBoolean157 = Static57.aClass3_Sub15_Sub1_3.g1() == 1;
-                Static207.aBoolean236 = Static57.aClass3_Sub15_Sub1_3.g1() == 1;
-                Static25.aBoolean57 = Static57.aClass3_Sub15_Sub1_3.g1() == 1;
-                Static86.aBoolean129 = Static57.aClass3_Sub15_Sub1_3.g1() == 1;
-                Static245.enabled = Static57.aClass3_Sub15_Sub1_3.g1() == 1;
-                Static16.anInt549 = Static57.aClass3_Sub15_Sub1_3.g2();
-                Static202.aBoolean233 = Static57.aClass3_Sub15_Sub1_3.g1() == 1;
-                Static2.aBoolean1 = Static57.aClass3_Sub15_Sub1_3.g1() == 1;
+                loginStream.read(0, 14, in.data);
+                in.pos = 0;
+                Static191.staffModLevel = in.g1();
+                Static249.anInt5431 = in.g1();
+                Static124.aBoolean157 = in.g1() == 1;
+                Static207.aBoolean236 = in.g1() == 1;
+                Static25.aBoolean57 = in.g1() == 1;
+                Static86.aBoolean129 = in.g1() == 1;
+                Static245.enabled = in.g1() == 1;
+                Static16.anInt549 = in.g2();
+                Static202.aBoolean233 = in.g1() == 1;
+                Static2.aBoolean1 = in.g1() == 1;
                 Static189.method3438(Static2.aBoolean1);
                 Static9.method186(Static2.aBoolean1);
                 if (!advertSuppressed) {
@@ -874,16 +882,16 @@ public final class Client extends GameShell {
                         }
                     }
                 }
-                Static164.anInt3985 = Static57.aClass3_Sub15_Sub1_3.method2243();
-                Static223.anInt5028 = Static57.aClass3_Sub15_Sub1_3.g2();
+                Static164.anInt3985 = in.method2243();
+                Static223.anInt5028 = in.g2();
                 loginStep = 9;
             }
             if (loginStep == 9) {
-                if (Static124.socket.available() < Static223.anInt5028) {
+                if (loginStream.available() < Static223.anInt5028) {
                     return;
                 }
-                Static57.aClass3_Sub15_Sub1_3.offset = 0;
-                Static124.socket.method2827(0, Static223.anInt5028, Static57.aClass3_Sub15_Sub1_3.data);
+                in.pos = 0;
+                loginStream.read(0, Static223.anInt5028, in.data);
                 Static266.anInt5336 = 2;
                 loginStep = 0;
                 Static243.method4221();
@@ -893,9 +901,9 @@ public final class Client extends GameShell {
                 return;
             }
         } catch (@Pc(977) IOException local977) {
-            if (Static124.socket != null) {
-                Static124.socket.method2834();
-                Static124.socket = null;
+            if (loginStream != null) {
+                loginStream.close();
+                loginStream = null;
             }
             if (Static276.anInt5816 >= 1) {
                 loginStep = 0;
@@ -1049,9 +1057,9 @@ public final class Client extends GameShell {
 			mouseTracking.aBoolean151 = false;
 		}
 		mouseTracking = null;
-		if (Static124.socket != null) {
-			Static124.socket.method2834();
-			Static124.socket = null;
+		if (loginStream != null) {
+			loginStream.close();
+			loginStream = null;
 		}
 		Static31.method847(Static154.canvas);
 		Static223.method3866(Static154.canvas);

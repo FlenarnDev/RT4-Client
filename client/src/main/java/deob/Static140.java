@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 import com.jagex.signlink.SignLink;
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -17,7 +18,7 @@ public final class Static140 {
 	public static final SecondaryLinkedList aClass16_7 = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!la", name = "a", descriptor = "(Lclient!wa;Z)V")
-	public static void method2705(@OriginalArg(0) Buffer arg0) {
+	public static void method2705(@OriginalArg(0) Packet arg0) {
 		@Pc(15) byte[] local15 = new byte[24];
 		if (Static121.uid != null) {
 			try {
@@ -35,7 +36,7 @@ public final class Static140 {
 				}
 			}
 		}
-		arg0.pBytes(local15, 24);
+		arg0.pdata(local15, 24);
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!la", name = "a", descriptor = "(ILclient!e;)I")
@@ -82,8 +83,8 @@ public final class Static140 {
 		Static190.aLongArray6[Static35.anInt1093] = arg0;
 		Static193.aClass100Array134[Static35.anInt1093++] = Static79.decode37(arg0);
 		Static185.anInt4369 = Static119.transmitTimer;
-		Static6.outboundBuffer.p1isaac(34);
-		Static6.outboundBuffer.p8(arg0);
+		Client.out.p1isaac(34);
+		Client.out.p8(arg0);
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!la", name = "a", descriptor = "(Lsignlink!ll;Ljava/lang/Object;I)V")
@@ -92,7 +93,7 @@ public final class Static140 {
 			return;
 		}
 		for (@Pc(19) int local19 = 0; local19 < 50 && arg0.anEventQueue1.peekEvent() != null; local19++) {
-			Static231.sleep(1L);
+			Static231.sleepPrecise(1L);
 		}
 		if (arg1 != null) {
 			arg0.anEventQueue1.postEvent(new ActionEvent(arg1, 1001, "dummy"));
@@ -108,7 +109,7 @@ public final class Static140 {
 		@Pc(26) byte[] local26 = Static85.aClass153_36.method4495(31, arg0);
 		local10 = new LightType();
 		if (local26 != null) {
-			local10.method2257(new Buffer(local26), arg0);
+			local10.method2257(new Packet(local26), arg0);
 		}
 		Static220.aClass99_28.method3095(local10, (long) arg0);
 		return local10;
@@ -123,9 +124,9 @@ public final class Static140 {
 		@Pc(29) int[] local29 = arg1.method4503(local10);
 		@Pc(35) Class134 local35 = new Class134(local29.length);
 		for (@Pc(37) int local37 = 0; local37 < local35.anInt5074; local37++) {
-			@Pc(56) Buffer local56 = new Buffer(arg1.method4495(local10, local29[local37]));
+			@Pc(56) Packet local56 = new Packet(arg1.method4495(local10, local29[local37]));
 			local35.aClass100Array153[local37] = local56.gjstr();
-			local35.aByteArray69[local37] = local56.g1s();
+			local35.aByteArray69[local37] = local56.g1b();
 			local35.aShortArray73[local37] = (short) local56.g2();
 			local35.aShortArray72[local37] = (short) local56.g2();
 			local35.anIntArray444[local37] = local56.g4();

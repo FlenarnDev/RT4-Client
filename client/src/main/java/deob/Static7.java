@@ -44,11 +44,11 @@ public final class Static7 {
 			return;
 		}
 		Static131.anInt3251 = 0;
-		if (!Static224.aBoolean247 && Static124.socket != null) {
-			Static6.outboundBuffer.p1isaac(93);
+		if (!Static224.aBoolean247 && Client.loginStream != null) {
+			Client.out.p1isaac(93);
 			try {
-				Static124.socket.write(Static6.outboundBuffer.data, Static6.outboundBuffer.offset);
-				Static6.outboundBuffer.offset = 0;
+				Client.loginStream.write(Client.out.data, Client.out.pos);
+				Client.out.pos = 0;
 			} catch (@Pc(53) IOException local53) {
 				Static224.aBoolean247 = true;
 			}

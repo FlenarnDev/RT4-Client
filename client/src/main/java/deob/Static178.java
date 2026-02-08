@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -35,8 +36,8 @@ public final class Static178 {
 			local24++;
 		}
 		if (local24 < Static199.aClass3_Sub22Array1.length && Static199.aClass3_Sub22Array1[local24] != null) {
-			Static6.outboundBuffer.p1isaac(162);
-			Static6.outboundBuffer.p8(Static199.aClass3_Sub22Array1[local24].aLong192);
+			Client.out.p1isaac(162);
+			Client.out.p8(Static199.aClass3_Sub22Array1[local24].aLong192);
 		}
 	}
 

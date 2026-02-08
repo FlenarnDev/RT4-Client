@@ -69,7 +69,7 @@ public final class Light {
 	public final float[] aFloatArray3 = new float[4];
 
 	@OriginalMember(owner = "com.jagex3.client.client!gi", name = "<init>", descriptor = "(Lclient!wa;)V")
-	public Light(@OriginalArg(0) Buffer arg0) {
+	public Light(@OriginalArg(0) Packet arg0) {
 		if (Static62.anIntArray150 == null) {
 			Static84.method1771();
 		}

@@ -30,7 +30,7 @@ public final class MidiDecoder {
 	private int anInt3304;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ki", name = "a", descriptor = "Lclient!wa;")
-	private final Buffer aClass3_Sub15_6 = new Buffer(null);
+	private final Packet aClass3_Sub15_6 = new Packet(null);
 
 	@OriginalMember(owner = "com.jagex3.client.client!ki", name = "<init>", descriptor = "()V")
 	public MidiDecoder() {
@@ -64,9 +64,9 @@ public final class MidiDecoder {
 		for (@Pc(8) int local8 = 0; local8 < local6; local8++) {
 			this.anIntArray310[local8] = 0;
 			this.anIntArray313[local8] = 0;
-			this.aClass3_Sub15_6.offset = this.anIntArray312[local8];
+			this.aClass3_Sub15_6.pos = this.anIntArray312[local8];
 			this.method2632(local8);
-			this.anIntArray311[local8] = this.aClass3_Sub15_6.offset;
+			this.anIntArray311[local8] = this.aClass3_Sub15_6.pos;
 		}
 	}
 
@@ -87,12 +87,12 @@ public final class MidiDecoder {
 
 	@OriginalMember(owner = "com.jagex3.client.client!ki", name = "c", descriptor = "(I)V")
 	public final void method2631(@OriginalArg(0) int arg0) {
-		this.aClass3_Sub15_6.offset = this.anIntArray311[arg0];
+		this.aClass3_Sub15_6.pos = this.anIntArray311[arg0];
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ki", name = "d", descriptor = "(I)V")
 	public final void method2632(@OriginalArg(0) int arg0) {
-		@Pc(4) int local4 = this.aClass3_Sub15_6.gVarInt();
+		@Pc(4) int local4 = this.aClass3_Sub15_6.gMidiVarLen();
 		this.anIntArray310[arg0] += local4;
 	}
 
@@ -111,9 +111,9 @@ public final class MidiDecoder {
 			return local12;
 		}
 		@Pc(7) int local7 = this.aClass3_Sub15_6.g1();
-		local12 = this.aClass3_Sub15_6.gVarInt();
+		local12 = this.aClass3_Sub15_6.gMidiVarLen();
 		if (local7 == 47) {
-			this.aClass3_Sub15_6.offset += local12;
+			this.aClass3_Sub15_6.pos += local12;
 			return 1;
 		} else if (local7 == 81) {
 			@Pc(32) int local32 = this.aClass3_Sub15_6.g3();
@@ -121,45 +121,45 @@ public final class MidiDecoder {
 			@Pc(38) int local38 = this.anIntArray310[arg0];
 			this.aLong117 += (long) local38 * (long) (this.anInt3304 - local32);
 			this.anInt3304 = local32;
-			this.aClass3_Sub15_6.offset += local12;
+			this.aClass3_Sub15_6.pos += local12;
 			return 2;
 		} else {
-			this.aClass3_Sub15_6.offset += local12;
+			this.aClass3_Sub15_6.pos += local12;
 			return 3;
 		}
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ki", name = "e", descriptor = "(I)I")
 	private int method2634(@OriginalArg(0) int arg0) {
-		@Pc(7) byte local7 = this.aClass3_Sub15_6.data[this.aClass3_Sub15_6.offset];
+		@Pc(7) byte local7 = this.aClass3_Sub15_6.data[this.aClass3_Sub15_6.pos];
 		@Pc(13) int local13;
 		if (local7 < 0) {
 			local13 = local7 & 0xFF;
 			this.anIntArray313[arg0] = local13;
-			this.aClass3_Sub15_6.offset++;
+			this.aClass3_Sub15_6.pos++;
 		} else {
 			local13 = this.anIntArray313[arg0];
 		}
 		if (local13 != 240 && local13 != 247) {
 			return this.method2633(arg0, local13);
 		}
-		@Pc(42) int local42 = this.aClass3_Sub15_6.gVarInt();
+		@Pc(42) int local42 = this.aClass3_Sub15_6.gMidiVarLen();
 		if (local13 == 247 && local42 > 0) {
-			@Pc(57) int local57 = this.aClass3_Sub15_6.data[this.aClass3_Sub15_6.offset] & 0xFF;
+			@Pc(57) int local57 = this.aClass3_Sub15_6.data[this.aClass3_Sub15_6.pos] & 0xFF;
 			if (local57 >= 241 && local57 <= 243 || local57 == 246 || local57 == 248 || local57 >= 250 && local57 <= 252 || local57 == 254) {
-				this.aClass3_Sub15_6.offset++;
+				this.aClass3_Sub15_6.pos++;
 				this.anIntArray313[arg0] = local57;
 				return this.method2633(arg0, local57);
 			}
 		}
-		this.aClass3_Sub15_6.offset += local42;
+		this.aClass3_Sub15_6.pos += local42;
 		return 0;
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ki", name = "a", descriptor = "([B)V")
 	public final void method2635(@OriginalArg(0) byte[] arg0) {
 		this.aClass3_Sub15_6.data = arg0;
-		this.aClass3_Sub15_6.offset = 10;
+		this.aClass3_Sub15_6.pos = 10;
 		@Pc(12) int local12 = this.aClass3_Sub15_6.g2();
 		this.anInt3303 = this.aClass3_Sub15_6.g2();
 		this.anInt3304 = 500000;
@@ -169,10 +169,10 @@ public final class MidiDecoder {
 			@Pc(35) int local35 = this.aClass3_Sub15_6.g4();
 			@Pc(40) int local40 = this.aClass3_Sub15_6.g4();
 			if (local35 == 1297379947) {
-				this.anIntArray312[local27] = this.aClass3_Sub15_6.offset;
+				this.anIntArray312[local27] = this.aClass3_Sub15_6.pos;
 				local27++;
 			}
-			this.aClass3_Sub15_6.offset += local40;
+			this.aClass3_Sub15_6.pos += local40;
 		}
 		this.aLong117 = 0L;
 		this.anIntArray311 = new int[local12];
@@ -185,7 +185,7 @@ public final class MidiDecoder {
 
 	@OriginalMember(owner = "com.jagex3.client.client!ki", name = "f", descriptor = "(I)V")
 	public final void method2636(@OriginalArg(0) int arg0) {
-		this.anIntArray311[arg0] = this.aClass3_Sub15_6.offset;
+		this.anIntArray311[arg0] = this.aClass3_Sub15_6.pos;
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ki", name = "e", descriptor = "()I")
@@ -213,6 +213,6 @@ public final class MidiDecoder {
 
 	@OriginalMember(owner = "com.jagex3.client.client!ki", name = "g", descriptor = "()V")
 	public final void method2639() {
-		this.aClass3_Sub15_6.offset = -1;
+		this.aClass3_Sub15_6.pos = -1;
 	}
 }

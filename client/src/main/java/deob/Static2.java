@@ -253,9 +253,9 @@ public final class Static2 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!aa", name = "a", descriptor = "(IZI)V")
 	public static void method10(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		Static6.outboundBuffer.p1isaac(132);
-		Static6.outboundBuffer.p4rme(arg1);
-		Static6.outboundBuffer.p2le(arg0);
+		Client.out.p1isaac(132);
+		Client.out.p4_alt2(arg1);
+		Client.out.p2_alt1(arg0);
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!aa", name = "a", descriptor = "(BLclient!be;)V")

@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -44,9 +45,9 @@ public final class Static245 {
 						@Pc(74) Component local74 = Static241.components[arg0][local46] = new Component();
 						local74.anInt507 = local46 + (arg0 << 16);
 						if (local62[0] == -1) {
-							local74.method490(new Buffer(local62));
+							local74.method490(new Packet(local62));
 						} else {
-							local74.method481(new Buffer(local62));
+							local74.method481(new Packet(local62));
 						}
 					}
 				}
@@ -63,9 +64,9 @@ public final class Static245 {
 		for (@Pc(7) int local7 = 0; local7 < Static116.anInt2951; local7++) {
 			@Pc(31) int local31 = Static44.anIntArray106[local7];
 			@Pc(35) Player local35 = Static159.aClass8_Sub4_Sub1Array1[local31];
-			@Pc(39) int local39 = Static57.aClass3_Sub15_Sub1_3.g1();
+			@Pc(39) int local39 = Client.in.g1();
 			if ((local39 & 0x10) != 0) {
-				local39 += Static57.aClass3_Sub15_Sub1_3.g1() << 8;
+				local39 += Client.in.g1() << 8;
 			}
 			Static84.method1768(local39, local31, local35);
 		}
@@ -89,7 +90,7 @@ public final class Static245 {
 		} else {
 			local87 = 4;
 		}
-		@Pc(96) Buffer local96 = new Buffer(arg5);
+		@Pc(96) Packet local96 = new Packet(arg5);
 		@Pc(103) int local103;
 		@Pc(108) int local108;
 		for (local17 = 0; local17 < local87; local17++) {
@@ -108,14 +109,14 @@ public final class Static245 {
 		@Pc(255) int local255;
 		@Pc(266) int local266;
 		@Pc(316) int local316;
-		while (local96.data.length > local96.offset) {
+		while (local96.data.length > local96.pos) {
 			local103 = local96.g1();
 			if (local103 != 129) {
-				local96.offset--;
+				local96.pos--;
 				break;
 			}
 			for (local108 = 0; local108 < 4; local108++) {
-				@Pc(223) byte local223 = local96.g1s();
+				@Pc(223) byte local223 = local96.g1b();
 				@Pc(237) int local237;
 				if (local223 == 0) {
 					if (local108 <= arg6) {
@@ -154,7 +155,7 @@ public final class Static245 {
 				} else if (local223 == 1) {
 					for (local232 = 0; local232 < 64; local232 += 4) {
 						for (local237 = 0; local237 < 64; local237 += 4) {
-							@Pc(246) byte local246 = local96.g1s();
+							@Pc(246) byte local246 = local96.g1b();
 							if (local108 <= arg6) {
 								for (local255 = local232; local255 < local232 + 4; local255++) {
 									for (local266 = local237; local266 < local237 + 4; local266++) {
@@ -179,7 +180,7 @@ public final class Static245 {
 			@Pc(472) Environment local472 = null;
 			label207: while (true) {
 				label200: do {
-					while (local96.data.length > local96.offset) {
+					while (local96.data.length > local96.pos) {
 						local108 = local96.g1();
 						if (local108 != 0) {
 							if (local108 != 1) {

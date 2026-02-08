@@ -487,7 +487,7 @@ public final class NpcType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!me", name = "a", descriptor = "(Lclient!wa;I)V")
-	public final void method2939(@OriginalArg(0) Buffer arg0) {
+	public final void method2939(@OriginalArg(0) Packet arg0) {
 		while (true) {
 			@Pc(9) int local9 = arg0.g1();
 			if (local9 == 0) {
@@ -556,7 +556,7 @@ public final class NpcType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!me", name = "a", descriptor = "(IILclient!wa;)V")
-	private void method2944(@OriginalArg(1) int arg0, @OriginalArg(2) Buffer arg1) {
+	private void method2944(@OriginalArg(1) int arg0, @OriginalArg(2) Packet arg1) {
 		@Pc(12) int local12;
 		@Pc(18) int local18;
 		if (arg0 == 1) {
@@ -597,7 +597,7 @@ public final class NpcType {
 			local12 = arg1.g1();
 			this.aByteArray51 = new byte[local12];
 			for (local18 = 0; local18 < local12; local18++) {
-				this.aByteArray51[local18] = arg1.g1s();
+				this.aByteArray51[local18] = arg1.g1b();
 			}
 		} else if (arg0 == 60) {
 			local12 = arg1.g1();
@@ -616,9 +616,9 @@ public final class NpcType {
 		} else if (arg0 == 99) {
 			this.aBoolean182 = true;
 		} else if (arg0 == 100) {
-			this.anInt3715 = arg1.g1s();
+			this.anInt3715 = arg1.g1b();
 		} else if (arg0 == 101) {
-			this.anInt3738 = arg1.g1s() * 5;
+			this.anInt3738 = arg1.g1b() * 5;
 		} else if (arg0 == 102) {
 			this.anInt3732 = arg1.g2();
 		} else if (arg0 == 103) {
@@ -660,29 +660,29 @@ public final class NpcType {
 				this.aShort24 = (short) arg1.g2();
 				this.aShort23 = (short) arg1.g2();
 			} else if (arg0 == 114) {
-				this.aByte13 = arg1.g1s();
-				this.aByte12 = arg1.g1s();
+				this.aByte13 = arg1.g1b();
+				this.aByte12 = arg1.g1b();
 			} else if (arg0 == 115) {
 				arg1.g1();
 				arg1.g1();
 			} else if (arg0 == 119) {
-				this.aByte10 = arg1.g1s();
+				this.aByte10 = arg1.g1b();
 			} else if (arg0 == 121) {
 				this.anIntArrayArray29 = new int[this.anIntArray356.length][];
 				local12 = arg1.g1();
 				for (local18 = 0; local18 < local12; local18++) {
 					local297 = arg1.g1();
 					@Pc(439) int[] local439 = this.anIntArrayArray29[local297] = new int[3];
-					local439[0] = arg1.g1s();
-					local439[1] = arg1.g1s();
-					local439[2] = arg1.g1s();
+					local439[0] = arg1.g1b();
+					local439[1] = arg1.g1b();
+					local439[2] = arg1.g1b();
 				}
 			} else if (arg0 == 122) {
 				this.anInt3736 = arg1.g2();
 			} else if (arg0 == 123) {
 				this.anInt3730 = arg1.g2();
 			} else if (arg0 == 125) {
-				this.aByte11 = arg1.g1s();
+				this.aByte11 = arg1.g1b();
 			} else if (arg0 == 126) {
 				this.anInt3739 = arg1.g2();
 			} else if (arg0 == 127) {

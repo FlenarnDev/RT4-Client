@@ -114,8 +114,8 @@ public final class Class45 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!fj", name = "a", descriptor = "()V")
 	public final void method1554() {
-		@Pc(7) Buffer local7 = new Buffer(this.anInt2018 * 4);
-		@Pc(15) Buffer local15 = new Buffer(this.anInt2017 * 16);
+		@Pc(7) Packet local7 = new Packet(this.anInt2018 * 4);
+		@Pc(15) Packet local15 = new Packet(this.anInt2017 * 16);
 		@Pc(19) int local19;
 		if (GlRenderer.bigEndian) {
 			for (local19 = 0; local19 < this.anInt2017; local19++) {
@@ -141,7 +141,7 @@ public final class Class45 {
 				local15.gFloat((float) this.anIntArray179[local19]);
 			}
 			for (local19 = 0; local19 < this.anInt2018; local19++) {
-				local7.p4le(this.anIntArray177[local19]);
+				local7.p4_alt1(this.anIntArray177[local19]);
 			}
 		}
 		if (GlRenderer.arbVboSupported) {
@@ -152,10 +152,10 @@ public final class Class45 {
 			@Pc(186) ByteBuffer local186 = ByteBuffer.wrap(local7.data);
 			this.aClass155_2.method4517(local186);
 		} else {
-			this.aByteBuffer1 = ByteBuffer.allocateDirect(local15.offset);
+			this.aByteBuffer1 = ByteBuffer.allocateDirect(local15.pos);
 			this.aByteBuffer1.put(local15.data);
 			this.aByteBuffer1.flip();
-			this.aByteBuffer2 = ByteBuffer.allocateDirect(local7.offset);
+			this.aByteBuffer2 = ByteBuffer.allocateDirect(local7.pos);
 			this.aByteBuffer2.put(local7.data);
 			this.aByteBuffer2.flip();
 		}

@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -24,8 +25,8 @@ public final class Static225 {
 	@OriginalMember(owner = "com.jagex3.client.client!se", name = "a", descriptor = "(I)V")
 	public static void method3889() {
 		while (true) {
-			if (Static57.aClass3_Sub15_Sub1_3.method2241(Static223.anInt5028) >= 11) {
-				@Pc(20) int local20 = Static57.aClass3_Sub15_Sub1_3.method2238(11);
+			if (Client.in.method2241(Static223.anInt5028) >= 11) {
+				@Pc(20) int local20 = Client.in.method2238(11);
 				if (local20 != 2047) {
 					@Pc(27) boolean local27 = false;
 					if (Static159.aClass8_Sub4_Sub1Array1[local20] == null) {
@@ -38,20 +39,20 @@ public final class Static225 {
 					Static105.anIntArray256[Static267.anInt5774++] = local20;
 					@Pc(65) Player local65 = Static159.aClass8_Sub4_Sub1Array1[local20];
 					local65.anInt3430 = Static83.anInt372;
-					@Pc(73) int local73 = Static57.aClass3_Sub15_Sub1_3.method2238(1);
+					@Pc(73) int local73 = Client.in.method2238(1);
 					if (local73 == 1) {
 						Static44.anIntArray106[Static116.anInt2951++] = local20;
 					}
-					@Pc(92) int local92 = Static57.aClass3_Sub15_Sub1_3.method2238(5);
-					@Pc(99) int local99 = Static56.anIntArray141[Static57.aClass3_Sub15_Sub1_3.method2238(3)];
+					@Pc(92) int local92 = Client.in.method2238(5);
+					@Pc(99) int local99 = Static56.anIntArray141[Client.in.method2238(3)];
 					if (local92 > 15) {
 						local92 -= 32;
 					}
 					if (local27) {
 						local65.anInt3400 = local65.anInt3381 = local99;
 					}
-					@Pc(116) int local116 = Static57.aClass3_Sub15_Sub1_3.method2238(1);
-					@Pc(121) int local121 = Static57.aClass3_Sub15_Sub1_3.method2238(5);
+					@Pc(116) int local116 = Client.in.method2238(1);
+					@Pc(121) int local121 = Client.in.method2238(5);
 					if (local121 > 15) {
 						local121 -= 32;
 					}
@@ -59,7 +60,7 @@ public final class Static225 {
 					continue;
 				}
 			}
-			Static57.aClass3_Sub15_Sub1_3.method2244();
+			Client.in.method2244();
 			return;
 		}
 	}
@@ -91,7 +92,7 @@ public final class Static225 {
 			Static196.anInt4587 = 0;
 			Static266.anInt5336 = -3;
 			Static219.anInt4937 = 1;
-			@Pc(43) Buffer local43 = new Buffer(128);
+			@Pc(43) Packet local43 = new Packet(128);
 			local43.p1(10);
 			local43.p2((int) (Math.random() * 99999.0D));
 			local43.p2(530);
@@ -99,11 +100,11 @@ public final class Static225 {
 			local43.p4((int) (Math.random() * 9.9999999E7D));
 			local43.pjstr(Static186.password);
 			local43.p4((int) (Math.random() * 9.9999999E7D));
-			local43.encryptRsa(Static86.RSA_EXPONENT, Static86.RSA_MODULUS);
-			Static6.outboundBuffer.offset = 0;
-			Static6.outboundBuffer.p1(210);
-			Static6.outboundBuffer.p1(local43.offset);
-			Static6.outboundBuffer.pBytes(local43.data, local43.offset);
+			local43.rsaenc(Static86.RSA_EXPONENT, Static86.RSA_MODULUS);
+			Client.out.pos = 0;
+			Client.out.p1(210);
+			Client.out.p1(local43.pos);
+			Client.out.pdata(local43.data, local43.pos);
 		} else {
 			Static49.method1208();
 		}

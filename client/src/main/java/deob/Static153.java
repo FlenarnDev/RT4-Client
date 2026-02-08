@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -69,7 +70,7 @@ public final class Static153 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!mc", name = "f", descriptor = "(B)V")
 	public static void method2909() {
-		Static6.outboundBuffer.p1isaac(184);
+		Client.out.p1isaac(184);
 		for (@Pc(18) Class3_Sub31 local18 = (Class3_Sub31) Static119.aClass133_9.method3859(); local18 != null; local18 = (Class3_Sub31) Static119.aClass133_9.method3861()) {
 			if (local18.anInt5879 == 0) {
 				Static132.method2605(true, local18);

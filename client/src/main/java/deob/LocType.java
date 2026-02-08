@@ -385,7 +385,7 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!pb", name = "a", descriptor = "(ILclient!wa;)V")
-	public final void method3424(@OriginalArg(1) Buffer arg0) {
+	public final void method3424(@OriginalArg(1) Packet arg0) {
 		while (true) {
 			@Pc(9) int local9 = arg0.g1();
 			if (local9 == 0) {
@@ -396,7 +396,7 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!pb", name = "a", descriptor = "(Lclient!wa;II)V")
-	private void method3425(@OriginalArg(0) Buffer arg0, @OriginalArg(1) int arg1) {
+	private void method3425(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		@Pc(18) int local18;
 		@Pc(38) int local38;
 		if (arg1 == 1) {
@@ -410,7 +410,7 @@ public final class LocType {
 						this.anIntArray378[local38] = arg0.g1();
 					}
 				} else {
-					arg0.offset += local18 * 3;
+					arg0.pos += local18 * 3;
 				}
 			}
 		} else if (arg1 == 2) {
@@ -425,7 +425,7 @@ public final class LocType {
 						this.anIntArray379[local38] = arg0.g2();
 					}
 				} else {
-					arg0.offset += local18 * 2;
+					arg0.pos += local18 * 2;
 				}
 			}
 		} else if (arg1 == 14) {
@@ -455,9 +455,9 @@ public final class LocType {
 		} else if (arg1 == 28) {
 			this.anInt4428 = arg0.g1();
 		} else if (arg1 == 29) {
-			this.anInt4407 = arg0.g1s();
+			this.anInt4407 = arg0.g1b();
 		} else if (arg1 == 39) {
-			this.anInt4405 = arg0.g1s() * 5;
+			this.anInt4405 = arg0.g1b() * 5;
 		} else if (arg1 >= 30 && arg1 < 35) {
 			this.aClass100Array130[arg1 - 30] = arg0.gjstr();
 			if (this.aClass100Array130[arg1 - 30].method3111(LocalizedText.HIDDEN)) {
@@ -483,7 +483,7 @@ public final class LocType {
 			local18 = arg0.g1();
 			this.aByteArray63 = new byte[local18];
 			for (local38 = 0; local38 < local18; local38++) {
-				this.aByteArray63[local38] = arg0.g1s();
+				this.aByteArray63[local38] = arg0.g1b();
 			}
 		} else if (arg1 == 60) {
 			this.anInt4400 = arg0.g2();
@@ -500,11 +500,11 @@ public final class LocType {
 		} else if (arg1 == 69) {
 			this.anInt4433 = arg0.g1();
 		} else if (arg1 == 70) {
-			this.anInt4408 = arg0.g2s();
+			this.anInt4408 = arg0.g2b();
 		} else if (arg1 == 71) {
-			this.anInt4411 = arg0.g2s();
+			this.anInt4411 = arg0.g2b();
 		} else if (arg1 == 72) {
-			this.anInt4434 = arg0.g2s();
+			this.anInt4434 = arg0.g2b();
 		} else if (arg1 == 73) {
 			this.aBoolean206 = true;
 		} else if (arg1 == 74) {

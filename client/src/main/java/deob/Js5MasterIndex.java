@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Js5MasterIndex {
 
 	@OriginalMember(owner = "com.jagex3.client.client!al", name = "a", descriptor = "Lclient!wa;")
-	private Buffer aClass3_Sub15_1;
+	private Packet aClass3_Sub15_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!al", name = "s", descriptor = "[Lclient!bg;")
 	private Js5CachedResourceProvider[] aClass14_Sub1Array1;
@@ -46,7 +46,7 @@ public final class Js5MasterIndex {
 		if (this.aClass3_Sub2_Sub5_Sub2_1.aBoolean226) {
 			return false;
 		} else {
-			this.aClass3_Sub15_1 = new Buffer(this.aClass3_Sub2_Sub5_Sub2_1.method3554());
+			this.aClass3_Sub15_1 = new Packet(this.aClass3_Sub2_Sub5_Sub2_1.method3554());
 			this.aClass14_Sub1Array1 = new Js5CachedResourceProvider[(this.aClass3_Sub15_1.data.length - 5) / 8];
 			return true;
 		}
@@ -80,8 +80,8 @@ public final class Js5MasterIndex {
 		if (this.aClass3_Sub15_1 == null) {
 			throw new RuntimeException();
 		}
-		this.aClass3_Sub15_1.offset = arg1 * 8 + 5;
-		if (this.aClass3_Sub15_1.data.length <= this.aClass3_Sub15_1.offset) {
+		this.aClass3_Sub15_1.pos = arg1 * 8 + 5;
+		if (this.aClass3_Sub15_1.data.length <= this.aClass3_Sub15_1.pos) {
 			throw new RuntimeException();
 		} else if (this.aClass14_Sub1Array1[arg1] == null) {
 			@Pc(56) int local56 = this.aClass3_Sub15_1.g4();

@@ -94,7 +94,7 @@ public final class BasType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ck", name = "a", descriptor = "(ILclient!wa;)V")
-	public final void method880(@OriginalArg(1) Buffer arg0) {
+	public final void method880(@OriginalArg(1) Packet arg0) {
 		while (true) {
 			@Pc(16) int local16 = arg0.g1();
 			if (local16 == 0) {
@@ -105,7 +105,7 @@ public final class BasType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ck", name = "a", descriptor = "(IBLclient!wa;)V")
-	private void method881(@OriginalArg(0) int arg0, @OriginalArg(2) Buffer arg1) {
+	private void method881(@OriginalArg(0) int arg0, @OriginalArg(2) Packet arg1) {
 		if (arg0 == 1) {
 			this.anInt1037 = arg1.g2();
 			this.anInt1051 = arg1.g2();
@@ -141,7 +141,7 @@ public final class BasType {
 			@Pc(306) int local306 = arg1.g1();
 			this.anIntArrayArray7[local306] = new int[6];
 			for (@Pc(314) int local314 = 0; local314 < 6; local314++) {
-				this.anIntArrayArray7[local306][local314] = arg1.g2s();
+				this.anIntArrayArray7[local306][local314] = arg1.g2b();
 			}
 		} else if (arg0 == 29) {
 			this.anInt1038 = arg1.g1();
@@ -152,13 +152,13 @@ public final class BasType {
 		} else if (arg0 == 32) {
 			this.anInt1040 = arg1.g2();
 		} else if (arg0 == 33) {
-			this.anInt1064 = arg1.g2s();
+			this.anInt1064 = arg1.g2b();
 		} else if (arg0 == 34) {
 			this.anInt1065 = arg1.g1();
 		} else if (arg0 == 35) {
 			this.anInt1063 = arg1.g2();
 		} else if (arg0 == 36) {
-			this.anInt1041 = arg1.g2s();
+			this.anInt1041 = arg1.g2b();
 		} else if (arg0 == 37) {
 			this.anInt1032 = arg1.g1();
 		} else if (arg0 == 38) {

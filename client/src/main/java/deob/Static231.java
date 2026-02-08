@@ -32,9 +32,9 @@ public final class Static231 {
 	public static boolean aBoolean252 = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!sk", name = "a", descriptor = "(ILclient!wa;)V")
-	public static void method3980(@OriginalArg(1) Buffer arg0) {
+	public static void method3980(@OriginalArg(1) Packet arg0) {
 		label83: while (true) {
-			if (arg0.offset < arg0.data.length) {
+			if (arg0.pos < arg0.data.length) {
 				@Pc(23) int local23 = 0;
 				@Pc(25) boolean local25 = false;
 				@Pc(27) int local27 = 0;
@@ -59,13 +59,13 @@ public final class Static231 {
 						}
 						for (@Pc(107) int local107 = 0; local107 < 64; local107++) {
 							if (!local25 || local23 * 8 <= local102 && local23 * 8 + 8 > local102 && local107 >= local27 * 8 && local27 * 8 + 8 > local107) {
-								local146 = arg0.g1s();
+								local146 = arg0.g1b();
 								if (local146 != 0) {
 									if (Static229.aByteArrayArrayArray12[local96][local100] == null) {
 										Static229.aByteArrayArrayArray12[local96][local100] = new byte[4096];
 									}
 									Static229.aByteArrayArrayArray12[local96][local100][(63 - local107 << 6) + local102] = local146;
-									@Pc(182) byte local182 = arg0.g1s();
+									@Pc(182) byte local182 = arg0.g1b();
 									if (Static125.aByteArrayArrayArray10[local96][local100] == null) {
 										Static125.aByteArrayArrayArray10[local96][local100] = new byte[4096];
 									}
@@ -81,9 +81,9 @@ public final class Static231 {
 					if (local96 >= (local25 ? 64 : 4096)) {
 						continue label83;
 					}
-					local146 = arg0.g1s();
+					local146 = arg0.g1b();
 					if (local146 != 0) {
-						arg0.offset++;
+						arg0.pos++;
 					}
 					local96++;
 				}
@@ -273,7 +273,7 @@ public final class Static231 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!sk", name = "a", descriptor = "(JI)V")
-	public static void sleep(@OriginalArg(0) long arg0) {
+	public static void sleepPrecise(@OriginalArg(0) long arg0) {
 		if (arg0 <= 0L) {
 			return;
 		}

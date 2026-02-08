@@ -18,7 +18,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static233 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!t", name = "l", descriptor = "Lclient!ma;")
-	public static BufferedSocket aClass95_4;
+	public static ClientStream aClass95_4;
 
 	@OriginalMember(owner = "com.jagex3.client.client!t", name = "o", descriptor = "I")
 	public static int anInt5217;
@@ -155,7 +155,7 @@ public final class Static233 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!t", name = "a", descriptor = "(Lclient!i;II)V")
-	public static void loop(@OriginalArg(0) Packet arg0) {
+	public static void loop(@OriginalArg(0) PacketBit arg0) {
 		while (true) {
 			@Pc(18) ReflectionCheck local18 = (ReflectionCheck) Static204.aClass69_113.method2289();
 			if (local18 == null) {
@@ -186,7 +186,7 @@ public final class Static233 {
 			}
 			arg0.p1isaac(163);
 			arg0.p1(0);
-			local25 = arg0.offset;
+			local25 = arg0.pos;
 			arg0.p4(local18.anInt1732);
 			for (@Pc(121) int local121 = 0; local121 < local18.anInt1725; local121++) {
 				if (local18.anIntArray138[local121] == 0) {
@@ -265,8 +265,8 @@ public final class Static233 {
 					arg0.p1(local18.anIntArray138[local121]);
 				}
 			}
-			arg0.pCrc32(local25);
-			arg0.p1len(arg0.offset - local25);
+			arg0.addcrc(local25);
+			arg0.psize1(arg0.pos - local25);
 			local18.method4658();
 		}
 	}

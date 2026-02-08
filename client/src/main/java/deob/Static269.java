@@ -46,7 +46,7 @@ public final class Static269 {
 				}
 			}
 		}
-		@Pc(95) Buffer local95 = new Buffer(arg6);
+		@Pc(95) Packet local95 = new Packet(arg6);
 		@Pc(99) byte local99;
 		if (arg1) {
 			local99 = 1;
@@ -66,14 +66,14 @@ public final class Static269 {
 		@Pc(188) int local188;
 		@Pc(190) int local190;
 		@Pc(194) int local194;
-		while (local95.offset < local95.data.length) {
+		while (local95.pos < local95.data.length) {
 			local21 = local95.g1();
 			if (local21 != 129) {
-				local95.offset--;
+				local95.pos--;
 				break;
 			}
 			for (local117 = 0; local117 < 4; local117++) {
-				@Pc(168) byte local168 = local95.g1s();
+				@Pc(168) byte local168 = local95.g1b();
 				if (local168 == 0) {
 					local243 = arg4;
 					if (arg4 < 0) {
@@ -109,7 +109,7 @@ public final class Static269 {
 				} else if (local168 == 1) {
 					for (local243 = 0; local243 < 64; local243 += 4) {
 						for (local188 = 0; local188 < 64; local188 += 4) {
-							@Pc(305) byte local305 = local95.g1s();
+							@Pc(305) byte local305 = local95.g1b();
 							for (local194 = local243 + arg4; local194 < arg4 + local243 + 4; local194++) {
 								for (@Pc(320) int local320 = arg3 + local188; local320 < arg3 + local188 + 4; local320++) {
 									if (local194 >= 0 && local194 < 104 && local320 >= 0 && local320 < 104) {
@@ -160,7 +160,7 @@ public final class Static269 {
 			@Pc(490) Environment local490 = null;
 			label270: while (true) {
 				label263: do {
-					while (local95.offset < local95.data.length) {
+					while (local95.pos < local95.data.length) {
 						local117 = local95.g1();
 						if (local117 != 0) {
 							if (local117 != 1) {

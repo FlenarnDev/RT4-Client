@@ -18,11 +18,11 @@ public final class SynthSound {
 	private int anInt5206;
 
 	@OriginalMember(owner = "com.jagex3.client.client!sl", name = "<init>", descriptor = "(Lclient!wa;)V")
-	public SynthSound(@OriginalArg(0) Buffer arg0) {
+	public SynthSound(@OriginalArg(0) Packet arg0) {
 		for (@Pc(7) int local7 = 0; local7 < 10; local7++) {
 			@Pc(14) int local14 = arg0.g1();
 			if (local14 != 0) {
-				arg0.offset--;
+				arg0.pos--;
 				this.aClass123Array1[local7] = new SynthInstrument();
 				this.aClass123Array1[local7].method3506(arg0);
 			}

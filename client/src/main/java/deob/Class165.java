@@ -48,7 +48,7 @@ public final class Class165 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!wm", name = "a", descriptor = "([[III)V")
 	public final void method4676(@OriginalArg(0) int[][] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(4) Buffer local4 = new Buffer(1620);
+		@Pc(4) Packet local4 = new Packet(1620);
 		@Pc(11) int local11;
 		for (@Pc(6) int local6 = 0; local6 <= 8; local6++) {
 			for (local11 = 0; local11 <= 8; local11++) {
@@ -68,15 +68,15 @@ public final class Class165 {
 			}
 		}
 		if (GlRenderer.arbVboSupported) {
-			@Pc(112) ByteBuffer local112 = ByteBuffer.wrap(local4.data, 0, local4.offset);
+			@Pc(112) ByteBuffer local112 = ByteBuffer.wrap(local4.data, 0, local4.pos);
 			this.aClass155_7 = new GlVertexBufferObject();
 			this.aClass155_7.method4519(local112);
 		} else {
-			this.aByteBuffer12 = ByteBuffer.allocateDirect(local4.offset).order(ByteOrder.nativeOrder());
-			this.aByteBuffer12.put(local4.data, 0, local4.offset);
+			this.aByteBuffer12 = ByteBuffer.allocateDirect(local4.pos).order(ByteOrder.nativeOrder());
+			this.aByteBuffer12.put(local4.data, 0, local4.pos);
 			this.aByteBuffer12.flip();
 		}
-		@Pc(147) Buffer local147 = new Buffer(1536);
+		@Pc(147) Packet local147 = new Packet(1536);
 		for (local11 = 0; local11 < 8; local11++) {
 			for (@Pc(154) int local154 = 0; local154 < 8; local154++) {
 				if (GlRenderer.bigEndian) {
@@ -87,22 +87,22 @@ public final class Class165 {
 					local147.p4(local154 + local11 * 9 + 1);
 					local147.p4(local154 + (local11 + 1) * 9 + 1);
 				} else {
-					local147.p4le(local154 + (local11 + 1) * 9);
-					local147.p4le(local154 + local11 * 9);
-					local147.p4le(local154 + local11 * 9 + 1);
-					local147.p4le(local154 + (local11 + 1) * 9);
-					local147.p4le(local154 + local11 * 9 + 1);
-					local147.p4le(local154 + (local11 + 1) * 9 + 1);
+					local147.p4_alt1(local154 + (local11 + 1) * 9);
+					local147.p4_alt1(local154 + local11 * 9);
+					local147.p4_alt1(local154 + local11 * 9 + 1);
+					local147.p4_alt1(local154 + (local11 + 1) * 9);
+					local147.p4_alt1(local154 + local11 * 9 + 1);
+					local147.p4_alt1(local154 + (local11 + 1) * 9 + 1);
 				}
 			}
 		}
 		if (GlRenderer.arbVboSupported) {
-			@Pc(293) ByteBuffer local293 = ByteBuffer.wrap(local147.data, 0, local147.offset);
+			@Pc(293) ByteBuffer local293 = ByteBuffer.wrap(local147.data, 0, local147.pos);
 			this.aClass155_6 = new GlVertexBufferObject();
 			this.aClass155_6.method4517(local293);
 		} else {
-			this.aByteBuffer11 = ByteBuffer.allocateDirect(local147.offset).order(ByteOrder.nativeOrder());
-			this.aByteBuffer11.put(local147.data, 0, local147.offset);
+			this.aByteBuffer11 = ByteBuffer.allocateDirect(local147.pos).order(ByteOrder.nativeOrder());
+			this.aByteBuffer11.put(local147.data, 0, local147.pos);
 			this.aByteBuffer11.flip();
 		}
 	}

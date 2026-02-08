@@ -67,7 +67,7 @@ public final class Static81 {
 		@Pc(21) byte[] local21 = Static216.aClass153_31.method4495(3, arg0);
 		local10 = new IdkType();
 		if (local21 != null) {
-			local10.method1209(new Buffer(local21));
+			local10.method1209(new Packet(local21));
 		}
 		Static67.aClass99_20.method3095(local10, (long) arg0);
 		return local10;
@@ -114,7 +114,7 @@ public final class Static81 {
 		if (Client.state != 30) {
 			return;
 		}
-		Static233.loop(Static6.outboundBuffer); // deob.ReflectionCheck
+		Static233.loop(Client.out); // deob.ReflectionCheck
 		@Pc(60) Object mouseRecorder = Client.mouseTracking.lock;
 		@Pc(86) int offset;
 		@Pc(79) int samples;
@@ -127,11 +127,11 @@ public final class Static81 {
 			if (!Static245.enabled) {
 				Client.mouseTracking.samples = 0;
 			} else if (Static150.clickButton != 0 || Client.mouseTracking.samples >= 40) {
-				Static6.outboundBuffer.p1isaac(123);
+				Client.out.p1isaac(123);
 				samples = 0;
-				Static6.outboundBuffer.p1(0);
-				offset = Static6.outboundBuffer.offset;
-				for (i = 0; Client.mouseTracking.samples > i && Static6.outboundBuffer.offset - offset < 240; i++) {
+				Client.out.p1(0);
+				offset = Client.out.pos;
+				for (i = 0; Client.mouseTracking.samples > i && Client.out.pos - offset < 240; i++) {
 					samples++;
 					y = Client.mouseTracking.y[i];
 					x = Client.mouseTracking.x[i];
@@ -159,28 +159,28 @@ public final class Static81 {
 						if (Static204.anInt4762 < 8 && dx >= -32 && dx <= 31 && dy >= -32 && dy <= 31) {
 							dy += 32;
 							dx += 32;
-							Static6.outboundBuffer.p2(dy + (Static204.anInt4762 << 12) + (dx << 6));
+							Client.out.p2(dy + (Static204.anInt4762 << 12) + (dx << 6));
 							Static204.anInt4762 = 0;
 						} else if (Static204.anInt4762 < 32 && dx >= -128 && dx <= 127 && dy >= -128 && dy <= 127) {
-							Static6.outboundBuffer.p1(Static204.anInt4762 + 128);
+							Client.out.p1(Static204.anInt4762 + 128);
 							dy += 128;
 							dx += 128;
-							Static6.outboundBuffer.p2((dx << 8) + dy);
+							Client.out.p2((dx << 8) + dy);
 							Static204.anInt4762 = 0;
 						} else if (Static204.anInt4762 < 32) {
-							Static6.outboundBuffer.p1(Static204.anInt4762 + 192);
+							Client.out.p1(Static204.anInt4762 + 192);
 							if (outsideWindow) {
-								Static6.outboundBuffer.p4(Integer.MIN_VALUE);
+								Client.out.p4(Integer.MIN_VALUE);
 							} else {
-								Static6.outboundBuffer.p4(x | y << 16);
+								Client.out.p4(x | y << 16);
 							}
 							Static204.anInt4762 = 0;
 						} else {
-							Static6.outboundBuffer.p2(Static204.anInt4762 + 57344);
+							Client.out.p2(Static204.anInt4762 + 57344);
 							if (outsideWindow) {
-								Static6.outboundBuffer.p4(Integer.MIN_VALUE);
+								Client.out.p4(Integer.MIN_VALUE);
 							} else {
-								Static6.outboundBuffer.p4(x | y << 16);
+								Client.out.p4(x | y << 16);
 							}
 							Static204.anInt4762 = 0;
 						}
@@ -188,7 +188,7 @@ public final class Static81 {
 						Static204.anInt4762++;
 					}
 				}
-				Static6.outboundBuffer.p1len(Static6.outboundBuffer.offset - offset);
+				Client.out.psize1(Client.out.pos - offset);
 				if (Client.mouseTracking.samples > samples) {
 					Client.mouseTracking.samples -= samples;
 					for (i = 0; i < Client.mouseTracking.samples; i++) {
@@ -223,9 +223,9 @@ public final class Static81 {
 			if (Static150.clickButton == 2) {
 				button = 1;
 			}
-			Static6.outboundBuffer.p1isaac(75);
-			Static6.outboundBuffer.p2leadd(button << 15 | x);
-			Static6.outboundBuffer.p4me(i | samples << 16);
+			Client.out.p1isaac(75);
+			Client.out.p2_alt3(button << 15 | x);
+			Client.out.p4_alt3(i | samples << 16);
 		}
 		if (Static16.anInt551 > 0) {
 			Static16.anInt551--;
@@ -244,23 +244,23 @@ public final class Static81 {
 		if (Static197.aBoolean228 && Static16.anInt551 <= 0) {
 			Static16.anInt551 = 20;
 			Static197.aBoolean228 = false;
-			Static6.outboundBuffer.p1isaac(21);
-			Static6.outboundBuffer.p2add(Static72.anInt2031);
-			Static6.outboundBuffer.p2le(Static57.anInt1747);
+			Client.out.p1isaac(21);
+			Client.out.p2_alt2(Static72.anInt2031);
+			Client.out.p2_alt1(Static57.anInt1747);
 		}
 		if (Static26.focus && !Static67.prevFocus) {
 			Static67.prevFocus = true;
-			Static6.outboundBuffer.p1isaac(22);
-			Static6.outboundBuffer.p1(1);
+			Client.out.p1isaac(22);
+			Client.out.p1(1);
 		}
 		if (!Static26.focus && Static67.prevFocus) {
 			Static67.prevFocus = false;
-			Static6.outboundBuffer.p1isaac(22);
-			Static6.outboundBuffer.p1(0);
+			Client.out.p1isaac(22);
+			Client.out.p1(0);
 		}
 		if (!Static18.sentToServer) {
-			Static6.outboundBuffer.p1isaac(98);
-			Static6.outboundBuffer.p4(Static145.method2746());
+			Client.out.p1isaac(98);
+			Client.out.p4(Static145.method2746());
 			Static18.sentToServer = true;
 		}
 		Static31.method846();
@@ -459,11 +459,11 @@ public final class Static81 {
 						} else {
 							local1361.swapObjs(Static18.anInt588, Static4.anInt36);
 						}
-						Static6.outboundBuffer.p1isaac(231);
-						Static6.outboundBuffer.p2(Static4.anInt36);
-						Static6.outboundBuffer.p4le2(Static118.aClass13_15.anInt507);
-						Static6.outboundBuffer.p2add(Static18.anInt588);
-						Static6.outboundBuffer.p1sub(local1363);
+						Client.out.p1isaac(231);
+						Client.out.p2(Static4.anInt36);
+						Client.out.p4le2(Static118.aClass13_15.anInt507);
+						Client.out.p2_alt2(Static18.anInt588);
+						Client.out.p1_alt3(local1363);
 					}
 				} else if ((Static116.anInt2952 == 1 || Static277.method4640(Static231.anInt5204 - 1)) && Static231.anInt5204 > 2) {
 					Static226.method3901();
@@ -534,11 +534,11 @@ public final class Static81 {
 												Static125.anInt3096 = 0;
 											} else if (Static125.anInt3096 == 2) {
 												if (Static56.anInt1742 != -1) {
-													Static6.outboundBuffer.p1isaac(131);
-													Static6.outboundBuffer.p4me(Static98.anInt2512);
-													Static6.outboundBuffer.p2add(Static225.originX + Static56.anInt1742);
-													Static6.outboundBuffer.p2leadd(Static15.anInt506);
-													Static6.outboundBuffer.p2add(Static116.anInt2954 + Static142.originZ);
+													Client.out.p1isaac(131);
+													Client.out.p4_alt3(Static98.anInt2512);
+													Client.out.p2_alt2(Static225.originX + Static56.anInt1742);
+													Client.out.p2_alt3(Static15.anInt506);
+													Client.out.p2_alt2(Static116.anInt2954 + Static142.originZ);
 													Static70.type = 1;
 													Static17.milliseconds = 0;
 													Static25.y = Static60.clickY;
@@ -547,9 +547,9 @@ public final class Static81 {
 												Static125.anInt3096 = 0;
 											} else if (Static187.anInt4422 == 2) {
 												if (Static56.anInt1742 != -1) {
-													Static6.outboundBuffer.p1isaac(179);
-													Static6.outboundBuffer.p2(Static142.originZ + Static116.anInt2954);
-													Static6.outboundBuffer.p2(Static56.anInt1742 + Static225.originX);
+													Client.out.p1isaac(179);
+													Client.out.p2(Static142.originZ + Static116.anInt2954);
+													Client.out.p2(Static56.anInt1742 + Static225.originX);
 													Static17.milliseconds = 0;
 													Static70.type = 1;
 													Static122.x = Static7.clickX;
@@ -608,7 +608,7 @@ public final class Static81 {
 											if (y > 15000 && x > 15000) {
 												Static267.anInt5775 = 250;
 												Static48.setIdleLoops(14500);
-												Static6.outboundBuffer.p1isaac(245);
+												Client.out.p1isaac(245);
 											}
 											if (Static33.openUrlRequest != null && Static33.openUrlRequest.status == 1) {
 												if (Static33.openUrlRequest.result != null) {
@@ -675,17 +675,17 @@ public final class Static81 {
 												Static263.anInt5755 = -2;
 											}
 											if (Static131.anInt3251 > 50) {
-												Static6.outboundBuffer.p1isaac(93);
+												Client.out.p1isaac(93);
 											}
 											if (Static34.verifyIdChanged) {
 												Static71.transmitVerifyId();
 												Static34.verifyIdChanged = false;
 											}
 											try {
-												if (Static124.socket != null && Static6.outboundBuffer.offset > 0) {
-													Static124.socket.write(Static6.outboundBuffer.data, Static6.outboundBuffer.offset);
+												if (Client.loginStream != null && Client.out.pos > 0) {
+													Client.loginStream.write(Client.out.data, Client.out.pos);
 													Static131.anInt3251 = 0;
-													Static6.outboundBuffer.offset = 0;
+													Client.out.pos = 0;
 												}
 											} catch (@Pc(2266) IOException local2266) {
 												Static175.method3279();

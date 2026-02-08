@@ -70,8 +70,8 @@ public final class Player extends PathingEntity {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!e", name = "a", descriptor = "(ILclient!wa;)V")
-	public final void method1262(@OriginalArg(1) Buffer arg0) {
-		arg0.offset = 0;
+	public final void method1262(@OriginalArg(1) Packet arg0) {
+		arg0.pos = 0;
 		@Pc(20) int local20 = arg0.g1();
 		@Pc(22) int local22 = -1;
 		@Pc(26) int local26 = local20 & 0x1;
@@ -82,8 +82,8 @@ public final class Player extends PathingEntity {
 		this.anInt1651 = local20 >> 6 & 0x3;
 		this.anInt3412 += (this.method2693() - local41) * 64;
 		this.anInt3421 += (this.method2693() - local41) * 64;
-		this.anInt1669 = arg0.g1s();
-		this.anInt1649 = arg0.g1s();
+		this.anInt1669 = arg0.g1b();
+		this.anInt1649 = arg0.g1b();
 		this.anInt1650 = 0;
 		@Pc(111) int local111;
 		@Pc(127) int local127;

@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -60,54 +61,54 @@ public final class Static263 {
 			return;
 		}
 		if (arg2 == 1) {
-			Static6.outboundBuffer.p1isaac(155);
-			Static6.outboundBuffer.p4(arg3);
-			Static6.outboundBuffer.p2(arg1);
+			Client.out.p1isaac(155);
+			Client.out.p4(arg3);
+			Client.out.p2(arg1);
 		}
 		if (arg2 == 2) {
-			Static6.outboundBuffer.p1isaac(196);
-			Static6.outboundBuffer.p4(arg3);
-			Static6.outboundBuffer.p2(arg1);
+			Client.out.p1isaac(196);
+			Client.out.p4(arg3);
+			Client.out.p2(arg1);
 		}
 		if (arg2 == 3) {
-			Static6.outboundBuffer.p1isaac(124);
-			Static6.outboundBuffer.p4(arg3);
-			Static6.outboundBuffer.p2(arg1);
+			Client.out.p1isaac(124);
+			Client.out.p4(arg3);
+			Client.out.p2(arg1);
 		}
 		if (arg2 == 4) {
-			Static6.outboundBuffer.p1isaac(199);
-			Static6.outboundBuffer.p4(arg3);
-			Static6.outboundBuffer.p2(arg1);
+			Client.out.p1isaac(199);
+			Client.out.p4(arg3);
+			Client.out.p2(arg1);
 		}
 		if (arg2 == 5) {
-			Static6.outboundBuffer.p1isaac(234);
-			Static6.outboundBuffer.p4(arg3);
-			Static6.outboundBuffer.p2(arg1);
+			Client.out.p1isaac(234);
+			Client.out.p4(arg3);
+			Client.out.p2(arg1);
 		}
 		if (arg2 == 6) {
-			Static6.outboundBuffer.p1isaac(168);
-			Static6.outboundBuffer.p4(arg3);
-			Static6.outboundBuffer.p2(arg1);
+			Client.out.p1isaac(168);
+			Client.out.p4(arg3);
+			Client.out.p2(arg1);
 		}
 		if (arg2 == 7) {
-			Static6.outboundBuffer.p1isaac(166);
-			Static6.outboundBuffer.p4(arg3);
-			Static6.outboundBuffer.p2(arg1);
+			Client.out.p1isaac(166);
+			Client.out.p4(arg3);
+			Client.out.p2(arg1);
 		}
 		if (arg2 == 8) {
-			Static6.outboundBuffer.p1isaac(64);
-			Static6.outboundBuffer.p4(arg3);
-			Static6.outboundBuffer.p2(arg1);
+			Client.out.p1isaac(64);
+			Client.out.p4(arg3);
+			Client.out.p2(arg1);
 		}
 		if (arg2 == 9) {
-			Static6.outboundBuffer.p1isaac(53);
-			Static6.outboundBuffer.p4(arg3);
-			Static6.outboundBuffer.p2(arg1);
+			Client.out.p1isaac(53);
+			Client.out.p4(arg3);
+			Client.out.p2(arg1);
 		}
 		if (arg2 == 10) {
-			Static6.outboundBuffer.p1isaac(9);
-			Static6.outboundBuffer.p4(arg3);
-			Static6.outboundBuffer.p2(arg1);
+			Client.out.p1isaac(9);
+			Client.out.p4(arg3);
+			Client.out.p2(arg1);
 		}
 	}
 

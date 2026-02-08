@@ -33,7 +33,7 @@ public final class Static197 {
 		}
 		@Pc(17) PrivilegedRequest local17 = arg0.method5132();
 		while (local17.status == 0) {
-			Static231.sleep(10L);
+			Static231.sleepPrecise(10L);
 		}
 		if (local17.status == 2) {
 			return new Class114[0];
@@ -151,7 +151,7 @@ public final class Static197 {
 				}
 				@Pc(300) PrivilegedRequest local300 = GameShell.signLink.method5123(Static215.aClient1.getClass());
 				while (local300.status == 0) {
-					Static231.sleep(100L);
+					Static231.sleepPrecise(100L);
 				}
 				if (local300.status == 1) {
 					Static211.aBoolean73 = true;
@@ -209,7 +209,7 @@ public final class Static197 {
 		if (Static154.topLevelInterace != -1) {
 			Static210.method3712(true);
 		}
-		if (Static124.socket != null && (Client.state == 30 || Client.state == 25)) {
+		if (Client.loginStream != null && (Client.state == 30 || Client.state == 25)) {
 			Static59.method1373();
 		}
 		for (@Pc(466) int local466 = 0; local466 < 100; local466++) {

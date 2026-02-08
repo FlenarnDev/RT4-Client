@@ -8,7 +8,7 @@ public final class ParticleSystem extends ParticleNode {
 
 	static {
 		new SecondaryHashTable(8);
-		new Buffer(131056);
+		new Packet(131056);
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ga", name = "d", descriptor = "()V")

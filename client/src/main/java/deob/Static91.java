@@ -38,11 +38,11 @@ public final class Static91 {
 			return null;
 		}
 		local12 = new ClientScript();
-		@Pc(42) Buffer local42 = new Buffer(local22);
-		local42.offset = local42.data.length - 2;
+		@Pc(42) Packet local42 = new Packet(local22);
+		local42.pos = local42.data.length - 2;
 		@Pc(53) int local53 = local42.g2();
 		@Pc(63) int local63 = local42.data.length - local53 - 12 - 2;
-		local42.offset = local63;
+		local42.pos = local63;
 		@Pc(70) int local70 = local42.g4();
 		local12.anInt4667 = local42.g2();
 		local12.anInt4671 = local42.g2();
@@ -64,13 +64,13 @@ public final class Static91 {
 				}
 			}
 		}
-		local42.offset = 0;
-		local12.aClass100_880 = local42.gjstrFast();
+		local42.pos = 0;
+		local12.aClass100_880 = local42.fastgstr();
 		local12.anIntArray415 = new int[local70];
 		local12.aClass100Array140 = new JagString[local70];
 		local107 = 0;
 		local12.anIntArray416 = new int[local70];
-		while (local63 > local42.offset) {
+		while (local63 > local42.pos) {
 			local114 = local42.g2();
 			if (local114 == 3) {
 				local12.aClass100Array140[local107] = local42.gjstr();

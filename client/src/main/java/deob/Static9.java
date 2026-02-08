@@ -77,8 +77,8 @@ public final class Static9 {
 	}
 
     @OriginalMember(owner = "com.jagex3.client.client!al", name = "a", descriptor = "(ILclient!wa;)Lclient!ci;")
-	public static TextureOp29SubOp1 method184(@OriginalArg(1) Buffer arg0) {
-		return new TextureOp29SubOp1(arg0.g2s(), arg0.g2s(), arg0.g2s(), arg0.g2s(), arg0.g3(), arg0.g1());
+	public static TextureOp29SubOp1 method184(@OriginalArg(1) Packet arg0) {
+		return new TextureOp29SubOp1(arg0.g2b(), arg0.g2b(), arg0.g2b(), arg0.g2b(), arg0.g3(), arg0.g1());
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!al", name = "b", descriptor = "(B)V")

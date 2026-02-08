@@ -49,7 +49,7 @@ public final class Environment {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!li", name = "<init>", descriptor = "(Lclient!wa;)V")
-	public Environment(@OriginalArg(0) Buffer arg0) {
+	public Environment(@OriginalArg(0) Packet arg0) {
 		@Pc(7) int local7 = arg0.g1();
 		if ((local7 & 0x1) == 0) {
 			this.anInt3526 = Static161.anInt3923;
@@ -76,9 +76,9 @@ public final class Environment {
 			this.anInt3530 = -50;
 			this.anInt3528 = -60;
 		} else {
-			this.anInt3530 = arg0.g2s();
-			this.anInt3528 = arg0.g2s();
-			this.anInt3527 = arg0.g2s();
+			this.anInt3530 = arg0.g2b();
+			this.anInt3528 = arg0.g2b();
+			this.anInt3527 = arg0.g2b();
 		}
 		if ((local7 & 0x20) == 0) {
 			this.anInt3525 = Static161.anInt3922;

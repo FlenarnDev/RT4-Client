@@ -38,7 +38,7 @@ public final class Static206 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!qk", name = "a", descriptor = "(BLclient!wa;)Lclient!j;")
-	public static TextureOp method3680(@OriginalArg(1) Buffer arg0) {
+	public static TextureOp method3680(@OriginalArg(1) Packet arg0) {
 		arg0.g1();
 		@Pc(13) int local13 = arg0.g1();
 		@Pc(17) TextureOp local17 = Static223.method3860(local13);

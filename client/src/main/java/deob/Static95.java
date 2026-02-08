@@ -9,13 +9,13 @@ public final class Static95 {
 	public static ByteBuffer aByteBuffer4;
 
 	@OriginalMember(owner = "com.jagex3.client.client!hg", name = "K", descriptor = "Lclient!wa;")
-	public static Buffer aClass3_Sub15_2;
+	public static Packet aClass3_Sub15_2;
 
 	@OriginalMember(owner = "com.jagex3.client.client!hg", name = "Q", descriptor = "Ljava/nio/ByteBuffer;")
 	public static ByteBuffer aByteBuffer5;
 
 	@OriginalMember(owner = "com.jagex3.client.client!hg", name = "U", descriptor = "Lclient!wa;")
-	public static Buffer aClass3_Sub15_3;
+	public static Packet aClass3_Sub15_3;
 
 	@OriginalMember(owner = "com.jagex3.client.client!hg", name = "a", descriptor = "()V")
 	public static void method1939() {

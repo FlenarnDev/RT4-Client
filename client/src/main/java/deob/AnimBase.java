@@ -29,7 +29,7 @@ public final class AnimBase extends Node {
 	@OriginalMember(owner = "com.jagex3.client.client!jm", name = "<init>", descriptor = "(I[B)V")
 	public AnimBase(@OriginalArg(0) int arg0, @OriginalArg(1) byte[] arg1) {
 		this.anInt3113 = arg0;
-		@Pc(9) Buffer local9 = new Buffer(arg1);
+		@Pc(9) Packet local9 = new Packet(arg1);
 		this.anInt3116 = local9.g1();
 		this.anIntArrayArray23 = new int[this.anInt3116][];
 		this.anIntArray291 = new int[this.anInt3116];

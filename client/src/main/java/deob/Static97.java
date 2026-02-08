@@ -99,21 +99,21 @@ public final class Static97 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!hi", name = "a", descriptor = "(Lclient!wa;I)V")
-	public static void method1962(@OriginalArg(0) Buffer arg0) {
-		@Pc(9) int local9 = arg0.gSmart1or2();
+	public static void method1962(@OriginalArg(0) Packet arg0) {
+		@Pc(9) int local9 = arg0.gsmart();
 		Static203.aClass32Array1 = new Class32[local9];
 		@Pc(14) int local14;
 		for (local14 = 0; local14 < local9; local14++) {
 			Static203.aClass32Array1[local14] = new Class32();
-			Static203.aClass32Array1[local14].anInt1739 = arg0.gSmart1or2();
+			Static203.aClass32Array1[local14].anInt1739 = arg0.gsmart();
 			Static203.aClass32Array1[local14].aClass100_378 = arg0.gjstr2();
 		}
-		Static19.anInt636 = arg0.gSmart1or2();
-		Static171.anInt4157 = arg0.gSmart1or2();
-		Static106.anInt2871 = arg0.gSmart1or2();
+		Static19.anInt636 = arg0.gsmart();
+		Static171.anInt4157 = arg0.gsmart();
+		Static106.anInt2871 = arg0.gsmart();
 		Static196.aClass10_Sub1Array2 = new World[Static171.anInt4157 + 1 - Static19.anInt636];
 		for (local14 = 0; local14 < Static106.anInt2871; local14++) {
-			@Pc(77) int local77 = arg0.gSmart1or2();
+			@Pc(77) int local77 = arg0.gsmart();
 			@Pc(85) World local85 = Static196.aClass10_Sub1Array2[local77] = new World();
 			local85.anInt377 = arg0.g1();
 			local85.anInt381 = arg0.g4();

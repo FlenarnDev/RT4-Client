@@ -54,7 +54,7 @@ public final class TextureOpColorFill extends TextureOp {
 
 	@OriginalMember(owner = "com.jagex3.client.client!fm", name = "a", descriptor = "(ILclient!wa;Z)V")
 	@Override
-	public final void method4629(@OriginalArg(0) int arg0, @OriginalArg(1) Buffer arg1) {
+	public final void method4629(@OriginalArg(0) int arg0, @OriginalArg(1) Packet arg1) {
 		if (arg0 == 0) {
 			this.method1595(arg1.g3());
 		}

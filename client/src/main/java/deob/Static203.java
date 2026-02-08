@@ -82,12 +82,12 @@ public final class Static203 {
 		try {
 			@Pc(16) PrivilegedRequest local16 = arg0.method5112("runescape");
 			while (local16.status == 0) {
-				Static231.sleep(1L);
+				Static231.sleepPrecise(1L);
 			}
 			if (local16.status == 1) {
 				local11 = (FileOnDisk) local16.result;
-				@Pc(39) Buffer local39 = Static48.method1196();
-				local11.method5134(local39.data, local39.offset, 0);
+				@Pc(39) Packet local39 = Static48.method1196();
+				local11.method5134(local39.data, local39.pos, 0);
 			}
 		} catch (@Pc(49) Exception local49) {
 		}

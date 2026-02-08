@@ -146,7 +146,7 @@ public final class Static230 {
 		}
 		local10 = new Class3_Sub2_Sub6();
 		if (local27 != null) {
-			local10.method761(new Buffer(local27));
+			local10.method761(new Packet(local27));
 		}
 		if (arg0 >= 32768) {
 			local10.method763();

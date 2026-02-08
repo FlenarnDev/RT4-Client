@@ -546,13 +546,13 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "a", descriptor = "(ILclient!wa;)V")
-	public final void method481(@OriginalArg(1) Buffer arg0) {
+	public final void method481(@OriginalArg(1) Packet arg0) {
 		this.aBoolean32 = false;
 		this.anInt452 = arg0.g1();
 		this.anInt530 = arg0.g1();
 		this.anInt453 = arg0.g2();
-		this.baseX = arg0.g2s();
-		this.baseY = arg0.g2s();
+		this.baseX = arg0.g2b();
+		this.baseY = arg0.g2b();
 		this.baseWidth = arg0.g2();
 		this.anInt488 = arg0.g2();
 		this.aByte5 = 0;
@@ -636,8 +636,8 @@ public final class Component {
 			for (local364 = 0; local364 < 20; local364++) {
 				@Pc(371) int local371 = arg0.g1();
 				if (local371 == 1) {
-					this.anIntArray41[local364] = arg0.g2s();
-					this.anIntArray47[local364] = arg0.g2s();
+					this.anIntArray41[local364] = arg0.g2b();
+					this.anIntArray47[local364] = arg0.g2b();
 					this.anIntArray36[local364] = arg0.g4();
 				} else {
 					this.anIntArray36[local364] = -1;
@@ -716,8 +716,8 @@ public final class Component {
 			}
 			this.aBoolean28 = arg0.g1() == 1;
 			this.anInt474 = arg0.g4();
-			this.anInt512 = arg0.g2s();
-			this.anInt516 = arg0.g2s();
+			this.anInt512 = arg0.g2b();
+			this.anInt516 = arg0.g2b();
 			local175 = arg0.g1();
 			if (local175 == 1) {
 				local164 |= 0x40000000;
@@ -790,7 +790,7 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "b", descriptor = "(ILclient!wa;)[Ljava/lang/Object;")
-	private Object[] method485(@OriginalArg(1) Buffer arg0) {
+	private Object[] method485(@OriginalArg(1) Packet arg0) {
 		@Pc(11) int local11 = arg0.g1();
 		if (local11 == 0) {
 			return null;
@@ -809,7 +809,7 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "a", descriptor = "(Lclient!wa;Z)[I")
-	private int[] method486(@OriginalArg(0) Buffer arg0) {
+	private int[] method486(@OriginalArg(0) Packet arg0) {
 		@Pc(9) int local9 = arg0.g1();
 		if (local9 == 0) {
 			return null;
@@ -976,23 +976,23 @@ public final class Component {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "c", descriptor = "(ILclient!wa;)V")
-	public final void method490(@OriginalArg(1) Buffer arg0) {
+	public final void method490(@OriginalArg(1) Packet arg0) {
 		this.aBoolean32 = true;
-		arg0.offset++;
+		arg0.pos++;
 		this.anInt452 = arg0.g1();
 		if ((this.anInt452 & 0x80) != 0) {
 			this.anInt452 &= 0x7F;
 			arg0.gjstr();
 		}
 		this.anInt453 = arg0.g2();
-		this.baseX = arg0.g2s();
-		this.baseY = arg0.g2s();
+		this.baseX = arg0.g2b();
+		this.baseY = arg0.g2b();
 		this.baseWidth = arg0.g2();
 		this.anInt488 = arg0.g2();
-		this.aByte5 = arg0.g1s();
-		this.aByte3 = arg0.g1s();
-		this.yMode = arg0.g1s();
-		this.xMode = arg0.g1s();
+		this.aByte5 = arg0.g1b();
+		this.aByte3 = arg0.g1b();
+		this.yMode = arg0.g1b();
+		this.xMode = arg0.g1b();
 		this.layer = arg0.g2();
 		if (this.layer == 65535) {
 			this.layer = -1;
@@ -1024,8 +1024,8 @@ public final class Component {
 			if (this.modelId == 65535) {
 				this.modelId = -1;
 			}
-			this.anInt495 = arg0.g2s();
-			this.anInt481 = arg0.g2s();
+			this.anInt495 = arg0.g2b();
+			this.anInt481 = arg0.g2b();
 			this.modelXAngle = arg0.g2();
 			this.modelYAngle = arg0.g2();
 			this.modelYOffset = arg0.g2();
@@ -1083,8 +1083,8 @@ public final class Component {
 				} else {
 					this.anIntArray46[local497] = local471;
 				}
-				this.aByteArray8[local497] = arg0.g1s();
-				this.aByteArray7[local497] = arg0.g1s();
+				this.aByteArray8[local497] = arg0.g1b();
+				this.aByteArray7[local497] = arg0.g1b();
 				local471 = arg0.g1();
 			}
 		}
