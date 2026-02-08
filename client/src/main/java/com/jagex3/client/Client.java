@@ -1122,11 +1122,7 @@ public final class Client extends GameShell {
 			Static143.worldListHostname = "127.0.0.1";
 			Static97.worldListAlternatePort = worldid + 50000;
 			Static249.worldListDefaultPort = worldid + 40000;
-        } else if (modeWhere == 3) {
-            Static143.worldListHostname = "127.0.0.1";
-            Static97.worldListAlternatePort = worldid + 50000;
-            Static249.worldListDefaultPort = worldid + 40000;
-		}
+        }
 		if (modegame == 1) {
 			Static172.shiftClick = true;
 			Static161.anInt3923 = 16777215;
