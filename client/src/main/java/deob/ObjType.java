@@ -356,7 +356,7 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!h", name = "a", descriptor = "(ILclient!wa;)V")
-	public final void method1827(@OriginalArg(1) Buffer arg0) {
+	public final void method1827(@OriginalArg(1) Packet arg0) {
 		while (true) {
 			@Pc(5) int local5 = arg0.g1();
 			if (local5 == 0) {
@@ -367,7 +367,7 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!h", name = "a", descriptor = "(BLclient!wa;I)V")
-	private void method1828(@OriginalArg(1) Buffer arg0, @OriginalArg(2) int arg1) {
+	private void method1828(@OriginalArg(1) Packet arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 1) {
 			this.anInt2320 = arg0.g2();
 		} else if (arg1 == 2) {
@@ -432,7 +432,7 @@ public final class ObjType {
 				local169 = arg0.g1();
 				this.aByteArray36 = new byte[local169];
 				for (local179 = 0; local179 < local169; local179++) {
-					this.aByteArray36[local179] = arg0.g1s();
+					this.aByteArray36[local179] = arg0.g1b();
 				}
 			} else if (arg1 == 65) {
 				this.aBoolean132 = true;
@@ -470,9 +470,9 @@ public final class ObjType {
 			} else if (arg1 == 112) {
 				this.anInt2368 = arg0.g2();
 			} else if (arg1 == 113) {
-				this.anInt2352 = arg0.g1s();
+				this.anInt2352 = arg0.g1b();
 			} else if (arg1 == 114) {
-				this.anInt2357 = arg0.g1s() * 5;
+				this.anInt2357 = arg0.g1b() * 5;
 			} else if (arg1 == 115) {
 				this.anInt2351 = arg0.g1();
 			} else if (arg1 == 121) {
@@ -480,13 +480,13 @@ public final class ObjType {
 			} else if (arg1 == 122) {
 				this.anInt2334 = arg0.g2();
 			} else if (arg1 == 125) {
-				this.anInt2330 = arg0.g1s();
-				this.anInt2347 = arg0.g1s();
-				this.anInt2343 = arg0.g1s();
+				this.anInt2330 = arg0.g1b();
+				this.anInt2347 = arg0.g1b();
+				this.anInt2343 = arg0.g1b();
 			} else if (arg1 == 126) {
-				this.anInt2346 = arg0.g1s();
-				this.anInt2371 = arg0.g1s();
-				this.anInt2315 = arg0.g1s();
+				this.anInt2346 = arg0.g1b();
+				this.anInt2371 = arg0.g1b();
+				this.anInt2315 = arg0.g1b();
 			} else if (arg1 == 127) {
 				this.anInt2338 = arg0.g1();
 				this.anInt2327 = arg0.g2();

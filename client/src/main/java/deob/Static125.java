@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -33,12 +34,12 @@ public final class Static125 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "a", descriptor = "(IIIII)V")
 	public static void method2448(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		Static6.outboundBuffer.offset = 0;
-		Static6.outboundBuffer.p1(147);
-		Static6.outboundBuffer.p1(arg2);
-		Static6.outboundBuffer.p1(arg3);
-		Static6.outboundBuffer.p2(arg0);
-		Static6.outboundBuffer.p2(arg1);
+		Client.out.pos = 0;
+		Client.out.p1(147);
+		Client.out.p1(arg2);
+		Client.out.p1(arg3);
+		Client.out.p2(arg0);
+		Client.out.p2(arg1);
 		Static226.anInt5079 = 0;
 		Static57.anInt1758 = 0;
 		Static179.anInt4261 = 1;
@@ -54,7 +55,7 @@ public final class Static125 {
 		@Pc(31) byte[] local31 = Static172.aClass153_69.method4495(Static254.method4349(arg0), Static274.method3845(arg0));
 		local10 = new Class85();
 		if (local31 != null) {
-			local10.method2651(new Buffer(local31));
+			local10.method2651(new Packet(local31));
 		}
 		aClass99_19.method3095(local10, (long) arg0);
 		return local10;

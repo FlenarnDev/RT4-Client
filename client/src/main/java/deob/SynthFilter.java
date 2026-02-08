@@ -21,7 +21,7 @@ public final class SynthFilter {
 	private final int[] anIntArray369 = new int[2];
 
 	@OriginalMember(owner = "com.jagex3.client.client!nl", name = "a", descriptor = "(Lclient!wa;Lclient!ff;)V")
-	public final void method3249(@OriginalArg(0) Buffer arg0, @OriginalArg(1) SynthEnvelope arg1) {
+	public final void method3249(@OriginalArg(0) Packet arg0, @OriginalArg(1) SynthEnvelope arg1) {
 		@Pc(3) int local3 = arg0.g1();
 		this.anIntArray368[0] = local3 >> 4;
 		this.anIntArray368[1] = local3 & 0xF;

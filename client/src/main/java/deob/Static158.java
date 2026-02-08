@@ -32,9 +32,9 @@ public final class Static158 {
 		}
 		try {
 			if (++Static226.anInt5079 > 2000) {
-				if (Static124.socket != null) {
-					Static124.socket.method2834();
-					Static124.socket = null;
+				if (Client.loginStream != null) {
+					Client.loginStream.close();
+					Client.loginStream = null;
 				}
 				if (Static57.anInt1758 >= 1) {
 					Static223.anInt5034 = -5;
@@ -62,16 +62,16 @@ public final class Static158 {
 				if (Static72.aClass212_3.status != 1) {
 					return;
 				}
-				Static124.socket = new BufferedSocket((Socket) Static72.aClass212_3.result, GameShell.signLink);
+				Client.loginStream = new ClientStream((Socket) Static72.aClass212_3.result, GameShell.signLink);
 				Static72.aClass212_3 = null;
-				Static124.socket.write(Static6.outboundBuffer.data, Static6.outboundBuffer.offset);
+				Client.loginStream.write(Client.out.data, Client.out.pos);
 				if (Static11.aClass62_1 != null) {
 					Static11.aClass62_1.method3571();
 				}
 				if (Static147.aClass62_2 != null) {
 					Static147.aClass62_2.method3571();
 				}
-				local120 = Static124.socket.read();
+				local120 = Client.loginStream.read();
 				if (Static11.aClass62_1 != null) {
 					Static11.aClass62_1.method3571();
 				}
@@ -81,38 +81,38 @@ public final class Static158 {
 				if (local120 != 21) {
 					Static223.anInt5034 = local120;
 					Static179.anInt4261 = 0;
-					Static124.socket.method2834();
-					Static124.socket = null;
+					Client.loginStream.close();
+					Client.loginStream = null;
 					return;
 				}
 				Static179.anInt4261 = 3;
 			}
 			if (Static179.anInt4261 == 3) {
-				if (Static124.socket.available() < 1) {
+				if (Client.loginStream.available() < 1) {
 					return;
 				}
-				Static229.aClass100Array156 = new JagString[Static124.socket.read()];
+				Static229.aClass100Array156 = new JagString[Client.loginStream.read()];
 				Static179.anInt4261 = 4;
 			}
 			if (Static179.anInt4261 == 4) {
-				if (Static124.socket.available() < Static229.aClass100Array156.length * 8) {
+				if (Client.loginStream.available() < Static229.aClass100Array156.length * 8) {
 					return;
 				}
-				Static57.aClass3_Sub15_Sub1_3.offset = 0;
-				Static124.socket.method2827(0, Static229.aClass100Array156.length * 8, Static57.aClass3_Sub15_Sub1_3.data);
+				Client.in.pos = 0;
+				Client.loginStream.read(0, Static229.aClass100Array156.length * 8, Client.in.data);
 				for (local120 = 0; local120 < Static229.aClass100Array156.length; local120++) {
-					Static229.aClass100Array156[local120] = Static79.decode37(Static57.aClass3_Sub15_Sub1_3.g8());
+					Static229.aClass100Array156[local120] = Static79.decode37(Client.in.g8());
 				}
 				Static223.anInt5034 = 21;
 				Static179.anInt4261 = 0;
-				Static124.socket.method2834();
-				Static124.socket = null;
+				Client.loginStream.close();
+				Client.loginStream = null;
 				return;
 			}
 		} catch (@Pc(238) IOException local238) {
-			if (Static124.socket != null) {
-				Static124.socket.method2834();
-				Static124.socket = null;
+			if (Client.loginStream != null) {
+				Client.loginStream.close();
+				Client.loginStream = null;
 			}
 			if (Static57.anInt1758 < 1) {
 				Static57.anInt1758++;
@@ -152,8 +152,8 @@ public final class Static158 {
 					local25 = Static157.anInt3811++;
 				}
 				@Pc(67) int local67 = 0;
-				@Pc(74) Buffer local74 = new Buffer(Static191.aByteArrayArray15[local16]);
-				while (local74.offset < Static191.aByteArrayArray15[local16].length && local67 < 511) {
+				@Pc(74) Packet local74 = new Packet(Static191.aByteArrayArray15[local16]);
+				while (local74.pos < Static191.aByteArrayArray15[local16].length && local67 < 511) {
 					@Pc(97) int local97 = local67++ << 6 | local25;
 					@Pc(103) int local103 = local74.g2();
 					@Pc(107) int local107 = local103 >> 14;

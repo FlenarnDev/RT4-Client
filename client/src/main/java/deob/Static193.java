@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -45,8 +46,8 @@ public final class Static193 {
 					Static3.aBooleanArray135[local41] = Static3.aBooleanArray135[local41 + 1];
 				}
 				Static185.anInt4369 = Static119.transmitTimer;
-				Static6.outboundBuffer.p1isaac(57);
-				Static6.outboundBuffer.p8(arg0);
+				Client.out.p1isaac(57);
+				Client.out.p8(arg0);
 				break;
 			}
 		}
@@ -286,26 +287,26 @@ public final class Static193 {
 		@Pc(23) int local23 = Static259.anIntArray514[arg0];
 		@Pc(27) int local27 = Static84.anIntArray209[arg0];
 		if (arg1 == 0) {
-			Static6.outboundBuffer.p1isaac(215);
-			Static6.outboundBuffer.p1(local13 + local13 + 3);
+			Client.out.p1isaac(215);
+			Client.out.p1(local13 + local13 + 3);
 		}
 		if (arg1 == 1) {
-			Static6.outboundBuffer.p1isaac(39);
-			Static6.outboundBuffer.p1(local13 + local13 + 3 + 14);
+			Client.out.p1isaac(39);
+			Client.out.p1(local13 + local13 + 3 + 14);
 		}
 		if (arg1 == 2) {
-			Static6.outboundBuffer.p1isaac(77);
-			Static6.outboundBuffer.p1(local13 + local13 + 3);
+			Client.out.p1isaac(77);
+			Client.out.p1(local13 + local13 + 3);
 		}
-		Static6.outboundBuffer.p1a(Static187.pressedKeys[82] ? 1 : 0);
-		Static6.outboundBuffer.p2(Static225.originX + local23);
-		Static6.outboundBuffer.p2add(Static142.originZ + local27);
+		Client.out.p1_alt1(Static187.pressedKeys[82] ? 1 : 0);
+		Client.out.p2(Static225.originX + local23);
+		Client.out.p2_alt2(Static142.originZ + local27);
 		Static84.anInt2255 = Static84.anIntArray209[0];
 		Static115.anInt2939 = Static259.anIntArray514[0];
 		for (@Pc(126) int local126 = 1; local126 < local13; local126++) {
 			arg0--;
-			Static6.outboundBuffer.p1a(Static259.anIntArray514[arg0] - local23);
-			Static6.outboundBuffer.p1sub(Static84.anIntArray209[arg0] - local27);
+			Client.out.p1_alt1(Static259.anIntArray514[arg0] - local23);
+			Client.out.p1_alt3(Static84.anIntArray209[arg0] - local27);
 		}
 	}
 }

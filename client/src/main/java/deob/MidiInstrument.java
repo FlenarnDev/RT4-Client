@@ -36,40 +36,40 @@ public final class MidiInstrument extends Node {
 	public MidiInstrument(@OriginalArg(0) byte[] arg0) {
 		@Pc(29) int local29 = 0;
 		this.aByteArray44 = new byte[128];
-		@Pc(38) Buffer local38 = new Buffer(arg0);
-		while (local38.data[local29 + local38.offset] != 0) {
+		@Pc(38) Packet local38 = new Packet(arg0);
+		while (local38.data[local29 + local38.pos] != 0) {
 			local29++;
 		}
 		@Pc(55) byte[] local55 = new byte[local29];
 		@Pc(57) int local57;
 		for (local57 = 0; local57 < local29; local57++) {
-			local55[local57] = local38.g1s();
+			local55[local57] = local38.g1b();
 		}
-		local38.offset++;
+		local38.pos++;
 		local29++;
-		local57 = local38.offset;
-		local38.offset += local29;
+		local57 = local38.pos;
+		local38.pos += local29;
 		@Pc(91) int local91;
-		for (local91 = 0; local38.data[local38.offset + local91] != 0; local91++) {
+		for (local91 = 0; local38.data[local38.pos + local91] != 0; local91++) {
 		}
 		@Pc(106) byte[] local106 = new byte[local91];
 		@Pc(108) int local108;
 		for (local108 = 0; local108 < local91; local108++) {
-			local106[local108] = local38.g1s();
+			local106[local108] = local38.g1b();
 		}
-		local38.offset++;
+		local38.pos++;
 		local91++;
 		@Pc(133) int local133 = 0;
-		local108 = local38.offset;
-		local38.offset += local91;
-		while (local38.data[local133 + local38.offset] != 0) {
+		local108 = local38.pos;
+		local38.pos += local91;
+		while (local38.data[local133 + local38.pos] != 0) {
 			local133++;
 		}
 		@Pc(159) byte[] local159 = new byte[local133];
 		for (@Pc(161) int local161 = 0; local161 < local133; local161++) {
-			local159[local161] = local38.g1s();
+			local159[local161] = local38.g1b();
 		}
-		local38.offset++;
+		local38.pos++;
 		local133++;
 		@Pc(187) byte[] local187 = new byte[local133];
 		@Pc(194) int local194;
@@ -111,14 +111,14 @@ public final class MidiInstrument extends Node {
 		local206 = local38.g1();
 		@Pc(327) byte[] local327 = local206 > 0 ? new byte[local206 * 2] : null;
 		@Pc(329) int local329;
-		for (local329 = 0; local38.data[local329 + local38.offset] != 0; local329++) {
+		for (local329 = 0; local38.data[local329 + local38.pos] != 0; local329++) {
 		}
 		@Pc(346) byte[] local346 = new byte[local329];
 		@Pc(348) int local348;
 		for (local348 = 0; local348 < local329; local348++) {
-			local346[local348] = local38.g1s();
+			local346[local348] = local38.g1b();
 		}
-		local38.offset++;
+		local38.pos++;
 		local329++;
 		local348 = 0;
 		@Pc(375) int local375;
@@ -142,7 +142,7 @@ public final class MidiInstrument extends Node {
 				} else {
 					local375 = -1;
 				}
-				local430 = local38.gVarInt();
+				local430 = local38.gMidiVarLen();
 			}
 			this.aShortArray36[local432] = (short) (this.aShortArray36[local432] + ((local430 - 1 & 0x2) << 14));
 			this.anIntArray289[local432] = local430;
@@ -226,23 +226,23 @@ public final class MidiInstrument extends Node {
 			local729 = local242[local664];
 			if (local729.aByteArray80 != null) {
 				for (local734 = 1; local734 < local729.aByteArray80.length; local734 += 2) {
-					local729.aByteArray80[local734] = local38.g1s();
+					local729.aByteArray80[local734] = local38.g1b();
 				}
 			}
 			if (local729.aByteArray81 != null) {
 				for (local734 = 3; local734 < local729.aByteArray81.length - 2; local734 += 2) {
-					local729.aByteArray81[local734] = local38.g1s();
+					local729.aByteArray81[local734] = local38.g1b();
 				}
 			}
 		}
 		if (local311 != null) {
 			for (local664 = 1; local664 < local311.length; local664 += 2) {
-				local311[local664] = local38.g1s();
+				local311[local664] = local38.g1b();
 			}
 		}
 		if (local327 != null) {
 			for (local664 = 1; local664 < local327.length; local664 += 2) {
-				local327[local664] = local38.g1s();
+				local327[local664] = local38.g1b();
 			}
 		}
 		for (local664 = 0; local664 < local194; local664++) {

@@ -22,15 +22,15 @@ public final class GzipDecompressor {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ha", name = "a", descriptor = "([BLclient!wa;Z)V")
-	public final void method1842(@OriginalArg(0) byte[] arg0, @OriginalArg(1) Buffer arg1) {
-		if (arg1.data[arg1.offset] != 31 || arg1.data[arg1.offset + 1] != -117) {
+	public final void method1842(@OriginalArg(0) byte[] arg0, @OriginalArg(1) Packet arg1) {
+		if (arg1.data[arg1.pos] != 31 || arg1.data[arg1.pos + 1] != -117) {
 			throw new RuntimeException("Invalid GZIP header!");
 		}
 		if (this.anInflater1 == null) {
 			this.anInflater1 = new Inflater(true);
 		}
 		try {
-			this.anInflater1.setInput(arg1.data, arg1.offset + 10, -8 - (arg1.offset + 10) + arg1.data.length);
+			this.anInflater1.setInput(arg1.data, arg1.pos + 10, -8 - (arg1.pos + 10) + arg1.data.length);
 			this.anInflater1.inflate(arg0);
 		} catch (@Pc(64) Exception local64) {
 			this.anInflater1.reset();

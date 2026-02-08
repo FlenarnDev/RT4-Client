@@ -4,6 +4,7 @@ import java.awt.Component;
 import java.io.IOException;
 import java.net.Socket;
 
+import com.jagex3.client.Client;
 import com.jagex3.client.GameShell;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -53,9 +54,9 @@ public final class Static31 {
 		}
 		try {
 			if (++Static20.anInt673 > 1500) {
-				if (Static124.socket != null) {
-					Static124.socket.method2834();
-					Static124.socket = null;
+				if (Client.loginStream != null) {
+					Client.loginStream.close();
+					Client.loginStream = null;
 				}
 				if (Static196.anInt4587 >= 1) {
 					Static266.anInt5336 = -5;
@@ -83,16 +84,16 @@ public final class Static31 {
 				if (Static72.aClass212_3.status != 1) {
 					return;
 				}
-				Static124.socket = new BufferedSocket((Socket) Static72.aClass212_3.result, GameShell.signLink);
+				Client.loginStream = new ClientStream((Socket) Static72.aClass212_3.result, GameShell.signLink);
 				Static72.aClass212_3 = null;
-				Static124.socket.write(Static6.outboundBuffer.data, Static6.outboundBuffer.offset);
+				Client.loginStream.write(Client.out.data, Client.out.pos);
 				if (Static11.aClass62_1 != null) {
 					Static11.aClass62_1.method3571();
 				}
 				if (Static147.aClass62_2 != null) {
 					Static147.aClass62_2.method3571();
 				}
-				local126 = Static124.socket.read();
+				local126 = Client.loginStream.read();
 				if (Static11.aClass62_1 != null) {
 					Static11.aClass62_1.method3571();
 				}
@@ -102,35 +103,35 @@ public final class Static31 {
 				if (local126 != 101) {
 					Static266.anInt5336 = local126;
 					Static219.anInt4937 = 0;
-					Static124.socket.method2834();
-					Static124.socket = null;
+					Client.loginStream.close();
+					Client.loginStream = null;
 					return;
 				}
 				Static219.anInt4937 = 3;
 			}
 			if (Static219.anInt4937 == 3) {
-				if (Static124.socket.available() < 2) {
+				if (Client.loginStream.available() < 2) {
 					return;
 				}
-				local126 = Static124.socket.read() << 8 | Static124.socket.read();
+				local126 = Client.loginStream.read() << 8 | Client.loginStream.read();
 				Static176.method3303(local126);
 				if (Static125.worldId == -1) {
 					Static219.anInt4937 = 0;
 					Static266.anInt5336 = 6;
-					Static124.socket.method2834();
-					Static124.socket = null;
+					Client.loginStream.close();
+					Client.loginStream = null;
 					return;
 				}
 				Static219.anInt4937 = 0;
-				Static124.socket.method2834();
-				Static124.socket = null;
+				Client.loginStream.close();
+				Client.loginStream = null;
 				Static49.method1208();
 				return;
 			}
 		} catch (@Pc(210) IOException local210) {
-			if (Static124.socket != null) {
-				Static124.socket.method2834();
-				Static124.socket = null;
+			if (Client.loginStream != null) {
+				Client.loginStream.close();
+				Client.loginStream = null;
 			}
 			if (Static196.anInt4587 < 1) {
 				if (Static208.worldListPort == Static249.worldListDefaultPort) {

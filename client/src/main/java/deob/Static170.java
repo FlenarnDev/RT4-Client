@@ -45,7 +45,7 @@ public final class Static170 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!nh", name = "a", descriptor = "(I[B)Z")
 	public static boolean method2572(@OriginalArg(1) byte[] arg0) {
-		@Pc(13) Buffer local13 = new Buffer(arg0);
+		@Pc(13) Packet local13 = new Packet(arg0);
 		@Pc(17) int local17 = local13.g1();
 		if (local17 != 1) {
 			return false;

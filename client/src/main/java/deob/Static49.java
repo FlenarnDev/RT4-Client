@@ -26,7 +26,7 @@ public final class Static49 {
 	public static boolean method1201(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) byte[] arg2) {
 		@Pc(15) boolean local15 = true;
 		@Pc(17) int local17 = -1;
-		@Pc(22) Buffer local22 = new Buffer(arg2);
+		@Pc(22) Packet local22 = new Packet(arg2);
 		label70: while (true) {
 			@Pc(26) int local26 = local22.gVarSmart();
 			if (local26 == 0) {
@@ -47,13 +47,13 @@ public final class Static49 {
 								do {
 									@Pc(45) int local45;
 									while (local39) {
-										local45 = local22.gSmart1or2();
+										local45 = local22.gsmart();
 										if (local45 == 0) {
 											continue label70;
 										}
 										local22.g1();
 									}
-									local45 = local22.gSmart1or2();
+									local45 = local22.gsmart();
 									if (local45 == 0) {
 										continue label70;
 									}
@@ -80,8 +80,8 @@ public final class Static49 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!dm", name = "a", descriptor = "(B)V")
 	public static void method1202() {
-		Static57.aClass3_Sub15_Sub1_3.method2233();
-		@Pc(13) int local13 = Static57.aClass3_Sub15_Sub1_3.method2238(8);
+		Client.in.method2233();
+		@Pc(13) int local13 = Client.in.method2238(8);
 		@Pc(22) int local22;
 		if (Static272.anInt5214 > local13) {
 			for (local22 = local13; local22 < Static272.anInt5214; local22++) {
@@ -95,12 +95,12 @@ public final class Static49 {
 		for (local22 = 0; local22 < local13; local22++) {
 			@Pc(61) int local61 = Static33.anIntArray79[local22];
 			@Pc(65) Npc local65 = Static175.aClass8_Sub4_Sub2Array1[local61];
-			@Pc(70) int local70 = Static57.aClass3_Sub15_Sub1_3.method2238(1);
+			@Pc(70) int local70 = Client.in.method2238(1);
 			if (local70 == 0) {
 				Static33.anIntArray79[Static272.anInt5214++] = local61;
 				local65.anInt3430 = Static83.anInt372;
 			} else {
-				@Pc(92) int local92 = Static57.aClass3_Sub15_Sub1_3.method2238(2);
+				@Pc(92) int local92 = Client.in.method2238(2);
 				if (local92 == 0) {
 					Static33.anIntArray79[Static272.anInt5214++] = local61;
 					local65.anInt3430 = Static83.anInt372;
@@ -111,25 +111,25 @@ public final class Static49 {
 					if (local92 == 1) {
 						Static33.anIntArray79[Static272.anInt5214++] = local61;
 						local65.anInt3430 = Static83.anInt372;
-						local139 = Static57.aClass3_Sub15_Sub1_3.method2238(3);
+						local139 = Client.in.method2238(3);
 						local65.method2684(1, local139);
-						local149 = Static57.aClass3_Sub15_Sub1_3.method2238(1);
+						local149 = Client.in.method2238(1);
 						if (local149 == 1) {
 							Static44.anIntArray106[Static116.anInt2951++] = local61;
 						}
 					} else if (local92 == 2) {
 						Static33.anIntArray79[Static272.anInt5214++] = local61;
 						local65.anInt3430 = Static83.anInt372;
-						if (Static57.aClass3_Sub15_Sub1_3.method2238(1) == 1) {
-							local139 = Static57.aClass3_Sub15_Sub1_3.method2238(3);
+						if (Client.in.method2238(1) == 1) {
+							local139 = Client.in.method2238(3);
 							local65.method2684(2, local139);
-							local149 = Static57.aClass3_Sub15_Sub1_3.method2238(3);
+							local149 = Client.in.method2238(3);
 							local65.method2684(2, local149);
 						} else {
-							local139 = Static57.aClass3_Sub15_Sub1_3.method2238(3);
+							local139 = Client.in.method2238(3);
 							local65.method2684(0, local139);
 						}
-						local139 = Static57.aClass3_Sub15_Sub1_3.method2238(1);
+						local139 = Client.in.method2238(1);
 						if (local139 == 1) {
 							Static44.anIntArray106[Static116.anInt2951++] = local61;
 						}

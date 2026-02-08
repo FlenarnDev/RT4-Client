@@ -9,10 +9,7 @@ public final class Static124 {
 	@OriginalMember(owner = "com.jagex3.client.client!jk", name = "x", descriptor = "I")
 	public static int anInt3080;
 
-	@OriginalMember(owner = "com.jagex3.client.client!jk", name = "B", descriptor = "Lclient!ma;")
-	public static BufferedSocket socket;
-
-	@OriginalMember(owner = "com.jagex3.client.client!jk", name = "J", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!jk", name = "J", descriptor = "I")
 	public static int anInt3083;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jk", name = "p", descriptor = "I")
@@ -47,7 +44,7 @@ public final class Static124 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!jk", name = "a", descriptor = "(IZ[BII[Lclient!mj;)V")
 	public static void method2437(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) byte[] arg2, @OriginalArg(3) int arg3, @OriginalArg(5) CollisionMap[] arg4) {
-		@Pc(10) Buffer local10 = new Buffer(arg2);
+		@Pc(10) Packet local10 = new Packet(arg2);
 		@Pc(12) int local12 = -1;
 		while (true) {
 			@Pc(16) int local16 = local10.gVarSmart();
@@ -57,7 +54,7 @@ public final class Static124 {
 			local12 += local16;
 			@Pc(27) int local27 = 0;
 			while (true) {
-				@Pc(31) int local31 = local10.gSmart1or2();
+				@Pc(31) int local31 = local10.gsmart();
 				if (local31 == 0) {
 					break;
 				}

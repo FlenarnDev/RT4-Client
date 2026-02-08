@@ -71,7 +71,7 @@ public final class IdkType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!dm", name = "a", descriptor = "(BLclient!wa;I)V")
-	private void method1203(@OriginalArg(1) Buffer arg0, @OriginalArg(2) int arg1) {
+	private void method1203(@OriginalArg(1) Packet arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 1) {
 			this.anInt1457 = arg0.g1();
 			return;
@@ -148,7 +148,7 @@ public final class IdkType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!dm", name = "a", descriptor = "(ILclient!wa;)V")
-	public final void method1209(@OriginalArg(1) Buffer arg0) {
+	public final void method1209(@OriginalArg(1) Packet arg0) {
 		while (true) {
 			@Pc(13) int local13 = arg0.g1();
 			if (local13 == 0) {

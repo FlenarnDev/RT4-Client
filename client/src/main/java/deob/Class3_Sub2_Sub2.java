@@ -52,7 +52,7 @@ public final class Class3_Sub2_Sub2 extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!bc", name = "a", descriptor = "(Lclient!wa;II)V")
-	private void method467(@OriginalArg(0) Buffer arg0, @OriginalArg(2) int arg1) {
+	private void method467(@OriginalArg(0) Packet arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 1) {
 			this.aClass100_79 = arg0.gjstr();
 			return;
@@ -65,7 +65,7 @@ public final class Class3_Sub2_Sub2 extends SecondaryNode {
 			this.anIntArray31 = new int[local28];
 			for (local38 = 0; local38 < local28; local38++) {
 				this.anIntArray30[local38] = arg0.g2();
-				this.anIntArray31[local38] = Static229.method3933(arg0.g1s());
+				this.anIntArray31[local38] = Static229.method3933(arg0.g1b());
 			}
 		} else if (arg1 == 3) {
 			local28 = arg0.g1();
@@ -73,7 +73,7 @@ public final class Class3_Sub2_Sub2 extends SecondaryNode {
 			this.anIntArray29 = new int[local28];
 			for (local38 = 0; local38 < local28; local38++) {
 				this.anIntArray32[local38] = arg0.g2();
-				this.anIntArray29[local38] = Static229.method3933(arg0.g1s());
+				this.anIntArray29[local38] = Static229.method3933(arg0.g1b());
 			}
 		} else if (arg1 == 4) {
 		}
@@ -93,7 +93,7 @@ public final class Class3_Sub2_Sub2 extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!bc", name = "a", descriptor = "(Lclient!wa;B)V")
-	public final void method470(@OriginalArg(0) Buffer arg0) {
+	public final void method470(@OriginalArg(0) Packet arg0) {
 		while (true) {
 			@Pc(12) int local12 = arg0.g1();
 			if (local12 == 0) {

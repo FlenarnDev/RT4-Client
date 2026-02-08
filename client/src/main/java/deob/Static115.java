@@ -19,7 +19,7 @@ public final class Static115 {
 	public static final JagString aClass100_579 = Static28.parse("Fps:");
 
 	@OriginalMember(owner = "com.jagex3.client.client!ja", name = "l", descriptor = "[Lclient!wa;")
-	public static final Buffer[] aClass3_Sub15Array1 = new Buffer[2048];
+	public static final Packet[] aClass3_Sub15Array1 = new Packet[2048];
 
 	@OriginalMember(owner = "com.jagex3.client.client!ja", name = "n", descriptor = "I")
 	public static int anInt2939 = 0;

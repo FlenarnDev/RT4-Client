@@ -158,17 +158,17 @@ public final class TextureOp4 extends TextureOp {
 
 	@OriginalMember(owner = "com.jagex3.client.client!bi", name = "a", descriptor = "(ILclient!wa;Z)V")
 	@Override
-	public final void method4629(@OriginalArg(0) int arg0, @OriginalArg(1) Buffer arg1) {
+	public final void method4629(@OriginalArg(0) int arg0, @OriginalArg(1) Packet arg1) {
 		if (arg0 == 0) {
 			this.aBoolean44 = arg1.g1() == 1;
 		} else if (arg0 == 1) {
 			this.anInt642 = arg1.g1();
 		} else if (arg0 == 2) {
-			this.anInt648 = arg1.g2s();
+			this.anInt648 = arg1.g2b();
 			if (this.anInt648 < 0) {
 				this.aShortArray4 = new short[this.anInt642];
 				for (@Pc(93) int local93 = 0; local93 < this.anInt642; local93++) {
-					this.aShortArray4[local93] = (short) arg1.g2s();
+					this.aShortArray4[local93] = (short) arg1.g2b();
 				}
 			}
 		} else if (arg0 == 3) {

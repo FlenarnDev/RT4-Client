@@ -72,7 +72,7 @@ public final class Static169 {
 		}
 		@Pc(90) PrivilegedRequest local90 = arg3.method5129(arg0, arg1, arg2);
 		while (local90.status == 0) {
-			Static231.sleep(10L);
+			Static231.sleepPrecise(10L);
 		}
 		@Pc(103) Frame local103 = (Frame) local90.result;
 		if (local103 == null) {
@@ -85,12 +85,4 @@ public final class Static169 {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!nf", name = "a", descriptor = "(II[BB)I")
-	public static int crc32(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte[] arg2) {
-		@Pc(5) int local5 = -1;
-		for (@Pc(15) int local15 = arg0; local15 < arg1; local15++) {
-			local5 = local5 >>> 8 ^ HuffmanCodec.anIntArray175[(local5 ^ arg2[local15]) & 0xFF];
-		}
-		return ~local5;
-	}
 }

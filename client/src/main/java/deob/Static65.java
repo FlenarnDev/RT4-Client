@@ -13,7 +13,7 @@ public final class Static65 {
 	public static final JagString aClass100_435 = Static28.parse("<img=0>");
 
 	@OriginalMember(owner = "com.jagex3.client.client!fc", name = "a", descriptor = "(Lclient!wa;I)Lclient!na;")
-	public static JagString method1497(@OriginalArg(0) Buffer arg0) {
+	public static JagString method1497(@OriginalArg(0) Packet arg0) {
 		return Static254.method4350(arg0);
 	}
 

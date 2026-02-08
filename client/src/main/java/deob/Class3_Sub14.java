@@ -158,7 +158,7 @@ public final class Class3_Sub14 extends Node {
 
 	@OriginalMember(owner = "com.jagex3.client.client!hg", name = "d", descriptor = "()V")
 	public final void method1943() {
-		@Pc(12) Buffer local12 = new Buffer((this.aBoolean139 ? 40 : 36) * this.anInt2483);
+		@Pc(12) Packet local12 = new Packet((this.aBoolean139 ? 40 : 36) * this.anInt2483);
 		for (@Pc(14) int local14 = 0; local14 < this.anInt2483; local14++) {
 			if (GlRenderer.bigEndian) {
 				local12.pFloat((float) this.anIntArray232[local14]);
@@ -189,12 +189,12 @@ public final class Class3_Sub14 extends Node {
 			}
 		}
 		if (GlRenderer.arbVboSupported) {
-			@Pc(200) ByteBuffer local200 = ByteBuffer.wrap(local12.data, 0, local12.offset);
+			@Pc(200) ByteBuffer local200 = ByteBuffer.wrap(local12.data, 0, local12.pos);
 			this.aClass155_3 = new GlVertexBufferObject();
 			this.aClass155_3.method4519(local200);
 		} else {
-			this.aByteBuffer3 = ByteBuffer.allocateDirect(local12.offset).order(ByteOrder.nativeOrder());
-			this.aByteBuffer3.put(local12.data, 0, local12.offset);
+			this.aByteBuffer3 = ByteBuffer.allocateDirect(local12.pos).order(ByteOrder.nativeOrder());
+			this.aByteBuffer3.put(local12.data, 0, local12.pos);
 			this.aByteBuffer3.flip();
 		}
 		this.anIntArray232 = null;
@@ -211,18 +211,18 @@ public final class Class3_Sub14 extends Node {
 	@OriginalMember(owner = "com.jagex3.client.client!hg", name = "a", descriptor = "([[[Lclient!bj;FZ)V")
 	public final void method1944(@OriginalArg(0) Tile[][][] arg0, @OriginalArg(1) float arg1, @OriginalArg(2) boolean arg2) {
 		if (Static95.aClass3_Sub15_3 == null || Static95.aClass3_Sub15_3.data.length < this.anInt2488 * 4) {
-			Static95.aClass3_Sub15_3 = new Buffer(this.anInt2488 * 4);
+			Static95.aClass3_Sub15_3 = new Packet(this.anInt2488 * 4);
 		} else {
-			Static95.aClass3_Sub15_3.offset = 0;
+			Static95.aClass3_Sub15_3.pos = 0;
 		}
 		if (Static95.aClass3_Sub15_2 == null || Static95.aClass3_Sub15_2.data.length < this.anInt2487 * 4) {
-			Static95.aClass3_Sub15_2 = new Buffer(this.anInt2487 * 4);
+			Static95.aClass3_Sub15_2 = new Packet(this.anInt2487 * 4);
 		} else {
-			Static95.aClass3_Sub15_2.offset = 0;
+			Static95.aClass3_Sub15_2.pos = 0;
 		}
 		@Pc(47) int local47;
 		@Pc(68) Tile local68;
-		@Pc(111) Buffer local111;
+		@Pc(111) Packet local111;
 		@Pc(78) int[] local78;
 		@Pc(86) int[] local86;
 		@Pc(90) int local90;
@@ -259,7 +259,7 @@ public final class Class3_Sub14 extends Node {
 						local86 = this.anIntArrayArray18[local47];
 						if (local86 != null) {
 							for (local90 = 0; local90 < local86.length; local90++) {
-								Static95.aClass3_Sub15_2.p4le(local86[local90]);
+								Static95.aClass3_Sub15_2.p4_alt1(local86[local90]);
 							}
 						}
 						local111 = this.aBooleanArray54[local47] ? Static95.aClass3_Sub15_2 : Static95.aClass3_Sub15_3;
@@ -267,14 +267,14 @@ public final class Class3_Sub14 extends Node {
 						local111 = Static95.aClass3_Sub15_3;
 					}
 					for (local116 = 1; local116 < local78.length - 1; local116++) {
-						local111.p4le(local78[0]);
-						local111.p4le(local78[local116]);
-						local111.p4le(local78[local116 + 1]);
+						local111.p4_alt1(local78[0]);
+						local111.p4_alt1(local78[local116]);
+						local111.p4_alt1(local78[local116 + 1]);
 					}
 				}
 			}
 		}
-		if (Static95.aClass3_Sub15_3.offset == 0 && Static95.aClass3_Sub15_2.offset == 0) {
+		if (Static95.aClass3_Sub15_3.pos == 0 && Static95.aClass3_Sub15_2.pos == 0) {
 			return;
 		}
 		@Pc(257) GL2 local257 = GlRenderer.gl;
@@ -322,30 +322,30 @@ public final class Class3_Sub14 extends Node {
 		if (GlRenderer.arbVboSupported) {
 			local257.glBindBuffer(GL2.GL_ELEMENT_ARRAY_BUFFER, 0);
 		}
-		if (Static95.aClass3_Sub15_3.offset != 0) {
-			if (Static95.aByteBuffer5 == null || Static95.aByteBuffer5.capacity() < Static95.aClass3_Sub15_3.offset) {
-				Static95.aByteBuffer5 = ByteBuffer.allocateDirect(Static95.aClass3_Sub15_3.offset).order(ByteOrder.nativeOrder());
+		if (Static95.aClass3_Sub15_3.pos != 0) {
+			if (Static95.aByteBuffer5 == null || Static95.aByteBuffer5.capacity() < Static95.aClass3_Sub15_3.pos) {
+				Static95.aByteBuffer5 = ByteBuffer.allocateDirect(Static95.aClass3_Sub15_3.pos).order(ByteOrder.nativeOrder());
 			} else {
 				Static95.aByteBuffer5.clear();
 			}
-			Static95.aByteBuffer5.put(Static95.aClass3_Sub15_3.data, 0, Static95.aClass3_Sub15_3.offset);
+			Static95.aByteBuffer5.put(Static95.aClass3_Sub15_3.data, 0, Static95.aClass3_Sub15_3.pos);
 			Static95.aByteBuffer5.flip();
 			GlRenderer.method4159(arg1);
-			local257.glDrawElements(GL2.GL_TRIANGLES, Static95.aClass3_Sub15_3.offset / 4, GL2.GL_UNSIGNED_INT, Static95.aByteBuffer5);
+			local257.glDrawElements(GL2.GL_TRIANGLES, Static95.aClass3_Sub15_3.pos / 4, GL2.GL_UNSIGNED_INT, Static95.aByteBuffer5);
 		}
-		if (Static95.aClass3_Sub15_2.offset == 0) {
+		if (Static95.aClass3_Sub15_2.pos == 0) {
 			return;
 		}
-		if (Static95.aByteBuffer4 == null || Static95.aByteBuffer4.capacity() < Static95.aClass3_Sub15_2.offset) {
-			Static95.aByteBuffer4 = ByteBuffer.allocateDirect(Static95.aClass3_Sub15_2.offset).order(ByteOrder.nativeOrder());
+		if (Static95.aByteBuffer4 == null || Static95.aByteBuffer4.capacity() < Static95.aClass3_Sub15_2.pos) {
+			Static95.aByteBuffer4 = ByteBuffer.allocateDirect(Static95.aClass3_Sub15_2.pos).order(ByteOrder.nativeOrder());
 		} else {
 			Static95.aByteBuffer4.clear();
 		}
-		Static95.aByteBuffer4.put(Static95.aClass3_Sub15_2.data, 0, Static95.aClass3_Sub15_2.offset);
+		Static95.aByteBuffer4.put(Static95.aClass3_Sub15_2.data, 0, Static95.aClass3_Sub15_2.pos);
 		Static95.aByteBuffer4.flip();
 		GlRenderer.method4159(arg1 - 100.0F);
 		GlRenderer.disableDepthMask();
-		local257.glDrawElements(GL2.GL_TRIANGLES, Static95.aClass3_Sub15_2.offset / 4, GL2.GL_UNSIGNED_INT, Static95.aByteBuffer4);
+		local257.glDrawElements(GL2.GL_TRIANGLES, Static95.aClass3_Sub15_2.pos / 4, GL2.GL_UNSIGNED_INT, Static95.aByteBuffer4);
 		GlRenderer.enableDepthMask();
 	}
 

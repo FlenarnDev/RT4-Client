@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -31,7 +32,7 @@ public final class Static71 {
 		local6 = new ObjType();
 		local6.anInt2354 = arg0;
 		if (local25 != null) {
-			local6.method1827(new Buffer(local25));
+			local6.method1827(new Packet(local25));
 		}
 		local6.method1826();
 		if (local6.anInt2358 != -1) {
@@ -59,7 +60,7 @@ public final class Static71 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!fk", name = "a", descriptor = "([BIZ)I")
 	public static int method1442(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1) {
-		return Static169.crc32(0, arg1, arg0);
+		return Packet.crctable(0, arg1, arg0);
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!fk", name = "b", descriptor = "(IB)V")
@@ -85,7 +86,7 @@ public final class Static71 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!fk", name = "c", descriptor = "(I)V")
 	public static void transmitVerifyId() {
-		Static6.outboundBuffer.p1isaac(177);
-		Static6.outboundBuffer.p2(Static189.anInt4443);
+		Client.out.p1isaac(177);
+		Client.out.p2(Static189.anInt4443);
 	}
 }

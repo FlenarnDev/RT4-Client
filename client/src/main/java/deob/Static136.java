@@ -40,8 +40,8 @@ public final class Static136 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!kk", name = "b", descriptor = "(Lclient!wa;I)V")
-	public static void method2654(@OriginalArg(0) Buffer arg0) {
-		if (arg0.data.length - arg0.offset < 1) {
+	public static void method2654(@OriginalArg(0) Packet arg0) {
+		if (arg0.data.length - arg0.pos < 1) {
 			return;
 		}
 		@Pc(21) int local21 = arg0.g1();
@@ -74,7 +74,7 @@ public final class Static136 {
 		} else {
 			local34 = 19;
 		}
-		if (arg0.data.length - arg0.offset < local34) {
+		if (arg0.data.length - arg0.pos < local34) {
 			return;
 		}
 		Static113.anInt4609 = arg0.g1();

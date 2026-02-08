@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -337,8 +338,8 @@ public final class Static54 {
 			}
 			Static144.aBoolean173 = false;
 		} else if (Static12.anInt391 != 0 && Static221.anInt4363 != -1 && !Static136.method2655()) {
-			Static6.outboundBuffer.p1isaac(137);
-			Static6.outboundBuffer.p4(Static221.anInt4363);
+			Client.out.p1isaac(137);
+			Client.out.p4(Static221.anInt4363);
 			Static221.anInt4363 = -1;
 		}
 	}

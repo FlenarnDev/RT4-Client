@@ -30,8 +30,8 @@ public final class StockMarketOffer {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!sg", name = "<init>", descriptor = "(Lclient!wa;)V")
-	public StockMarketOffer(@OriginalArg(0) Buffer arg0) {
-		this.aByte17 = arg0.g1s();
+	public StockMarketOffer(@OriginalArg(0) Packet arg0) {
+		this.aByte17 = arg0.g1b();
 		this.anInt5094 = arg0.g2();
 		this.anInt5099 = arg0.g4();
 		this.anInt5090 = arg0.g4();

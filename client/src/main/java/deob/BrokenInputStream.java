@@ -10,7 +10,7 @@ public final class BrokenInputStream extends InputStream {
 	@OriginalMember(owner = "com.jagex3.client.client!qk", name = "read", descriptor = "()I")
 	@Override
 	public final int read() {
-		Static231.sleep(30000L);
+		Static231.sleepPrecise(30000L);
 		return -1;
 	}
 }

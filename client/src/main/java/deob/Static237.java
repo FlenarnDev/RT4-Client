@@ -41,7 +41,7 @@ public final class Static237 {
 	public static float aFloat29;
 
 	@OriginalMember(owner = "com.jagex3.client.client!td", name = "D", descriptor = "Lclient!wa;")
-	public static Buffer aClass3_Sub15_8 = new Buffer(10000);
+	public static Packet aClass3_Sub15_8 = new Packet(10000);
 
 	@OriginalMember(owner = "com.jagex3.client.client!td", name = "bb", descriptor = "Lclient!td;")
 	public static GlModel aClass8_Sub1_Sub1_1 = new GlModel();

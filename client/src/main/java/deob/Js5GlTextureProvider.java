@@ -68,7 +68,7 @@ public final class Js5GlTextureProvider implements GlTextureProvider {
 		} else {
 			this.aClass54_11 = null;
 		}
-		@Pc(51) Buffer local51 = new Buffer(arg1.method4495(0, 0));
+		@Pc(51) Packet local51 = new Packet(arg1.method4495(0, 0));
 		@Pc(55) int local55 = local51.g2();
 		this.aByteArray61 = new byte[local55];
 		this.aByteArray60 = new byte[local55];
@@ -106,22 +106,22 @@ public final class Js5GlTextureProvider implements GlTextureProvider {
 		}
 		for (local97 = 0; local97 < local55; local97++) {
 			if (this.aBooleanArray92[local97]) {
-				this.aByteArray59[local97] = local51.g1s();
+				this.aByteArray59[local97] = local51.g1b();
 			}
 		}
 		for (local97 = 0; local97 < local55; local97++) {
 			if (this.aBooleanArray92[local97]) {
-				this.aByteArray60[local97] = local51.g1s();
+				this.aByteArray60[local97] = local51.g1b();
 			}
 		}
 		for (local97 = 0; local97 < local55; local97++) {
 			if (this.aBooleanArray92[local97]) {
-				this.aByteArray62[local97] = local51.g1s();
+				this.aByteArray62[local97] = local51.g1b();
 			}
 		}
 		for (local97 = 0; local97 < local55; local97++) {
 			if (this.aBooleanArray92[local97]) {
-				this.aByteArray61[local97] = local51.g1s();
+				this.aByteArray61[local97] = local51.g1b();
 			}
 		}
 		for (local97 = 0; local97 < local55; local97++) {
@@ -173,7 +173,7 @@ public final class Js5GlTextureProvider implements GlTextureProvider {
 		if (local30 == null) {
 			return null;
 		} else {
-			@Pc(41) Buffer local41 = new Buffer(local30);
+			@Pc(41) Packet local41 = new Packet(local30);
 			local14 = new GlTexture(local41);
 			this.aClass54_12.method1811(local14, (long) arg0);
 			return local14;

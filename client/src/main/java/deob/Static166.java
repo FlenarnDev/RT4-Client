@@ -22,9 +22,9 @@ public final class Static166 {
 	public static int anInt4055 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!nc", name = "a", descriptor = "(BLclient!wa;)V")
-	public static void method3166(@OriginalArg(1) Buffer arg0) {
+	public static void method3166(@OriginalArg(1) Packet arg0) {
 		label123: while (true) {
-			if (arg0.data.length > arg0.offset) {
+			if (arg0.data.length > arg0.pos) {
 				@Pc(17) boolean local17 = false;
 				@Pc(19) int local19 = 0;
 				@Pc(21) int local21 = 0;
@@ -100,13 +100,13 @@ public final class Static166 {
 					local95 = arg0.g1();
 					if (local95 != 0) {
 						if ((local95 & 0x1) == 1) {
-							arg0.offset++;
+							arg0.pos++;
 						}
 						if ((local95 & 0x2) == 2) {
-							arg0.offset += 2;
+							arg0.pos += 2;
 						}
 						if ((local95 & 0x4) == 4) {
-							arg0.offset += 3;
+							arg0.pos += 3;
 						}
 					}
 					local84++;

@@ -22,8 +22,8 @@ public final class Static278 {
 	@OriginalMember(owner = "com.jagex3.client.client!wj", name = "a", descriptor = "(I)V")
 	public static void method4645() {
 		while (true) {
-			if (Static57.aClass3_Sub15_Sub1_3.method2241(Static223.anInt5028) >= 27) {
-				@Pc(14) int local14 = Static57.aClass3_Sub15_Sub1_3.method2238(15);
+			if (Client.in.method2241(Static223.anInt5028) >= 27) {
+				@Pc(14) int local14 = Client.in.method2238(15);
 				if (local14 != 32767) {
 					@Pc(19) boolean local19 = false;
 					if (Static175.aClass8_Sub4_Sub2Array1[local14] == null) {
@@ -36,21 +36,21 @@ public final class Static278 {
 					if (local37.aClass96_1 != null && local37.aClass96_1.method2935()) {
 						Static91.method1877(local37);
 					}
-					@Pc(66) int local66 = Static57.aClass3_Sub15_Sub1_3.method2238(1);
-					@Pc(73) int local73 = Static56.anIntArray141[Static57.aClass3_Sub15_Sub1_3.method2238(3)];
+					@Pc(66) int local66 = Client.in.method2238(1);
+					@Pc(73) int local73 = Static56.anIntArray141[Client.in.method2238(3)];
 					if (local19) {
 						local37.anInt3400 = local37.anInt3381 = local73;
 					}
-					@Pc(86) int local86 = Static57.aClass3_Sub15_Sub1_3.method2238(1);
+					@Pc(86) int local86 = Client.in.method2238(1);
 					if (local86 == 1) {
 						Static44.anIntArray106[Static116.anInt2951++] = local14;
 					}
-					@Pc(105) int local105 = Static57.aClass3_Sub15_Sub1_3.method2238(5);
-					local37.method2698(Static214.method4363(Static57.aClass3_Sub15_Sub1_3.method2238(14)));
+					@Pc(105) int local105 = Client.in.method2238(5);
+					local37.method2698(Static214.method4363(Client.in.method2238(14)));
 					if (local105 > 15) {
 						local105 -= 32;
 					}
-					@Pc(124) int local124 = Static57.aClass3_Sub15_Sub1_3.method2238(5);
+					@Pc(124) int local124 = Client.in.method2238(5);
 					if (local124 > 15) {
 						local124 -= 32;
 					}
@@ -67,7 +67,7 @@ public final class Static278 {
 					continue;
 				}
 			}
-			Static57.aClass3_Sub15_Sub1_3.method2244();
+			Client.in.method2244();
 			return;
 		}
 	}
@@ -117,7 +117,7 @@ public final class Static278 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!wj", name = "a", descriptor = "(IIZLclient!wa;IIBII)V")
-	public static void method4651(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Buffer arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7) {
+	public static void method4651(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Packet arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7) {
 		@Pc(32) int local32;
 		if (arg5 < 0 || arg5 >= 104 || arg4 < 0 || arg4 >= 104) {
 			while (true) {
@@ -167,7 +167,7 @@ public final class Static278 {
 				break;
 			}
 			if (local32 <= 49) {
-				Static240.aByteArrayArrayArray14[arg7][arg5][arg4] = arg3.g1s();
+				Static240.aByteArrayArrayArray14[arg7][arg5][arg4] = arg3.g1b();
 				Static163.aByteArrayArrayArray11[arg7][arg5][arg4] = (byte) ((local32 - 2) / 4);
 				Static4.aByteArrayArrayArray1[arg7][arg5][arg4] = (byte) (local32 + arg6 - 2 & 0x3);
 			} else if (local32 > 81) {
@@ -198,9 +198,9 @@ public final class Static278 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!wj", name = "b", descriptor = "(B)V")
 	public static void method4653() {
-		if (Static124.socket != null) {
-			Static124.socket.method2834();
-			Static124.socket = null;
+		if (Client.loginStream != null) {
+			Client.loginStream.close();
+			Client.loginStream = null;
 		}
 		Static217.method3768();
 		Static65.method1500();

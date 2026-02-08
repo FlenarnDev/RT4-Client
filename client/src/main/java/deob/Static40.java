@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -93,7 +94,7 @@ public final class Static40 {
 		@Pc(20) byte[] local20 = Static98.aClass153_42.method4495(34, arg0);
 		local10 = new Class2();
 		if (local20 != null) {
-			local10.method6(new Buffer(local20), arg0);
+			local10.method6(new Packet(local20), arg0);
 		}
 		Static231.aClass99_29.method3095(local10, (long) arg0);
 		return local10;
@@ -122,7 +123,7 @@ public final class Static40 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!da", name = "a", descriptor = "(IIIILclient!na;JI)V")
 	public static void method1016(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) JagString password, @OriginalArg(5) long name, @OriginalArg(6) int arg5) {
-		@Pc(8) Buffer local8 = new Buffer(128);
+		@Pc(8) Packet local8 = new Packet(128);
 		local8.p1(10);
 		local8.p2((int) (Math.random() * 99999.0D));
 		local8.p2(530);
@@ -137,11 +138,11 @@ public final class Static40 {
 		local8.p2(arg5);
 		local8.p2(arg1);
 		local8.p4((int) (Math.random() * 9.9999999E7D));
-		local8.encryptRsa(Static86.RSA_EXPONENT, Static86.RSA_MODULUS);
-		Static6.outboundBuffer.offset = 0;
-		Static6.outboundBuffer.p1(36);
-		Static6.outboundBuffer.p1(local8.offset);
-		Static6.outboundBuffer.pBytes(local8.data, local8.offset);
+		local8.rsaenc(Static86.RSA_EXPONENT, Static86.RSA_MODULUS);
+		Client.out.pos = 0;
+		Client.out.p1(36);
+		Client.out.p1(local8.pos);
+		Client.out.pdata(local8.data, local8.pos);
 		Static223.anInt5034 = -3;
 		Static179.anInt4261 = 1;
 		Static226.anInt5079 = 0;

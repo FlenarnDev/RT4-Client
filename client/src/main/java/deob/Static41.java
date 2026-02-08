@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -170,7 +171,7 @@ public final class Static41 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!dc", name = "b", descriptor = "(Z)V")
 	public static void method1050() {
-		@Pc(6) int local6 = Static57.aClass3_Sub15_Sub1_3.method2238(8);
+		@Pc(6) int local6 = Client.in.method2238(8);
 		@Pc(20) int local20;
 		if (Static267.anInt5774 > local6) {
 			for (local20 = local6; local20 < Static267.anInt5774; local20++) {
@@ -184,12 +185,12 @@ public final class Static41 {
 		for (local20 = 0; local20 < local6; local20++) {
 			@Pc(75) int local75 = Static105.anIntArray256[local20];
 			@Pc(79) Player local79 = Static159.aClass8_Sub4_Sub1Array1[local75];
-			@Pc(84) int local84 = Static57.aClass3_Sub15_Sub1_3.method2238(1);
+			@Pc(84) int local84 = Client.in.method2238(1);
 			if (local84 == 0) {
 				Static105.anIntArray256[Static267.anInt5774++] = local75;
 				local79.anInt3430 = Static83.anInt372;
 			} else {
-				@Pc(107) int local107 = Static57.aClass3_Sub15_Sub1_3.method2238(2);
+				@Pc(107) int local107 = Client.in.method2238(2);
 				if (local107 == 0) {
 					Static105.anIntArray256[Static267.anInt5774++] = local75;
 					local79.anInt3430 = Static83.anInt372;
@@ -200,25 +201,25 @@ public final class Static41 {
 					if (local107 == 1) {
 						Static105.anIntArray256[Static267.anInt5774++] = local75;
 						local79.anInt3430 = Static83.anInt372;
-						local153 = Static57.aClass3_Sub15_Sub1_3.method2238(3);
+						local153 = Client.in.method2238(3);
 						local79.method2684(1, local153);
-						local163 = Static57.aClass3_Sub15_Sub1_3.method2238(1);
+						local163 = Client.in.method2238(1);
 						if (local163 == 1) {
 							Static44.anIntArray106[Static116.anInt2951++] = local75;
 						}
 					} else if (local107 == 2) {
 						Static105.anIntArray256[Static267.anInt5774++] = local75;
 						local79.anInt3430 = Static83.anInt372;
-						if (Static57.aClass3_Sub15_Sub1_3.method2238(1) == 1) {
-							local153 = Static57.aClass3_Sub15_Sub1_3.method2238(3);
+						if (Client.in.method2238(1) == 1) {
+							local153 = Client.in.method2238(3);
 							local79.method2684(2, local153);
-							local163 = Static57.aClass3_Sub15_Sub1_3.method2238(3);
+							local163 = Client.in.method2238(3);
 							local79.method2684(2, local163);
 						} else {
-							local153 = Static57.aClass3_Sub15_Sub1_3.method2238(3);
+							local153 = Client.in.method2238(3);
 							local79.method2684(0, local153);
 						}
-						local153 = Static57.aClass3_Sub15_Sub1_3.method2238(1);
+						local153 = Client.in.method2238(1);
 						if (local153 == 1) {
 							Static44.anIntArray106[Static116.anInt2951++] = local75;
 						}

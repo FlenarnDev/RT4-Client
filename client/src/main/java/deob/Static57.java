@@ -14,10 +14,7 @@ public final class Static57 {
 	@OriginalMember(owner = "com.jagex3.client.client!eg", name = "d", descriptor = "I")
 	public static int anInt1747 = 0;
 
-	@OriginalMember(owner = "com.jagex3.client.client!eg", name = "e", descriptor = "Lclient!i;")
-	public static final Packet aClass3_Sub15_Sub1_3 = new Packet(65536);
-
-	@OriginalMember(owner = "com.jagex3.client.client!eg", name = "v", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!eg", name = "v", descriptor = "I")
 	public static int anInt1758 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!eg", name = "w", descriptor = "I")

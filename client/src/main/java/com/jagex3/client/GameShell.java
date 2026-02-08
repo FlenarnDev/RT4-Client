@@ -129,7 +129,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	public final void destroy() {
 		if (Static230.anApplet_Sub1_1 == this && !Static58.aBoolean101) {
 			Static72.aLong74 = MonotonicClock.currentTime();
-			Static231.sleep(5000L);
+			Static231.sleepPrecise(5000L);
 			Static69.aClass213_4 = null;
 			this.method931(false);
 		}
@@ -342,7 +342,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 				Static140.method2708(signLink, Static154.canvas);
 			}
 		} catch (@Pc(198) Exception local198) {
-			Static89.method1839(null, local198);
+			Static89.report(null, local198);
 			this.error("crash");
 		}
 		this.method931(true);
@@ -394,11 +394,11 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			Static69.aClass213_4 = signLink = new SignLink(null, arg0, arg1, 28);
 			@Pc(76) PrivilegedRequest local76 = signLink.threadreq(1, this);
 			while (local76.status == 0) {
-				Static231.sleep(10L);
+				Static231.sleepPrecise(10L);
 			}
 			Static37.aThread1 = (Thread) local76.result;
 		} catch (@Pc(91) Exception local91) {
-			Static89.method1839(null, local91);
+			Static89.report(null, local91);
 		}
 	}
 
@@ -446,11 +446,11 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			}
 			@Pc(86) PrivilegedRequest local86 = signLink.threadreq(1, this);
 			while (local86.status == 0) {
-				Static231.sleep(10L);
+				Static231.sleepPrecise(10L);
 			}
 			Static37.aThread1 = (Thread) local86.result;
 		} catch (@Pc(103) Exception local103) {
-			Static89.method1839(null, local103);
+			Static89.report(null, local103);
 			this.error("crash");
 		}
 	}

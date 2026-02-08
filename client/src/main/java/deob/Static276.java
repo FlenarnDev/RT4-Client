@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -59,20 +60,20 @@ public final class Static276 {
 				local13 = true;
 				Static102.method2075(Static173.self.movementQueueZ[0], 0, 1, false, 0, local28.movementQueueX[0], 1, 0, 2, local28.movementQueueZ[0], Static173.self.movementQueueX[0]);
 				if (arg0 == 1) {
-					Static6.outboundBuffer.p1isaac(68);
-					Static6.outboundBuffer.p2leadd(Static105.anIntArray256[local15]);
+					Client.out.p1isaac(68);
+					Client.out.p2_alt3(Static105.anIntArray256[local15]);
 				} else if (arg0 == 4) {
-					Static6.outboundBuffer.p1isaac(180);
-					Static6.outboundBuffer.p2leadd(Static105.anIntArray256[local15]);
+					Client.out.p1isaac(180);
+					Client.out.p2_alt3(Static105.anIntArray256[local15]);
 				} else if (arg0 == 5) {
-					Static6.outboundBuffer.p1isaac(4);
-					Static6.outboundBuffer.p2le(Static105.anIntArray256[local15]);
+					Client.out.p1isaac(4);
+					Client.out.p2_alt1(Static105.anIntArray256[local15]);
 				} else if (arg0 == 6) {
-					Static6.outboundBuffer.p1isaac(133);
-					Static6.outboundBuffer.p2le(Static105.anIntArray256[local15]);
+					Client.out.p1isaac(133);
+					Client.out.p2_alt1(Static105.anIntArray256[local15]);
 				} else if (arg0 == 7) {
-					Static6.outboundBuffer.p1isaac(114);
-					Static6.outboundBuffer.p2leadd(Static105.anIntArray256[local15]);
+					Client.out.p1isaac(114);
+					Client.out.p2_alt3(Static105.anIntArray256[local15]);
 				}
 				break;
 			}

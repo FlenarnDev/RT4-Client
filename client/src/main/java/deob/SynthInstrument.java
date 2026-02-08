@@ -263,14 +263,14 @@ public final class SynthInstrument {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!pj", name = "a", descriptor = "(Lclient!wa;)V")
-	public final void method3506(@OriginalArg(0) Buffer arg0) {
+	public final void method3506(@OriginalArg(0) Packet arg0) {
 		this.aClass42_5 = new SynthEnvelope();
 		this.aClass42_5.method1515(arg0);
 		this.aClass42_3 = new SynthEnvelope();
 		this.aClass42_3.method1515(arg0);
 		@Pc(21) int local21 = arg0.g1();
 		if (local21 != 0) {
-			arg0.offset--;
+			arg0.pos--;
 			this.aClass42_9 = new SynthEnvelope();
 			this.aClass42_9.method1515(arg0);
 			this.aClass42_8 = new SynthEnvelope();
@@ -278,7 +278,7 @@ public final class SynthInstrument {
 		}
 		local21 = arg0.g1();
 		if (local21 != 0) {
-			arg0.offset--;
+			arg0.pos--;
 			this.aClass42_7 = new SynthEnvelope();
 			this.aClass42_7.method1515(arg0);
 			this.aClass42_1 = new SynthEnvelope();
@@ -286,23 +286,23 @@ public final class SynthInstrument {
 		}
 		local21 = arg0.g1();
 		if (local21 != 0) {
-			arg0.offset--;
+			arg0.pos--;
 			this.aClass42_2 = new SynthEnvelope();
 			this.aClass42_2.method1515(arg0);
 			this.aClass42_4 = new SynthEnvelope();
 			this.aClass42_4.method1515(arg0);
 		}
 		for (@Pc(109) int local109 = 0; local109 < 10; local109++) {
-			@Pc(116) int local116 = arg0.gSmart1or2();
+			@Pc(116) int local116 = arg0.gsmart();
 			if (local116 == 0) {
 				break;
 			}
 			this.anIntArray396[local109] = local116;
-			this.anIntArray404[local109] = arg0.gSmart1or2s();
-			this.anIntArray397[local109] = arg0.gSmart1or2();
+			this.anIntArray404[local109] = arg0.gsmarts();
+			this.anIntArray397[local109] = arg0.gsmart();
 		}
-		this.anInt4547 = arg0.gSmart1or2();
-		this.anInt4549 = arg0.gSmart1or2();
+		this.anInt4547 = arg0.gsmart();
+		this.anInt4549 = arg0.gsmart();
 		this.anInt4546 = arg0.g2();
 		this.anInt4548 = arg0.g2();
 		this.aClass110_1 = new SynthFilter();

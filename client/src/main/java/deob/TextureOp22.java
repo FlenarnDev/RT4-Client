@@ -306,7 +306,7 @@ public final class TextureOp22 extends TextureOp {
 
 	@OriginalMember(owner = "com.jagex3.client.client!ol", name = "a", descriptor = "(ILclient!wa;Z)V")
 	@Override
-	public final void method4629(@OriginalArg(0) int arg0, @OriginalArg(1) Buffer arg1) {
+	public final void method4629(@OriginalArg(0) int arg0, @OriginalArg(1) Packet arg1) {
 		if (arg0 == 0) {
 			this.anInt4354 = arg1.g1();
 		} else if (arg0 == 1) {

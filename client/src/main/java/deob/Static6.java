@@ -7,10 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static6 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!ag", name = "P", descriptor = "Lclient!i;")
-	public static final Packet outboundBuffer = new Packet(5000);
-
-	@OriginalMember(owner = "com.jagex3.client.client!ag", name = "ab", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!ag", name = "ab", descriptor = "Lclient!na;")
 	public static final JagString aClass100_17 = Static28.parse("0");
 
 	@OriginalMember(owner = "com.jagex3.client.client!ag", name = "bb", descriptor = "Lclient!na;")

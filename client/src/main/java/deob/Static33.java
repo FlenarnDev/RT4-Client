@@ -58,14 +58,14 @@ public final class Static33 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!cj", name = "a", descriptor = "(BLclient!wa;)V")
-	public static void method868(@OriginalArg(1) Buffer arg0) {
+	public static void method868(@OriginalArg(1) Packet arg0) {
 		@Pc(13) int local13 = Static266.anInt5338 >> 1;
 		@Pc(19) int local19 = Static131.anInt3254 >> 2 << 10;
 		@Pc(23) byte[][] local23 = new byte[Static48.anInt1449][Static181.anInt4296];
 		@Pc(33) int local33;
 		@Pc(102) int local102;
 		@Pc(114) int local114;
-		while (arg0.offset < arg0.data.length) {
+		while (arg0.pos < arg0.data.length) {
 			@Pc(31) int local31 = 0;
 			local33 = 0;
 			@Pc(35) boolean local35 = false;
@@ -83,14 +83,14 @@ public final class Static33 {
 					@Pc(112) byte[] local112 = local23[local68 + local102];
 					for (local114 = 0; local114 < 64; local114++) {
 						if (!local35 || local102 >= local33 * 8 && local33 * 8 + 8 > local102 && local114 >= local31 * 8 && local114 < local31 * 8 + 8) {
-							local112[local78 - local114] = arg0.g1s();
+							local112[local78 - local114] = arg0.g1b();
 						}
 					}
 				}
 			} else if (local35) {
-				arg0.offset += 64;
+				arg0.pos += 64;
 			} else {
-				arg0.offset += 4096;
+				arg0.pos += 4096;
 			}
 		}
 		@Pc(175) int local175 = Static48.anInt1449;

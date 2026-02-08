@@ -97,7 +97,7 @@ public final class VorbisSound extends Node {
 
 	@OriginalMember(owner = "com.jagex3.client.client!jc", name = "a", descriptor = "([B)V")
 	private void method2342(@OriginalArg(0) byte[] arg0) {
-		@Pc(4) Buffer local4 = new Buffer(arg0);
+		@Pc(4) Packet local4 = new Packet(arg0);
 		this.anInt2980 = local4.g4();
 		this.anInt2974 = local4.g4();
 		this.anInt2976 = local4.g4();
@@ -116,7 +116,7 @@ public final class VorbisSound extends Node {
 				local51 += local55;
 			} while (local55 >= 255);
 			@Pc(67) byte[] local67 = new byte[local51];
-			local4.gBytes(local51, local67);
+			local4.gdata(local51, local67);
 			this.aByteArrayArray10[local46] = local67;
 		}
 	}

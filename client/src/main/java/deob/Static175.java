@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static175 {
@@ -27,8 +28,8 @@ public final class Static175 {
 		if (Static267.anInt5775 > 0) {
 			Static278.method4653();
 		} else {
-			Static233.aClass95_4 = Static124.socket;
-			Static124.socket = null;
+			Static233.aClass95_4 = Client.loginStream;
+			Client.loginStream = null;
 			Static196.method3534(40);
 		}
 	}

@@ -33,7 +33,7 @@ public final class Static202 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!qg", name = "a", descriptor = "(Lsignlink!ll;Lclient!wa;IB)V")
-	public static void method3654(@OriginalArg(0) SignLink arg0, @OriginalArg(1) Buffer arg1, @OriginalArg(2) int arg2) {
+	public static void method3654(@OriginalArg(0) SignLink arg0, @OriginalArg(1) Packet arg1, @OriginalArg(2) int arg2) {
 		@Pc(17) ReflectionCheck local17 = new ReflectionCheck();
 		local17.anInt1725 = arg1.g1();
 		local17.anInt1732 = arg1.g4();
@@ -73,7 +73,7 @@ public final class Static202 {
 						for (@Pc(199) int local199 = 0; local199 < local95; local199++) {
 							local210 = arg1.g4();
 							local193[local199] = new byte[local210];
-							arg1.gBytes(local210, local193[local199]);
+							arg1.gdata(local210, local193[local199]);
 						}
 					}
 					local17.anIntArray139[local59] = local71;
@@ -141,7 +141,7 @@ public final class Static202 {
 		@Pc(20) byte[] local20 = Static153.aClass153_57.method4495(33, arg0);
 		local10 = new Class63();
 		if (local20 != null) {
-			local10.method2249(new Buffer(local20), arg0);
+			local10.method2249(new Packet(local20), arg0);
 		}
 		Static79.aClass99_11.method3095(local10, (long) arg0);
 		return local10;

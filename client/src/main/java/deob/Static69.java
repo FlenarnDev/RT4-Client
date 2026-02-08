@@ -3,6 +3,7 @@ package deob;
 import java.awt.Frame;
 
 import com.jagex.signlink.SignLink;
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -49,8 +50,8 @@ public final class Static69 {
 					Static193.aClass100Array134[local36] = Static193.aClass100Array134[local36 + 1];
 				}
 				Static185.anInt4369 = Static119.transmitTimer;
-				Static6.outboundBuffer.p1isaac(213);
-				Static6.outboundBuffer.p8(arg0);
+				Client.out.p1isaac(213);
+				Client.out.p8(arg0);
 				break;
 			}
 		}
@@ -171,9 +172,9 @@ public final class Static69 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!fh", name = "a", descriptor = "(Lclient!wa;I)V")
-	public static void method1546(@OriginalArg(0) Buffer arg0) {
+	public static void method1546(@OriginalArg(0) Packet arg0) {
 		for (@Pc(7) int local7 = 0; local7 < Static106.anInt2871; local7++) {
-			@Pc(18) int local18 = arg0.gSmart1or2();
+			@Pc(18) int local18 = arg0.gsmart();
 			@Pc(22) int local22 = arg0.g2();
 			if (local22 == 65535) {
 				local22 = -1;

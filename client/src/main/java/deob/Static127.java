@@ -294,7 +294,7 @@ public final class Static127 {
 			}
 			if (arg0.method3111(Static165.aClass100_775)) {
 				GameShell.signLink.method5110();
-				Static124.socket.method2833();
+				Client.loginStream.method2833();
 				Static107.js5NetQueue.method2323();
 			}
 			if (arg0.method3111(Static114.aClass100_1100)) {
@@ -367,8 +367,8 @@ public final class Static127 {
 				}
 			}
 		}
-		Static6.outboundBuffer.p1isaac(44);
-		Static6.outboundBuffer.p1(arg0.length() - 1);
-		Static6.outboundBuffer.pjstr(arg0.method3136(2));
+		Client.out.p1isaac(44);
+		Client.out.p1(arg0.length() - 1);
+		Client.out.pjstr(arg0.method3136(2));
 	}
 }

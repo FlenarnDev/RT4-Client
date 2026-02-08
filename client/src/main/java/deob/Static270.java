@@ -25,7 +25,7 @@ public final class Static270 {
 	public static final JagString aClass100_1090 = Static28.parse("l");
 
 	@OriginalMember(owner = "com.jagex3.client.client!wb", name = "f", descriptor = "Lclient!wa;")
-	public static final Buffer aClass3_Sub15_9 = new Buffer(new byte[5000]);
+	public static final Packet aClass3_Sub15_9 = new Packet(new byte[5000]);
 
 	@OriginalMember(owner = "com.jagex3.client.client!wb", name = "j", descriptor = "Lclient!na;")
 	public static final JagString aClass100_1093 = Static28.parse("Memory after cleanup=");

@@ -32,15 +32,15 @@ public final class Static271 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!wc", name = "a", descriptor = "(Lclient!wa;I)V")
-	public static void method4598(@OriginalArg(0) Buffer arg0) {
+	public static void method4598(@OriginalArg(0) Packet arg0) {
 		if (Static121.uid != null) {
 			try {
 				Static121.uid.method1459(0L);
-				Static121.uid.method1458(arg0.data, arg0.offset, 24);
+				Static121.uid.method1458(arg0.data, arg0.pos, 24);
 			} catch (@Pc(16) Exception local16) {
 			}
 		}
-		arg0.offset += 24;
+		arg0.pos += 24;
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!wc", name = "a", descriptor = "(ZI)V")
@@ -59,7 +59,7 @@ public final class Static271 {
 		local15 = new LocType();
 		local15.anInt4426 = arg0;
 		if (local30 != null) {
-			local15.method3424(new Buffer(local30));
+			local15.method3424(new Packet(local30));
 		}
 		local15.method3421();
 		if (!Static30.aBoolean61 && local15.aBoolean208) {
