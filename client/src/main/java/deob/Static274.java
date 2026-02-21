@@ -18,10 +18,10 @@ public final class Static274 {
 	public static Js5 aClass153_90;
 
 	@OriginalMember(owner = "com.jagex3.client.client!wf", name = "j", descriptor = "Lclient!be;")
-	public static Component aClass13_24;
+	public static IfType aClass13_24;
 
 	@OriginalMember(owner = "com.jagex3.client.client!wf", name = "o", descriptor = "[Lclient!gb;")
-	public static final RawModel[] aClass8_Sub5Array5 = new RawModel[4];
+	public static final ModelUnlit[] aClass8_Sub5Array5 = new ModelUnlit[4];
 
 	@OriginalMember(owner = "com.jagex3.client.client!wf", name = "s", descriptor = "Lclient!na;")
 	public static final JagString aClass100_943 = Static28.parse("Forced tweening disabled)3");

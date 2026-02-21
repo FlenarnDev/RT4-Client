@@ -15,10 +15,10 @@ public final class Static39 {
 	public static Js5 aClass153_23;
 
 	@OriginalMember(owner = "com.jagex3.client.client!d", name = "ib", descriptor = "Lclient!qf;")
-	public static Sprite aClass3_Sub2_Sub1_1;
+	public static AbstractPix32 aClass3_Sub2_Sub1_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!d", name = "R", descriptor = "Lclient!be;")
-	public static Component aClass13_10 = null;
+	public static IfType aClass13_10 = null;
 
 	@OriginalMember(owner = "com.jagex3.client.client!d", name = "S", descriptor = "Ljava/util/Random;")
 	public static final Random aRandom1 = new Random();

@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static116 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!jb", name = "k", descriptor = "[Lclient!qf;")
-	public static Sprite[] aClass3_Sub2_Sub1Array3;
+	public static AbstractPix32[] aClass3_Sub2_Sub1Array3;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jb", name = "c", descriptor = "Lclient!na;")
 	public static final JagString aClass100_583 = Static28.parse("(Y<)4col>");
@@ -25,9 +25,9 @@ public final class Static116 {
 	public static int anInt2961 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jb", name = "a", descriptor = "(ILclient!ve;I)Lclient!jk;")
-	public static MidiInstrument method2320(@OriginalArg(1) Js5 arg0, @OriginalArg(2) int arg1) {
+	public static Patch method2320(@OriginalArg(1) Js5 arg0, @OriginalArg(2) int arg1) {
 		@Pc(9) byte[] local9 = arg0.method4500(arg1);
-		return local9 == null ? null : new MidiInstrument(local9);
+		return local9 == null ? null : new Patch(local9);
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!jb", name = "a", descriptor = "(IZ)V")
@@ -50,7 +50,7 @@ public final class Static116 {
 		Static41.anInt1309 = 0;
 		Static269.aClass3_Sub2_Sub4_2 = null;
 		Static145.aClass69_84.method2278();
-		Static203.aClass134_1 = null;
+		Static203.aMapElementList_1 = null;
 		Static217.anInt4901 = -1;
 		Static130.aClass41_2 = null;
 		Static160.aClass41_4 = null;

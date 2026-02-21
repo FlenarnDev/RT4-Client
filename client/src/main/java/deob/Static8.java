@@ -16,7 +16,7 @@ public final class Static8 {
 	public static final JagString aClass100_32 = Static28.parse("<col=ff9040>");
 
 	@OriginalMember(owner = "com.jagex3.client.client!aj", name = "a", descriptor = "(BILclient!be;)I")
-	public static int method118(@OriginalArg(1) int arg0, @OriginalArg(2) Component arg1) {
+	public static int method118(@OriginalArg(1) int arg0, @OriginalArg(2) IfType arg1) {
 		if (!Static36.method940(arg1).method503(arg0) && arg1.anObjectArray29 == null) {
 			return -1;
 		} else if (arg1.anIntArray39 == null || arg0 >= arg1.anIntArray39.length) {
@@ -119,7 +119,7 @@ public final class Static8 {
 	@OriginalMember(owner = "com.jagex3.client.client!aj", name = "i", descriptor = "(I)V")
 	public static void method121() {
 		for (@Pc(3) int local3 = 0; local3 < Static165.anInt4043; local3++) {
-			@Pc(19) Class35 local19 = Static247.method4248(local3);
+			@Pc(19) VarpType local19 = Static247.method4248(local3);
 			if (local19 != null && local19.anInt1765 == 0) {
 				Static106.anIntArray257[local3] = 0;
 				Static7.anIntArray75[local3] = 0;

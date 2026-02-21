@@ -33,7 +33,7 @@ public final class Static5 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!af", name = "a", descriptor = "(BI)Lclient!be;")
-	public static Component getComponent(@OriginalArg(1) int id) {
+	public static IfType getComponent(@OriginalArg(1) int id) {
 		@Pc(7) int interfaceId = id >> 16;
 		@Pc(18) int componentId = id & 0xFFFF;
 		if (Static241.components[interfaceId] == null || Static241.components[interfaceId][componentId] == null) {
@@ -57,7 +57,7 @@ public final class Static5 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!af", name = "a", descriptor = "(IIIIIILclient!th;IJ)Z")
-	public static boolean method35(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) Entity arg6, @OriginalArg(8) long arg7) {
+	public static boolean method35(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) ModelSource arg6, @OriginalArg(8) long arg7) {
 		if (arg6 == null) {
 			return true;
 		} else {

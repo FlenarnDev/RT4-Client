@@ -58,7 +58,7 @@ public final class Static19 {
 			} else {
 				local22 = Static105.anIntArray256[local11];
 			}
-			@Pc(30) Player local30 = Static159.aClass8_Sub4_Sub1Array1[local22];
+			@Pc(30) ClientPlayer local30 = Static159.aClass8_Sub4_Sub1Array1[local22];
 			if (local30 != null && local30.anInt3408 > 0) {
 				local30.anInt3408--;
 				if (local30.anInt3408 == 0) {
@@ -68,7 +68,7 @@ public final class Static19 {
 		}
 		for (local11 = 0; local11 < Static272.anInt5214; local11++) {
 			@Pc(68) int local68 = Static33.anIntArray79[local11];
-			@Pc(72) Npc local72 = Static175.aClass8_Sub4_Sub2Array1[local68];
+			@Pc(72) ClientNPC local72 = Static175.aClass8_Sub4_Sub2Array1[local68];
 			if (local72 != null && local72.anInt3408 > 0) {
 				local72.anInt3408--;
 				if (local72.anInt3408 == 0) {

@@ -13,18 +13,18 @@ public final class Static173 {
 	public static int anInt4183;
 
 	@OriginalMember(owner = "com.jagex3.client.client!nk", name = "L", descriptor = "[Lclient!mm;")
-	public static SoftwareSprite[] aClass3_Sub2_Sub1_Sub1Array9;
+	public static Pix32[] aClass3_Sub2_Sub1_Sub1Array9;
 
 	@OriginalMember(owner = "com.jagex3.client.client!nk", name = "O", descriptor = "Lclient!e;")
-	public static Player self;
+	public static ClientPlayer self;
 
 	@OriginalMember(owner = "com.jagex3.client.client!nk", name = "n", descriptor = "[Lclient!sl;")
-	public static final SynthSound[] aClass138Array1 = new SynthSound[50];
+	public static final JagFX[] aClass138Array1 = new JagFX[50];
 
 	@OriginalMember(owner = "com.jagex3.client.client!nk", name = "c", descriptor = "(IZ)V")
 	public static void method3240(@OriginalArg(1) boolean arg0) {
 		@Pc(7) int local7;
-		@Pc(16) Npc local16;
+		@Pc(16) ClientNPC local16;
 		@Pc(107) int local107;
 		@Pc(113) int local113;
 		@Pc(133) int local133;

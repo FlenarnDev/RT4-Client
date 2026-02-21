@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class HashTableIterator {
 
 	@OriginalMember(owner = "com.jagex3.client.client!l", name = "a", descriptor = "Lclient!ab;")
-	private Node aClass3_135;
+	private Linkable aClass3_135;
 
 	@OriginalMember(owner = "com.jagex3.client.client!l", name = "c", descriptor = "I")
 	private int anInt3447 = 0;
@@ -23,8 +23,8 @@ public final class HashTableIterator {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!l", name = "a", descriptor = "(I)Lclient!ab;")
-	public final Node method2700() {
-		@Pc(30) Node local30;
+	public final Linkable method2700() {
+		@Pc(30) Linkable local30;
 		if (this.anInt3447 > 0 && this.aClass133_10.aClass3Array1[this.anInt3447 - 1] != this.aClass3_135) {
 			local30 = this.aClass3_135;
 			this.aClass3_135 = local30.aClass3_222;
@@ -41,7 +41,7 @@ public final class HashTableIterator {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!l", name = "a", descriptor = "(B)Lclient!ab;")
-	public final Node method2701() {
+	public final Linkable method2701() {
 		this.anInt3447 = 0;
 		return this.method2700();
 	}

@@ -8,10 +8,10 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static276 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!wh", name = "c", descriptor = "[[[Lclient!bj;")
-	public static Tile[][][] aClass3_Sub5ArrayArrayArray3;
+	public static Square[][][] aClass3_Sub5ArrayArrayArray3;
 
 	@OriginalMember(owner = "com.jagex3.client.client!wh", name = "l", descriptor = "[Lclient!qf;")
-	public static Sprite[] aClass3_Sub2_Sub1Array11;
+	public static AbstractPix32[] aClass3_Sub2_Sub1Array11;
 
 	@OriginalMember(owner = "com.jagex3.client.client!wh", name = "g", descriptor = "[I")
 	public static final int[] anIntArray563 = new int[50];
@@ -55,7 +55,7 @@ public final class Static276 {
 		@Pc(7) JagString local7 = arg1.method3159().method3125();
 		@Pc(13) boolean local13 = false;
 		for (@Pc(15) int local15 = 0; local15 < Static267.anInt5774; local15++) {
-			@Pc(28) Player local28 = Static159.aClass8_Sub4_Sub1Array1[Static105.anIntArray256[local15]];
+			@Pc(28) ClientPlayer local28 = Static159.aClass8_Sub4_Sub1Array1[Static105.anIntArray256[local15]];
 			if (local28 != null && local28.aClass100_364 != null && local28.aClass100_364.method3111(local7)) {
 				local13 = true;
 				Static102.method2075(Static173.self.movementQueueZ[0], 0, 1, false, 0, local28.movementQueueX[0], 1, 0, 2, local28.movementQueueZ[0], Static173.self.movementQueueX[0]);
@@ -84,12 +84,12 @@ public final class Static276 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!wh", name = "b", descriptor = "(B)Lclient!ok;")
-	public static IndexedSprite method4614() {
-		@Pc(27) IndexedSprite local27;
+	public static Pix8 method4614() {
+		@Pc(27) Pix8 local27;
 		if (GlRenderer.enabled) {
-			local27 = new GlIndexedSprite(Static124.anInt3080, Static227.anInt5091, Static274.anIntArray440[0], Static269.anIntArray252[0], Static254.anIntArray488[0], Static26.anIntArray66[0], Static7.aByteArrayArray5[0], Static259.anIntArray513);
+			local27 = new GlPix8(Static124.anInt3080, Static227.anInt5091, Static274.anIntArray440[0], Static269.anIntArray252[0], Static254.anIntArray488[0], Static26.anIntArray66[0], Static7.aByteArrayArray5[0], Static259.anIntArray513);
 		} else {
-			local27 = new SoftwareIndexedSprite(Static124.anInt3080, Static227.anInt5091, Static274.anIntArray440[0], Static269.anIntArray252[0], Static254.anIntArray488[0], Static26.anIntArray66[0], Static7.aByteArrayArray5[0], Static259.anIntArray513);
+			local27 = new SoftwarePix8(Static124.anInt3080, Static227.anInt5091, Static274.anIntArray440[0], Static269.anIntArray252[0], Static254.anIntArray488[0], Static26.anIntArray66[0], Static7.aByteArrayArray5[0], Static259.anIntArray513);
 		}
 		Static75.method1631();
 		return local27;

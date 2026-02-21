@@ -54,7 +54,7 @@ public final class Light {
 	public final boolean aBoolean126;
 
 	@OriginalMember(owner = "com.jagex3.client.client!gi", name = "B", descriptor = "Lclient!fj;")
-	public Class45 aClass45_1;
+	public Light_Class45 aClass45_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!gi", name = "C", descriptor = "I")
 	public final int anInt2247;
@@ -116,7 +116,7 @@ public final class Light {
 		@Pc(29) int local29 = this.anInt2233;
 		@Pc(62) int local62;
 		if (local29 == 1) {
-			local62 = (MathUtils.anIntArray223[local26] >> 6) + 1024;
+			local62 = (Pix3D.anIntArray223[local26] >> 6) + 1024;
 		} else if (local29 == 3) {
 			local62 = Static62.anIntArray150[local26] >> 1;
 		} else if (local29 == 4) {

@@ -35,7 +35,7 @@ public final class Static223 {
 	public static final JagString aClass100_951 = Static28.parse("<col=ff7000>");
 
 	@OriginalMember(owner = "com.jagex3.client.client!sc", name = "a", descriptor = "(IIILclient!km;)V")
-	public static void method3855(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) Npc arg2) {
+	public static void method3855(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) ClientNPC arg2) {
 		if (arg2.anInt3369 == arg1 && arg1 != -1) {
 			@Pc(10) SeqType local10 = Static36.method941(arg1);
 			@Pc(13) int local13 = local10.anInt5347;
@@ -67,7 +67,7 @@ public final class Static223 {
 	@OriginalMember(owner = "com.jagex3.client.client!sc", name = "a", descriptor = "()V")
 	public static void method3858() {
 		for (@Pc(1) int local1 = 0; local1 < Static22.anInt726; local1++) {
-			@Pc(8) Scenery local8 = Static243.aClass31Array3[local1];
+			@Pc(8) Sprite local8 = Static243.aClass31Array3[local1];
 			Static266.method4193(local8);
 			Static243.aClass31Array3[local1] = null;
 		}

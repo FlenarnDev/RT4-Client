@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static37 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!cm", name = "a", descriptor = "Lclient!m;")
-	public static GlTextureProvider anInterface1_1;
+	public static TextureProvider anInterface1_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!cm", name = "b", descriptor = "Ljava/lang/Thread;")
 	public static Thread aThread1;
@@ -16,7 +16,7 @@ public final class Static37 {
 	public static int anInt1176;
 
     @OriginalMember(owner = "com.jagex3.client.client!cm", name = "a", descriptor = "(ILclient!fe;)V")
-	public static void method949(@OriginalArg(1) PathingEntity arg0) {
+	public static void method949(@OriginalArg(1) ClientEntity arg0) {
 		if (arg0.anInt3376 == 0) {
 			return;
 		}
@@ -24,7 +24,7 @@ public final class Static37 {
 		@Pc(43) int local43;
 		@Pc(36) int local36;
 		if (arg0.anInt3370 != -1 && arg0.anInt3370 < 32768) {
-			@Pc(26) Npc local26 = Static175.aClass8_Sub4_Sub2Array1[arg0.anInt3370];
+			@Pc(26) ClientNPC local26 = Static175.aClass8_Sub4_Sub2Array1[arg0.anInt3370];
 			if (local26 != null) {
 				local36 = arg0.anInt3421 - local26.anInt3421;
 				local43 = arg0.anInt3412 - local26.anInt3412;
@@ -40,7 +40,7 @@ public final class Static37 {
 			if (local70 == Static16.anInt549) {
 				local70 = 2047;
 			}
-			@Pc(83) Player local83 = Static159.aClass8_Sub4_Sub1Array1[local70];
+			@Pc(83) ClientPlayer local83 = Static159.aClass8_Sub4_Sub1Array1[local70];
 			if (local83 != null) {
 				local94 = arg0.anInt3421 - local83.anInt3421;
 				local36 = arg0.anInt3412 - local83.anInt3412;

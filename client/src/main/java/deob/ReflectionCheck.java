@@ -5,7 +5,7 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("com.jagex3.client.client!ed")
-public final class ReflectionCheck extends Node {
+public final class ReflectionCheck extends Linkable {
 
 	@OriginalMember(owner = "com.jagex3.client.client!ed", name = "p", descriptor = "I")
 	public int anInt1725;

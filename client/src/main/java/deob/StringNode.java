@@ -5,7 +5,7 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("com.jagex3.client.client!sj")
-public final class StringNode extends Node {
+public final class StringNode extends Linkable {
 
 	@OriginalMember(owner = "com.jagex3.client.client!sj", name = "A", descriptor = "Lclient!na;")
 	public JagString aClass100_980;

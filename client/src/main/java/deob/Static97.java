@@ -26,7 +26,7 @@ public final class Static97 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!hi", name = "a", descriptor = "(IIIIILclient!be;Z)V")
-	public static void method1960(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) Component arg5) {
+	public static void method1960(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) IfType arg5) {
 		@Pc(13) int local13 = arg3 * arg3 + arg4 * arg4;
 		if (local13 > 360000) {
 			return;
@@ -38,8 +38,8 @@ public final class Static97 {
 		}
 		local30 -= 10;
 		@Pc(58) int local58 = Static59.anInt1814 + Static57.anInt1747 & 0x7FF;
-		@Pc(62) int local62 = MathUtils.anIntArray225[local58];
-		@Pc(66) int local66 = MathUtils.anIntArray223[local58];
+		@Pc(62) int local62 = Pix3D.anIntArray225[local58];
+		@Pc(66) int local66 = Pix3D.anIntArray223[local58];
 		@Pc(74) int local74 = local66 * 256 / (Static273.anInt4130 + 256);
 		@Pc(82) int local82 = local62 * 256 / (Static273.anInt4130 + 256);
 		@Pc(93) int local93 = arg4 * local74 + local82 * arg3 >> 16;
@@ -48,17 +48,17 @@ public final class Static97 {
 		@Pc(117) int local117 = (int) (Math.sin(local110) * (double) local30);
 		@Pc(124) int local124 = (int) (Math.cos(local110) * (double) local30);
 		if (GlRenderer.enabled) {
-			((GlSprite) Static277.aClass3_Sub2_Sub1Array12[arg0]).method1428((arg5.anInt445 / 2 + arg2 + local117) * 16, (arg5.anInt459 / 2 + arg1 - local124) * 16, (int) (local110 * 10430.378D));
+			((GlPix32) Static277.aClass3_Sub2_Sub1Array12[arg0]).method1428((arg5.anInt445 / 2 + arg2 + local117) * 16, (arg5.anInt459 / 2 + arg1 - local124) * 16, (int) (local110 * 10430.378D));
 		} else {
-			((SoftwareSprite) Static277.aClass3_Sub2_Sub1Array12[arg0]).method306(local117 + arg5.anInt445 / 2 + arg2 - 10, arg5.anInt459 / 2 + -10 + arg1 + -local124, local110);
+			((Pix32) Static277.aClass3_Sub2_Sub1Array12[arg0]).method306(local117 + arg5.anInt445 / 2 + arg2 - 10, arg5.anInt459 / 2 + -10 + arg1 + -local124, local110);
 		}
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!hi", name = "a", descriptor = "(ILjava/lang/Throwable;)Ljava/lang/String;")
 	public static String method1961(@OriginalArg(1) Throwable arg0) throws IOException {
 		@Pc(24) String local24;
-		if (arg0 instanceof TracingException) {
-			@Pc(11) TracingException local11 = (TracingException) arg0;
+		if (arg0 instanceof JagException) {
+			@Pc(11) JagException local11 = (JagException) arg0;
 			arg0 = local11.aThrowable1;
 			local24 = local11.aString3 + " | ";
 		} else {
@@ -101,20 +101,20 @@ public final class Static97 {
 	@OriginalMember(owner = "com.jagex3.client.client!hi", name = "a", descriptor = "(Lclient!wa;I)V")
 	public static void method1962(@OriginalArg(0) Packet arg0) {
 		@Pc(9) int local9 = arg0.gsmart();
-		Static203.aClass32Array1 = new Class32[local9];
+		Static203.aWorldInfoArray1 = new WorldInfo[local9];
 		@Pc(14) int local14;
 		for (local14 = 0; local14 < local9; local14++) {
-			Static203.aClass32Array1[local14] = new Class32();
-			Static203.aClass32Array1[local14].anInt1739 = arg0.gsmart();
-			Static203.aClass32Array1[local14].aClass100_378 = arg0.gjstr2();
+			Static203.aWorldInfoArray1[local14] = new WorldInfo();
+			Static203.aWorldInfoArray1[local14].anInt1739 = arg0.gsmart();
+			Static203.aWorldInfoArray1[local14].aClass100_378 = arg0.gjstr2();
 		}
 		Static19.anInt636 = arg0.gsmart();
 		Static171.anInt4157 = arg0.gsmart();
 		Static106.anInt2871 = arg0.gsmart();
-		Static196.aClass10_Sub1Array2 = new World[Static171.anInt4157 + 1 - Static19.anInt636];
+		Static196.aClass10_Sub1Array2 = new GWCWorld[Static171.anInt4157 + 1 - Static19.anInt636];
 		for (local14 = 0; local14 < Static106.anInt2871; local14++) {
 			@Pc(77) int local77 = arg0.gsmart();
-			@Pc(85) World local85 = Static196.aClass10_Sub1Array2[local77] = new World();
+			@Pc(85) GWCWorld local85 = Static196.aClass10_Sub1Array2[local77] = new GWCWorld();
 			local85.anInt377 = arg0.g1();
 			local85.anInt381 = arg0.g4();
 			local85.anInt382 = local77 + Static19.anInt636;
@@ -126,7 +126,7 @@ public final class Static97 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!hi", name = "a", descriptor = "(Lclient!be;B)Lclient!na;")
-	public static JagString method1963(@OriginalArg(0) Component arg0) {
+	public static JagString method1963(@OriginalArg(0) IfType arg0) {
 		if (Static36.method940(arg0).method512() == 0) {
 			return null;
 		} else if (arg0.aClass100_86 == null || arg0.aClass100_86.method3144().length() == 0) {

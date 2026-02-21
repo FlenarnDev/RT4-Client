@@ -150,14 +150,14 @@ public final class Static253 {
 			Static142.method2726(arg4, arg3, arg2, 256, arg0, 256);
 			Static233.method4000(arg3, arg2, arg0, 256, 256, arg4);
 		}
-		((Js5GlTextureProvider) Rasteriser.anInterface1_2).method3239(Static178.anInt4247);
+		((WorldTextureProvider) Rasteriser.anInterface1_2).method3239(Static178.anInt4247);
 		Static115.method2310(arg3, arg4, arg0, arg2);
 		Static240.anInt5333 = local123;
 		Static134.anInt3302 = local121;
 		Static5.anInt40 = local57;
 		Static138.anInt3439 = local59;
 		Static184.anInt4358 = local125;
-		if (Static19.aBoolean43 && Static107.js5NetQueue.method2328() == 0) {
+		if (Static19.aBoolean43 && Static107.js5Net.method2328() == 0) {
 			Static19.aBoolean43 = false;
 		}
 		if (Static19.aBoolean43) {
@@ -194,13 +194,13 @@ public final class Static253 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ui", name = "h", descriptor = "(I)[Lclient!ok;")
-	public static IndexedSprite[] method4331() {
-		@Pc(8) IndexedSprite[] local8 = new IndexedSprite[Static165.anInt4038];
+	public static Pix8[] method4331() {
+		@Pc(8) Pix8[] local8 = new Pix8[Static165.anInt4038];
 		for (@Pc(10) int local10 = 0; local10 < Static165.anInt4038; local10++) {
 			if (GlRenderer.enabled) {
-				local8[local10] = new GlIndexedSprite(Static124.anInt3080, Static227.anInt5091, Static274.anIntArray440[local10], Static269.anIntArray252[local10], Static254.anIntArray488[local10], Static26.anIntArray66[local10], Static7.aByteArrayArray5[local10], Static259.anIntArray513);
+				local8[local10] = new GlPix8(Static124.anInt3080, Static227.anInt5091, Static274.anIntArray440[local10], Static269.anIntArray252[local10], Static254.anIntArray488[local10], Static26.anIntArray66[local10], Static7.aByteArrayArray5[local10], Static259.anIntArray513);
 			} else {
-				local8[local10] = new SoftwareIndexedSprite(Static124.anInt3080, Static227.anInt5091, Static274.anIntArray440[local10], Static269.anIntArray252[local10], Static254.anIntArray488[local10], Static26.anIntArray66[local10], Static7.aByteArrayArray5[local10], Static259.anIntArray513);
+				local8[local10] = new SoftwarePix8(Static124.anInt3080, Static227.anInt5091, Static274.anIntArray440[local10], Static269.anIntArray252[local10], Static254.anIntArray488[local10], Static26.anIntArray66[local10], Static7.aByteArrayArray5[local10], Static259.anIntArray513);
 			}
 		}
 		Static75.method1631();

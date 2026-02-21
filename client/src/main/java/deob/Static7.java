@@ -16,7 +16,7 @@ public final class Static7 {
 	public static int anInt986;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ah", name = "i", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_5 = new SoftLruHashTable(2);
+	public static final SoftLruCache aClass99_5 = new SoftLruCache(2);
 
 	@OriginalMember(owner = "com.jagex3.client.client!ah", name = "j", descriptor = "[I")
 	public static final int[] anIntArray75 = new int[2500];
@@ -28,7 +28,7 @@ public final class Static7 {
 	public static int anInt983 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ah", name = "p", descriptor = "Lclient!ih;")
-	public static final LinkedList aClass69_32 = new LinkedList();
+	public static final LinkList aClass69_32 = new LinkList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!ah", name = "s", descriptor = "I")
 	public static int clickX = 0;
@@ -70,8 +70,8 @@ public final class Static7 {
 				if (local37 == 25 || local37 == 23 || local37 == 48 || local37 == 7 || local37 == 13 || local37 == 47 || local37 == 5 || local37 == 43 || local37 == 35 || local37 == 58 || local37 == 22 || local37 == 1006) {
 					local93 = Static196.anIntArray408[Static231.anInt5204 - 1];
 					local99 = Static56.anIntArray142[Static231.anInt5204 - 1];
-					@Pc(103) Component local103 = Static5.getComponent(local99);
-					@Pc(106) ServerActiveProperties local106 = Static36.method940(local103);
+					@Pc(103) IfType local103 = Static5.getComponent(local99);
+					@Pc(106) ServerActive local106 = Static36.method940(local103);
 					if (local106.method511() || local106.method504()) {
 						Static78.anInt2145 = 0;
 						Static123.aBoolean155 = false;

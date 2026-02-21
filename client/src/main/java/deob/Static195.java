@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static195 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!pk", name = "R", descriptor = "[[Lclient!hg;")
-	public static Class3_Sub14[][] aClass3_Sub14ArrayArray3;
+	public static GlSquare[][] aClass3_Sub14ArrayArray3;
 
 	@OriginalMember(owner = "com.jagex3.client.client!pk", name = "Y", descriptor = "I")
 	public static int anInt4581;
@@ -27,20 +27,20 @@ public final class Static195 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!pk", name = "i", descriptor = "(I)V")
 	public static void method3532() {
-		for (@Pc(16) ProjAnimNode local16 = (ProjAnimNode) Static217.aClass69_116.method2289(); local16 != null; local16 = (ProjAnimNode) Static217.aClass69_116.method2288()) {
-			@Pc(21) ProjAnim local21 = local16.aClass8_Sub6_1;
+		for (@Pc(16) ClientProjNode local16 = (ClientProjNode) Static217.aClass69_116.method2289(); local16 != null; local16 = (ClientProjNode) Static217.aClass69_116.method2288()) {
+			@Pc(21) ClientProj local21 = local16.aClass8_Sub6_1;
 			if (Static55.level != local21.anInt4810 || local21.anInt4800 < Static83.anInt372) {
 				local16.method4658();
 			} else if (Static83.anInt372 >= local21.anInt4822) {
 				if (local21.anInt4819 > 0) {
-					@Pc(54) Npc local54 = Static175.aClass8_Sub4_Sub2Array1[local21.anInt4819 - 1];
+					@Pc(54) ClientNPC local54 = Static175.aClass8_Sub4_Sub2Array1[local21.anInt4819 - 1];
 					if (local54 != null && local54.anInt3412 >= 0 && local54.anInt3412 < 13312 && local54.anInt3421 >= 0 && local54.anInt3421 < 13312) {
 						local21.method3705(local54.anInt3421, Static83.anInt372, Static207.method3685(local21.anInt4810, local54.anInt3412, local54.anInt3421) - local21.anInt4805, local54.anInt3412);
 					}
 				}
 				if (local21.anInt4819 < 0) {
 					@Pc(102) int local102 = -local21.anInt4819 - 1;
-					@Pc(107) Player local107;
+					@Pc(107) ClientPlayer local107;
 					if (Static16.anInt549 == local102) {
 						local107 = Static173.self;
 					} else {

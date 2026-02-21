@@ -36,13 +36,13 @@ public final class Static245 {
 				return true;
 			}
 			if (Static241.components[arg0] == null) {
-				Static241.components[arg0] = new Component[local25];
+				Static241.components[arg0] = new IfType[local25];
 			}
 			for (@Pc(46) int local46 = 0; local46 < local25; local46++) {
 				if (Static241.components[arg0][local46] == null) {
 					@Pc(62) byte[] local62 = Static202.aClass153_84.method4495(arg0, local46);
 					if (local62 != null) {
-						@Pc(74) Component local74 = Static241.components[arg0][local46] = new Component();
+						@Pc(74) IfType local74 = Static241.components[arg0][local46] = new IfType();
 						local74.anInt507 = local46 + (arg0 << 16);
 						if (local62[0] == -1) {
 							local74.method490(new Packet(local62));
@@ -63,7 +63,7 @@ public final class Static245 {
 	public static void method4226() {
 		for (@Pc(7) int local7 = 0; local7 < Static116.anInt2951; local7++) {
 			@Pc(31) int local31 = Static44.anIntArray106[local7];
-			@Pc(35) Player local35 = Static159.aClass8_Sub4_Sub1Array1[local31];
+			@Pc(35) ClientPlayer local35 = Static159.aClass8_Sub4_Sub1Array1[local31];
 			@Pc(39) int local39 = Client.in.g1();
 			if ((local39 & 0x10) != 0) {
 				local39 += Client.in.g1() << 8;

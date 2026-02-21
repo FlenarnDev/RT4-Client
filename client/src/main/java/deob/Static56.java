@@ -5,16 +5,16 @@ import org.openrs2.deob.annotation.OriginalMember;
 public final class Static56 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!ef", name = "j", descriptor = "Lclient!mm;")
-	public static SoftwareSprite aClass3_Sub2_Sub1_Sub1_1;
+	public static Pix32 aClass3_Sub2_Sub1_Sub1_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ef", name = "p", descriptor = "Lclient!vj;")
-	public static Resampler aClass156_1;
+	public static Decimator aClass156_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ef", name = "a", descriptor = "[I")
 	public static final int[] anIntArray141 = new int[] { 768, 1024, 1280, 512, 1536, 256, 0, 1792 };
 
 	@OriginalMember(owner = "com.jagex3.client.client!ef", name = "b", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_9 = new SoftLruHashTable(30);
+	public static final SoftLruCache aClass99_9 = new SoftLruCache(30);
 
 	@OriginalMember(owner = "com.jagex3.client.client!ef", name = "c", descriptor = "[I")
 	public static final int[] anIntArray142 = new int[500];
@@ -32,7 +32,7 @@ public final class Static56 {
 	public static int anInt1743 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ef", name = "r", descriptor = "Lclient!be;")
-	public static Component aClass13_12 = null;
+	public static IfType aClass13_12 = null;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ef", name = "a", descriptor = "(I)I")
 	public static int method1314() {

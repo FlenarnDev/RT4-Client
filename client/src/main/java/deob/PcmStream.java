@@ -5,13 +5,13 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("com.jagex3.client.client!qb")
-public abstract class PcmStream extends Node {
+public abstract class PcmStream extends Linkable {
 
 	@OriginalMember(owner = "com.jagex3.client.client!qb", name = "p", descriptor = "I")
 	public int anInt5626;
 
 	@OriginalMember(owner = "com.jagex3.client.client!qb", name = "q", descriptor = "Lclient!ik;")
-	public Sound aClass3_Sub16_5;
+	public PcmStreamable aClass3_Sub16_5;
 
 	@OriginalMember(owner = "com.jagex3.client.client!qb", name = "s", descriptor = "Lclient!qb;")
 	public PcmStream aClass3_Sub3_8;

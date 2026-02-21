@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("com.jagex3.client.client!wa")
-public class Packet extends Node {
+public class Packet extends Linkable {
 
 	@OriginalMember(owner = "com.jagex3.client.client!wa", name = "y", descriptor = "[B")
 	public byte[] data;

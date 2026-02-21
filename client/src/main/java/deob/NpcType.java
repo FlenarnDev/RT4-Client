@@ -217,12 +217,12 @@ public final class NpcType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!me", name = "a", descriptor = "([Lclient!ub;IBIIIILclient!tk;ILclient!tk;)Lclient!ak;")
-	public final Model method2937(@OriginalArg(0) Class147[] arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) SeqType arg6, @OriginalArg(8) int arg7, @OriginalArg(9) SeqType arg8) {
+	public final ModelLit method2937(@OriginalArg(0) Class147[] arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) SeqType arg6, @OriginalArg(8) int arg7, @OriginalArg(9) SeqType arg8) {
 		if (this.anIntArray357 != null) {
 			@Pc(13) NpcType local13 = this.method2932();
 			return local13 == null ? null : local13.method2937(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		}
-		@Pc(40) Model local40 = (Model) Static125.aClass99_18.method3106((long) this.anInt3741);
+		@Pc(40) ModelLit local40 = (ModelLit) Static125.aClass99_18.method3106((long) this.anInt3741);
 		@Pc(46) boolean local46;
 		@Pc(173) int local173;
 		@Pc(235) int local235;
@@ -245,7 +245,7 @@ public final class NpcType {
 			if (local46) {
 				return null;
 			}
-			@Pc(84) RawModel[] local84 = new RawModel[this.anIntArray356.length];
+			@Pc(84) ModelUnlit[] local84 = new ModelUnlit[this.anIntArray356.length];
 			for (@Pc(86) int local86 = 0; local86 < this.anIntArray356.length; local86++) {
 				if (this.anIntArray356[local86] != -1) {
 					local84[local86] = Static77.method1686(Static86.aClass153_37, this.anIntArray356[local86]);
@@ -278,12 +278,12 @@ public final class NpcType {
 								local259[0] = local259[4] = local259[8] = 32768;
 								local259[12] = -local235;
 							} else {
-								local300 = MathUtils.anIntArray225[local207] >> 1;
-								@Pc(306) int local306 = MathUtils.anIntArray223[local207] >> 1;
-								@Pc(312) int local312 = MathUtils.anIntArray225[local214] >> 1;
-								local318 = MathUtils.anIntArray225[local228] >> 1;
-								local324 = MathUtils.anIntArray223[local214] >> 1;
-								local330 = MathUtils.anIntArray223[local228] >> 1;
+								local300 = Pix3D.anIntArray225[local207] >> 1;
+								@Pc(306) int local306 = Pix3D.anIntArray223[local207] >> 1;
+								@Pc(312) int local312 = Pix3D.anIntArray225[local214] >> 1;
+								local318 = Pix3D.anIntArray225[local228] >> 1;
+								local324 = Pix3D.anIntArray223[local214] >> 1;
+								local330 = Pix3D.anIntArray223[local228] >> 1;
 								local259[3] = local300 * local330 + 16384 >> 15;
 								local259[8] = local300 * local312 + 16384 >> 15;
 								local259[5] = -local306;
@@ -312,11 +312,11 @@ public final class NpcType {
 					}
 				}
 			}
-			@Pc(593) RawModel local593;
+			@Pc(593) ModelUnlit local593;
 			if (local84.length == 1) {
 				local593 = local84[0];
 			} else {
-				local593 = new RawModel(local84, local84.length);
+				local593 = new ModelUnlit(local84, local84.length);
 			}
 			if (this.aShortArray38 != null) {
 				for (local173 = 0; local173 < this.aShortArray38.length; local173++) {
@@ -334,7 +334,7 @@ public final class NpcType {
 			}
 			local40 = local593.method1679(this.anInt3715 + 64, this.anInt3738 + 850, -30, -50, -30);
 			if (GlRenderer.enabled) {
-				((GlModel) local40).method4111(false, false, false, false, false, true);
+				((GlModelLit) local40).method4111(false, false, false, false, false, true);
 			}
 			Static125.aClass99_18.method3095(local40, (long) this.anInt3741);
 		}
@@ -381,7 +381,7 @@ public final class NpcType {
 			}
 		}
 		if (!local46 && arg8 == null && arg6 == null) {
-			@Pc(933) Model local933 = local40.method4572(true, true, true);
+			@Pc(933) ModelLit local933 = local40.method4572(true, true, true);
 			if (this.anInt3729 != 128 || this.anInt3731 != 128) {
 				local933.method4559(this.anInt3729, this.anInt3731, this.anInt3729);
 			}
@@ -450,7 +450,7 @@ public final class NpcType {
 				}
 			}
 		}
-		@Pc(1218) Model local1218 = local40.method4572(!local721, !local723, !local725);
+		@Pc(1218) ModelLit local1218 = local40.method4572(!local721, !local723, !local725);
 		local330 = 1;
 		for (local318 = 0; local318 < local173; local318++) {
 			if (Static6.aClass3_Sub2_Sub7Array1[local318] != null) {
@@ -502,14 +502,14 @@ public final class NpcType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!me", name = "a", descriptor = "(Lclient!tk;IIII)Lclient!ak;")
-	public final Model method2943(@OriginalArg(0) SeqType arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3) {
+	public final ModelLit method2943(@OriginalArg(0) SeqType arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3) {
 		if (this.anIntArray357 != null) {
 			@Pc(13) NpcType local13 = this.method2932();
 			return local13 == null ? null : local13.method2943(arg0, arg1, arg2, arg3);
 		} else if (this.anIntArray354 == null) {
 			return null;
 		} else {
-			@Pc(41) Model local41 = (Model) Static262.aClass99_35.method3106((long) this.anInt3741);
+			@Pc(41) ModelLit local41 = (ModelLit) Static262.aClass99_35.method3106((long) this.anInt3741);
 			if (local41 == null) {
 				@Pc(46) boolean local46 = false;
 				for (@Pc(48) int local48 = 0; local48 < this.anIntArray354.length; local48++) {
@@ -520,15 +520,15 @@ public final class NpcType {
 				if (local46) {
 					return null;
 				}
-				@Pc(82) RawModel[] local82 = new RawModel[this.anIntArray354.length];
+				@Pc(82) ModelUnlit[] local82 = new ModelUnlit[this.anIntArray354.length];
 				for (@Pc(84) int local84 = 0; local84 < this.anIntArray354.length; local84++) {
 					local82[local84] = Static77.method1686(Static86.aClass153_37, this.anIntArray354[local84]);
 				}
-				@Pc(119) RawModel local119;
+				@Pc(119) ModelUnlit local119;
 				if (local82.length == 1) {
 					local119 = local82[0];
 				} else {
-					local119 = new RawModel(local82, local82.length);
+					local119 = new ModelUnlit(local82, local82.length);
 				}
 				@Pc(130) int local130;
 				if (this.aShortArray38 != null) {
@@ -724,7 +724,7 @@ public final class NpcType {
 				for (local18 = 0; local18 < local12; local18++) {
 					@Pc(592) boolean local592 = arg1.g1() == 1;
 					@Pc(596) int local596 = arg1.g3();
-					@Pc(605) Node local605;
+					@Pc(605) Linkable local605;
 					if (local592) {
 						local605 = new StringNode(arg1.gjstr());
 					} else {

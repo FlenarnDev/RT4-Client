@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static147 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!lh", name = "s", descriptor = "Lclient!vh;")
-	public static AudioChannel aClass62_2;
+	public static PcmPlayer aClass62_2;
 
 	@OriginalMember(owner = "com.jagex3.client.client!lh", name = "u", descriptor = "I")
 	public static volatile int anInt3521 = -1;
@@ -23,7 +23,7 @@ public final class Static147 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!lh", name = "a", descriptor = "(Lclient!fg;IIIIIIZ)V")
-	public static void method2762(@OriginalArg(0) ShapedTile arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7) {
+	public static void method2762(@OriginalArg(0) Ground arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7) {
 		@Pc(3) int local3 = arg0.anIntArray168.length;
 		@Pc(5) int local5;
 		@Pc(15) int local15;

@@ -16,7 +16,7 @@ public final class Static107 {
 	public static int anInt2878;
 
 	@OriginalMember(owner = "com.jagex3.client.client!id", name = "l", descriptor = "Lclient!jb;")
-	public static Js5NetQueue js5NetQueue;
+	public static Js5Net js5Net;
 
 	@OriginalMember(owner = "com.jagex3.client.client!id", name = "b", descriptor = "I")
 	public static int anInt2875 = -1;
@@ -47,12 +47,12 @@ public final class Static107 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!id", name = "a", descriptor = "(ILsignlink!ll;Ljava/awt/deob.Component;II)Lclient!vh;")
-	public static AudioChannel method2262(@OriginalArg(0) int arg0, @OriginalArg(1) SignLink arg1, @OriginalArg(2) Component arg2, @OriginalArg(3) int arg3) {
+	public static PcmPlayer method2262(@OriginalArg(0) int arg0, @OriginalArg(1) SignLink arg1, @OriginalArg(2) Component arg2, @OriginalArg(3) int arg3) {
 		if (Static44.anInt1404 == 0) {
 			throw new IllegalStateException();
 		}
 		try {
-			@Pc(33) AudioChannel local33 = (AudioChannel) Class.forName("deob.JavaAudioChannel").getDeclaredConstructor().newInstance();
+			@Pc(33) PcmPlayer local33 = (PcmPlayer) Class.forName("deob.JavaPcmPlayer").getDeclaredConstructor().newInstance();
 			local33.anInt4641 = arg0;
 			local33.anIntArray411 = new int[(Static164.aBoolean192 ? 2 : 1) * 256];
 			local33.method3576(arg2);
@@ -75,7 +75,7 @@ public final class Static107 {
 			return local33;
 		} catch (@Pc(109) Throwable local109) {
 			try {
-				@Pc(120) SignLinkAudioChannel local120 = new SignLinkAudioChannel(arg1, arg3);
+				@Pc(120) JavaSafePcmPlayer local120 = new JavaSafePcmPlayer(arg1, arg3);
 				local120.anIntArray411 = new int[(Static164.aBoolean192 ? 2 : 1) * 256];
 				local120.anInt4641 = arg0;
 				local120.method3576(arg2);
@@ -94,7 +94,7 @@ public final class Static107 {
 				}
 				return local120;
 			} catch (@Pc(186) Throwable local186) {
-				return new AudioChannel();
+				return new PcmPlayer();
 			}
 		}
 	}

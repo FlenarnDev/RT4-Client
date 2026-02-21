@@ -38,7 +38,7 @@ public final class Static141 {
 		Static217.method3768();
 		Static255.aClass54_16.method1815();
 		Static171.aClass139_1 = new Class139();
-		((Js5GlTextureProvider) Rasteriser.anInterface1_2).method3247();
+		((WorldTextureProvider) Rasteriser.anInterface1_2).method3247();
 		Static120.anInt3034 = 0;
 		Static120.aClass51Array1 = new Light[255];
 		Static237.method4120();
@@ -47,7 +47,7 @@ public final class Static141 {
 		Static116.method2325(false);
 		Static119.method2381();
 		for (@Pc(39) int local39 = 0; local39 < 2048; local39++) {
-			@Pc(46) Player local46 = Static159.aClass8_Sub4_Sub1Array1[local39];
+			@Pc(46) ClientPlayer local46 = Static159.aClass8_Sub4_Sub1Array1[local39];
 			if (local46 != null) {
 				local46.anObject5 = null;
 			}

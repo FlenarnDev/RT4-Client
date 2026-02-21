@@ -17,7 +17,7 @@ public final class Static84 {
 	public static int anInt2257;
 
 	@OriginalMember(owner = "com.jagex3.client.client!gk", name = "l", descriptor = "Lclient!qf;")
-	public static Sprite aClass3_Sub2_Sub1_4;
+	public static AbstractPix32 aClass3_Sub2_Sub1_4;
 
 	@OriginalMember(owner = "com.jagex3.client.client!gk", name = "c", descriptor = "[I")
 	public static final int[] anIntArray209 = new int[4096];
@@ -32,7 +32,7 @@ public final class Static84 {
 	public static int anInt2256 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!gk", name = "a", descriptor = "(IIBLclient!e;)V")
-	public static void method1768(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) Player arg2) {
+	public static void method1768(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) ClientPlayer arg2) {
 		@Pc(13) int local13;
 		@Pc(17) int local17;
 		@Pc(24) int local24;
@@ -64,7 +64,7 @@ public final class Static84 {
 					@Pc(106) int local106 = -1;
 					@Pc(127) JagString local127;
 					if (local35) {
-						@Pc(112) Class12 local112 = Static264.method3568(Static270.aClass3_Sub15_9);
+						@Pc(112) QuickChatPhrase local112 = Static264.method3568(Static270.aClass3_Sub15_9);
 						local13 &= 0x7FFF;
 						local106 = local112.anInt439;
 						local127 = local112.aClass3_Sub2_Sub6_1.method770(Static270.aClass3_Sub15_9);
@@ -291,7 +291,7 @@ public final class Static84 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!gk", name = "a", descriptor = "(Lclient!rg;Lclient!rg;B)V")
-	public static void method1772(@OriginalArg(0) SecondaryNode arg0, @OriginalArg(1) SecondaryNode arg1) {
+	public static void method1772(@OriginalArg(0) DoubleLinkable arg0, @OriginalArg(1) DoubleLinkable arg1) {
 		if (arg1.aClass3_Sub2_66 != null) {
 			arg1.method4365();
 		}

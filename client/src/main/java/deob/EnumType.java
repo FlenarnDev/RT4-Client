@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("com.jagex3.client.client!ml")
-public final class EnumType extends SecondaryNode {
+public final class EnumType extends DoubleLinkable {
 
 	@OriginalMember(owner = "com.jagex3.client.client!ml", name = "N", descriptor = "I")
 	public int anInt3950;
@@ -41,7 +41,7 @@ public final class EnumType extends SecondaryNode {
 			this.aClass133_16 = new HashTable(Static165.method3164(local41));
 			for (@Pc(51) int local51 = 0; local51 < local41; local51++) {
 				@Pc(58) int local58 = arg1.g4();
-				@Pc(70) Node local70;
+				@Pc(70) Linkable local70;
 				if (arg0 == 5) {
 					local70 = new StringNode(arg1.gjstr());
 				} else {
@@ -70,7 +70,7 @@ public final class EnumType extends SecondaryNode {
 		if (this.aClass133_17 == null) {
 			this.method3087();
 		}
-		for (@Pc(38) Class3_Sub13 local38 = (Class3_Sub13) this.aClass133_17.method3863(arg0.method3118()); local38 != null; local38 = (Class3_Sub13) this.aClass133_17.method3867()) {
+		for (@Pc(38) EnumStringNode local38 = (EnumStringNode) this.aClass133_17.method3863(arg0.method3118()); local38 != null; local38 = (EnumStringNode) this.aClass133_17.method3867()) {
 			if (local38.aClass100_503.method3108(arg0)) {
 				return true;
 			}
@@ -82,7 +82,7 @@ public final class EnumType extends SecondaryNode {
 	private void method3087() {
 		this.aClass133_17 = new HashTable(this.aClass133_16.method3868());
 		for (@Pc(22) StringNode local22 = (StringNode) this.aClass133_16.method3859(); local22 != null; local22 = (StringNode) this.aClass133_16.method3861()) {
-			@Pc(36) Class3_Sub13 local36 = new Class3_Sub13(local22.aClass100_980, (int) local22.aLong192);
+			@Pc(36) EnumStringNode local36 = new EnumStringNode(local22.aClass100_980, (int) local22.aLong192);
 			this.aClass133_17.method3862(local36, local22.aClass100_980.method3118());
 		}
 	}

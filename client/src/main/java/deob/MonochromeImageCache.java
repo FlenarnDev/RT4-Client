@@ -18,7 +18,7 @@ public final class MonochromeImageCache {
 	private int anInt4066 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!nd", name = "g", descriptor = "Lclient!ih;")
-	private LinkedList aClass69_96 = new LinkedList();
+	private LinkList aClass69_96 = new LinkList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!nd", name = "w", descriptor = "Z")
 	public boolean aBoolean195 = false;
@@ -30,7 +30,7 @@ public final class MonochromeImageCache {
 	private final int anInt4064;
 
 	@OriginalMember(owner = "com.jagex3.client.client!nd", name = "o", descriptor = "[Lclient!lb;")
-	private Class3_Sub23[] aClass3_Sub23Array1;
+	private MonochromeImageCacheEntry[] aClass3_Sub23Array1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!nd", name = "a", descriptor = "[[[I")
 	private int[][][] anIntArrayArrayArray13;
@@ -48,7 +48,7 @@ public final class MonochromeImageCache {
 	public MonochromeImageCache(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		this.anInt4067 = arg1;
 		this.anInt4064 = arg0;
-		this.aClass3_Sub23Array1 = new Class3_Sub23[this.anInt4067];
+		this.aClass3_Sub23Array1 = new MonochromeImageCacheEntry[this.anInt4067];
 		this.anIntArrayArrayArray13 = new int[this.anInt4064][3][arg2];
 	}
 
@@ -88,15 +88,15 @@ public final class MonochromeImageCache {
 			this.anInt4062 = arg0;
 			return this.anIntArrayArrayArray13[0];
 		} else {
-			@Pc(44) Class3_Sub23 local44 = this.aClass3_Sub23Array1[arg0];
+			@Pc(44) MonochromeImageCacheEntry local44 = this.aClass3_Sub23Array1[arg0];
 			if (local44 == null) {
 				this.aBoolean195 = true;
 				if (this.anInt4066 < this.anInt4064) {
-					local44 = new Class3_Sub23(arg0, this.anInt4066);
+					local44 = new MonochromeImageCacheEntry(arg0, this.anInt4066);
 					this.anInt4066++;
 				} else {
-					@Pc(80) Class3_Sub23 local80 = (Class3_Sub23) this.aClass69_96.method2279();
-					local44 = new Class3_Sub23(arg0, local80.anInt3468);
+					@Pc(80) MonochromeImageCacheEntry local80 = (MonochromeImageCacheEntry) this.aClass69_96.method2279();
+					local44 = new MonochromeImageCacheEntry(arg0, local80.anInt3468);
 					this.aClass3_Sub23Array1[local80.anInt3476] = null;
 					local80.method4658();
 				}

@@ -15,7 +15,7 @@ public final class Static179 {
 	public static final int[][] anIntArrayArray33 = new int[5][5000];
 
 	@OriginalMember(owner = "com.jagex3.client.client!oe", name = "j", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_25 = new SoftLruHashTable(64);
+	public static final SoftLruCache aClass99_25 = new SoftLruCache(64);
 
 	@OriginalMember(owner = "com.jagex3.client.client!oe", name = "l", descriptor = "I")
 	public static int anInt4261 = 0;

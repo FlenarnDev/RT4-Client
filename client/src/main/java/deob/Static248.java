@@ -48,10 +48,10 @@ public final class Static248 {
 		@Pc(37) int local37;
 		@Pc(183) int local183;
 		for (@Pc(23) int local23 = Static235.anInt5276; local23 < Static126.anInt3114; local23++) {
-			@Pc(30) Tile[][] local30 = Static130.aClass3_Sub5ArrayArrayArray1[local23];
+			@Pc(30) Square[][] local30 = Static130.aClass3_Sub5ArrayArrayArray1[local23];
 			for (local32 = Static31.anInt987; local32 < Static2.anInt15; local32++) {
 				for (local37 = Static80.anInt4698; local37 < Static215.anInt4866; local37++) {
-					@Pc(46) Tile local46 = local30[local32][local37];
+					@Pc(46) Square local46 = local30[local32][local37];
 					if (local46 != null) {
 						if (Static48.aBooleanArrayArray1[local32 + Static277.anInt5855 - Static167.anInt4069][local37 + Static277.anInt5855 - Static193.anInt4539] && (arg3 == null || local23 < arg4 || arg3[local23][local32][local37] != arg5)) {
 							local46.aBoolean45 = true;
@@ -87,7 +87,7 @@ public final class Static248 {
 								}
 								if (local46.aClass31Array1 != null) {
 									for (local183 = 0; local183 < local46.anInt662; local183++) {
-										@Pc(192) Scenery local192 = local46.aClass31Array1[local183];
+										@Pc(192) Sprite local192 = local46.aClass31Array1[local183];
 										local192.aClass8_4.method4545(local192.anInt1714, local23, local192.anInt1706, local192.anInt1699, local192.anInt1703);
 									}
 								}
@@ -109,8 +109,8 @@ public final class Static248 {
 				Static275.method4609();
 				Static152.anInt3604 = -1;
 				Static22.anInt730 = -1;
-				for (local32 = 0; local32 < Static182.aClass3_Sub14ArrayArray2[0].length; local32++) {
-					@Pc(285) Class3_Sub14 local285 = Static182.aClass3_Sub14ArrayArray2[0][local32];
+				for (local32 = 0; local32 < Static182.aGlSquareArrayArray2[0].length; local32++) {
+					@Pc(285) GlSquare local285 = Static182.aGlSquareArrayArray2[0][local32];
 					@Pc(294) float local294 = 251.5F - (local285.aBoolean140 ? 1.0F : 0.5F);
 					if (local285.anInt2486 != Static152.anInt3604) {
 						Static152.anInt3604 = local285.anInt2486;
@@ -127,8 +127,8 @@ public final class Static248 {
 						Static120.method2402(Static167.anInt4069, Static193.anInt4539, Static130.aClass3_Sub5ArrayArrayArray1);
 						break;
 					}
-					for (local37 = 0; local37 < Static182.aClass3_Sub14ArrayArray2[local32].length; local37++) {
-						@Pc(336) Class3_Sub14 local336 = Static182.aClass3_Sub14ArrayArray2[local32][local37];
+					for (local37 = 0; local37 < Static182.aGlSquareArrayArray2[local32].length; local37++) {
+						@Pc(336) GlSquare local336 = Static182.aGlSquareArrayArray2[local32][local37];
 						@Pc(350) float local350 = 201.5F - (float) local32 * 50.0F - (local336.aBoolean140 ? 1.0F : 0.5F);
 						if (local336.anInt2485 != -1 && Rasteriser.anInterface1_2.method3237(local336.anInt2485) == 4 && Static220.aBoolean244) {
 							Static21.method619(local336.anInt2486);
@@ -146,9 +146,9 @@ public final class Static248 {
 		}
 		@Pc(434) int local434;
 		@Pc(438) int local438;
-		@Pc(450) Tile local450;
+		@Pc(450) Square local450;
 		@Pc(399) int local399;
-		@Pc(406) Tile[][] local406;
+		@Pc(406) Square[][] local406;
 		@Pc(415) int local415;
 		@Pc(428) int local428;
 		for (local399 = Static235.anInt5276; local399 < Static126.anInt3114; local399++) {

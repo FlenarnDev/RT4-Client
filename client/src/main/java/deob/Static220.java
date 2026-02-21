@@ -10,7 +10,7 @@ public final class Static220 {
 	public static int anInt4941 = 1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!rm", name = "d", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_28 = new SoftLruHashTable(64);
+	public static final SoftLruCache aClass99_28 = new SoftLruCache(64);
 
 	@OriginalMember(owner = "com.jagex3.client.client!rm", name = "g", descriptor = "Z")
 	public static boolean aBoolean244 = true;
@@ -20,15 +20,15 @@ public final class Static220 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!rm", name = "a", descriptor = "(IBI)V")
 	public static void method3797(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(9) LinkedList local9 = Static159.aClass69ArrayArrayArray1[Static55.level][arg1][arg0];
+		@Pc(9) LinkList local9 = Static159.aClass69ArrayArrayArray1[Static55.level][arg1][arg0];
 		if (local9 == null) {
 			Static187.method3420(Static55.level, arg1, arg0);
 			return;
 		}
 		@Pc(28) int local28 = -99999999;
-		@Pc(30) ObjStackNode local30 = null;
-		@Pc(35) ObjStackNode local35;
-		for (local35 = (ObjStackNode) local9.method2289(); local35 != null; local35 = (ObjStackNode) local9.method2288()) {
+		@Pc(30) ClientObjNode local30 = null;
+		@Pc(35) ClientObjNode local35;
+		for (local35 = (ClientObjNode) local9.method2289(); local35 != null; local35 = (ClientObjNode) local9.method2288()) {
 			@Pc(44) ObjType local44 = Static71.method1439(local35.aClass8_Sub7_1.anInt5555);
 			@Pc(47) int local47 = local44.anInt2325;
 			if (local44.anInt2336 == 1) {
@@ -44,10 +44,10 @@ public final class Static220 {
 			return;
 		}
 		local9.method2283(local30);
-		@Pc(89) ObjStack local89 = null;
-		@Pc(91) ObjStack local91 = null;
-		for (local35 = (ObjStackNode) local9.method2289(); local35 != null; local35 = (ObjStackNode) local9.method2288()) {
-			@Pc(103) ObjStack local103 = local35.aClass8_Sub7_1;
+		@Pc(89) ClientObj local89 = null;
+		@Pc(91) ClientObj local91 = null;
+		for (local35 = (ClientObjNode) local9.method2289(); local35 != null; local35 = (ClientObjNode) local9.method2288()) {
+			@Pc(103) ClientObj local103 = local35.aClass8_Sub7_1;
 			if (local103.anInt5555 != local30.aClass8_Sub7_1.anInt5555) {
 				if (local89 == null) {
 					local89 = local103;
@@ -70,11 +70,11 @@ public final class Static220 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!rm", name = "a", descriptor = "(ZIIIILclient!ak;I)Lclient!ak;")
-	public static Model method3800(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) Model arg4, @OriginalArg(6) int arg5) {
+	public static ModelLit method3800(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) ModelLit arg4, @OriginalArg(6) int arg5) {
 		@Pc(4) long local4 = (long) arg2;
-		@Pc(10) Model local10 = (Model) Static110.aClass99_15.method3106(local4);
+		@Pc(10) ModelLit local10 = (ModelLit) Static110.aClass99_15.method3106(local4);
 		if (local10 == null) {
-			@Pc(22) RawModel local22 = Static77.method1686(Static267.aClass153_109, arg2);
+			@Pc(22) ModelUnlit local22 = Static77.method1686(Static267.aClass153_109, arg2);
 			if (local22 == null) {
 				return null;
 			}
@@ -91,16 +91,16 @@ public final class Static220 {
 		}
 		@Pc(94) int local94;
 		if (GlRenderer.enabled) {
-			@Pc(68) GlModel local68 = (GlModel) local10;
+			@Pc(68) GlModelLit local68 = (GlModelLit) local10;
 			if (arg5 != Static207.method3685(Static55.level, arg3 + local42, arg1 + local48) || arg5 != Static207.method3685(Static55.level, arg3 + local45, local51 + arg1)) {
 				for (local94 = 0; local94 < local68.anInt5295; local94++) {
 					local68.anIntArray465[local94] += Static207.method3685(Static55.level, local68.anIntArray461[local94] + arg3, local68.anIntArray466[local94] + arg1) - arg5;
 				}
 				local68.aClass127_4.aBoolean235 = false;
-				local68.aClass5_1.aBoolean3 = false;
+				local68.aGlBoundingBox_1.aBoolean3 = false;
 			}
 		} else {
-			@Pc(142) SoftwareModel local142 = (SoftwareModel) local10;
+			@Pc(142) SoftwareModelLit local142 = (SoftwareModelLit) local10;
 			if (arg5 != Static207.method3685(Static55.level, local42 + arg3, local48 + arg1) || arg5 != Static207.method3685(Static55.level, arg3 + local45, local51 + arg1)) {
 				for (local94 = 0; local94 < local142.anInt5788; local94++) {
 					local142.anIntArray527[local94] += Static207.method3685(Static55.level, arg3 + local142.anIntArray528[local94], local142.anIntArray531[local94] + arg1) - arg5;
@@ -116,7 +116,7 @@ public final class Static220 {
 		for (@Pc(1) int local1 = 0; local1 < Static126.anInt3114; local1++) {
 			for (@Pc(6) int local6 = 0; local6 < Static152.anInt3594; local6++) {
 				for (@Pc(11) int local11 = 0; local11 < Static99.anInt2550; local11++) {
-					@Pc(22) Tile local22 = Static130.aClass3_Sub5ArrayArrayArray1[local1][local6][local11];
+					@Pc(22) Square local22 = Static130.aClass3_Sub5ArrayArrayArray1[local1][local6][local11];
 					if (local22 != null) {
 						@Pc(27) Wall local27 = local22.aClass77_1;
 						if (local27 != null && local27.aClass8_5.method4543()) {
@@ -129,7 +129,7 @@ public final class Static220 {
 							local27.aClass8_5 = local27.aClass8_5.method4539();
 						}
 						for (@Pc(83) int local83 = 0; local83 < local22.anInt662; local83++) {
-							@Pc(92) Scenery local92 = local22.aClass31Array1[local83];
+							@Pc(92) Sprite local92 = local22.aClass31Array1[local83];
 							if (local92 != null && local92.aClass8_4.method4543()) {
 								Static69.method1544(local92.aClass8_4, local1, local6, local11, local92.anInt1713 + 1 - local92.anInt1701, local92.anInt1698 - local92.anInt1696 + 1);
 								local92.aClass8_4 = local92.aClass8_4.method4539();

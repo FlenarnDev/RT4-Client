@@ -10,7 +10,7 @@ public final class Rasteriser {
 	public static int anInt2469;
 
 	@OriginalMember(owner = "com.jagex3.client.client!hf", name = "e", descriptor = "Lclient!m;")
-	public static GlTextureProvider anInterface1_2;
+	public static TextureProvider anInterface1_2;
 
 	@OriginalMember(owner = "com.jagex3.client.client!hf", name = "k", descriptor = "I")
 	private static int anInt2470;
@@ -1207,7 +1207,7 @@ public final class Rasteriser {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!hf", name = "a", descriptor = "(Lclient!m;)V")
-	public static void method1914(@OriginalArg(0) GlTextureProvider arg0) {
+	public static void method1914(@OriginalArg(0) TextureProvider arg0) {
 		anInterface1_2 = arg0;
 	}
 

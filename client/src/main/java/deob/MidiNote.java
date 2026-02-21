@@ -4,7 +4,7 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("com.jagex3.client.client!mf")
-public final class MidiNote extends Node {
+public final class MidiNote extends Linkable {
 
 	@OriginalMember(owner = "com.jagex3.client.client!mf", name = "s", descriptor = "I")
 	public int anInt3763;
@@ -16,19 +16,19 @@ public final class MidiNote extends Node {
 	public int anInt3765;
 
 	@OriginalMember(owner = "com.jagex3.client.client!mf", name = "w", descriptor = "Lclient!wh;")
-	public Class162 aClass162_1;
+	public SynthEnvelopeSet aSynthEnvelopeSet_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!mf", name = "y", descriptor = "I")
 	public int anInt3767;
 
 	@OriginalMember(owner = "com.jagex3.client.client!mf", name = "z", descriptor = "Lclient!b;")
-	public SoundPcmStream aClass3_Sub3_Sub1_3;
+	public WaveStream aClass3_Sub3_Sub1_3;
 
 	@OriginalMember(owner = "com.jagex3.client.client!mf", name = "A", descriptor = "I")
 	public int anInt3768;
 
 	@OriginalMember(owner = "com.jagex3.client.client!mf", name = "B", descriptor = "Lclient!kj;")
-	public PcmSound aClass3_Sub16_Sub1_1;
+	public Wave aClass3_Sub16_Sub1_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!mf", name = "C", descriptor = "I")
 	public int anInt3769;
@@ -67,11 +67,11 @@ public final class MidiNote extends Node {
 	public int anInt3782;
 
 	@OriginalMember(owner = "com.jagex3.client.client!mf", name = "V", descriptor = "Lclient!jk;")
-	public MidiInstrument aClass3_Sub18_1;
+	public Patch aClass3_Sub18_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!mf", name = "d", descriptor = "(I)V")
 	public final void method2957() {
-		this.aClass162_1 = null;
+		this.aSynthEnvelopeSet_1 = null;
 		this.aClass3_Sub16_Sub1_1 = null;
 		this.aClass3_Sub3_Sub1_3 = null;
 		this.aClass3_Sub18_1 = null;

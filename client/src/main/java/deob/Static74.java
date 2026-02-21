@@ -59,8 +59,8 @@ public final class Static74 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!fn", name = "a", descriptor = "(ILclient!be;)V")
-	public static void method1625(@OriginalArg(1) Component arg0) {
-		@Pc(7) Component local7 = Static280.method4668(arg0);
+	public static void method1625(@OriginalArg(1) IfType arg0) {
+		@Pc(7) IfType local7 = Static280.method4668(arg0);
 		@Pc(19) int local19;
 		@Pc(17) int local17;
 		if (local7 == null) {
@@ -79,9 +79,9 @@ public final class Static74 {
 		if (arg0 == -1 || !Static245.load(arg0)) {
 			return;
 		}
-		@Pc(31) Component[] local31 = Static241.components[arg0];
+		@Pc(31) IfType[] local31 = Static241.components[arg0];
 		for (@Pc(33) int local33 = 0; local33 < local31.length; local33++) {
-			@Pc(41) Component local41 = local31[local33];
+			@Pc(41) IfType local41 = local31[local33];
 			if (local41.anObjectArray3 != null) {
 				@Pc(50) HookRequest local50 = new HookRequest();
 				local50.anObjectArray31 = local41.anObjectArray3;

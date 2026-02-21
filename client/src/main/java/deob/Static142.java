@@ -10,7 +10,7 @@ public final class Static142 {
 	public static int originZ;
 
 	@OriginalMember(owner = "com.jagex3.client.client!lc", name = "e", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_23 = new SoftLruHashTable(64);
+	public static final SoftLruCache aClass99_23 = new SoftLruCache(64);
 
 	@OriginalMember(owner = "com.jagex3.client.client!lc", name = "l", descriptor = "I")
 	public static int anInt3482 = -1;
@@ -29,7 +29,7 @@ public final class Static142 {
 		@Pc(359) int local359;
 		@Pc(639) int local639;
 		for (local5 = -1; local5 < Static267.anInt5774 + Static272.anInt5214; local5++) {
-			@Pc(17) PathingEntity local17;
+			@Pc(17) ClientEntity local17;
 			if (local5 == -1) {
 				local17 = Static173.self;
 			} else if (Static267.anInt5774 > local5) {
@@ -39,8 +39,8 @@ public final class Static142 {
 			}
 			if (local17 != null && local17.method2682()) {
 				@Pc(58) NpcType local58;
-				if (local17 instanceof Npc) {
-					local58 = ((Npc) local17).aClass96_1;
+				if (local17 instanceof ClientNPC) {
+					local58 = ((ClientNPC) local17).aClass96_1;
 					if (local58.anIntArray357 != null) {
 						local58 = local58.method2932();
 					}
@@ -50,7 +50,7 @@ public final class Static142 {
 				}
 				@Pc(161) int local161;
 				if (local5 >= Static267.anInt5774) {
-					local58 = ((Npc) local17).aClass96_1;
+					local58 = ((ClientNPC) local17).aClass96_1;
 					if (local58.anIntArray357 != null) {
 						local58 = local58.method2932();
 					}
@@ -65,9 +65,9 @@ public final class Static142 {
 							Static138.aClass3_Sub2_Sub1Array5[local58.anInt3732].method1423(arg2 + Static65.anInt1951 - 12, arg0 + -30 - -Static16.anInt548);
 						}
 					}
-					@Pc(308) Class102[] local308 = Static143.aClass102Array1;
+					@Pc(308) MapMarker[] local308 = Static143.aClass102Array1;
 					for (local310 = 0; local310 < local308.length; local310++) {
-						@Pc(322) Class102 local322 = local308[local310];
+						@Pc(322) MapMarker local322 = local308[local310];
 						if (local322 != null && local322.anInt4058 == 1 && local322.anInt4057 == Static33.anIntArray79[local5 - Static267.anInt5774] && Static83.anInt372 % 20 < 10) {
 							if (local58.anInt3730 == -1) {
 								local359 = local17.method2691() + 15;
@@ -82,7 +82,7 @@ public final class Static142 {
 					}
 				} else {
 					local74 = 30;
-					@Pc(77) Player local77 = (Player) local17;
+					@Pc(77) ClientPlayer local77 = (ClientPlayer) local17;
 					if (local77.anInt1669 != -1 || local77.anInt1649 != -1) {
 						Static180.method3326(arg4 >> 1, arg3, local17, arg5, local17.method2691() + 15, arg1 >> 1);
 						if (Static65.anInt1951 > -1) {
@@ -97,9 +97,9 @@ public final class Static142 {
 						}
 					}
 					if (local5 >= 0) {
-						@Pc(159) Class102[] local159 = Static143.aClass102Array1;
+						@Pc(159) MapMarker[] local159 = Static143.aClass102Array1;
 						for (local161 = 0; local161 < local159.length; local161++) {
-							@Pc(173) Class102 local173 = local159[local161];
+							@Pc(173) MapMarker local173 = local159[local161];
 							if (local173 != null && local173.anInt4058 == 10 && Static105.anIntArray256[local5] == local173.anInt4057) {
 								Static180.method3326(arg4 >> 1, arg3, local17, arg5, local17.method2691() + 15, arg1 >> 1);
 								if (Static65.anInt1951 > -1) {
@@ -109,7 +109,7 @@ public final class Static142 {
 						}
 					}
 				}
-				if (local17.aClass100_640 != null && (local5 >= Static267.anInt5774 || Static59.anInt1812 == 0 || Static59.anInt1812 == 3 || Static59.anInt1812 == 1 && Static98.method1965(((Player) local17).aClass100_364))) {
+				if (local17.aClass100_640 != null && (local5 >= Static267.anInt5774 || Static59.anInt1812 == 0 || Static59.anInt1812 == 3 || Static59.anInt1812 == 1 && Static98.method1965(((ClientPlayer) local17).aClass100_364))) {
 					Static180.method3326(arg4 >> 1, arg3, local17, arg5, local17.method2691(), arg1 >> 1);
 					if (Static65.anInt1951 > -1 && Static277.anInt5854 < Static191.anInt4506) {
 						Static191.anIntArray389[Static277.anInt5854] = Static280.aClass3_Sub2_Sub9_43.method2858(local17.aClass100_640) / 2;
@@ -124,11 +124,11 @@ public final class Static142 {
 					}
 				}
 				if (local17.anInt3378 > Static83.anInt372) {
-					@Pc(508) Sprite local508 = Static116.aClass3_Sub2_Sub1Array3[0];
-					@Pc(512) Sprite local512 = Static116.aClass3_Sub2_Sub1Array3[1];
-					if (local17 instanceof Npc) {
-						@Pc(518) Npc local518 = (Npc) local17;
-						@Pc(528) Sprite[] local528 = (Sprite[]) Static73.aClass99_10.method3106((long) local518.aClass96_1.anInt3736);
+					@Pc(508) AbstractPix32 local508 = Static116.aClass3_Sub2_Sub1Array3[0];
+					@Pc(512) AbstractPix32 local512 = Static116.aClass3_Sub2_Sub1Array3[1];
+					if (local17 instanceof ClientNPC) {
+						@Pc(518) ClientNPC local518 = (ClientNPC) local17;
+						@Pc(528) AbstractPix32[] local528 = (AbstractPix32[]) Static73.aClass99_10.method3106((long) local518.aClass96_1.anInt3736);
 						if (local528 == null) {
 							local528 = Static209.method3708(local518.aClass96_1.anInt3736, Static209.aClass153_86);
 							if (local528 != null) {
@@ -170,8 +170,8 @@ public final class Static142 {
 				}
 				for (local74 = 0; local74 < 4; local74++) {
 					if (local17.anIntArray319[local74] > Static83.anInt372) {
-						if (local17 instanceof Npc) {
-							@Pc(725) Npc local725 = (Npc) local17;
+						if (local17 instanceof ClientNPC) {
+							@Pc(725) ClientNPC local725 = (ClientNPC) local17;
 							@Pc(728) NpcType local728 = local725.aClass96_1;
 							if (local728.anInt3730 == -1) {
 								local265 = local17.method2691() / 2;

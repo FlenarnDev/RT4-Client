@@ -28,7 +28,7 @@ public final class Static214 {
 	public static int anInt5581 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!rg", name = "a", descriptor = "(Lclient!e;I)V")
-	public static void method4359(@OriginalArg(0) Player arg0) {
+	public static void method4359(@OriginalArg(0) ClientPlayer arg0) {
 		@Pc(12) AreaSound local12 = (AreaSound) Static93.aClass133_7.method3863(arg0.aClass100_364.encode37());
 		if (local12 == null) {
 			Static122.method2411(arg0.movementQueueZ[0], null, 0, null, arg0.movementQueueX[0], Static55.level, arg0);

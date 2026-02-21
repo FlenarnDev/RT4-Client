@@ -10,10 +10,10 @@ public final class Static172 {
 	public static Js5 aClass153_69;
 
 	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "e", descriptor = "Lclient!va;")
-	public static MidiPcmStream aClass3_Sub3_Sub4_2;
+	public static MidiPlayer aClass3_Sub3_Sub4_2;
 
 	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "f", descriptor = "Lclient!en;")
-	public static BufferedFile cacheData;
+	public static BufferedRandomAccessFile cacheData;
 
 	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "g", descriptor = "Lclient!ve;")
 	public static Js5 aClass153_70;
@@ -34,7 +34,7 @@ public final class Static172 {
 	public static boolean shiftClick = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "h", descriptor = "Lclient!ih;")
-	public static final LinkedList aClass69_97 = new LinkedList();
+	public static final LinkList aClass69_97 = new LinkList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "i", descriptor = "I")
 	public static int anInt4164 = 0;

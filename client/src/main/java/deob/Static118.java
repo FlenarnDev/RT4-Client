@@ -10,10 +10,10 @@ public final class Static118 {
 	public static byte[][][] aByteArrayArrayArray9;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jd", name = "i", descriptor = "Lclient!be;")
-	public static Component aClass13_15;
+	public static IfType aClass13_15;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jd", name = "c", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_16 = new SoftLruHashTable(100);
+	public static final SoftLruCache aClass99_16 = new SoftLruCache(100);
 
 	@OriginalMember(owner = "com.jagex3.client.client!jd", name = "a", descriptor = "(B)I")
 	public static int method2352() {
@@ -28,9 +28,9 @@ public final class Static118 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!jd", name = "a", descriptor = "(II[Lclient!be;)V")
-	public static void method2354(@OriginalArg(1) int arg0, @OriginalArg(2) Component[] arg1) {
+	public static void method2354(@OriginalArg(1) int arg0, @OriginalArg(2) IfType[] arg1) {
 		for (@Pc(7) int local7 = 0; local7 < arg1.length; local7++) {
-			@Pc(15) Component local15 = arg1[local7];
+			@Pc(15) IfType local15 = arg1[local7];
 			if (local15 != null && local15.layer == arg0 && (!local15.aBoolean32 || !Static36.method947(local15))) {
 				if (local15.anInt452 == 0) {
 					if (!local15.aBoolean32 && Static36.method947(local15) && local15 != Static180.aClass13_22) {
@@ -40,7 +40,7 @@ public final class Static118 {
 					if (local15.createdComponents != null) {
 						method2354(local15.anInt507, local15.createdComponents);
 					}
-					@Pc(73) Class3_Sub31 local73 = (Class3_Sub31) Static119.aClass133_9.method3863((long) local15.anInt507);
+					@Pc(73) SubInterface local73 = (SubInterface) Static119.aClass133_9.method3863((long) local15.anInt507);
 					if (local73 != null) {
 						Static96.method1949(local73.anInt5878);
 					}

@@ -14,7 +14,7 @@ public final class Static217 {
 	public static int anInt4901 = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!rj", name = "U", descriptor = "Lclient!ih;")
-	public static final LinkedList aClass69_116 = new LinkedList();
+	public static final LinkList aClass69_116 = new LinkList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!rj", name = "Z", descriptor = "[I")
 	public static final int[] anIntArray434 = new int[64];
@@ -23,7 +23,7 @@ public final class Static217 {
 	public static final JagString aClass100_916 = Static28.parse(":clanreq:");
 
 	@OriginalMember(owner = "com.jagex3.client.client!rj", name = "a", descriptor = "(IIILclient!e;I)V")
-	public static void method3767(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Player arg2, @OriginalArg(4) int arg3) {
+	public static void method3767(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) ClientPlayer arg2, @OriginalArg(4) int arg3) {
 		if (Static173.self == arg2 || Static231.anInt5204 >= 400) {
 			return;
 		}
@@ -116,7 +116,7 @@ public final class Static217 {
 		Static90.method1857();
 		Static139.aClass99_22.method3104();
 		if (!GlRenderer.enabled) {
-			((Js5GlTextureProvider) Rasteriser.anInterface1_2).method3247();
+			((WorldTextureProvider) Rasteriser.anInterface1_2).method3247();
 		}
 		Static105.aClass54_9.method1815();
 		Static213.aClass153_88.method4499();

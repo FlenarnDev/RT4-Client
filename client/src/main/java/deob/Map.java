@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("com.jagex3.client.client!bn")
-public final class Map extends SecondaryNode {
+public final class Map extends DoubleLinkable {
 
 	@OriginalMember(owner = "com.jagex3.client.client!bn", name = "K", descriptor = "I")
 	public int anInt758 = 0;
@@ -42,7 +42,7 @@ public final class Map extends SecondaryNode {
 	public final int anInt769;
 
 	@OriginalMember(owner = "com.jagex3.client.client!bn", name = "ab", descriptor = "Lclient!ih;")
-	public final LinkedList aClass69_23;
+	public final LinkList aClass69_23;
 
 	@OriginalMember(owner = "com.jagex3.client.client!bn", name = "<init>", descriptor = "(Lclient!na;Lclient!na;IIIZI)V")
 	public Map(@OriginalArg(0) JagString arg0, @OriginalArg(1) JagString arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5, @OriginalArg(6) int arg6) {
@@ -56,7 +56,7 @@ public final class Map extends SecondaryNode {
 		if (this.anInt772 == 255) {
 			this.anInt772 = 0;
 		}
-		this.aClass69_23 = new LinkedList();
+		this.aClass69_23 = new LinkList();
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!bn", name = "a", descriptor = "(IBI)Z")
@@ -64,7 +64,7 @@ public final class Map extends SecondaryNode {
 		if (this.anInt763 > arg1 || arg1 > this.anInt770 || arg0 < this.anInt771 || arg0 > this.anInt758) {
 			return false;
 		}
-		for (@Pc(33) Class3_Sub24 local33 = (Class3_Sub24) this.aClass69_23.method2289(); local33 != null; local33 = (Class3_Sub24) this.aClass69_23.method2288()) {
+		for (@Pc(33) MapChunk local33 = (MapChunk) this.aClass69_23.method2289(); local33 != null; local33 = (MapChunk) this.aClass69_23.method2288()) {
 			if (local33.method2760(arg0, arg1)) {
 				return true;
 			}
@@ -78,7 +78,7 @@ public final class Map extends SecondaryNode {
 		this.anInt770 = 0;
 		this.anInt758 = 0;
 		this.anInt763 = 12800;
-		for (@Pc(29) Class3_Sub24 local29 = (Class3_Sub24) this.aClass69_23.method2289(); local29 != null; local29 = (Class3_Sub24) this.aClass69_23.method2288()) {
+		for (@Pc(29) MapChunk local29 = (MapChunk) this.aClass69_23.method2289(); local29 != null; local29 = (MapChunk) this.aClass69_23.method2288()) {
 			if (local29.anInt3522 < this.anInt771) {
 				this.anInt771 = local29.anInt3522;
 			}

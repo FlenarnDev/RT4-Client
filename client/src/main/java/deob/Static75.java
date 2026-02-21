@@ -169,7 +169,7 @@ public final class Static75 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!g", name = "a", descriptor = "(III)Lclient!df;")
 	public static WallDecor method1633(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) Tile local7 = Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2];
+		@Pc(7) Square local7 = Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2];
 		if (local7 == null) {
 			return null;
 		} else {
@@ -206,13 +206,13 @@ public final class Static75 {
 			local19 = (local23 >> 4 & 0x7) + Static115.anInt2940;
 			local31 = Client.in.g2_alt2();
 			if (local19 >= 0 && local27 >= 0 && local19 < 104 && local27 < 104) {
-				@Pc(122) ObjStack local122 = new ObjStack();
+				@Pc(122) ClientObj local122 = new ClientObj();
 				local122.anInt5550 = local31;
 				local122.anInt5555 = local15;
 				if (Static159.aClass69ArrayArrayArray1[Static55.level][local19][local27] == null) {
-					Static159.aClass69ArrayArrayArray1[Static55.level][local19][local27] = new LinkedList();
+					Static159.aClass69ArrayArrayArray1[Static55.level][local19][local27] = new LinkList();
 				}
-				Static159.aClass69ArrayArrayArray1[Static55.level][local19][local27].method2282(new ObjStackNode(local122));
+				Static159.aClass69ArrayArrayArray1[Static55.level][local19][local27].method2282(new ClientObjNode(local122));
 				Static220.method3797(local27, local19);
 			}
 		} else {
@@ -222,7 +222,7 @@ public final class Static75 {
 			@Pc(247) int local247;
 			@Pc(224) int local224;
 			@Pc(236) int local236;
-			@Pc(317) ProjAnim local317;
+			@Pc(317) ClientProj local317;
 			if (Static164.anInt3985 == 121) {
 				local15 = Client.in.g1();
 				local23 = Static115.anInt2940 * 2 + (local15 >> 4 & 0xF);
@@ -245,9 +245,9 @@ public final class Static75 {
 					local27 = local27 * 64;
 					local19 = local19 * 64;
 					local23 = local23 * 64;
-					local317 = new ProjAnim(local45, Static55.level, local23, local19, Static207.method3685(Static55.level, local23, local19) - local218, Static83.anInt372 + local228, local232 + Static83.anInt372, local236, local247, local39, local224);
+					local317 = new ClientProj(local45, Static55.level, local23, local19, Static207.method3685(Static55.level, local23, local19) - local218, Static83.anInt372 + local228, local232 + Static83.anInt372, local236, local247, local39, local224);
 					local317.method3705(local31, Static83.anInt372 + local228, -local224 + Static207.method3685(Static55.level, local27, local31), local27);
-					Static217.aClass69_116.method2282(new ProjAnimNode(local317));
+					Static217.aClass69_116.method2282(new ClientProjNode(local317));
 				}
 			} else if (Static164.anInt3985 == 17) {
 				local15 = Client.in.g1();
@@ -259,8 +259,8 @@ public final class Static75 {
 				if (local23 >= 0 && local19 >= 0 && local23 < 104 && local19 < 104) {
 					local23 = local23 * 128 + 64;
 					local19 = local19 * 128 + 64;
-					@Pc(427) SpotAnim local427 = new SpotAnim(local27, Static55.level, local23, local19, Static207.method3685(Static55.level, local23, local19) - local31, local39, Static83.anInt372);
-					Static99.aClass69_64.method2282(new SpotAnimNode(local427));
+					@Pc(427) MapSpotAnim local427 = new MapSpotAnim(local27, Static55.level, local23, local19, Static207.method3685(Static55.level, local23, local19) - local31, local39, Static83.anInt372);
+					Static99.aClass69_64.method2282(new MapSpotAnimNode(local427));
 				}
 			} else if (Static164.anInt3985 == 179) {
 				local15 = Client.in.g1_alt1();
@@ -316,10 +316,10 @@ public final class Static75 {
 					local31 = Client.in.g2();
 					local39 = Client.in.g2();
 					if (local23 >= 0 && local19 >= 0 && local23 < 104 && local19 < 104) {
-						@Pc(710) LinkedList local710 = Static159.aClass69ArrayArrayArray1[Static55.level][local23][local19];
+						@Pc(710) LinkList local710 = Static159.aClass69ArrayArrayArray1[Static55.level][local23][local19];
 						if (local710 != null) {
-							for (@Pc(718) ObjStackNode local718 = (ObjStackNode) local710.method2289(); local718 != null; local718 = (ObjStackNode) local710.method2288()) {
-								@Pc(723) ObjStack local723 = local718.aClass8_Sub7_1;
+							for (@Pc(718) ClientObjNode local718 = (ClientObjNode) local710.method2289(); local718 != null; local718 = (ClientObjNode) local710.method2288()) {
+								@Pc(723) ClientObj local723 = local718.aClass8_Sub7_1;
 								if ((local27 & 0x7FFF) == local723.anInt5555 && local31 == local723.anInt5550) {
 									local723.anInt5550 = local39;
 									break;
@@ -336,13 +336,13 @@ public final class Static75 {
 					local31 = Client.in.g2_alt1();
 					local39 = Client.in.g2_alt1();
 					if (local19 >= 0 && local27 >= 0 && local19 < 104 && local27 < 104 && Static16.anInt549 != local15) {
-						@Pc(812) ObjStack local812 = new ObjStack();
+						@Pc(812) ClientObj local812 = new ClientObj();
 						local812.anInt5550 = local31;
 						local812.anInt5555 = local39;
 						if (Static159.aClass69ArrayArrayArray1[Static55.level][local19][local27] == null) {
-							Static159.aClass69ArrayArrayArray1[Static55.level][local19][local27] = new LinkedList();
+							Static159.aClass69ArrayArrayArray1[Static55.level][local19][local27] = new LinkList();
 						}
-						Static159.aClass69ArrayArrayArray1[Static55.level][local19][local27].method2282(new ObjStackNode(local812));
+						Static159.aClass69ArrayArrayArray1[Static55.level][local19][local27].method2282(new ClientObjNode(local812));
 						Static220.method3797(local27, local19);
 					}
 				} else if (Static164.anInt3985 == 16) {
@@ -367,9 +367,9 @@ public final class Static75 {
 						local19 = local19 * 128 + 64;
 						local23 = local23 * 128 + 64;
 						local27 = local27 * 128 + 64;
-						local317 = new ProjAnim(local45, Static55.level, local23, local19, Static207.method3685(Static55.level, local23, local19) - local218, local228 + Static83.anInt372, local232 + Static83.anInt372, local236, local247, local39, local224);
+						local317 = new ClientProj(local45, Static55.level, local23, local19, Static207.method3685(Static55.level, local23, local19) - local218, local228 + Static83.anInt372, local232 + Static83.anInt372, local236, local247, local39, local224);
 						local317.method3705(local31, Static83.anInt372 + local228, Static207.method3685(Static55.level, local27, local31) - local224, local27);
-						Static217.aClass69_116.method2282(new ProjAnimNode(local317));
+						Static217.aClass69_116.method2282(new ClientProjNode(local317));
 					}
 				} else if (Static164.anInt3985 == 104) {
 					local15 = Client.in.g1();
@@ -396,7 +396,7 @@ public final class Static75 {
 						local19 *= 64;
 						if (local39 != 0) {
 							@Pc(1194) int local1194;
-							@Pc(1198) PathingEntity local1198;
+							@Pc(1198) ClientEntity local1198;
 							@Pc(1184) int local1184;
 							@Pc(1188) int local1188;
 							if (local39 >= 0) {
@@ -420,8 +420,8 @@ public final class Static75 {
 									local1188 = local1232.anIntArrayArray7[local1194][0];
 									local224 -= local1232.anIntArrayArray7[local1194][1];
 									@Pc(1264) int local1264 = local1232.anIntArrayArray7[local1194][2];
-									@Pc(1269) int local1269 = MathUtils.anIntArray223[local1198.anInt3381];
-									@Pc(1274) int local1274 = MathUtils.anIntArray225[local1198.anInt3381];
+									@Pc(1269) int local1269 = Pix3D.anIntArray223[local1198.anInt3381];
+									@Pc(1274) int local1274 = Pix3D.anIntArray225[local1198.anInt3381];
 									@Pc(1284) int local1284 = local1188 * local1274 + local1264 * local1269 >> 16;
 									@Pc(1295) int local1295 = local1274 * local1264 - local1188 * local1269 >> 16;
 									local19 += local1295;
@@ -429,9 +429,9 @@ public final class Static75 {
 								}
 							}
 						}
-						@Pc(1331) ProjAnim local1331 = new ProjAnim(local218, Static55.level, local23, local19, Static207.method3685(Static55.level, local23, local19) - local224, local232 + Static83.anInt372, local236 + Static83.anInt372, local247, local633, local45, local228);
+						@Pc(1331) ClientProj local1331 = new ClientProj(local218, Static55.level, local23, local19, Static207.method3685(Static55.level, local23, local19) - local224, local232 + Static83.anInt372, local236 + Static83.anInt372, local247, local633, local45, local228);
 						local1331.method3705(local31, local232 + Static83.anInt372, -local228 + Static207.method3685(Static55.level, local27, local31), local27);
-						Static217.aClass69_116.method2282(new ProjAnimNode(local1331));
+						Static217.aClass69_116.method2282(new ClientProjNode(local1331));
 					}
 				} else if (Static164.anInt3985 == 97) {
 					local15 = Client.in.g1();
@@ -462,9 +462,9 @@ public final class Static75 {
 					local23 = (local15 >> 4 & 0x7) + Static115.anInt2940;
 					local27 = Client.in.g2();
 					if (local23 >= 0 && local19 >= 0 && local23 < 104 && local19 < 104) {
-						@Pc(1565) LinkedList local1565 = Static159.aClass69ArrayArrayArray1[Static55.level][local23][local19];
+						@Pc(1565) LinkList local1565 = Static159.aClass69ArrayArrayArray1[Static55.level][local23][local19];
 						if (local1565 != null) {
-							for (@Pc(1572) ObjStackNode local1572 = (ObjStackNode) local1565.method2289(); local1572 != null; local1572 = (ObjStackNode) local1565.method2288()) {
+							for (@Pc(1572) ClientObjNode local1572 = (ClientObjNode) local1565.method2289(); local1572 != null; local1572 = (ClientObjNode) local1565.method2288()) {
 								if (local1572.aClass8_Sub7_1.anInt5555 == (local27 & 0x7FFF)) {
 									local1572.method4658();
 									break;

@@ -15,7 +15,7 @@ public final class ColorImageCache {
 	private int anInt4471 = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!pf", name = "p", descriptor = "Lclient!ih;")
-	private LinkedList aClass69_103 = new LinkedList();
+	private LinkList aClass69_103 = new LinkList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!pf", name = "t", descriptor = "Z")
 	public boolean aBoolean221 = false;

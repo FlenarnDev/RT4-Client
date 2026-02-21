@@ -24,7 +24,7 @@ public final class Static273 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!we", name = "a", descriptor = "(BILclient!be;)I")
-	public static int method3212(@OriginalArg(1) int arg0, @OriginalArg(2) Component arg1) {
+	public static int method3212(@OriginalArg(1) int arg0, @OriginalArg(2) IfType arg1) {
 		if (arg1.anIntArrayArray4 == null || arg0 >= arg1.anIntArrayArray4.length) {
 			return -2;
 		}
@@ -59,7 +59,7 @@ public final class Static273 {
 					local41 = Static227.anIntArray446[local33[local39++]];
 				}
 				@Pc(124) int local124;
-				@Pc(135) Component local135;
+				@Pc(135) IfType local135;
 				@Pc(140) int local140;
 				@Pc(152) int local152;
 				if (local46 == 4) {
@@ -168,7 +168,7 @@ public final class Static273 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!we", name = "b", descriptor = "(BI)V")
 	public static void method3214(@OriginalArg(1) int arg0) {
-		for (@Pc(11) Node local11 = Static210.aClass133_21.method3859(); local11 != null; local11 = Static210.aClass133_21.method3861()) {
+		for (@Pc(11) Linkable local11 = Static210.aClass133_21.method3859(); local11 != null; local11 = Static210.aClass133_21.method3861()) {
 			if ((local11.aLong192 >> 48 & 0xFFFFL) == (long) arg0) {
 				local11.method4658();
 			}

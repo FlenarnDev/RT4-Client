@@ -13,7 +13,7 @@ public final class Static279 {
 	public static int anInt5880;
 
 	@OriginalMember(owner = "com.jagex3.client.client!wk", name = "t", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_38 = new SoftLruHashTable(64);
+	public static final SoftLruCache aClass99_38 = new SoftLruCache(64);
 
 	@OriginalMember(owner = "com.jagex3.client.client!wk", name = "u", descriptor = "Lclient!na;")
 	public static final JagString aClass100_1106 = Static28.parse("::clientjs5drop");

@@ -38,8 +38,8 @@ public final class Static81 {
 			return;
 		}
 		if (arg0 != -1) {
-			@Pc(24) Class63 local24 = Static202.method3660(arg0);
-			@Pc(28) SoftwareSprite local28 = local24.method2246();
+			@Pc(24) CursorType local24 = Static202.method3660(arg0);
+			@Pc(28) Pix32 local28 = local24.method2246();
 			if (local28 == null) {
 				arg0 = -1;
 			} else {
@@ -78,9 +78,9 @@ public final class Static81 {
 		if (!Static245.load(arg0)) {
 			return;
 		}
-		@Pc(15) Component[] local15 = Static241.components[arg0];
+		@Pc(15) IfType[] local15 = Static241.components[arg0];
 		for (@Pc(17) int local17 = 0; local17 < local15.length; local17++) {
-			@Pc(29) Component local29 = local15[local17];
+			@Pc(29) IfType local29 = local15[local17];
 			if (local29 != null) {
 				local29.anInt496 = 1;
 				local29.anInt510 = 0;
@@ -298,7 +298,7 @@ public final class Static81 {
 				Static226.varcstrs[i] = change.stringArg;
 				Static233.updatedVarcstrs[Static72.updatedVarcstrsWriterIndex++ & 0x1F] = i;
 			} else {
-				@Pc(773) Component component;
+				@Pc(773) IfType component;
 				if (samples == 3) {
 					component = Static5.getComponent(i);
 					if (!change.stringArg.method3108(component.aClass100_84)) {
@@ -330,7 +330,7 @@ public final class Static81 {
 					x = y >> 10 & 0x1F;
 					dx = y & 0x1F;
 					modelId = y >> 5 & 0x1F;
-					@Pc(1189) Component local1189 = Static5.getComponent(i);
+					@Pc(1189) IfType local1189 = Static5.getComponent(i);
 					dy = (dx << 3) + (modelId << 11) + (x << 19);
 					if (dy != local1189.anInt474) {
 						local1189.anInt474 = dy;
@@ -419,7 +419,7 @@ public final class Static81 {
 				Static257.aClass13_7 = null;
 			}
 		}
-		@Pc(1361) Component local1361;
+		@Pc(1361) IfType local1361;
 		if (Static118.aClass13_15 != null) {
 			Static43.method1143(Static118.aClass13_15);
 			if (Static149.anInt3554 + 5 < Static215.anInt4873 || Static215.anInt4873 < Static149.anInt3554 - 5 || Static206.anInt4773 + 5 < Static223.anInt5032 || Static206.anInt4773 - 5 > Static223.anInt5032) {
@@ -481,7 +481,7 @@ public final class Static81 {
 		Static182.keyQueueSize = 0;
 		local1361 = Static180.aClass13_22;
 		Static180.aClass13_22 = null;
-		@Pc(1508) Component local1508 = Static43.aClass13_11;
+		@Pc(1508) IfType local1508 = Static43.aClass13_11;
 		Static43.aClass13_11 = null;
 		while (Static25.nextKey() && Static182.keyQueueSize < 128) {
 			Static227.keyCodes[Static182.keyQueueSize] = Static102.keyCode;
@@ -496,8 +496,8 @@ public final class Static81 {
 		Static119.transmitTimer++;
 		while (true) {
 			// todo: this is actually split up into low/medium/high
-			@Pc(1569) Component highPriorityComponent;
-			@Pc(1560) Component highPrioritySource;
+			@Pc(1569) IfType highPriorityComponent;
+			@Pc(1560) IfType highPrioritySource;
 			@Pc(1555) HookRequest highPriorityRequest;
 			do {
 				highPriorityRequest = (HookRequest) Static4.aClass69_2.method2287();

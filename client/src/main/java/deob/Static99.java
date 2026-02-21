@@ -11,7 +11,7 @@ public final class Static99 {
 	public static int[] anIntArray239;
 
 	@OriginalMember(owner = "com.jagex3.client.client!hk", name = "W", descriptor = "Lclient!ih;")
-	public static final LinkedList aClass69_64 = new LinkedList();
+	public static final LinkList aClass69_64 = new LinkList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!hk", name = "db", descriptor = "Lclient!na;")
 	public static final JagString aClass100_529 = Static28.parse("::wm3");

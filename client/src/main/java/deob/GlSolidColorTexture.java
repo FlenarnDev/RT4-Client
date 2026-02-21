@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("com.jagex3.client.client!sd")
-public final class GlSolidColorTexture extends SecondaryNode {
+public final class GlSolidColorTexture extends DoubleLinkable {
 
 	@OriginalMember(owner = "com.jagex3.client.client!sd", name = "U", descriptor = "I")
 	private int anInt5065 = 0;

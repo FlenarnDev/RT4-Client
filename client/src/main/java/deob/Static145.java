@@ -14,7 +14,7 @@ public final class Static145 {
 	public static final int[][] anIntArrayArray25 = new int[104][104];
 
 	@OriginalMember(owner = "com.jagex3.client.client!lf", name = "c", descriptor = "Lclient!ih;")
-	public static final LinkedList aClass69_84 = new LinkedList();
+	public static final LinkList aClass69_84 = new LinkList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!lf", name = "d", descriptor = "[I")
 	public static final int[] anIntArray331 = new int[1000];
@@ -65,7 +65,7 @@ public final class Static145 {
 		Static69.method1545(null);
 		Static103.anIntArray254 = new int[32768];
 		Static216.anIntArray188 = new int[32768];
-		Static167.aClass3_Sub2_Sub1_Sub1_3 = new SoftwareSprite(128, 254);
+		Static167.aClass3_Sub2_Sub1_Sub1_3 = new Pix32(128, 254);
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!lf", name = "b", descriptor = "(I)V")

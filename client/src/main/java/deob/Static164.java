@@ -153,7 +153,7 @@ public final class Static164 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!na", name = "a", descriptor = "(Lclient!ba;Lclient!ba;IIIZZ)I")
-	public static int method3115(@OriginalArg(0) World arg0, @OriginalArg(1) World arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) boolean arg4, @OriginalArg(6) boolean arg5) {
+	public static int method3115(@OriginalArg(0) GWCWorld arg0, @OriginalArg(1) GWCWorld arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) boolean arg4, @OriginalArg(6) boolean arg5) {
 		@Pc(8) int local8 = Static270.method4595(arg1, arg3, arg0, arg5);
 		if (local8 != 0) {
 			return arg5 ? -local8 : local8;
@@ -166,17 +166,17 @@ public final class Static164 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!na", name = "a", descriptor = "(Lclient!ve;IZ)Lclient!mm;")
-	public static SoftwareSprite method3117(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
+	public static Pix32 method3117(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
 		return Static254.method4346(arg0, arg1) ? Static196.method3537() : null;
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!na", name = "a", descriptor = "(IZILclient!ve;)Lclient!ek;")
-	public static SoftwareIndexedSprite method3119(@OriginalArg(2) int arg0, @OriginalArg(3) Js5 arg1) {
+	public static SoftwarePix8 method3119(@OriginalArg(2) int arg0, @OriginalArg(3) Js5 arg1) {
 		return Static234.method4016(arg1, 0, arg0) ? Static134.method2619() : null;
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!na", name = "a", descriptor = "(IBZIZIIZ)Lclient!qf;")
-	public static Sprite method3150(@OriginalArg(0) int arg0, @OriginalArg(2) boolean arg1, @OriginalArg(3) int arg2, @OriginalArg(4) boolean arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) boolean arg6) {
+	public static AbstractPix32 method3150(@OriginalArg(0) int arg0, @OriginalArg(2) boolean arg1, @OriginalArg(3) int arg2, @OriginalArg(4) boolean arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) boolean arg6) {
 		@Pc(5) ObjType local5 = Static71.method1439(arg2);
 		if (arg5 > 1 && local5.anIntArray214 != null) {
 			@Pc(15) int local15 = -1;
@@ -189,18 +189,18 @@ public final class Static164 {
 				local5 = Static71.method1439(local15);
 			}
 		}
-		@Pc(60) SoftwareModel local60 = local5.method1834();
+		@Pc(60) SoftwareModelLit local60 = local5.method1834();
 		if (local60 == null) {
 			return null;
 		}
-		@Pc(71) SoftwareSprite local71 = null;
+		@Pc(71) Pix32 local71 = null;
 		if (local5.anInt2358 != -1) {
-			local71 = (SoftwareSprite) method3150(0, true, local5.anInt2356, false, 1, 10, true);
+			local71 = (Pix32) method3150(0, true, local5.anInt2356, false, 1, 10, true);
 			if (local71 == null) {
 				return null;
 			}
 		} else if (local5.anInt2334 != -1) {
-			local71 = (SoftwareSprite) method3150(arg0, true, local5.anInt2363, false, arg4, arg5, false);
+			local71 = (Pix32) method3150(arg0, true, local5.anInt2363, false, arg4, arg5, false);
 			if (local71 == null) {
 				return null;
 			}
@@ -210,7 +210,7 @@ public final class Static164 {
 		@Pc(122) int local122 = Static129.anInt3146;
 		@Pc(125) int[] local125 = new int[4];
 		Static129.method2497(local125);
-		@Pc(133) SoftwareSprite local133 = new SoftwareSprite(36, 32);
+		@Pc(133) Pix32 local133 = new Pix32(36, 32);
 		Static129.method2491(local133.anIntArray20, 36, 32);
 		Rasteriser.method1908();
 		Rasteriser.method1919(16, 16);
@@ -221,8 +221,8 @@ public final class Static164 {
 		} else if (arg4 == 2) {
 			local145 = (int) ((double) local145 * 1.04D);
 		}
-		@Pc(176) int local176 = MathUtils.anIntArray225[local5.anInt2353] * local145 >> 16;
-		@Pc(185) int local185 = MathUtils.anIntArray223[local5.anInt2353] * local145 >> 16;
+		@Pc(176) int local176 = Pix3D.anIntArray225[local5.anInt2353] * local145 >> 16;
+		@Pc(185) int local185 = Pix3D.anIntArray223[local5.anInt2353] * local145 >> 16;
 		local60.method4571(local5.anInt2369, local5.anInt2339, local5.anInt2353, local5.anInt2359, local185 + local5.anInt2319 - local60.method4549() / 2, local5.anInt2319 + local176, -1L);
 		if (arg4 >= 1) {
 			local133.method303(1);
@@ -248,6 +248,6 @@ public final class Static164 {
 		Static129.method2488(local125);
 		Rasteriser.method1908();
 		Rasteriser.aBoolean136 = true;
-		return GlRenderer.enabled && !arg1 ? new GlSprite(local133) : local133;
+		return GlRenderer.enabled && !arg1 ? new GlPix32(local133) : local133;
 	}
 }

@@ -17,7 +17,7 @@ public final class Static26 {
 	public static boolean focus;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ca", name = "X", descriptor = "Lclient!ih;")
-	public static LinkedList aClass69_27 = new LinkedList();
+	public static LinkList aClass69_27 = new LinkList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!ca", name = "cb", descriptor = "Lclient!na;")
 	public static final JagString aClass100_160 = Static165.method3165();

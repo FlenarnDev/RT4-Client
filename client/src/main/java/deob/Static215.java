@@ -12,13 +12,13 @@ public final class Static215 {
 	public static int anInt4866;
 
 	@OriginalMember(owner = "com.jagex3.client.client!rh", name = "h", descriptor = "Lclient!rk;")
-	public static Font aClass3_Sub2_Sub9_32;
+	public static PixFontGeneric aClass3_Sub2_Sub9_32;
 
 	@OriginalMember(owner = "com.jagex3.client.client!rh", name = "j", descriptor = "Lclient!com.jagex3.client.client;")
 	public static Client aClient1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!rh", name = "e", descriptor = "Lclient!ce;")
-	public static final SecondaryLinkedList aClass16_9 = new SecondaryLinkedList();
+	public static final secondaryLinkList aClass16_9 = new secondaryLinkList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!rh", name = "g", descriptor = "I")
 	public static final int anInt4868 = -1;

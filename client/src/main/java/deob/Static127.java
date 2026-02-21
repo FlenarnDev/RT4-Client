@@ -30,7 +30,7 @@ public final class Static127 {
 	public static int anInt3132 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!k", name = "a", descriptor = "(IIBLclient!ve;Lclient!ve;)Lclient!rk;")
-	public static Font method2462(@OriginalArg(1) int arg0, @OriginalArg(3) Js5 arg1, @OriginalArg(4) Js5 arg2) {
+	public static PixFontGeneric method2462(@OriginalArg(1) int arg0, @OriginalArg(3) Js5 arg1, @OriginalArg(4) Js5 arg2) {
 		return Static234.method4016(arg1, 0, arg0) ? Static29.method799(arg2.method4495(arg0, 0)) : null;
 	}
 
@@ -58,9 +58,9 @@ public final class Static127 {
 		Static158.aClass3_Sub2_Sub4_3 = Static29.method803(Static80.anInt4701 * 8, Static52.anInt1695 * 8);
 		@Pc(81) int local81 = Static142.originZ - local53;
 		@Pc(86) int local86 = Static225.originX - local55;
-		Static235.aClass134_2 = null;
+		Static235.aMapElementList_2 = null;
 		@Pc(96) int local96;
-		@Pc(103) Npc local103;
+		@Pc(103) ClientNPC local103;
 		@Pc(109) int local109;
 		if (arg4) {
 			Static272.anInt5214 = 0;
@@ -95,7 +95,7 @@ public final class Static127 {
 			}
 		}
 		for (local96 = 0; local96 < 2048; local96++) {
-			@Pc(265) Player local265 = Static159.aClass8_Sub4_Sub1Array1[local96];
+			@Pc(265) ClientPlayer local265 = Static159.aClass8_Sub4_Sub1Array1[local96];
 			if (local265 != null) {
 				for (local109 = 0; local109 < 10; local109++) {
 					local265.movementQueueX[local109] -= local86;
@@ -136,7 +136,7 @@ public final class Static127 {
 				}
 			}
 		}
-		for (@Pc(451) Class3_Sub7 local451 = (Class3_Sub7) Static26.aClass69_27.method2289(); local451 != null; local451 = (Class3_Sub7) Static26.aClass69_27.method2288()) {
+		for (@Pc(451) LocChange local451 = (LocChange) Static26.aClass69_27.method2289(); local451 != null; local451 = (LocChange) Static26.aClass69_27.method2288()) {
 			local451.anInt916 -= local81;
 			local451.anInt928 -= local86;
 			if (local451.anInt928 < 0 || local451.anInt916 < 0 || local451.anInt928 >= 104 || local451.anInt916 >= 104) {
@@ -189,7 +189,7 @@ public final class Static127 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!k", name = "a", descriptor = "(Lclient!be;Lclient!na;I)Lclient!na;")
-	public static JagString method2465(@OriginalArg(0) Component arg0, @OriginalArg(1) JagString arg1) {
+	public static JagString method2465(@OriginalArg(0) IfType arg0, @OriginalArg(1) JagString arg1) {
 		if (arg1.indexOf(Static49.aClass100_352) == -1) {
 			return arg1;
 		}
@@ -287,15 +287,15 @@ public final class Static127 {
 				Static175.method3279();
 			}
 			if (arg0.method3111(Static279.aClass100_1106)) {
-				Static107.js5NetQueue.method2329();
+				Static107.js5Net.method2329();
 			}
 			if (arg0.method3111(Static185.aClass100_823)) {
-				Static107.js5NetQueue.method2319();
+				Static107.js5Net.method2319();
 			}
 			if (arg0.method3111(Static165.aClass100_775)) {
 				GameShell.signLink.method5110();
 				Client.loginStream.method2833();
-				Static107.js5NetQueue.method2323();
+				Static107.js5Net.method2323();
 			}
 			if (arg0.method3111(Static114.aClass100_1100)) {
 				Static35.aBoolean66 = true;

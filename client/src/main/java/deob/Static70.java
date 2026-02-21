@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static70 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!fi", name = "j", descriptor = "Lclient!qf;")
-	public static Sprite aClass3_Sub2_Sub1_2;
+	public static AbstractPix32 aClass3_Sub2_Sub1_2;
 
 	@OriginalMember(owner = "com.jagex3.client.client!fi", name = "m", descriptor = "[[[B")
 	public static byte[][][] aByteArrayArrayArray7;

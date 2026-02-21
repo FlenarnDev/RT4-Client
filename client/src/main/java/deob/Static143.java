@@ -12,7 +12,7 @@ public final class Static143 {
 	public static final int[] anIntArray329 = new int[] { 2, 2, 4, 0, 1, 8, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0 };
 
 	@OriginalMember(owner = "com.jagex3.client.client!ld", name = "b", descriptor = "[Lclient!nc;")
-	public static final Class102[] aClass102Array1 = new Class102[4];
+	public static final MapMarker[] aClass102Array1 = new MapMarker[4];
 
 	@OriginalMember(owner = "com.jagex3.client.client!ld", name = "c", descriptor = "I")
 	public static int anInt3484 = -1;

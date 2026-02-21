@@ -15,7 +15,7 @@ public final class Static240 {
 	public static int anInt5334;
 
 	@OriginalMember(owner = "com.jagex3.client.client!tg", name = "d", descriptor = "[Lclient!qf;")
-	public static Sprite[] aClass3_Sub2_Sub1Array10;
+	public static AbstractPix32[] aClass3_Sub2_Sub1Array10;
 
 	@OriginalMember(owner = "com.jagex3.client.client!tg", name = "f", descriptor = "Z")
 	public static boolean aBoolean276;

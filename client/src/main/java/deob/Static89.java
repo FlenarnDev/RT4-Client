@@ -14,7 +14,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static89 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!ha", name = "i", descriptor = "Lclient!qf;")
-	public static Sprite aClass3_Sub2_Sub1_5;
+	public static AbstractPix32 aClass3_Sub2_Sub1_5;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ha", name = "k", descriptor = "[[Z")
 	public static boolean[][] aBooleanArrayArray3;
@@ -26,7 +26,7 @@ public final class Static89 {
 	public static int anInt2385 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ha", name = "p", descriptor = "Lclient!gn;")
-	public static final LruHashTable aClass54_8 = new LruHashTable(64);
+	public static final LruCache aClass54_8 = new LruCache(64);
 
 	@OriginalMember(owner = "com.jagex3.client.client!ha", name = "q", descriptor = "I")
 	public static int anInt2388 = 0;
@@ -73,8 +73,8 @@ public final class Static89 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ha", name = "a", descriptor = "(ILclient!be;)Lclient!be;")
-	public static Component method1836(@OriginalArg(1) Component arg0) {
-		@Pc(12) Component local12 = Static36.method938(arg0);
+	public static IfType method1836(@OriginalArg(1) IfType arg0) {
+		@Pc(12) IfType local12 = Static36.method938(arg0);
 		if (local12 == null) {
 			local12 = arg0.aClass13_5;
 		}
@@ -83,7 +83,7 @@ public final class Static89 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!ha", name = "a", descriptor = "(II)[B")
 	public static byte[] method1837(@OriginalArg(1) int arg0) {
-		@Pc(10) ByteArrayNode local10 = (ByteArrayNode) Static53.aClass54_5.method1806((long) arg0);
+		@Pc(10) ByteArrayNode2 local10 = (ByteArrayNode2) Static53.aClass54_5.method1806((long) arg0);
 		if (local10 == null) {
 			@Pc(24) Random local24 = new Random((long) arg0);
 			@Pc(27) byte[] local27 = new byte[512];
@@ -98,7 +98,7 @@ public final class Static89 {
 				local27[local58] = local27[local53];
 				local27[local53] = local27[511 - local29] = local62;
 			}
-			local10 = new ByteArrayNode(local27);
+			local10 = new ByteArrayNode2(local27);
 			Static53.aClass54_5.method1811(local10, (long) arg0);
 		}
 		return local10.aByteArray37;

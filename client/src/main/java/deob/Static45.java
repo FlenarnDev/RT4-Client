@@ -11,13 +11,13 @@ public final class Static45 {
 	public static final JagString[] aClass100Array53 = new JagString[5];
 
 	@OriginalMember(owner = "com.jagex3.client.client!di", name = "F", descriptor = "Lclient!bf;")
-	public static final ServerActiveProperties aClass3_Sub4_2 = new ServerActiveProperties(0, -1);
+	public static final ServerActive aClass3_Sub4_2 = new ServerActive(0, -1);
 
 	@OriginalMember(owner = "com.jagex3.client.client!di", name = "H", descriptor = "Z")
 	public static boolean aBoolean84 = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!di", name = "I", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_6 = new SoftLruHashTable(32);
+	public static final SoftLruCache aClass99_6 = new SoftLruCache(32);
 
 	@OriginalMember(owner = "com.jagex3.client.client!di", name = "a", descriptor = "([Lclient!mj;ZI)V")
 	public static void method1169(@OriginalArg(0) CollisionMap[] arg0, @OriginalArg(1) boolean arg1) {
@@ -331,15 +331,15 @@ public final class Static45 {
 				local200 = 1;
 				while (true) {
 					if (local200 > 103) {
-						@Pc(2025) Class3_Sub14[] local2025;
+						@Pc(2025) GlSquare[] local2025;
 						if (arg1) {
 							local2025 = Static193.method3501(Static12.aByteArrayArrayArray2, Static163.aByteArrayArrayArray11[local152], Static253.aByteArrayArrayArray16[local152], local146, local1896, Static62.anIntArrayArray11, Static240.aByteArrayArrayArray14[local152], Static4.aByteArrayArrayArray1[local152], local1888, local152, local1900, local142, Static83.anIntArrayArrayArray4[local152], Static107.anIntArrayArrayArray10[0]);
 							Static110.method2280(local152, local2025);
 							break;
 						}
 						local2025 = Static193.method3501(Static12.aByteArrayArrayArray2, Static163.aByteArrayArrayArray11[local152], Static253.aByteArrayArrayArray16[local152], local146, local1896, null, Static240.aByteArrayArrayArray14[local152], Static4.aByteArrayArrayArray1[local152], local1888, local152, local1900, local142, Static83.anIntArrayArrayArray4[local152], null);
-						@Pc(2049) Class3_Sub14[] local2049 = Static1.method2(local1896, local1888, Static83.anIntArrayArrayArray4[local152], local152, local1900, Static4.aByteArrayArrayArray1[local152], local146, Static163.aByteArrayArrayArray11[local152], Static253.aByteArrayArrayArray16[local152], Static240.aByteArrayArrayArray14[local152], Static12.aByteArrayArrayArray2);
-						@Pc(2057) Class3_Sub14[] local2057 = new Class3_Sub14[local2025.length + local2049.length];
+						@Pc(2049) GlSquare[] local2049 = Static1.method2(local1896, local1888, Static83.anIntArrayArrayArray4[local152], local152, local1900, Static4.aByteArrayArrayArray1[local152], local146, Static163.aByteArrayArrayArray11[local152], Static253.aByteArrayArrayArray16[local152], Static240.aByteArrayArrayArray14[local152], Static12.aByteArrayArrayArray2);
+						@Pc(2057) GlSquare[] local2057 = new GlSquare[local2025.length + local2049.length];
 						for (local349 = 0; local349 < local2025.length; local349++) {
 							local2057[local349] = local2025[local349];
 						}

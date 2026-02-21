@@ -14,13 +14,13 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static203 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!qh", name = "a", descriptor = "Lclient!se;")
-	public static Class134 aClass134_1;
+	public static MapElementList aMapElementList_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!qh", name = "d", descriptor = "Lclient!fd;")
 	public static WorldMapFont aClass41_8;
 
 	@OriginalMember(owner = "com.jagex3.client.client!qh", name = "e", descriptor = "[Lclient!ee;")
-	public static Class32[] aClass32Array1;
+	public static WorldInfo[] aWorldInfoArray1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!qh", name = "g", descriptor = "Lclient!ve;")
 	public static Js5 aClass153_85;

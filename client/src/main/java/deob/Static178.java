@@ -24,7 +24,7 @@ public final class Static178 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!od", name = "a", descriptor = "(ILclient!na;)V")
 	public static void method3318(@OriginalArg(1) JagString arg0) {
-		if (Static199.aClass3_Sub22Array1 == null) {
+		if (Static199.aFriendChatUserArray1 == null) {
 			return;
 		}
 		@Pc(22) long local22 = arg0.encode37();
@@ -32,18 +32,18 @@ public final class Static178 {
 		if (local22 == 0L) {
 			return;
 		}
-		while (Static199.aClass3_Sub22Array1.length > local24 && Static199.aClass3_Sub22Array1[local24].aLong192 != local22) {
+		while (Static199.aFriendChatUserArray1.length > local24 && Static199.aFriendChatUserArray1[local24].aLong192 != local22) {
 			local24++;
 		}
-		if (local24 < Static199.aClass3_Sub22Array1.length && Static199.aClass3_Sub22Array1[local24] != null) {
+		if (local24 < Static199.aFriendChatUserArray1.length && Static199.aFriendChatUserArray1[local24] != null) {
 			Client.out.p1isaac(162);
-			Client.out.p8(Static199.aClass3_Sub22Array1[local24].aLong192);
+			Client.out.p8(Static199.aFriendChatUserArray1[local24].aLong192);
 		}
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!od", name = "a", descriptor = "(IZII)I")
 	public static int method3319(@OriginalArg(1) boolean arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(19) Inv local19 = (Inv) Static20.aClass133_2.method3863((long) arg1);
+		@Pc(19) ClientInvCache local19 = (ClientInvCache) Static20.aClass133_2.method3863((long) arg1);
 		if (local19 == null) {
 			return 0;
 		}

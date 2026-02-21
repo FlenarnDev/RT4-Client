@@ -7,11 +7,11 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static110 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!ih", name = "l", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_15 = new SoftLruHashTable(4);
+	public static final SoftLruCache aClass99_15 = new SoftLruCache(4);
 
 	@OriginalMember(owner = "com.jagex3.client.client!ih", name = "a", descriptor = "(III)Lclient!jh;")
 	public static Wall method2276(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) Tile local7 = Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2];
+		@Pc(7) Square local7 = Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2];
 		if (local7 == null) {
 			return null;
 		} else {
@@ -22,13 +22,13 @@ public final class Static110 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ih", name = "a", descriptor = "(II)Lclient!hn;")
-	public static Class3_Sub2_Sub12 method2277(@OriginalArg(1) int arg0) {
-		@Pc(6) Class3_Sub2_Sub12 local6 = (Class3_Sub2_Sub12) Static272.aClass54_14.method1806((long) arg0);
+	public static ParamType method2277(@OriginalArg(1) int arg0) {
+		@Pc(6) ParamType local6 = (ParamType) Static272.aClass54_14.method1806((long) arg0);
 		if (local6 != null) {
 			return local6;
 		}
 		@Pc(30) byte[] local30 = Static39.aClass153_23.method4495(11, arg0);
-		local6 = new Class3_Sub2_Sub12();
+		local6 = new ParamType();
 		if (local30 != null) {
 			local6.method2076(new Packet(local30));
 		}
@@ -37,8 +37,8 @@ public final class Static110 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ih", name = "a", descriptor = "(I[Lclient!hg;)V")
-	public static void method2280(@OriginalArg(0) int arg0, @OriginalArg(1) Class3_Sub14[] arg1) {
-		Static182.aClass3_Sub14ArrayArray2[arg0] = arg1;
+	public static void method2280(@OriginalArg(0) int arg0, @OriginalArg(1) GlSquare[] arg1) {
+		Static182.aGlSquareArrayArray2[arg0] = arg1;
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ih", name = "a", descriptor = "(IIIII)V")

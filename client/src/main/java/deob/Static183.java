@@ -16,7 +16,7 @@ public final class Static183 {
 	public static long prevClickTime = 0L;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ok", name = "a", descriptor = "(Lclient!ab;Lclient!ab;I)V")
-	public static void method3331(@OriginalArg(0) Node arg0, @OriginalArg(1) Node arg1) {
+	public static void method3331(@OriginalArg(0) Linkable arg0, @OriginalArg(1) Linkable arg1) {
 		if (arg0.aClass3_223 != null) {
 			arg0.method4658();
 		}
@@ -27,8 +27,8 @@ public final class Static183 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ok", name = "a", descriptor = "(IIB)Lclient!ce;")
-	public static SecondaryLinkedList method3333(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(9) SecondaryLinkedList local9 = new SecondaryLinkedList();
+	public static secondaryLinkList method3333(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+		@Pc(9) secondaryLinkList local9 = new secondaryLinkList();
 		for (@Pc(14) Map local14 = (Map) Static228.aClass69_120.method2289(); local14 != null; local14 = (Map) Static228.aClass69_120.method2288()) {
 			if (local14.aBoolean50 && local14.method664(arg1, arg0)) {
 				local9.method798(local14);

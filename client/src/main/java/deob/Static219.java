@@ -6,10 +6,10 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static219 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!rl", name = "V", descriptor = "[Lclient!qf;")
-	public static Sprite[] aClass3_Sub2_Sub1Array9;
+	public static AbstractPix32[] aClass3_Sub2_Sub1Array9;
 
 	@OriginalMember(owner = "com.jagex3.client.client!rl", name = "P", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_27 = new SoftLruHashTable(64);
+	public static final SoftLruCache aClass99_27 = new SoftLruCache(64);
 
 	@OriginalMember(owner = "com.jagex3.client.client!rl", name = "S", descriptor = "Lclient!na;")
 	public static final JagString aClass100_920 = Static28.parse("hitmarks");
@@ -49,7 +49,7 @@ public final class Static219 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!rl", name = "i", descriptor = "(I)V")
 	public static void method3796() {
-		for (@Pc(10) Class3_Sub7 local10 = (Class3_Sub7) Static26.aClass69_27.method2289(); local10 != null; local10 = (Class3_Sub7) Static26.aClass69_27.method2288()) {
+		for (@Pc(10) LocChange local10 = (LocChange) Static26.aClass69_27.method2289(); local10 != null; local10 = (LocChange) Static26.aClass69_27.method2288()) {
 			if (local10.anInt924 == -1) {
 				local10.anInt925 = 0;
 				Static226.method3898(local10);

@@ -5,7 +5,7 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("com.jagex3.client.client!qi")
-public final class ColorImageCacheEntry extends Node {
+public final class ColorImageCacheEntry extends Linkable {
 
 	@OriginalMember(owner = "com.jagex3.client.client!qi", name = "s", descriptor = "I")
 	public final int anInt4761;

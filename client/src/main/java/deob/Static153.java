@@ -11,7 +11,7 @@ public final class Static153 {
 	public static JagString aClass100_724;
 
 	@OriginalMember(owner = "com.jagex3.client.client!mc", name = "S", descriptor = "Lclient!mm;")
-	public static SoftwareSprite aClass3_Sub2_Sub1_Sub1_2;
+	public static Pix32 aClass3_Sub2_Sub1_Sub1_2;
 
 	@OriginalMember(owner = "com.jagex3.client.client!mc", name = "Z", descriptor = "Lclient!ve;")
 	public static Js5 aClass153_57;
@@ -71,7 +71,7 @@ public final class Static153 {
 	@OriginalMember(owner = "com.jagex3.client.client!mc", name = "f", descriptor = "(B)V")
 	public static void method2909() {
 		Client.out.p1isaac(184);
-		for (@Pc(18) Class3_Sub31 local18 = (Class3_Sub31) Static119.aClass133_9.method3859(); local18 != null; local18 = (Class3_Sub31) Static119.aClass133_9.method3861()) {
+		for (@Pc(18) SubInterface local18 = (SubInterface) Static119.aClass133_9.method3859(); local18 != null; local18 = (SubInterface) Static119.aClass133_9.method3861()) {
 			if (local18.anInt5879 == 0) {
 				Static132.method2605(true, local18);
 			}

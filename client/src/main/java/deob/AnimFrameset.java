@@ -6,14 +6,14 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("com.jagex3.client.client!cl")
-public final class AnimFrameset extends SecondaryNode {
+public final class AnimFrameset extends DoubleLinkable {
 
 	@OriginalMember(owner = "com.jagex3.client.client!cl", name = "W", descriptor = "[Lclient!ne;")
 	public final AnimFrame[] aClass104Array1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!cl", name = "<init>", descriptor = "(Lclient!ve;Lclient!ve;IZ)V")
 	public AnimFrameset(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Js5 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) boolean arg3) {
-		@Pc(5) LinkedList local5 = new LinkedList();
+		@Pc(5) LinkList local5 = new LinkList();
 		@Pc(10) int local10 = arg0.method4504(arg2);
 		this.aClass104Array1 = new AnimFrame[local10];
 		@Pc(19) int[] local19 = arg0.method4503(arg2);

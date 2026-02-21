@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("com.jagex3.client.client!j")
-public abstract class TextureOp extends Node {
+public abstract class TextureOp extends Linkable {
 
 	@OriginalMember(owner = "com.jagex3.client.client!j", name = "t", descriptor = "Lclient!nd;")
 	protected MonochromeImageCache aClass103_41;

@@ -12,7 +12,7 @@ public final class AudioThread implements Runnable {
 	public SignLink aClass213_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!cj", name = "p", descriptor = "[Lclient!vh;")
-	public final AudioChannel[] aClass62Array1 = new AudioChannel[2];
+	public final PcmPlayer[] aClass62Array1 = new PcmPlayer[2];
 
 	@OriginalMember(owner = "com.jagex3.client.client!cj", name = "g", descriptor = "Z")
 	public volatile boolean aBoolean62 = false;
@@ -27,7 +27,7 @@ public final class AudioThread implements Runnable {
 		try {
 			while (!this.aBoolean62) {
 				for (@Pc(9) int local9 = 0; local9 < 2; local9++) {
-					@Pc(19) AudioChannel local19 = this.aClass62Array1[local9];
+					@Pc(19) PcmPlayer local19 = this.aClass62Array1[local9];
 					if (local19 != null) {
 						local19.method3565();
 					}

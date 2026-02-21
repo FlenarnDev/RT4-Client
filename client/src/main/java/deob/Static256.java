@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static256 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!um", name = "U", descriptor = "Lclient!dd;")
-	public static SoftwareFont aClass3_Sub2_Sub9_Sub1_1;
+	public static PixFont aClass3_Sub2_Sub9_Sub1_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!um", name = "a", descriptor = "(Z)V")
 	public static void method4392() {
@@ -28,7 +28,7 @@ public final class Static256 {
 	@OriginalMember(owner = "com.jagex3.client.client!um", name = "c", descriptor = "(III)Z")
 	public static boolean method4394(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		for (@Pc(1) int local1 = 0; local1 < Static215.anInt4870; local1++) {
-			@Pc(8) Class120 local8 = Static247.aClass120Array2[local1];
+			@Pc(8) Occlude local8 = Static247.aOccludeArray2[local1];
 			@Pc(17) int local17;
 			@Pc(29) int local29;
 			@Pc(39) int local39;

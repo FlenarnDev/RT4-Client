@@ -11,13 +11,13 @@ public final class Static243 {
 	public static Js5 aClass153_97;
 
 	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "o", descriptor = "Lclient!ok;")
-	public static IndexedSprite aClass36_1;
+	public static Pix8 aClass36_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "s", descriptor = "Lclient!ve;")
 	public static Js5 aClass153_98;
 
 	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "D", descriptor = "[Lclient!ec;")
-	public static Scenery[] aClass31Array3;
+	public static Sprite[] aClass31Array3;
 
 	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "c", descriptor = "J")
 	public static volatile long aLong178 = 0L;
@@ -29,11 +29,11 @@ public final class Static243 {
 	public static int[] anIntArray476 = new int[2];
 
 	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "a", descriptor = "(Lclient!sc;ZLclient!wl;)Lclient!hg;")
-	public static Class3_Sub14 method4212(@OriginalArg(0) HashTable arg0, @OriginalArg(2) FloType arg1) {
+	public static GlSquare method4212(@OriginalArg(0) HashTable arg0, @OriginalArg(2) FloType arg1) {
 		@Pc(23) long local23 = (long) ((arg1.anInt5892 + 1 << 16) + arg1.anInt5885) + ((long) arg1.anInt5897 << 56) + ((long) arg1.anInt5889 << 32);
-		@Pc(38) Class3_Sub14 local38 = (Class3_Sub14) arg0.method3863(local23);
+		@Pc(38) GlSquare local38 = (GlSquare) arg0.method3863(local23);
 		if (local38 == null) {
-			local38 = new Class3_Sub14(arg1.anInt5892, (float) arg1.anInt5885, true, false, arg1.anInt5889);
+			local38 = new GlSquare(arg1.anInt5892, (float) arg1.anInt5885, true, false, arg1.anInt5889);
 			arg0.method3862(local38, local23);
 		}
 		return local38;
@@ -89,7 +89,7 @@ public final class Static243 {
 		for (local3506 = 0; local3506 < 32768; local3506++) {
 			Static175.aClass8_Sub4_Sub2Array1[local3506] = null;
 		}
-		Static173.self = Static159.aClass8_Sub4_Sub1Array1[2047] = new Player();
+		Static173.self = Static159.aClass8_Sub4_Sub1Array1[2047] = new ClientPlayer();
 		Static217.aClass69_116.method2278();
 		Static99.aClass69_64.method2278();
 		if (Static159.aClass69ArrayArrayArray1 != null) {
@@ -101,7 +101,7 @@ public final class Static243 {
 				}
 			}
 		}
-		Static26.aClass69_27 = new LinkedList();
+		Static26.aClass69_27 = new LinkList();
 		Static166.anInt4054 = 0;
 		Static9.anInt178 = 0;
 		Static8.method121();
@@ -122,7 +122,7 @@ public final class Static243 {
 		if (Static154.topLevelInterace != -1) {
 			Static109.method2275(Static154.topLevelInterace);
 		}
-		for (@Pc(3755) Class3_Sub31 local3755 = (Class3_Sub31) Static119.aClass133_9.method3859(); local3755 != null; local3755 = (Class3_Sub31) Static119.aClass133_9.method3861()) {
+		for (@Pc(3755) SubInterface local3755 = (SubInterface) Static119.aClass133_9.method3859(); local3755 != null; local3755 = (SubInterface) Static119.aClass133_9.method3861()) {
 			Static132.method2605(true, local3755);
 		}
 		Static154.topLevelInterace = -1;
@@ -143,7 +143,7 @@ public final class Static243 {
 			Static186.aBooleanArray100[local3506] = true;
 		}
 		Static214.anInt5577 = 0;
-		Static199.aClass3_Sub22Array1 = null;
+		Static199.aFriendChatUserArray1 = null;
 		Static15.aClass100_87 = null;
 		for (local3506 = 0; local3506 < 6; local3506++) {
 			Static229.aClass136Array1[local3506] = new StockMarketOffer();

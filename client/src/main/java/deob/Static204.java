@@ -7,10 +7,10 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static204 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!qi", name = "z", descriptor = "Lclient!qf;")
-	public static Sprite aClass3_Sub2_Sub1_10;
+	public static AbstractPix32 aClass3_Sub2_Sub1_10;
 
 	@OriginalMember(owner = "com.jagex3.client.client!qi", name = "C", descriptor = "Lclient!ei;")
-	public static MixerPcmStream aClass3_Sub3_Sub2_1;
+	public static Mixer aClass3_Sub3_Sub2_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!qi", name = "r", descriptor = "I")
 	public static int anInt4760 = 0;
@@ -19,7 +19,7 @@ public final class Static204 {
 	public static int anInt4762 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!qi", name = "u", descriptor = "Lclient!ih;")
-	public static LinkedList aClass69_113 = new LinkedList();
+	public static LinkList aClass69_113 = new LinkList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!qi", name = "v", descriptor = "Z")
 	public static boolean aBoolean234 = false;

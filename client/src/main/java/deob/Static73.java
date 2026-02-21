@@ -10,13 +10,13 @@ public final class Static73 {
 	public static int anInt2077;
 
 	@OriginalMember(owner = "com.jagex3.client.client!fm", name = "S", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_10 = new SoftLruHashTable(4);
+	public static final SoftLruCache aClass99_10 = new SoftLruCache(4);
 
 	@OriginalMember(owner = "com.jagex3.client.client!fm", name = "W", descriptor = "Lclient!na;")
 	public static final JagString aClass100_453 = Static28.parse(")2");
 
 	@OriginalMember(owner = "com.jagex3.client.client!fm", name = "db", descriptor = "Lclient!gn;")
-	public static final LruHashTable aClass54_7 = new LruHashTable(64);
+	public static final LruCache aClass54_7 = new LruCache(64);
 
 	@OriginalMember(owner = "com.jagex3.client.client!fm", name = "eb", descriptor = "Lclient!na;")
 	public static final JagString aClass100_454 = Static28.parse("b12_full");
@@ -33,7 +33,7 @@ public final class Static73 {
 			if (Static154.topLevelInterace != -1) {
 				Static109.method2275(Static154.topLevelInterace);
 			}
-			for (@Pc(18) Class3_Sub31 local18 = (Class3_Sub31) Static119.aClass133_9.method3859(); local18 != null; local18 = (Class3_Sub31) Static119.aClass133_9.method3861()) {
+			for (@Pc(18) SubInterface local18 = (SubInterface) Static119.aClass133_9.method3859(); local18 != null; local18 = (SubInterface) Static119.aClass133_9.method3861()) {
 				Static132.method2605(true, local18);
 			}
 			Static154.topLevelInterace = -1;
@@ -46,7 +46,7 @@ public final class Static73 {
 		}
 		Static35.anInt1092 = -1;
 		Static81.method1750(Static270.anInt5794);
-		Static173.self = new Player();
+		Static173.self = new ClientPlayer();
 		Static173.self.anInt3421 = 3000;
 		Static173.self.anInt3412 = 3000;
 		if (!GlRenderer.enabled) {

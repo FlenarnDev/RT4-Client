@@ -79,7 +79,7 @@ public final class Static34 {
 	public static boolean verifyIdChanged = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ck", name = "a", descriptor = "(ILclient!va;Lclient!ve;Lclient!ve;Lclient!ve;)Z")
-	public static boolean method876(@OriginalArg(1) MidiPcmStream arg0, @OriginalArg(2) Js5 arg1, @OriginalArg(3) Js5 arg2, @OriginalArg(4) Js5 arg3) {
+	public static boolean method876(@OriginalArg(1) MidiPlayer arg0, @OriginalArg(2) Js5 arg1, @OriginalArg(3) Js5 arg2, @OriginalArg(4) Js5 arg3) {
 		Static210.aClass153_87 = arg1;
 		Static78.aClass153_32 = arg3;
 		Static252.aClass153_103 = arg2;
@@ -88,13 +88,13 @@ public final class Static34 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ck", name = "a", descriptor = "(BI)Lclient!eg;")
-	public static SpotAnimType method877(@OriginalArg(1) int arg0) {
-		@Pc(10) SpotAnimType local10 = (SpotAnimType) Static279.aClass99_38.method3106((long) arg0);
+	public static SpotType method877(@OriginalArg(1) int arg0) {
+		@Pc(10) SpotType local10 = (SpotType) Static279.aClass99_38.method3106((long) arg0);
 		if (local10 != null) {
 			return local10;
 		}
 		@Pc(26) byte[] local26 = Static132.aClass153_48.method4495(Static206.method3681(arg0), Static133.method4010(arg0));
-		local10 = new SpotAnimType();
+		local10 = new SpotType();
 		local10.anInt1751 = arg0;
 		if (local26 != null) {
 			local10.method1316(new Packet(local26));
@@ -104,7 +104,7 @@ public final class Static34 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ck", name = "a", descriptor = "(Lclient!fe;I)V")
-	public static void method879(@OriginalArg(0) PathingEntity arg0) {
+	public static void method879(@OriginalArg(0) ClientEntity arg0) {
 		arg0.aBoolean171 = false;
 		@Pc(18) SeqType local18;
 		if (arg0.anInt3366 != -1) {

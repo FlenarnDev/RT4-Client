@@ -25,16 +25,16 @@ public final class Static264 {
 	public static final int[] anIntArray413 = new int[128];
 
 	@OriginalMember(owner = "com.jagex3.client.client!vh", name = "a", descriptor = "(ILclient!wa;)Lclient!bd;")
-	public static Class12 method3568(@OriginalArg(1) Packet arg0) {
-		@Pc(3) Class12 local3 = new Class12();
+	public static QuickChatPhrase method3568(@OriginalArg(1) Packet arg0) {
+		@Pc(3) QuickChatPhrase local3 = new QuickChatPhrase();
 		local3.anInt439 = arg0.g2();
 		local3.aClass3_Sub2_Sub6_1 = Static230.method3953(local3.anInt439);
 		return local3;
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!vh", name = "a", descriptor = "(Lclient!th;III)V")
-	public static void method3574(@OriginalArg(0) Entity arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		@Pc(12) Tile local12;
+	public static void method3574(@OriginalArg(0) ModelSource arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+		@Pc(12) Square local12;
 		if (arg2 < Static152.anInt3594) {
 			local12 = Static130.aClass3_Sub5ArrayArrayArray1[arg1][arg2 + 1][arg3];
 			if (local12 != null && local12.aClass15_1 != null && local12.aClass15_1.aClass8_1.method4543()) {

@@ -10,7 +10,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static10 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!an", name = "ab", descriptor = "Lclient!uf;")
-	public static Keyboard aClass149_1 = new Keyboard();
+	public static ClientKeyboardListener aClass149_1 = new ClientKeyboardListener();
 
 	@OriginalMember(owner = "com.jagex3.client.client!an", name = "db", descriptor = "S")
 	public static short aShort9 = 205;

@@ -12,7 +12,7 @@ public final class Static63 {
 	public static int anInt1942 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!fa", name = "b", descriptor = "Lclient!ih;")
-	private static final LinkedList aClass69_48 = new LinkedList();
+	private static final LinkList aClass69_48 = new LinkList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!fa", name = "c", descriptor = "I")
 	public static int anInt1943 = 0;
@@ -27,13 +27,13 @@ public final class Static63 {
 	public static int anInt1945 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!fa", name = "g", descriptor = "Lclient!ih;")
-	private static final LinkedList aClass69_49 = new LinkedList();
+	private static final LinkList aClass69_49 = new LinkList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!fa", name = "h", descriptor = "Lclient!ih;")
-	private static final LinkedList aClass69_50 = new LinkedList();
+	private static final LinkList aClass69_50 = new LinkList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!fa", name = "i", descriptor = "Lclient!ih;")
-	private static final LinkedList aClass69_51 = new LinkedList();
+	private static final LinkList aClass69_51 = new LinkList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!fa", name = "j", descriptor = "[I")
 	private static final int[] anIntArray151 = new int[1000];

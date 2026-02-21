@@ -11,11 +11,11 @@ public final class Static192 {
 	@OriginalMember(owner = "com.jagex3.client.client!ph", name = "a", descriptor = "(B)V")
 	public static void loop() {
 		while (true) {
-			@Pc(17) Class3_Sub8 local17 = (Class3_Sub8) Static128.aClass69_77.method2287();
+			@Pc(17) LocMerge local17 = (LocMerge) Static128.aClass69_77.method2287();
 			if (local17 == null) {
 				return;
 			}
-			@Pc(40) PathingEntity local40;
+			@Pc(40) ClientEntity local40;
 			@Pc(29) int local29;
 			if (local17.anInt1192 < 0) {
 				local29 = -local17.anInt1192 - 1;
@@ -47,7 +47,7 @@ public final class Static192 {
 				@Pc(126) int local126 = (local83 + 1 >> 1) + local17.anInt1204;
 				@Pc(130) int[][] local130 = Static83.anIntArrayArrayArray4[Static55.level];
 				@Pc(157) int local157 = local130[local103][local126] + local130[local110][local126] + local130[local110][local117] + local130[local103][local117] >> 2;
-				@Pc(159) Entity local159 = null;
+				@Pc(159) ModelSource local159 = null;
 				@Pc(164) int local164 = Static133.anIntArray453[local17.anInt1198];
 				if (local164 == 0) {
 					@Pc(176) Wall local176 = Static262.method4509(Static55.level, local17.anInt1190, local17.anInt1204);
@@ -60,7 +60,7 @@ public final class Static192 {
 						local159 = local231.aClass8_3;
 					}
 				} else if (local164 == 2) {
-					@Pc(198) Scenery local198 = Static133.method4008(Static55.level, local17.anInt1190, local17.anInt1204);
+					@Pc(198) Sprite local198 = Static133.method4008(Static55.level, local17.anInt1190, local17.anInt1204);
 					if (local198 != null) {
 						local159 = local198.aClass8_4;
 					}

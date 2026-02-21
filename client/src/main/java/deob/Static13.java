@@ -23,7 +23,7 @@ public final class Static13 {
 	public static boolean aBoolean16 = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!bc", name = "N", descriptor = "Lclient!lb;")
-	public static final Class3_Sub23 aClass3_Sub23_1 = new Class3_Sub23(0, 0);
+	public static final MonochromeImageCacheEntry aClass3_Sub23_1 = new MonochromeImageCacheEntry(0, 0);
 
 	@OriginalMember(owner = "com.jagex3.client.client!bc", name = "f", descriptor = "(B)Lclient!na;")
 	public static JagString method471() {
@@ -45,7 +45,7 @@ public final class Static13 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!bc", name = "d", descriptor = "(II)V")
 	public static void method472(@OriginalArg(0) int arg0) {
-		@Pc(14) Inv local14 = (Inv) Static20.aClass133_2.method3863((long) arg0);
+		@Pc(14) ClientInvCache local14 = (ClientInvCache) Static20.aClass133_2.method3863((long) arg0);
 		if (local14 != null) {
 			local14.method4658();
 		}

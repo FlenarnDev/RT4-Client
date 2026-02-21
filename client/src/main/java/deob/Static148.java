@@ -8,13 +8,13 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static148 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!li", name = "l", descriptor = "Lclient!ge;")
-	public static Cache masterCache;
+	public static DataFile masterCache;
 
 	@OriginalMember(owner = "com.jagex3.client.client!li", name = "t", descriptor = "I")
 	public static int anInt3534;
 
 	@OriginalMember(owner = "com.jagex3.client.client!li", name = "v", descriptor = "Lclient!va;")
-	public static MidiPcmStream aClass3_Sub3_Sub4_1;
+	public static MidiPlayer aClass3_Sub3_Sub4_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!li", name = "w", descriptor = "Lclient!sc;")
 	public static HashTable aClass133_13;
@@ -48,13 +48,13 @@ public final class Static148 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!li", name = "a", descriptor = "(II)Lclient!dd;")
-	public static SoftwareFont method2768(@OriginalArg(1) int arg0) {
-		@Pc(16) SoftwareFont local16 = (SoftwareFont) Static139.aClass99_22.method3106((long) arg0);
+	public static PixFont method2768(@OriginalArg(1) int arg0) {
+		@Pc(16) PixFont local16 = (PixFont) Static139.aClass99_22.method3106((long) arg0);
 		if (local16 != null) {
 			return local16;
 		}
 		@Pc(26) byte[] local26 = Static261.aClass153_107.method4495(arg0, 0);
-		local16 = new SoftwareFont(local26);
+		local16 = new PixFont(local26);
 		local16.method2873(Static159.aClass36Array12, null);
 		Static139.aClass99_22.method3095(local16, (long) arg0);
 		return local16;

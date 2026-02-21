@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class PacketBit extends Packet {
 
 	@OriginalMember(owner = "com.jagex3.client.client!i", name = "Xb", descriptor = "Lclient!ij;")
-	private IsaacRandom aClass71_1;
+	private Isaac aClass71_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!i", name = "fc", descriptor = "I")
 	private int anInt2846;
@@ -52,7 +52,7 @@ public final class PacketBit extends Packet {
 
 	@OriginalMember(owner = "com.jagex3.client.client!i", name = "a", descriptor = "([IZ)V")
 	public final void seed(@OriginalArg(0) int[] arg0) {
-		this.aClass71_1 = new IsaacRandom(arg0);
+		this.aClass71_1 = new Isaac(arg0);
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!i", name = "q", descriptor = "(II)I")

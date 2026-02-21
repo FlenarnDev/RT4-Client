@@ -10,7 +10,7 @@ public final class Static36 {
 	public static int anInt1165;
 
 	@OriginalMember(owner = "com.jagex3.client.client!com.jagex3.client.client", name = "kb", descriptor = "[[Lclient!hg;")
-	public static Class3_Sub14[][] aClass3_Sub14ArrayArray1;
+	public static GlSquare[][] aGlSquareArrayArray1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!com.jagex3.client.client", name = "lb", descriptor = "[I")
 	public static int[] anIntArray84;
@@ -19,7 +19,7 @@ public final class Static36 {
 	public static final HashTable aClass133_3 = new HashTable(16);
 
 	@OriginalMember(owner = "com.jagex3.client.client!com.jagex3.client.client", name = "a", descriptor = "(Lclient!be;)Lclient!be;")
-	public static Component method938(@OriginalArg(0) Component arg0) {
+	public static IfType method938(@OriginalArg(0) IfType arg0) {
 		@Pc(4) int local4 = method940(arg0).method505();
 		if (local4 == 0) {
 			return null;
@@ -34,8 +34,8 @@ public final class Static36 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!com.jagex3.client.client", name = "b", descriptor = "(Lclient!be;)Lclient!bf;")
-	public static ServerActiveProperties method940(@OriginalArg(0) Component arg0) {
-		@Pc(13) ServerActiveProperties local13 = (ServerActiveProperties) Static210.aClass133_21.method3863(((long) arg0.anInt507 << 32) + (long) arg0.componentId);
+	public static ServerActive method940(@OriginalArg(0) IfType arg0) {
+		@Pc(13) ServerActive local13 = (ServerActive) Static210.aClass133_21.method3863(((long) arg0.anInt507 << 32) + (long) arg0.componentId);
 		return local13 == null ? arg0.aClass3_Sub4_1 : local13;
 	}
 
@@ -57,9 +57,9 @@ public final class Static36 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!com.jagex3.client.client", name = "a", descriptor = "([Lclient!be;IIIIIII)V")
-	public static void method946(@OriginalArg(0) Component[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
+	public static void method946(@OriginalArg(0) IfType[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
 		for (@Pc(1) int local1 = 0; local1 < arg0.length; local1++) {
-			@Pc(9) Component local9 = arg0[local1];
+			@Pc(9) IfType local9 = arg0[local1];
 			if (local9 != null && local9.layer == arg1 && (!local9.aBoolean32 || local9.anInt452 == 0 || local9.aBoolean25 || method940(local9).anInt546 != 0 || local9 == Static4.aClass13_1 || local9.anInt453 == 1338) && (!local9.aBoolean32 || !method947(local9))) {
 				@Pc(50) int local50 = local9.x + arg6;
 				@Pc(55) int local55 = local9.y + arg7;
@@ -496,7 +496,7 @@ public final class Static36 {
 						if (local9.createdComponents != null) {
 							method946(local9.createdComponents, local9.anInt507, local61, local63, local65, local67, local50 - local9.anInt489, local55 - local9.scrollY);
 						}
-						@Pc(1595) Class3_Sub31 local1595 = (Class3_Sub31) Static119.aClass133_9.method3863((long) local9.anInt507);
+						@Pc(1595) SubInterface local1595 = (SubInterface) Static119.aClass133_9.method3863((long) local9.anInt507);
 						if (local1595 != null) {
 							Static57.method1320(local50, local63, local55, local65, local1595.anInt5878, local61, local67);
 						}
@@ -507,7 +507,7 @@ public final class Static36 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!com.jagex3.client.client", name = "c", descriptor = "(Lclient!be;)Z")
-	public static boolean method947(@OriginalArg(0) Component arg0) {
+	public static boolean method947(@OriginalArg(0) IfType arg0) {
 		if (Static121.aBoolean154) {
 			if (method940(arg0).anInt546 != 0) {
 				return false;

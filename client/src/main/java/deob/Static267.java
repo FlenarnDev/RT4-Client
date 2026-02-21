@@ -12,7 +12,7 @@ public final class Static267 {
 	public static Js5 aClass153_109;
 
 	@OriginalMember(owner = "com.jagex3.client.client!vl", name = "a", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_37 = new SoftLruHashTable(100);
+	public static final SoftLruCache aClass99_37 = new SoftLruCache(100);
 
 	@OriginalMember(owner = "com.jagex3.client.client!vl", name = "e", descriptor = "[I")
 	public static final int[] anIntArray517 = new int[] { 1, 2, 4, 8 };
@@ -37,7 +37,7 @@ public final class Static267 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!vl", name = "a", descriptor = "(III)Lclient!bm;")
 	public static GroundDecor method4526(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) Tile local7 = Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2];
+		@Pc(7) Square local7 = Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2];
 		if (local7 == null) {
 			return null;
 		} else {

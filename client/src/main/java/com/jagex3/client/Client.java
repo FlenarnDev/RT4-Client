@@ -222,8 +222,8 @@ public final class Client extends GameShell {
 
     @OriginalMember(owner = "com.jagex3.client.client!com.jagex3.client.client", name = "h", descriptor = "(I)V")
     private void js5Connect() {
-        if (Static233.js5PrevErrors < Static107.js5NetQueue.errors) {
-            js5ConnectCooldown = 5 * 50 * (Static107.js5NetQueue.errors - 1);
+        if (Static233.js5PrevErrors < Static107.js5Net.errors) {
+            js5ConnectCooldown = 5 * 50 * (Static107.js5Net.errors - 1);
             if (Static271.defaultPort == loginPort) {
                 loginPort = Static55.alternatePort;
             } else {
@@ -232,20 +232,20 @@ public final class Client extends GameShell {
             if (js5ConnectCooldown > 3000) {
                 js5ConnectCooldown = 3000;
             }
-            if (Static107.js5NetQueue.errors >= 2 && Static107.js5NetQueue.response == 6) {
+            if (Static107.js5Net.errors >= 2 && Static107.js5Net.response == 6) {
                 this.error("js5connect_outofdate");
                 state = 1000;
                 return;
             }
-            if (Static107.js5NetQueue.errors >= 4 && Static107.js5NetQueue.response == -1) {
+            if (Static107.js5Net.errors >= 4 && Static107.js5Net.response == -1) {
                 this.error("js5crc");
                 state = 1000;
                 return;
             }
-            if (Static107.js5NetQueue.errors >= 4 && (state == 0 || state == 5)) {
-                if (Static107.js5NetQueue.response == 7 || Static107.js5NetQueue.response == 9) {
+            if (Static107.js5Net.errors >= 4 && (state == 0 || state == 5)) {
+                if (Static107.js5Net.response == 7 || Static107.js5Net.response == 9) {
                     this.error("js5connect_full");
-                } else if (Static107.js5NetQueue.response > 0) {
+                } else if (Static107.js5Net.response > 0) {
                     this.error("js5connect");
                 } else {
                     this.error("js5io");
@@ -254,7 +254,7 @@ public final class Client extends GameShell {
                 return;
             }
         }
-        Static233.js5PrevErrors = Static107.js5NetQueue.errors;
+        Static233.js5PrevErrors = Static107.js5Net.errors;
         if (js5ConnectCooldown > 0) {
             js5ConnectCooldown--;
             return;
@@ -297,7 +297,7 @@ public final class Client extends GameShell {
             }
             if (js5ConnectState == 4) {
                 @Pc(296) boolean loggedOut = state == 5 || state == 10 || state == 28;
-                Static107.js5NetQueue.loggedOut(!loggedOut, js5Stream);
+                Static107.js5Net.loggedOut(!loggedOut, js5Stream);
                 js5Stream = null;
                 js5SocketReq = null;
                 js5ConnectState = 0;
@@ -353,7 +353,7 @@ public final class Client extends GameShell {
             Static126.loadString = LocalizedText.MAINLOAD10B;
         } else if (loadingStep == 30) {
             if (Static257.aClass9_2 == null) {
-                Static257.aClass9_2 = new Js5MasterIndex(Static107.js5NetQueue, Static86.js5CacheQueue);
+                Static257.aClass9_2 = new Js5Loader(Static107.js5Net, Static86.js5CacheQueue);
             }
             if (Static257.aClass9_2.method178()) {
                 Static213.aClass153_88 = openJs5(false, true, true, 0);
@@ -411,15 +411,15 @@ public final class Client extends GameShell {
             }
         } else if (loadingStep == 45) {
             Static41.method1045(Static99.aBoolean143);
-            Static148.aClass3_Sub3_Sub4_1 = new MidiPcmStream();
+            Static148.aClass3_Sub3_Sub4_1 = new MidiPlayer();
             Static148.aClass3_Sub3_Sub4_1.method4420();
             Static11.aClass62_1 = Static107.method2262(22050, GameShell.signLink, Static154.canvas, 0);
             Static11.aClass62_1.method3566(Static148.aClass3_Sub3_Sub4_1);
             Static34.method876(Static148.aClass3_Sub3_Sub4_1, Static138.aClass153_51, Static137.aClass153_49, Static248.aClass153_75);
             Static147.aClass62_2 = Static107.method2262(2048, GameShell.signLink, Static154.canvas, 1);
-            Static204.aClass3_Sub3_Sub2_1 = new MixerPcmStream();
+            Static204.aClass3_Sub3_Sub2_1 = new Mixer();
             Static147.aClass62_2.method3566(Static204.aClass3_Sub3_Sub2_1);
-            Static56.aClass156_1 = new Resampler(22050, Static44.anInt1404);
+            Static56.aClass156_1 = new Decimator(22050, Static44.anInt1404);
             Static250.anInt5441 = Static130.aClass153_47.method4482(Static1.aClass100_1);
             Static199.loadPos = 30;
             loadingStep = 50;
@@ -520,7 +520,7 @@ public final class Client extends GameShell {
             }
         } else if (loadingStep == 90) {
             if (Static167.aClass153_63.requestFullDownload()) {
-                @Pc(951) Js5GlTextureProvider local951 = new Js5GlTextureProvider(Static195.aClass153_80, Static167.aClass153_63, Static209.aClass153_86, 20, !Static53.aBoolean99);
+                @Pc(951) WorldTextureProvider local951 = new WorldTextureProvider(Static195.aClass153_80, Static167.aClass153_63, Static209.aClass153_86, 20, !Static53.aBoolean99);
                 Rasteriser.method1914(local951);
                 if (Static113.anInt4609 == 1) {
                     Rasteriser.method1911(0.9F);
@@ -630,9 +630,9 @@ public final class Client extends GameShell {
 
     @OriginalMember(owner = "com.jagex3.client.client!al", name = "a", descriptor = "(ZZZIZ)Lclient!ve;")
     public static Js5 openJs5(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) int arg3) {
-        @Pc(7) Cache local7 = null;
+        @Pc(7) DataFile local7 = null;
         if (Static172.cacheData != null) {
-            local7 = new Cache(arg3, Static172.cacheData, Static47.cacheIndexes[arg3], 1000000);
+            local7 = new DataFile(arg3, Static172.cacheData, Static47.cacheIndexes[arg3], 1000000);
         }
         Static269.aClass14_Sub1Array3[arg3] = Static257.aClass9_2.method180(arg3, Static148.masterCache, local7);
         if (arg1) {
@@ -1063,19 +1063,19 @@ public final class Client extends GameShell {
 		}
 		Static31.method847(Static154.canvas);
 		Static223.method3866(Static154.canvas);
-		if (Static71.mouseWheel != null) {
-			Static71.mouseWheel.method3291(Static154.canvas);
+		if (Static71.mouseWheelInterface != null) {
+			Static71.mouseWheelInterface.method3291(Static154.canvas);
 		}
 		Static6.method82();
 		Static251.method4277();
-		Static71.mouseWheel = null;
+		Static71.mouseWheelInterface = null;
 		if (Static11.aClass62_1 != null) {
 			Static11.aClass62_1.method3575();
 		}
 		if (Static147.aClass62_2 != null) {
 			Static147.aClass62_2.method3575();
 		}
-		Static107.js5NetQueue.method2329();
+		Static107.js5Net.method2329();
 		Static86.js5CacheQueue.method2466();
 		try {
 			if (Static172.cacheData != null) {
@@ -1105,7 +1105,7 @@ public final class Client extends GameShell {
 	protected final void method935() {
 		Static203.method3662();
 		Static86.js5CacheQueue = new Js5CacheQueue();
-		Static107.js5NetQueue = new Js5NetQueue();
+		Static107.js5Net = new Js5Net();
 		if (modeWhat != 0) {
 			Static51.aByteArrayArray8 = new byte[50][];
 		}
@@ -1157,20 +1157,20 @@ public final class Client extends GameShell {
 		Static156.init(); // keyboard
 		Static19.start(Static154.canvas); // keyboard
 		Static88.start(Static154.canvas); // mouse
-		Static71.mouseWheel = Static44.create();
-		if (Static71.mouseWheel != null) {
-			Static71.mouseWheel.start(Static154.canvas);
+		Static71.mouseWheelInterface = Static44.create();
+		if (Static71.mouseWheelInterface != null) {
+			Static71.mouseWheelInterface.start(Static154.canvas);
 		}
 		Static7.anInt986 = SignLink.anInt5928;
 		try {
 			if (GameShell.signLink.cacheData != null) {
-				Static172.cacheData = new BufferedFile(GameShell.signLink.cacheData, 5200, 0);
+				Static172.cacheData = new BufferedRandomAccessFile(GameShell.signLink.cacheData, 5200, 0);
 				for (@Pc(162) int i = 0; i < 28; i++) {
-					Static47.cacheIndexes[i] = new BufferedFile(GameShell.signLink.cacheIndexes[i], 6000, 0);
+					Static47.cacheIndexes[i] = new BufferedRandomAccessFile(GameShell.signLink.cacheIndexes[i], 6000, 0);
 				}
-				Static190.cacheMasterIndex = new BufferedFile(GameShell.signLink.cacheMasterIndex, 6000, 0);
-				Static148.masterCache = new Cache(255, Static172.cacheData, Static190.cacheMasterIndex, 500000);
-				Static121.uid = new BufferedFile(GameShell.signLink.uid, 24, 0);
+				Static190.cacheMasterIndex = new BufferedRandomAccessFile(GameShell.signLink.cacheMasterIndex, 6000, 0);
+				Static148.masterCache = new DataFile(255, Static172.cacheData, Static190.cacheMasterIndex, 500000);
+				Static121.uid = new BufferedRandomAccessFile(GameShell.signLink.uid, 24, 0);
 				GameShell.signLink.cacheIndexes = null;
 				GameShell.signLink.cacheMasterIndex = null;
 				GameShell.signLink.uid = null;
@@ -1195,9 +1195,9 @@ public final class Client extends GameShell {
 
 	@OriginalMember(owner = "com.jagex3.client.client!com.jagex3.client.client", name = "a", descriptor = "(ZI)V")
 	private void setJs5Response(@OriginalArg(1) int arg0) {
-		Static107.js5NetQueue.errors++;
+		Static107.js5Net.errors++;
 		js5SocketReq = null;
-		Static107.js5NetQueue.response = arg0;
+		Static107.js5Net.response = arg0;
 		js5Stream = null;
 		js5ConnectState = 0;
 	}
@@ -1215,7 +1215,7 @@ public final class Client extends GameShell {
 		Static119.transmitTimer++;
 		if (GlRenderer.enabled) {
 			label191: for (@Pc(57) int local57 = 0; local57 < 32768; local57++) {
-				@Pc(66) Npc local66 = Static175.aClass8_Sub4_Sub2Array1[local57];
+				@Pc(66) ClientNPC local66 = Static175.aClass8_Sub4_Sub2Array1[local57];
 				if (local66 != null) {
 					@Pc(73) byte local73 = local66.aClass96_1.aByte10;
 					if ((local73 & 0x2) > 0 && local66.anInt3409 == 0 && Math.random() * 1000.0D < 10.0D) {
@@ -1261,8 +1261,8 @@ public final class Client extends GameShell {
 		}
 		while (true) {
 			@Pc(374) HookRequest local374;
-			@Pc(379) Component local379;
-			@Pc(387) Component local387;
+			@Pc(379) IfType local379;
+			@Pc(387) IfType local387;
 			do {
 				local374 = (HookRequest) Static4.aClass69_2.method2287();
 				if (local374 == null) {
@@ -1320,7 +1320,7 @@ public final class Client extends GameShell {
 
 	@OriginalMember(owner = "com.jagex3.client.client!com.jagex3.client.client", name = "d", descriptor = "(Z)V")
 	private void js5NetworkLoop() {
-		@Pc(3) boolean idle = Static107.js5NetQueue.loop();
+		@Pc(3) boolean idle = Static107.js5Net.loop();
 		if (!idle) {
 			this.js5Connect();
 		}
@@ -1351,8 +1351,8 @@ public final class Client extends GameShell {
 		if (GlRenderer.enabled) {
 			Static63.method1490();
 		}
-		if (Static71.mouseWheel != null) {
-			@Pc(75) int local75 = Static71.mouseWheel.method3287();
+		if (Static71.mouseWheelInterface != null) {
+			@Pc(75) int local75 = Static71.mouseWheelInterface.method3287();
 			Static58.wheelRotation = local75;
 		}
 		if (state == 0) {

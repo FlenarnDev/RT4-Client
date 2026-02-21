@@ -4,7 +4,7 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("com.jagex3.client.client!qc")
-public final class ClientScript extends SecondaryNode {
+public final class ClientScript extends DoubleLinkable {
 
 	@OriginalMember(owner = "com.jagex3.client.client!qc", name = "I", descriptor = "I")
 	public int anInt4665;

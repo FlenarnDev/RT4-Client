@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 public final class Js5CacheRequest extends Js5Request {
 
 	@OriginalMember(owner = "com.jagex3.client.client!c", name = "X", descriptor = "Lclient!ge;")
-	public Cache aClass49_3;
+	public DataFile aClass49_3;
 
 	@OriginalMember(owner = "com.jagex3.client.client!c", name = "ab", descriptor = "[B")
 	public byte[] aByteArray11;

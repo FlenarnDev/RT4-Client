@@ -24,8 +24,8 @@ public final class Static246 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!u", name = "a", descriptor = "(Z)V")
 	public static void method4239() {
-		for (@Pc(9) SpotAnimNode local9 = (SpotAnimNode) Static99.aClass69_64.method2289(); local9 != null; local9 = (SpotAnimNode) Static99.aClass69_64.method2288()) {
-			@Pc(15) SpotAnim local15 = local9.aClass8_Sub2_1;
+		for (@Pc(9) MapSpotAnimNode local9 = (MapSpotAnimNode) Static99.aClass69_64.method2289(); local9 != null; local9 = (MapSpotAnimNode) Static99.aClass69_64.method2288()) {
+			@Pc(15) MapSpotAnim local15 = local9.aClass8_Sub2_1;
 			if (local15.anInt606 != Static55.level || local15.aBoolean41) {
 				local9.method4658();
 			} else if (local15.anInt590 <= Static83.anInt372) {
@@ -58,7 +58,7 @@ public final class Static246 {
 		if (Static260.anInt5014 == 1) {
 			Static98.method1966(Static169.anInt4075, (long) arg2, Static34.method882(new JagString[] { Static34.aClass100_203, Static201.aClass100_407, local35 }), arg1, (short) 26, LocalizedText.USE, arg3);
 		} else if (Static241.aBoolean302) {
-			@Pc(378) Class3_Sub2_Sub12 local378 = Static121.anInt3039 == -1 ? null : Static110.method2277(Static121.anInt3039);
+			@Pc(378) ParamType local378 = Static121.anInt3039 == -1 ? null : Static110.method2277(Static121.anInt3039);
 			if ((Static274.anInt4999 & 0x2) != 0 && (local378 == null || arg0.method2936(Static121.anInt3039, local378.anInt2667) != local378.anInt2667)) {
 				Static98.method1966(anInt5393, (long) arg2, Static34.method882(new JagString[] { Static78.aClass100_466, Static201.aClass100_407, local35 }), arg1, (short) 45, Static102.aClass100_545, arg3);
 			}
@@ -133,13 +133,13 @@ public final class Static246 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!u", name = "a", descriptor = "(II)Lclient!md;")
-	public static Class3_Sub2_Sub14 method4241(@OriginalArg(0) int arg0) {
-		@Pc(16) Class3_Sub2_Sub14 local16 = (Class3_Sub2_Sub14) Static89.aClass54_8.method1806((long) arg0);
+	public static InvType method4241(@OriginalArg(0) int arg0) {
+		@Pc(16) InvType local16 = (InvType) Static89.aClass54_8.method1806((long) arg0);
 		if (local16 != null) {
 			return local16;
 		}
 		@Pc(27) byte[] local27 = Static9.aClass153_2.method4495(5, arg0);
-		local16 = new Class3_Sub2_Sub14();
+		local16 = new InvType();
 		if (local27 != null) {
 			local16.method2927(new Packet(local27));
 		}

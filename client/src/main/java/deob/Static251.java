@@ -32,7 +32,7 @@ public final class Static251 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!ug", name = "a", descriptor = "(B)V")
 	public static void loop() {
-		for (@Pc(10) Class3_Sub7 local10 = (Class3_Sub7) Static26.aClass69_27.method2289(); local10 != null; local10 = (Class3_Sub7) Static26.aClass69_27.method2288()) {
+		for (@Pc(10) LocChange local10 = (LocChange) Static26.aClass69_27.method2289(); local10 != null; local10 = (LocChange) Static26.aClass69_27.method2288()) {
 			if (local10.anInt924 > 0) {
 				local10.anInt924--;
 			}
@@ -64,7 +64,7 @@ public final class Static251 {
 	@OriginalMember(owner = "com.jagex3.client.client!ug", name = "a", descriptor = "(I)V")
 	public static void method4277() {
 		if (Static93.aClass150_1 != null) {
-			@Pc(5) Mouse local5 = Static93.aClass150_1;
+			@Pc(5) ClientMouseListener local5 = Static93.aClass150_1;
 			synchronized (Static93.aClass150_1) {
 				Static93.aClass150_1 = null;
 			}

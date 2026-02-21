@@ -39,15 +39,15 @@ public final class Static2 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!aa", name = "a", descriptor = "([Lclient!be;ZI)V")
-	public static void method7(@OriginalArg(0) Component[] arg0, @OriginalArg(2) int arg1) {
+	public static void method7(@OriginalArg(0) IfType[] arg0, @OriginalArg(2) int arg1) {
 		for (@Pc(11) int local11 = 0; local11 < arg0.length; local11++) {
-			@Pc(23) Component local23 = arg0[local11];
+			@Pc(23) IfType local23 = arg0[local11];
 			if (local23 != null) {
 				if (local23.anInt452 == 0) {
 					if (local23.createdComponents != null) {
 						method7(local23.createdComponents, arg1);
 					}
-					@Pc(49) Class3_Sub31 local49 = (Class3_Sub31) Static119.aClass133_9.method3863((long) local23.anInt507);
+					@Pc(49) SubInterface local49 = (SubInterface) Static119.aClass133_9.method3863((long) local23.anInt507);
 					if (local49 != null) {
 						Static54.method1304(arg1, local49.anInt5878);
 					}
@@ -61,7 +61,7 @@ public final class Static2 {
 				}
 				if (arg1 == 1 && local23.anObjectArray8 != null) {
 					if (local23.componentId >= 0) {
-						@Pc(103) Component local103 = Static5.getComponent(local23.anInt507);
+						@Pc(103) IfType local103 = Static5.getComponent(local23.anInt507);
 						if (local103 == null || local103.createdComponents == null || local23.componentId >= local103.createdComponents.length || local103.createdComponents[local23.componentId] != local23) {
 							continue;
 						}
@@ -259,7 +259,7 @@ public final class Static2 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!aa", name = "a", descriptor = "(BLclient!be;)V")
-	public static void method13(@OriginalArg(1) Component arg0) {
+	public static void method13(@OriginalArg(1) IfType arg0) {
 		@Pc(16) int local16 = arg0.anInt453;
 		if (local16 == 324) {
 			if (Static158.anInt3851 == -1) {

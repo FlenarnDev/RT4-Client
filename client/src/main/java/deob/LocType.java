@@ -224,8 +224,8 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!pb", name = "a", descriptor = "(III)Lclient!gb;")
-	private RawModel method3418(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(7) RawModel local7 = null;
+	private ModelUnlit method3418(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+		@Pc(7) ModelUnlit local7 = null;
 		@Pc(10) boolean local10 = this.aBoolean217;
 		if (arg1 == 2 && arg0 > 3) {
 			local10 = !local10;
@@ -245,7 +245,7 @@ public final class LocType {
 				if (local10) {
 					local60 += 65536;
 				}
-				local7 = (RawModel) Static169.aClass99_24.method3106((long) local60);
+				local7 = (ModelUnlit) Static169.aClass99_24.method3106((long) local60);
 				if (local7 == null) {
 					local7 = Static77.method1686(Static121.aClass153_45, local60 & 0xFFFF);
 					if (local7 == null) {
@@ -261,7 +261,7 @@ public final class LocType {
 				}
 			}
 			if (local46 > 1) {
-				local7 = new RawModel(Static274.aClass8_Sub5Array5, local46);
+				local7 = new ModelUnlit(Static274.aClass8_Sub5Array5, local46);
 			}
 		} else {
 			local46 = -1;
@@ -278,7 +278,7 @@ public final class LocType {
 			if (local10) {
 				local48 += 65536;
 			}
-			local7 = (RawModel) Static169.aClass99_24.method3106((long) local48);
+			local7 = (ModelUnlit) Static169.aClass99_24.method3106((long) local48);
 			if (local7 == null) {
 				local7 = Static77.method1686(Static121.aClass153_45, local48 & 0xFFFF);
 				if (local7 == null) {
@@ -302,7 +302,7 @@ public final class LocType {
 		} else {
 			local230 = true;
 		}
-		@Pc(265) RawModel local265 = new RawModel(local7, arg0 == 0 && !local211 && !local230, this.aShortArray61 == null, this.aShortArray60 == null, true);
+		@Pc(265) ModelUnlit local265 = new ModelUnlit(local7, arg0 == 0 && !local211 && !local230, this.aShortArray61 == null, this.aShortArray60 == null, true);
 		if (arg1 == 4 && arg0 > 3) {
 			local265.method1682();
 			local265.method1672(45, 0, -45);
@@ -593,7 +593,7 @@ public final class LocType {
 			for (local38 = 0; local38 < local18; local38++) {
 				@Pc(576) boolean local576 = arg0.g1() == 1;
 				@Pc(580) int local580 = arg0.g3();
-				@Pc(589) Node local589;
+				@Pc(589) Linkable local589;
 				if (local576) {
 					local589 = new StringNode(arg0.gjstr());
 				} else {
@@ -617,10 +617,10 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!pb", name = "a", descriptor = "(IZZI)Lclient!td;")
-	private GlModel method3427(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1, @OriginalArg(3) int arg2) {
+	private GlModelLit method3427(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1, @OriginalArg(3) int arg2) {
 		@Pc(10) int local10 = this.anInt4407 + 64;
 		@Pc(17) int local17 = this.anInt4405 * 5 + 768;
-		@Pc(79) GlModel local79;
+		@Pc(79) GlModelLit local79;
 		@Pc(24) int local24;
 		@Pc(177) int local177;
 		if (this.anIntArray378 == null) {
@@ -641,9 +641,9 @@ public final class LocType {
 			if (arg1) {
 				local135 = ~local135;
 			}
-			local79 = (GlModel) Static169.aClass99_24.method3106(local135);
+			local79 = (GlModelLit) Static169.aClass99_24.method3106(local135);
 			if (local79 == null) {
-				@Pc(175) RawModel local175 = null;
+				@Pc(175) ModelUnlit local175 = null;
 				for (local177 = 0; local177 < local24; local177++) {
 					local175 = Static77.method1686(Static121.aClass153_45, this.anIntArray379[local177] & 0xFFFF);
 					if (local175 == null) {
@@ -654,9 +654,9 @@ public final class LocType {
 					}
 				}
 				if (local24 > 1) {
-					local175 = new RawModel(Static274.aClass8_Sub5Array5, local24);
+					local175 = new ModelUnlit(Static274.aClass8_Sub5Array5, local24);
 				}
-				local79 = new GlModel(local175, local10, local17, arg1);
+				local79 = new GlModelLit(local175, local10, local17, arg1);
 				Static169.aClass99_24.method3095(local79, local135);
 			}
 		} else {
@@ -675,13 +675,13 @@ public final class LocType {
 			if (arg1) {
 				local26 += 65536;
 			}
-			local79 = (GlModel) Static169.aClass99_24.method3106((long) local26);
+			local79 = (GlModelLit) Static169.aClass99_24.method3106((long) local26);
 			if (local79 == null) {
-				@Pc(90) RawModel local90 = Static77.method1686(Static121.aClass153_45, local26 & 0xFFFF);
+				@Pc(90) ModelUnlit local90 = Static77.method1686(Static121.aClass153_45, local26 & 0xFFFF);
 				if (local90 == null) {
 					return null;
 				}
-				local79 = new GlModel(local90, local10, local17, arg1);
+				local79 = new GlModelLit(local90, local10, local17, arg1);
 				Static169.aClass99_24.method3095(local79, (long) local26);
 			}
 		}
@@ -691,7 +691,7 @@ public final class LocType {
 		}
 		@Pc(264) boolean local264 = this.anInt4404 == 128 && this.anInt4411 == 0;
 		@Pc(294) boolean local294 = arg0 == 0 && this.anInt4396 == 128 && this.anInt4399 == 128 && this.anInt4408 == 0 && this.anInt4434 == 0 && !local236;
-		@Pc(351) GlModel local351 = local79.method4117(local294, local264, this.aShortArray61 == null, local79.method4094() == local10, arg0 == 0 && !local236, true, local17 == local79.method4115(), !local236, this.aShortArray60 == null);
+		@Pc(351) GlModelLit local351 = local79.method4117(local294, local264, this.aShortArray61 == null, local79.method4094() == local10, arg0 == 0 && !local236, true, local17 == local79.method4115(), !local236, this.aShortArray60 == null);
 		if (local236) {
 			local351.method4122();
 		}
@@ -733,7 +733,7 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!pb", name = "a", descriptor = "(II[[III[[IZLclient!ek;BZI)Lclient!sm;")
-	public final Class139 method3428(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int[][] arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int[][] arg5, @OriginalArg(6) boolean arg6, @OriginalArg(7) SoftwareIndexedSprite arg7, @OriginalArg(9) boolean arg8, @OriginalArg(10) int arg9) {
+	public final Class139 method3428(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int[][] arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int[][] arg5, @OriginalArg(6) boolean arg6, @OriginalArg(7) SoftwarePix8 arg7, @OriginalArg(9) boolean arg8, @OriginalArg(10) int arg9) {
 		@Pc(29) long local29;
 		if (GlRenderer.enabled) {
 			if (this.anIntArray378 == null) {
@@ -742,8 +742,8 @@ public final class LocType {
 				local29 = arg0 + (this.anInt4426 << 10) + (arg3 << 3);
 			}
 			@Pc(225) Class139 local225 = (Class139) Static93.aClass99_14.method3106(local29);
-			@Pc(235) GlModel local235;
-			@Pc(265) SoftwareIndexedSprite local265;
+			@Pc(235) GlModelLit local235;
+			@Pc(265) SoftwarePix8 local265;
 			if (local225 == null) {
 				local235 = this.method3427(arg0, false, arg3);
 				if (local235 == null) {
@@ -764,11 +764,11 @@ public final class LocType {
 				local225.aClass36_Sub1_3 = local265;
 				Static93.aClass99_14.method3095(local225, local29);
 			} else {
-				local235 = (GlModel) local225.aClass8_10;
+				local235 = (GlModelLit) local225.aClass8_10;
 				local265 = local225.aClass36_Sub1_3;
 			}
 			@Pc(298) boolean local298 = this.aBoolean219 & arg6;
-			@Pc(330) GlModel local330 = local235.method4117(this.aByte15 != 3, this.aByte15 == 0, true, true, true, !local298, true, true, true);
+			@Pc(330) GlModelLit local330 = local235.method4117(this.aByte15 != 3, this.aByte15 == 0, true, true, true, !local298, true, true, true);
 			if (this.aByte15 != 0) {
 				local330.method4110(this.aByte15, this.aShort26, local235, arg2, arg5, arg1, arg4, arg9);
 			}
@@ -790,9 +790,9 @@ public final class LocType {
 		} else {
 			local50 = false;
 		}
-		@Pc(60) Entity local60 = (Entity) Static93.aClass99_14.method3106(local29);
+		@Pc(60) ModelSource local60 = (ModelSource) Static93.aClass99_14.method3106(local29);
 		if (local60 == null) {
-			@Pc(69) RawModel local69 = this.method3418(arg0, arg3);
+			@Pc(69) ModelUnlit local69 = this.method3418(arg0, arg3);
 			if (local69 == null) {
 				Static171.aClass139_1.aClass8_10 = null;
 				return Static171.aClass139_1;
@@ -807,18 +807,18 @@ public final class LocType {
 				local69.aShort18 = (short) (this.anInt4405 * 5 + 768);
 				local69.method1668();
 			} else {
-				local60 = new SoftwareModel(local69, this.anInt4407 + 64, this.anInt4405 * 5 + 768, -50, -10, -50);
+				local60 = new SoftwareModelLit(local69, this.anInt4407 + 64, this.anInt4405 * 5 + 768, -50, -10, -50);
 			}
 			Static93.aClass99_14.method3095(local60, local29);
 		}
 		if (local50) {
-			local60 = ((RawModel) local60).method1675();
+			local60 = ((ModelUnlit) local60).method1675();
 		}
 		if (this.aByte15 != 0) {
-			if (local60 instanceof SoftwareModel) {
-				local60 = ((SoftwareModel) local60).method4586(this.aByte15, this.aShort26, arg2, arg5, arg1, arg4, arg9, true);
-			} else if (local60 instanceof RawModel) {
-				local60 = ((RawModel) local60).method1670(this.aByte15, this.aShort26, arg2, arg5, arg1, arg4, arg9);
+			if (local60 instanceof SoftwareModelLit) {
+				local60 = ((SoftwareModelLit) local60).method4586(this.aByte15, this.aShort26, arg2, arg5, arg1, arg4, arg9, true);
+			} else if (local60 instanceof ModelUnlit) {
+				local60 = ((ModelUnlit) local60).method1670(this.aByte15, this.aShort26, arg2, arg5, arg1, arg4, arg9);
 			}
 		}
 		Static171.aClass139_1.aClass8_10 = local60;
@@ -826,7 +826,7 @@ public final class LocType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!pb", name = "a", descriptor = "(IILclient!ek;ILclient!tk;I[[IZII[[IIII)Lclient!sm;")
-	public final Class139 method3429(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) SoftwareIndexedSprite arg2, @OriginalArg(3) int arg3, @OriginalArg(4) SeqType arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int[][] arg6, @OriginalArg(7) boolean arg7, @OriginalArg(8) int arg8, @OriginalArg(10) int[][] arg9, @OriginalArg(11) int arg10, @OriginalArg(12) int arg11, @OriginalArg(13) int arg12) {
+	public final Class139 method3429(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) SoftwarePix8 arg2, @OriginalArg(3) int arg3, @OriginalArg(4) SeqType arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int[][] arg6, @OriginalArg(7) boolean arg7, @OriginalArg(8) int arg8, @OriginalArg(10) int[][] arg9, @OriginalArg(11) int arg10, @OriginalArg(12) int arg11, @OriginalArg(13) int arg12) {
 		@Pc(30) long local30;
 		if (!GlRenderer.enabled) {
 			if (this.anIntArray378 == null) {
@@ -834,30 +834,30 @@ public final class LocType {
 			} else {
 				local30 = arg5 + (this.anInt4426 << 10) + (arg11 << 3);
 			}
-			@Pc(195) SoftwareModel local195 = (SoftwareModel) Static262.aClass99_36.method3106(local30);
+			@Pc(195) SoftwareModelLit local195 = (SoftwareModelLit) Static262.aClass99_36.method3106(local30);
 			if (local195 == null) {
-				@Pc(204) RawModel local204 = this.method3418(arg5, arg11);
+				@Pc(204) ModelUnlit local204 = this.method3418(arg5, arg11);
 				if (local204 == null) {
 					return null;
 				}
-				local195 = new SoftwareModel(local204, this.anInt4407 + 64, this.anInt4405 * 5 + 768, -50, -10, -50);
+				local195 = new SoftwareModelLit(local204, this.anInt4407 + 64, this.anInt4405 * 5 + 768, -50, -10, -50);
 				Static262.aClass99_36.method3095(local195, local30);
 			}
 			@Pc(234) boolean local234 = false;
 			if (arg4 != null) {
 				local234 = true;
-				local195 = (SoftwareModel) arg4.method4214(arg8, arg10, local195, arg5, arg12);
+				local195 = (SoftwareModelLit) arg4.method4214(arg8, arg10, local195, arg5, arg12);
 			}
 			if (arg11 == 10 && arg5 > 3) {
 				if (!local234) {
 					local234 = true;
-					local195 = (SoftwareModel) local195.method4568(true, true, true);
+					local195 = (SoftwareModelLit) local195.method4568(true, true, true);
 				}
 				local195.method4554(256);
 			}
 			if (this.aByte15 != 0) {
 				if (!local234) {
-					local195 = (SoftwareModel) local195.method4568(true, true, true);
+					local195 = (SoftwareModelLit) local195.method4568(true, true, true);
 				}
 				local195 = local195.method4586(this.aByte15, this.aShort26, arg6, arg9, arg1, arg3, arg0, false);
 			}
@@ -869,7 +869,7 @@ public final class LocType {
 		} else {
 			local30 = (arg11 << 3) + ((this.anInt4426 << 10) + arg5);
 		}
-		@Pc(46) GlModel local46 = (GlModel) Static262.aClass99_36.method3106(local30);
+		@Pc(46) GlModelLit local46 = (GlModelLit) Static262.aClass99_36.method3106(local30);
 		if (local46 == null) {
 			local46 = this.method3427(arg5, true, arg11);
 			if (local46 == null) {
@@ -880,14 +880,14 @@ public final class LocType {
 			Static262.aClass99_36.method3095(local46, local30);
 		}
 		@Pc(80) boolean local80 = false;
-		@Pc(82) GlModel local82 = local46;
+		@Pc(82) GlModelLit local82 = local46;
 		if (arg4 != null) {
-			local82 = (GlModel) arg4.method4216(arg10, arg8, arg12, arg5, local46);
+			local82 = (GlModelLit) arg4.method4216(arg10, arg8, arg12, arg5, local46);
 			local80 = true;
 		}
 		if (arg11 == 10 && arg5 > 3) {
 			if (!local80) {
-				local82 = (GlModel) local82.method4568(true, true, true);
+				local82 = (GlModelLit) local82.method4568(true, true, true);
 				local80 = true;
 			}
 			local82.method4554(256);
@@ -899,7 +899,7 @@ public final class LocType {
 		}
 		if (this.aByte15 != 0) {
 			if (!local80) {
-				local82 = (GlModel) local82.method4568(true, true, true);
+				local82 = (GlModelLit) local82.method4568(true, true, true);
 			}
 			local82.method4110(this.aByte15, this.aShort26, local46, arg6, arg9, arg1, arg3, arg0);
 		}

@@ -21,7 +21,7 @@ public final class Static250 {
 	public static int anInt5434 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!uf", name = "j", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_33 = new SoftLruHashTable(260);
+	public static final SoftLruCache aClass99_33 = new SoftLruCache(260);
 
 	@OriginalMember(owner = "com.jagex3.client.client!uf", name = "o", descriptor = "Lclient!na;")
 	public static final JagString aClass100_1041 = Static28.parse("scrollbar");

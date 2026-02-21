@@ -58,8 +58,8 @@ public final class Static69 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!fh", name = "a", descriptor = "(IIIILclient!th;JLclient!th;Lclient!th;)V")
-	public static void method1543(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) Entity arg4, @OriginalArg(5) long arg5, @OriginalArg(6) Entity arg6, @OriginalArg(7) Entity arg7) {
-		@Pc(3) ObjStackEntity local3 = new ObjStackEntity();
+	public static void method1543(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) ModelSource arg4, @OriginalArg(5) long arg5, @OriginalArg(6) ModelSource arg6, @OriginalArg(7) ModelSource arg7) {
+		@Pc(3) GroundObject local3 = new GroundObject();
 		local3.aClass8_9 = arg4;
 		local3.anInt3064 = arg1 * 128 + 64;
 		local3.anInt3061 = arg2 * 128 + 64;
@@ -68,10 +68,10 @@ public final class Static69 {
 		local3.aClass8_7 = arg6;
 		local3.aClass8_8 = arg7;
 		@Pc(34) int local34 = 0;
-		@Pc(42) Tile local42 = Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2];
+		@Pc(42) Square local42 = Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2];
 		if (local42 != null) {
 			for (@Pc(46) int local46 = 0; local46 < local42.anInt662; local46++) {
-				@Pc(55) Scenery local55 = local42.aClass31Array1[local46];
+				@Pc(55) Sprite local55 = local42.aClass31Array1[local46];
 				if ((local55.aLong56 & 0x400000L) == 4194304L) {
 					@Pc(66) int local66 = local55.aClass8_4.method4549();
 					if (local66 != -32768 && local66 < local34) {
@@ -82,13 +82,13 @@ public final class Static69 {
 		}
 		local3.anInt3063 = -local34;
 		if (Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2] == null) {
-			Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2] = new Tile(arg0, arg1, arg2);
+			Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2] = new Square(arg0, arg1, arg2);
 		}
 		Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2].aClass79_1 = local3;
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!fh", name = "a", descriptor = "(Lclient!th;IIIII)V")
-	public static void method1544(@OriginalArg(0) Entity arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
+	public static void method1544(@OriginalArg(0) ModelSource arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
 		@Pc(1) boolean local1 = true;
 		@Pc(3) int local3 = arg2;
 		@Pc(7) int local7 = arg2 + arg4;
@@ -100,7 +100,7 @@ public final class Static69 {
 					if (local28 >= 0 && local28 < Static152.anInt3594) {
 						for (@Pc(39) int local39 = local11; local39 <= local15; local39++) {
 							if (local39 >= 0 && local39 < Static99.anInt2550 && (!local1 || local28 >= local7 || local39 >= local15 || local39 < arg3 && local28 != arg2)) {
-								@Pc(71) Tile local71 = Static130.aClass3_Sub5ArrayArrayArray1[local17][local28][local39];
+								@Pc(71) Square local71 = Static130.aClass3_Sub5ArrayArrayArray1[local17][local28][local39];
 								if (local71 != null) {
 									@Pc(158) int local158 = (Static83.anIntArrayArrayArray4[local17][local28][local39] + Static83.anIntArrayArrayArray4[local17][local28 + 1][local39] + Static83.anIntArrayArrayArray4[local17][local28][local39 + 1] + Static83.anIntArrayArrayArray4[local17][local28 + 1][local39 + 1]) / 4 - (Static83.anIntArrayArrayArray4[arg1][arg2][arg3] + Static83.anIntArrayArrayArray4[arg1][arg2 + 1][arg3] + Static83.anIntArrayArrayArray4[arg1][arg2][arg3 + 1] + Static83.anIntArrayArrayArray4[arg1][arg2 + 1][arg3 + 1]) / 4;
 									@Pc(161) Wall local161 = local71.aClass77_1;
@@ -113,7 +113,7 @@ public final class Static69 {
 										}
 									}
 									for (@Pc(232) int local232 = 0; local232 < local71.anInt662; local232++) {
-										@Pc(241) Scenery local241 = local71.aClass31Array1[local232];
+										@Pc(241) Sprite local241 = local71.aClass31Array1[local232];
 										if (local241 != null && local241.aClass8_4.method4543() && (local28 == local241.anInt1701 || local28 == local3) && (local39 == local241.anInt1696 || local39 == local11)) {
 											@Pc(270) int local270 = local241.anInt1713 + 1 - local241.anInt1701;
 											@Pc(278) int local278 = local241.anInt1698 + 1 - local241.anInt1696;
@@ -132,7 +132,7 @@ public final class Static69 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!fh", name = "a", descriptor = "(BLclient!ek;)V")
-	public static void method1545(@OriginalArg(1) SoftwareIndexedSprite arg0) {
+	public static void method1545(@OriginalArg(1) SoftwarePix8 arg0) {
 		@Pc(5) int local5;
 		for (local5 = 0; local5 < Static270.anIntArray562.length; local5++) {
 			Static270.anIntArray562[local5] = 0;

@@ -41,7 +41,7 @@ public final class Static263 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!vg", name = "a", descriptor = "(Lclient!na;IIBI)V")
 	public static void method4512(@OriginalArg(0) JagString arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3) {
-		@Pc(8) Component local8 = Static201.method1418(arg3, arg1);
+		@Pc(8) IfType local8 = Static201.method1418(arg3, arg1);
 		if (local8 == null) {
 			return;
 		}
@@ -113,7 +113,7 @@ public final class Static263 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!vg", name = "a", descriptor = "(IILclient!fe;)V")
-	public static void method4514(@OriginalArg(0) int arg0, @OriginalArg(2) PathingEntity arg1) {
+	public static void method4514(@OriginalArg(0) int arg0, @OriginalArg(2) ClientEntity arg1) {
 		if (Static83.anInt372 < arg1.anInt3395) {
 			Static18.method553(arg1);
 		} else if (arg1.anInt3386 >= Static83.anInt372) {

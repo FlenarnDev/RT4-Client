@@ -21,7 +21,7 @@ public final class Static258 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!va", name = "a", descriptor = "(IZILclient!be;)V")
-	public static void method4418(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Component arg2) {
+	public static void method4418(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) IfType arg2) {
 		if (arg2.anInt530 == 1) {
 			Static98.method1966(-1, 0L, Static186.aClass100_827, 0, (short) 8, arg2.aClass100_89, arg2.anInt507);
 		}
@@ -60,14 +60,14 @@ public final class Static258 {
 						Static169.aClass13_18 = arg2;
 						Static18.anInt588 = local171;
 						if (arg2.objTypes[local171] > 0) {
-							@Pc(267) ServerActiveProperties local267 = Static36.method940(arg2);
+							@Pc(267) ServerActive local267 = Static36.method940(arg2);
 							@Pc(276) ObjType local276 = Static71.method1439(arg2.objTypes[local171] - 1);
 							if (Static260.anInt5014 == 1 && local267.method510()) {
 								if (Static224.anInt5062 != arg2.anInt507 || Static185.anInt4370 != local171) {
 									Static98.method1966(-1, (long) local276.anInt2354, Static34.method882(new JagString[] { Static34.aClass100_203, Static223.aClass100_947, local276.aClass100_495 }), local171, (short) 40, LocalizedText.USE, arg2.anInt507);
 								}
 							} else if (Static241.aBoolean302 && local267.method510()) {
-								@Pc(596) Class3_Sub2_Sub12 local596 = Static121.anInt3039 == -1 ? null : Static110.method2277(Static121.anInt3039);
+								@Pc(596) ParamType local596 = Static121.anInt3039 == -1 ? null : Static110.method2277(Static121.anInt3039);
 								if ((Static274.anInt4999 & 0x10) != 0 && (local596 == null || local276.method1829(local596.anInt2667, Static121.anInt3039) != local596.anInt2667)) {
 									Static98.method1966(Static246.anInt5393, (long) local276.anInt2354, Static34.method882(new JagString[] { Static78.aClass100_466, Static223.aClass100_947, local276.aClass100_495 }), local171, (short) 3, Static102.aClass100_545, arg2.anInt507);
 								}

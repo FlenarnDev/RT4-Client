@@ -29,9 +29,9 @@ public final class Static137 {
 		@Pc(80) int local80;
 		if (Static56.aClass3_Sub2_Sub1_Sub1_1 == null) {
 			if (GlRenderer.enabled || Static89.aClass3_Sub2_Sub1_5 == null) {
-				Static56.aClass3_Sub2_Sub1_Sub1_1 = new SoftwareSprite(512, 512);
+				Static56.aClass3_Sub2_Sub1_Sub1_1 = new Pix32(512, 512);
 			} else {
-				Static56.aClass3_Sub2_Sub1_Sub1_1 = (SoftwareSprite) Static89.aClass3_Sub2_Sub1_5;
+				Static56.aClass3_Sub2_Sub1_Sub1_1 = (Pix32) Static89.aClass3_Sub2_Sub1_5;
 			}
 			@Pc(32) int[] local32 = Static56.aClass3_Sub2_Sub1_Sub1_1.anIntArray20;
 			local35 = local32.length;
@@ -130,7 +130,7 @@ public final class Static137 {
 					local576[local80] = 1;
 				}
 			}
-			Static89.aClass3_Sub2_Sub1_5 = new GlSprite(Static56.aClass3_Sub2_Sub1_Sub1_1);
+			Static89.aClass3_Sub2_Sub1_5 = new GlPix32(Static56.aClass3_Sub2_Sub1_Sub1_1);
 		} else {
 			Static89.aClass3_Sub2_Sub1_5 = Static56.aClass3_Sub2_Sub1_Sub1_1;
 		}

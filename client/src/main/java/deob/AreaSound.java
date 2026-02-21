@@ -5,7 +5,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("com.jagex3.client.client!fl")
-public final class AreaSound extends Node {
+public final class AreaSound extends Linkable {
 
 	@OriginalMember(owner = "com.jagex3.client.client!fl", name = "p", descriptor = "I")
 	public int anInt2028;
@@ -17,13 +17,13 @@ public final class AreaSound extends Node {
 	public int anInt2032;
 
 	@OriginalMember(owner = "com.jagex3.client.client!fl", name = "v", descriptor = "Lclient!b;")
-	public SoundPcmStream aClass3_Sub3_Sub1_1;
+	public WaveStream aClass3_Sub3_Sub1_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!fl", name = "x", descriptor = "I")
 	public int anInt2033;
 
 	@OriginalMember(owner = "com.jagex3.client.client!fl", name = "y", descriptor = "Lclient!b;")
-	public SoundPcmStream aClass3_Sub3_Sub1_2;
+	public WaveStream aClass3_Sub3_Sub1_2;
 
 	@OriginalMember(owner = "com.jagex3.client.client!fl", name = "z", descriptor = "I")
 	public int anInt2034;
@@ -35,7 +35,7 @@ public final class AreaSound extends Node {
 	public int anInt2037;
 
 	@OriginalMember(owner = "com.jagex3.client.client!fl", name = "I", descriptor = "Lclient!km;")
-	public Npc aClass8_Sub4_Sub2_1;
+	public ClientNPC aClass8_Sub4_Sub2_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!fl", name = "K", descriptor = "I")
 	public int anInt2040;
@@ -44,7 +44,7 @@ public final class AreaSound extends Node {
 	public int anInt2041;
 
 	@OriginalMember(owner = "com.jagex3.client.client!fl", name = "M", descriptor = "Lclient!e;")
-	public Player aClass8_Sub4_Sub1_1;
+	public ClientPlayer aClass8_Sub4_Sub1_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!fl", name = "N", descriptor = "I")
 	public int anInt2042;

@@ -10,7 +10,7 @@ public final class Static104 {
 	public static final int[] anIntArray255 = new int[200];
 
 	@OriginalMember(owner = "com.jagex3.client.client!ia", name = "a", descriptor = "(BLclient!fe;)V")
-	public static void method2247(@OriginalArg(1) PathingEntity arg0) {
+	public static void method2247(@OriginalArg(1) ClientEntity arg0) {
 		@Pc(9) BasType local9 = arg0.method2681();
 		arg0.anInt3366 = local9.anInt1037;
 		if (arg0.anInt3409 == 0) {
@@ -77,8 +77,8 @@ public final class Static104 {
 			local227 = local9.anInt1051;
 		}
 		arg0.anInt3366 = local227;
-		if (arg0 instanceof Npc) {
-			local233 = ((Npc) arg0).aClass96_1.aBoolean181;
+		if (arg0 instanceof ClientNPC) {
+			local233 = ((ClientNPC) arg0).aClass96_1.aBoolean181;
 		}
 		if (local233) {
 			if (arg0.anInt3381 != arg0.anInt3400 && arg0.anInt3370 == -1 && arg0.anInt3376 != 0) {

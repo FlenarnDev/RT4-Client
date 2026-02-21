@@ -302,7 +302,7 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!h", name = "a", descriptor = "(IIILclient!tk;II)Lclient!ak;")
-	public final Model method1824(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) SeqType arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
+	public final ModelLit method1824(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) SeqType arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		if (this.anIntArray214 != null && arg3 > 1) {
 			@Pc(22) int local22 = -1;
 			for (@Pc(24) int local24 = 0; local24 < 10; local24++) {
@@ -314,9 +314,9 @@ public final class ObjType {
 				return Static71.method1439(local22).method1824(arg0, arg1, arg2, 1, arg4);
 			}
 		}
-		@Pc(76) Model local76 = (Model) Static244.aClass99_32.method3106((long) this.anInt2354);
+		@Pc(76) ModelLit local76 = (ModelLit) Static244.aClass99_32.method3106((long) this.anInt2354);
 		if (local76 == null) {
-			@Pc(85) RawModel local85 = Static77.method1686(Static230.aClass153_95, this.anInt2320);
+			@Pc(85) ModelUnlit local85 = Static77.method1686(Static230.aClass153_95, this.anInt2320);
 			if (local85 == null) {
 				return null;
 			}
@@ -341,7 +341,7 @@ public final class ObjType {
 			}
 			local76.aBoolean303 = true;
 			if (GlRenderer.enabled) {
-				((GlModel) local76).method4111(false, false, false, false, false, true);
+				((GlModelLit) local76).method4111(false, false, false, false, false, true);
 			}
 			Static244.aClass99_32.method3095(local76, (long) this.anInt2354);
 		}
@@ -508,7 +508,7 @@ public final class ObjType {
 				for (local179 = 0; local179 < local169; local179++) {
 					@Pc(510) boolean local510 = arg0.g1() == 1;
 					@Pc(514) int local514 = arg0.g3();
-					@Pc(523) Node local523;
+					@Pc(523) Linkable local523;
 					if (local510) {
 						local523 = new StringNode(arg0.gjstr());
 					} else {
@@ -531,7 +531,7 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!h", name = "a", descriptor = "(ZB)Lclient!gb;")
-	public final RawModel method1830(@OriginalArg(0) boolean arg0) {
+	public final ModelUnlit method1830(@OriginalArg(0) boolean arg0) {
 		@Pc(4) int local4 = this.anInt2364;
 		@Pc(17) int local17 = this.anInt2372;
 		if (arg0) {
@@ -541,11 +541,11 @@ public final class ObjType {
 		if (local17 == -1) {
 			return null;
 		}
-		@Pc(36) RawModel local36 = Static77.method1686(Static230.aClass153_95, local17);
+		@Pc(36) ModelUnlit local36 = Static77.method1686(Static230.aClass153_95, local17);
 		if (local4 != -1) {
-			@Pc(44) RawModel local44 = Static77.method1686(Static230.aClass153_95, local4);
-			@Pc(55) RawModel[] local55 = new RawModel[] { local36, local44 };
-			local36 = new RawModel(local55, 2);
+			@Pc(44) ModelUnlit local44 = Static77.method1686(Static230.aClass153_95, local4);
+			@Pc(55) ModelUnlit[] local55 = new ModelUnlit[] { local36, local44 };
+			local36 = new ModelUnlit(local55, 2);
 		}
 		@Pc(66) int local66;
 		if (this.aShortArray34 != null) {
@@ -562,7 +562,7 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!h", name = "a", descriptor = "(ZI)Lclient!gb;")
-	public final RawModel method1831(@OriginalArg(0) boolean arg0) {
+	public final ModelUnlit method1831(@OriginalArg(0) boolean arg0) {
 		@Pc(4) int local4 = this.anInt2360;
 		@Pc(18) int local18 = this.anInt2341;
 		@Pc(21) int local21 = this.anInt2340;
@@ -574,16 +574,16 @@ public final class ObjType {
 		if (local4 == -1) {
 			return null;
 		}
-		@Pc(43) RawModel local43 = Static77.method1686(Static230.aClass153_95, local4);
+		@Pc(43) ModelUnlit local43 = Static77.method1686(Static230.aClass153_95, local4);
 		if (local18 != -1) {
-			@Pc(54) RawModel local54 = Static77.method1686(Static230.aClass153_95, local18);
+			@Pc(54) ModelUnlit local54 = Static77.method1686(Static230.aClass153_95, local18);
 			if (local21 == -1) {
-				@Pc(68) RawModel[] local68 = new RawModel[] { local43, local54 };
-				local43 = new RawModel(local68, 2);
+				@Pc(68) ModelUnlit[] local68 = new ModelUnlit[] { local43, local54 };
+				local43 = new ModelUnlit(local68, 2);
 			} else {
-				@Pc(81) RawModel local81 = Static77.method1686(Static230.aClass153_95, local21);
-				@Pc(96) RawModel[] local96 = new RawModel[] { local43, local54, local81 };
-				local43 = new RawModel(local96, 3);
+				@Pc(81) ModelUnlit local81 = Static77.method1686(Static230.aClass153_95, local21);
+				@Pc(96) ModelUnlit[] local96 = new ModelUnlit[] { local43, local54, local81 };
+				local43 = new ModelUnlit(local96, 3);
 			}
 		}
 		if (!arg0 && (this.anInt2330 != 0 || this.anInt2347 != 0 || this.anInt2343 != 0)) {
@@ -627,8 +627,8 @@ public final class ObjType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!h", name = "d", descriptor = "(I)Lclient!w;")
-	public final SoftwareModel method1834() {
-		@Pc(11) RawModel local11 = Static77.method1686(Static230.aClass153_95, this.anInt2320);
+	public final SoftwareModelLit method1834() {
+		@Pc(11) ModelUnlit local11 = Static77.method1686(Static230.aClass153_95, this.anInt2320);
 		if (local11 == null) {
 			return null;
 		}
@@ -647,7 +647,7 @@ public final class ObjType {
 				local11.method1669(this.aShortArray32[local21], this.aShortArray31[local21]);
 			}
 		}
-		@Pc(107) SoftwareModel local107 = local11.method1671(this.anInt2352 + 64, 768 - -this.anInt2357);
+		@Pc(107) SoftwareModelLit local107 = local11.method1671(this.anInt2352 + 64, 768 - -this.anInt2357);
 		if (this.anInt2373 != 128 || this.anInt2350 != 128 || this.anInt2368 != 128) {
 			local107.method4559(this.anInt2373, this.anInt2350, this.anInt2368);
 		}

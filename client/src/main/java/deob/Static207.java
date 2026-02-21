@@ -25,7 +25,7 @@ public final class Static207 {
 	public static final JagString aClass100_904 = Static28.parse("::wm2");
 
 	@OriginalMember(owner = "com.jagex3.client.client!ql", name = "a", descriptor = "(IFII[[I[[II[[FIBIZLclient!hg;[[FII[[FI)I")
-	public static int method3683(@OriginalArg(0) int arg0, @OriginalArg(1) float arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int[][] arg4, @OriginalArg(5) int[][] arg5, @OriginalArg(6) int arg6, @OriginalArg(7) float[][] arg7, @OriginalArg(8) int arg8, @OriginalArg(10) int arg9, @OriginalArg(11) boolean arg10, @OriginalArg(12) Class3_Sub14 arg11, @OriginalArg(13) float[][] arg12, @OriginalArg(14) int arg13, @OriginalArg(15) int arg14, @OriginalArg(16) float[][] arg15, @OriginalArg(17) int arg16) {
+	public static int method3683(@OriginalArg(0) int arg0, @OriginalArg(1) float arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int[][] arg4, @OriginalArg(5) int[][] arg5, @OriginalArg(6) int arg6, @OriginalArg(7) float[][] arg7, @OriginalArg(8) int arg8, @OriginalArg(10) int arg9, @OriginalArg(11) boolean arg10, @OriginalArg(12) GlSquare arg11, @OriginalArg(13) float[][] arg12, @OriginalArg(14) int arg13, @OriginalArg(15) int arg14, @OriginalArg(16) float[][] arg15, @OriginalArg(17) int arg16) {
 		@Pc(20) int local20;
 		if (arg9 == 1) {
 			local20 = arg14;
@@ -169,10 +169,10 @@ public final class Static207 {
 			if (Static141.anInt3469 < Static116.anInt2961) {
 				return -1;
 			} else if (Static170.method2572(Static229.aByteArray70)) {
-				Static101.aClass10_Sub1Array1 = new World[Static106.anInt2871];
+				Static101.aClass10_Sub1Array1 = new GWCWorld[Static106.anInt2871];
 				local124 = 0;
 				for (@Pc(240) int local240 = Static19.anInt636; local240 <= Static171.anInt4157; local240++) {
-					@Pc(247) World local247 = Static54.method1310(local240);
+					@Pc(247) GWCWorld local247 = Static54.method1310(local240);
 					if (local247 != null) {
 						Static101.aClass10_Sub1Array1[local124++] = local247;
 					}

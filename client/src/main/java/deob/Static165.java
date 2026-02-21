@@ -10,7 +10,7 @@ public final class Static165 {
 	public static int anInt4038;
 
 	@OriginalMember(owner = "com.jagex3.client.client!nb", name = "i", descriptor = "Lclient!qf;")
-	public static Sprite aClass3_Sub2_Sub1_8;
+	public static AbstractPix32 aClass3_Sub2_Sub1_8;
 
 	@OriginalMember(owner = "com.jagex3.client.client!nb", name = "o", descriptor = "I")
 	public static int anInt4042;

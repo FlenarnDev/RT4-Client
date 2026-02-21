@@ -13,7 +13,7 @@ public final class Static152 {
 	public static WorldMapFont aClass41_3;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ma", name = "x", descriptor = "Lclient!ih;")
-	public static final LinkedList aClass69_87 = new LinkedList();
+	public static final LinkList aClass69_87 = new LinkList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!ma", name = "z", descriptor = "I")
 	public static int anInt3604 = -1;
@@ -29,11 +29,11 @@ public final class Static152 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!ma", name = "a", descriptor = "([IIIIII)V")
 	public static void method2835(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
-		@Pc(7) Tile local7 = Static130.aClass3_Sub5ArrayArrayArray1[arg2][arg3][arg4];
+		@Pc(7) Square local7 = Static130.aClass3_Sub5ArrayArrayArray1[arg2][arg3][arg4];
 		if (local7 == null) {
 			return;
 		}
-		@Pc(13) PlainTile local13 = local7.aClass131_1;
+		@Pc(13) QuickGround local13 = local7.aClass131_1;
 		@Pc(23) int local23;
 		if (local13 != null) {
 			@Pc(18) int local18 = local13.anInt4871;
@@ -48,7 +48,7 @@ public final class Static152 {
 			}
 			return;
 		}
-		@Pc(58) ShapedTile local58 = local7.aClass43_1;
+		@Pc(58) Ground local58 = local7.aClass43_1;
 		if (local58 == null) {
 			return;
 		}

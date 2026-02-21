@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static43 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!dg", name = "h", descriptor = "Lclient!be;")
-	public static Component aClass13_11;
+	public static IfType aClass13_11;
 
 	@OriginalMember(owner = "com.jagex3.client.client!dg", name = "b", descriptor = "Lclient!na;")
 	public static final JagString aClass100_333 = Static28.parse("Shift)2click ENABLED(Q");
@@ -22,7 +22,7 @@ public final class Static43 {
 	public static boolean displayFps = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!dg", name = "a", descriptor = "(IIIIILclient!th;IJZ)Z")
-	public static boolean method1141(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) Entity arg5, @OriginalArg(6) int arg6, @OriginalArg(7) long arg7, @OriginalArg(8) boolean arg8) {
+	public static boolean method1141(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) ModelSource arg5, @OriginalArg(6) int arg6, @OriginalArg(7) long arg7, @OriginalArg(8) boolean arg8) {
 		if (arg5 == null) {
 			return true;
 		}
@@ -52,7 +52,7 @@ public final class Static43 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!dg", name = "a", descriptor = "(ILclient!be;)V")
-	public static void method1143(@OriginalArg(1) Component arg0) {
+	public static void method1143(@OriginalArg(1) IfType arg0) {
 		if (Static182.anInt4311 == arg0.anInt465) {
 			Static186.aBooleanArray100[arg0.anInt517] = true;
 		}
@@ -80,8 +80,8 @@ public final class Static43 {
 		if (local9 == 0L) {
 			return;
 		}
-		@Pc(100) Entity local100 = null;
-		@Pc(102) Entity local102 = null;
+		@Pc(100) ModelSource local100 = null;
+		@Pc(102) ModelSource local102 = null;
 		if (arg3 == 0) {
 			@Pc(110) Wall local110 = Static110.method2276(arg2, arg1, arg0);
 			if (local110 != null) {
@@ -98,7 +98,7 @@ public final class Static43 {
 				local102 = local233.aClass8_2;
 			}
 		} else if (arg3 == 2) {
-			@Pc(148) Scenery local148 = Static47.method3996(arg2, arg1, arg0);
+			@Pc(148) Sprite local148 = Static47.method3996(arg2, arg1, arg0);
 			if (local148 != null) {
 				local100 = local148.aClass8_4;
 			}
@@ -118,53 +118,53 @@ public final class Static43 {
 			return;
 		}
 		if (local57 == 2) {
-			if (local100 instanceof Loc) {
-				((Loc) local100).method1046();
+			if (local100 instanceof ClientLocAnim) {
+				((ClientLocAnim) local100).method1046();
 			} else {
 				Static9.method181(local74, 0, local92 + 4, 0, local57, arg1, arg0, arg4);
 			}
-			if (local102 instanceof Loc) {
-				((Loc) local102).method1046();
+			if (local102 instanceof ClientLocAnim) {
+				((ClientLocAnim) local102).method1046();
 			} else {
 				Static9.method181(local74, 0, local92 + 1 & 0x3, 0, local57, arg1, arg0, arg4);
 			}
 		} else if (local57 == 5) {
-			if (local100 instanceof Loc) {
-				((Loc) local100).method1046();
+			if (local100 instanceof ClientLocAnim) {
+				((ClientLocAnim) local100).method1046();
 			} else {
 				Static9.method181(local74, Static238.anIntArray469[local92] * 8, local92, Static34.anIntArray80[local92] * 8, 4, arg1, arg0, arg4);
 			}
 		} else if (local57 == 6) {
-			if (local100 instanceof Loc) {
-				((Loc) local100).method1046();
+			if (local100 instanceof ClientLocAnim) {
+				((ClientLocAnim) local100).method1046();
 			} else {
 				Static9.method181(local74, Static64.anIntArray154[local92] * 8, local92 + 4, Static114.anIntArray565[local92] * 8, 4, arg1, arg0, arg4);
 			}
 		} else if (local57 == 7) {
-			if (local100 instanceof Loc) {
-				((Loc) local100).method1046();
+			if (local100 instanceof ClientLocAnim) {
+				((ClientLocAnim) local100).method1046();
 			} else {
 				Static9.method181(local74, 0, (local92 + 2 & 0x3) + 4, 0, 4, arg1, arg0, arg4);
 			}
 		} else if (local57 == 8) {
-			if (local100 instanceof Loc) {
-				((Loc) local100).method1046();
+			if (local100 instanceof ClientLocAnim) {
+				((ClientLocAnim) local100).method1046();
 			} else {
 				Static9.method181(local74, Static64.anIntArray154[local92] * 8, local92 + 4, Static114.anIntArray565[local92] * 8, 4, arg1, arg0, arg4);
 			}
-			if (local102 instanceof Loc) {
-				((Loc) local102).method1046();
+			if (local102 instanceof ClientLocAnim) {
+				((ClientLocAnim) local102).method1046();
 			} else {
 				Static9.method181(local74, Static64.anIntArray154[local92] * 8, (local92 + 2 & 0x3) + 4, Static114.anIntArray565[local92] * 8, 4, arg1, arg0, arg4);
 			}
 		} else if (local57 == 11) {
-			if (local100 instanceof Loc) {
-				((Loc) local100).method1046();
+			if (local100 instanceof ClientLocAnim) {
+				((ClientLocAnim) local100).method1046();
 			} else {
 				Static9.method181(local74, 0, local92 + 4, 0, 10, arg1, arg0, arg4);
 			}
-		} else if (local100 instanceof Loc) {
-			((Loc) local100).method1046();
+		} else if (local100 instanceof ClientLocAnim) {
+			((ClientLocAnim) local100).method1046();
 		} else {
 			Static9.method181(local74, 0, local92, 0, local57, arg1, arg0, arg4);
 		}

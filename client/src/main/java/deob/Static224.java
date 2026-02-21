@@ -27,13 +27,13 @@ public final class Static224 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!sd", name = "c", descriptor = "(II)V")
 	public static void method3884(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(7) Tile local7 = Static130.aClass3_Sub5ArrayArrayArray1[0][arg0][arg1];
+		@Pc(7) Square local7 = Static130.aClass3_Sub5ArrayArrayArray1[0][arg0][arg1];
 		for (@Pc(9) int local9 = 0; local9 < 3; local9++) {
-			@Pc(30) Tile local30 = Static130.aClass3_Sub5ArrayArrayArray1[local9][arg0][arg1] = Static130.aClass3_Sub5ArrayArrayArray1[local9 + 1][arg0][arg1];
+			@Pc(30) Square local30 = Static130.aClass3_Sub5ArrayArrayArray1[local9][arg0][arg1] = Static130.aClass3_Sub5ArrayArrayArray1[local9 + 1][arg0][arg1];
 			if (local30 != null) {
 				local30.anInt672--;
 				for (@Pc(40) int local40 = 0; local40 < local30.anInt662; local40++) {
-					@Pc(49) Scenery local49 = local30.aClass31Array1[local40];
+					@Pc(49) Sprite local49 = local30.aClass31Array1[local40];
 					if ((local49.aLong56 >> 29 & 0x3L) == 2L && local49.anInt1701 == arg0 && local49.anInt1696 == arg1) {
 						local49.anInt1709--;
 					}
@@ -41,7 +41,7 @@ public final class Static224 {
 			}
 		}
 		if (Static130.aClass3_Sub5ArrayArrayArray1[0][arg0][arg1] == null) {
-			Static130.aClass3_Sub5ArrayArrayArray1[0][arg0][arg1] = new Tile(0, arg0, arg1);
+			Static130.aClass3_Sub5ArrayArrayArray1[0][arg0][arg1] = new Square(0, arg0, arg1);
 		}
 		Static130.aClass3_Sub5ArrayArrayArray1[0][arg0][arg1].aClass3_Sub5_1 = local7;
 		Static130.aClass3_Sub5ArrayArrayArray1[3][arg0][arg1] = null;

@@ -1,62 +1,47 @@
 package deob;
 
-import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
-import org.openrs2.deob.annotation.Pc;
 
-@OriginalClass("com.jagex3.client.client!qf")
-public abstract class Sprite extends SecondaryNode {
+@OriginalClass("com.jagex3.client.client!ec")
+public final class Sprite {
 
-	@OriginalMember(owner = "com.jagex3.client.client!qf", name = "I", descriptor = "I")
-	public int anInt1859;
+	@OriginalMember(owner = "com.jagex3.client.client!ec", name = "a", descriptor = "I")
+	public int anInt1696;
 
-	@OriginalMember(owner = "com.jagex3.client.client!qf", name = "J", descriptor = "I")
-	public int anInt1860;
+	@OriginalMember(owner = "com.jagex3.client.client!ec", name = "c", descriptor = "Lclient!th;")
+	public ModelSource aClass8_4;
 
-	@OriginalMember(owner = "com.jagex3.client.client!qf", name = "K", descriptor = "I")
-	protected int anInt1861;
+	@OriginalMember(owner = "com.jagex3.client.client!ec", name = "e", descriptor = "I")
+	public int anInt1698;
 
-	@OriginalMember(owner = "com.jagex3.client.client!qf", name = "P", descriptor = "I")
-	protected int anInt1863;
+	@OriginalMember(owner = "com.jagex3.client.client!ec", name = "f", descriptor = "I")
+	public int anInt1699;
 
-	@OriginalMember(owner = "com.jagex3.client.client!qf", name = "V", descriptor = "I")
-	public int anInt1866;
+	@OriginalMember(owner = "com.jagex3.client.client!ec", name = "h", descriptor = "I")
+	public int anInt1701;
 
-	@OriginalMember(owner = "com.jagex3.client.client!qf", name = "W", descriptor = "I")
-	public int anInt1867;
+	@OriginalMember(owner = "com.jagex3.client.client!ec", name = "j", descriptor = "I")
+	public int anInt1703;
 
-	@OriginalMember(owner = "com.jagex3.client.client!qf", name = "<init>", descriptor = "()V")
-	protected Sprite() {
-	}
+	@OriginalMember(owner = "com.jagex3.client.client!ec", name = "m", descriptor = "I")
+	public int anInt1705;
 
-	@OriginalMember(owner = "com.jagex3.client.client!qf", name = "c", descriptor = "(II)V")
-	public abstract void method1415(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1);
+	@OriginalMember(owner = "com.jagex3.client.client!ec", name = "o", descriptor = "I")
+	public int anInt1706;
 
-	@OriginalMember(owner = "com.jagex3.client.client!qf", name = "a", descriptor = "(IIIIII)V")
-	protected abstract void method1416(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5);
+	@OriginalMember(owner = "com.jagex3.client.client!ec", name = "p", descriptor = "I")
+	public int anInt1707;
 
-	@OriginalMember(owner = "com.jagex3.client.client!qf", name = "a", descriptor = "(III)V")
-	public abstract void method1417(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2);
+	@OriginalMember(owner = "com.jagex3.client.client!ec", name = "s", descriptor = "I")
+	public int anInt1709;
 
-	@OriginalMember(owner = "com.jagex3.client.client!qf", name = "a", descriptor = "(IIII)V")
-	public abstract void method1419(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3);
+	@OriginalMember(owner = "com.jagex3.client.client!ec", name = "w", descriptor = "I")
+	public int anInt1713;
 
-	@OriginalMember(owner = "com.jagex3.client.client!qf", name = "a", descriptor = "(IIIII)V")
-	public final void method1420(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		@Pc(8) int local8 = this.anInt1860 << 3;
-		@Pc(17) int local17 = this.anInt1866 << 3;
-		@Pc(25) int local25 = (arg3 << 4) + (local8 & 0xF);
-		@Pc(33) int local33 = (arg0 << 4) + (local17 & 0xF);
-		this.method1416(local8, local17, local25, local33, arg1, arg2);
-	}
+	@OriginalMember(owner = "com.jagex3.client.client!ec", name = "x", descriptor = "I")
+	public int anInt1714;
 
-	@OriginalMember(owner = "com.jagex3.client.client!qf", name = "d", descriptor = "(II)V")
-	public abstract void method1421(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1);
-
-	@OriginalMember(owner = "com.jagex3.client.client!qf", name = "b", descriptor = "(IIIII)V")
-	public abstract void method1422(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4);
-
-	@OriginalMember(owner = "com.jagex3.client.client!qf", name = "e", descriptor = "(II)V")
-	public abstract void method1423(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1);
+	@OriginalMember(owner = "com.jagex3.client.client!ec", name = "A", descriptor = "J")
+	public long aLong56 = 0L;
 }

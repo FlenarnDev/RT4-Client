@@ -12,7 +12,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("com.jagex3.client.client!na")
-public final class JagString implements StringInterface {
+public final class JagString implements StringWrapper {
 
 	@OriginalMember(owner = "com.jagex3.client.client!na", name = "T", descriptor = "[B")
 	public byte[] aByteArray52;

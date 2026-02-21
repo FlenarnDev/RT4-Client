@@ -23,7 +23,7 @@ public final class Static33 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!cj", name = "a", descriptor = "(ILclient!pb;ZIIII)Z")
 	public static boolean method867(@OriginalArg(0) int arg0, @OriginalArg(1) LocType arg1, @OriginalArg(5) int arg2, @OriginalArg(6) int arg3) {
-		@Pc(10) Class2 local10 = Static40.method1013(arg1.anInt4415);
+		@Pc(10) MsiType local10 = Static40.method1013(arg1.anInt4415);
 		if (local10.anInt12 == -1) {
 			return true;
 		}
@@ -33,7 +33,7 @@ public final class Static33 {
 		} else {
 			arg3 = 0;
 		}
-		@Pc(42) SoftwareIndexedSprite local42 = local10.method9(arg3);
+		@Pc(42) SoftwarePix8 local42 = local10.method9(arg3);
 		if (local42 == null) {
 			return false;
 		}
@@ -185,7 +185,7 @@ public final class Static33 {
 		}
 		if (arg0.length > 136 && !Static84.aBoolean127) {
 			try {
-				@Pc(27) ByteArray local27 = (ByteArray) Class.forName("deob.DirectByteArray").getDeclaredConstructor().newInstance();
+				@Pc(27) ByteArrayWrapper local27 = (ByteArrayWrapper) Class.forName("deob.ByteBufferNode").getDeclaredConstructor().newInstance();
 				local27.method4238(arg0);
 				return local27;
 			} catch (@Pc(34) Throwable local34) {
@@ -196,8 +196,8 @@ public final class Static33 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!cj", name = "a", descriptor = "(I)[Lclient!qf;")
-	public static Sprite[] method870() {
-		@Pc(6) Sprite[] local6 = new Sprite[Static165.anInt4038];
+	public static AbstractPix32[] method870() {
+		@Pc(6) AbstractPix32[] local6 = new AbstractPix32[Static165.anInt4038];
 		for (@Pc(15) int local15 = 0; local15 < Static165.anInt4038; local15++) {
 			@Pc(30) int local30 = Static254.anIntArray488[local15] * Static26.anIntArray66[local15];
 			@Pc(34) byte[] local34 = Static7.aByteArrayArray5[local15];
@@ -206,9 +206,9 @@ public final class Static33 {
 				local37[local39] = Static259.anIntArray513[local34[local39] & 0xFF];
 			}
 			if (GlRenderer.enabled) {
-				local6[local15] = new GlSprite(Static124.anInt3080, Static227.anInt5091, Static274.anIntArray440[local15], Static269.anIntArray252[local15], Static254.anIntArray488[local15], Static26.anIntArray66[local15], local37);
+				local6[local15] = new GlPix32(Static124.anInt3080, Static227.anInt5091, Static274.anIntArray440[local15], Static269.anIntArray252[local15], Static254.anIntArray488[local15], Static26.anIntArray66[local15], local37);
 			} else {
-				local6[local15] = new SoftwareSprite(Static124.anInt3080, Static227.anInt5091, Static274.anIntArray440[local15], Static269.anIntArray252[local15], Static254.anIntArray488[local15], Static26.anIntArray66[local15], local37);
+				local6[local15] = new Pix32(Static124.anInt3080, Static227.anInt5091, Static274.anIntArray440[local15], Static269.anIntArray252[local15], Static254.anIntArray488[local15], Static26.anIntArray66[local15], local37);
 			}
 		}
 		Static75.method1631();

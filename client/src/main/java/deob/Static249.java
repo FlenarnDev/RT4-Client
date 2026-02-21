@@ -15,7 +15,7 @@ public final class Static249 {
 	public static int anInt5431 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ud", name = "P", descriptor = "Lclient!gn;")
-	public static final LruHashTable aClass54_15 = new LruHashTable(64);
+	public static final LruCache aClass54_15 = new LruCache(64);
 
 	@OriginalMember(owner = "com.jagex3.client.client!ud", name = "Q", descriptor = "Lclient!na;")
 	public static final JagString aClass100_1039 = Static28.parse(" x ");
@@ -24,7 +24,7 @@ public final class Static249 {
 	public static final int[] anIntArray478 = new int[32];
 
 	@OriginalMember(owner = "com.jagex3.client.client!ud", name = "a", descriptor = "(ILclient!be;)Z")
-	public static boolean method4265(@OriginalArg(1) Component arg0) {
+	public static boolean method4265(@OriginalArg(1) IfType arg0) {
 		if (arg0.anInt453 == 205) {
 			Static267.anInt5775 = 250;
 			return true;

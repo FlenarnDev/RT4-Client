@@ -11,7 +11,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Js5CacheQueue implements Runnable {
 
 	@OriginalMember(owner = "com.jagex3.client.client!k", name = "q", descriptor = "Lclient!ce;")
-	private final SecondaryLinkedList aClass16_6 = new SecondaryLinkedList();
+	private final secondaryLinkList aClass16_6 = new secondaryLinkList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!k", name = "s", descriptor = "I")
 	public int anInt3131 = 0;
@@ -36,7 +36,7 @@ public final class Js5CacheQueue implements Runnable {
 
 	@OriginalMember(owner = "com.jagex3.client.client!k", name = "a", descriptor = "(Lclient!c;I)V")
 	private void method2461(@OriginalArg(0) Js5CacheRequest arg0) {
-		@Pc(7) SecondaryLinkedList local7 = this.aClass16_6;
+		@Pc(7) secondaryLinkList local7 = this.aClass16_6;
 		synchronized (this.aClass16_6) {
 			this.aClass16_6.method798(arg0);
 			this.anInt3131++;
@@ -47,7 +47,7 @@ public final class Js5CacheQueue implements Runnable {
 	@OriginalMember(owner = "com.jagex3.client.client!k", name = "a", descriptor = "(I)V")
 	public final void method2466() {
 		this.aBoolean161 = true;
-		@Pc(6) SecondaryLinkedList local6 = this.aClass16_6;
+		@Pc(6) secondaryLinkList local6 = this.aClass16_6;
 		synchronized (this.aClass16_6) {
 			this.aClass16_6.notifyAll();
 		}
@@ -59,7 +59,7 @@ public final class Js5CacheQueue implements Runnable {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!k", name = "a", descriptor = "(Lclient!ge;I[BI)Lclient!c;")
-	public final Js5CacheRequest method2467(@OriginalArg(0) Cache arg0, @OriginalArg(2) byte[] arg1, @OriginalArg(3) int arg2) {
+	public final Js5CacheRequest method2467(@OriginalArg(0) DataFile arg0, @OriginalArg(2) byte[] arg1, @OriginalArg(3) int arg2) {
 		@Pc(7) Js5CacheRequest local7 = new Js5CacheRequest();
 		local7.aByteArray11 = arg1;
 		local7.aBoolean225 = false;
@@ -71,7 +71,7 @@ public final class Js5CacheQueue implements Runnable {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!k", name = "a", descriptor = "(IILclient!ge;)Lclient!c;")
-	public final Js5CacheRequest method2469(@OriginalArg(0) int arg0, @OriginalArg(2) Cache arg1) {
+	public final Js5CacheRequest method2469(@OriginalArg(0) int arg0, @OriginalArg(2) DataFile arg1) {
 		@Pc(7) Js5CacheRequest local7 = new Js5CacheRequest();
 		local7.aClass49_3 = arg1;
 		local7.anInt824 = 3;
@@ -82,10 +82,10 @@ public final class Js5CacheQueue implements Runnable {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!k", name = "a", descriptor = "(Lclient!ge;BI)Lclient!c;")
-	public final Js5CacheRequest method2471(@OriginalArg(0) Cache arg0, @OriginalArg(2) int arg1) {
+	public final Js5CacheRequest method2471(@OriginalArg(0) DataFile arg0, @OriginalArg(2) int arg1) {
 		@Pc(9) Js5CacheRequest local9 = new Js5CacheRequest();
 		local9.anInt824 = 1;
-		@Pc(16) SecondaryLinkedList local16 = this.aClass16_6;
+		@Pc(16) secondaryLinkList local16 = this.aClass16_6;
 		synchronized (this.aClass16_6) {
 			@Pc(31) Js5CacheRequest local31 = (Js5CacheRequest) this.aClass16_6.method795();
 			while (true) {
@@ -110,7 +110,7 @@ public final class Js5CacheQueue implements Runnable {
 	@Override
 	public final void run() {
 		while (!this.aBoolean161) {
-			@Pc(12) SecondaryLinkedList local12 = this.aClass16_6;
+			@Pc(12) secondaryLinkList local12 = this.aClass16_6;
 			@Pc(19) Js5CacheRequest local19;
 			synchronized (this.aClass16_6) {
 				local19 = (Js5CacheRequest) this.aClass16_6.method796();

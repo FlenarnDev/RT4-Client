@@ -114,9 +114,9 @@ public final class Static186 {
 				if (!Static119.aClass153_44.method4489(Static34.method882(new JagString[] { Static269.aClass3_Sub2_Sub4_2.aClass100_138, Static265.aClass100_1086 }))) {
 					return;
 				}
-				Static203.aClass134_1 = Static140.method2711(Static34.method882(new JagString[] { Static269.aClass3_Sub2_Sub4_2.aClass100_138, Static265.aClass100_1086 }), Static119.aClass153_44);
+				Static203.aMapElementList_1 = Static140.method2711(Static34.method882(new JagString[] { Static269.aClass3_Sub2_Sub4_2.aClass100_138, Static265.aClass100_1086 }), Static119.aClass153_44);
 			} else {
-				Static203.aClass134_1 = new Class134(0);
+				Static203.aMapElementList_1 = new MapElementList(0);
 			}
 			Static41.anInt1309 = 70;
 			Static234.method4020();
@@ -165,7 +165,7 @@ public final class Static186 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!pa", name = "a", descriptor = "(IIILclient!e;)V")
-	public static void method3415(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Player arg2) {
+	public static void method3415(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) ClientPlayer arg2) {
 		if (arg1 == arg2.anInt3369 && arg1 != -1) {
 			@Pc(89) SeqType local89 = Static36.method941(arg1);
 			@Pc(92) int local92 = local89.anInt5347;

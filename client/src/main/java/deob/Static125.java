@@ -14,10 +14,10 @@ public final class Static125 {
 	public static int anInt3096 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "x", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_18 = new SoftLruHashTable(50);
+	public static final SoftLruCache aClass99_18 = new SoftLruCache(50);
 
 	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "G", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_19 = new SoftLruHashTable(64);
+	public static final SoftLruCache aClass99_19 = new SoftLruCache(64);
 
 	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "H", descriptor = "I")
 	public static int worldId = -1;
@@ -47,13 +47,13 @@ public final class Static125 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "a", descriptor = "(IB)Lclient!kk;")
-	public static Class85 method2449(@OriginalArg(0) int arg0) {
-		@Pc(10) Class85 local10 = (Class85) aClass99_19.method3106((long) arg0);
+	public static VarBitType method2449(@OriginalArg(0) int arg0) {
+		@Pc(10) VarBitType local10 = (VarBitType) aClass99_19.method3106((long) arg0);
 		if (local10 != null) {
 			return local10;
 		}
 		@Pc(31) byte[] local31 = Static172.aClass153_69.method4495(Static254.method4349(arg0), Static274.method3845(arg0));
-		local10 = new Class85();
+		local10 = new VarBitType();
 		if (local31 != null) {
 			local10.method2651(new Packet(local31));
 		}

@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static92 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!hd", name = "e", descriptor = "Lclient!qf;")
-	public static Sprite aClass3_Sub2_Sub1_6;
+	public static AbstractPix32 aClass3_Sub2_Sub1_6;
 
 	@OriginalMember(owner = "com.jagex3.client.client!hd", name = "a", descriptor = "I")
 	public static int anInt2430 = 0;
@@ -32,10 +32,10 @@ public final class Static92 {
 			if (local28 != null) {
 				local38 = Integer.MAX_VALUE & (int) (local28.aLong107 >>> 32);
 				if (arg2 == 2) {
-					local28.aClass8_5 = new Loc(local38, 2, arg1 + 4, arg0, arg5, arg3, arg6, false, local28.aClass8_5);
-					local28.aClass8_6 = new Loc(local38, 2, arg1 + 1 & 0x3, arg0, arg5, arg3, arg6, false, local28.aClass8_6);
+					local28.aClass8_5 = new ClientLocAnim(local38, 2, arg1 + 4, arg0, arg5, arg3, arg6, false, local28.aClass8_5);
+					local28.aClass8_6 = new ClientLocAnim(local38, 2, arg1 + 1 & 0x3, arg0, arg5, arg3, arg6, false, local28.aClass8_6);
 				} else {
-					local28.aClass8_5 = new Loc(local38, arg2, arg1, arg0, arg5, arg3, arg6, false, local28.aClass8_5);
+					local28.aClass8_5 = new ClientLocAnim(local38, arg2, arg1, arg0, arg5, arg3, arg6, false, local28.aClass8_5);
 				}
 			}
 		}
@@ -44,14 +44,14 @@ public final class Static92 {
 			if (local106 != null) {
 				local38 = (int) (local106.aLong52 >>> 32) & Integer.MAX_VALUE;
 				if (arg2 == 4 || arg2 == 5) {
-					local106.aClass8_3 = new Loc(local38, 4, arg1, arg0, arg5, arg3, arg6, false, local106.aClass8_3);
+					local106.aClass8_3 = new ClientLocAnim(local38, 4, arg1, arg0, arg5, arg3, arg6, false, local106.aClass8_3);
 				} else if (arg2 == 6) {
-					local106.aClass8_3 = new Loc(local38, 4, arg1 + 4, arg0, arg5, arg3, arg6, false, local106.aClass8_3);
+					local106.aClass8_3 = new ClientLocAnim(local38, 4, arg1 + 4, arg0, arg5, arg3, arg6, false, local106.aClass8_3);
 				} else if (arg2 == 7) {
-					local106.aClass8_3 = new Loc(local38, 4, (arg1 + 2 & 0x3) + 4, arg0, arg5, arg3, arg6, false, local106.aClass8_3);
+					local106.aClass8_3 = new ClientLocAnim(local38, 4, (arg1 + 2 & 0x3) + 4, arg0, arg5, arg3, arg6, false, local106.aClass8_3);
 				} else if (arg2 == 8) {
-					local106.aClass8_3 = new Loc(local38, 4, arg1 + 4, arg0, arg5, arg3, arg6, false, local106.aClass8_3);
-					local106.aClass8_2 = new Loc(local38, 4, (arg1 + 2 & 0x3) + 4, arg0, arg5, arg3, arg6, false, local106.aClass8_2);
+					local106.aClass8_3 = new ClientLocAnim(local38, 4, arg1 + 4, arg0, arg5, arg3, arg6, false, local106.aClass8_3);
+					local106.aClass8_2 = new ClientLocAnim(local38, 4, (arg1 + 2 & 0x3) + 4, arg0, arg5, arg3, arg6, false, local106.aClass8_2);
 				}
 			}
 		}
@@ -59,15 +59,15 @@ public final class Static92 {
 			if (arg2 == 11) {
 				arg2 = 10;
 			}
-			@Pc(255) Scenery local255 = Static133.method4008(arg0, arg5, arg3);
+			@Pc(255) Sprite local255 = Static133.method4008(arg0, arg5, arg3);
 			if (local255 != null) {
-				local255.aClass8_4 = new Loc((int) (local255.aLong56 >>> 32) & Integer.MAX_VALUE, arg2, arg1, arg0, arg5, arg3, arg6, false, local255.aClass8_4);
+				local255.aClass8_4 = new ClientLocAnim((int) (local255.aLong56 >>> 32) & Integer.MAX_VALUE, arg2, arg1, arg0, arg5, arg3, arg6, false, local255.aClass8_4);
 			}
 		}
 		if (arg4 == 3) {
 			@Pc(290) GroundDecor local290 = Static269.method2210(arg0, arg5, arg3);
 			if (local290 != null) {
-				local290.aClass8_1 = new Loc(Integer.MAX_VALUE & (int) (local290.aLong26 >>> 32), 22, arg1, arg0, arg5, arg3, arg6, false, local290.aClass8_1);
+				local290.aClass8_1 = new ClientLocAnim(Integer.MAX_VALUE & (int) (local290.aLong26 >>> 32), 22, arg1, arg0, arg5, arg3, arg6, false, local290.aClass8_1);
 			}
 		}
 	}

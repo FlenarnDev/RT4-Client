@@ -94,7 +94,7 @@ public final class Static49 {
 		Static272.anInt5214 = 0;
 		for (local22 = 0; local22 < local13; local22++) {
 			@Pc(61) int local61 = Static33.anIntArray79[local22];
-			@Pc(65) Npc local65 = Static175.aClass8_Sub4_Sub2Array1[local61];
+			@Pc(65) ClientNPC local65 = Static175.aClass8_Sub4_Sub2Array1[local61];
 			@Pc(70) int local70 = Client.in.method2238(1);
 			if (local70 == 0) {
 				Static33.anIntArray79[Static272.anInt5214++] = local61;
@@ -172,7 +172,7 @@ public final class Static49 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!dm", name = "a", descriptor = "(Lclient!be;III)V")
-	public static void method1207(@OriginalArg(0) Component arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
+	public static void method1207(@OriginalArg(0) IfType arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
 		if (Static231.anInt5204 < 2 && Static260.anInt5014 == 0 && !Static241.aBoolean302) {
 			return;
 		}
@@ -182,7 +182,7 @@ public final class Static49 {
 			Static133.method4012(arg2 + 4, Static280.aClass3_Sub2_Sub9_43.method2858(local24) + local40, arg1, 15);
 			return;
 		}
-		@Pc(59) Font local59 = arg0.method491(Static159.aClass36Array12);
+		@Pc(59) PixFontGeneric local59 = arg0.method491(Static159.aClass36Array12);
 		if (local59 == null) {
 			local59 = Static280.aClass3_Sub2_Sub9_43;
 		}

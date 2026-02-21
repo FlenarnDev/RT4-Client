@@ -67,11 +67,11 @@ public final class Static155 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!me", name = "a", descriptor = "(II)I")
 	public static int method2945(@OriginalArg(1) int arg0) {
-		@Pc(13) Class85 local13 = Static125.method2449(arg0);
+		@Pc(13) VarBitType local13 = Static125.method2449(arg0);
 		@Pc(16) int local16 = local13.anInt3327;
 		@Pc(19) int local19 = local13.anInt3323;
 		@Pc(22) int local22 = local13.anInt3318;
-		@Pc(29) int local29 = Class3_Sub9.anIntArray135[local19 - local22];
+		@Pc(29) int local29 = ByteArrayNode.anIntArray135[local19 - local22];
 		return Static7.anIntArray75[local16] >> local22 & local29;
 	}
 }

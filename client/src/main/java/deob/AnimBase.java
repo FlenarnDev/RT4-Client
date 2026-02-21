@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("com.jagex3.client.client!jm")
-public final class AnimBase extends Node {
+public final class AnimBase extends Linkable {
 
 	@OriginalMember(owner = "com.jagex3.client.client!jm", name = "p", descriptor = "I")
 	public final int anInt3113;

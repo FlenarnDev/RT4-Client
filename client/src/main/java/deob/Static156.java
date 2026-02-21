@@ -33,10 +33,10 @@ public final class Static156 {
 		} else if (arg2 >= Static99.anInt2550 * 128) {
 			arg2 = Static99.anInt2550 * 128 - 1;
 		}
-		Static109.anInt2886 = MathUtils.anIntArray223[arg3];
-		Static121.anInt3038 = MathUtils.anIntArray225[arg3];
-		Static231.anInt5205 = MathUtils.anIntArray223[arg4];
-		Static81.anInt2222 = MathUtils.anIntArray225[arg4];
+		Static109.anInt2886 = Pix3D.anIntArray223[arg3];
+		Static121.anInt3038 = Pix3D.anIntArray225[arg3];
+		Static231.anInt5205 = Pix3D.anIntArray223[arg4];
+		Static81.anInt2222 = Pix3D.anIntArray225[arg4];
 		Static149.anInt3555 = arg0;
 		Static162.anInt3947 = arg1;
 		Static217.anInt4903 = arg2;
@@ -164,8 +164,8 @@ public final class Static156 {
 		local1.glPushAttrib(GL2.GL_FOG_BIT);
 		local1.glFogf(GL2.GL_FOG_START, 3072.0F);
 		GlRenderer.disableDepthMask();
-		for (@Pc(19) int local19 = 0; local19 < Static36.aClass3_Sub14ArrayArray1[0].length; local19++) {
-			@Pc(31) Class3_Sub14 local31 = Static36.aClass3_Sub14ArrayArray1[0][local19];
+		for (@Pc(19) int local19 = 0; local19 < Static36.aGlSquareArrayArray1[0].length; local19++) {
+			@Pc(31) GlSquare local31 = Static36.aGlSquareArrayArray1[0][local19];
 			if (local31.anInt2485 >= 0 && Rasteriser.anInterface1_2.method3237(local31.anInt2485) == 4) {
 				local1.glColor4fv(Static190.method3441(local31.anInt2486), 0);
 				@Pc(57) float local57 = 201.5F - (local31.aBoolean140 ? 1.0F : 0.5F);

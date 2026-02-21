@@ -19,7 +19,7 @@ public final class Static124 {
 	public static boolean aBoolean156 = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jk", name = "z", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_17 = new SoftLruHashTable(50);
+	public static final SoftLruCache aClass99_17 = new SoftLruCache(50);
 
 	@OriginalMember(owner = "com.jagex3.client.client!jk", name = "F", descriptor = "Lclient!na;")
 	public static final JagString aClass100_596 = Static28.parse("::tween");

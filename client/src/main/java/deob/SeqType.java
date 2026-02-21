@@ -74,7 +74,7 @@ public final class SeqType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "a", descriptor = "(IIILclient!ak;II)Lclient!ak;")
-	public final Model method4214(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Model arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
+	public final ModelLit method4214(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) ModelLit arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		@Pc(10) int local10 = this.anIntArray474[arg0];
 		@Pc(15) int local15 = this.anIntArray473[arg0];
 		@Pc(23) AnimFrameset local23 = Static72.method1566(local15 >> 16);
@@ -89,7 +89,7 @@ public final class SeqType {
 			local41 = Static72.method1566(local69 >> 16);
 			arg1 = local69 & 0xFFFF;
 		}
-		@Pc(124) Model local124;
+		@Pc(124) ModelLit local124;
 		if (local41 == null) {
 			local124 = arg2.method4568(!local23.method901(local27), !local23.method903(local27), !this.aBoolean278);
 		} else {
@@ -97,11 +97,11 @@ public final class SeqType {
 		}
 		if (GlRenderer.enabled && this.aBoolean278) {
 			if (local39 == 1) {
-				((GlModel) local124).method4093();
+				((GlModelLit) local124).method4093();
 			} else if (local39 == 2) {
-				((GlModel) local124).method4102();
+				((GlModelLit) local124).method4102();
 			} else if (local39 == 3) {
-				((GlModel) local124).method4116();
+				((GlModelLit) local124).method4116();
 			}
 		} else if (local39 == 1) {
 			local124.method4578();
@@ -113,11 +113,11 @@ public final class SeqType {
 		local124.method4558(local23, local27, local41, arg1, arg4 - 1, local10, this.aBoolean278);
 		if (GlRenderer.enabled && this.aBoolean278) {
 			if (local39 == 1) {
-				((GlModel) local124).method4116();
+				((GlModelLit) local124).method4116();
 			} else if (local39 == 2) {
-				((GlModel) local124).method4102();
+				((GlModelLit) local124).method4102();
 			} else if (local39 == 3) {
-				((GlModel) local124).method4093();
+				((GlModelLit) local124).method4093();
 			}
 		} else if (local39 == 1) {
 			local124.method4563();
@@ -130,7 +130,7 @@ public final class SeqType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "a", descriptor = "(Lclient!ak;BIII)Lclient!ak;")
-	public final Model method4215(@OriginalArg(0) Model arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
+	public final ModelLit method4215(@OriginalArg(0) ModelLit arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		@Pc(8) int local8 = this.anIntArray473[arg3];
 		@Pc(13) int local13 = this.anIntArray474[arg3];
 		@Pc(19) AnimFrameset local19 = Static72.method1566(local8 >> 16);
@@ -178,7 +178,7 @@ public final class SeqType {
 			local163 &= !local81.method901(local85);
 			local172 &= !local81.method903(local85);
 		}
-		@Pc(258) Model local258 = arg0.method4572(local163, local172, !this.aBoolean278);
+		@Pc(258) ModelLit local258 = arg0.method4572(local163, local172, !this.aBoolean278);
 		local258.method4558(local19, local23, local34, arg1, arg2 - 1, local13, this.aBoolean278);
 		if (local71 != null) {
 			local258.method4558(local71, local83, local81, local85, arg2 - 1, local13, this.aBoolean278);
@@ -187,7 +187,7 @@ public final class SeqType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "a", descriptor = "(IIIILclient!ak;I)Lclient!ak;")
-	public final Model method4216(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) Model arg4) {
+	public final ModelLit method4216(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) ModelLit arg4) {
 		@Pc(6) int local6 = this.anIntArray474[arg1];
 		@Pc(11) int local11 = this.anIntArray473[arg1];
 		@Pc(19) AnimFrameset local19 = Static72.method1566(local11 >> 16);
@@ -202,7 +202,7 @@ public final class SeqType {
 			local42 = Static72.method1566(local66 >> 16);
 			arg0 = local66 & 0xFFFF;
 		}
-		@Pc(106) Model local106;
+		@Pc(106) ModelLit local106;
 		if (local42 == null) {
 			local106 = arg4.method4572(!local19.method901(local27), !local19.method903(local27), !this.aBoolean278);
 		} else {
@@ -210,11 +210,11 @@ public final class SeqType {
 		}
 		if (this.aBoolean278 && GlRenderer.enabled) {
 			if (local40 == 1) {
-				((GlModel) local106).method4093();
+				((GlModelLit) local106).method4093();
 			} else if (local40 == 2) {
-				((GlModel) local106).method4102();
+				((GlModelLit) local106).method4102();
 			} else if (local40 == 3) {
-				((GlModel) local106).method4116();
+				((GlModelLit) local106).method4116();
 			}
 		} else if (local40 == 1) {
 			local106.method4578();
@@ -226,11 +226,11 @@ public final class SeqType {
 		local106.method4558(local19, local27, local42, arg0, arg2 - 1, local6, this.aBoolean278);
 		if (this.aBoolean278 && GlRenderer.enabled) {
 			if (local40 == 1) {
-				((GlModel) local106).method4116();
+				((GlModelLit) local106).method4116();
 			} else if (local40 == 2) {
-				((GlModel) local106).method4102();
+				((GlModelLit) local106).method4102();
 			} else if (local40 == 3) {
-				((GlModel) local106).method4093();
+				((GlModelLit) local106).method4093();
 			}
 		} else if (local40 == 1) {
 			local106.method4563();
@@ -262,7 +262,7 @@ public final class SeqType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "a", descriptor = "(IIIBLclient!ak;)Lclient!ak;")
-	public final Model method4219(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) Model arg3) {
+	public final ModelLit method4219(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) ModelLit arg3) {
 		@Pc(16) int local16 = this.anIntArray474[arg2];
 		@Pc(21) int local21 = this.anIntArray473[arg2];
 		@Pc(27) AnimFrameset local27 = Static72.method1566(local21 >> 16);
@@ -276,7 +276,7 @@ public final class SeqType {
 			local42 = Static72.method1566(local65 >> 16);
 			arg0 = local65 & 0xFFFF;
 		}
-		@Pc(103) Model local103;
+		@Pc(103) ModelLit local103;
 		if (local42 == null) {
 			local103 = arg3.method4560(!local27.method901(local31), !local27.method903(local31), !this.aBoolean278);
 		} else {

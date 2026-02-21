@@ -133,8 +133,8 @@ public final class Static230 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!sj", name = "b", descriptor = "(II)Lclient!cb;")
-	public static Class3_Sub2_Sub6 method3953(@OriginalArg(1) int arg0) {
-		@Pc(10) Class3_Sub2_Sub6 local10 = (Class3_Sub2_Sub6) Static249.aClass54_15.method1806((long) arg0);
+	public static QuickChatPhraseType method3953(@OriginalArg(1) int arg0) {
+		@Pc(10) QuickChatPhraseType local10 = (QuickChatPhraseType) Static249.aClass54_15.method1806((long) arg0);
 		if (local10 != null) {
 			return local10;
 		}
@@ -144,7 +144,7 @@ public final class Static230 {
 		} else {
 			local27 = Static262.aClass153_108.method4495(1, arg0 & 0x7FFF);
 		}
-		local10 = new Class3_Sub2_Sub6();
+		local10 = new QuickChatPhraseType();
 		if (local27 != null) {
 			local10.method761(new Packet(local27));
 		}

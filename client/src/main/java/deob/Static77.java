@@ -10,13 +10,13 @@ public final class Static77 {
 	public static final int[] anIntArray194 = new int[10000];
 
 	@OriginalMember(owner = "com.jagex3.client.client!gb", name = "N", descriptor = "[I")
-	public static final int[] anIntArray195 = MathUtils.anIntArray225;
+	public static final int[] anIntArray195 = Pix3D.anIntArray225;
 
 	@OriginalMember(owner = "com.jagex3.client.client!gb", name = "S", descriptor = "I")
 	public static int anInt2138 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!gb", name = "V", descriptor = "[I")
-	public static final int[] anIntArray198 = MathUtils.anIntArray223;
+	public static final int[] anIntArray198 = Pix3D.anIntArray223;
 
 	@OriginalMember(owner = "com.jagex3.client.client!gb", name = "Z", descriptor = "[I")
 	public static final int[] anIntArray199 = new int[10000];
@@ -36,8 +36,8 @@ public final class Static77 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!gb", name = "a", descriptor = "(Lclient!ve;II)Lclient!gb;")
-	public static RawModel method1686(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
+	public static ModelUnlit method1686(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
 		@Pc(5) byte[] local5 = arg0.method4495(arg1, 0);
-		return local5 == null ? null : new RawModel(local5);
+		return local5 == null ? null : new ModelUnlit(local5);
 	}
 }

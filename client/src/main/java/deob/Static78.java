@@ -14,7 +14,7 @@ public final class Static78 {
 	public static Js5 aClass153_32;
 
 	@OriginalMember(owner = "com.jagex3.client.client!gd", name = "n", descriptor = "Lclient!qf;")
-	public static Sprite aClass3_Sub2_Sub1_3;
+	public static AbstractPix32 aClass3_Sub2_Sub1_3;
 
 	@OriginalMember(owner = "com.jagex3.client.client!gd", name = "b", descriptor = "Lclient!na;")
 	public static final JagString aClass100_464 = Static28.parse("null");
@@ -48,7 +48,7 @@ public final class Static78 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!gd", name = "a", descriptor = "(ILclient!ve;II)Lclient!mm;")
-	public static SoftwareSprite method1693(@OriginalArg(0) int arg0, @OriginalArg(1) Js5 arg1, @OriginalArg(3) int arg2) {
+	public static Pix32 method1693(@OriginalArg(0) int arg0, @OriginalArg(1) Js5 arg1, @OriginalArg(3) int arg2) {
 		return Static234.method4016(arg1, arg0, arg2) ? Static196.method3537() : null;
 	}
 
@@ -107,11 +107,11 @@ public final class Static78 {
 				}
 			}
 		}
-		if (Static235.aClass134_2 == null) {
+		if (Static235.aMapElementList_2 == null) {
 			if (Static158.aClass3_Sub2_Sub4_3 == null || !Static227.aClass153_94.method4497(Static34.method882(new JagString[] { Static158.aClass3_Sub2_Sub4_3.aClass100_138, Static50.aClass100_363 }))) {
-				Static235.aClass134_2 = new Class134(0);
+				Static235.aMapElementList_2 = new MapElementList(0);
 			} else if (Static227.aClass153_94.method4489(Static34.method882(new JagString[] { Static158.aClass3_Sub2_Sub4_3.aClass100_138, Static50.aClass100_363 }))) {
-				Static235.aClass134_2 = Static140.method2711(Static34.method882(new JagString[] { Static158.aClass3_Sub2_Sub4_3.aClass100_138, Static50.aClass100_363 }), Static227.aClass153_94);
+				Static235.aMapElementList_2 = Static140.method2711(Static34.method882(new JagString[] { Static158.aClass3_Sub2_Sub4_3.aClass100_138, Static50.aClass100_363 }), Static227.aClass153_94);
 			} else {
 				local12 = false;
 				Static175.anInt4220++;

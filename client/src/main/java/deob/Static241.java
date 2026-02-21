@@ -7,19 +7,19 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static241 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!th", name = "f", descriptor = "[Lclient!ok;")
-	public static IndexedSprite[] aClass36Array16;
+	public static Pix8[] aClass36Array16;
 
 	@OriginalMember(owner = "com.jagex3.client.client!th", name = "j", descriptor = "[[Lclient!be;")
-	public static Component[][] components;
+	public static IfType[][] components;
 
 	@OriginalMember(owner = "com.jagex3.client.client!th", name = "m", descriptor = "[Lclient!be;")
-	public static Component[] aClass13Array13;
+	public static IfType[] aClass13Array13;
 
 	@OriginalMember(owner = "com.jagex3.client.client!th", name = "o", descriptor = "[I")
 	public static int[] anIntArray522;
 
 	@OriginalMember(owner = "com.jagex3.client.client!th", name = "p", descriptor = "[Lclient!mm;")
-	public static SoftwareSprite[] aClass3_Sub2_Sub1_Sub1Array13;
+	public static Pix32[] aClass3_Sub2_Sub1_Sub1Array13;
 
 	@OriginalMember(owner = "com.jagex3.client.client!th", name = "h", descriptor = "Lclient!na;")
 	public static final JagString aClass100_1088 = Static28.parse("::setparticles");
@@ -82,7 +82,7 @@ public final class Static241 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!th", name = "a", descriptor = "(ZBLclient!ve;Lclient!dd;Lclient!ve;)V")
-	public static void method4542(@OriginalArg(2) Js5 arg0, @OriginalArg(3) SoftwareFont arg1, @OriginalArg(4) Js5 arg2) {
+	public static void method4542(@OriginalArg(2) Js5 arg0, @OriginalArg(3) PixFont arg1, @OriginalArg(4) Js5 arg2) {
 		Static240.aBoolean276 = true;
 		Static230.aClass153_95 = arg2;
 		Static167.aClass153_61 = arg0;

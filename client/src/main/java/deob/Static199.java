@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static199 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!qc", name = "bb", descriptor = "[Lclient!kl;")
-	public static Class3_Sub22[] aClass3_Sub22Array1;
+	public static FriendChatUser[] aFriendChatUserArray1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!qc", name = "cb", descriptor = "I")
 	public static int anInt4675;

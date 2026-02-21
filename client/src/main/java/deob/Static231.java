@@ -13,14 +13,14 @@ public final class Static231 {
 	public static int anInt5205;
 
 	@OriginalMember(owner = "com.jagex3.client.client!sk", name = "bb", descriptor = "Lclient!gn;")
-	public static final LruHashTable aClass54_13 = new LruHashTable(64);
+	public static final LruCache aClass54_13 = new LruCache(64);
 
 
 	@OriginalMember(owner = "com.jagex3.client.client!sk", name = "gb", descriptor = "J")
 	public static long aLong174 = 0L;
 
 	@OriginalMember(owner = "com.jagex3.client.client!sk", name = "hb", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_29 = new SoftLruHashTable(64);
+	public static final SoftLruCache aClass99_29 = new SoftLruCache(64);
 
 	@OriginalMember(owner = "com.jagex3.client.client!sk", name = "ib", descriptor = "I")
 	public static int anInt5202 = 0;

@@ -27,13 +27,13 @@ public final class Static233 {
 	public static int anInt5225;
 
 	@OriginalMember(owner = "com.jagex3.client.client!t", name = "G", descriptor = "[Lclient!ek;")
-	public static SoftwareIndexedSprite[] aClass36_Sub1Array1;
+	public static SoftwarePix8[] aClass36_Sub1Array1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!t", name = "m", descriptor = "Z")
 	public static volatile boolean aBoolean253 = true;
 
 	@OriginalMember(owner = "com.jagex3.client.client!t", name = "p", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_31 = new SoftLruHashTable(64);
+	public static final SoftLruCache aClass99_31 = new SoftLruCache(64);
 
 	@OriginalMember(owner = "com.jagex3.client.client!t", name = "v", descriptor = "[Lclient!na;")
 	public static final JagString[] aClass100Array160 = new JagString[500];
@@ -67,9 +67,9 @@ public final class Static233 {
 	@OriginalMember(owner = "com.jagex3.client.client!t", name = "a", descriptor = "(IIIZIII)V")
 	public static void method4000(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
 		@Pc(3) int local3 = 0;
-		@Pc(5) Class102[] local5 = Static143.aClass102Array1;
+		@Pc(5) MapMarker[] local5 = Static143.aClass102Array1;
 		while (local5.length > local3) {
-			@Pc(17) Class102 local17 = local5[local3];
+			@Pc(17) MapMarker local17 = local5[local3];
 			if (local17 != null && local17.anInt4058 == 2) {
 				Static198.method1026(arg0 >> 1, arg4, (local17.anInt4046 - Static142.originZ << 7) + local17.anInt4047, local17.anInt4050 * 2, arg2 >> 1, local17.anInt4045 + (local17.anInt4053 - Static225.originX << 7), arg3);
 				if (Static65.anInt1951 > -1 && Static83.anInt372 % 20 < 10) {

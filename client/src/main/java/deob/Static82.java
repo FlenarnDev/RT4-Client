@@ -22,18 +22,18 @@ public final class Static82 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!gi", name = "b", descriptor = "(I)Lclient!qf;")
-	public static Sprite method1764() {
+	public static AbstractPix32 method1764() {
 		@Pc(9) byte[] local9 = Static7.aByteArrayArray5[0];
 		@Pc(17) int local17 = Static254.anIntArray488[0] * Static26.anIntArray66[0];
 		@Pc(20) int[] local20 = new int[local17];
 		for (@Pc(28) int local28 = 0; local28 < local17; local28++) {
 			local20[local28] = Static259.anIntArray513[local9[local28] & 0xFF];
 		}
-		@Pc(69) Sprite local69;
+		@Pc(69) AbstractPix32 local69;
 		if (GlRenderer.enabled) {
-			local69 = new GlSprite(Static124.anInt3080, Static227.anInt5091, Static274.anIntArray440[0], Static269.anIntArray252[0], Static254.anIntArray488[0], Static26.anIntArray66[0], local20);
+			local69 = new GlPix32(Static124.anInt3080, Static227.anInt5091, Static274.anIntArray440[0], Static269.anIntArray252[0], Static254.anIntArray488[0], Static26.anIntArray66[0], local20);
 		} else {
-			local69 = new SoftwareSprite(Static124.anInt3080, Static227.anInt5091, Static274.anIntArray440[0], Static269.anIntArray252[0], Static254.anIntArray488[0], Static26.anIntArray66[0], local20);
+			local69 = new Pix32(Static124.anInt3080, Static227.anInt5091, Static274.anIntArray440[0], Static269.anIntArray252[0], Static254.anIntArray488[0], Static26.anIntArray66[0], local20);
 		}
 		Static75.method1631();
 		return local69;

@@ -64,7 +64,7 @@ public final class Static48 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!dl", name = "a", descriptor = "(II)V")
 	public static void setIdleLoops(@OriginalArg(1) int arg0) {
-		@Pc(10) Mouse local10 = Static93.aClass150_1;
+		@Pc(10) ClientMouseListener local10 = Static93.aClass150_1;
 		synchronized (Static93.aClass150_1) {
 			Static93.anInt2467 = arg0;
 		}

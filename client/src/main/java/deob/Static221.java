@@ -81,7 +81,7 @@ public final class Static221 {
 			@Pc(18) Light local18 = arg3[local7];
 			if (local18.anInt2241 == arg4) {
 				@Pc(24) int local24 = 0;
-				@Pc(28) Class45 local28 = new Class45();
+				@Pc(28) Light_Class45 local28 = new Light_Class45();
 				@Pc(37) int local37 = (local18.anInt2240 >> 7) - local18.anInt2236;
 				@Pc(46) int local46 = (local18.anInt2245 >> 7) - local18.anInt2236;
 				if (local46 < 0) {
@@ -148,7 +148,7 @@ public final class Static221 {
 								local135 = true;
 							}
 						}
-						@Pc(275) Scenery local275 = Static133.method4008(arg4, local114, local72);
+						@Pc(275) Sprite local275 = Static133.method4008(arg4, local114, local72);
 						if (local275 != null) {
 							@Pc(287) int local287 = (int) (local275.aLong56 >> 14) & 0x3F;
 							if (local287 == 9) {
@@ -268,7 +268,7 @@ public final class Static221 {
 								local791 = true;
 							}
 						}
-						@Pc(899) Scenery local899 = Static133.method4008(arg4, local114, local72);
+						@Pc(899) Sprite local899 = Static133.method4008(arg4, local114, local72);
 						if (local899 != null) {
 							@Pc(911) int local911 = (int) (local899.aLong56 >> 14) & 0x3F;
 							if (local911 == 9) {

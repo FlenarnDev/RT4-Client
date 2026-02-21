@@ -67,13 +67,13 @@ public final class Static44 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!dh", name = "a", descriptor = "(IIII)Lclient!wk;")
-	public static Class3_Sub31 method1148(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(9) Class3_Sub31 local9 = new Class3_Sub31();
+	public static SubInterface method1148(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
+		@Pc(9) SubInterface local9 = new SubInterface();
 		local9.anInt5879 = arg2;
 		local9.anInt5878 = arg0;
 		Static119.aClass133_9.method3862(local9, (long) arg1);
 		Static81.method1753(arg0);
-		@Pc(28) Component local28 = Static5.getComponent(arg1);
+		@Pc(28) IfType local28 = Static5.getComponent(arg1);
 		if (local28 != null) {
 			Static43.method1143(local28);
 		}
@@ -117,14 +117,14 @@ public final class Static44 {
 	public static void method1149(@OriginalArg(0) JagString arg0) {
 		@Pc(7) int local7 = Static91.method1879(arg0);
 		if (local7 != -1) {
-			Static80.method3616(Static203.aClass134_1.aShortArray73[local7], Static203.aClass134_1.aShortArray72[local7]);
+			Static80.method3616(Static203.aMapElementList_1.aShortArray73[local7], Static203.aMapElementList_1.aShortArray72[local7]);
 		}
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!dh", name = "a", descriptor = "(B)Lclient!uc;")
-	public static MouseWheel create() {
+	public static MouseWheelInterface create() {
 		try {
-			return (MouseWheel) Class.forName("deob.JavaMouseWheel").getDeclaredConstructor().newInstance();
+			return (MouseWheelInterface) Class.forName("deob.ClientMouseWheelListener").getDeclaredConstructor().newInstance();
 		} catch (@Pc(15) Throwable local15) {
 			return null;
 		}

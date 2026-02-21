@@ -11,7 +11,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static25 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!c", name = "bb", descriptor = "[Lclient!ec;")
-	public static Scenery[] aClass31Array2;
+	public static Sprite[] aClass31Array2;
 
 	@OriginalMember(owner = "com.jagex3.client.client!c", name = "Y", descriptor = "Lclient!na;")
 	public static final JagString aClass100_154 = Static28.parse("Mem:");
@@ -24,7 +24,7 @@ public final class Static25 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!c", name = "d", descriptor = "(I)Z")
 	public static boolean nextKey() {
-		@Pc(6) Keyboard local6 = Static10.aClass149_1;
+		@Pc(6) ClientKeyboardListener local6 = Static10.aClass149_1;
 		synchronized (Static10.aClass149_1) {
 			if (Static228.anInt5105 == Static102.anInt2678) {
 				return false;

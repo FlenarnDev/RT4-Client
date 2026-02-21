@@ -28,9 +28,9 @@ public final class Static278 {
 					@Pc(19) boolean local19 = false;
 					if (Static175.aClass8_Sub4_Sub2Array1[local14] == null) {
 						local19 = true;
-						Static175.aClass8_Sub4_Sub2Array1[local14] = new Npc();
+						Static175.aClass8_Sub4_Sub2Array1[local14] = new ClientNPC();
 					}
-					@Pc(37) Npc local37 = Static175.aClass8_Sub4_Sub2Array1[local14];
+					@Pc(37) ClientNPC local37 = Static175.aClass8_Sub4_Sub2Array1[local14];
 					Static33.anIntArray79[Static272.anInt5214++] = local14;
 					local37.anInt3430 = Static83.anInt372;
 					if (local37.aClass96_1 != null && local37.aClass96_1.method2935()) {
@@ -74,7 +74,7 @@ public final class Static278 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!wj", name = "a", descriptor = "(IIIIIII)V")
 	public static void method4647(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
-		@Pc(3) Class120 local3 = new Class120();
+		@Pc(3) Occlude local3 = new Occlude();
 		local3.anInt4452 = arg1 / 128;
 		local3.anInt4446 = arg2 / 128;
 		local3.anInt4461 = arg3 / 128;
@@ -86,7 +86,7 @@ public final class Static278 {
 		local3.anInt4449 = arg4;
 		local3.anInt4444 = arg5;
 		local3.anInt4447 = arg6;
-		Static91.aClass120Array1[Static28.anInt917++] = local3;
+		Static91.aOccludeArray1[Static28.anInt917++] = local3;
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!wj", name = "a", descriptor = "(Z)V")
@@ -94,11 +94,11 @@ public final class Static278 {
 		if (arg0) {
 			Static130.aClass3_Sub5ArrayArrayArray1 = Static276.aClass3_Sub5ArrayArrayArray3;
 			Static83.anIntArrayArrayArray4 = Static80.anIntArrayArrayArray19;
-			Static182.aClass3_Sub14ArrayArray2 = Static195.aClass3_Sub14ArrayArray3;
+			Static182.aGlSquareArrayArray2 = Static195.aClass3_Sub14ArrayArray3;
 		} else {
 			Static130.aClass3_Sub5ArrayArrayArray1 = Static197.aClass3_Sub5ArrayArrayArray2;
 			Static83.anIntArrayArrayArray4 = Static107.anIntArrayArrayArray10;
-			Static182.aClass3_Sub14ArrayArray2 = Static36.aClass3_Sub14ArrayArray1;
+			Static182.aGlSquareArrayArray2 = Static36.aGlSquareArrayArray1;
 		}
 		Static126.anInt3114 = Static130.aClass3_Sub5ArrayArrayArray1.length;
 	}
@@ -180,7 +180,7 @@ public final class Static278 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!wj", name = "a", descriptor = "(BII)I")
 	public static int method4652(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(8) Inv local8 = (Inv) Static20.aClass133_2.method3863((long) arg0);
+		@Pc(8) ClientInvCache local8 = (ClientInvCache) Static20.aClass133_2.method3863((long) arg0);
 		if (local8 == null) {
 			return 0;
 		} else if (arg1 == -1) {

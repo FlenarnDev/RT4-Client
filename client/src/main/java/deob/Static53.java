@@ -10,7 +10,7 @@ public final class Static53 {
 	public static int anInt1716;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ec", name = "d", descriptor = "Lclient!gn;")
-	public static final LruHashTable aClass54_5 = new LruHashTable(16);
+	public static final LruCache aClass54_5 = new LruCache(16);
 
 	@OriginalMember(owner = "com.jagex3.client.client!ec", name = "l", descriptor = "I")
 	public static final int anInt1704 = 5063219;
@@ -32,7 +32,7 @@ public final class Static53 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ec", name = "a", descriptor = "([[IZILclient!hg;[IIIIZ[[FZI[[FIIIZ[[I[[FBI[Z)V")
-	public static void method1291(@OriginalArg(0) int[][] arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2, @OriginalArg(3) Class3_Sub14 arg3, @OriginalArg(4) int[] arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) boolean arg8, @OriginalArg(9) float[][] arg9, @OriginalArg(10) boolean arg10, @OriginalArg(12) float[][] arg11, @OriginalArg(13) int arg12, @OriginalArg(14) int arg13, @OriginalArg(15) int arg14, @OriginalArg(16) boolean arg15, @OriginalArg(17) int[][] arg16, @OriginalArg(18) float[][] arg17, @OriginalArg(19) byte arg18, @OriginalArg(20) int arg19, @OriginalArg(21) boolean[] arg20) {
+	public static void method1291(@OriginalArg(0) int[][] arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2, @OriginalArg(3) GlSquare arg3, @OriginalArg(4) int[] arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) boolean arg8, @OriginalArg(9) float[][] arg9, @OriginalArg(10) boolean arg10, @OriginalArg(12) float[][] arg11, @OriginalArg(13) int arg12, @OriginalArg(14) int arg13, @OriginalArg(15) int arg14, @OriginalArg(16) boolean arg15, @OriginalArg(17) int[][] arg16, @OriginalArg(18) float[][] arg17, @OriginalArg(19) byte arg18, @OriginalArg(20) int arg19, @OriginalArg(21) boolean[] arg20) {
 		@Pc(11) int local11 = (arg2 << 8) + (arg1 ? 255 : 0);
 		@Pc(25) int local25 = (arg8 ? 255 : 0) + (arg14 << 8);
 		@Pc(31) int[] local31 = new int[arg4.length / 2];
@@ -89,7 +89,7 @@ public final class Static53 {
 		if (!Static241.aBoolean302) {
 			return;
 		}
-		@Pc(19) Component local19 = Static201.method1418(Static98.anInt2512, Static15.anInt506);
+		@Pc(19) IfType local19 = Static201.method1418(Static98.anInt2512, Static15.anInt506);
 		if (local19 != null && local19.anObjectArray27 != null) {
 			@Pc(29) HookRequest local29 = new HookRequest();
 			local29.anObjectArray31 = local19.anObjectArray27;

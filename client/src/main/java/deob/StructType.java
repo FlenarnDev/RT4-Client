@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("com.jagex3.client.client!lk")
-public final class StructType extends SecondaryNode {
+public final class StructType extends DoubleLinkable {
 
 	@OriginalMember(owner = "com.jagex3.client.client!lk", name = "I", descriptor = "Lclient!sc;")
 	private HashTable aClass133_14;
@@ -35,7 +35,7 @@ public final class StructType extends SecondaryNode {
 		for (local25 = 0; local25 < local17; local25++) {
 			@Pc(45) boolean local45 = arg0.g1() == 1;
 			@Pc(49) int local49 = arg0.g3();
-			@Pc(58) Node local58;
+			@Pc(58) Linkable local58;
 			if (local45) {
 				local58 = new StringNode(arg0.gjstr());
 			} else {

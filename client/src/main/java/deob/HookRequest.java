@@ -4,10 +4,10 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("com.jagex3.client.client!jl")
-public final class HookRequest extends Node {
+public final class HookRequest extends Linkable {
 
 	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "q", descriptor = "Lclient!be;")
-	public Component aClass13_16;
+	public IfType aClass13_16;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "r", descriptor = "Lclient!na;")
 	public JagString aClass100_598;
@@ -34,5 +34,5 @@ public final class HookRequest extends Node {
 	public Object[] anObjectArray31;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "F", descriptor = "Lclient!be;")
-	public Component source;
+	public IfType source;
 }

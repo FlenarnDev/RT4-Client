@@ -43,7 +43,7 @@ public final class Static65 {
 				}
 			}
 		}
-		Static36.aClass3_Sub14ArrayArray1 = null;
+		Static36.aGlSquareArrayArray1 = null;
 		if (Static276.aClass3_Sub5ArrayArrayArray3 != null) {
 			for (local3 = 0; local3 < Static276.aClass3_Sub5ArrayArrayArray3.length; local3++) {
 				for (local9 = 0; local9 < Static152.anInt3594; local9++) {
@@ -55,9 +55,9 @@ public final class Static65 {
 		}
 		Static195.aClass3_Sub14ArrayArray3 = null;
 		Static28.anInt917 = 0;
-		if (Static91.aClass120Array1 != null) {
+		if (Static91.aOccludeArray1 != null) {
 			for (local3 = 0; local3 < Static28.anInt917; local3++) {
-				Static91.aClass120Array1[local3] = null;
+				Static91.aOccludeArray1[local3] = null;
 			}
 		}
 		if (Static243.aClass31Array3 != null) {
@@ -75,7 +75,7 @@ public final class Static65 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!fc", name = "b", descriptor = "(I)V")
 	public static void method1501() {
-		@Pc(12) Keyboard local12 = Static10.aClass149_1;
+		@Pc(12) ClientKeyboardListener local12 = Static10.aClass149_1;
 		synchronized (Static10.aClass149_1) {
 			Static102.anInt2678 = Static228.anInt5105;
 			Static229.anInt5140++;

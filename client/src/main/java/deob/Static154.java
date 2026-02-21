@@ -26,7 +26,7 @@ public final class Static154 {
 	public static int topLevelInterace = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!md", name = "a", descriptor = "(Lclient!be;I)Z")
-	public static boolean method2926(@OriginalArg(0) Component arg0) {
+	public static boolean method2926(@OriginalArg(0) IfType arg0) {
 		if (arg0.anIntArray43 == null) {
 			return false;
 		}

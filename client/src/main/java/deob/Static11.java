@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static11 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!ba", name = "D", descriptor = "Lclient!vh;")
-	public static AudioChannel aClass62_1;
+	public static PcmPlayer aClass62_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ba", name = "w", descriptor = "I")
 	public static int anInt384 = 0;
@@ -28,7 +28,7 @@ public final class Static11 {
 		if (arg0 < 0) {
 			return 0;
 		}
-		@Pc(17) Inv local17 = (Inv) Static20.aClass133_2.method3863((long) arg0);
+		@Pc(17) ClientInvCache local17 = (ClientInvCache) Static20.aClass133_2.method3863((long) arg0);
 		if (local17 == null) {
 			return Static246.method4241(arg0).anInt3706;
 		}

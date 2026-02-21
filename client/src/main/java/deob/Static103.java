@@ -37,7 +37,7 @@ public final class Static103 {
 		}
 		@Pc(31) long local31 = Static159.aLongArray5[arg0];
 		@Pc(36) int local36 = (int) Static159.aLongArray5[arg0];
-		@Pc(43) Player local43;
+		@Pc(43) ClientPlayer local43;
 		if (local23 == 31) {
 			local43 = Static159.aClass8_Sub4_Sub1Array1[local36];
 			if (local43 != null) {
@@ -69,7 +69,7 @@ public final class Static103 {
 			Static257.aClass13_7 = Static5.getComponent(local19);
 			Static250.anInt5444 = local15;
 		}
-		@Pc(192) Npc local192;
+		@Pc(192) ClientNPC local192;
 		if (local23 == 19) {
 			local192 = Static175.aClass8_Sub4_Sub2Array1[local36];
 			if (local192 != null) {
@@ -173,7 +173,7 @@ public final class Static103 {
 			Client.out.p1isaac(92);
 			Client.out.p2_alt3(local36);
 		}
-		@Pc(693) Component local693;
+		@Pc(693) IfType local693;
 		if (local23 == 1006) {
 			local693 = Static5.getComponent(local19);
 			if (local693 == null || local693.objCounts[local15] < 100000) {
@@ -344,7 +344,7 @@ public final class Static103 {
 			local693 = Static201.method1418(local19, local15);
 			if (local693 != null) {
 				Static53.method1294();
-				@Pc(1493) ServerActiveProperties local1493 = Static36.method940(local693);
+				@Pc(1493) ServerActive local1493 = Static36.method940(local693);
 				Static247.method4246(local19, local15, local1493.method512(), local1493.anInt540, local693.anInt499, local693.anInt484);
 				Static260.anInt5014 = 0;
 				Static102.aClass100_545 = Static97.method1963(local693);
@@ -798,11 +798,11 @@ public final class Static103 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!i", name = "i", descriptor = "(Z)V")
 	public static void method2245() {
-		for (@Pc(6) Class3_Sub31 local6 = (Class3_Sub31) Static119.aClass133_9.method3859(); local6 != null; local6 = (Class3_Sub31) Static119.aClass133_9.method3861()) {
+		for (@Pc(6) SubInterface local6 = (SubInterface) Static119.aClass133_9.method3859(); local6 != null; local6 = (SubInterface) Static119.aClass133_9.method3861()) {
 			@Pc(14) int local14 = local6.anInt5878;
 			if (Static245.load(local14)) {
 				@Pc(21) boolean local21 = true;
-				@Pc(25) Component[] local25 = Static241.components[local14];
+				@Pc(25) IfType[] local25 = Static241.components[local14];
 				@Pc(27) int local27;
 				for (local27 = 0; local27 < local25.length; local27++) {
 					if (local25[local27] != null) {
@@ -812,7 +812,7 @@ public final class Static103 {
 				}
 				if (!local21) {
 					local27 = (int) local6.aLong192;
-					@Pc(60) Component local60 = Static5.getComponent(local27);
+					@Pc(60) IfType local60 = Static5.getComponent(local27);
 					if (local60 != null) {
 						Static43.method1143(local60);
 					}

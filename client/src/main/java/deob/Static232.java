@@ -20,7 +20,7 @@ public final class Static232 {
 	public static int anInt5212;
 
 	@OriginalMember(owner = "com.jagex3.client.client!sm", name = "c", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_30 = new SoftLruHashTable(64);
+	public static final SoftLruCache aClass99_30 = new SoftLruCache(64);
 
 	@OriginalMember(owner = "com.jagex3.client.client!sm", name = "l", descriptor = "[S")
 	public static short[] aShortArray74 = new short[256];
@@ -62,7 +62,7 @@ public final class Static232 {
 									@Pc(222) LocType local222 = Static271.method4601(local209 - 1);
 									if (!Static258.aBooleanArray130[local222.anInt4400]) {
 										if (local11 != -1 && local222.anInt4400 == Static9.anInt172) {
-											@Pc(243) Class3_Sub26 local243 = new Class3_Sub26();
+											@Pc(243) MapElement local243 = new MapElement();
 											local243.anInt4307 = local65;
 											local243.anInt4314 = local144;
 											local243.anInt4308 = local222.anInt4400;
@@ -78,7 +78,7 @@ public final class Static232 {
 				}
 			}
 		}
-		for (@Pc(285) Class3_Sub26 local285 = (Class3_Sub26) Static172.aClass69_97.method2289(); local285 != null; local285 = (Class3_Sub26) Static172.aClass69_97.method2288()) {
+		for (@Pc(285) MapElement local285 = (MapElement) Static172.aClass69_97.method2289(); local285 != null; local285 = (MapElement) Static172.aClass69_97.method2288()) {
 			Static129.method2502(local285.anInt4307, local285.anInt4314, 15, local11);
 			Static129.method2502(local285.anInt4307, local285.anInt4314, 13, local11);
 			Static129.method2502(local285.anInt4307, local285.anInt4314, 11, local11);

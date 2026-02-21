@@ -25,7 +25,7 @@ public final class Static111 {
 	public static final JagString aClass100_570 = Static28.parse(")2");
 
 	@OriginalMember(owner = "com.jagex3.client.client!ii", name = "a", descriptor = "(Lclient!be;III)V")
-	public static void method2291(@OriginalArg(0) Component arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
+	public static void method2291(@OriginalArg(0) IfType arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
 		if (arg0.xMode == 0) {
 			arg0.y = arg0.baseY;
 		} else if (arg0.xMode == 1) {
@@ -69,7 +69,7 @@ public final class Static111 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!ii", name = "b", descriptor = "(I)V")
 	public static void method2292() {
-		@Pc(2) Mouse local2 = Static93.aClass150_1;
+		@Pc(2) ClientMouseListener local2 = Static93.aClass150_1;
 		synchronized (Static93.aClass150_1) {
 			Static22.anInt723 = Static57.anInt1759;
 			Static215.anInt4873 = Static147.anInt3521;

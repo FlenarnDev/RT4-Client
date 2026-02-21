@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static280 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!wl", name = "q", descriptor = "Lclient!rk;")
-	public static Font aClass3_Sub2_Sub9_43;
+	public static PixFontGeneric aClass3_Sub2_Sub9_43;
 
 	@OriginalMember(owner = "com.jagex3.client.client!wl", name = "s", descriptor = "Lclient!ve;")
 	public static Js5 aClass153_110;
@@ -19,13 +19,13 @@ public final class Static280 {
 	public static final JagString aClass100_1108 = Static28.parse("compass");
 
 	@OriginalMember(owner = "com.jagex3.client.client!wl", name = "h", descriptor = "Lclient!be;")
-	public static Component aClass13_26 = null;
+	public static IfType aClass13_26 = null;
 
 	@OriginalMember(owner = "com.jagex3.client.client!wl", name = "u", descriptor = "I")
 	public static int anInt5895 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!wl", name = "a", descriptor = "(Lclient!fe;B)V")
-	public static void method4665(@OriginalArg(0) PathingEntity arg0) {
+	public static void method4665(@OriginalArg(0) ClientEntity arg0) {
 		if (Static83.anInt372 == arg0.anInt3386 || arg0.anInt3369 == -1 || arg0.anInt3420 != 0 || arg0.anInt3360 + 1 > Static36.method941(arg0.anInt3369).anIntArray474[arg0.anInt3425]) {
 			@Pc(35) int local35 = arg0.anInt3386 - arg0.anInt3395;
 			@Pc(41) int local41 = Static83.anInt372 - arg0.anInt3395;
@@ -545,13 +545,13 @@ public final class Static280 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!wl", name = "a", descriptor = "(Lclient!be;I)Lclient!be;")
-	public static Component method4668(@OriginalArg(0) Component arg0) {
+	public static IfType method4668(@OriginalArg(0) IfType arg0) {
 		if (arg0.layer != -1) {
 			return Static5.getComponent(arg0.layer);
 		}
 		@Pc(28) int local28 = arg0.anInt507 >>> 16;
 		@Pc(33) HashTableIterator local33 = new HashTableIterator(Static119.aClass133_9);
-		for (@Pc(38) Class3_Sub31 local38 = (Class3_Sub31) local33.method2701(); local38 != null; local38 = (Class3_Sub31) local33.method2700()) {
+		for (@Pc(38) SubInterface local38 = (SubInterface) local33.method2701(); local38 != null; local38 = (SubInterface) local33.method2700()) {
 			if (local28 == local38.anInt5878) {
 				return Static5.getComponent((int) local38.aLong192);
 			}
@@ -677,9 +677,9 @@ public final class Static280 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!wl", name = "a", descriptor = "(IIIIB)V")
 	public static void method4672(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		@Pc(12) Inv local12 = (Inv) Static20.aClass133_2.method3863((long) arg3);
+		@Pc(12) ClientInvCache local12 = (ClientInvCache) Static20.aClass133_2.method3863((long) arg3);
 		if (local12 == null) {
-			local12 = new Inv();
+			local12 = new ClientInvCache();
 			Static20.aClass133_2.method3862(local12, (long) arg3);
 		}
 		if (arg1 >= local12.anIntArray420.length) {

@@ -23,7 +23,7 @@ public final class Static234 {
 	public static void method4014() {
 		for (@Pc(3) int local3 = 0; local3 < Static116.anInt2951; local3++) {
 			@Pc(10) int local10 = Static44.anIntArray106[local3];
-			@Pc(14) Npc local14 = Static175.aClass8_Sub4_Sub2Array1[local10];
+			@Pc(14) ClientNPC local14 = Static175.aClass8_Sub4_Sub2Array1[local10];
 			@Pc(18) int local18 = Client.in.g1();
 			if ((local18 & 0x8) != 0) {
 				local18 += Client.in.g1() << 8;
@@ -144,7 +144,7 @@ public final class Static234 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ta", name = "a", descriptor = "([Lclient!mm;ILclient!ve;)V")
-	public static void method4018(@OriginalArg(0) SoftwareSprite[] arg0, @OriginalArg(2) Js5 arg1) {
+	public static void method4018(@OriginalArg(0) Pix32[] arg0, @OriginalArg(2) Js5 arg1) {
 		Static119.aClass153_44 = arg1;
 		Static241.aClass3_Sub2_Sub1_Sub1Array13 = arg0;
 		Static258.aBooleanArray130 = new boolean[Static241.aClass3_Sub2_Sub1_Sub1Array13.length];

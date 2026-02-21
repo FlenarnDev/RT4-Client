@@ -11,11 +11,11 @@ public final class Static134 {
 	public static int anInt3302;
 
 	@OriginalMember(owner = "com.jagex3.client.client!kh", name = "g", descriptor = "Lclient!hh;")
-	public static final Class59 aClass59_2 = new Class59();
+	public static final PlayerModel aClass59_2 = new PlayerModel();
 
 	@OriginalMember(owner = "com.jagex3.client.client!kh", name = "a", descriptor = "(B)Lclient!ek;")
-	public static SoftwareIndexedSprite method2619() {
-		@Pc(25) SoftwareIndexedSprite local25 = new SoftwareIndexedSprite(Static124.anInt3080, Static227.anInt5091, Static274.anIntArray440[0], Static269.anIntArray252[0], Static254.anIntArray488[0], Static26.anIntArray66[0], Static7.aByteArrayArray5[0], Static259.anIntArray513);
+	public static SoftwarePix8 method2619() {
+		@Pc(25) SoftwarePix8 local25 = new SoftwarePix8(Static124.anInt3080, Static227.anInt5091, Static274.anIntArray440[0], Static269.anIntArray252[0], Static254.anIntArray488[0], Static26.anIntArray66[0], Static7.aByteArrayArray5[0], Static259.anIntArray513);
 		Static75.method1631();
 		return local25;
 	}

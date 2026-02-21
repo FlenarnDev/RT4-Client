@@ -28,7 +28,7 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 	private int anInt578 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!bg", name = "R", descriptor = "Lclient!ih;")
-	private final LinkedList aClass69_16 = new LinkedList();
+	private final LinkList aClass69_16 = new LinkList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!bg", name = "V", descriptor = "J")
 	private long aLong20 = 0L;
@@ -37,13 +37,13 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 	private final int anInt576;
 
 	@OriginalMember(owner = "com.jagex3.client.client!bg", name = "F", descriptor = "Lclient!ge;")
-	private final Cache aClass49_2;
+	private final DataFile aClass49_2;
 
 	@OriginalMember(owner = "com.jagex3.client.client!bg", name = "Q", descriptor = "Z")
 	private boolean aBoolean35;
 
 	@OriginalMember(owner = "com.jagex3.client.client!bg", name = "U", descriptor = "Lclient!ih;")
-	private LinkedList aClass69_17;
+	private LinkList aClass69_17;
 
 	@OriginalMember(owner = "com.jagex3.client.client!bg", name = "J", descriptor = "Lclient!k;")
 	private final Js5CacheQueue aClass80_2;
@@ -55,10 +55,10 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 	private final boolean aBoolean37;
 
 	@OriginalMember(owner = "com.jagex3.client.client!bg", name = "k", descriptor = "Lclient!ge;")
-	private final Cache aClass49_1;
+	private final DataFile aClass49_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!bg", name = "D", descriptor = "Lclient!jb;")
-	private final Js5NetQueue aClass73_2;
+	private final Js5Net aClass73_2;
 
 	@OriginalMember(owner = "com.jagex3.client.client!bg", name = "t", descriptor = "I")
 	private final int anInt566;
@@ -67,14 +67,14 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 	private Js5Request aClass3_Sub2_Sub5_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!bg", name = "<init>", descriptor = "(ILclient!ge;Lclient!ge;Lclient!jb;Lclient!k;IIZ)V")
-	public Js5CachedResourceProvider(@OriginalArg(0) int arg0, @OriginalArg(1) Cache arg1, @OriginalArg(2) Cache arg2, @OriginalArg(3) Js5NetQueue arg3, @OriginalArg(4) Js5CacheQueue arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7) {
+	public Js5CachedResourceProvider(@OriginalArg(0) int arg0, @OriginalArg(1) DataFile arg1, @OriginalArg(2) DataFile arg2, @OriginalArg(3) Js5Net arg3, @OriginalArg(4) Js5CacheQueue arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7) {
 		this.anInt576 = arg0;
 		this.aClass49_2 = arg1;
 		if (this.aClass49_2 == null) {
 			this.aBoolean35 = false;
 		} else {
 			this.aBoolean35 = true;
-			this.aClass69_17 = new LinkedList();
+			this.aClass69_17 = new LinkList();
 		}
 		this.aClass80_2 = arg4;
 		this.anInt573 = arg5;
@@ -93,13 +93,13 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 		if (this.aClass49_2 == null) {
 			return;
 		}
-		@Pc(15) Node local15;
+		@Pc(15) Linkable local15;
 		for (local15 = this.aClass69_16.method2289(); local15 != null; local15 = this.aClass69_16.method2288()) {
 			if (local15.aLong192 == (long) arg0) {
 				return;
 			}
 		}
-		local15 = new Node();
+		local15 = new Linkable();
 		local15.aLong192 = arg0;
 		this.aClass69_16.method2282(local15);
 	}
@@ -171,7 +171,7 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 		if (this.aClass49_2 != null) {
 			this.aBoolean36 = true;
 			if (this.aClass69_17 == null) {
-				this.aClass69_17 = new LinkedList();
+				this.aClass69_17 = new LinkList();
 			}
 		}
 	}
@@ -186,7 +186,7 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 		if (this.aClass70_1 == null) {
 			return 0;
 		} else if (this.aBoolean35) {
-			@Pc(25) Node local25 = this.aClass69_17.method2289();
+			@Pc(25) Linkable local25 = this.aClass69_17.method2289();
 			return local25 == null ? 0 : (int) local25.aLong192;
 		} else {
 			return this.aClass70_1.anInt2902;
@@ -200,7 +200,7 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 				return;
 			}
 			@Pc(32) boolean local32;
-			@Pc(37) Node local37;
+			@Pc(37) Linkable local37;
 			@Pc(43) int local43;
 			if (this.aBoolean35) {
 				local32 = true;
@@ -228,7 +228,7 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 						}
 						if (this.aByteArray9[this.anInt578] == 0) {
 							local32 = false;
-							local37 = new Node();
+							local37 = new Linkable();
 							local37.aLong192 = this.anInt578;
 							this.aClass69_17.method2282(local37);
 						}
@@ -264,7 +264,7 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 							this.method536(2, this.anInt578);
 						}
 						if (this.aByteArray9[this.anInt578] != 1) {
-							local37 = new Node();
+							local37 = new Linkable();
 							local37.aLong192 = this.anInt578;
 							this.aClass69_17.method2282(local37);
 							local32 = false;
@@ -430,7 +430,7 @@ public final class Js5CachedResourceProvider extends Js5ResourceProvider {
 		if (this.aClass69_17 == null || this.method521() == null) {
 			return;
 		}
-		for (@Pc(21) Node local21 = this.aClass69_16.method2289(); local21 != null; local21 = this.aClass69_16.method2288()) {
+		for (@Pc(21) Linkable local21 = this.aClass69_16.method2289(); local21 != null; local21 = this.aClass69_16.method2288()) {
 			@Pc(28) int local28 = (int) local21.aLong192;
 			if (local28 < 0 || this.aClass70_1.anInt2907 <= local28 || this.aClass70_1.anIntArray272[local28] == 0) {
 				local21.method4658();

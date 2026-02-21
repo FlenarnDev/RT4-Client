@@ -15,7 +15,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static197 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!pm", name = "cb", descriptor = "[[[Lclient!bj;")
-	public static Tile[][][] aClass3_Sub5ArrayArrayArray2;
+	public static Square[][][] aClass3_Sub5ArrayArrayArray2;
 
 	@OriginalMember(owner = "com.jagex3.client.client!pm", name = "hb", descriptor = "I")
 	public static int anInt4620;
@@ -27,21 +27,21 @@ public final class Static197 {
 	public static boolean aBoolean228 = true;
 
 	@OriginalMember(owner = "com.jagex3.client.client!pm", name = "a", descriptor = "(ILsignlink!ll;)[Lclient!od;")
-	public static Class114[] method3558(@OriginalArg(1) SignLink arg0) {
+	public static DisplayMode[] method3558(@OriginalArg(1) SignLink arg0) {
 		if (!arg0.method5111()) {
-			return new Class114[0];
+			return new DisplayMode[0];
 		}
 		@Pc(17) PrivilegedRequest local17 = arg0.method5132();
 		while (local17.status == 0) {
 			Static231.sleepPrecise(10L);
 		}
 		if (local17.status == 2) {
-			return new Class114[0];
+			return new DisplayMode[0];
 		}
 		@Pc(39) int[] local39 = (int[]) local17.result;
-		@Pc(45) Class114[] local45 = new Class114[local39.length >> 2];
+		@Pc(45) DisplayMode[] local45 = new DisplayMode[local39.length >> 2];
 		for (@Pc(47) int local47 = 0; local47 < local45.length; local47++) {
-			@Pc(59) Class114 local59 = new Class114();
+			@Pc(59) DisplayMode local59 = new DisplayMode();
 			local45[local47] = local59;
 			local59.anInt4248 = local39[local47 << 2];
 			local59.anInt4250 = local39[(local47 << 2) + 1];
@@ -102,14 +102,14 @@ public final class Static197 {
 		if (arg0) {
 			Static31.method847(Static154.canvas);
 			Static223.method3866(Static154.canvas);
-			if (Static71.mouseWheel != null) {
-				Static71.mouseWheel.method3291(Static154.canvas);
+			if (Static71.mouseWheelInterface != null) {
+				Static71.mouseWheelInterface.method3291(Static154.canvas);
 			}
 			Static215.aClient1.method926();
 			Static19.start(Static154.canvas);
 			Static88.start(Static154.canvas);
-			if (Static71.mouseWheel != null) {
-				Static71.mouseWheel.start(Static154.canvas);
+			if (Static71.mouseWheelInterface != null) {
+				Static71.mouseWheelInterface.start(Static154.canvas);
 			}
 		} else {
 			if (GlRenderer.enabled) {
@@ -169,7 +169,7 @@ public final class Static197 {
 			Static37.aThread1.setPriority(5);
 			Static260.aClass27_2 = null;
 			Static268.method4580();
-			((Js5GlTextureProvider) Rasteriser.anInterface1_2).method3248(200);
+			((WorldTextureProvider) Rasteriser.anInterface1_2).method3248(200);
 			if (Static178.highDetailLighting) {
 				Rasteriser.method1911(0.7F);
 			}
@@ -179,7 +179,7 @@ public final class Static197 {
 			Static260.aClass27_2 = Static131.method2579(503, 765, Static154.canvas);
 			Static268.method4583();
 			Static76.method1643();
-			((Js5GlTextureProvider) Rasteriser.anInterface1_2).method3248(20);
+			((WorldTextureProvider) Rasteriser.anInterface1_2).method3248(20);
 			if (Static178.highDetailLighting) {
 				if (Static113.anInt4609 == 1) {
 					Rasteriser.method1911(0.9F);

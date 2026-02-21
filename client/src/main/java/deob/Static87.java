@@ -15,7 +15,7 @@ public final class Static87 {
 	public static boolean aBoolean130 = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!gn", name = "i", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_12 = new SoftLruHashTable(20);
+	public static final SoftLruCache aClass99_12 = new SoftLruCache(20);
 
 	@OriginalMember(owner = "com.jagex3.client.client!gn", name = "v", descriptor = "Lclient!na;")
 	public static final JagString aClass100_494 = Static28.parse("null");
@@ -112,7 +112,7 @@ public final class Static87 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!gn", name = "a", descriptor = "(III[Lclient!be;IIIIBI)V")
-	public static void method1809(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) Component[] arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(9) int arg8) {
+	public static void method1809(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) IfType[] arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(9) int arg8) {
 		if (GlRenderer.enabled) {
 			Static46.method1187(arg0, arg6, arg4, arg7);
 		} else {
@@ -120,7 +120,7 @@ public final class Static87 {
 			Rasteriser.method1908();
 		}
 		for (@Pc(18) int local18 = 0; local18 < arg3.length; local18++) {
-			@Pc(30) Component local30 = arg3[local18];
+			@Pc(30) IfType local30 = arg3[local18];
 			if (local30 != null && (local30.layer == arg5 || arg5 == -1412584499 && local30 == Static105.aClass13_14)) {
 				@Pc(57) int local57;
 				if (arg8 == -1) {
@@ -242,8 +242,8 @@ public final class Static87 {
 								local276 -= local30.anInt459 / 2;
 								local503 = Static57.anInt1747 + Static59.anInt1814 & 0x7FF;
 								local270 -= local30.anInt445 / 2;
-								local514 = MathUtils.anIntArray223[local503];
-								local518 = MathUtils.anIntArray225[local503];
+								local514 = Pix3D.anIntArray223[local503];
+								local518 = Pix3D.anIntArray225[local503];
 								local514 = (Static273.anInt4130 + 256) * local514 >> 8;
 								local518 = (Static273.anInt4130 + 256) * local518 >> 8;
 								local545 = local518 * local276 - local514 * local270 >> 11;
@@ -251,7 +251,7 @@ public final class Static87 {
 								local563 = Static173.self.anInt3412 + local556 >> 7;
 								local571 = Static173.self.anInt3421 - local545 >> 7;
 								if (Static241.aBoolean302 && (Static274.anInt4999 & 0x40) != 0) {
-									@Pc(583) Component local583 = Static201.method1418(Static98.anInt2512, Static15.anInt506);
+									@Pc(583) IfType local583 = Static201.method1418(Static98.anInt2512, Static15.anInt506);
 									if (local583 == null) {
 										Static53.method1294();
 									} else {
@@ -383,7 +383,7 @@ public final class Static87 {
 							if (local30.createdComponents != null) {
 								method1809(local166, local114 - local30.scrollY, -local30.anInt489 + local123, local30.createdComponents, local302, local30.anInt507, local164, local291, local57);
 							}
-							@Pc(1186) Class3_Sub31 local1186 = (Class3_Sub31) Static119.aClass133_9.method3863((long) local30.anInt507);
+							@Pc(1186) SubInterface local1186 = (SubInterface) Static119.aClass133_9.method3863((long) local30.anInt507);
 							if (local1186 != null) {
 								if (local1186.anInt5879 == 0 && !Static60.aBoolean108 && Static155.anInt3751 >= local166 && local164 <= Static60.anInt1892 && local302 > Static155.anInt3751 && Static60.anInt1892 < local291 && !Static121.aBoolean154) {
 									Static254.aClass100Array168[0] = LocalizedText.CANCEL;
@@ -419,7 +419,7 @@ public final class Static87 {
 											if (local30.objTypes[local270] > 0) {
 												local545 = local30.objTypes[local270] - 1;
 												if (arg0 < local503 + 32 && local503 < arg4 && arg6 < local514 + 32 && local514 < arg7 || local30 == Static118.aClass13_15 && Static4.anInt36 == local270) {
-													@Pc(1476) Sprite local1476;
+													@Pc(1476) AbstractPix32 local1476;
 													if (Static260.anInt5014 == 1 && Static185.anInt4370 == local270 && local30.anInt507 == Static224.anInt5062) {
 														local1476 = Static190.method3443(2, local545, local30.aBoolean31, local30.objCounts[local270], 0);
 													} else {
@@ -445,7 +445,7 @@ public final class Static87 {
 														}
 														local1476.method1417(local503 + local518, local514 - -local556, 128);
 														if (arg5 != -1) {
-															@Pc(1571) Component local1571 = arg3[arg5 & 0xFFFF];
+															@Pc(1571) IfType local1571 = arg3[arg5 & 0xFFFF];
 															@Pc(1577) int local1577;
 															@Pc(1575) int local1575;
 															if (GlRenderer.enabled) {
@@ -488,7 +488,7 @@ public final class Static87 {
 													}
 												}
 											} else if (local30.anIntArray36 != null && local270 < 20) {
-												@Pc(1381) Sprite local1381 = local30.method482(local270);
+												@Pc(1381) AbstractPix32 local1381 = local30.method482(local270);
 												if (local1381 != null) {
 													local1381.method1423(local503, local514);
 												} else if (Static211.aBoolean72) {
@@ -534,7 +534,7 @@ public final class Static87 {
 										Static129.method2487(local123, local114, local30.anInt445, local30.anInt459, local270, 256 - (local117 & 0xFF));
 									}
 								} else {
-									@Pc(1921) Font local1921;
+									@Pc(1921) PixFontGeneric local1921;
 									if (local30.anInt452 == 4) {
 										local1921 = local30.method491(Static159.aClass36Array12);
 										if (local1921 != null) {
@@ -575,7 +575,7 @@ public final class Static87 {
 											Static43.method1143(local30);
 										}
 									} else if (local30.anInt452 == 5) {
-										@Pc(2094) Sprite local2094;
+										@Pc(2094) AbstractPix32 local2094;
 										if (local30.aBoolean32) {
 											if (local30.objId == -1) {
 												local2094 = local30.method489(false);
@@ -592,7 +592,7 @@ public final class Static87 {
 														Static46.method1183(local123, local114, local30.anInt445 + local123, local30.anInt459 + local114);
 														@Pc(2274) boolean local2274 = Static209.method3702(local2094.anInt1867);
 														@Pc(2279) boolean local2279 = Static209.method3702(local2094.anInt1859);
-														@Pc(2282) GlSprite local2282 = (GlSprite) local2094;
+														@Pc(2282) GlPix32 local2282 = (GlPix32) local2094;
 														if (local2274 && local2279) {
 															if (local117 == 0) {
 																local2282.method1429(local123, local114, local503, local514);
@@ -669,7 +669,7 @@ public final class Static87 {
 										@Pc(2611) ObjType local2611;
 										if (local30.anInt452 == 6) {
 											@Pc(2587) boolean local2587 = Static154.method2926(local30);
-											@Pc(2589) Model local2589 = null;
+											@Pc(2589) ModelLit local2589 = null;
 											if (local2587) {
 												local276 = local30.anInt462;
 											} else {
@@ -696,7 +696,7 @@ public final class Static87 {
 													if (local514 == Static16.anInt549) {
 														local514 = 2047;
 													}
-													@Pc(2751) Player local2751 = Static159.aClass8_Sub4_Sub1Array1[local514];
+													@Pc(2751) ClientPlayer local2751 = Static159.aClass8_Sub4_Sub1Array1[local514];
 													@Pc(2760) SeqType local2760 = local276 == -1 ? null : Static36.method941(local276);
 													if (local2751 != null && (int) local2751.aClass100_364.encode37() << 11 == (local30.modelId & 0xFFFFF800)) {
 														local2589 = local2751.aClass59_1.method1954(null, -1, null, local2760, 0, -1, 0, local30.anInt510, 0);
@@ -747,8 +747,8 @@ public final class Static87 {
 													if (local30.aBoolean34) {
 														GlRenderer.disableDepthMask();
 													}
-													local563 = MathUtils.anIntArray223[local30.modelXAngle] * local30.modelZoom >> 16;
-													local571 = local30.modelZoom * MathUtils.anIntArray225[local30.modelXAngle] >> 16;
+													local563 = Pix3D.anIntArray223[local30.modelXAngle] * local30.modelZoom >> 16;
+													local571 = local30.modelZoom * Pix3D.anIntArray225[local30.modelXAngle] >> 16;
 													if (local30.aBoolean32) {
 														local2589.method4571(local30.modelYAngle, local30.modelYOffset, local30.modelXAngle, local30.modelXOffset, local30.modelZOffset + local563 + local503, local30.modelZOffset + local571, -1L);
 													} else {
@@ -759,12 +759,12 @@ public final class Static87 {
 													}
 												} else {
 													Rasteriser.method1919(local556, local545);
-													local563 = MathUtils.anIntArray223[local30.modelXAngle] * local30.modelZoom >> 16;
-													local571 = local30.modelZoom * MathUtils.anIntArray225[local30.modelXAngle] >> 16;
+													local563 = Pix3D.anIntArray223[local30.modelXAngle] * local30.modelZoom >> 16;
+													local571 = local30.modelZoom * Pix3D.anIntArray225[local30.modelXAngle] >> 16;
 													if (!local30.aBoolean32) {
 														local2589.method4571(local30.modelYAngle, 0, local30.modelXAngle, 0, local563, local571, -1L);
 													} else if (local30.aBoolean22) {
-														((SoftwareModel) local2589).method4591(local30.modelYAngle, local30.modelYOffset, local30.modelXAngle, local30.modelXOffset, local30.modelZOffset + local503 + local563, local571 + local30.modelZOffset, local30.modelZoom);
+														((SoftwareModelLit) local2589).method4591(local30.modelYAngle, local30.modelYOffset, local30.modelXAngle, local30.modelXOffset, local30.modelZOffset + local503 + local563, local571 + local30.modelZOffset, local30.modelZoom);
 													} else {
 														local2589.method4571(local30.modelYAngle, local30.modelYOffset, local30.modelXAngle, local30.modelXOffset, local30.modelZOffset + local563 + local503, local571 + local30.modelZOffset, -1L);
 													}
@@ -809,7 +809,7 @@ public final class Static87 {
 												local276 = 0;
 												local270 = 0;
 												@Pc(3297) JagString local3297 = local30.aClass100_84;
-												@Pc(3299) Font local3299 = Static215.aClass3_Sub2_Sub9_32;
+												@Pc(3299) PixFontGeneric local3299 = Static215.aClass3_Sub2_Sub9_32;
 												local3297 = Static127.method2465(local30, local3297);
 												@Pc(3325) JagString local3325;
 												while (local3297.length() > 0) {

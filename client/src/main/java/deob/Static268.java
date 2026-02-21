@@ -33,7 +33,7 @@ public final class Static268 {
 	public static int[] anIntArray558;
 
 	@OriginalMember(owner = "com.jagex3.client.client!w", name = "ab", descriptor = "Lclient!w;")
-	public static final SoftwareModel aClass8_Sub1_Sub2_1 = new SoftwareModel();
+	public static final SoftwareModelLit aClass8_Sub1_Sub2_1 = new SoftwareModelLit();
 
 	@OriginalMember(owner = "com.jagex3.client.client!w", name = "cb", descriptor = "[I")
 	public static int[] anIntArray535 = new int[1];
@@ -42,7 +42,7 @@ public final class Static268 {
 	public static int[] anIntArray536 = new int[1];
 
 	@OriginalMember(owner = "com.jagex3.client.client!w", name = "eb", descriptor = "Lclient!w;")
-	public static final SoftwareModel aClass8_Sub1_Sub2_2 = new SoftwareModel();
+	public static final SoftwareModelLit aClass8_Sub1_Sub2_2 = new SoftwareModelLit();
 
 	@OriginalMember(owner = "com.jagex3.client.client!w", name = "fb", descriptor = "[B")
 	public static byte[] aByteArray76 = new byte[1];
@@ -66,7 +66,7 @@ public final class Static268 {
 	public static byte[] aByteArray77 = new byte[1];
 
 	@OriginalMember(owner = "com.jagex3.client.client!w", name = "nb", descriptor = "Lclient!w;")
-	public static final SoftwareModel aClass8_Sub1_Sub2_3 = new SoftwareModel();
+	public static final SoftwareModelLit aClass8_Sub1_Sub2_3 = new SoftwareModelLit();
 
 	@OriginalMember(owner = "com.jagex3.client.client!w", name = "ob", descriptor = "[I")
 	public static int[] anIntArray540 = new int[1];

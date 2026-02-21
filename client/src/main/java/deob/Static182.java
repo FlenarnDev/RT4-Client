@@ -13,7 +13,7 @@ public final class Static182 {
 	public static Js5 aClass153_77;
 
 	@OriginalMember(owner = "com.jagex3.client.client!oj", name = "E", descriptor = "[[Lclient!hg;")
-	public static Class3_Sub14[][] aClass3_Sub14ArrayArray2;
+	public static GlSquare[][] aGlSquareArrayArray2;
 
 	@OriginalMember(owner = "com.jagex3.client.client!oj", name = "p", descriptor = "I")
 	public static final int anInt4306 = 2301979;
@@ -28,7 +28,7 @@ public final class Static182 {
 	public static final boolean[] aBooleanArray97 = new boolean[] { true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, false };
 
 	@OriginalMember(owner = "com.jagex3.client.client!oj", name = "a", descriptor = "(BZLclient!rk;)V")
-	public static void method3359(@OriginalArg(1) boolean arg0, @OriginalArg(2) Font arg1) {
+	public static void method3359(@OriginalArg(1) boolean arg0, @OriginalArg(2) PixFontGeneric arg1) {
 		@Pc(9) int local9;
 		if (GlRenderer.enabled || arg0) {
 			local9 = Static254.anInt5554;

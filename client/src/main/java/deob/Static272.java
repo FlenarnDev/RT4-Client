@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static272 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!wd", name = "a", descriptor = "Lclient!gn;")
-	public static final LruHashTable aClass54_14 = new LruHashTable(64);
+	public static final LruCache aClass54_14 = new LruCache(64);
 
 	@OriginalMember(owner = "com.jagex3.client.client!wd", name = "d", descriptor = "[I")
 	public static final int[] anIntArray451 = new int[] { 8, 11, 4, 6, 9, 7, 10, 0 };
@@ -23,11 +23,11 @@ public final class Static272 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!wd", name = "a", descriptor = "(BII)V")
 	public static void method3995(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(14) Class85 local14 = Static125.method2449(arg1);
+		@Pc(14) VarBitType local14 = Static125.method2449(arg1);
 		@Pc(17) int local17 = local14.anInt3327;
 		@Pc(20) int local20 = local14.anInt3323;
 		@Pc(23) int local23 = local14.anInt3318;
-		@Pc(29) int local29 = Class3_Sub9.anIntArray135[local20 - local23];
+		@Pc(29) int local29 = ByteArrayNode.anIntArray135[local20 - local23];
 		if (arg0 < 0 || local29 < arg0) {
 			arg0 = 0;
 		}

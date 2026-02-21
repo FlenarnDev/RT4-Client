@@ -221,7 +221,7 @@ public final class Static269 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!wa", name = "a", descriptor = "(III)Lclient!bm;")
 	public static GroundDecor method2210(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) Tile local7 = Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2];
+		@Pc(7) Square local7 = Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2];
 		return local7 == null || local7.aClass15_1 == null ? null : local7.aClass15_1;
 	}
 
@@ -288,7 +288,7 @@ public final class Static269 {
 		if (GlRenderer.enabled) {
 			if (Static153.aClass3_Sub2_Sub1_Sub1_2 == null || Static153.aClass3_Sub2_Sub1_Sub1_2.anInt1867 != arg3 || Static153.aClass3_Sub2_Sub1_Sub1_2.anInt1859 != arg2) {
 				Static153.aClass3_Sub2_Sub1_Sub1_2 = null;
-				Static153.aClass3_Sub2_Sub1_Sub1_2 = new SoftwareSprite(arg3, arg2);
+				Static153.aClass3_Sub2_Sub1_Sub1_2 = new Pix32(arg3, arg2);
 			}
 			Static129.method2491(Static153.aClass3_Sub2_Sub1_Sub1_2.anIntArray20, arg3, arg2);
 			Static214.method4364(arg3, 0, local61, local50, 0, local236, arg2, local211);

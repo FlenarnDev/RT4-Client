@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static114 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!j", name = "x", descriptor = "Lclient!rk;")
-	public static Font aClass3_Sub2_Sub9_42;
+	public static PixFontGeneric aClass3_Sub2_Sub9_42;
 
 	@OriginalMember(owner = "com.jagex3.client.client!j", name = "v", descriptor = "I")
 	public static int anInt5831 = 0;
@@ -30,15 +30,15 @@ public final class Static114 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!j", name = "c", descriptor = "(I)V")
 	public static void method4625() {
-		Static204.aClass69_113 = new LinkedList();
+		Static204.aClass69_113 = new LinkList();
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!j", name = "a", descriptor = "([BI)Lclient!dd;")
-	public static SoftwareFont method4635(@OriginalArg(0) byte[] arg0) {
+	public static PixFont method4635(@OriginalArg(0) byte[] arg0) {
 		if (arg0 == null) {
 			return null;
 		} else {
-			@Pc(22) SoftwareFont local22 = new SoftwareFont(arg0, Static274.anIntArray440, Static269.anIntArray252, Static254.anIntArray488, Static26.anIntArray66, Static7.aByteArrayArray5);
+			@Pc(22) PixFont local22 = new PixFont(arg0, Static274.anIntArray440, Static269.anIntArray252, Static254.anIntArray488, Static26.anIntArray66, Static7.aByteArrayArray5);
 			Static75.method1631();
 			return local22;
 		}

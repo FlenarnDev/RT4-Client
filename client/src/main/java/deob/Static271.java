@@ -19,7 +19,7 @@ public final class Static271 {
 	public static final byte[] aByteArray79 = new byte[520];
 
 	@OriginalMember(owner = "com.jagex3.client.client!wc", name = "a", descriptor = "(Lclient!e;I)V")
-	public static void method4597(@OriginalArg(0) Player arg0) {
+	public static void method4597(@OriginalArg(0) ClientPlayer arg0) {
 		@Pc(10) AreaSound local10 = (AreaSound) Static93.aClass133_7.method3863(arg0.aClass100_364.encode37());
 		if (local10 == null) {
 			return;

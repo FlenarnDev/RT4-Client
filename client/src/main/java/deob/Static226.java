@@ -31,7 +31,7 @@ public final class Static226 {
 	public static int anInt5084 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!sf", name = "a", descriptor = "(ILclient!cd;)V")
-	public static void method3898(@OriginalArg(1) Class3_Sub7 arg0) {
+	public static void method3898(@OriginalArg(1) LocChange arg0) {
 		@Pc(5) long local5 = 0L;
 		@Pc(7) int local7 = -1;
 		@Pc(14) int local14 = 0;

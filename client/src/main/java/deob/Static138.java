@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static138 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!km", name = "sc", descriptor = "[Lclient!qf;")
-	public static Sprite[] aClass3_Sub2_Sub1Array5;
+	public static AbstractPix32[] aClass3_Sub2_Sub1Array5;
 
 	@OriginalMember(owner = "com.jagex3.client.client!km", name = "uc", descriptor = "F")
 	public static float aFloat14;
@@ -96,8 +96,8 @@ public final class Static138 {
 		} else if (arg0 instanceof byte[]) {
 			@Pc(14) byte[] local14 = (byte[]) arg0;
 			return arg1 ? Static23.method648(local14) : local14;
-		} else if (arg0 instanceof ByteArray) {
-			@Pc(34) ByteArray local34 = (ByteArray) arg0;
+		} else if (arg0 instanceof ByteArrayWrapper) {
+			@Pc(34) ByteArrayWrapper local34 = (ByteArrayWrapper) arg0;
 			return local34.method4236();
 		} else {
 			throw new IllegalArgumentException();
@@ -120,7 +120,7 @@ public final class Static138 {
 					}
 				}
 				if (Static27.aClass89_1 == null) {
-					Static27.aClass89_1 = new SoundBank(Static78.aClass153_32, Static252.aClass153_103);
+					Static27.aClass89_1 = new WaveCache(Static78.aClass153_32, Static252.aClass153_103);
 				}
 				if (Static172.aClass3_Sub3_Sub4_2.method4411(Static144.aClass3_Sub29_1, Static210.aClass153_87, Static27.aClass89_1)) {
 					Static172.aClass3_Sub3_Sub4_2.method4412();

@@ -36,7 +36,7 @@ public final class Static52 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!eb", name = "d", descriptor = "(I)V")
 	public static void method1287() {
-		Static241.components = new Component[Static202.aClass153_84.method4483()][];
+		Static241.components = new IfType[Static202.aClass153_84.method4483()][];
 		Static223.aBooleanArray115 = new boolean[Static202.aClass153_84.method4483()];
 	}
 

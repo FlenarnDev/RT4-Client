@@ -21,10 +21,10 @@ public final class Static169 {
 	public static int anInt4073;
 
 	@OriginalMember(owner = "com.jagex3.client.client!nf", name = "h", descriptor = "Lclient!be;")
-	public static Component aClass13_18;
+	public static IfType aClass13_18;
 
 	@OriginalMember(owner = "com.jagex3.client.client!nf", name = "f", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_24 = new SoftLruHashTable(500);
+	public static final SoftLruCache aClass99_24 = new SoftLruCache(500);
 
 	@OriginalMember(owner = "com.jagex3.client.client!nf", name = "i", descriptor = "I")
 	public static int anInt4075 = -1;
@@ -56,7 +56,7 @@ public final class Static169 {
 		if (!arg3.method5111()) {
 			return null;
 		}
-		@Pc(20) Class114[] local20 = Static197.method3558(arg3);
+		@Pc(20) DisplayMode[] local20 = Static197.method3558(arg3);
 		if (local20 == null) {
 			return null;
 		}

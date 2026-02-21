@@ -19,12 +19,12 @@ public final class Static187 {
 	public static short aShort27 = 320;
 
 	@OriginalMember(owner = "com.jagex3.client.client!pb", name = "b", descriptor = "(III)Lclient!jj;")
-	public static ObjStackEntity method3420(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) Tile local7 = Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2];
+	public static GroundObject method3420(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+		@Pc(7) Square local7 = Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2];
 		if (local7 == null) {
 			return null;
 		} else {
-			@Pc(14) ObjStackEntity local14 = local7.aClass79_1;
+			@Pc(14) GroundObject local14 = local7.aClass79_1;
 			local7.aClass79_1 = null;
 			return local14;
 		}
