@@ -3,6 +3,7 @@ package deob;
 import java.util.Random;
 
 import com.jagex3.client.Client;
+import com.jagex3.client.JagString;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

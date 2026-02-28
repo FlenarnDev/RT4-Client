@@ -4,6 +4,10 @@ import java.awt.Component;
 import java.lang.reflect.Method;
 
 import com.jagex.signlink.SignLink;
+import com.jagex3.client.ClientNPC;
+import com.jagex3.client.ClientPlayer;
+import com.jagex3.client.JagString;
+import com.jagex3.client.Rasteriser;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

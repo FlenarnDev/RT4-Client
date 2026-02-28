@@ -4,6 +4,9 @@ import java.awt.Frame;
 
 import com.jagex.signlink.PrivilegedRequest;
 import com.jagex.signlink.SignLink;
+import com.jagex3.client.ClientKeyboardListener;
+import com.jagex3.client.JagString;
+import com.jagex3.client.Sprite;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

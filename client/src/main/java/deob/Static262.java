@@ -1,5 +1,9 @@
 package deob;
 
+import com.jagex3.client.JagString;
+import com.jagex3.client.ModelSource;
+import com.jagex3.client.SoftLruCache;
+import com.jagex3.client.Square;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

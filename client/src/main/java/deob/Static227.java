@@ -1,5 +1,7 @@
 package deob;
 
+import com.jagex3.client.IfType;
+import com.jagex3.client.JagString;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static227 {

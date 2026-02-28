@@ -2,6 +2,9 @@ package deob;
 
 import java.util.Calendar;
 import java.util.TimeZone;
+
+import com.jagex3.client.Sprite;
+import com.jagex3.client.Square;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

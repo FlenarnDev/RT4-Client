@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 import com.jagex.signlink.SignLink;
-import com.jagex3.client.Client;
+import com.jagex3.client.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

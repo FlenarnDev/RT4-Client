@@ -1,6 +1,10 @@
 package deob;
 
 import java.nio.ByteBuffer;
+
+import com.jagex3.client.GlModelLit;
+import com.jagex3.client.Packet;
+import com.jagex3.client.Rasteriser;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

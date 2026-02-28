@@ -3,8 +3,7 @@ package deob;
 import java.awt.Point;
 import java.io.IOException;
 
-import com.jagex3.client.Client;
-import com.jagex3.client.GameShell;
+import com.jagex3.client.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -111,7 +110,7 @@ public final class Static81 {
 		if (Client.state != 30) {
 			return;
 		}
-		Static233.loop(Client.out); // deob.ReflectionCheck
+		Static233.loop(Client.out); // com.jagex3.client.ReflectionCheck
 		@Pc(60) Object mouseRecorder = Client.mouseTracking.lock;
 		@Pc(86) int offset;
 		@Pc(79) int samples;
@@ -284,7 +283,7 @@ public final class Static81 {
 			Static83.updatedVarps[Static70.updatedVarpsWriterIndex++ & 0x1F] = i;
 		}
 		@Pc(782) int modelId;
-		// deob.DelayedStateChange
+		// com.jagex3.client.DelayedStateChange
 		for (@Pc(709) DelayedStateChange change = Static127.poll(); change != null; change = Static127.poll()) {
 			samples = change.method1011();
 			i = change.method1012();

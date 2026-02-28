@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.PcmStream;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;

@@ -3,7 +3,7 @@ package deob;
 import java.awt.Component;
 
 import com.jagex.signlink.SignLink;
-import com.jagex3.client.Client;
+import com.jagex3.client.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -50,7 +50,7 @@ public final class Static107 {
 			throw new IllegalStateException();
 		}
 		try {
-			@Pc(33) PcmPlayer local33 = (PcmPlayer) Class.forName("deob.JavaPcmPlayer").getDeclaredConstructor().newInstance();
+			@Pc(33) PcmPlayer local33 = (PcmPlayer) Class.forName("com.jagex3.client.JavaPcmPlayer").getDeclaredConstructor().newInstance();
 			local33.anInt4641 = arg0;
 			local33.anIntArray411 = new int[(Static164.aBoolean192 ? 2 : 1) * 256];
 			local33.method3576(arg2);

@@ -1,5 +1,9 @@
 package deob;
 
+import com.jagex3.client.AbstractPix32;
+import com.jagex3.client.JagString;
+import com.jagex3.client.LocChange;
+import com.jagex3.client.SoftLruCache;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 

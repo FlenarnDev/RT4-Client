@@ -1,6 +1,9 @@
 package deob;
 
 import com.jagex3.client.Client;
+import com.jagex3.client.HookRequest;
+import com.jagex3.client.IfType;
+import com.jagex3.client.MaterialRenderer;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

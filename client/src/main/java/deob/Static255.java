@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.LruCache;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static255 {

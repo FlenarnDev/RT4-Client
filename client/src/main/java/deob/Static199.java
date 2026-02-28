@@ -1,5 +1,9 @@
 package deob;
 
+import com.jagex3.client.FluType;
+import com.jagex3.client.FriendChatUser;
+import com.jagex3.client.HashTable;
+import com.jagex3.client.Packet;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

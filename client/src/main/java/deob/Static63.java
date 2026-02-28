@@ -1,6 +1,9 @@
 package deob;
 
 import com.jagex.signlink.MonotonicClock;
+import com.jagex3.client.GlRenderer;
+import com.jagex3.client.IntNode;
+import com.jagex3.client.LinkList;
 import com.jogamp.opengl.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;

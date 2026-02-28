@@ -4,6 +4,9 @@ import java.io.UnsupportedEncodingException;
 
 import com.jagex.signlink.MonotonicClock;
 import com.jagex3.client.GameShell;
+import com.jagex3.client.JagString;
+import com.jagex3.client.Packet;
+import com.jagex3.client.QuickChatPhraseType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

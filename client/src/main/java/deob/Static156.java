@@ -1,7 +1,7 @@
 package deob;
 
 import com.jagex.signlink.SignLink;
-import com.jagex3.client.Client;
+import com.jagex3.client.*;
 import com.jogamp.opengl.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;

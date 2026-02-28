@@ -1,5 +1,9 @@
 package deob;
 
+import com.jagex3.client.IfType;
+import com.jagex3.client.JagString;
+import com.jagex3.client.Pix32;
+import com.jagex3.client.SoftLruCache;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static56 {

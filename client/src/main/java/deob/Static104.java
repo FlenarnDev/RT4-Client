@@ -1,5 +1,9 @@
 package deob;
 
+import com.jagex3.client.BasType;
+import com.jagex3.client.ClientEntity;
+import com.jagex3.client.ClientNPC;
+import com.jagex3.client.SeqType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

@@ -2,6 +2,9 @@ package deob;
 
 import java.awt.Frame;
 import java.util.Random;
+
+import com.jagex3.client.AbstractPix32;
+import com.jagex3.client.IfType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

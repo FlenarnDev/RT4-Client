@@ -3,6 +3,9 @@ package deob;
 import java.awt.event.KeyEvent;
 
 import com.jagex3.client.Client;
+import com.jagex3.client.DelayedStateChange;
+import com.jagex3.client.JagString;
+import com.jagex3.client.Packet;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

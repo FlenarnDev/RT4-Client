@@ -1,6 +1,5 @@
 package com.jagex3.client;
 
-import deob.JagString;
 import deob.Static28;
 import org.openrs2.deob.annotation.OriginalMember;
 

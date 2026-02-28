@@ -1,6 +1,11 @@
 package deob;
 
 import java.awt.Component;
+
+import com.jagex3.client.ClientNPC;
+import com.jagex3.client.JagString;
+import com.jagex3.client.SeqType;
+import com.jagex3.client.Sprite;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.GlRenderer;
 import com.jogamp.opengl.*;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

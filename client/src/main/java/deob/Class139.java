@@ -1,5 +1,7 @@
 package deob;
 
+import com.jagex3.client.ModelSource;
+import com.jagex3.client.SoftwarePix8;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 

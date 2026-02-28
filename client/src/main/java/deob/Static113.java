@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.LocType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

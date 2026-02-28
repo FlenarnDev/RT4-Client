@@ -1,6 +1,9 @@
 package deob;
 
 import java.nio.ByteBuffer;
+
+import com.jagex3.client.GlRenderer;
+import com.jagex3.client.MaterialRenderer;
 import com.jogamp.opengl.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;

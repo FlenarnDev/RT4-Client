@@ -1,5 +1,9 @@
 package deob;
 
+import com.jagex3.client.Js5;
+import com.jagex3.client.LruCache;
+import com.jagex3.client.Packet;
+import com.jagex3.client.SoftLruCache;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

@@ -1,6 +1,6 @@
 package deob;
 
-import com.jagex3.client.Client;
+import com.jagex3.client.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -60,7 +60,7 @@ public final class Static44 {
 	@OriginalMember(owner = "com.jagex3.client.client!dh", name = "b", descriptor = "(I)Lclient!q;")
 	public static ReferenceNodeFactory method1147() {
 		try {
-			return (ReferenceNodeFactory) Class.forName("deob.SoftReferenceNodeFactory").getDeclaredConstructor().newInstance();
+			return (ReferenceNodeFactory) Class.forName("com.jagex3.client.SoftReferenceNodeFactory").getDeclaredConstructor().newInstance();
 		} catch (@Pc(15) Throwable local15) {
 			return null;
 		}
@@ -124,7 +124,7 @@ public final class Static44 {
 	@OriginalMember(owner = "com.jagex3.client.client!dh", name = "a", descriptor = "(B)Lclient!uc;")
 	public static MouseWheelInterface create() {
 		try {
-			return (MouseWheelInterface) Class.forName("deob.ClientMouseWheelListener").getDeclaredConstructor().newInstance();
+			return (MouseWheelInterface) Class.forName("com.jagex3.client.ClientMouseWheelListener").getDeclaredConstructor().newInstance();
 		} catch (@Pc(15) Throwable local15) {
 			return null;
 		}

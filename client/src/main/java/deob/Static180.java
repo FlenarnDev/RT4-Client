@@ -1,5 +1,9 @@
 package deob;
 
+import com.jagex3.client.ClientEntity;
+import com.jagex3.client.DelayedStateChange;
+import com.jagex3.client.IfType;
+import com.jagex3.client.JagString;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
