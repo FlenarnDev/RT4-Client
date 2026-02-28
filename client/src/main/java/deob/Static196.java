@@ -50,7 +50,7 @@ public final class Static196 {
 			Static123.method2418();
 		}
 		if (arg0 == 5) {
-			Static181.method3344(Static209.aClass153_86);
+			Static181.method3344(Client.sprites);
 		} else {
 			Static119.method2381();
 		}
@@ -61,7 +61,7 @@ public final class Static196 {
 				if (Static12.anInt391 == 0) {
 					Static29.method801();
 				} else {
-					Static257.method526(Static250.anInt5441, Static130.aClass153_47, 255);
+					Static257.method526(Static250.anInt5441, Client.songs, 255);
 				}
 				Static107.js5Net.method2322(false);
 			} else {

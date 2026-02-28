@@ -14,10 +14,7 @@ public final class Static274 {
 	@OriginalMember(owner = "com.jagex3.client.client!wf", name = "f", descriptor = "I")
 	public static int anInt4999;
 
-	@OriginalMember(owner = "com.jagex3.client.client!wf", name = "g", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_90;
-
-	@OriginalMember(owner = "com.jagex3.client.client!wf", name = "j", descriptor = "Lclient!be;")
+    @OriginalMember(owner = "com.jagex3.client.client!wf", name = "j", descriptor = "Lclient!be;")
 	public static IfType aClass13_24;
 
 	@OriginalMember(owner = "com.jagex3.client.client!wf", name = "o", descriptor = "[Lclient!gb;")

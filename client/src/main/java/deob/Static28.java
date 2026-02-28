@@ -12,10 +12,7 @@ public final class Static28 {
 	@OriginalMember(owner = "com.jagex3.client.client!cd", name = "u", descriptor = "I")
 	public static int anInt919;
 
-	@OriginalMember(owner = "com.jagex3.client.client!cd", name = "B", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_18;
-
-	@OriginalMember(owner = "com.jagex3.client.client!cd", name = "a", descriptor = "(Lclient!ve;B)I")
+    @OriginalMember(owner = "com.jagex3.client.client!cd", name = "a", descriptor = "(Lclient!ve;B)I")
 	public static int method789(@OriginalArg(0) Js5 arg0) {
 		@Pc(5) int local5 = 0;
 		if (arg0.method4506(Static280.anInt5900)) {

@@ -9,10 +9,7 @@ public final class Static280 {
 	@OriginalMember(owner = "com.jagex3.client.client!wl", name = "q", descriptor = "Lclient!rk;")
 	public static PixFontGeneric aClass3_Sub2_Sub9_43;
 
-	@OriginalMember(owner = "com.jagex3.client.client!wl", name = "s", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_110;
-
-	@OriginalMember(owner = "com.jagex3.client.client!wl", name = "A", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!wl", name = "A", descriptor = "I")
 	public static int anInt5900;
 
 	@OriginalMember(owner = "com.jagex3.client.client!wl", name = "d", descriptor = "Lclient!na;")

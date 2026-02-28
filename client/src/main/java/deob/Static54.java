@@ -279,7 +279,7 @@ public final class Static54 {
 			if (Static164.anIntArray362[local5] >= -10) {
 				@Pc(79) JagFX local79 = Static173.aClass138Array1[local5];
 				if (local79 == null) {
-					local79 = Static292.method3988(Static248.aClass153_75, Static200.anIntArray421[local5], 0);
+					local79 = Static292.method3988(Client.jagFX, Static200.anIntArray421[local5], 0);
 					if (local79 == null) {
 						continue;
 					}
@@ -334,7 +334,7 @@ public final class Static54 {
 		}
 		if (Static144.aBoolean173 && !Static136.method2655()) {
 			if (Static12.anInt391 != 0 && Static221.anInt4363 != -1) {
-				Static122.method2410(Static130.aClass153_47, Static221.anInt4363, Static12.anInt391);
+				Static122.method2410(Client.songs, Static221.anInt4363, Static12.anInt391);
 			}
 			Static144.aBoolean173 = false;
 		} else if (Static12.anInt391 != 0 && Static221.anInt4363 != -1 && !Static136.method2655()) {

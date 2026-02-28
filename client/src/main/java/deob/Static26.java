@@ -10,10 +10,7 @@ public final class Static26 {
 	@OriginalMember(owner = "com.jagex3.client.client!ca", name = "Y", descriptor = "[I")
 	public static int[] anIntArray66;
 
-	@OriginalMember(owner = "com.jagex3.client.client!ca", name = "Z", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_16;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ca", name = "ab", descriptor = "Z")
+    @OriginalMember(owner = "com.jagex3.client.client!ca", name = "ab", descriptor = "Z")
 	public static boolean focus;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ca", name = "X", descriptor = "Lclient!ih;")
@@ -53,11 +50,11 @@ public final class Static26 {
 			for (@Pc(97) int local97 = (local23 - 6) / 8; local97 <= (local23 + 6) / 8; local97++) {
 				@Pc(115) int local115 = (local80 << 8) + local97;
 				Static238.anIntArray470[local74] = local115;
-				Static36.anIntArray84[local74] = aClass153_16.method4482(Static34.method882(new JagString[] { Static103.aClass100_558, Static123.method2423(local80), Static86.aClass100_488, Static123.method2423(local97) }));
-				Static172.anIntArray366[local74] = aClass153_16.method4482(Static34.method882(new JagString[] { Static270.aClass100_1090, Static123.method2423(local80), Static86.aClass100_488, Static123.method2423(local97) }));
-				Static175.anIntArray371[local74] = aClass153_16.method4482(Static34.method882(new JagString[] { Static179.aClass100_807, Static123.method2423(local80), Static86.aClass100_488, Static123.method2423(local97) }));
-				Static99.anIntArray239[local74] = aClass153_16.method4482(Static34.method882(new JagString[] { Static165.aClass100_772, Static123.method2423(local80), Static86.aClass100_488, Static123.method2423(local97) }));
-				Static35.anIntArray82[local74] = aClass153_16.method4482(Static34.method882(new JagString[] { Static278.aClass100_1103, Static123.method2423(local80), Static86.aClass100_488, Static123.method2423(local97) }));
+				Static36.anIntArray84[local74] = Client.maps.method4482(Static34.method882(new JagString[] { Static103.aClass100_558, Static123.method2423(local80), Static86.aClass100_488, Static123.method2423(local97) }));
+				Static172.anIntArray366[local74] = Client.maps.method4482(Static34.method882(new JagString[] { Static270.aClass100_1090, Static123.method2423(local80), Static86.aClass100_488, Static123.method2423(local97) }));
+				Static175.anIntArray371[local74] = Client.maps.method4482(Static34.method882(new JagString[] { Static179.aClass100_807, Static123.method2423(local80), Static86.aClass100_488, Static123.method2423(local97) }));
+				Static99.anIntArray239[local74] = Client.maps.method4482(Static34.method882(new JagString[] { Static165.aClass100_772, Static123.method2423(local80), Static86.aClass100_488, Static123.method2423(local97) }));
+				Static35.anIntArray82[local74] = Client.maps.method4482(Static34.method882(new JagString[] { Static278.aClass100_1103, Static123.method2423(local80), Static86.aClass100_488, Static123.method2423(local97) }));
 				if (Static175.anIntArray371[local74] == -1) {
 					Static36.anIntArray84[local74] = -1;
 					Static172.anIntArray366[local74] = -1;

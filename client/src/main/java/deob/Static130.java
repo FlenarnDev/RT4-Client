@@ -17,10 +17,7 @@ public final class Static130 {
 	@OriginalMember(owner = "com.jagex3.client.client!kc", name = "t", descriptor = "I")
 	public static int anInt3161;
 
-	@OriginalMember(owner = "com.jagex3.client.client!kc", name = "w", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_47;
-
-	@OriginalMember(owner = "com.jagex3.client.client!kc", name = "C", descriptor = "Lclient!fd;")
+    @OriginalMember(owner = "com.jagex3.client.client!kc", name = "C", descriptor = "Lclient!fd;")
 	public static WorldMapFont aClass41_2;
 
 	@OriginalMember(owner = "com.jagex3.client.client!kc", name = "s", descriptor = "[I")

@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -74,7 +75,7 @@ public final class Static220 {
 		@Pc(4) long local4 = (long) arg2;
 		@Pc(10) ModelLit local10 = (ModelLit) Static110.aClass99_15.method3106(local4);
 		if (local10 == null) {
-			@Pc(22) ModelUnlit local22 = Static77.method1686(Static267.aClass153_109, arg2);
+			@Pc(22) ModelUnlit local22 = Static77.method1686(Client.models, arg2);
 			if (local22 == null) {
 				return null;
 			}

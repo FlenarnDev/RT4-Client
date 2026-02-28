@@ -111,7 +111,7 @@ public final class Static278 {
 	@OriginalMember(owner = "com.jagex3.client.client!wj", name = "a", descriptor = "(IIB)V")
 	public static void method4650(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		if (Static12.anInt391 != 0 && arg1 != -1) {
-			Static122.method2410(Static214.aClass153_106, arg1, Static12.anInt391);
+			Static122.method2410(Client.jingles, arg1, Static12.anInt391);
 			Static144.aBoolean173 = true;
 		}
 	}

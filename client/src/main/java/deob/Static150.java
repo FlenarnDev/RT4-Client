@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -127,7 +128,7 @@ public final class Static150 {
 		if (arg1.aClass3_Sub3_Sub1_1 != null) {
 			arg1.aClass3_Sub3_Sub1_1.method386(local134);
 		} else if (arg1.anInt2044 >= 0) {
-			@Pc(150) JagFX local150 = Static292.method3988(Static248.aClass153_75, arg1.anInt2044, 0);
+			@Pc(150) JagFX local150 = Static292.method3988(Client.jagFX, arg1.anInt2044, 0);
 			if (local150 != null) {
 				@Pc(158) Wave local158 = local150.method3989().method2648(Static56.aClass156_1);
 				@Pc(163) WaveStream local163 = Static284.method404(local158, local134);
@@ -143,7 +144,7 @@ public final class Static150 {
 			}
 		} else if (arg1.anIntArray181 != null && (arg1.anInt2034 -= arg3) <= 0) {
 			@Pc(219) int local219 = (int) ((double) arg1.anIntArray181.length * Math.random());
-			@Pc(227) JagFX local227 = Static292.method3988(Static248.aClass153_75, arg1.anIntArray181[local219], 0);
+			@Pc(227) JagFX local227 = Static292.method3988(Client.jagFX, arg1.anIntArray181[local219], 0);
 			if (local227 != null) {
 				@Pc(236) Wave local236 = local227.method3989().method2648(Static56.aClass156_1);
 				@Pc(241) WaveStream local241 = Static284.method404(local236, local134);

@@ -12,10 +12,7 @@ public final class Static171 {
 	@OriginalMember(owner = "com.jagex3.client.client!ni", name = "h", descriptor = "I")
 	public static int anInt4153;
 
-	@OriginalMember(owner = "com.jagex3.client.client!ni", name = "k", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_68;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ni", name = "q", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!ni", name = "q", descriptor = "I")
 	public static int anInt4157;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ni", name = "n", descriptor = "Lclient!sm;")

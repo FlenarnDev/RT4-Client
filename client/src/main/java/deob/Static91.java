@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -33,7 +34,7 @@ public final class Static91 {
 		if (local12 != null) {
 			return local12;
 		}
-		@Pc(22) byte[] local22 = Static16.aClass153_9.method4495(arg0, 0);
+		@Pc(22) byte[] local22 = Client.scripts.method4495(arg0, 0);
 		if (local22 == null) {
 			return null;
 		}

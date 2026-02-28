@@ -119,17 +119,17 @@ public final class Static217 {
 			((WorldTextureProvider) Rasteriser.anInterface1_2).method3247();
 		}
 		Static105.aClass54_9.method1815();
-		Static213.aClass153_88.method4499();
-		Static249.aClass153_100.method4499();
-		Static41.aClass153_25.method4499();
-		Static248.aClass153_75.method4499();
-		Static26.aClass153_16.method4499();
-		Static130.aClass153_47.method4499();
-		Static267.aClass153_109.method4499();
-		Static209.aClass153_86.method4499();
-		Static184.aClass153_78.method4499();
-		Static214.aClass153_106.method4499();
-		Static16.aClass153_9.method4499();
+		Client.anims.method4499();
+		Client.bases.method4499();
+		Client.interfaces.method4499();
+		Client.jagFX.method4499();
+		Client.maps.method4499();
+		Client.songs.method4499();
+		Client.models.method4499();
+		Client.sprites.method4499();
+		Client.binary.method4499();
+		Client.jingles.method4499();
+		Client.scripts.method4499();
 		Static73.aClass99_10.method3104();
 	}
 

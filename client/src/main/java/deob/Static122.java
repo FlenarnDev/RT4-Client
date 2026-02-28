@@ -12,10 +12,7 @@ public final class Static122 {
 	@OriginalMember(owner = "com.jagex3.client.client!jh", name = "n", descriptor = "Lclient!bd;")
 	public static QuickChatPhrase aClass12_1;
 
-	@OriginalMember(owner = "com.jagex3.client.client!jh", name = "p", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_46;
-
-	@OriginalMember(owner = "com.jagex3.client.client!jh", name = "b", descriptor = "[Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!jh", name = "b", descriptor = "[Lclient!na;")
 	public static final JagString[] aClass100Array92 = new JagString[200];
 
 	@OriginalMember(owner = "com.jagex3.client.client!jh", name = "f", descriptor = "D")

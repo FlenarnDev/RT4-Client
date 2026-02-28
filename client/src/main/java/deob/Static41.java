@@ -7,10 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static41 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!dc", name = "z", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_25;
-
-	@OriginalMember(owner = "com.jagex3.client.client!dc", name = "v", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!dc", name = "v", descriptor = "Lclient!na;")
 	public static final JagString aClass100_266 = Static28.parse("<col=c0ff00>");
 
 	@OriginalMember(owner = "com.jagex3.client.client!dc", name = "E", descriptor = "Lclient!na;")

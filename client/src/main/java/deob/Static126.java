@@ -11,13 +11,7 @@ public final class Static126 {
 	@OriginalMember(owner = "com.jagex3.client.client!jm", name = "s", descriptor = "F")
 	public static float aFloat13;
 
-	@OriginalMember(owner = "com.jagex3.client.client!jm", name = "A", descriptor = "Lclient!na;")
-	private static final JagString aClass100_603 = Static28.parse("");
-
-	@OriginalMember(owner = "com.jagex3.client.client!jm", name = "z", descriptor = "Lclient!na;")
-	public static JagString loadString = aClass100_603;
-
-	@OriginalMember(owner = "com.jagex3.client.client!jm", name = "a", descriptor = "(Z)V")
+    @OriginalMember(owner = "com.jagex3.client.client!jm", name = "a", descriptor = "(Z)V")
 	public static void method2460() {
 		if (Static154.topLevelInterace != -1) {
 			Static96.method1949(Static154.topLevelInterace);

@@ -24,10 +24,7 @@ public final class Static172 {
 	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "k", descriptor = "I")
 	public static int anInt4165;
 
-	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "l", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_71;
-
-	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "m", descriptor = "[[S")
+    @OriginalMember(owner = "com.jagex3.client.client!nj", name = "m", descriptor = "[[S")
 	public static short[][] aShortArrayArray7;
 
 	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "a", descriptor = "Z")

@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -130,7 +131,7 @@ public final class Static142 {
 						@Pc(518) ClientNPC local518 = (ClientNPC) local17;
 						@Pc(528) AbstractPix32[] local528 = (AbstractPix32[]) Static73.aClass99_10.method3106((long) local518.aClass96_1.anInt3736);
 						if (local528 == null) {
-							local528 = Static209.method3708(local518.aClass96_1.anInt3736, Static209.aClass153_86);
+							local528 = Static209.method3708(local518.aClass96_1.anInt3736, Client.sprites);
 							if (local528 != null) {
 								Static73.aClass99_10.method3095(local528, (long) local518.aClass96_1.anInt3736);
 							}

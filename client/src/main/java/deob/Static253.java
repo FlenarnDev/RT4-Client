@@ -16,10 +16,7 @@ public final class Static253 {
 	@OriginalMember(owner = "com.jagex3.client.client!ui", name = "T", descriptor = "F")
 	public static float aFloat36;
 
-	@OriginalMember(owner = "com.jagex3.client.client!ui", name = "cb", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_104;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ui", name = "eb", descriptor = "[[[B")
+    @OriginalMember(owner = "com.jagex3.client.client!ui", name = "eb", descriptor = "[[[B")
 	public static byte[][][] aByteArrayArrayArray16;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ui", name = "mb", descriptor = "F")

@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -50,7 +51,7 @@ public final class Static73 {
 		Static173.self.anInt3421 = 3000;
 		Static173.self.anInt3412 = 3000;
 		if (!GlRenderer.enabled) {
-			Static145.method2743(Static209.aClass153_86);
+			Static145.method2743(Client.sprites);
 			Static196.method3534(10);
 			return;
 		}

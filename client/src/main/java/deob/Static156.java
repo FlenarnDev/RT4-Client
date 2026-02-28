@@ -12,10 +12,7 @@ public final class Static156 {
 	@OriginalMember(owner = "com.jagex3.client.client!mf", name = "O", descriptor = "[[B")
 	public static byte[][] aByteArrayArray11;
 
-	@OriginalMember(owner = "com.jagex3.client.client!mf", name = "W", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_59;
-
-	@OriginalMember(owner = "com.jagex3.client.client!mf", name = "X", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!mf", name = "X", descriptor = "I")
 	public static int anInt3783;
 
 	@OriginalMember(owner = "com.jagex3.client.client!mf", name = "x", descriptor = "Lclient!ha;")

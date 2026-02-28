@@ -11,10 +11,7 @@ public final class Static195 {
 	@OriginalMember(owner = "com.jagex3.client.client!pk", name = "Y", descriptor = "I")
 	public static int anInt4581;
 
-	@OriginalMember(owner = "com.jagex3.client.client!pk", name = "Z", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_80;
-
-	@OriginalMember(owner = "com.jagex3.client.client!pk", name = "bb", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!pk", name = "bb", descriptor = "Lclient!na;")
 	public static JagString aClass100_859;
 
 	@OriginalMember(owner = "com.jagex3.client.client!pk", name = "V", descriptor = "[S")

@@ -7,10 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static137 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!kl", name = "r", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_49;
-
-	@OriginalMember(owner = "com.jagex3.client.client!kl", name = "s", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!kl", name = "s", descriptor = "I")
 	public static int anInt3337 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!kl", name = "u", descriptor = "Lclient!na;")

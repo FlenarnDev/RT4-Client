@@ -69,6 +69,62 @@ public final class Client extends GameShell {
     public static int loginStep = 0;
     @OriginalMember(owner = "com.jagex3.client.client!jk", name = "B", descriptor = "Lclient!ma;")
     public static ClientStream loginStream;
+    @OriginalMember(owner = "com.jagex3.client.client!re", name = "B", descriptor = "Lclient!ve;")
+    public static Js5 anims;
+    @OriginalMember(owner = "com.jagex3.client.client!ud", name = "J", descriptor = "Lclient!ve;")
+    public static Js5 bases;
+    @OriginalMember(owner = "com.jagex3.client.client!wf", name = "g", descriptor = "Lclient!ve;")
+    public static Js5 config;
+    @OriginalMember(owner = "com.jagex3.client.client!dc", name = "z", descriptor = "Lclient!ve;")
+    public static Js5 interfaces;
+    @OriginalMember(owner = "com.jagex3.client.client!uc", name = "c", descriptor = "Lclient!ve;")
+    public static Js5 jagFX;
+    @OriginalMember(owner = "com.jagex3.client.client!ca", name = "Z", descriptor = "Lclient!ve;")
+    public static Js5 maps;
+    @OriginalMember(owner = "com.jagex3.client.client!kc", name = "w", descriptor = "Lclient!ve;")
+    public static Js5 songs;
+    @OriginalMember(owner = "com.jagex3.client.client!vl", name = "g", descriptor = "Lclient!ve;")
+    public static Js5 models;
+    @OriginalMember(owner = "com.jagex3.client.client!ra", name = "K", descriptor = "Lclient!ve;")
+	public static Js5 sprites;
+    @OriginalMember(owner = "com.jagex3.client.client!pk", name = "Z", descriptor = "Lclient!ve;")
+    public static Js5 textures;
+    @OriginalMember(owner = "com.jagex3.client.client!ol", name = "U", descriptor = "Lclient!ve;")
+    public static Js5 binary;
+    @OriginalMember(owner = "com.jagex3.client.client!rg", name = "z", descriptor = "Lclient!ve;")
+    public static Js5 jingles;
+    @OriginalMember(owner = "com.jagex3.client.client!bf", name = "s", descriptor = "Lclient!ve;")
+    public static Js5 scripts;
+    @OriginalMember(owner = "com.jagex3.client.client!ve", name = "l", descriptor = "Lclient!ve;")
+    public static Js5 fontMetrics;
+    @OriginalMember(owner = "com.jagex3.client.client!kl", name = "r", descriptor = "Lclient!ve;")
+    public static Js5 vorbis;
+    @OriginalMember(owner = "com.jagex3.client.client!km", name = "Oc", descriptor = "Lclient!ve;")
+    public static Js5 patches;
+    @OriginalMember(owner = "com.jagex3.client.client!wl", name = "s", descriptor = "Lclient!ve;")
+    public static Js5 locConfig;
+    @OriginalMember(owner = "com.jagex3.client.client!km", name = "Nc", descriptor = "Lclient!ve;")
+    public static Js5 enumConfig;
+    @OriginalMember(owner = "com.jagex3.client.client!nj", name = "l", descriptor = "Lclient!ve;")
+    public static Js5 npcConfig;
+    @OriginalMember(owner = "com.jagex3.client.client!ni", name = "k", descriptor = "Lclient!ve;")
+    public static Js5 objConfig;
+    @OriginalMember(owner = "com.jagex3.client.client!ui", name = "cb", descriptor = "Lclient!ve;")
+    public static Js5 seqConfig;
+    @OriginalMember(owner = "com.jagex3.client.client!jh", name = "p", descriptor = "Lclient!ve;")
+    public static Js5 spotConfig;
+    @OriginalMember(owner = "com.jagex3.client.client!mf", name = "W", descriptor = "Lclient!ve;")
+    public static Js5 varbitConfig;
+    @OriginalMember(owner = "com.jagex3.client.client!sg", name = "k", descriptor = "Lclient!ve;")
+    public static Js5 worldmap;
+    @OriginalMember(owner = "com.jagex3.client.client!uj", name = "J", descriptor = "Lclient!ve;")
+    public static Js5 quickchat;
+    @OriginalMember(owner = "com.jagex3.client.client!cd", name = "B", descriptor = "Lclient!ve;")
+    public static Js5 quickchatGlobal;
+    @OriginalMember(owner = "com.jagex3.client.client!nd", name = "t", descriptor = "Lclient!ve;")
+    public static Js5 materials;
+    @OriginalMember(owner = "com.jagex3.client.client!sf", name = "b", descriptor = "Lclient!ve;")
+    public static Js5 particleConfig;
 
     @OriginalMember(owner = "com.jagex3.client.client!com.jagex3.client.client", name = "main", descriptor = "([Ljava/lang/String;)V")
 	public static void main(@OriginalArg(0) String[] args) {
@@ -333,12 +389,12 @@ public final class Client extends GameShell {
                     System.gc();
                     Static160.aLong134 = local46;
                 }
-                Static199.loadPos = 5;
-                Static126.loadString = LocalizedText.MAINLOAD0;
+                TitleScreen.loadPos = 5;
+                TitleScreen.loadString = LocalizedText.MAINLOAD0;
             } else {
-                Static126.loadString = LocalizedText.MAINLOAD0B;
+                TitleScreen.loadString = LocalizedText.MAINLOAD0B;
                 loadingStep = 10;
-                Static199.loadPos = 5;
+                TitleScreen.loadPos = 5;
             }
             return;
         }
@@ -348,48 +404,48 @@ public final class Client extends GameShell {
             for (int level = 0; level < 4; level++) {
                 levelCollisionMap[level] = new CollisionMap(104, 104);
             }
-            Static199.loadPos = 10;
+            TitleScreen.loadPos = 10;
             loadingStep = 30;
-            Static126.loadString = LocalizedText.MAINLOAD10B;
+            TitleScreen.loadString = LocalizedText.MAINLOAD10B;
         } else if (loadingStep == 30) {
             if (Static257.aClass9_2 == null) {
                 Static257.aClass9_2 = new Js5Loader(Static107.js5Net, Static86.js5CacheQueue);
             }
             if (Static257.aClass9_2.method178()) {
-                Static213.aClass153_88 = openJs5(false, true, true, 0);
-                Static249.aClass153_100 = openJs5(false, true, true, 1);
-                Static274.aClass153_90 = openJs5(true, true, false, 2);
-                Static41.aClass153_25 = openJs5(false, true, true, 3);
-                Static248.aClass153_75 = openJs5(false, true, true, 4);
-                Static26.aClass153_16 = openJs5(true, true, true, 5);
-                Static130.aClass153_47 = openJs5(true, false, true, 6);
-                Static267.aClass153_109 = openJs5(false, true, true, 7);
-                Static209.aClass153_86 = openJs5(false, true, true, 8);
-                Static195.aClass153_80 = openJs5(false, true, true, 9);
-                Static184.aClass153_78 = openJs5(false, true, true, 10);
-                Static214.aClass153_106 = openJs5(false, true, true, 11);
-                Static16.aClass153_9 = openJs5(false, true, true, 12);
-                Static261.aClass153_107 = openJs5(false, true, true, 13);
-                Static137.aClass153_49 = openJs5(false, false, true, 14);
-                Static138.aClass153_51 = openJs5(false, true, true, 15);
-                Static280.aClass153_110 = openJs5(false, true, true, 16);
-                Static138.aClass153_50 = openJs5(false, true, true, 17);
-                Static172.aClass153_71 = openJs5(false, true, true, 18);
-                Static171.aClass153_68 = openJs5(false, true, true, 19);
-                Static253.aClass153_104 = openJs5(false, true, true, 20);
-                Static122.aClass153_46 = openJs5(false, true, true, 21);
-                Static156.aClass153_59 = openJs5(false, true, true, 22);
-                Static227.aClass153_94 = openJs5(true, true, true, 23);
-                Static254.aClass153_105 = openJs5(false, true, true, 24);
-                Static28.aClass153_18 = openJs5(false, true, true, 25);
-                Static167.aClass153_63 = openJs5(true, true, true, 26);
-                Static226.aClass153_93 = openJs5(false, true, true, 27);
-                Static199.loadPos = 15;
-                Static126.loadString = LocalizedText.MAINLOAD30B;
+                anims = openJs5(false, true, true, 0);
+                bases = openJs5(false, true, true, 1);
+                config = openJs5(true, true, false, 2);
+                interfaces = openJs5(false, true, true, 3);
+                jagFX = openJs5(false, true, true, 4);
+                maps = openJs5(true, true, true, 5);
+                songs = openJs5(true, false, true, 6);
+                models = openJs5(false, true, true, 7);
+                sprites = openJs5(false, true, true, 8);
+                textures = openJs5(false, true, true, 9);
+                binary = openJs5(false, true, true, 10);
+                jingles = openJs5(false, true, true, 11);
+                scripts = openJs5(false, true, true, 12);
+                fontMetrics = openJs5(false, true, true, 13);
+                vorbis = openJs5(false, false, true, 14);
+                patches = openJs5(false, true, true, 15);
+                locConfig = openJs5(false, true, true, 16);
+                enumConfig = openJs5(false, true, true, 17);
+                npcConfig = openJs5(false, true, true, 18);
+                objConfig = openJs5(false, true, true, 19);
+                seqConfig = openJs5(false, true, true, 20);
+                spotConfig = openJs5(false, true, true, 21);
+                varbitConfig = openJs5(false, true, true, 22);
+                worldmap = openJs5(true, true, true, 23);
+                quickchat = openJs5(false, true, true, 24);
+                quickchatGlobal = openJs5(false, true, true, 25);
+                materials = openJs5(true, true, true, 26);
+                particleConfig = openJs5(false, true, true, 27);
+                TitleScreen.loadPos = 15;
+                TitleScreen.loadString = LocalizedText.MAINLOAD30B;
                 loadingStep = 40;
             } else {
-                Static126.loadString = LocalizedText.MAINLOAD30;
-                Static199.loadPos = 12;
+                TitleScreen.loadString = LocalizedText.MAINLOAD30;
+                TitleScreen.loadPos = 12;
             }
         } else if (loadingStep == 40) {
             int total = 0;
@@ -397,17 +453,17 @@ public final class Client extends GameShell {
                 total += Static269.aClass14_Sub1Array3[i].method538() * Static170.anIntArray306[i] / 100;
             }
             if (total == 100) {
-                Static199.loadPos = 20;
-                Static126.loadString = LocalizedText.MAINLOAD40B;
-                Static75.method1635(Static209.aClass153_86);
-                Static167.method3172(Static209.aClass153_86);
-                Static81.method1754(Static209.aClass153_86);
+                TitleScreen.loadPos = 20;
+                TitleScreen.loadString = LocalizedText.MAINLOAD40B;
+                Static75.method1635(sprites);
+                Static167.method3172(sprites);
+                Static81.method1754(sprites);
                 loadingStep = 45;
             } else {
                 if (total != 0) {
-                    Static126.loadString = Static34.method882(new JagString[] { LocalizedText.CHECKING_FOR_UPDATES, Static123.method2423(total), Static49.aClass100_352 });
+                    TitleScreen.loadString = Static34.method882(new JagString[] { LocalizedText.CHECKING_FOR_UPDATES, Static123.method2423(total), Static49.aClass100_352 });
                 }
-                Static199.loadPos = 20;
+                TitleScreen.loadPos = 20;
             }
         } else if (loadingStep == 45) {
             Static41.method1045(Static99.aBoolean143);
@@ -415,112 +471,112 @@ public final class Client extends GameShell {
             Static148.aClass3_Sub3_Sub4_1.method4420();
             Static11.aClass62_1 = Static107.method2262(22050, GameShell.signLink, Static154.canvas, 0);
             Static11.aClass62_1.method3566(Static148.aClass3_Sub3_Sub4_1);
-            Static34.method876(Static148.aClass3_Sub3_Sub4_1, Static138.aClass153_51, Static137.aClass153_49, Static248.aClass153_75);
+            Static34.method876(Static148.aClass3_Sub3_Sub4_1, patches, vorbis, jagFX);
             Static147.aClass62_2 = Static107.method2262(2048, GameShell.signLink, Static154.canvas, 1);
             Static204.aClass3_Sub3_Sub2_1 = new Mixer();
             Static147.aClass62_2.method3566(Static204.aClass3_Sub3_Sub2_1);
             Static56.aClass156_1 = new Decimator(22050, Static44.anInt1404);
-            Static250.anInt5441 = Static130.aClass153_47.method4482(Static1.aClass100_1);
-            Static199.loadPos = 30;
+            Static250.anInt5441 = songs.method4482(Static1.aClass100_1);
+            TitleScreen.loadPos = 30;
             loadingStep = 50;
-            Static126.loadString = LocalizedText.MAINLOAD45B;
+            TitleScreen.loadString = LocalizedText.MAINLOAD45B;
         } else if (loadingStep == 50) {
-            int i = Static74.ready(Static209.aClass153_86, Static261.aClass153_107);
+            int i = Static74.ready(sprites, fontMetrics);
             int j = Static143.readyMax();
             if (i >= j) {
-                Static126.loadString = LocalizedText.MAINLOAD50B;
-                Static199.loadPos = 35;
+                TitleScreen.loadString = LocalizedText.MAINLOAD50B;
+                TitleScreen.loadPos = 35;
                 loadingStep = 60;
             } else {
-                Static126.loadString = Static34.method882(new JagString[] { LocalizedText.MAINLOAD50, Static123.method2423(i * 100 / j), Static49.aClass100_352 });
-                Static199.loadPos = 35;
+                TitleScreen.loadString = Static34.method882(new JagString[] { LocalizedText.MAINLOAD50, Static123.method2423(i * 100 / j), Static49.aClass100_352 });
+                TitleScreen.loadPos = 35;
             }
         } else if (loadingStep == 60) {
-            int i = Static150.ready(Static209.aClass153_86);
+            int i = Static150.ready(sprites);
             int j = Static104.readyMax();
             if (j <= i) {
-                Static126.loadString = LocalizedText.MAINLOAD60B;
+                TitleScreen.loadString = LocalizedText.MAINLOAD60B;
                 loadingStep = 65;
-                Static199.loadPos = 40;
+                TitleScreen.loadPos = 40;
             } else {
-                Static126.loadString = Static34.method882(new JagString[] { LocalizedText.MAINLOAD60, Static123.method2423(i * 100 / j), Static49.aClass100_352 });
-                Static199.loadPos = 40;
+                TitleScreen.loadString = Static34.method882(new JagString[] { LocalizedText.MAINLOAD60, Static123.method2423(i * 100 / j), Static49.aClass100_352 });
+                TitleScreen.loadPos = 40;
             }
         } else if (loadingStep == 65) {
-            Static102.method2074(Static261.aClass153_107, Static209.aClass153_86);
-            Static199.loadPos = 45;
-            Static126.loadString = LocalizedText.MAINLOAD65B;
+            Static102.method2074(fontMetrics, sprites);
+            TitleScreen.loadPos = 45;
+            TitleScreen.loadString = LocalizedText.MAINLOAD65B;
             Static196.method3534(5);
             loadingStep = 70;
         } else if (loadingStep == 70) {
             int i;
-            Static274.aClass153_90.requestFullDownload();
-            i = Static274.aClass153_90.method4498();
-            Static280.aClass153_110.requestFullDownload();
-            i += Static280.aClass153_110.method4498();
-            Static138.aClass153_50.requestFullDownload();
-            i += Static138.aClass153_50.method4498();
-            Static172.aClass153_71.requestFullDownload();
-            i += Static172.aClass153_71.method4498();
-            Static171.aClass153_68.requestFullDownload();
-            i += Static171.aClass153_68.method4498();
-            Static253.aClass153_104.requestFullDownload();
-            i += Static253.aClass153_104.method4498();
-            Static122.aClass153_46.requestFullDownload();
-            i += Static122.aClass153_46.method4498();
-            Static156.aClass153_59.requestFullDownload();
-            i += Static156.aClass153_59.method4498();
-            Static254.aClass153_105.requestFullDownload();
-            i += Static254.aClass153_105.method4498();
-            Static28.aClass153_18.requestFullDownload();
-            i += Static28.aClass153_18.method4498();
-            Static226.aClass153_93.requestFullDownload();
-            i += Static226.aClass153_93.method4498();
+            config.requestFullDownload();
+            i = config.method4498();
+            locConfig.requestFullDownload();
+            i += locConfig.method4498();
+            enumConfig.requestFullDownload();
+            i += enumConfig.method4498();
+            npcConfig.requestFullDownload();
+            i += npcConfig.method4498();
+            objConfig.requestFullDownload();
+            i += objConfig.method4498();
+            seqConfig.requestFullDownload();
+            i += seqConfig.method4498();
+            spotConfig.requestFullDownload();
+            i += spotConfig.method4498();
+            varbitConfig.requestFullDownload();
+            i += varbitConfig.method4498();
+            quickchat.requestFullDownload();
+            i += quickchat.method4498();
+            quickchatGlobal.requestFullDownload();
+            i += quickchatGlobal.method4498();
+            particleConfig.requestFullDownload();
+            i += particleConfig.method4498();
             if (i >= 1100) {
-                Static226.method3899(Static274.aClass153_90);
-                Static199.method3595(Static274.aClass153_90);
-                Static91.method1878(Static274.aClass153_90);
-                Static125.method2446(Static267.aClass153_109, Static274.aClass153_90);
-                Static181.method3349(Static280.aClass153_110, Static267.aClass153_109);
-                Static88.method1817(Static267.aClass153_109, Static172.aClass153_71);
-                Static241.method4542(Static171.aClass153_68, Static265.aClass3_Sub2_Sub9_Sub1_2, Static267.aClass153_109);
-                Static58.method1322(Static274.aClass153_90);
-                Static141.method2724(Static249.aClass153_100, Static253.aClass153_104, Static213.aClass153_88);
-                Static79.method1703(Static274.aClass153_90);
-                Static266.method4187(Static267.aClass153_109, Static122.aClass153_46);
-                Static180.method3327(Static156.aClass153_59);
-                Static230.method3951(Static274.aClass153_90);
-                Static3.method4661(Static261.aClass153_107, Static209.aClass153_86, Static41.aClass153_25, Static267.aClass153_109);
-                Static119.method2384(Static274.aClass153_90);
-                Static85.method1774(Static138.aClass153_50);
-                Static59.method1374(Static28.aClass153_18, Static254.aClass153_105, new Js5QuickChatCommandDecoder());
-                Static115.method2311(Static28.aClass153_18, Static254.aClass153_105);
-                Static107.method2264(Static274.aClass153_90);
-                Static246.method4237(Static274.aClass153_90, Static209.aClass153_86);
-                Static180.method3324(Static274.aClass153_90, Static209.aClass153_86);
-                Static199.loadPos = 50;
-                Static126.loadString = LocalizedText.MAINLOAD70B;
+                Static226.method3899(config);
+                Static199.method3595(config);
+                Static91.method1878(config);
+                Static125.method2446(models, config);
+                Static181.method3349(locConfig, models);
+                Static88.method1817(models, npcConfig);
+                Static241.method4542(objConfig, Static265.aClass3_Sub2_Sub9_Sub1_2, models);
+                Static58.method1322(config);
+                Static141.method2724(bases, seqConfig, anims);
+                Static79.method1703(config);
+                Static266.method4187(models, spotConfig);
+                Static180.method3327(varbitConfig);
+                Static230.method3951(config);
+                Static3.method4661(fontMetrics, sprites, interfaces, models);
+                Static119.method2384(config);
+                Static85.method1774(enumConfig);
+                Static59.method1374(quickchatGlobal, quickchat, new Js5QuickChatCommandDecoder());
+                Static115.method2311(quickchatGlobal, quickchat);
+                Static107.method2264(config);
+                Static246.method4237(config, sprites);
+                Static180.method3324(config, sprites);
+                TitleScreen.loadPos = 50;
+                TitleScreen.loadString = LocalizedText.MAINLOAD70B;
                 Static58.method1321();
                 loadingStep = 80;
             } else {
-                Static126.loadString = Static34.method882(new JagString[] { LocalizedText.MAINLOAD70, Static123.method2423(i / 11), Static49.aClass100_352 });
-                Static199.loadPos = 50;
+                TitleScreen.loadString = Static34.method882(new JagString[] { LocalizedText.MAINLOAD70, Static123.method2423(i / 11), Static49.aClass100_352 });
+                TitleScreen.loadPos = 50;
             }
         } else if (loadingStep == 80) {
-            int i = Static28.method789(Static209.aClass153_86);
+            int i = Static28.method789(sprites);
             int local43 = Static62.method1483();
             if (local43 > i) {
-                Static126.loadString = Static34.method882(new JagString[] { LocalizedText.MAINLOAD80, Static123.method2423(i * 100 / local43), Static49.aClass100_352 });
-                Static199.loadPos = 60;
+                TitleScreen.loadString = Static34.method882(new JagString[] { LocalizedText.MAINLOAD80, Static123.method2423(i * 100 / local43), Static49.aClass100_352 });
+                TitleScreen.loadPos = 60;
             } else {
-                Static30.method839(Static209.aClass153_86);
+                Static30.method839(sprites);
                 loadingStep = 90;
-                Static199.loadPos = 60;
-                Static126.loadString = LocalizedText.MAINLOAD80B;
+                TitleScreen.loadPos = 60;
+                TitleScreen.loadString = LocalizedText.MAINLOAD80B;
             }
         } else if (loadingStep == 90) {
-            if (Static167.aClass153_63.requestFullDownload()) {
-                @Pc(951) WorldTextureProvider local951 = new WorldTextureProvider(Static195.aClass153_80, Static167.aClass153_63, Static209.aClass153_86, 20, !Static53.aBoolean99);
+            if (materials.requestFullDownload()) {
+                @Pc(951) WorldTextureProvider local951 = new WorldTextureProvider(textures, materials, sprites, 20, !Static53.aBoolean99);
                 Rasteriser.method1914(local951);
                 if (Static113.anInt4609 == 1) {
                     Rasteriser.method1911(0.9F);
@@ -534,79 +590,79 @@ public final class Client extends GameShell {
                 if (Static113.anInt4609 == 4) {
                     Rasteriser.method1911(0.6F);
                 }
-                Static126.loadString = LocalizedText.MAINLOAD90B;
+                TitleScreen.loadString = LocalizedText.MAINLOAD90B;
                 loadingStep = 100;
-                Static199.loadPos = 70;
+                TitleScreen.loadPos = 70;
             } else {
-                Static126.loadString = Static34.method882(new JagString[] { LocalizedText.MAINLOAD90, Static123.method2423(Static167.aClass153_63.method4498()), Static49.aClass100_352 });
-                Static199.loadPos = 70;
+                TitleScreen.loadString = Static34.method882(new JagString[] { LocalizedText.MAINLOAD90, Static123.method2423(materials.method4498()), Static49.aClass100_352 });
+                TitleScreen.loadPos = 70;
             }
         } else if (loadingStep == 100) {
-            if (Static231.method3986(Static209.aClass153_86)) {
+            if (Static231.method3986(sprites)) {
                 loadingStep = 110;
             }
         } else if (loadingStep == 110) {
             mouseTracking = new MouseRecorder();
             GameShell.signLink.threadreq(10, mouseTracking);
-            Static126.loadString = LocalizedText.MAINLOAD110B;
-            Static199.loadPos = 75;
+            TitleScreen.loadString = LocalizedText.MAINLOAD110B;
+            TitleScreen.loadPos = 75;
             loadingStep = 120;
         } else if (loadingStep == 120) {
-            if (Static184.aClass153_78.requestDownload(Static186.aClass100_827, Static252.aClass100_1049)) {
-                @Pc(1060) HuffmanCodec huffman = new HuffmanCodec(Static184.aClass153_78.method4485(Static186.aClass100_827, Static252.aClass100_1049));
+            if (binary.requestDownload(Static186.aClass100_827, Static252.aClass100_1049)) {
+                @Pc(1060) HuffmanCodec huffman = new HuffmanCodec(binary.method4485(Static186.aClass100_827, Static252.aClass100_1049));
                 Static1.setHuffman(huffman);
-                Static126.loadString = LocalizedText.MAINLOAD120B;
+                TitleScreen.loadString = LocalizedText.MAINLOAD120B;
                 loadingStep = 130;
-                Static199.loadPos = 80;
+                TitleScreen.loadPos = 80;
             } else {
-                Static126.loadString = Static34.method882(new JagString[] { LocalizedText.MAINLOAD120, Static206.aClass100_899 });
-                Static199.loadPos = 80;
+                TitleScreen.loadString = Static34.method882(new JagString[] { LocalizedText.MAINLOAD120, Static206.aClass100_899 });
+                TitleScreen.loadPos = 80;
             }
         } else if (loadingStep == 130) {
-            if (!Static41.aClass153_25.requestFullDownload()) {
-                Static126.loadString = Static34.method882(new JagString[] { LocalizedText.MAINLOAD130, Static123.method2423(Static41.aClass153_25.method4498() * 3 / 4), Static49.aClass100_352 });
-                Static199.loadPos = 85;
-            } else if (!Static16.aClass153_9.requestFullDownload()) {
-                Static126.loadString = Static34.method882(new JagString[] { LocalizedText.MAINLOAD130, Static123.method2423(Static16.aClass153_9.method4498() / 10 + 75), Static49.aClass100_352 });
-                Static199.loadPos = 85;
-            } else if (!Static261.aClass153_107.requestFullDownload()) {
-                Static126.loadString = Static34.method882(new JagString[] { LocalizedText.MAINLOAD130, Static123.method2423(Static261.aClass153_107.method4498() / 20 + 85), Static49.aClass100_352 });
-                Static199.loadPos = 85;
-            } else if (Static227.aClass153_94.method4489(Static165.aClass100_777)) {
-                Static234.method4018(Static173.aClass3_Sub2_Sub1_Sub1Array9, Static227.aClass153_94);
-                Static199.loadPos = 95;
-                Static126.loadString = LocalizedText.MAINLOAD130B;
+            if (!interfaces.requestFullDownload()) {
+                TitleScreen.loadString = Static34.method882(new JagString[] { LocalizedText.MAINLOAD130, Static123.method2423(interfaces.method4498() * 3 / 4), Static49.aClass100_352 });
+                TitleScreen.loadPos = 85;
+            } else if (!scripts.requestFullDownload()) {
+                TitleScreen.loadString = Static34.method882(new JagString[] { LocalizedText.MAINLOAD130, Static123.method2423(scripts.method4498() / 10 + 75), Static49.aClass100_352 });
+                TitleScreen.loadPos = 85;
+            } else if (!fontMetrics.requestFullDownload()) {
+                TitleScreen.loadString = Static34.method882(new JagString[] { LocalizedText.MAINLOAD130, Static123.method2423(fontMetrics.method4498() / 20 + 85), Static49.aClass100_352 });
+                TitleScreen.loadPos = 85;
+            } else if (worldmap.method4489(Static165.aClass100_777)) {
+                Static234.method4018(Static173.aClass3_Sub2_Sub1_Sub1Array9, worldmap);
+                TitleScreen.loadPos = 95;
+                TitleScreen.loadString = LocalizedText.MAINLOAD130B;
                 loadingStep = 135;
             } else {
-                Static126.loadString = Static34.method882(new JagString[] { LocalizedText.MAINLOAD130, Static123.method2423(Static227.aClass153_94.method4478(Static165.aClass100_777) / 10 + 90), Static49.aClass100_352 });
-                Static199.loadPos = 85;
+                TitleScreen.loadString = Static34.method882(new JagString[] { LocalizedText.MAINLOAD130, Static123.method2423(worldmap.method4478(Static165.aClass100_777) / 10 + 90), Static49.aClass100_352 });
+                TitleScreen.loadPos = 85;
             }
         } else if (loadingStep == 135) {
             int i = Static207.method3684();
             if (i == -1) {
-                Static199.loadPos = 95;
-                Static126.loadString = LocalizedText.MAINLOAD135;
+                TitleScreen.loadPos = 95;
+                TitleScreen.loadString = LocalizedText.MAINLOAD135;
             } else if (i == 7 || i == 9) {
                 this.error("worldlistfull");
                 Static196.method3534(1000);
             } else if (Static61.aBoolean109) {
-                Static126.loadString = LocalizedText.MAINLOAD135B;
+                TitleScreen.loadString = LocalizedText.MAINLOAD135B;
                 loadingStep = 140;
-                Static199.loadPos = 96;
+                TitleScreen.loadPos = 96;
             } else {
                 this.error("worldlistio_" + i);
                 Static196.method3534(1000);
             }
         } else if (loadingStep == 140) {
-            Static156.anInt3783 = Static41.aClass153_25.method4482(Static138.aClass100_652);
-            Static26.aClass153_16.method4477(false);
-            Static130.aClass153_47.method4477(true);
-            Static209.aClass153_86.method4477(true);
-            Static261.aClass153_107.method4477(true);
-            Static184.aClass153_78.method4477(true);
-            Static41.aClass153_25.method4477(true);
-            Static199.loadPos = 97;
-            Static126.loadString = LocalizedText.MAINLOAD140;
+            Static156.anInt3783 = interfaces.method4482(Static138.aClass100_652);
+            maps.method4477(false);
+            songs.method4477(true);
+            sprites.method4477(true);
+            fontMetrics.method4477(true);
+            binary.method4477(true);
+            interfaces.method4477(true);
+            TitleScreen.loadPos = 97;
+            TitleScreen.loadString = LocalizedText.MAINLOAD140;
             loadingStep = 150;
             Static107.aBoolean147 = true;
         } else if (loadingStep == 150) {
@@ -620,9 +676,9 @@ public final class Client extends GameShell {
             Static164.aBoolean191 = true;
             Static203.method3663(GameShell.signLink);
             Static241.method4540(false, Static214.anInt5581, -1, -1);
-            Static199.loadPos = 100;
+            TitleScreen.loadPos = 100;
             loadingStep = 160;
-            Static126.loadString = LocalizedText.MAINLOAD150B;
+            TitleScreen.loadString = LocalizedText.MAINLOAD150B;
         } else if (loadingStep == 160) {
             Static73.method1596(true);
         }
@@ -751,34 +807,34 @@ public final class Client extends GameShell {
                 login.p4(Static145.method2746());
                 Static18.sentToServer = true;
                 login.p2(Static189.anInt4443);
-                login.p4(Static213.aClass153_88.getCrc());
-                login.p4(Static249.aClass153_100.getCrc());
-                login.p4(Static274.aClass153_90.getCrc());
-                login.p4(Static41.aClass153_25.getCrc());
-                login.p4(Static248.aClass153_75.getCrc());
-                login.p4(Static26.aClass153_16.getCrc());
-                login.p4(Static130.aClass153_47.getCrc());
-                login.p4(Static267.aClass153_109.getCrc());
-                login.p4(Static209.aClass153_86.getCrc());
-                login.p4(Static195.aClass153_80.getCrc());
-                login.p4(Static184.aClass153_78.getCrc());
-                login.p4(Static214.aClass153_106.getCrc());
-                login.p4(Static16.aClass153_9.getCrc());
-                login.p4(Static261.aClass153_107.getCrc());
-                login.p4(Static137.aClass153_49.getCrc());
-                login.p4(Static138.aClass153_51.getCrc());
-                login.p4(Static280.aClass153_110.getCrc());
-                login.p4(Static138.aClass153_50.getCrc());
-                login.p4(Static172.aClass153_71.getCrc());
-                login.p4(Static171.aClass153_68.getCrc());
-                login.p4(Static253.aClass153_104.getCrc());
-                login.p4(Static122.aClass153_46.getCrc());
-                login.p4(Static156.aClass153_59.getCrc());
-                login.p4(Static227.aClass153_94.getCrc());
-                login.p4(Static254.aClass153_105.getCrc());
-                login.p4(Static28.aClass153_18.getCrc());
-                login.p4(Static167.aClass153_63.getCrc());
-                login.p4(Static226.aClass153_93.getCrc());
+                login.p4(anims.getCrc());
+                login.p4(bases.getCrc());
+                login.p4(config.getCrc());
+                login.p4(interfaces.getCrc());
+                login.p4(jagFX.getCrc());
+                login.p4(maps.getCrc());
+                login.p4(songs.getCrc());
+                login.p4(models.getCrc());
+                login.p4(sprites.getCrc());
+                login.p4(textures.getCrc());
+                login.p4(binary.getCrc());
+                login.p4(jingles.getCrc());
+                login.p4(scripts.getCrc());
+                login.p4(fontMetrics.getCrc());
+                login.p4(vorbis.getCrc());
+                login.p4(patches.getCrc());
+                login.p4(locConfig.getCrc());
+                login.p4(enumConfig.getCrc());
+                login.p4(npcConfig.getCrc());
+                login.p4(objConfig.getCrc());
+                login.p4(seqConfig.getCrc());
+                login.p4(spotConfig.getCrc());
+                login.p4(varbitConfig.getCrc());
+                login.p4(worldmap.getCrc());
+                login.p4(quickchat.getCrc());
+                login.p4(quickchatGlobal.getCrc());
+                login.p4(materials.getCrc());
+                login.p4(particleConfig.getCrc());
                 login.pdata(out.data, out.pos);
                 loginStream.write(login.data, login.pos);
                 out.seed(seed);
@@ -974,7 +1030,7 @@ public final class Client extends GameShell {
 			}
 		}
 		if (state == 0) {
-			Static13.method473(null, local158, Static126.loadString, Static199.loadPos);
+			Static13.method473(null, local158, TitleScreen.loadString, TitleScreen.loadPos);
 		} else if (state == 5) {
 			Static182.method3359(false, Static280.aClass3_Sub2_Sub9_43);
 		} else if (state == 10) {

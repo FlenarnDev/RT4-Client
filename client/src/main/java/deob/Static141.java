@@ -56,15 +56,15 @@ public final class Static141 {
 			Static242.method4201();
 			Static76.method1642();
 		}
-		Static102.method2074(Static261.aClass153_107, Static209.aClass153_86);
-		Static30.method839(Static209.aClass153_86);
+		Static102.method2074(Client.fontMetrics, Client.sprites);
+		Static30.method839(Client.sprites);
 		Static204.aClass3_Sub2_Sub1_10 = null;
 		Static39.aClass3_Sub2_Sub1_1 = null;
 		Static92.aClass3_Sub2_Sub1_6 = null;
 		Static165.aClass3_Sub2_Sub1_8 = null;
 		Static181.aClass3_Sub2_Sub1_9 = null;
 		if (Client.state == 5) {
-			Static181.method3344(Static209.aClass153_86);
+			Static181.method3344(Client.sprites);
 		}
 		if (Client.state == 10) {
 			Static73.method1596(false);

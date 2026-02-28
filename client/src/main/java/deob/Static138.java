@@ -12,13 +12,7 @@ public final class Static138 {
 	@OriginalMember(owner = "com.jagex3.client.client!km", name = "uc", descriptor = "F")
 	public static float aFloat14;
 
-	@OriginalMember(owner = "com.jagex3.client.client!km", name = "Nc", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_50;
-
-	@OriginalMember(owner = "com.jagex3.client.client!km", name = "Oc", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_51;
-
-	@OriginalMember(owner = "com.jagex3.client.client!km", name = "Pc", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!km", name = "Pc", descriptor = "I")
 	public static int anInt3439;
 
 	@OriginalMember(owner = "com.jagex3.client.client!km", name = "Yc", descriptor = "I")

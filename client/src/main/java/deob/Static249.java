@@ -5,10 +5,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static249 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!ud", name = "J", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_100;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ud", name = "K", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!ud", name = "K", descriptor = "I")
 	public static int worldListDefaultPort;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ud", name = "O", descriptor = "I")

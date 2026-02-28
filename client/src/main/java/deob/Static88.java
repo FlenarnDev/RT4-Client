@@ -3032,11 +3032,11 @@ public final class Static88 {
 														Static254.anInt5556 = Static254.anIntArray487[local28 + 8];
 														Static195.anInt4581 = Static254.anIntArray487[local28 + 9];
 														Static262.anInt5752 = Static254.anIntArray487[local28 + 10];
-														Static209.aClass153_86.method4506(Static55.anInt1736);
-														Static209.aClass153_86.method4506(Static169.anInt4073);
-														Static209.aClass153_86.method4506(Static85.anInt2261);
-														Static209.aClass153_86.method4506(Static136.anInt3324);
-														Static209.aClass153_86.method4506(Static254.anInt5556);
+														Client.sprites.method4506(Static55.anInt1736);
+														Client.sprites.method4506(Static169.anInt4073);
+														Client.sprites.method4506(Static85.anInt2261);
+														Client.sprites.method4506(Static136.anInt3324);
+														Client.sprites.method4506(Static254.anInt5556);
 														Static261.aBoolean298 = true;
 														continue;
 													}
@@ -3400,7 +3400,7 @@ public final class Static88 {
 														}
 														if (local809 != Static12.anInt391) {
 															if (Static12.anInt391 == 0 && Static221.anInt4363 != -1) {
-																Static122.method2410(Static130.aClass153_47, Static221.anInt4363, local809);
+																Static122.method2410(Client.songs, Static221.anInt4363, local809);
 																Static144.aBoolean173 = false;
 															} else if (local809 == 0) {
 																Static241.method4548();

@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -34,7 +35,7 @@ public final class Static186 {
 		}
 		if (Static41.anInt1309 < 10) {
 			if (!Static119.aClass153_44.method4489(Static269.aClass3_Sub2_Sub4_2.aClass100_138)) {
-				Static41.anInt1309 = Static227.aClass153_94.method4478(Static269.aClass3_Sub2_Sub4_2.aClass100_138) / 10;
+				Static41.anInt1309 = Client.worldmap.method4478(Static269.aClass3_Sub2_Sub4_2.aClass100_138) / 10;
 				return;
 			}
 			Static6.method84();
