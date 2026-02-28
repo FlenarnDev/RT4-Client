@@ -23,7 +23,55 @@ public final class JagString implements StringWrapper {
 	@OriginalMember(owner = "com.jagex3.client.client!na", name = "N", descriptor = "Z")
 	private boolean aBoolean193 = true;
 
-	@OriginalMember(owner = "com.jagex3.client.client!na", name = "a", descriptor = "(Z)Ljava/net/URL;")
+    @OriginalMember(owner = "com.jagex3.client.client!ck", name = "a", descriptor = "([Lclient!na;B)Lclient!na;")
+    public static JagString join(@OriginalArg(0) JagString[] arg0) {
+        if (arg0.length < 2) {
+            throw new IllegalArgumentException();
+        }
+        return Static118.method2355(0, arg0.length, arg0);
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!q", name = "a", descriptor = "(BZII)Lclient!na;")
+    public static JagString parseInt(@OriginalArg(1) boolean arg0, @OriginalArg(3) int arg1) {
+        @Pc(23) int local23 = 1;
+        @Pc(27) int local27 = arg1 / 10;
+        while (local27 != 0) {
+            local27 /= 10;
+            local23++;
+        }
+        @Pc(38) int local38 = local23;
+        if (arg1 < 0 || arg0) {
+            local38 = local23 + 1;
+        }
+        @Pc(46) byte[] local46 = new byte[local38];
+        if (arg1 < 0) {
+            local46[0] = 45;
+        } else if (arg0) {
+            local46[0] = 43;
+        }
+        for (@Pc(61) int local61 = 0; local61 < local23; local61++) {
+            @Pc(68) int local68 = arg1 % 10;
+            if (local68 < 0) {
+                local68 = -local68;
+            }
+            if (local68 > 9) {
+                local68 += 39;
+            }
+            local46[local38 - local61 - 1] = (byte) (local68 + 48);
+            arg1 /= 10;
+        }
+        @Pc(112) JagString local112 = new JagString();
+        local112.aByteArray52 = local46;
+        local112.anInt4030 = local38;
+        return local112;
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!jj", name = "b", descriptor = "(BI)Lclient!na;")
+    public static JagString parseInt(@OriginalArg(1) int arg0) {
+        return parseInt(false, arg0);
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!na", name = "a", descriptor = "(Z)Ljava/net/URL;")
 	public final URL method3107() throws MalformedURLException {
 		return new URL(new String(this.aByteArray52, 0, this.anInt4030));
 	}

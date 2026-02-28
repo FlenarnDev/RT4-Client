@@ -111,11 +111,11 @@ public final class Static150 {
 		}
 		if (arg1.anInt2042 == 0 || arg1.anInt2042 < local20 - 64 || Static30.anInt978 == 0 || arg2 != arg1.anInt2033) {
 			if (arg1.aClass3_Sub3_Sub1_1 != null) {
-				Static204.aClass3_Sub3_Sub2_1.method1347(arg1.aClass3_Sub3_Sub1_1);
+				Client.soundMixer.method1347(arg1.aClass3_Sub3_Sub1_1);
 				arg1.aClass3_Sub3_Sub1_1 = null;
 			}
 			if (arg1.aClass3_Sub3_Sub1_2 != null) {
-				Static204.aClass3_Sub3_Sub2_1.method1347(arg1.aClass3_Sub3_Sub1_2);
+				Client.soundMixer.method1347(arg1.aClass3_Sub3_Sub1_2);
 				arg1.aClass3_Sub3_Sub1_2 = null;
 			}
 			return;
@@ -130,10 +130,10 @@ public final class Static150 {
 		} else if (arg1.anInt2044 >= 0) {
 			@Pc(150) JagFX local150 = Static292.method3988(Client.jagFX, arg1.anInt2044, 0);
 			if (local150 != null) {
-				@Pc(158) Wave local158 = local150.method3989().method2648(Static56.aClass156_1);
+				@Pc(158) Wave local158 = local150.method3989().method2648(Client.soundDecimator);
 				@Pc(163) WaveStream local163 = Static284.method404(local158, local134);
 				local163.method396(-1);
-				Static204.aClass3_Sub3_Sub2_1.method1343(local163);
+				Client.soundMixer.method1343(local163);
 				arg1.aClass3_Sub3_Sub1_1 = local163;
 			}
 		}
@@ -146,10 +146,10 @@ public final class Static150 {
 			@Pc(219) int local219 = (int) ((double) arg1.anIntArray181.length * Math.random());
 			@Pc(227) JagFX local227 = Static292.method3988(Client.jagFX, arg1.anIntArray181[local219], 0);
 			if (local227 != null) {
-				@Pc(236) Wave local236 = local227.method3989().method2648(Static56.aClass156_1);
+				@Pc(236) Wave local236 = local227.method3989().method2648(Client.soundDecimator);
 				@Pc(241) WaveStream local241 = Static284.method404(local236, local134);
 				local241.method396(0);
-				Static204.aClass3_Sub3_Sub2_1.method1343(local241);
+				Client.soundMixer.method1343(local241);
 				arg1.anInt2034 = (int) ((double) (arg1.anInt2040 - arg1.anInt2032) * Math.random()) + arg1.anInt2032;
 				arg1.aClass3_Sub3_Sub1_2 = local241;
 			}

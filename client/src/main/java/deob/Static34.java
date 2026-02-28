@@ -246,11 +246,4 @@ public final class Static34 {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!ck", name = "a", descriptor = "([Lclient!na;B)Lclient!na;")
-	public static JagString method882(@OriginalArg(0) JagString[] arg0) {
-		if (arg0.length < 2) {
-			throw new IllegalArgumentException();
-		}
-		return Static118.method2355(0, arg0.length, arg0);
-	}
 }

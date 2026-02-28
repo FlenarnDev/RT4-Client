@@ -66,13 +66,13 @@ public final class Static140 {
 		@Pc(36) int local36;
 		for (local36 = 0; local36 < Static35.anInt1093; local36++) {
 			if (Static190.aLongArray6[local36] == arg0) {
-				Static103.method2231(Static186.aClass100_827, 0, Static34.method882(new JagString[] { local34, LocalizedText.IGNORELISTDUPE}));
+				Static103.method2231(Static186.aClass100_827, 0, JagString.join(new JagString[] { local34, LocalizedText.IGNORELISTDUPE}));
 				return;
 			}
 		}
 		for (local36 = 0; local36 < Static9.anInt178; local36++) {
 			if (Static92.aLongArray3[local36] == arg0) {
-				Static103.method2231(Static186.aClass100_827, 0, Static34.method882(new JagString[] { LocalizedText.REMOVESOCIAL2, local34, LocalizedText.REMOVEFRIEND}));
+				Static103.method2231(Static186.aClass100_827, 0, JagString.join(new JagString[] { LocalizedText.REMOVESOCIAL2, local34, LocalizedText.REMOVEFRIEND}));
 				return;
 			}
 		}

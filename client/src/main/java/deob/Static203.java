@@ -63,12 +63,12 @@ public final class Static203 {
 		if (GlRenderer.enabled) {
 			GlRenderer.setCanvasSize(Static48.anInt1448, Static254.anInt5554);
 		}
-		Static154.canvas.setSize(Static48.anInt1448, Static254.anInt5554);
+		GameCanvas.canvas.setSize(Static48.anInt1448, Static254.anInt5554);
 		if (local8 == Static39.aFrame1) {
 			local35 = Static39.aFrame1.getInsets();
-			Static154.canvas.setLocation(local35.left + Static145.anInt3497, Static178.anInt4246 + local35.top);
+			GameCanvas.canvas.setLocation(local35.left + Static145.anInt3497, Static178.anInt4246 + local35.top);
 		} else {
-			Static154.canvas.setLocation(Static145.anInt3497, Static178.anInt4246);
+			GameCanvas.canvas.setLocation(Static145.anInt3497, Static178.anInt4246);
 		}
 		if (Static154.topLevelInterace != -1) {
 			Static210.method3712(true);

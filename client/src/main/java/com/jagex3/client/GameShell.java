@@ -92,9 +92,9 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 
 	@OriginalMember(owner = "com.jagex3.client.client!rc", name = "b", descriptor = "(B)V")
 	public final synchronized void method926() {
-		if (Static154.canvas != null) {
-			Static154.canvas.removeFocusListener(this);
-			Static154.canvas.getParent().remove(Static154.canvas);
+		if (GameCanvas.canvas != null) {
+			GameCanvas.canvas.removeFocusListener(this);
+			GameCanvas.canvas.getParent().remove(GameCanvas.canvas);
 		}
 		@Pc(19) Container local19;
 		if (Static69.aFrame2 != null) {
@@ -105,18 +105,18 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			local19 = Static39.aFrame1;
 		}
 		local19.setLayout(null);
-		Static154.canvas = new GameCanvas(this);
-		local19.add(Static154.canvas);
-		Static154.canvas.setSize(Static48.anInt1448, Static254.anInt5554);
-		Static154.canvas.setVisible(true);
+		GameCanvas.canvas = new GameCanvas(this);
+		local19.add(GameCanvas.canvas);
+		GameCanvas.canvas.setSize(Static48.anInt1448, Static254.anInt5554);
+		GameCanvas.canvas.setVisible(true);
 		if (local19 == Static39.aFrame1) {
 			@Pc(66) Insets local66 = Static39.aFrame1.getInsets();
-			Static154.canvas.setLocation(Static145.anInt3497 + local66.left, local66.top + Static178.anInt4246);
+			GameCanvas.canvas.setLocation(Static145.anInt3497 + local66.left, local66.top + Static178.anInt4246);
 		} else {
-			Static154.canvas.setLocation(Static145.anInt3497, Static178.anInt4246);
+			GameCanvas.canvas.setLocation(Static145.anInt3497, Static178.anInt4246);
 		}
-		Static154.canvas.addFocusListener(this);
-		Static154.canvas.requestFocus();
+		GameCanvas.canvas.addFocusListener(this);
+		GameCanvas.canvas.requestFocus();
 		Static233.aBoolean253 = true;
 		Static69.aBoolean115 = true;
 		Static26.focus = true;
@@ -205,10 +205,10 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			this.method928();
 		} catch (@Pc(34) Exception local34) {
 		}
-		if (Static154.canvas != null) {
+		if (GameCanvas.canvas != null) {
 			try {
-				Static154.canvas.removeFocusListener(this);
-				Static154.canvas.getParent().remove(Static154.canvas);
+				GameCanvas.canvas.removeFocusListener(this);
+				GameCanvas.canvas.getParent().remove(GameCanvas.canvas);
 			} catch (@Pc(45) Exception local45) {
 			}
 		}
@@ -260,13 +260,13 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 		if (Static184.anInt4355++ > 50) {
 			Static69.aBoolean115 = true;
 			Static184.anInt4355 -= 50;
-			Static154.canvas.setSize(Static48.anInt1448, Static254.anInt5554);
-			Static154.canvas.setVisible(true);
+			GameCanvas.canvas.setSize(Static48.anInt1448, Static254.anInt5554);
+			GameCanvas.canvas.setVisible(true);
 			if (Static39.aFrame1 != null && Static69.aFrame2 == null) {
 				@Pc(84) Insets local84 = Static39.aFrame1.getInsets();
-				Static154.canvas.setLocation(local84.left + Static145.anInt3497, Static178.anInt4246 + local84.top);
+				GameCanvas.canvas.setLocation(local84.left + Static145.anInt3497, Static178.anInt4246 + local84.top);
 			} else {
-				Static154.canvas.setLocation(Static145.anInt3497, Static178.anInt4246);
+				GameCanvas.canvas.setLocation(Static145.anInt3497, Static178.anInt4246);
 			}
 		}
 		this.method934();
@@ -330,7 +330,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			}
 			Static224.method3888();
 			this.method926();
-			Static260.aClass27_2 = Static131.method2579(Static254.anInt5554, Static48.anInt1448, Static154.canvas);
+			Static260.aClass27_2 = Static131.method2579(Static254.anInt5554, Static48.anInt1448, GameCanvas.canvas);
 			this.method935();
 			Static200.aClass93_1 = Static70.method1547();
 			while (Static72.aLong74 == 0L || Static72.aLong74 > MonotonicClock.currentTime()) {
@@ -339,7 +339,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 					this.method932();
 				}
 				this.method933();
-				Static140.method2708(signLink, Static154.canvas);
+				Static140.method2708(signLink, GameCanvas.canvas);
 			}
 		} catch (@Pc(198) Exception local198) {
 			Static89.report(null, local198);

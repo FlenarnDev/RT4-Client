@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -53,7 +54,7 @@ public final class Static5 {
 	public static void method34() {
 		Static116.method2325(false);
 		System.gc();
-		Static196.method3534(25);
+		Client.setMainState(25);
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!af", name = "a", descriptor = "(IIIIIILclient!th;IJ)Z")

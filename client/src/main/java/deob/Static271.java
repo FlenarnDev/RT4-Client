@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -25,7 +26,7 @@ public final class Static271 {
 			return;
 		}
 		if (local10.aClass3_Sub3_Sub1_1 != null) {
-			Static204.aClass3_Sub3_Sub2_1.method1347(local10.aClass3_Sub3_Sub1_1);
+			Client.soundMixer.method1347(local10.aClass3_Sub3_Sub1_1);
 			local10.aClass3_Sub3_Sub1_1 = null;
 		}
 		local10.method4658();

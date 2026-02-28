@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -45,7 +46,7 @@ public final class Static48 {
 		local4.p1(Static220.aBoolean244 ? 1 : 0);
 		local4.p1(Static71.aBoolean107 ? 1 : 0);
 		local4.p1(Static102.anInt2679);
-		local4.p1(Static99.aBoolean143 ? 1 : 0);
+		local4.p1(Client.lowMem ? 1 : 0);
 		local4.p1(Static125.anInt3104);
 		local4.p1(Static12.anInt391);
 		local4.p1(Static30.anInt978);

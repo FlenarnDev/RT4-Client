@@ -29,7 +29,7 @@ public final class Static181 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!oi", name = "a", descriptor = "(II)Lclient!na;")
 	public static JagString method3341(@OriginalArg(0) int arg0) {
-		return Static34.method882(new JagString[] { Static123.method2423(arg0 >> 24 & 0xFF), Static233.aClass100_994, Static123.method2423(arg0 >> 16 & 0xFF), Static233.aClass100_994, Static123.method2423(arg0 >> 8 & 0xFF), Static233.aClass100_994, Static123.method2423(arg0 & 0xFF) });
+		return JagString.join(new JagString[] { JagString.parseInt(arg0 >> 24 & 0xFF), Static233.aClass100_994, JagString.parseInt(arg0 >> 16 & 0xFF), Static233.aClass100_994, JagString.parseInt(arg0 >> 8 & 0xFF), Static233.aClass100_994, JagString.parseInt(arg0 & 0xFF) });
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!oi", name = "a", descriptor = "(I)V")

@@ -30,7 +30,7 @@ public final class Static175 {
 		} else {
 			Static233.aClass95_4 = Client.loginStream;
 			Client.loginStream = null;
-			Static196.method3534(40);
+			Client.setMainState(40);
 		}
 	}
 }

@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import com.jagex3.client.GameShell;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -41,16 +42,16 @@ public final class Static211 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!rc", name = "d", descriptor = "(I)V")
 	public static void method930() {
-		if (Static11.aClass62_1 != null) {
-			Static11.aClass62_1.method3575();
+		if (Client.midiPcmPlayer != null) {
+			Client.midiPcmPlayer.method3575();
 		}
-		if (Static147.aClass62_2 != null) {
-			Static147.aClass62_2.method3575();
+		if (Client.soundPcmPlayer != null) {
+			Client.soundPcmPlayer.method3575();
 		}
-		Static41.method1045(Static99.aBoolean143);
-		Static11.aClass62_1 = Static107.method2262(22050, GameShell.signLink, Static154.canvas, 0);
-		Static11.aClass62_1.method3566(Static148.aClass3_Sub3_Sub4_1);
-		Static147.aClass62_2 = Static107.method2262(2048, GameShell.signLink, Static154.canvas, 1);
-		Static147.aClass62_2.method3566(Static204.aClass3_Sub3_Sub2_1);
+		Static41.method1045(Client.lowMem);
+		Client.midiPcmPlayer = Static107.method2262(22050, GameShell.signLink, GameCanvas.canvas, 0);
+		Client.midiPcmPlayer.method3566(Client.midiPlayer);
+		Client.soundPcmPlayer = Static107.method2262(2048, GameShell.signLink, GameCanvas.canvas, 1);
+		Client.soundPcmPlayer.method3566(Client.soundMixer);
 	}
 }

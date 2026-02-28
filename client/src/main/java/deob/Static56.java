@@ -7,10 +7,7 @@ public final class Static56 {
 	@OriginalMember(owner = "com.jagex3.client.client!ef", name = "j", descriptor = "Lclient!mm;")
 	public static Pix32 aClass3_Sub2_Sub1_Sub1_1;
 
-	@OriginalMember(owner = "com.jagex3.client.client!ef", name = "p", descriptor = "Lclient!vj;")
-	public static Decimator aClass156_1;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ef", name = "a", descriptor = "[I")
+    @OriginalMember(owner = "com.jagex3.client.client!ef", name = "a", descriptor = "[I")
 	public static final int[] anIntArray141 = new int[] { 768, 1024, 1280, 512, 1536, 256, 0, 1792 };
 
 	@OriginalMember(owner = "com.jagex3.client.client!ef", name = "b", descriptor = "Lclient!n;")

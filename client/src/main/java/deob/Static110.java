@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -64,7 +65,7 @@ public final class Static110 {
 				local141 = Static112.method2299(local6.aClass8_Sub4_Sub2_1);
 				if (local141 != local6.anInt2044) {
 					if (local6.aClass3_Sub3_Sub1_1 != null) {
-						Static204.aClass3_Sub3_Sub2_1.method1347(local6.aClass3_Sub3_Sub1_1);
+						Client.soundMixer.method1347(local6.aClass3_Sub3_Sub1_1);
 						local6.aClass3_Sub3_Sub1_1 = null;
 					}
 					local6.anInt2044 = local141;
@@ -91,7 +92,7 @@ public final class Static110 {
 				local141 = Static140.method2706(local6.aClass8_Sub4_Sub1_1);
 				if (local6.anInt2044 != local141) {
 					if (local6.aClass3_Sub3_Sub1_1 != null) {
-						Static204.aClass3_Sub3_Sub2_1.method1347(local6.aClass3_Sub3_Sub1_1);
+						Client.soundMixer.method1347(local6.aClass3_Sub3_Sub1_1);
 						local6.aClass3_Sub3_Sub1_1 = null;
 					}
 					local6.anInt2044 = local141;
@@ -108,6 +109,6 @@ public final class Static110 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!ih", name = "a", descriptor = "(ZII)Lclient!na;")
 	public static JagString method2285(@OriginalArg(2) int arg0) {
-		return Static198.method1025(true, arg0);
+		return JagString.parseInt(true, arg0);
 	}
 }

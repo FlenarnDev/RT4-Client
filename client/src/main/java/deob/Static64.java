@@ -69,13 +69,13 @@ public final class Static64 {
 		@Pc(42) int local42;
 		for (local42 = 0; local42 < Static9.anInt178; local42++) {
 			if (Static92.aLongArray3[local42] == arg0) {
-				Static103.method2231(Static186.aClass100_827, 0, Static34.method882(new JagString[] { local35, LocalizedText.FRIENDLISTDUPE}));
+				Static103.method2231(Static186.aClass100_827, 0, JagString.join(new JagString[] { local35, LocalizedText.FRIENDLISTDUPE}));
 				return;
 			}
 		}
 		for (local42 = 0; local42 < Static35.anInt1093; local42++) {
 			if (arg0 == Static190.aLongArray6[local42]) {
-				Static103.method2231(Static186.aClass100_827, 0, Static34.method882(new JagString[] { LocalizedText.REMOVESOCIAL1, local35, LocalizedText.REMOVEIGNORE}));
+				Static103.method2231(Static186.aClass100_827, 0, JagString.join(new JagString[] { LocalizedText.REMOVESOCIAL1, local35, LocalizedText.REMOVEIGNORE}));
 				return;
 			}
 		}

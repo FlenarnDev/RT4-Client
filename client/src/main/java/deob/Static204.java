@@ -9,10 +9,7 @@ public final class Static204 {
 	@OriginalMember(owner = "com.jagex3.client.client!qi", name = "z", descriptor = "Lclient!qf;")
 	public static AbstractPix32 aClass3_Sub2_Sub1_10;
 
-	@OriginalMember(owner = "com.jagex3.client.client!qi", name = "C", descriptor = "Lclient!ei;")
-	public static Mixer aClass3_Sub3_Sub2_1;
-
-	@OriginalMember(owner = "com.jagex3.client.client!qi", name = "r", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!qi", name = "r", descriptor = "I")
 	public static int anInt4760 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!qi", name = "t", descriptor = "I")

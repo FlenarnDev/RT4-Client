@@ -14,10 +14,7 @@ public final class Static148 {
 	@OriginalMember(owner = "com.jagex3.client.client!li", name = "t", descriptor = "I")
 	public static int anInt3534;
 
-	@OriginalMember(owner = "com.jagex3.client.client!li", name = "v", descriptor = "Lclient!va;")
-	public static MidiPlayer aClass3_Sub3_Sub4_1;
-
-	@OriginalMember(owner = "com.jagex3.client.client!li", name = "w", descriptor = "Lclient!sc;")
+    @OriginalMember(owner = "com.jagex3.client.client!li", name = "w", descriptor = "Lclient!sc;")
 	public static HashTable aClass133_13;
 
 	@OriginalMember(owner = "com.jagex3.client.client!li", name = "x", descriptor = "I")

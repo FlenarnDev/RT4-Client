@@ -43,12 +43,12 @@ public final class Static81 {
 			if (local28 == null) {
 				arg0 = -1;
 			} else {
-				GameShell.signLink.method5113(local28.method301(), local28.anInt1860, Static154.canvas, new Point(local24.anInt2852, local24.anInt2850), local28.anInt1866);
+				GameShell.signLink.method5113(local28.method301(), local28.anInt1860, GameCanvas.canvas, new Point(local24.anInt2852, local24.anInt2850), local28.anInt1866);
 				Static115.anInt2941 = arg0;
 			}
 		}
 		if (arg0 == -1 && Static115.anInt2941 != -1) {
-			GameShell.signLink.method5113(null, -1, Static154.canvas, new Point(), -1);
+			GameShell.signLink.method5113(null, -1, GameCanvas.canvas, new Point(), -1);
 			Static115.anInt2941 = -1;
 		}
 	}

@@ -111,53 +111,53 @@ public final class Static186 {
 			Static7.method842(true);
 			Static234.method4020();
 		} else if (Static41.anInt1309 == 60) {
-			if (Static119.aClass153_44.method4497(Static34.method882(new JagString[] { Static269.aClass3_Sub2_Sub4_2.aClass100_138, Static265.aClass100_1086 }))) {
-				if (!Static119.aClass153_44.method4489(Static34.method882(new JagString[] { Static269.aClass3_Sub2_Sub4_2.aClass100_138, Static265.aClass100_1086 }))) {
+			if (Static119.aClass153_44.method4497(JagString.join(new JagString[] { Static269.aClass3_Sub2_Sub4_2.aClass100_138, Static265.aClass100_1086 }))) {
+				if (!Static119.aClass153_44.method4489(JagString.join(new JagString[] { Static269.aClass3_Sub2_Sub4_2.aClass100_138, Static265.aClass100_1086 }))) {
 					return;
 				}
-				Static203.aMapElementList_1 = Static140.method2711(Static34.method882(new JagString[] { Static269.aClass3_Sub2_Sub4_2.aClass100_138, Static265.aClass100_1086 }), Static119.aClass153_44);
+				Static203.aMapElementList_1 = Static140.method2711(JagString.join(new JagString[] { Static269.aClass3_Sub2_Sub4_2.aClass100_138, Static265.aClass100_1086 }), Static119.aClass153_44);
 			} else {
 				Static203.aMapElementList_1 = new MapElementList(0);
 			}
 			Static41.anInt1309 = 70;
 			Static234.method4020();
 		} else if (Static41.anInt1309 == 70) {
-			Static273.aClass41_7 = new WorldMapFont(11, true, Static154.canvas);
+			Static273.aClass41_7 = new WorldMapFont(11, true, GameCanvas.canvas);
 			Static41.anInt1309 = 73;
 			Static7.method842(true);
 			Static234.method4020();
 		} else if (Static41.anInt1309 == 73) {
-			Static152.aClass41_3 = new WorldMapFont(12, true, Static154.canvas);
+			Static152.aClass41_3 = new WorldMapFont(12, true, GameCanvas.canvas);
 			Static41.anInt1309 = 76;
 			Static7.method842(true);
 			Static234.method4020();
 		} else if (Static41.anInt1309 == 76) {
-			Static169.aClass41_5 = new WorldMapFont(14, true, Static154.canvas);
+			Static169.aClass41_5 = new WorldMapFont(14, true, GameCanvas.canvas);
 			Static41.anInt1309 = 79;
 			Static7.method842(true);
 			Static234.method4020();
 		} else if (Static41.anInt1309 == 79) {
-			Static130.aClass41_1 = new WorldMapFont(17, true, Static154.canvas);
+			Static130.aClass41_1 = new WorldMapFont(17, true, GameCanvas.canvas);
 			Static41.anInt1309 = 82;
 			Static7.method842(true);
 			Static234.method4020();
 		} else if (Static41.anInt1309 == 82) {
-			Static203.aClass41_8 = new WorldMapFont(19, true, Static154.canvas);
+			Static203.aClass41_8 = new WorldMapFont(19, true, GameCanvas.canvas);
 			Static41.anInt1309 = 85;
 			Static7.method842(true);
 			Static234.method4020();
 		} else if (Static41.anInt1309 == 85) {
-			Static130.aClass41_2 = new WorldMapFont(22, true, Static154.canvas);
+			Static130.aClass41_2 = new WorldMapFont(22, true, GameCanvas.canvas);
 			Static41.anInt1309 = 88;
 			Static7.method842(true);
 			Static234.method4020();
 		} else if (Static41.anInt1309 == 88) {
-			Static270.aClass41_9 = new WorldMapFont(26, true, Static154.canvas);
+			Static270.aClass41_9 = new WorldMapFont(26, true, GameCanvas.canvas);
 			Static41.anInt1309 = 91;
 			Static7.method842(true);
 			Static234.method4020();
 		} else {
-			Static160.aClass41_4 = new WorldMapFont(30, true, Static154.canvas);
+			Static160.aClass41_4 = new WorldMapFont(30, true, GameCanvas.canvas);
 			Static41.anInt1309 = 100;
 			Static7.method842(true);
 			Static234.method4020();

@@ -43,11 +43,11 @@ public final class Static52 {
 	@OriginalMember(owner = "com.jagex3.client.client!eb", name = "b", descriptor = "(II)Lclient!na;")
 	public static JagString method1288(@OriginalArg(1) int arg0) {
 		if (arg0 < 100000) {
-			return Static34.method882(new JagString[] { Static105.aClass100_559, Static123.method2423(arg0), Static123.aClass100_594 });
+			return JagString.join(new JagString[] { Static105.aClass100_559, JagString.parseInt(arg0), Static123.aClass100_594 });
 		} else if (arg0 >= 10000000) {
-			return Static34.method882(new JagString[] { Static184.aClass100_819, Static123.method2423(arg0 / 1000000), LocalizedText.MILLION, Static123.aClass100_594 });
+			return JagString.join(new JagString[] { Static184.aClass100_819, JagString.parseInt(arg0 / 1000000), LocalizedText.MILLION, Static123.aClass100_594 });
 		} else {
-			return Static34.method882(new JagString[] { Static137.aClass100_637, Static123.method2423(arg0 / 1000), LocalizedText.THOUSAND, Static123.aClass100_594 });
+			return JagString.join(new JagString[] { Static137.aClass100_637, JagString.parseInt(arg0 / 1000), LocalizedText.THOUSAND, Static123.aClass100_594 });
 		}
 	}
 }

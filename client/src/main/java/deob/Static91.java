@@ -91,7 +91,7 @@ public final class Static91 {
 		for (@Pc(13) AreaSound local13 = (AreaSound) Static152.aClass69_87.method2289(); local13 != null; local13 = (AreaSound) Static152.aClass69_87.method2288()) {
 			if (arg0 == local13.aClass8_Sub4_Sub2_1) {
 				if (local13.aClass3_Sub3_Sub1_1 != null) {
-					Static204.aClass3_Sub3_Sub2_1.method1347(local13.aClass3_Sub3_Sub1_1);
+					Client.soundMixer.method1347(local13.aClass3_Sub3_Sub1_1);
 					local13.aClass3_Sub3_Sub1_1 = null;
 				}
 				local13.method4658();

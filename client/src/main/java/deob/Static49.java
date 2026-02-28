@@ -13,10 +13,7 @@ public final class Static49 {
 	@OriginalMember(owner = "com.jagex3.client.client!dm", name = "m", descriptor = "I")
 	public static int anInt1459 = 0;
 
-	@OriginalMember(owner = "com.jagex3.client.client!dm", name = "n", descriptor = "Lclient!na;")
-	public static final JagString aClass100_352 = Static28.parse("(U");
-
-	@OriginalMember(owner = "com.jagex3.client.client!dm", name = "q", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!dm", name = "q", descriptor = "I")
 	public static int anInt1462 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!dm", name = "u", descriptor = "I")

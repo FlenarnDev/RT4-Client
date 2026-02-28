@@ -3,6 +3,7 @@ package deob;
 import java.awt.Component;
 
 import com.jagex.signlink.SignLink;
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -38,11 +39,11 @@ public final class Static107 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!id", name = "b", descriptor = "(I)V")
 	public static void method2261() {
-		if (Static147.aClass62_2 != null) {
-			Static147.aClass62_2.method3565();
+		if (Client.soundPcmPlayer != null) {
+			Client.soundPcmPlayer.method3565();
 		}
-		if (Static11.aClass62_1 != null) {
-			Static11.aClass62_1.method3565();
+		if (Client.midiPcmPlayer != null) {
+			Client.midiPcmPlayer.method3565();
 		}
 	}
 

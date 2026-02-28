@@ -100,38 +100,38 @@ public final class Static197 {
 			Static254.anInt5554 = 503;
 		}
 		if (arg0) {
-			Static31.method847(Static154.canvas);
-			Static223.method3866(Static154.canvas);
+			Static31.method847(GameCanvas.canvas);
+			Static223.method3866(GameCanvas.canvas);
 			if (Static71.mouseWheelInterface != null) {
-				Static71.mouseWheelInterface.method3291(Static154.canvas);
+				Static71.mouseWheelInterface.method3291(GameCanvas.canvas);
 			}
 			Static215.aClient1.method926();
-			Static19.start(Static154.canvas);
-			Static88.start(Static154.canvas);
+			Static19.start(GameCanvas.canvas);
+			Static88.start(GameCanvas.canvas);
 			if (Static71.mouseWheelInterface != null) {
-				Static71.mouseWheelInterface.start(Static154.canvas);
+				Static71.mouseWheelInterface.start(GameCanvas.canvas);
 			}
 		} else {
 			if (GlRenderer.enabled) {
 				GlRenderer.setCanvasSize(Static48.anInt1448, Static254.anInt5554);
 			}
-			Static154.canvas.setSize(Static48.anInt1448, Static254.anInt5554);
+			GameCanvas.canvas.setSize(Static48.anInt1448, Static254.anInt5554);
 			if (Static39.aFrame1 == local85) {
 				local109 = Static39.aFrame1.getInsets();
-				Static154.canvas.setLocation(local109.left + Static145.anInt3497, local109.top + Static178.anInt4246);
+				GameCanvas.canvas.setLocation(local109.left + Static145.anInt3497, local109.top + Static178.anInt4246);
 			} else {
-				Static154.canvas.setLocation(Static145.anInt3497, Static178.anInt4246);
+				GameCanvas.canvas.setLocation(Static145.anInt3497, Static178.anInt4246);
 			}
 		}
 		if (arg1 == 0 && arg3 > 0) {
-			GlRenderer.createAndDestroyContext(Static154.canvas);
+			GlRenderer.createAndDestroyContext(GameCanvas.canvas);
 		}
 		if (arg2 && arg1 > 0) {
-			Static154.canvas.setIgnoreRepaint(true);
+			GameCanvas.canvas.setIgnoreRepaint(true);
 			if (!Static211.aBoolean73) {
 				Static65.method1500();
 				Static260.aClass27_2 = null;
-				Static260.aClass27_2 = Static131.method2579(Static254.anInt5554, Static48.anInt1448, Static154.canvas);
+				Static260.aClass27_2 = Static131.method2579(Static254.anInt5554, Static48.anInt1448, GameCanvas.canvas);
 				Static129.method2492();
 				if (Client.state == 5) {
 					Static182.method3359(true, Static280.aClass3_Sub2_Sub9_43);
@@ -139,13 +139,13 @@ public final class Static197 {
 					Static114.method4636(false, LocalizedText.LOADING);
 				}
 				try {
-					@Pc(269) Graphics local269 = Static154.canvas.getGraphics();
+					@Pc(269) Graphics local269 = GameCanvas.canvas.getGraphics();
 					Static260.aClass27_2.method4186(local269);
 				} catch (@Pc(277) Exception local277) {
 				}
 				Static139.method2704();
 				if (arg3 == 0) {
-					Static260.aClass27_2 = Static131.method2579(503, 765, Static154.canvas);
+					Static260.aClass27_2 = Static131.method2579(503, 765, GameCanvas.canvas);
 				} else {
 					Static260.aClass27_2 = null;
 				}
@@ -158,7 +158,7 @@ public final class Static197 {
 				}
 			}
 			if (Static211.aBoolean73) {
-				GlRenderer.init(Static154.canvas, Static186.anInt4392 * 2);
+				GlRenderer.init(GameCanvas.canvas, Static186.anInt4392 * 2);
 			}
 		}
 		if (!GlRenderer.enabled && arg1 > 0) {
@@ -176,7 +176,7 @@ public final class Static197 {
 			Static114.method4637();
 		} else if (arg1 == 0 && arg3 > 0) {
 			Static37.aThread1.setPriority(1);
-			Static260.aClass27_2 = Static131.method2579(503, 765, Static154.canvas);
+			Static260.aClass27_2 = Static131.method2579(503, 765, GameCanvas.canvas);
 			Static268.method4583();
 			Static76.method1643();
 			((WorldTextureProvider) Rasteriser.anInterface1_2).method3248(20);

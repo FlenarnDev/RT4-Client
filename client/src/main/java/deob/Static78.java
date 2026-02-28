@@ -108,10 +108,10 @@ public final class Static78 {
 			}
 		}
 		if (Static235.aMapElementList_2 == null) {
-			if (Static158.aClass3_Sub2_Sub4_3 == null || !Client.worldmap.method4497(Static34.method882(new JagString[] { Static158.aClass3_Sub2_Sub4_3.aClass100_138, Static50.aClass100_363 }))) {
+			if (Static158.aClass3_Sub2_Sub4_3 == null || !Client.worldmap.method4497(JagString.join(new JagString[] { Static158.aClass3_Sub2_Sub4_3.aClass100_138, Static50.aClass100_363 }))) {
 				Static235.aMapElementList_2 = new MapElementList(0);
-			} else if (Client.worldmap.method4489(Static34.method882(new JagString[] { Static158.aClass3_Sub2_Sub4_3.aClass100_138, Static50.aClass100_363 }))) {
-				Static235.aMapElementList_2 = Static140.method2711(Static34.method882(new JagString[] { Static158.aClass3_Sub2_Sub4_3.aClass100_138, Static50.aClass100_363 }), Client.worldmap);
+			} else if (Client.worldmap.method4489(JagString.join(new JagString[] { Static158.aClass3_Sub2_Sub4_3.aClass100_138, Static50.aClass100_363 }))) {
+				Static235.aMapElementList_2 = Static140.method2711(JagString.join(new JagString[] { Static158.aClass3_Sub2_Sub4_3.aClass100_138, Static50.aClass100_363 }), Client.worldmap);
 			} else {
 				local12 = false;
 				Static175.anInt4220++;
@@ -154,7 +154,7 @@ public final class Static78 {
 			return;
 		}
 		if (Static233.anInt5223 != 0) {
-			Static114.method4636(true, Static34.method882(new JagString[] { LocalizedText.LOADING, Static18.aClass100_108 }));
+			Static114.method4636(true, JagString.join(new JagString[] { LocalizedText.LOADING, Static18.aClass100_108 }));
 		}
 		Static107.method2261();
 		Static217.method3768();
@@ -289,16 +289,16 @@ public final class Static78 {
 			for (@Pc(837) int local837 = local320 - 1; local837 <= local309 + 1; local837++) {
 				for (@Pc(850) int local850 = local821 - 1; local850 <= local815 + 1; local850++) {
 					if (local837 < local320 || local837 > local309 || local850 < local821 || local850 > local815) {
-						Client.maps.method4486(Static34.method882(new JagString[] { Static103.aClass100_558, Static123.method2423(local837), Static86.aClass100_488, Static123.method2423(local850) }));
-						Client.maps.method4486(Static34.method882(new JagString[] { Static270.aClass100_1090, Static123.method2423(local837), Static86.aClass100_488, Static123.method2423(local850) }));
+						Client.maps.method4486(JagString.join(new JagString[] { Static103.aClass100_558, JagString.parseInt(local837), Static86.aClass100_488, JagString.parseInt(local850) }));
+						Client.maps.method4486(JagString.join(new JagString[] { Static270.aClass100_1090, JagString.parseInt(local837), Static86.aClass100_488, JagString.parseInt(local850) }));
 					}
 				}
 			}
 		}
 		if (Client.state == 28) {
-			Static196.method3534(10);
+			Client.setMainState(10);
 		} else {
-			Static196.method3534(30);
+			Client.setMainState(30);
 			if (Client.loginStream != null) {
 				Client.out.p1isaac(110);
 			}

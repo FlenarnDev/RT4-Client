@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -20,11 +21,11 @@ public final class Static209 {
 		for (@Pc(10) AreaSound local10 = (AreaSound) Static3.aClass69_135.method2289(); local10 != null; local10 = (AreaSound) Static3.aClass69_135.method2288()) {
 			if (arg3 == local10.anInt2033 && local10.anInt2041 == arg0 * 128 && local10.anInt2029 == arg2 * 128 && arg1.anInt4426 == local10.aClass118_1.anInt4426) {
 				if (local10.aClass3_Sub3_Sub1_1 != null) {
-					Static204.aClass3_Sub3_Sub2_1.method1347(local10.aClass3_Sub3_Sub1_1);
+					Client.soundMixer.method1347(local10.aClass3_Sub3_Sub1_1);
 					local10.aClass3_Sub3_Sub1_1 = null;
 				}
 				if (local10.aClass3_Sub3_Sub1_2 != null) {
-					Static204.aClass3_Sub3_Sub2_1.method1347(local10.aClass3_Sub3_Sub1_2);
+					Client.soundMixer.method1347(local10.aClass3_Sub3_Sub1_2);
 					local10.aClass3_Sub3_Sub1_2 = null;
 				}
 				local10.method4658();

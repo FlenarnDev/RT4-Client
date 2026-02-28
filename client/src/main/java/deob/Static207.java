@@ -125,18 +125,18 @@ public final class Static207 {
 				Client.out.p1(255);
 				Client.out.p4(local82);
 				Client.loginStream.write(Client.out.data, Client.out.pos);
-				if (Static11.aClass62_1 != null) {
-					Static11.aClass62_1.method3571();
+				if (Client.midiPcmPlayer != null) {
+					Client.midiPcmPlayer.method3571();
 				}
-				if (Static147.aClass62_2 != null) {
-					Static147.aClass62_2.method3571();
+				if (Client.soundPcmPlayer != null) {
+					Client.soundPcmPlayer.method3571();
 				}
 				local124 = Client.loginStream.read();
-				if (Static11.aClass62_1 != null) {
-					Static11.aClass62_1.method3571();
+				if (Client.midiPcmPlayer != null) {
+					Client.midiPcmPlayer.method3571();
 				}
-				if (Static147.aClass62_2 != null) {
-					Static147.aClass62_2.method3571();
+				if (Client.soundPcmPlayer != null) {
+					Client.soundPcmPlayer.method3571();
 				}
 				if (local124 != 0) {
 					return Static10.method347(local124);

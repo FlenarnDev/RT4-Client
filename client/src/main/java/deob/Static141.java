@@ -70,7 +70,7 @@ public final class Static141 {
 			Static73.method1596(false);
 		}
 		if (Client.state == 30) {
-			Static196.method3534(25);
+			Client.setMainState(25);
 		}
 	}
 

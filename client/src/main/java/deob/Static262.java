@@ -57,6 +57,6 @@ public final class Static262 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!vf", name = "a", descriptor = "(IB)Lclient!na;")
 	public static JagString method4510(@OriginalArg(0) int arg0) {
-		return arg0 >= 999999999 ? Static220.aClass100_930 : Static123.method2423(arg0);
+		return arg0 >= 999999999 ? Static220.aClass100_930 : JagString.parseInt(arg0);
 	}
 }

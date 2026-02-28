@@ -13,10 +13,7 @@ public final class Static1 {
 	@OriginalMember(owner = "com.jagex3.client.client!a", name = "h", descriptor = "I")
 	public static int anInt5;
 
-	@OriginalMember(owner = "com.jagex3.client.client!a", name = "e", descriptor = "Lclient!na;")
-	public static final JagString aClass100_1 = Static28.parse("scape main");
-
-	@OriginalMember(owner = "com.jagex3.client.client!a", name = "f", descriptor = "[Z")
+    @OriginalMember(owner = "com.jagex3.client.client!a", name = "f", descriptor = "[Z")
 	public static final boolean[] aBooleanArray1 = new boolean[8];
 
 	@OriginalMember(owner = "com.jagex3.client.client!a", name = "i", descriptor = "I")

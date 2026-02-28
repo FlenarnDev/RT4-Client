@@ -10,7 +10,9 @@ import org.openrs2.deob.annotation.OriginalMember;
 @OriginalClass("com.jagex3.client.client!tm")
 public final class GameCanvas extends Canvas {
 
-	@OriginalMember(owner = "com.jagex3.client.client!tm", name = "m", descriptor = "Ljava/awt/deob.Component;")
+    @OriginalMember(owner = "com.jagex3.client.client!md", name = "L", descriptor = "Ljava/awt/Canvas;")
+    public static Canvas canvas;
+    @OriginalMember(owner = "com.jagex3.client.client!tm", name = "m", descriptor = "Ljava/awt/deob.Component;")
 	private final Component aComponent2;
 
 	@OriginalMember(owner = "com.jagex3.client.client!tm", name = "<init>", descriptor = "(Ljava/awt/deob.Component;)V")

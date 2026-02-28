@@ -5,6 +5,7 @@ import java.io.IOException;
 import com.jagex.signlink.FileOnDisk;
 import com.jagex.signlink.PrivilegedRequest;
 import com.jagex.signlink.SignLink;
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -45,7 +46,7 @@ public final class Static80 {
 		Static113.anInt4609 = 3;
 		Static53.method1293(true);
 		aBoolean231 = true;
-		Static99.aBoolean143 = true;
+		Client.lowMem = true;
 		Static220.aBoolean244 = true;
 		Static102.anInt2679 = 0;
 		Static22.anInt729 = 0;

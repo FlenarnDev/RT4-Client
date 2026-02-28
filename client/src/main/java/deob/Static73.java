@@ -52,7 +52,7 @@ public final class Static73 {
 		Static173.self.anInt3412 = 3000;
 		if (!GlRenderer.enabled) {
 			Static145.method2743(Client.sprites);
-			Static196.method3534(10);
+			Client.setMainState(10);
 			return;
 		}
 		if (Static227.anInt5096 == 2) {
@@ -63,7 +63,7 @@ public final class Static73 {
 		}
 		Static86.method1799();
 		Static26.method740();
-		Static196.method3534(28);
+		Client.setMainState(28);
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!fm", name = "a", descriptor = "(ZII)V")

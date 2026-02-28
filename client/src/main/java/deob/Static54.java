@@ -313,10 +313,10 @@ public final class Static54 {
 						local209 = Static30.anInt978 * (local125 - local180) / local125;
 					}
 					if (local209 > 0) {
-						@Pc(223) Wave local223 = local79.method3989().method2648(Static56.aClass156_1);
+						@Pc(223) Wave local223 = local79.method3989().method2648(Client.soundDecimator);
 						@Pc(228) WaveStream local228 = Static284.method404(local223, local209);
 						local228.method396(Static276.anIntArray563[local5] - 1);
-						Static204.aClass3_Sub3_Sub2_1.method1343(local228);
+						Client.soundMixer.method1343(local228);
 					}
 					Static164.anIntArray362[local5] = -100;
 				}

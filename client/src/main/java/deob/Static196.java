@@ -1,6 +1,5 @@
 package deob;
 
-import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -22,60 +21,7 @@ public final class Static196 {
 	@OriginalMember(owner = "com.jagex3.client.client!pl", name = "i", descriptor = "I")
 	public static int anInt4587 = 0;
 
-	@OriginalMember(owner = "com.jagex3.client.client!pl", name = "a", descriptor = "(II)V")
-	public static void method3534(@OriginalArg(0) int arg0) {
-		if (Client.state == arg0) {
-			return;
-		}
-		if (Client.state == 0) {
-			Static163.method3097();
-		}
-		if (arg0 == 40) {
-			Static49.method1208();
-		}
-		@Pc(37) boolean local37 = arg0 == 5 || arg0 == 10 || arg0 == 28;
-		if (arg0 != 40 && Static233.aClass95_4 != null) {
-			Static233.aClass95_4.close();
-			Static233.aClass95_4 = null;
-		}
-		if (arg0 == 25 || arg0 == 28) {
-			Static271.anInt5804 = 0;
-			Static230.anInt5150 = 1;
-			Static233.anInt5223 = 0;
-			Static38.anInt1196 = 1;
-			Static175.anInt4220 = 0;
-			Static116.method2325(true);
-		}
-		if (arg0 == 25 || arg0 == 10) {
-			Static123.method2418();
-		}
-		if (arg0 == 5) {
-			Static181.method3344(Client.sprites);
-		} else {
-			Static119.method2381();
-		}
-		@Pc(106) boolean local106 = Client.state == 5 || Client.state == 10 || Client.state == 28;
-		if (local106 != local37) {
-			if (local37) {
-				Static221.anInt4363 = Static250.anInt5441;
-				if (Static12.anInt391 == 0) {
-					Static29.method801();
-				} else {
-					Static257.method526(Static250.anInt5441, Client.songs, 255);
-				}
-				Static107.js5Net.method2322(false);
-			} else {
-				Static29.method801();
-				Static107.js5Net.method2322(true);
-			}
-		}
-		if (GlRenderer.enabled && (arg0 == 25 || arg0 == 28 || arg0 == 40)) {
-			GlRenderer.method4160();
-		}
-		Client.state = arg0;
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!pl", name = "a", descriptor = "(ZI)V")
+    @OriginalMember(owner = "com.jagex3.client.client!pl", name = "a", descriptor = "(ZI)V")
 	public static void method3535(@OriginalArg(0) boolean arg0) {
 		Static221.anIntArray376 = new int[104];
 		Static139.anIntArray325 = new int[104];

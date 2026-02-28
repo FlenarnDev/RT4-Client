@@ -65,18 +65,18 @@ public final class Static158 {
 				Client.loginStream = new ClientStream((Socket) Static72.aClass212_3.result, GameShell.signLink);
 				Static72.aClass212_3 = null;
 				Client.loginStream.write(Client.out.data, Client.out.pos);
-				if (Static11.aClass62_1 != null) {
-					Static11.aClass62_1.method3571();
+				if (Client.midiPcmPlayer != null) {
+					Client.midiPcmPlayer.method3571();
 				}
-				if (Static147.aClass62_2 != null) {
-					Static147.aClass62_2.method3571();
+				if (Client.soundPcmPlayer != null) {
+					Client.soundPcmPlayer.method3571();
 				}
 				local120 = Client.loginStream.read();
-				if (Static11.aClass62_1 != null) {
-					Static11.aClass62_1.method3571();
+				if (Client.midiPcmPlayer != null) {
+					Client.midiPcmPlayer.method3571();
 				}
-				if (Static147.aClass62_2 != null) {
-					Static147.aClass62_2.method3571();
+				if (Client.soundPcmPlayer != null) {
+					Client.soundPcmPlayer.method3571();
 				}
 				if (local120 != 21) {
 					Static223.anInt5034 = local120;
