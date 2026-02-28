@@ -9,10 +9,7 @@ public final class Static144 {
 	@OriginalMember(owner = "com.jagex3.client.client!le", name = "c", descriptor = "Lclient!rf;")
 	public static MidiFile aClass3_Sub29_1;
 
-	@OriginalMember(owner = "com.jagex3.client.client!le", name = "e", descriptor = "I")
-	public static int anInt3490 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!le", name = "k", descriptor = "Z")
+    @OriginalMember(owner = "com.jagex3.client.client!le", name = "k", descriptor = "Z")
 	public static boolean aBoolean173 = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!le", name = "a", descriptor = "(IIIIIIIIIII)V")

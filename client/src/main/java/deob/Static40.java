@@ -91,7 +91,7 @@ public final class Static40 {
 		if (local10 != null) {
 			return local10;
 		}
-		@Pc(20) byte[] local20 = MsiType.aClass153_42.method4495(34, arg0);
+		@Pc(20) byte[] local20 = MsiType.archive.method4495(34, arg0);
 		local10 = new MsiType();
 		if (local20 != null) {
 			local10.method6(new Packet(local20), arg0);

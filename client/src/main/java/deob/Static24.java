@@ -40,7 +40,7 @@ public final class Static24 {
 		@Pc(11) int local11 = 0;
 		@Pc(22) short[] local22 = new short[16];
 		@Pc(28) int local28 = arg0 ? 32768 : 0;
-		@Pc(36) int local36 = (arg0 ? Static34.anInt1047 : Static144.anInt3490) + local28;
+		@Pc(36) int local36 = (arg0 ? QuickChatPhraseType.anInt1047 : QuickChatPhraseType.anInt3490) + local28;
 		for (@Pc(38) int local38 = local28; local38 < local36; local38++) {
 			@Pc(45) QuickChatPhraseType local45 = Static230.method3953(local38);
 			if (local45.aBoolean60 && local45.method769().toLowerCase().indexOf(local9) != -1) {

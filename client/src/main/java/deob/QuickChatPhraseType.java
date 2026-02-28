@@ -8,7 +8,17 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("com.jagex3.client.client!cb")
 public final class QuickChatPhraseType extends DoubleLinkable {
 
-	@OriginalMember(owner = "com.jagex3.client.client!cb", name = "L", descriptor = "[I")
+    @OriginalMember(owner = "com.jagex3.client.client!vf", name = "n", descriptor = "Lclient!ve;")
+    public static Js5 configClientLarge;
+    @OriginalMember(owner = "com.jagex3.client.client!id", name = "j", descriptor = "Lclient!of;")
+    public static QuickChatCommandDecoder decoder = null;
+    @OriginalMember(owner = "com.jagex3.client.client!te", name = "y", descriptor = "Lclient!ve;")
+    public static Js5 configClientSmall;
+    @OriginalMember(owner = "com.jagex3.client.client!le", name = "e", descriptor = "I")
+    public static int anInt3490 = 0;
+    @OriginalMember(owner = "com.jagex3.client.client!ck", name = "C", descriptor = "I")
+    public static int anInt1047 = 0;
+    @OriginalMember(owner = "com.jagex3.client.client!cb", name = "L", descriptor = "[I")
 	private int[] anIntArray71;
 
 	@OriginalMember(owner = "com.jagex3.client.client!cb", name = "M", descriptor = "[I")
@@ -25,14 +35,14 @@ public final class QuickChatPhraseType extends DoubleLinkable {
 
     @OriginalMember(owner = "com.jagex3.client.client!ej", name = "a", descriptor = "(Lclient!ve;ILclient!ve;Lclient!of;)V")
     public static void init(@OriginalArg(0) Js5 arg0, @OriginalArg(2) Js5 arg1, @OriginalArg(3) QuickChatCommandDecoder arg2) {
-        Static262.aClass153_108 = arg0;
-        Static107.anInterface3_1 = arg2;
-        Static238.aClass153_96 = arg1;
-        if (Static238.aClass153_96 != null) {
-            Static144.anInt3490 = Static238.aClass153_96.getFileIdLimit(1);
+        configClientLarge = arg0;
+        decoder = arg2;
+        configClientSmall = arg1;
+        if (configClientSmall != null) {
+            anInt3490 = configClientSmall.getFileIdLimit(1);
         }
-        if (Static262.aClass153_108 != null) {
-            Static34.anInt1047 = Static262.aClass153_108.getFileIdLimit(1);
+        if (configClientLarge != null) {
+            anInt1047 = configClientLarge.getFileIdLimit(1);
         }
     }
 

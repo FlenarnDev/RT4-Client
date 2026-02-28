@@ -9,10 +9,7 @@ public final class Static262 {
 	@OriginalMember(owner = "com.jagex3.client.client!vf", name = "c", descriptor = "I")
 	public static int anInt5752;
 
-	@OriginalMember(owner = "com.jagex3.client.client!vf", name = "n", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_108;
-
-	@OriginalMember(owner = "com.jagex3.client.client!vf", name = "a", descriptor = "Lclient!n;")
+    @OriginalMember(owner = "com.jagex3.client.client!vf", name = "a", descriptor = "Lclient!n;")
 	public static final SoftLruCache aClass99_34 = new SoftLruCache(64);
 
 	@OriginalMember(owner = "com.jagex3.client.client!vf", name = "g", descriptor = "[I")

@@ -8,10 +8,7 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static87 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!gn", name = "t", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_38;
-
-	@OriginalMember(owner = "com.jagex3.client.client!gn", name = "d", descriptor = "Z")
+    @OriginalMember(owner = "com.jagex3.client.client!gn", name = "d", descriptor = "Z")
 	public static boolean aBoolean130 = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!gn", name = "i", descriptor = "Lclient!n;")

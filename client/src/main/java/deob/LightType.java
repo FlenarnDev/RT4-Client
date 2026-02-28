@@ -8,7 +8,9 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("com.jagex3.client.client!ic")
 public final class LightType {
 
-	@OriginalMember(owner = "com.jagex3.client.client!ic", name = "g", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!gl", name = "a", descriptor = "Lclient!ve;")
+    public static Js5 archive;
+    @OriginalMember(owner = "com.jagex3.client.client!ic", name = "g", descriptor = "I")
 	public int anInt2867 = 2048;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ic", name = "c", descriptor = "I")
@@ -22,7 +24,7 @@ public final class LightType {
 
     @OriginalMember(owner = "com.jagex3.client.client!id", name = "a", descriptor = "(Lclient!ve;B)V")
     public static void init(@OriginalArg(0) Js5 arg0) {
-        Static85.aClass153_36 = arg0;
+        archive = arg0;
     }
 
     @OriginalMember(owner = "com.jagex3.client.client!ic", name = "a", descriptor = "(ILclient!wa;I)V")

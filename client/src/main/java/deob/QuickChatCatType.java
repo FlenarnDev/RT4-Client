@@ -8,7 +8,11 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("com.jagex3.client.client!bc")
 public final class QuickChatCatType extends DoubleLinkable {
 
-	@OriginalMember(owner = "com.jagex3.client.client!bc", name = "O", descriptor = "[I")
+    @OriginalMember(owner = "com.jagex3.client.client!gn", name = "t", descriptor = "Lclient!ve;")
+    public static Js5 archive1;
+    @OriginalMember(owner = "com.jagex3.client.client!ce", name = "d", descriptor = "Lclient!ve;")
+    public static Js5 archive2;
+    @OriginalMember(owner = "com.jagex3.client.client!bc", name = "O", descriptor = "[I")
 	public int[] anIntArray29;
 
 	@OriginalMember(owner = "com.jagex3.client.client!bc", name = "P", descriptor = "[I")
@@ -25,8 +29,8 @@ public final class QuickChatCatType extends DoubleLinkable {
 
     @OriginalMember(owner = "com.jagex3.client.client!ja", name = "a", descriptor = "(Lclient!ve;Lclient!ve;I)V")
     public static void init(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Js5 arg1) {
-        Static87.aClass153_38 = arg1;
-        Static29.aClass153_19 = arg0;
+        archive1 = arg1;
+        archive2 = arg0;
     }
 
     @OriginalMember(owner = "com.jagex3.client.client!bc", name = "d", descriptor = "(I)V")

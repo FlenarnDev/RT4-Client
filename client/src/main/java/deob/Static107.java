@@ -34,10 +34,7 @@ public final class Static107 {
 	@OriginalMember(owner = "com.jagex3.client.client!id", name = "f", descriptor = "Z")
 	public static boolean aBoolean147 = false;
 
-	@OriginalMember(owner = "com.jagex3.client.client!id", name = "j", descriptor = "Lclient!of;")
-	public static QuickChatCommandDecoder anInterface3_1 = null;
-
-	@OriginalMember(owner = "com.jagex3.client.client!id", name = "b", descriptor = "(I)V")
+    @OriginalMember(owner = "com.jagex3.client.client!id", name = "b", descriptor = "(I)V")
 	public static void method2261() {
 		if (Client.soundPcmPlayer != null) {
 			Client.soundPcmPlayer.method3565();

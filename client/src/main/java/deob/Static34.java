@@ -66,10 +66,7 @@ public final class Static34 {
 	@OriginalMember(owner = "com.jagex3.client.client!ck", name = "o", descriptor = "Lclient!na;")
 	private static final JagString aClass100_200 = Static28.parse("Loaded world list data");
 
-	@OriginalMember(owner = "com.jagex3.client.client!ck", name = "C", descriptor = "I")
-	public static int anInt1047 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ck", name = "D", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!ck", name = "D", descriptor = "Lclient!na;")
 	public static JagString aClass100_203 = null;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ck", name = "K", descriptor = "I")

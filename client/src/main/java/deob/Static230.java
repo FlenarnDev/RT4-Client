@@ -131,9 +131,9 @@ public final class Static230 {
 		}
 		@Pc(27) byte[] local27;
 		if (arg0 < 32768) {
-			local27 = Static238.aClass153_96.method4495(1, arg0);
+			local27 = QuickChatPhraseType.configClientSmall.method4495(1, arg0);
 		} else {
-			local27 = Static262.aClass153_108.method4495(1, arg0 & 0x7FFF);
+			local27 = QuickChatPhraseType.configClientLarge.method4495(1, arg0 & 0x7FFF);
 		}
 		local10 = new QuickChatPhraseType();
 		if (local27 != null) {

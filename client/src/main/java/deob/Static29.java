@@ -6,10 +6,7 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static29 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!ce", name = "d", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_19;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ce", name = "a", descriptor = "(I[B)Lclient!rk;")
+    @OriginalMember(owner = "com.jagex3.client.client!ce", name = "a", descriptor = "(I[B)Lclient!rk;")
 	public static PixFontGeneric method799(@OriginalArg(1) byte[] arg0) {
 		if (arg0 == null) {
 			return null;
