@@ -1,6 +1,6 @@
 package deob;
 
-import com.jagex3.AreaSound;
+import BgSound.AreaSound;
 import com.jagex3.client.Client;
 import com.jagex3.JagString;
 import com.jagex3.PixMap;

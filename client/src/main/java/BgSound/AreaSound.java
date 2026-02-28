@@ -1,5 +1,6 @@
-package com.jagex3;
+package BgSound;
 
+import com.jagex3.*;
 import com.jagex3.client.Client;
 import deob.Static112;
 import deob.Static140;

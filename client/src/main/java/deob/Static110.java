@@ -1,5 +1,6 @@
 package deob;
 
+import BgSound.AreaSound;
 import com.jagex3.*;
 import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
