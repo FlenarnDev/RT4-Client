@@ -8,7 +8,9 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("com.jagex3.client.client!hn")
 public final class ParamType extends DoubleLinkable {
 
-	@OriginalMember(owner = "com.jagex3.client.client!hn", name = "I", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!d", name = "hb", descriptor = "Lclient!ve;")
+    public static Js5 clientConfig;
+    @OriginalMember(owner = "com.jagex3.client.client!hn", name = "I", descriptor = "I")
 	public int anInt2667;
 
 	@OriginalMember(owner = "com.jagex3.client.client!hn", name = "L", descriptor = "I")
@@ -17,7 +19,12 @@ public final class ParamType extends DoubleLinkable {
 	@OriginalMember(owner = "com.jagex3.client.client!hn", name = "Q", descriptor = "Lclient!na;")
 	public JagString aClass100_544;
 
-	@OriginalMember(owner = "com.jagex3.client.client!hn", name = "a", descriptor = "(ILclient!wa;I)V")
+    @OriginalMember(owner = "com.jagex3.client.client!sf", name = "a", descriptor = "(BLclient!ve;)V")
+    public static void init(@OriginalArg(1) Js5 arg0) {
+        clientConfig = arg0;
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!hn", name = "a", descriptor = "(ILclient!wa;I)V")
 	private void method2072(@OriginalArg(0) int arg0, @OriginalArg(1) Packet arg1) {
 		if (arg0 == 1) {
 			this.anInt2669 = arg1.g1();

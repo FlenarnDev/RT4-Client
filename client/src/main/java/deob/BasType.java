@@ -8,7 +8,9 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("com.jagex3.client.client!ck")
 public final class BasType {
 
-	@OriginalMember(owner = "com.jagex3.client.client!ck", name = "g", descriptor = "[[I")
+    @OriginalMember(owner = "com.jagex3.client.client!nd", name = "p", descriptor = "Lclient!ve;")
+	public static Js5 clientConfig;
+    @OriginalMember(owner = "com.jagex3.client.client!ck", name = "g", descriptor = "[[I")
 	public int[][] anIntArrayArray7;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ck", name = "p", descriptor = "I")
@@ -89,7 +91,12 @@ public final class BasType {
 	@OriginalMember(owner = "com.jagex3.client.client!ck", name = "cb", descriptor = "I")
 	public int anInt1064 = 0;
 
-	@OriginalMember(owner = "com.jagex3.client.client!ck", name = "a", descriptor = "(I)V")
+    @OriginalMember(owner = "com.jagex3.client.client!ge", name = "a", descriptor = "(BLclient!ve;)V")
+    public static void init(@OriginalArg(1) Js5 arg0) {
+        clientConfig = arg0;
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!ck", name = "a", descriptor = "(I)V")
 	public final void method878() {
 	}
 

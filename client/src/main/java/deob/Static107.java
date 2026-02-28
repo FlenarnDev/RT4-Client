@@ -108,8 +108,4 @@ public final class Static107 {
 		Static106.anInt2869 = arg0;
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!id", name = "a", descriptor = "(Lclient!ve;B)V")
-	public static void method2264(@OriginalArg(0) Js5 arg0) {
-		Static85.aClass153_36 = arg0;
-	}
 }

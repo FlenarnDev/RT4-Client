@@ -181,7 +181,7 @@ public final class Static253 {
 		if (local10 != null) {
 			return local10;
 		}
-		@Pc(24) byte[] local24 = Static84.aClass153_35.method4495(Static97.method1959(arg0), Static103.method2236(arg0));
+		@Pc(24) byte[] local24 = EnumType.clientConfig.method4495(Static97.method1959(arg0), Static103.method2236(arg0));
 		local10 = new EnumType();
 		if (local24 != null) {
 			local10.method3094(new Packet(local24));

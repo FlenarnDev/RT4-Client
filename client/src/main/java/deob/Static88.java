@@ -13,13 +13,7 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static88 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!h", name = "a", descriptor = "(Lclient!ve;Lclient!ve;Z)V")
-	public static void method1817(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Js5 arg1) {
-		Static86.aClass153_37 = arg0;
-		Static58.aClass153_28 = arg1;
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!h", name = "a", descriptor = "(BILclient!jl;)V")
+    @OriginalMember(owner = "com.jagex3.client.client!h", name = "a", descriptor = "(BILclient!jl;)V")
 	public static void method1818(@OriginalArg(1) int arg0, @OriginalArg(2) HookRequest arg1) {
 		@Pc(4) Object[] local4 = arg1.anObjectArray31;
 		@Pc(10) int local10 = (Integer) local4[0];

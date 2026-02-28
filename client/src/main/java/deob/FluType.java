@@ -8,7 +8,15 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("com.jagex3.client.client!ni")
 public final class FluType {
 
-	@OriginalMember(owner = "com.jagex3.client.client!ni", name = "d", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!oj", name = "x", descriptor = "Lclient!ve;")
+    public static Js5 configClient;
+    @OriginalMember(owner = "com.jagex3.client.client!bd", name = "g", descriptor = "Lclient!ve;")
+    public static Js5 aClass153_8;
+    @OriginalMember(owner = "com.jagex3.client.client!ri", name = "c", descriptor = "Lclient!ve;")
+    public static Js5 clientConfig;
+    @OriginalMember(owner = "com.jagex3.client.client!ec", name = "z", descriptor = "I")
+    public static int anInt1716;
+    @OriginalMember(owner = "com.jagex3.client.client!ni", name = "d", descriptor = "I")
 	public int anInt4149;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ni", name = "i", descriptor = "I")
@@ -32,7 +40,19 @@ public final class FluType {
 	@OriginalMember(owner = "com.jagex3.client.client!ni", name = "l", descriptor = "Z")
 	public boolean aBoolean198 = true;
 
-	@OriginalMember(owner = "com.jagex3.client.client!ni", name = "a", descriptor = "(IB)V")
+    @OriginalMember(owner = "com.jagex3.client.client!hc", name = "a", descriptor = "(Lclient!ve;I)V")
+    public static void init(@OriginalArg(0) Js5 arg0) {
+        configClient = arg0;
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!jl", name = "a", descriptor = "(ILclient!ve;Lclient!ve;)V")
+    public static void init(@OriginalArg(1) Js5 arg0, @OriginalArg(2) Js5 arg1) {
+        aClass153_8 = arg0;
+        clientConfig = arg1;
+        anInt1716 = clientConfig.getFileIdLimit(3);
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!ni", name = "a", descriptor = "(IB)V")
 	private void method3216(@OriginalArg(0) int arg0) {
 		@Pc(8) double local8 = (double) (arg0 >> 16 & 0xFF) / 256.0D;
 		@Pc(21) double local21 = (double) (arg0 >> 8 & 0xFF) / 256.0D;

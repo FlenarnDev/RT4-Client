@@ -690,7 +690,7 @@ public final class Static247 {
 		if (local10 != null) {
 			return local10;
 		}
-		@Pc(20) byte[] local20 = Static81.aClass153_34.method4495(16, arg0);
+		@Pc(20) byte[] local20 = VarpType.clientConfig.method4495(16, arg0);
 		local10 = new VarpType();
 		if (local20 != null) {
 			local10.method1323(new Packet(local20));

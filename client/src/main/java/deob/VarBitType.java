@@ -8,7 +8,9 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("com.jagex3.client.client!kk")
 public final class VarBitType {
 
-	@OriginalMember(owner = "com.jagex3.client.client!kk", name = "c", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!nj", name = "c", descriptor = "Lclient!ve;")
+    public static Js5 varbitConfig;
+    @OriginalMember(owner = "com.jagex3.client.client!kk", name = "c", descriptor = "I")
 	public int anInt3318;
 
 	@OriginalMember(owner = "com.jagex3.client.client!kk", name = "h", descriptor = "I")
@@ -17,7 +19,12 @@ public final class VarBitType {
 	@OriginalMember(owner = "com.jagex3.client.client!kk", name = "l", descriptor = "I")
 	public int anInt3327;
 
-	@OriginalMember(owner = "com.jagex3.client.client!kk", name = "a", descriptor = "(Lclient!wa;I)V")
+    @OriginalMember(owner = "com.jagex3.client.client!og", name = "a", descriptor = "(Lclient!ve;I)V")
+    public static void init(@OriginalArg(0) Js5 arg0) {
+        varbitConfig = arg0;
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!kk", name = "a", descriptor = "(Lclient!wa;I)V")
 	public final void method2651(@OriginalArg(0) Packet arg0) {
 		while (true) {
 			@Pc(9) int local9 = arg0.g1();

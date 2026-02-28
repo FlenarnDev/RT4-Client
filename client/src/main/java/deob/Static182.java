@@ -10,10 +10,7 @@ public final class Static182 {
 	@OriginalMember(owner = "com.jagex3.client.client!oj", name = "t", descriptor = "[I")
 	public static int[] anIntArray372;
 
-	@OriginalMember(owner = "com.jagex3.client.client!oj", name = "x", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_77;
-
-	@OriginalMember(owner = "com.jagex3.client.client!oj", name = "E", descriptor = "[[Lclient!hg;")
+    @OriginalMember(owner = "com.jagex3.client.client!oj", name = "E", descriptor = "[[Lclient!hg;")
 	public static GlSquare[][] aGlSquareArrayArray2;
 
 	@OriginalMember(owner = "com.jagex3.client.client!oj", name = "p", descriptor = "I")

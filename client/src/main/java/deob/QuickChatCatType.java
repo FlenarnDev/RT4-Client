@@ -23,7 +23,13 @@ public final class QuickChatCatType extends DoubleLinkable {
 	@OriginalMember(owner = "com.jagex3.client.client!bc", name = "ab", descriptor = "[I")
 	public int[] anIntArray32;
 
-	@OriginalMember(owner = "com.jagex3.client.client!bc", name = "d", descriptor = "(I)V")
+    @OriginalMember(owner = "com.jagex3.client.client!ja", name = "a", descriptor = "(Lclient!ve;Lclient!ve;I)V")
+    public static void init(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Js5 arg1) {
+        Static87.aClass153_38 = arg1;
+        Static29.aClass153_19 = arg0;
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!bc", name = "d", descriptor = "(I)V")
 	public final void method465() {
 		@Pc(8) int local8;
 		if (this.anIntArray32 != null) {

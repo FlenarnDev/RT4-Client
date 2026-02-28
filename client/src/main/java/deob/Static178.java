@@ -49,7 +49,7 @@ public final class Static178 {
 		}
 		@Pc(27) int local27 = 0;
 		for (@Pc(29) int local29 = 0; local29 < local19.anIntArray420.length; local29++) {
-			if (local19.anIntArray420[local29] >= 0 && Static170.anInt3245 > local19.anIntArray420[local29]) {
+			if (local19.anIntArray420[local29] >= 0 && ObjType.anInt3245 > local19.anIntArray420[local29]) {
 				@Pc(56) ObjType local56 = Static71.method1439(local19.anIntArray420[local29]);
 				if (local56.aClass133_6 != null) {
 					@Pc(68) IntNode local68 = (IntNode) local56.aClass133_6.method3863((long) arg2);

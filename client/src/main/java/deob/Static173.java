@@ -9,10 +9,7 @@ public final class Static173 {
 	@OriginalMember(owner = "com.jagex3.client.client!nk", name = "d", descriptor = "[I")
 	public static int[] anIntArray367;
 
-	@OriginalMember(owner = "com.jagex3.client.client!nk", name = "E", descriptor = "I")
-	public static int anInt4183;
-
-	@OriginalMember(owner = "com.jagex3.client.client!nk", name = "L", descriptor = "[Lclient!mm;")
+    @OriginalMember(owner = "com.jagex3.client.client!nk", name = "L", descriptor = "[Lclient!mm;")
 	public static Pix32[] aClass3_Sub2_Sub1_Sub1Array9;
 
 	@OriginalMember(owner = "com.jagex3.client.client!nk", name = "O", descriptor = "Lclient!e;")

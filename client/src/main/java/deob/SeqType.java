@@ -8,7 +8,13 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("com.jagex3.client.client!tk")
 public final class SeqType {
 
-	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "g", descriptor = "[I")
+    @OriginalMember(owner = "com.jagex3.client.client!tk", name = "s", descriptor = "Lclient!ve;")
+    public static Js5 seqConfig;
+    @OriginalMember(owner = "com.jagex3.client.client!af", name = "a", descriptor = "Lclient!ve;")
+    public static Js5 bases;
+    @OriginalMember(owner = "com.jagex3.client.client!se", name = "l", descriptor = "Lclient!ve;")
+    public static Js5 anims;
+    @OriginalMember(owner = "com.jagex3.client.client!tk", name = "g", descriptor = "[I")
 	public int[] anIntArray473;
 
 	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "n", descriptor = "[Z")
@@ -62,7 +68,14 @@ public final class SeqType {
 	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "L", descriptor = "Z")
 	public boolean aBoolean280 = false;
 
-	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "a", descriptor = "(Lclient!wa;B)V")
+    @OriginalMember(owner = "com.jagex3.client.client!lb", name = "a", descriptor = "(Lclient!ve;Lclient!ve;ILclient!ve;)V")
+    public static void init(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Js5 arg1, @OriginalArg(3) Js5 arg2) {
+        seqConfig = arg1;
+        bases = arg0;
+        anims = arg2;
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!tk", name = "a", descriptor = "(Lclient!wa;B)V")
 	public final void method4213(@OriginalArg(0) Packet arg0) {
 		while (true) {
 			@Pc(19) int local19 = arg0.g1();

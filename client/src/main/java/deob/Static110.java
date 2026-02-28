@@ -28,7 +28,7 @@ public final class Static110 {
 		if (local6 != null) {
 			return local6;
 		}
-		@Pc(30) byte[] local30 = Static39.aClass153_23.method4495(11, arg0);
+		@Pc(30) byte[] local30 = ParamType.clientConfig.method4495(11, arg0);
 		local6 = new ParamType();
 		if (local30 != null) {
 			local6.method2076(new Packet(local30));

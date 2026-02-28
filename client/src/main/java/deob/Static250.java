@@ -11,10 +11,7 @@ public final class Static250 {
 	@OriginalMember(owner = "com.jagex3.client.client!uf", name = "p", descriptor = "I")
 	public static int anInt5443;
 
-	@OriginalMember(owner = "com.jagex3.client.client!uf", name = "r", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_101;
-
-	@OriginalMember(owner = "com.jagex3.client.client!uf", name = "b", descriptor = "Z")
+    @OriginalMember(owner = "com.jagex3.client.client!uf", name = "b", descriptor = "Z")
 	public static boolean aBoolean283 = true;
 
 	@OriginalMember(owner = "com.jagex3.client.client!uf", name = "e", descriptor = "I")

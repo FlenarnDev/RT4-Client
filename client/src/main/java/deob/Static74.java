@@ -79,7 +79,7 @@ public final class Static74 {
 		if (arg0 == -1 || !Static245.load(arg0)) {
 			return;
 		}
-		@Pc(31) IfType[] local31 = Static241.components[arg0];
+		@Pc(31) IfType[] local31 = IfType.list[arg0];
 		for (@Pc(33) int local33 = 0; local33 < local31.length; local33++) {
 			@Pc(41) IfType local41 = local31[local33];
 			if (local41.anObjectArray3 != null) {

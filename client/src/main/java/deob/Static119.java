@@ -60,12 +60,7 @@ public final class Static119 {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!je", name = "a", descriptor = "(ILclient!ve;)V")
-	public static void method2384(@OriginalArg(1) Js5 arg0) {
-		Static9.aClass153_2 = arg0;
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!je", name = "j", descriptor = "(I)I")
+    @OriginalMember(owner = "com.jagex3.client.client!je", name = "j", descriptor = "(I)I")
 	public static int method2385() {
 		if (Static203.aMapElementList_1 == null) {
 			return -1;

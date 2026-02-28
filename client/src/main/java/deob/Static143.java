@@ -20,10 +20,7 @@ public final class Static143 {
 	@OriginalMember(owner = "com.jagex3.client.client!ld", name = "d", descriptor = "Lclient!na;")
 	public static final JagString aClass100_668 = Static28.parse("Hidden)2use");
 
-	@OriginalMember(owner = "com.jagex3.client.client!ld", name = "g", descriptor = "[Lclient!na;")
-	public static JagString[] aClass100Array104 = null;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ld", name = "i", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!ld", name = "i", descriptor = "I")
 	public static int anInt3486 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ld", name = "a", descriptor = "(IIIIZI)V")

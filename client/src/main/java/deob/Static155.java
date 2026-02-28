@@ -37,7 +37,7 @@ public final class Static155 {
 		@Pc(8) short[] local8 = new short[16];
 		@Pc(12) JagString local12 = arg1.toLowerCase();
 		@Pc(14) int local14 = 0;
-		for (@Pc(16) int local16 = 0; local16 < Static170.anInt3245; local16++) {
+		for (@Pc(16) int local16 = 0; local16 < ObjType.anInt3245; local16++) {
 			@Pc(27) ObjType local27 = Static71.method1439(local16);
 			if ((!arg0 || local27.aBoolean132) && local27.anInt2358 == -1 && local27.anInt2334 == -1 && local27.anInt2370 == 0 && local27.aClass100_495.toLowerCase().indexOf(local12) != -1) {
 				if (local14 >= 250) {

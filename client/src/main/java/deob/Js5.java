@@ -116,7 +116,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ve", name = "b", descriptor = "(I)I")
-	public final int method4483() {
+	public final int getGroupCount() {
 		return this.method4484() ? this.aClass70_2.anIntArray270.length : -1;
 	}
 
@@ -478,7 +478,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ve", name = "a", descriptor = "(IB)I")
-	public final int method4504(@OriginalArg(0) int arg0) {
+	public final int getFileIdLimit(@OriginalArg(0) int arg0) {
 		return this.method4492(arg0) ? this.aClass70_2.anIntArray270[arg0] : 0;
 	}
 

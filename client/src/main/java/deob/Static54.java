@@ -16,7 +16,7 @@ public final class Static54 {
 	@OriginalMember(owner = "com.jagex3.client.client!ed", name = "a", descriptor = "(III)V")
 	public static void method1304(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
 		if (Static245.load(arg1)) {
-			Static2.method7(Static241.components[arg1], arg0);
+			Static2.method7(IfType.list[arg1], arg0);
 		}
 	}
 

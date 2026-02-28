@@ -8,7 +8,9 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("com.jagex3.client.client!ml")
 public final class EnumType extends DoubleLinkable {
 
-	@OriginalMember(owner = "com.jagex3.client.client!ml", name = "N", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!gk", name = "e", descriptor = "Lclient!ve;")
+    public static Js5 clientConfig;
+    @OriginalMember(owner = "com.jagex3.client.client!ml", name = "N", descriptor = "I")
 	public int anInt3950;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ml", name = "V", descriptor = "I")
@@ -26,7 +28,12 @@ public final class EnumType extends DoubleLinkable {
 	@OriginalMember(owner = "com.jagex3.client.client!ml", name = "Z", descriptor = "Lclient!na;")
 	private JagString aClass100_766 = Static87.aClass100_494;
 
-	@OriginalMember(owner = "com.jagex3.client.client!ml", name = "a", descriptor = "(ILclient!wa;B)V")
+    @OriginalMember(owner = "com.jagex3.client.client!gl", name = "a", descriptor = "(Lclient!ve;I)V")
+    public static void init(@OriginalArg(0) Js5 arg0) {
+        clientConfig = arg0;
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!ml", name = "a", descriptor = "(ILclient!wa;B)V")
 	private void method3084(@OriginalArg(0) int arg0, @OriginalArg(1) Packet arg1) {
 		if (arg0 == 1) {
 			this.anInt3957 = arg1.g1();

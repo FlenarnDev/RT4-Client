@@ -14,10 +14,7 @@ public final class Static81 {
 	@OriginalMember(owner = "com.jagex3.client.client!gg", name = "Z", descriptor = "I")
 	public static int anInt2222;
 
-	@OriginalMember(owner = "com.jagex3.client.client!gg", name = "ab", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_34;
-
-	@OriginalMember(owner = "com.jagex3.client.client!gg", name = "bb", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!gg", name = "bb", descriptor = "I")
 	public static int anInt2223;
 
     @OriginalMember(owner = "com.jagex3.client.client!gg", name = "W", descriptor = "Lclient!na;")
@@ -64,7 +61,7 @@ public final class Static81 {
 		if (local10 != null) {
 			return local10;
 		}
-		@Pc(21) byte[] local21 = Static216.aClass153_31.method4495(3, arg0);
+		@Pc(21) byte[] local21 = FluType.clientConfig.method4495(3, arg0);
 		local10 = new IdkType();
 		if (local21 != null) {
 			local10.method1209(new Packet(local21));
@@ -78,7 +75,7 @@ public final class Static81 {
 		if (!Static245.load(arg0)) {
 			return;
 		}
-		@Pc(15) IfType[] local15 = Static241.components[arg0];
+		@Pc(15) IfType[] local15 = IfType.list[arg0];
 		for (@Pc(17) int local17 = 0; local17 < local15.length; local17++) {
 			@Pc(29) IfType local29 = local15[local17];
 			if (local29 != null) {

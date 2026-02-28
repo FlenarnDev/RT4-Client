@@ -28,7 +28,7 @@ public final class Static71 {
 		if (local6 != null) {
 			return local6;
 		}
-		@Pc(25) byte[] local25 = Static167.aClass153_61.method4495(Static18.method554(arg0), Static247.method4247(arg0));
+		@Pc(25) byte[] local25 = ObjType.objConfig.method4495(Static18.method554(arg0), Static247.method4247(arg0));
 		local6 = new ObjType();
 		local6.anInt2354 = arg0;
 		if (local25 != null) {
@@ -41,12 +41,12 @@ public final class Static71 {
 		if (local6.anInt2334 != -1) {
 			local6.method1823(method1439(local6.anInt2363), method1439(local6.anInt2334));
 		}
-		if (!Static240.aBoolean276 && local6.aBoolean131) {
+		if (!ObjType.aBoolean276 && local6.aBoolean131) {
 			local6.aClass100_495 = LocalizedText.MEMBERS_OBJECT;
 			local6.anInt2351 = 0;
-			local6.aClass100Array71 = Static143.aClass100Array104;
+			local6.aClass100Array71 = ObjType.aClass100Array104;
 			local6.aBoolean132 = false;
-			local6.aClass100Array72 = Static269.aClass100Array87;
+			local6.aClass100Array72 = ObjType.aClass100Array87;
 		}
 		Static27.aClass99_4.method3095(local6, (long) arg0);
 		return local6;

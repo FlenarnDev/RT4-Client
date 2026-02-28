@@ -12,18 +12,10 @@ public final class Static85 {
 	@OriginalMember(owner = "com.jagex3.client.client!gl", name = "d", descriptor = "I")
 	public static int anInt2261;
 
-	@OriginalMember(owner = "com.jagex3.client.client!gl", name = "e", descriptor = "I")
-	public static int anInt2262;
-
-	@OriginalMember(owner = "com.jagex3.client.client!gl", name = "f", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!gl", name = "f", descriptor = "I")
 	public static int anInt2263;
 
-	@OriginalMember(owner = "com.jagex3.client.client!gl", name = "a", descriptor = "(Lclient!ve;I)V")
-	public static void method1774(@OriginalArg(0) Js5 arg0) {
-		Static84.aClass153_35 = arg0;
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!gl", name = "a", descriptor = "(II)V")
+    @OriginalMember(owner = "com.jagex3.client.client!gl", name = "a", descriptor = "(II)V")
 	public static void method1775(@OriginalArg(1) int arg0) {
 		Static103.method2245();
 		Static119.method2386();

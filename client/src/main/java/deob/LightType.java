@@ -20,7 +20,12 @@ public final class LightType {
 	@OriginalMember(owner = "com.jagex3.client.client!ic", name = "p", descriptor = "I")
 	public int anInt2873 = 2048;
 
-	@OriginalMember(owner = "com.jagex3.client.client!ic", name = "a", descriptor = "(ILclient!wa;I)V")
+    @OriginalMember(owner = "com.jagex3.client.client!id", name = "a", descriptor = "(Lclient!ve;B)V")
+    public static void init(@OriginalArg(0) Js5 arg0) {
+        Static85.aClass153_36 = arg0;
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!ic", name = "a", descriptor = "(ILclient!wa;I)V")
 	public final void method2257(@OriginalArg(1) Packet arg0, @OriginalArg(2) int arg1) {
 		while (true) {
 			@Pc(5) int local5 = arg0.g1();

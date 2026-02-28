@@ -802,7 +802,7 @@ public final class Static103 {
 			@Pc(14) int local14 = local6.anInt5878;
 			if (Static245.load(local14)) {
 				@Pc(21) boolean local21 = true;
-				@Pc(25) IfType[] local25 = Static241.components[local14];
+				@Pc(25) IfType[] local25 = IfType.list[local14];
 				@Pc(27) int local27;
 				for (local27 = 0; local27 < local25.length; local27++) {
 					if (local25[local27] != null) {

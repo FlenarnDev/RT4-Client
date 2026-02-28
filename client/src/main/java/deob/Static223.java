@@ -7,10 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static223 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!sc", name = "m", descriptor = "[Z")
-	public static boolean[] aBooleanArray115;
-
-	@OriginalMember(owner = "com.jagex3.client.client!sc", name = "f", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!sc", name = "f", descriptor = "Lclient!na;")
 	public static final JagString aClass100_946 = Static28.parse("(R");
 
 	@OriginalMember(owner = "com.jagex3.client.client!sc", name = "g", descriptor = "Lclient!na;")

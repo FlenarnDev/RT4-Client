@@ -8,7 +8,11 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("com.jagex3.client.client!wl")
 public final class FloType {
 
-	@OriginalMember(owner = "com.jagex3.client.client!wl", name = "j", descriptor = "Z")
+    @OriginalMember(owner = "com.jagex3.client.client!cl", name = "J", descriptor = "Lclient!ve;")
+    public static Js5 clientConfig;
+    @OriginalMember(owner = "com.jagex3.client.client!hj", name = "a", descriptor = "I")
+    public static int anInt2510;
+    @OriginalMember(owner = "com.jagex3.client.client!wl", name = "j", descriptor = "Z")
 	public boolean aBoolean310 = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!wl", name = "l", descriptor = "Z")
@@ -38,7 +42,13 @@ public final class FloType {
 	@OriginalMember(owner = "com.jagex3.client.client!wl", name = "m", descriptor = "I")
 	public int anInt5889 = 1190717;
 
-	@OriginalMember(owner = "com.jagex3.client.client!wl", name = "a", descriptor = "(ILclient!wa;I)V")
+    @OriginalMember(owner = "com.jagex3.client.client!qc", name = "a", descriptor = "(ZLclient!ve;)V")
+    public static void init(@OriginalArg(1) Js5 arg0) {
+        clientConfig = arg0;
+        anInt2510 = clientConfig.getFileIdLimit(4);
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!wl", name = "a", descriptor = "(ILclient!wa;I)V")
 	public final void method4669(@OriginalArg(1) Packet arg0, @OriginalArg(2) int arg1) {
 		while (true) {
 			@Pc(5) int local5 = arg0.g1();

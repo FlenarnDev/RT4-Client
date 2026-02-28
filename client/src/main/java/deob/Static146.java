@@ -9,10 +9,7 @@ public final class Static146 {
 	@OriginalMember(owner = "com.jagex3.client.client!lg", name = "d", descriptor = "F")
 	public static float aFloat15;
 
-	@OriginalMember(owner = "com.jagex3.client.client!lg", name = "g", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_54;
-
-	@OriginalMember(owner = "com.jagex3.client.client!lg", name = "b", descriptor = "Z")
+    @OriginalMember(owner = "com.jagex3.client.client!lg", name = "b", descriptor = "Z")
 	public static boolean aBoolean174 = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!lg", name = "c", descriptor = "[Lclient!tk;")

@@ -10,10 +10,7 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static230 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!sj", name = "r", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_95;
-
-	@OriginalMember(owner = "com.jagex3.client.client!sj", name = "D", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!sj", name = "D", descriptor = "I")
 	public static int anInt5158;
 
 	@OriginalMember(owner = "com.jagex3.client.client!sj", name = "p", descriptor = "I")
@@ -107,13 +104,7 @@ public final class Static230 {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!sj", name = "a", descriptor = "(Lclient!ve;B)V")
-	public static void method3951(@OriginalArg(0) Js5 arg0) {
-		Static81.aClass153_34 = arg0;
-		Static165.anInt4043 = Static81.aClass153_34.method4504(16);
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!sj", name = "a", descriptor = "(Ljava/lang/String;I)Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!sj", name = "a", descriptor = "(Ljava/lang/String;I)Lclient!na;")
 	public static JagString method3952(@OriginalArg(0) String arg0) {
 		@Pc(14) byte[] local14;
 		try {

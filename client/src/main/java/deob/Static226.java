@@ -55,12 +55,7 @@ public final class Static226 {
 		arg0.anInt923 = local31;
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!sf", name = "a", descriptor = "(BLclient!ve;)V")
-	public static void method3899(@OriginalArg(1) Js5 arg0) {
-		Static39.aClass153_23 = arg0;
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!sf", name = "b", descriptor = "(B)V")
+    @OriginalMember(owner = "com.jagex3.client.client!sf", name = "b", descriptor = "(B)V")
 	public static void method3901() {
 		@Pc(16) int local16 = Static280.aClass3_Sub2_Sub9_43.method2858(LocalizedText.CHOOSE_OPTION);
 		@Pc(18) int local18;

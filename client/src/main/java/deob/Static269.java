@@ -12,10 +12,7 @@ public final class Static269 {
 	@OriginalMember(owner = "com.jagex3.client.client!wa", name = "ub", descriptor = "Lclient!bn;")
 	public static Map aClass3_Sub2_Sub4_2;
 
-	@OriginalMember(owner = "com.jagex3.client.client!wa", name = "X", descriptor = "[Lclient!na;")
-	public static JagString[] aClass100Array87 = null;
-
-	@OriginalMember(owner = "com.jagex3.client.client!wa", name = "pb", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!wa", name = "pb", descriptor = "Lclient!na;")
 	public static final JagString aClass100_556 = Static28.parse("<br>");
 
     @OriginalMember(owner = "com.jagex3.client.client!wa", name = "a", descriptor = "(Z)V")

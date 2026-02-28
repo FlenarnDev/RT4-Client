@@ -7,16 +7,10 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static243 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "j", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_97;
-
-	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "o", descriptor = "Lclient!ok;")
+    @OriginalMember(owner = "com.jagex3.client.client!tk", name = "o", descriptor = "Lclient!ok;")
 	public static Pix8 aClass36_1;
 
-	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "s", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_98;
-
-	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "D", descriptor = "[Lclient!ec;")
+    @OriginalMember(owner = "com.jagex3.client.client!tk", name = "D", descriptor = "[Lclient!ec;")
 	public static Sprite[] aClass31Array3;
 
 	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "c", descriptor = "J")

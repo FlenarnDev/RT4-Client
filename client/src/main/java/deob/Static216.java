@@ -5,10 +5,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static216 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!ri", name = "c", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_31;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ri", name = "d", descriptor = "[I")
+    @OriginalMember(owner = "com.jagex3.client.client!ri", name = "d", descriptor = "[I")
 	public static int[] anIntArray188;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ri", name = "b", descriptor = "[I")

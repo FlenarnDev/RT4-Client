@@ -10,12 +10,9 @@ public final class Static23 {
 	public static float aFloat5;
 
 	@OriginalMember(owner = "com.jagex3.client.client!bm", name = "e", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_11;
+	public static Js5 clientConfig;
 
-	@OriginalMember(owner = "com.jagex3.client.client!bm", name = "f", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_12;
-
-	@OriginalMember(owner = "com.jagex3.client.client!bm", name = "p", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!bm", name = "p", descriptor = "Lclient!na;")
 	public static final JagString aClass100_133 = Static28.parse("(U1");
 
 	@OriginalMember(owner = "com.jagex3.client.client!bm", name = "a", descriptor = "(IBIIII)V")

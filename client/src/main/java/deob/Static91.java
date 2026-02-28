@@ -100,12 +100,7 @@ public final class Static91 {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!hc", name = "a", descriptor = "(Lclient!ve;I)V")
-	public static void method1878(@OriginalArg(0) Js5 arg0) {
-		Static182.aClass153_77 = arg0;
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!hc", name = "a", descriptor = "(Lclient!na;Z)I")
+    @OriginalMember(owner = "com.jagex3.client.client!hc", name = "a", descriptor = "(Lclient!na;Z)I")
 	public static int method1879(@OriginalArg(0) JagString arg0) {
 		if (Static203.aMapElementList_1 == null || arg0.length() == 0) {
 			return -1;

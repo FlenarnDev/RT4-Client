@@ -11,7 +11,12 @@ public final class StructType extends DoubleLinkable {
 	@OriginalMember(owner = "com.jagex3.client.client!lk", name = "I", descriptor = "Lclient!sc;")
 	private HashTable aClass133_14;
 
-	@OriginalMember(owner = "com.jagex3.client.client!lk", name = "a", descriptor = "(IIB)I")
+    @OriginalMember(owner = "com.jagex3.client.client!eh", name = "a", descriptor = "(Lclient!ve;I)V")
+    public static void init(@OriginalArg(0) Js5 arg0) {
+        Static23.clientConfig = arg0;
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!lk", name = "a", descriptor = "(IIB)I")
 	public final int method2798(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		if (this.aClass133_14 == null) {
 			return arg1;

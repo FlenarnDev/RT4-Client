@@ -11,10 +11,7 @@ public final class Static202 {
 	@OriginalMember(owner = "com.jagex3.client.client!qg", name = "R", descriptor = "I")
 	public static int anInt4741;
 
-	@OriginalMember(owner = "com.jagex3.client.client!qg", name = "ab", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_84;
-
-	@OriginalMember(owner = "com.jagex3.client.client!qg", name = "U", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!qg", name = "U", descriptor = "Lclient!na;")
 	public static final JagString aClass100_891 = Static28.parse("");
 
 	@OriginalMember(owner = "com.jagex3.client.client!qg", name = "W", descriptor = "Z")
@@ -138,7 +135,7 @@ public final class Static202 {
 		if (local10 != null) {
 			return local10;
 		}
-		@Pc(20) byte[] local20 = Static153.aClass153_57.method4495(33, arg0);
+		@Pc(20) byte[] local20 = CursorType.aClass153_57.method4495(33, arg0);
 		local10 = new CursorType();
 		if (local20 != null) {
 			local10.method2249(new Packet(local20), arg0);

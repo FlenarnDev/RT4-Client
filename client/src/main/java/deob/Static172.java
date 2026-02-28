@@ -6,10 +6,7 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static172 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "c", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_69;
-
-	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "e", descriptor = "Lclient!va;")
+    @OriginalMember(owner = "com.jagex3.client.client!nj", name = "e", descriptor = "Lclient!va;")
 	public static MidiPlayer aClass3_Sub3_Sub4_2;
 
 	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "f", descriptor = "Lclient!en;")

@@ -23,7 +23,20 @@ public final class QuickChatPhraseType extends DoubleLinkable {
 	@OriginalMember(owner = "com.jagex3.client.client!cb", name = "O", descriptor = "Z")
 	public boolean aBoolean60 = true;
 
-	@OriginalMember(owner = "com.jagex3.client.client!cb", name = "a", descriptor = "(Lclient!wa;[IZ)V")
+    @OriginalMember(owner = "com.jagex3.client.client!ej", name = "a", descriptor = "(Lclient!ve;ILclient!ve;Lclient!of;)V")
+    public static void init(@OriginalArg(0) Js5 arg0, @OriginalArg(2) Js5 arg1, @OriginalArg(3) QuickChatCommandDecoder arg2) {
+        Static262.aClass153_108 = arg0;
+        Static107.anInterface3_1 = arg2;
+        Static238.aClass153_96 = arg1;
+        if (Static238.aClass153_96 != null) {
+            Static144.anInt3490 = Static238.aClass153_96.getFileIdLimit(1);
+        }
+        if (Static262.aClass153_108 != null) {
+            Static34.anInt1047 = Static262.aClass153_108.getFileIdLimit(1);
+        }
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!cb", name = "a", descriptor = "(Lclient!wa;[IZ)V")
 	public final void method760(@OriginalArg(0) Packet arg0, @OriginalArg(1) int[] arg1) {
 		if (this.anIntArray71 == null) {
 			return;

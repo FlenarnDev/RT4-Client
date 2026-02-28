@@ -27,22 +27,22 @@ public final class Static245 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!tm", name = "b", descriptor = "(II)Z")
 	public static boolean load(@OriginalArg(0) int arg0) {
-		if (Static223.aBooleanArray115[arg0]) {
+		if (IfType.open[arg0]) {
 			return true;
-		} else if (Static202.aClass153_84.method4479(arg0)) {
-			@Pc(25) int local25 = Static202.aClass153_84.method4504(arg0);
+		} else if (IfType.interfaces.method4479(arg0)) {
+			@Pc(25) int local25 = IfType.interfaces.getFileIdLimit(arg0);
 			if (local25 == 0) {
-				Static223.aBooleanArray115[arg0] = true;
+				IfType.open[arg0] = true;
 				return true;
 			}
-			if (Static241.components[arg0] == null) {
-				Static241.components[arg0] = new IfType[local25];
+			if (IfType.list[arg0] == null) {
+				IfType.list[arg0] = new IfType[local25];
 			}
 			for (@Pc(46) int local46 = 0; local46 < local25; local46++) {
-				if (Static241.components[arg0][local46] == null) {
-					@Pc(62) byte[] local62 = Static202.aClass153_84.method4495(arg0, local46);
+				if (IfType.list[arg0][local46] == null) {
+					@Pc(62) byte[] local62 = IfType.interfaces.method4495(arg0, local46);
 					if (local62 != null) {
-						@Pc(74) IfType local74 = Static241.components[arg0][local46] = new IfType();
+						@Pc(74) IfType local74 = IfType.list[arg0][local46] = new IfType();
 						local74.anInt507 = local46 + (arg0 << 16);
 						if (local62[0] == -1) {
 							local74.method490(new Packet(local62));
@@ -52,7 +52,7 @@ public final class Static245 {
 					}
 				}
 			}
-			Static223.aBooleanArray115[arg0] = true;
+			IfType.open[arg0] = true;
 			return true;
 		} else {
 			return false;

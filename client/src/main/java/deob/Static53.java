@@ -6,10 +6,7 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static53 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!ec", name = "z", descriptor = "I")
-	public static int anInt1716;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ec", name = "d", descriptor = "Lclient!gn;")
+    @OriginalMember(owner = "com.jagex3.client.client!ec", name = "d", descriptor = "Lclient!gn;")
 	public static final LruCache aClass54_5 = new LruCache(16);
 
 	@OriginalMember(owner = "com.jagex3.client.client!ec", name = "l", descriptor = "I")

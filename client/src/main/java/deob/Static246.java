@@ -16,13 +16,7 @@ public final class Static246 {
 	@OriginalMember(owner = "com.jagex3.client.client!u", name = "g", descriptor = "Lclient!na;")
 	public static final JagString aClass100_1029 = Static28.parse("cookiehost");
 
-	@OriginalMember(owner = "com.jagex3.client.client!u", name = "a", descriptor = "(BLclient!ve;Lclient!ve;)V")
-	public static void method4237(@OriginalArg(1) Js5 arg0, @OriginalArg(2) Js5 arg1) {
-		Static153.aClass153_57 = arg0;
-		Static243.aClass153_97 = arg1;
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!u", name = "a", descriptor = "(Z)V")
+    @OriginalMember(owner = "com.jagex3.client.client!u", name = "a", descriptor = "(Z)V")
 	public static void method4239() {
 		for (@Pc(9) MapSpotAnimNode local9 = (MapSpotAnimNode) Static99.aClass69_64.method2289(); local9 != null; local9 = (MapSpotAnimNode) Static99.aClass69_64.method2288()) {
 			@Pc(15) MapSpotAnim local15 = local9.aClass8_Sub2_1;
@@ -138,7 +132,7 @@ public final class Static246 {
 		if (local16 != null) {
 			return local16;
 		}
-		@Pc(27) byte[] local27 = Static9.aClass153_2.method4495(5, arg0);
+		@Pc(27) byte[] local27 = Static9.clientConfig.method4495(5, arg0);
 		local16 = new InvType();
 		if (local27 != null) {
 			local16.method2927(new Packet(local27));

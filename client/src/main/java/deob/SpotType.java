@@ -8,7 +8,11 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("com.jagex3.client.client!eg")
 public final class SpotType {
 
-	@OriginalMember(owner = "com.jagex3.client.client!eg", name = "f", descriptor = "[S")
+    @OriginalMember(owner = "com.jagex3.client.client!he", name = "cb", descriptor = "Lclient!ve;")
+    public static Js5 models;
+    @OriginalMember(owner = "com.jagex3.client.client!ke", name = "R", descriptor = "Lclient!ve;")
+    public static Js5 spotConfig;
+    @OriginalMember(owner = "com.jagex3.client.client!eg", name = "f", descriptor = "[S")
 	private short[] aShortArray15;
 
 	@OriginalMember(owner = "com.jagex3.client.client!eg", name = "g", descriptor = "[S")
@@ -47,7 +51,13 @@ public final class SpotType {
 	@OriginalMember(owner = "com.jagex3.client.client!eg", name = "q", descriptor = "I")
 	private int anInt1755 = 0;
 
-	@OriginalMember(owner = "com.jagex3.client.client!eg", name = "a", descriptor = "(Lclient!wa;B)V")
+    @OriginalMember(owner = "com.jagex3.client.client!vk", name = "a", descriptor = "(Lclient!ve;Lclient!ve;I)V")
+	public static void init(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Js5 arg1) {
+		models = arg0;
+		spotConfig = arg1;
+	}
+
+    @OriginalMember(owner = "com.jagex3.client.client!eg", name = "a", descriptor = "(Lclient!wa;B)V")
 	public final void method1316(@OriginalArg(0) Packet arg0) {
 		while (true) {
 			@Pc(17) int local17 = arg0.g1();
@@ -103,7 +113,7 @@ public final class SpotType {
 	public final ModelLit method1319(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
 		@Pc(13) ModelLit local13 = (ModelLit) Static56.aClass99_9.method3106((long) this.anInt1751);
 		if (local13 == null) {
-			@Pc(28) ModelUnlit local28 = Static77.method1686(Static93.aClass153_41, this.anInt1753);
+			@Pc(28) ModelUnlit local28 = Static77.method1686(models, this.anInt1753);
 			if (local28 == null) {
 				return null;
 			}

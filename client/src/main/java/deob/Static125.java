@@ -25,14 +25,7 @@ public final class Static125 {
 	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "J", descriptor = "I")
 	public static int anInt3104 = 127;
 
-	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "a", descriptor = "(ILclient!ve;Lclient!ve;)V")
-	public static void method2446(@OriginalArg(1) Js5 arg0, @OriginalArg(2) Js5 arg1) {
-		Static14.aClass153_8 = arg0;
-		Static216.aClass153_31 = arg1;
-		Static53.anInt1716 = Static216.aClass153_31.method4504(3);
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "a", descriptor = "(IIIII)V")
+    @OriginalMember(owner = "com.jagex3.client.client!jl", name = "a", descriptor = "(IIIII)V")
 	public static void method2448(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		Client.out.pos = 0;
 		Client.out.p1(147);
@@ -52,7 +45,7 @@ public final class Static125 {
 		if (local10 != null) {
 			return local10;
 		}
-		@Pc(31) byte[] local31 = Static172.aClass153_69.method4495(Static254.method4349(arg0), Static274.method3845(arg0));
+		@Pc(31) byte[] local31 = VarBitType.varbitConfig.method4495(Static254.method4349(arg0), Static274.method3845(arg0));
 		local10 = new VarBitType();
 		if (local31 != null) {
 			local10.method2651(new Packet(local31));

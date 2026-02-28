@@ -242,7 +242,7 @@ public final class Static164 {
 			local133 = local71;
 		}
 		if (arg3 && (local5.anInt2336 == 1 || arg5 != 1) && arg5 != -1) {
-			Static256.aClass3_Sub2_Sub9_Sub1_1.method2857(Static52.method1288(arg5), 0, 9, 16776960, 1);
+			ObjType.aClass3_Sub2_Sub9_Sub1_1.method2857(Static52.method1288(arg5), 0, 9, 16776960, 1);
 		}
 		Static129.method2491(local118, local120, local122);
 		Static129.method2488(local125);

@@ -139,7 +139,7 @@ public final class Static234 {
 	@OriginalMember(owner = "com.jagex3.client.client!ta", name = "a", descriptor = "(IZIII)V")
 	public static void method4017(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		if (Static245.load(arg2)) {
-			Static266.method4190(-1, arg1, arg3, arg0, Static241.components[arg2]);
+			Static266.method4190(-1, arg1, arg3, arg0, IfType.list[arg2]);
 		}
 	}
 

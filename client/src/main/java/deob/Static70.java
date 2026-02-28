@@ -47,7 +47,7 @@ public final class Static70 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!fi", name = "a", descriptor = "(III)V")
 	public static void method1549(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		for (@Pc(11) int local11 = 0; local11 < Static98.anInt2510; local11++) {
+		for (@Pc(11) int local11 = 0; local11 < FloType.anInt2510; local11++) {
 			@Pc(18) FloType local18 = Static256.method4395(local11);
 			if (local18 != null) {
 				@Pc(24) int local24 = local18.anInt5892;

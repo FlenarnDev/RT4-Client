@@ -72,10 +72,4 @@ public final class Static181 {
 		Static110.aClass99_15.method3104();
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!oi", name = "a", descriptor = "(ILclient!ve;Lclient!ve;Z)V")
-	public static void method3349(@OriginalArg(1) Js5 arg0, @OriginalArg(2) Js5 arg1) {
-		Static30.aBoolean61 = true;
-		Static121.aClass153_45 = arg1;
-		Static146.aClass153_54 = arg0;
-	}
 }

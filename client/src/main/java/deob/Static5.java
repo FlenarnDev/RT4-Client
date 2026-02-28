@@ -7,10 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static5 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!af", name = "a", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_1;
-
-	@OriginalMember(owner = "com.jagex3.client.client!af", name = "d", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!af", name = "d", descriptor = "I")
 	public static int anInt40;
 
 	@OriginalMember(owner = "com.jagex3.client.client!af", name = "c", descriptor = "I")
@@ -37,17 +34,17 @@ public final class Static5 {
 	public static IfType getComponent(@OriginalArg(1) int id) {
 		@Pc(7) int interfaceId = id >> 16;
 		@Pc(18) int componentId = id & 0xFFFF;
-		if (Static241.components[interfaceId] == null || Static241.components[interfaceId][componentId] == null) {
+		if (IfType.list[interfaceId] == null || IfType.list[interfaceId][componentId] == null) {
 			@Pc(33) boolean success = Static245.load(interfaceId);
 			if (!success) {
 				return null;
 			}
 			// todo: this should not be necessary, data/server-related?
-			if (Static241.components.length <= interfaceId || Static241.components[interfaceId].length <= componentId) {
+			if (IfType.list.length <= interfaceId || IfType.list[interfaceId].length <= componentId) {
 				return null;
 			}
 		}
-		return Static241.components[interfaceId][componentId];
+		return IfType.list[interfaceId][componentId];
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!af", name = "b", descriptor = "(B)V")

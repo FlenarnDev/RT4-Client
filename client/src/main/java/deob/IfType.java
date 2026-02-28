@@ -8,7 +8,19 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("com.jagex3.client.client!be")
 public final class IfType {
 
-	@OriginalMember(owner = "com.jagex3.client.client!be", name = "b", descriptor = "[Ljava/lang/Object;")
+    @OriginalMember(owner = "com.jagex3.client.client!bm", name = "f", descriptor = "Lclient!ve;")
+    public static Js5 sprites;
+    @OriginalMember(owner = "com.jagex3.client.client!nd", name = "v", descriptor = "Lclient!ve;")
+	public static Js5 fontMetrics;
+    @OriginalMember(owner = "com.jagex3.client.client!qg", name = "ab", descriptor = "Lclient!ve;")
+    public static Js5 interfaces;
+    @OriginalMember(owner = "com.jagex3.client.client!qh", name = "g", descriptor = "Lclient!ve;")
+    public static Js5 models;
+    @OriginalMember(owner = "com.jagex3.client.client!th", name = "j", descriptor = "[[Lclient!be;")
+    public static IfType[][] list;
+    @OriginalMember(owner = "com.jagex3.client.client!sc", name = "m", descriptor = "[Z")
+    public static boolean[] open;
+    @OriginalMember(owner = "com.jagex3.client.client!be", name = "b", descriptor = "[Ljava/lang/Object;")
 	public Object[] anObjectArray1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "d", descriptor = "[Ljava/lang/Object;")
@@ -479,7 +491,18 @@ public final class IfType {
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "xd", descriptor = "I")
 	public int anInt530 = 0;
 
-	@OriginalMember(owner = "com.jagex3.client.client!be", name = "a", descriptor = "(IIB)V")
+    @OriginalMember(owner = "com.jagex3.client.client!ab", name = "a", descriptor = "(ZLclient!ve;Lclient!ve;Lclient!ve;Lclient!ve;)V")
+    public static void init(@OriginalArg(1) Js5 fontMetrics, @OriginalArg(2) Js5 sprites, @OriginalArg(3) Js5 interfaces, @OriginalArg(4) Js5 models) {
+        IfType.sprites = sprites;
+        IfType.fontMetrics = fontMetrics;
+        IfType.interfaces = interfaces;
+        IfType.models = models;
+
+        list = new IfType[IfType.interfaces.getGroupCount()][];
+        open = new boolean[IfType.interfaces.getGroupCount()];
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!be", name = "a", descriptor = "(IIB)V")
 	public final void method477(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		if (this.anIntArray39 == null || this.anIntArray39.length <= arg0) {
 			@Pc(18) int[] local18 = new int[arg0 + 1];
@@ -502,7 +525,7 @@ public final class IfType {
 		if (this.anIntArray37 != null) {
 			return true;
 		}
-		@Pc(18) SoftwarePix8 local18 = Static164.method3119(this.anInt477, Static23.aClass153_12);
+		@Pc(18) SoftwarePix8 local18 = Static164.method3119(this.anInt477, sprites);
 		if (local18 == null) {
 			return false;
 		}
@@ -780,7 +803,7 @@ public final class IfType {
 		if (local43 != null) {
 			return local43;
 		}
-		local43 = Static150.method2800(local29, Static23.aClass153_12);
+		local43 = Static150.method2800(local29, sprites);
 		if (local43 == null) {
 			Static211.aBoolean72 = true;
 		} else {
@@ -852,7 +875,7 @@ public final class IfType {
 			if (local10 == 1) {
 				local61 = (ModelLit) Static124.aClass99_17.method3106((long) ((local10 << 16) + local13));
 				if (local61 == null) {
-					@Pc(69) ModelUnlit local69 = Static77.method1686(Static203.aClass153_85, local13);
+					@Pc(69) ModelUnlit local69 = Static77.method1686(models, local13);
 					if (local69 == null) {
 						Static211.aBoolean72 = true;
 						return null;
@@ -938,9 +961,9 @@ public final class IfType {
 		}
 		@Pc(85) Pix32 local85;
 		if (this.aBoolean18) {
-			local85 = Static80.method3613(Static23.aClass153_12, local12);
+			local85 = Static80.method3613(sprites, local12);
 		} else {
-			local85 = Static78.method1693(0, Static23.aClass153_12, local12);
+			local85 = Static78.method1693(0, sprites, local12);
 		}
 		if (local85 == null) {
 			Static211.aBoolean72 = true;
@@ -1168,7 +1191,7 @@ public final class IfType {
 		if (local21 != null) {
 			return local21;
 		}
-		local21 = Static127.method2462(this.anInt502, Static23.aClass153_12, Static167.aClass153_64);
+		local21 = Static127.method2462(this.anInt502, sprites, fontMetrics);
 		if (local21 == null) {
 			Static211.aBoolean72 = true;
 		} else {

@@ -22,10 +22,7 @@ public final class Static203 {
 	@OriginalMember(owner = "com.jagex3.client.client!qh", name = "e", descriptor = "[Lclient!ee;")
 	public static WorldInfo[] aWorldInfoArray1;
 
-	@OriginalMember(owner = "com.jagex3.client.client!qh", name = "g", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_85;
-
-	@OriginalMember(owner = "com.jagex3.client.client!qh", name = "c", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!qh", name = "c", descriptor = "Lclient!na;")
 	public static final JagString aClass100_893 = Static28.parse("Memory before cleanup=");
 
 	@OriginalMember(owner = "com.jagex3.client.client!qh", name = "i", descriptor = "Lclient!na;")

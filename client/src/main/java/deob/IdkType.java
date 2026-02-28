@@ -38,7 +38,7 @@ public final class IdkType {
 		@Pc(16) ModelUnlit[] local16 = new ModelUnlit[5];
 		for (@Pc(18) int local18 = 0; local18 < 5; local18++) {
 			if (this.anIntArray113[local18] != -1) {
-				local16[local13++] = Static77.method1686(Static14.aClass153_8, this.anIntArray113[local18]);
+				local16[local13++] = Static77.method1686(FluType.aClass153_8, this.anIntArray113[local18]);
 			}
 		}
 		@Pc(52) ModelUnlit local52 = new ModelUnlit(local16, local13);
@@ -63,7 +63,7 @@ public final class IdkType {
 		}
 		@Pc(13) boolean local13 = true;
 		for (@Pc(22) int local22 = 0; local22 < this.anIntArray112.length; local22++) {
-			if (!Static14.aClass153_8.method4491(0, this.anIntArray112[local22])) {
+			if (!FluType.aClass153_8.method4491(0, this.anIntArray112[local22])) {
 				local13 = false;
 			}
 		}
@@ -114,7 +114,7 @@ public final class IdkType {
 		}
 		@Pc(16) ModelUnlit[] local16 = new ModelUnlit[this.anIntArray112.length];
 		for (@Pc(18) int local18 = 0; local18 < this.anIntArray112.length; local18++) {
-			local16[local18] = Static77.method1686(Static14.aClass153_8, this.anIntArray112[local18]);
+			local16[local18] = Static77.method1686(FluType.aClass153_8, this.anIntArray112[local18]);
 		}
 		@Pc(56) ModelUnlit local56;
 		if (local16.length == 1) {
@@ -140,7 +140,7 @@ public final class IdkType {
 	public final boolean method1205() {
 		@Pc(3) boolean local3 = true;
 		for (@Pc(12) int local12 = 0; local12 < 5; local12++) {
-			if (this.anIntArray113[local12] != -1 && !Static14.aClass153_8.method4491(0, this.anIntArray113[local12])) {
+			if (this.anIntArray113[local12] != -1 && !FluType.aClass153_8.method4491(0, this.anIntArray113[local12])) {
 				local3 = false;
 			}
 		}

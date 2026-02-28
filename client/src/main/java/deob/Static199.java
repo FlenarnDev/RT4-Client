@@ -27,7 +27,7 @@ public final class Static199 {
 		if (local10 != null) {
 			return local10;
 		}
-		@Pc(27) byte[] local27 = Static182.aClass153_77.method4495(1, arg0);
+		@Pc(27) byte[] local27 = FluType.configClient.method4495(1, arg0);
 		local10 = new FluType();
 		if (local27 != null) {
 			local10.method3217(arg0, new Packet(local27));
@@ -41,9 +41,4 @@ public final class Static199 {
 		return arg0 >> 11 & 0x7F;
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!qc", name = "a", descriptor = "(ZLclient!ve;)V")
-	public static void method3595(@OriginalArg(1) Js5 arg0) {
-		Static35.aClass153_22 = arg0;
-		Static98.anInt2510 = Static35.aClass153_22.method4504(4);
-	}
 }

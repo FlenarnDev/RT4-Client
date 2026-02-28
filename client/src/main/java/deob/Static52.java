@@ -36,8 +36,8 @@ public final class Static52 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!eb", name = "d", descriptor = "(I)V")
 	public static void method1287() {
-		Static241.components = new IfType[Static202.aClass153_84.method4483()][];
-		Static223.aBooleanArray115 = new boolean[Static202.aClass153_84.method4483()];
+		IfType.list = new IfType[IfType.interfaces.getGroupCount()][];
+		IfType.open = new boolean[IfType.interfaces.getGroupCount()];
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!eb", name = "b", descriptor = "(II)Lclient!na;")

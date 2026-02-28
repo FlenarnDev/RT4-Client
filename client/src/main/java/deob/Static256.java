@@ -6,10 +6,7 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static256 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!um", name = "U", descriptor = "Lclient!dd;")
-	public static PixFont aClass3_Sub2_Sub9_Sub1_1;
-
-	@OriginalMember(owner = "com.jagex3.client.client!um", name = "a", descriptor = "(Z)V")
+    @OriginalMember(owner = "com.jagex3.client.client!um", name = "a", descriptor = "(Z)V")
 	public static void method4392() {
 		Static11.anInt384 = 0;
 		@Pc(17) int local17 = Static225.originX + (Static173.self.anInt3412 >> 7);
@@ -100,7 +97,7 @@ public final class Static256 {
 		if (local6 != null) {
 			return local6;
 		}
-		@Pc(30) byte[] local30 = Static35.aClass153_22.method4495(4, arg0);
+		@Pc(30) byte[] local30 = FloType.clientConfig.method4495(4, arg0);
 		local6 = new FloType();
 		if (local30 != null) {
 			local6.method4669(new Packet(local30), arg0);

@@ -13,10 +13,7 @@ public final class Static153 {
 	@OriginalMember(owner = "com.jagex3.client.client!mc", name = "S", descriptor = "Lclient!mm;")
 	public static Pix32 aClass3_Sub2_Sub1_Sub1_2;
 
-	@OriginalMember(owner = "com.jagex3.client.client!mc", name = "Z", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_57;
-
-	@OriginalMember(owner = "com.jagex3.client.client!mc", name = "Y", descriptor = "[Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!mc", name = "Y", descriptor = "[Lclient!na;")
 	public static final JagString[] aClass100Array112 = new JagString[100];
 
 	@OriginalMember(owner = "com.jagex3.client.client!mc", name = "ab", descriptor = "[I")

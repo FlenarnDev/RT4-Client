@@ -52,9 +52,9 @@ public final class WaveCache {
 
 	@OriginalMember(owner = "com.jagex3.client.client!le", name = "a", descriptor = "(II[I)Lclient!kj;")
 	public final Wave method2738(@OriginalArg(0) int arg0, @OriginalArg(2) int[] arg1) {
-		if (this.aClass153_52.method4483() == 1) {
+		if (this.aClass153_52.getGroupCount() == 1) {
 			return this.method2737(arg1, 0, arg0);
-		} else if (this.aClass153_52.method4504(arg0) == 1) {
+		} else if (this.aClass153_52.getFileIdLimit(arg0) == 1) {
 			return this.method2737(arg1, arg0, 0);
 		} else {
 			throw new RuntimeException();
@@ -93,9 +93,9 @@ public final class WaveCache {
 
 	@OriginalMember(owner = "com.jagex3.client.client!le", name = "b", descriptor = "(II[I)Lclient!kj;")
 	public final Wave method2741(@OriginalArg(1) int arg0, @OriginalArg(2) int[] arg1) {
-		if (this.aClass153_53.method4483() == 1) {
+		if (this.aClass153_53.getGroupCount() == 1) {
 			return this.method2740(0, arg1, arg0);
-		} else if (this.aClass153_53.method4504(arg0) == 1) {
+		} else if (this.aClass153_53.getFileIdLimit(arg0) == 1) {
 			return this.method2740(arg0, arg1, 0);
 		} else {
 			throw new RuntimeException();

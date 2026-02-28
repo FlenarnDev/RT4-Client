@@ -14,10 +14,7 @@ public final class Static86 {
     @OriginalMember(owner = "com.jagex3.client.client!gm", name = "T", descriptor = "Lclient!k;")
 	public static Js5CacheQueue js5CacheQueue;
 
-	@OriginalMember(owner = "com.jagex3.client.client!gm", name = "ib", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_37;
-
-	@OriginalMember(owner = "com.jagex3.client.client!gm", name = "R", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!gm", name = "R", descriptor = "I")
 	public static int anInt2293 = (int) (Math.random() * 17.0D) - 8;
 
 	@OriginalMember(owner = "com.jagex3.client.client!gm", name = "W", descriptor = "Lclient!na;")

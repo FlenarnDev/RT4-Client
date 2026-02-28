@@ -8,7 +8,11 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("com.jagex3.client.client!me")
 public final class NpcType {
 
-	@OriginalMember(owner = "com.jagex3.client.client!me", name = "b", descriptor = "[S")
+    @OriginalMember(owner = "com.jagex3.client.client!eh", name = "f", descriptor = "Lclient!ve;")
+    public static Js5 clientConfig;
+    @OriginalMember(owner = "com.jagex3.client.client!gm", name = "ib", descriptor = "Lclient!ve;")
+    public static Js5 aClass153_37;
+    @OriginalMember(owner = "com.jagex3.client.client!me", name = "b", descriptor = "[S")
 	private short[] aShortArray37;
 
 	@OriginalMember(owner = "com.jagex3.client.client!me", name = "c", descriptor = "[B")
@@ -155,7 +159,13 @@ public final class NpcType {
 	@OriginalMember(owner = "com.jagex3.client.client!me", name = "ob", descriptor = "I")
 	public int anInt3752 = -1;
 
-	@OriginalMember(owner = "com.jagex3.client.client!me", name = "a", descriptor = "(B)Lclient!me;")
+    @OriginalMember(owner = "com.jagex3.client.client!h", name = "a", descriptor = "(Lclient!ve;Lclient!ve;Z)V")
+    public static void init(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Js5 arg1) {
+        aClass153_37 = arg0;
+        clientConfig = arg1;
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!me", name = "a", descriptor = "(B)Lclient!me;")
 	public final NpcType method2932() {
 		@Pc(5) int local5 = -1;
 		if (this.anInt3723 != -1) {
@@ -238,7 +248,7 @@ public final class NpcType {
 		if (local40 == null) {
 			local46 = false;
 			for (@Pc(48) int local48 = 0; local48 < this.anIntArray356.length; local48++) {
-				if (this.anIntArray356[local48] != -1 && !Static86.aClass153_37.method4491(0, this.anIntArray356[local48])) {
+				if (this.anIntArray356[local48] != -1 && !aClass153_37.method4491(0, this.anIntArray356[local48])) {
 					local46 = true;
 				}
 			}
@@ -248,7 +258,7 @@ public final class NpcType {
 			@Pc(84) ModelUnlit[] local84 = new ModelUnlit[this.anIntArray356.length];
 			for (@Pc(86) int local86 = 0; local86 < this.anIntArray356.length; local86++) {
 				if (this.anIntArray356[local86] != -1) {
-					local84[local86] = Static77.method1686(Static86.aClass153_37, this.anIntArray356[local86]);
+					local84[local86] = Static77.method1686(aClass153_37, this.anIntArray356[local86]);
 					if (this.anIntArrayArray29 != null && this.anIntArrayArray29[local86] != null && local84[local86] != null) {
 						local84[local86].method1672(this.anIntArrayArray29[local86][0], this.anIntArrayArray29[local86][1], this.anIntArrayArray29[local86][2]);
 					}
@@ -513,7 +523,7 @@ public final class NpcType {
 			if (local41 == null) {
 				@Pc(46) boolean local46 = false;
 				for (@Pc(48) int local48 = 0; local48 < this.anIntArray354.length; local48++) {
-					if (!Static86.aClass153_37.method4491(0, this.anIntArray354[local48])) {
+					if (!aClass153_37.method4491(0, this.anIntArray354[local48])) {
 						local46 = true;
 					}
 				}
@@ -522,7 +532,7 @@ public final class NpcType {
 				}
 				@Pc(82) ModelUnlit[] local82 = new ModelUnlit[this.anIntArray354.length];
 				for (@Pc(84) int local84 = 0; local84 < this.anIntArray354.length; local84++) {
-					local82[local84] = Static77.method1686(Static86.aClass153_37, this.anIntArray354[local84]);
+					local82[local84] = Static77.method1686(aClass153_37, this.anIntArray354[local84]);
 				}
 				@Pc(119) ModelUnlit local119;
 				if (local82.length == 1) {

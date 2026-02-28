@@ -77,7 +77,7 @@ public final class Static186 {
 				Static13.anInt435 = Static269.aClass3_Sub2_Sub4_2.anInt769 * 64 - Static158.anInt3846;
 			}
 			Static38.method965();
-			Static145.anIntArray330 = new int[Static98.anInt2510 + 1];
+			Static145.anIntArray330 = new int[FloType.anInt2510 + 1];
 			@Pc(235) int local235 = Static181.anInt4296 >> 6;
 			@Pc(239) int local239 = Static48.anInt1449 >> 6;
 			Static90.aByteArrayArrayArray8 = new byte[local239][local235][];

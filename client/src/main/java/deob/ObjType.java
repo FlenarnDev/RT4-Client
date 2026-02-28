@@ -10,8 +10,22 @@ public final class ObjType {
 
 	@OriginalMember(owner = "com.jagex3.client.client!h", name = "S", descriptor = "[I")
 	public static final int[] anIntArray213 = new int[99];
+    @OriginalMember(owner = "com.jagex3.client.client!tg", name = "f", descriptor = "Z")
+    public static boolean aBoolean276;
+    @OriginalMember(owner = "com.jagex3.client.client!sj", name = "r", descriptor = "Lclient!ve;")
+    public static Js5 aClass153_95;
+    @OriginalMember(owner = "com.jagex3.client.client!nd", name = "n", descriptor = "Lclient!ve;")
+    public static Js5 objConfig;
+    @OriginalMember(owner = "com.jagex3.client.client!nh", name = "eb", descriptor = "I")
+    public static int anInt3245;
+    @OriginalMember(owner = "com.jagex3.client.client!ld", name = "g", descriptor = "[Lclient!na;")
+    public static JagString[] aClass100Array104 = null;
+    @OriginalMember(owner = "com.jagex3.client.client!wa", name = "X", descriptor = "[Lclient!na;")
+    public static JagString[] aClass100Array87 = null;
+    @OriginalMember(owner = "com.jagex3.client.client!um", name = "U", descriptor = "Lclient!dd;")
+    public static PixFont aClass3_Sub2_Sub9_Sub1_1;
 
-	@OriginalMember(owner = "com.jagex3.client.client!h", name = "a", descriptor = "[S")
+    @OriginalMember(owner = "com.jagex3.client.client!h", name = "a", descriptor = "[S")
 	private short[] aShortArray31;
 
 	@OriginalMember(owner = "com.jagex3.client.client!h", name = "g", descriptor = "I")
@@ -183,7 +197,19 @@ public final class ObjType {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!h", name = "a", descriptor = "(ZZ)Z")
+    @OriginalMember(owner = "com.jagex3.client.client!th", name = "a", descriptor = "(ZBLclient!ve;Lclient!dd;Lclient!ve;)V")
+    public static void init(@OriginalArg(2) Js5 arg0, @OriginalArg(3) PixFont arg1, @OriginalArg(4) Js5 arg2) {
+        aBoolean276 = true;
+        aClass153_95 = arg2;
+        objConfig = arg0;
+        @Pc(23) int local23 = objConfig.getGroupCount() - 1;
+        anInt3245 = objConfig.getFileIdLimit(local23) + local23 * 256;
+        aClass100Array104 = new JagString[] { null, null, null, null, LocalizedText.DROP};
+        aClass100Array87 = new JagString[] { null, null, LocalizedText.TAKE, null, null };
+        aClass3_Sub2_Sub9_Sub1_1 = arg1;
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!h", name = "a", descriptor = "(ZZ)Z")
 	public final boolean method1816(@OriginalArg(0) boolean arg0) {
 		@Pc(6) int local6 = this.anInt2372;
 		@Pc(9) int local9 = this.anInt2364;
@@ -195,10 +221,10 @@ public final class ObjType {
 			return true;
 		}
 		@Pc(33) boolean local33 = true;
-		if (!Static230.aClass153_95.method4491(0, local6)) {
+		if (!aClass153_95.method4491(0, local6)) {
 			local33 = false;
 		}
-		if (local9 != -1 && !Static230.aClass153_95.method4491(0, local9)) {
+		if (local9 != -1 && !aClass153_95.method4491(0, local9)) {
 			local33 = false;
 		}
 		return local33;
@@ -244,13 +270,13 @@ public final class ObjType {
 			return true;
 		}
 		@Pc(41) boolean local41 = true;
-		if (!Static230.aClass153_95.method4491(0, local9)) {
+		if (!aClass153_95.method4491(0, local9)) {
 			local41 = false;
 		}
-		if (local6 != -1 && !Static230.aClass153_95.method4491(0, local6)) {
+		if (local6 != -1 && !aClass153_95.method4491(0, local6)) {
 			local41 = false;
 		}
-		if (local20 != -1 && !Static230.aClass153_95.method4491(0, local20)) {
+		if (local20 != -1 && !aClass153_95.method4491(0, local20)) {
 			local41 = false;
 		}
 		return local41;
@@ -316,7 +342,7 @@ public final class ObjType {
 		}
 		@Pc(76) ModelLit local76 = (ModelLit) Static244.aClass99_32.method3106((long) this.anInt2354);
 		if (local76 == null) {
-			@Pc(85) ModelUnlit local85 = Static77.method1686(Static230.aClass153_95, this.anInt2320);
+			@Pc(85) ModelUnlit local85 = Static77.method1686(aClass153_95, this.anInt2320);
 			if (local85 == null) {
 				return null;
 			}
@@ -541,9 +567,9 @@ public final class ObjType {
 		if (local17 == -1) {
 			return null;
 		}
-		@Pc(36) ModelUnlit local36 = Static77.method1686(Static230.aClass153_95, local17);
+		@Pc(36) ModelUnlit local36 = Static77.method1686(aClass153_95, local17);
 		if (local4 != -1) {
-			@Pc(44) ModelUnlit local44 = Static77.method1686(Static230.aClass153_95, local4);
+			@Pc(44) ModelUnlit local44 = Static77.method1686(aClass153_95, local4);
 			@Pc(55) ModelUnlit[] local55 = new ModelUnlit[] { local36, local44 };
 			local36 = new ModelUnlit(local55, 2);
 		}
@@ -574,14 +600,14 @@ public final class ObjType {
 		if (local4 == -1) {
 			return null;
 		}
-		@Pc(43) ModelUnlit local43 = Static77.method1686(Static230.aClass153_95, local4);
+		@Pc(43) ModelUnlit local43 = Static77.method1686(aClass153_95, local4);
 		if (local18 != -1) {
-			@Pc(54) ModelUnlit local54 = Static77.method1686(Static230.aClass153_95, local18);
+			@Pc(54) ModelUnlit local54 = Static77.method1686(aClass153_95, local18);
 			if (local21 == -1) {
 				@Pc(68) ModelUnlit[] local68 = new ModelUnlit[] { local43, local54 };
 				local43 = new ModelUnlit(local68, 2);
 			} else {
-				@Pc(81) ModelUnlit local81 = Static77.method1686(Static230.aClass153_95, local21);
+				@Pc(81) ModelUnlit local81 = Static77.method1686(aClass153_95, local21);
 				@Pc(96) ModelUnlit[] local96 = new ModelUnlit[] { local43, local54, local81 };
 				local43 = new ModelUnlit(local96, 3);
 			}
@@ -628,7 +654,7 @@ public final class ObjType {
 
 	@OriginalMember(owner = "com.jagex3.client.client!h", name = "d", descriptor = "(I)Lclient!w;")
 	public final SoftwareModelLit method1834() {
-		@Pc(11) ModelUnlit local11 = Static77.method1686(Static230.aClass153_95, this.anInt2320);
+		@Pc(11) ModelUnlit local11 = Static77.method1686(aClass153_95, this.anInt2320);
 		if (local11 == null) {
 			return null;
 		}

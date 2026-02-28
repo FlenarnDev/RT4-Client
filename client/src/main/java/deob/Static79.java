@@ -97,8 +97,4 @@ public final class Static79 {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!ge", name = "a", descriptor = "(BLclient!ve;)V")
-	public static void method1703(@OriginalArg(1) Js5 arg0) {
-		Static167.aClass153_62 = arg0;
-	}
 }

@@ -8,7 +8,11 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("com.jagex3.client.client!pb")
 public final class LocType {
 
-	@OriginalMember(owner = "com.jagex3.client.client!pb", name = "a", descriptor = "[S")
+    @OriginalMember(owner = "com.jagex3.client.client!jg", name = "j", descriptor = "Lclient!ve;")
+    public static Js5 models;
+    @OriginalMember(owner = "com.jagex3.client.client!lg", name = "g", descriptor = "Lclient!ve;")
+    public static Js5 locConfig;
+    @OriginalMember(owner = "com.jagex3.client.client!pb", name = "a", descriptor = "[S")
 	private short[] aShortArray60;
 
 	@OriginalMember(owner = "com.jagex3.client.client!pb", name = "b", descriptor = "[S")
@@ -185,12 +189,19 @@ public final class LocType {
 	@OriginalMember(owner = "com.jagex3.client.client!pb", name = "Ab", descriptor = "Z")
 	public boolean aBoolean220 = false;
 
-	@OriginalMember(owner = "com.jagex3.client.client!pb", name = "a", descriptor = "(II)Z")
+    @OriginalMember(owner = "com.jagex3.client.client!oi", name = "a", descriptor = "(ILclient!ve;Lclient!ve;Z)V")
+    public static void init(@OriginalArg(1) Js5 arg0, @OriginalArg(2) Js5 arg1) {
+        Static30.aBoolean61 = true;
+        models = arg1;
+        locConfig = arg0;
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!pb", name = "a", descriptor = "(II)Z")
 	public final boolean method3416(@OriginalArg(1) int arg0) {
 		if (this.anIntArray378 != null) {
 			for (@Pc(18) int local18 = 0; local18 < this.anIntArray378.length; local18++) {
 				if (arg0 == this.anIntArray378[local18]) {
-					return Static121.aClass153_45.method4491(0, this.anIntArray379[local18] & 0xFFFF);
+					return models.method4491(0, this.anIntArray379[local18] & 0xFFFF);
 				}
 			}
 			return true;
@@ -199,7 +210,7 @@ public final class LocType {
 		} else if (arg0 == 10) {
 			@Pc(71) boolean local71 = true;
 			for (@Pc(73) int local73 = 0; local73 < this.anIntArray379.length; local73++) {
-				local71 &= Static121.aClass153_45.method4491(0, this.anIntArray379[local73] & 0xFFFF);
+				local71 &= models.method4491(0, this.anIntArray379[local73] & 0xFFFF);
 			}
 			return local71;
 		} else {
@@ -247,7 +258,7 @@ public final class LocType {
 				}
 				local7 = (ModelUnlit) Static169.aClass99_24.method3106((long) local60);
 				if (local7 == null) {
-					local7 = Static77.method1686(Static121.aClass153_45, local60 & 0xFFFF);
+					local7 = Static77.method1686(models, local60 & 0xFFFF);
 					if (local7 == null) {
 						return null;
 					}
@@ -280,7 +291,7 @@ public final class LocType {
 			}
 			local7 = (ModelUnlit) Static169.aClass99_24.method3106((long) local48);
 			if (local7 == null) {
-				local7 = Static77.method1686(Static121.aClass153_45, local48 & 0xFFFF);
+				local7 = Static77.method1686(models, local48 & 0xFFFF);
 				if (local7 == null) {
 					return null;
 				}
@@ -611,7 +622,7 @@ public final class LocType {
 		}
 		@Pc(13) boolean local13 = true;
 		for (@Pc(15) int local15 = 0; local15 < this.anIntArray379.length; local15++) {
-			local13 &= Static121.aClass153_45.method4491(0, this.anIntArray379[local15] & 0xFFFF);
+			local13 &= models.method4491(0, this.anIntArray379[local15] & 0xFFFF);
 		}
 		return local13;
 	}
@@ -645,7 +656,7 @@ public final class LocType {
 			if (local79 == null) {
 				@Pc(175) ModelUnlit local175 = null;
 				for (local177 = 0; local177 < local24; local177++) {
-					local175 = Static77.method1686(Static121.aClass153_45, this.anIntArray379[local177] & 0xFFFF);
+					local175 = Static77.method1686(models, this.anIntArray379[local177] & 0xFFFF);
 					if (local175 == null) {
 						return null;
 					}
@@ -677,7 +688,7 @@ public final class LocType {
 			}
 			local79 = (GlModelLit) Static169.aClass99_24.method3106((long) local26);
 			if (local79 == null) {
-				@Pc(90) ModelUnlit local90 = Static77.method1686(Static121.aClass153_45, local26 & 0xFFFF);
+				@Pc(90) ModelUnlit local90 = Static77.method1686(models, local26 & 0xFFFF);
 				if (local90 == null) {
 					return null;
 				}

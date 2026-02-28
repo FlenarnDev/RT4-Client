@@ -53,20 +53,7 @@ public final class Static59 {
 		Client.out.p1(Static186.anInt4392);
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!ej", name = "a", descriptor = "(Lclient!ve;ILclient!ve;Lclient!of;)V")
-	public static void method1374(@OriginalArg(0) Js5 arg0, @OriginalArg(2) Js5 arg1, @OriginalArg(3) QuickChatCommandDecoder arg2) {
-		Static262.aClass153_108 = arg0;
-		Static107.anInterface3_1 = arg2;
-		Static238.aClass153_96 = arg1;
-		if (Static238.aClass153_96 != null) {
-			Static144.anInt3490 = Static238.aClass153_96.method4504(1);
-		}
-		if (Static262.aClass153_108 != null) {
-			Static34.anInt1047 = Static262.aClass153_108.method4504(1);
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!ej", name = "a", descriptor = "(IZIJ)Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!ej", name = "a", descriptor = "(IZIJ)Lclient!na;")
 	public static JagString method1376(@OriginalArg(3) long arg0) {
 		@Pc(35) long local35 = arg0 / (long) 10;
 		@Pc(37) int local37 = 1;

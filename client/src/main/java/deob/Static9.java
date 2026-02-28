@@ -10,7 +10,7 @@ public final class Static9 {
 	public static int anInt172;
 
 	@OriginalMember(owner = "com.jagex3.client.client!al", name = "q", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_2;
+	public static Js5 clientConfig;
 
 	@OriginalMember(owner = "com.jagex3.client.client!al", name = "m", descriptor = "I")
 	public static int anInt178 = 0;
@@ -97,8 +97,8 @@ public final class Static9 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!al", name = "a", descriptor = "(ZI)V")
 	public static void method186(@OriginalArg(0) boolean arg0) {
-		if (arg0 != Static240.aBoolean276) {
-			Static240.aBoolean276 = arg0;
+		if (arg0 != ObjType.aBoolean276) {
+			ObjType.aBoolean276 = arg0;
 			Static176.method3302();
 		}
 	}
