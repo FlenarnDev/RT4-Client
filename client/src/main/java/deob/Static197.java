@@ -171,7 +171,7 @@ public final class Static197 {
 			Static268.method4580();
 			((WorldTextureProvider) Rasteriser.anInterface1_2).method3248(200);
 			if (Static178.highDetailLighting) {
-				Rasteriser.method1911(0.7F);
+				Pix3D.method1911(0.7F);
 			}
 			Static114.method4637();
 		} else if (arg1 == 0 && arg3 > 0) {
@@ -182,16 +182,16 @@ public final class Static197 {
 			((WorldTextureProvider) Rasteriser.anInterface1_2).method3248(20);
 			if (Static178.highDetailLighting) {
 				if (Static113.anInt4609 == 1) {
-					Rasteriser.method1911(0.9F);
+					Pix3D.method1911(0.9F);
 				}
 				if (Static113.anInt4609 == 2) {
-					Rasteriser.method1911(0.8F);
+					Pix3D.method1911(0.8F);
 				}
 				if (Static113.anInt4609 == 3) {
-					Rasteriser.method1911(0.7F);
+					Pix3D.method1911(0.7F);
 				}
 				if (Static113.anInt4609 == 4) {
-					Rasteriser.method1911(0.6F);
+					Pix3D.method1911(0.6F);
 				}
 			}
 			Static95.method1939();

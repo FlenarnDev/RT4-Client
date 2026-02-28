@@ -653,18 +653,18 @@ public final class Client extends GameShell {
         } else if (loadingStep == 90) {
             if (materials.requestFullDownload()) {
                 @Pc(951) WorldTextureProvider local951 = new WorldTextureProvider(textures, materials, sprites, 20, !Static53.aBoolean99);
-                Rasteriser.method1914(local951);
+                Pix3D.method1914(local951);
                 if (Static113.anInt4609 == 1) {
-                    Rasteriser.method1911(0.9F);
+                    Pix3D.method1911(0.9F);
                 }
                 if (Static113.anInt4609 == 2) {
-                    Rasteriser.method1911(0.8F);
+                    Pix3D.method1911(0.8F);
                 }
                 if (Static113.anInt4609 == 3) {
-                    Rasteriser.method1911(0.7F);
+                    Pix3D.method1911(0.7F);
                 }
                 if (Static113.anInt4609 == 4) {
-                    Rasteriser.method1911(0.6F);
+                    Pix3D.method1911(0.6F);
                 }
                 TitleScreen.loadString = LocalizedText.MAINLOAD90B;
                 loadingStep = 100;

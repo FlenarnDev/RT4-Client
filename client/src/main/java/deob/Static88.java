@@ -3206,16 +3206,16 @@ public final class Static88 {
 														Static113.anInt4609 = local809;
 														if (!GlRenderer.enabled || !Static178.highDetailLighting) {
 															if (Static113.anInt4609 == 1) {
-																Rasteriser.method1911(0.9F);
+																Pix3D.method1911(0.9F);
 															}
 															if (Static113.anInt4609 == 2) {
-																Rasteriser.method1911(0.8F);
+																Pix3D.method1911(0.8F);
 															}
 															if (Static113.anInt4609 == 3) {
-																Rasteriser.method1911(0.7F);
+																Pix3D.method1911(0.7F);
 															}
 															if (Static113.anInt4609 == 4) {
-																Rasteriser.method1911(0.6F);
+																Pix3D.method1911(0.6F);
 															}
 														}
 														if (GlRenderer.enabled) {
@@ -3309,19 +3309,19 @@ public final class Static88 {
 														local28--;
 														Static178.highDetailLighting = Static254.anIntArray487[local28] == 1;
 														if (GlRenderer.enabled && Static178.highDetailLighting) {
-															Rasteriser.method1911(0.7F);
+															Pix3D.method1911(0.7F);
 														} else {
 															if (Static113.anInt4609 == 1) {
-																Rasteriser.method1911(0.9F);
+																Pix3D.method1911(0.9F);
 															}
 															if (Static113.anInt4609 == 2) {
-																Rasteriser.method1911(0.8F);
+																Pix3D.method1911(0.8F);
 															}
 															if (Static113.anInt4609 == 3) {
-																Rasteriser.method1911(0.7F);
+																Pix3D.method1911(0.7F);
 															}
 															if (Static113.anInt4609 == 4) {
-																Rasteriser.method1911(0.6F);
+																Pix3D.method1911(0.6F);
 															}
 														}
 														Static145.method2742();
