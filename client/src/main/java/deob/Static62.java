@@ -1,6 +1,6 @@
 package deob;
 
-import com.jagex3.client.HuffmanCodec;
+import com.jagex3.HuffmanCodec;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static62 {

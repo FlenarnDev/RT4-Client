@@ -1,9 +1,9 @@
 package deob;
 
-import com.jagex3.client.AreaSound;
+import com.jagex3.AreaSound;
 import com.jagex3.client.Client;
-import com.jagex3.client.JagString;
-import com.jagex3.client.PixMap;
+import com.jagex3.JagString;
+import com.jagex3.PixMap;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

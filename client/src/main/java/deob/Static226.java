@@ -1,8 +1,8 @@
 package deob;
 
-import com.jagex3.client.JagString;
-import com.jagex3.client.LocChange;
-import com.jagex3.client.LocalizedText;
+import com.jagex3.JagString;
+import com.jagex3.LocChange;
+import com.jagex3.LocalizedText;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

@@ -1,6 +1,6 @@
 package deob;
 
-import com.jagex3.client.SeqType;
+import com.jagex3.SeqType;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static208 {

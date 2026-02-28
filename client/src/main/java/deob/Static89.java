@@ -6,7 +6,8 @@ import java.util.Random;
 
 import com.jagex.signlink.PrivilegedRequest;
 import com.jagex.signlink.SignLink;
-import com.jagex3.client.*;
+import com.jagex3.*;
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

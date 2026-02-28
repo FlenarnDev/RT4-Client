@@ -1,9 +1,9 @@
 package deob;
 
-import com.jagex3.client.BufferedRandomAccessFile;
-import com.jagex3.client.Js5;
-import com.jagex3.client.LinkList;
-import com.jagex3.client.MidiPlayer;
+import com.jagex3.BufferedRandomAccessFile;
+import com.jagex3.Js5;
+import com.jagex3.LinkList;
+import com.jagex3.MidiPlayer;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

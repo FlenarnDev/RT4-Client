@@ -1,8 +1,8 @@
 package deob;
 
-import com.jagex3.client.IfType;
-import com.jagex3.client.JagString;
-import com.jagex3.client.ModelUnlit;
+import com.jagex3.IfType;
+import com.jagex3.JagString;
+import com.jagex3.ModelUnlit;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 

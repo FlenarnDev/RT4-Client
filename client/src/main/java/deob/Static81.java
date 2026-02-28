@@ -3,7 +3,10 @@ package deob;
 import java.awt.Point;
 import java.io.IOException;
 
-import com.jagex3.client.*;
+import com.jagex3.*;
+import com.jagex3.client.Client;
+import com.jagex3.client.applet.GameCanvas;
+import com.jagex3.client.applet.GameShell;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

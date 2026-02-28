@@ -2,8 +2,8 @@ package deob;
 
 import java.awt.Image;
 
-import com.jagex3.client.AbstractPix32;
-import com.jagex3.client.LruCache;
+import com.jagex3.AbstractPix32;
+import com.jagex3.LruCache;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static149 {

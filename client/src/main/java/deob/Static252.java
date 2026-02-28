@@ -1,8 +1,8 @@
 package deob;
 
-import com.jagex3.client.JagString;
-import com.jagex3.client.Js5;
-import com.jagex3.client.ReferenceNodeFactory;
+import com.jagex3.JagString;
+import com.jagex3.Js5;
+import com.jagex3.ReferenceNodeFactory;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 

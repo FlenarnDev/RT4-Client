@@ -5,9 +5,9 @@ import java.io.IOException;
 import java.net.Socket;
 
 import com.jagex3.client.Client;
-import com.jagex3.client.ClientStream;
-import com.jagex3.client.GameShell;
-import com.jagex3.client.JagString;
+import com.jagex3.ClientStream;
+import com.jagex3.client.applet.GameShell;
+import com.jagex3.JagString;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

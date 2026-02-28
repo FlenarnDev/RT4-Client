@@ -1,6 +1,6 @@
 package deob;
 
-import com.jagex3.client.SoftwareModelLit;
+import com.jagex3.SoftwareModelLit;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 

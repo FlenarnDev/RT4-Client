@@ -1,9 +1,9 @@
 package deob;
 
-import com.jagex3.client.ColorImageCache;
-import com.jagex3.client.Linkable;
-import com.jagex3.client.MonochromeImageCache;
-import com.jagex3.client.Packet;
+import com.jagex3.ColorImageCache;
+import com.jagex3.Linkable;
+import com.jagex3.MonochromeImageCache;
+import com.jagex3.Packet;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;

@@ -1,8 +1,8 @@
 package deob;
 
-import com.jagex3.client.GlModelLit;
-import com.jagex3.client.GlRenderer;
-import com.jagex3.client.Square;
+import com.jagex3.GlModelLit;
+import com.jagex3.GlRenderer;
+import com.jagex3.Square;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 

@@ -1,8 +1,8 @@
 package deob;
 
-import com.jagex3.client.ClientMouseListener;
-import com.jagex3.client.DelayedStateChange;
-import com.jagex3.client.LocChange;
+import com.jagex3.ClientMouseListener;
+import com.jagex3.DelayedStateChange;
+import com.jagex3.LocChange;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

@@ -2,7 +2,7 @@ package deob;
 
 import java.util.Random;
 
-import com.jagex3.client.Packet;
+import com.jagex3.Packet;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;

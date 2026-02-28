@@ -1,7 +1,7 @@
 package deob;
 
-import com.jagex3.client.GroundObject;
-import com.jagex3.client.Square;
+import com.jagex3.GroundObject;
+import com.jagex3.Square;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

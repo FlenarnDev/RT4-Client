@@ -1,8 +1,8 @@
 package deob;
 
 import com.jagex3.client.Client;
-import com.jagex3.client.ClientNPC;
-import com.jagex3.client.JagString;
+import com.jagex3.ClientNPC;
+import com.jagex3.JagString;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static175 {

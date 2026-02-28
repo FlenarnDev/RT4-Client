@@ -3,7 +3,9 @@ package deob;
 import java.io.IOException;
 import java.net.Socket;
 
-import com.jagex3.client.*;
+import com.jagex3.*;
+import com.jagex3.client.Client;
+import com.jagex3.client.applet.GameShell;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 

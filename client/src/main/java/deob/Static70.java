@@ -1,6 +1,6 @@
 package deob;
 
-import com.jagex3.client.*;
+import com.jagex3.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -25,7 +25,7 @@ public final class Static70 {
 	@OriginalMember(owner = "com.jagex3.client.client!fi", name = "a", descriptor = "(B)Lclient!s;")
 	public static Timer method1547() {
 		try {
-			return (Timer) Class.forName("com.jagex3.client.NanoTimer").getDeclaredConstructor().newInstance();
+			return (Timer) Class.forName("com.jagex3.NanoTimer").getDeclaredConstructor().newInstance();
 		} catch (@Pc(15) Throwable local15) {
 			return new MillisTimer();
 		}

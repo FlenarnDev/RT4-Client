@@ -1,8 +1,8 @@
 package deob;
 
-import com.jagex3.client.Linkable;
-import com.jagex3.client.Map;
-import com.jagex3.client.secondaryLinkList;
+import com.jagex3.Linkable;
+import com.jagex3.Map;
+import com.jagex3.secondaryLinkList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

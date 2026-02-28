@@ -1,9 +1,9 @@
 package deob;
 
 import com.jagex.signlink.PrivilegedRequest;
-import com.jagex3.client.LocType;
-import com.jagex3.client.MapElement;
-import com.jagex3.client.SoftLruCache;
+import com.jagex3.LocType;
+import com.jagex3.MapElement;
+import com.jagex3.SoftLruCache;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

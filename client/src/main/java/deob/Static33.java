@@ -3,7 +3,7 @@ package deob;
 import java.util.Date;
 
 import com.jagex.signlink.PrivilegedRequest;
-import com.jagex3.client.*;
+import com.jagex3.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -186,7 +186,7 @@ public final class Static33 {
 		}
 		if (arg0.length > 136 && !Static84.aBoolean127) {
 			try {
-				@Pc(27) ByteArrayWrapper local27 = (ByteArrayWrapper) Class.forName("com.jagex3.client.ByteBufferNode").getDeclaredConstructor().newInstance();
+				@Pc(27) ByteArrayWrapper local27 = (ByteArrayWrapper) Class.forName("com.jagex3.ByteBufferNode").getDeclaredConstructor().newInstance();
 				local27.method4238(arg0);
 				return local27;
 			} catch (@Pc(34) Throwable local34) {

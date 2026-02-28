@@ -1,9 +1,9 @@
 package deob;
 
 import com.jagex3.client.Client;
-import com.jagex3.client.GWCWorld;
-import com.jagex3.client.JagString;
-import com.jagex3.client.SoftLruCache;
+import com.jagex3.GWCWorld;
+import com.jagex3.JagString;
+import com.jagex3.SoftLruCache;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

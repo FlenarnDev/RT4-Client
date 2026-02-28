@@ -1,6 +1,8 @@
 package deob;
 
-import com.jagex3.client.*;
+import com.jagex3.*;
+import com.jagex3.client.Client;
+import com.jagex3.client.applet.GameCanvas;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

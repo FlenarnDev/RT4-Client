@@ -2,7 +2,7 @@ package deob;
 
 import java.nio.ByteBuffer;
 
-import com.jagex3.client.Packet;
+import com.jagex3.Packet;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static95 {

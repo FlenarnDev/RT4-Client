@@ -1,8 +1,8 @@
 package deob;
 
-import com.jagex3.client.Js5;
-import com.jagex3.client.ModelUnlit;
-import com.jagex3.client.Pix3D;
+import com.jagex3.Js5;
+import com.jagex3.ModelUnlit;
+import com.jagex3.Pix3D;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

@@ -1,9 +1,9 @@
 package deob;
 
-import com.jagex3.client.ClientNPC;
-import com.jagex3.client.ClientPlayer;
-import com.jagex3.client.JagFX;
-import com.jagex3.client.Pix32;
+import com.jagex3.ClientNPC;
+import com.jagex3.ClientPlayer;
+import com.jagex3.JagFX;
+import com.jagex3.Pix32;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

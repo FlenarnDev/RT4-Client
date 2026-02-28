@@ -3,8 +3,8 @@ package deob;
 import java.io.IOException;
 
 import com.jagex3.client.Client;
-import com.jagex3.client.ClientKeyboardListener;
-import com.jagex3.client.JagString;
+import com.jagex3.ClientKeyboardListener;
+import com.jagex3.JagString;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

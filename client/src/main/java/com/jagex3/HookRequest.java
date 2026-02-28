@@ -1,0 +1,38 @@
+package com.jagex3;
+
+import org.openrs2.deob.annotation.OriginalClass;
+import org.openrs2.deob.annotation.OriginalMember;
+
+@OriginalClass("com.jagex3.client.client!jl")
+public final class HookRequest extends Linkable {
+
+	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "q", descriptor = "Lclient!be;")
+	public IfType aClass13_16;
+
+	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "r", descriptor = "Lclient!na;")
+	public JagString aClass100_598;
+
+	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "w", descriptor = "I")
+	public int anInt3097;
+
+	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "z", descriptor = "I")
+	public int anInt3099;
+
+	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "A", descriptor = "I")
+	public int anInt3100;
+
+	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "B", descriptor = "I")
+	public int anInt3101;
+
+	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "C", descriptor = "Z")
+	public boolean aBoolean158;
+
+	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "D", descriptor = "I")
+	public int anInt3102;
+
+	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "E", descriptor = "[Ljava/lang/Object;")
+	public Object[] anObjectArray31;
+
+	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "F", descriptor = "Lclient!be;")
+	public IfType source;
+}

@@ -3,7 +3,9 @@ package deob;
 import java.io.UnsupportedEncodingException;
 
 import com.jagex.signlink.MonotonicClock;
-import com.jagex3.client.*;
+import com.jagex3.*;
+import com.jagex3.client.Client;
+import com.jagex3.client.applet.GameShell;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

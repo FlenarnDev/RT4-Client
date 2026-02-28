@@ -1,8 +1,8 @@
 package deob;
 
-import com.jagex3.client.ClientInvCache;
-import com.jagex3.client.JagString;
-import com.jagex3.client.Pix32;
+import com.jagex3.ClientInvCache;
+import com.jagex3.JagString;
+import com.jagex3.Pix32;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

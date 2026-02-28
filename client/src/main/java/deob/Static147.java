@@ -1,9 +1,9 @@
 package deob;
 
-import com.jagex3.client.GlRenderer;
-import com.jagex3.client.Ground;
-import com.jagex3.client.JagString;
-import com.jagex3.client.Rasteriser;
+import com.jagex3.GlRenderer;
+import com.jagex3.Ground;
+import com.jagex3.JagString;
+import com.jagex3.Rasteriser;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

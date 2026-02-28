@@ -1,7 +1,7 @@
 package deob;
 
-import com.jagex3.client.JagString;
-import com.jagex3.client.Linkable;
+import com.jagex3.JagString;
+import com.jagex3.Linkable;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;

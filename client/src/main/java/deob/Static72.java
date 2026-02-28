@@ -1,9 +1,9 @@
 package deob;
 
 import com.jagex.signlink.PrivilegedRequest;
-import com.jagex3.client.AnimFrameset;
-import com.jagex3.client.JagString;
-import com.jagex3.client.SeqType;
+import com.jagex3.AnimFrameset;
+import com.jagex3.JagString;
+import com.jagex3.SeqType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

@@ -1,8 +1,8 @@
 package deob;
 
-import com.jagex3.client.Floor;
-import com.jagex3.client.JagVorbis;
-import com.jagex3.client.Js5;
+import com.jagex3.Floor;
+import com.jagex3.JagVorbis;
+import com.jagex3.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

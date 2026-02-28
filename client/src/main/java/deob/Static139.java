@@ -5,7 +5,8 @@ import java.awt.Container;
 import java.awt.Graphics;
 import java.awt.Insets;
 
-import com.jagex3.client.*;
+import com.jagex3.*;
+import com.jagex3.client.applet.GameShell;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

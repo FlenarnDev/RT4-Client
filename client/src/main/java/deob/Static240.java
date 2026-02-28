@@ -2,8 +2,8 @@ package deob;
 
 import java.awt.FontMetrics;
 
-import com.jagex3.client.AbstractPix32;
-import com.jagex3.client.JagString;
+import com.jagex3.AbstractPix32;
+import com.jagex3.JagString;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static240 {

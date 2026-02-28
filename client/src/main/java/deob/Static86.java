@@ -1,8 +1,8 @@
 package deob;
 
 import com.jagex3.client.Client;
-import com.jagex3.client.JagString;
-import com.jagex3.client.Js5CacheQueue;
+import com.jagex3.JagString;
+import com.jagex3.Js5CacheQueue;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 

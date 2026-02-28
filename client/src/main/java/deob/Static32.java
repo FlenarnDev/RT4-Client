@@ -1,8 +1,8 @@
 package deob;
 
-import com.jagex3.client.ClientPlayer;
-import com.jagex3.client.SeqType;
-import com.jagex3.client.SoftwarePix8;
+import com.jagex3.ClientPlayer;
+import com.jagex3.SeqType;
+import com.jagex3.SoftwarePix8;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

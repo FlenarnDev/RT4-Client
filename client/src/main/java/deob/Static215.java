@@ -1,8 +1,8 @@
 package deob;
 
 import com.jagex3.client.Client;
-import com.jagex3.client.PixFontGeneric;
-import com.jagex3.client.secondaryLinkList;
+import com.jagex3.PixFontGeneric;
+import com.jagex3.secondaryLinkList;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static215 {

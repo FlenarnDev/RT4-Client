@@ -8,8 +8,8 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.PixelGrabber;
 
-import com.jagex3.client.GameCanvas;
-import com.jagex3.client.JagString;
+import com.jagex3.client.applet.GameCanvas;
+import com.jagex3.JagString;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;

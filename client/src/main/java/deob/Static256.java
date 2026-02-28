@@ -1,8 +1,8 @@
 package deob;
 
-import com.jagex3.client.FloType;
-import com.jagex3.client.Occlude;
-import com.jagex3.client.Packet;
+import com.jagex3.FloType;
+import com.jagex3.Occlude;
+import com.jagex3.Packet;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

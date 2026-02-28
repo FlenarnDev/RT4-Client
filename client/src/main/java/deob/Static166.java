@@ -1,9 +1,9 @@
 package deob;
 
-import com.jagex3.client.JagString;
-import com.jagex3.client.LocType;
-import com.jagex3.client.MapElement;
-import com.jagex3.client.Packet;
+import com.jagex3.JagString;
+import com.jagex3.LocType;
+import com.jagex3.MapElement;
+import com.jagex3.Packet;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

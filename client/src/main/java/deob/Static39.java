@@ -3,8 +3,8 @@ package deob;
 import java.awt.Frame;
 import java.util.Random;
 
-import com.jagex3.client.AbstractPix32;
-import com.jagex3.client.IfType;
+import com.jagex3.AbstractPix32;
+import com.jagex3.IfType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
