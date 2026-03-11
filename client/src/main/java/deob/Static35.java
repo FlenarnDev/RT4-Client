@@ -3,18 +3,14 @@ package deob;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-import com.jagex3.Sprite;
-import com.jagex3.Square;
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 public final class Static35 {
 
-    @OriginalMember(owner = "com.jagex3.client.client!cl", name = "V", descriptor = "[I")
-	public static int[] anIntArray82;
-
-	@OriginalMember(owner = "com.jagex3.client.client!cl", name = "X", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!cl", name = "X", descriptor = "I")
 	public static int anInt1091;
 
 	@OriginalMember(owner = "com.jagex3.client.client!cl", name = "K", descriptor = "Ljava/util/Calendar;")
@@ -29,10 +25,7 @@ public final class Static35 {
 	@OriginalMember(owner = "com.jagex3.client.client!cl", name = "ab", descriptor = "[I")
 	public static final int[] anIntArray83 = new int[256];
 
-	@OriginalMember(owner = "com.jagex3.client.client!cl", name = "bb", descriptor = "Z")
-	public static volatile boolean aBoolean66 = false;
-
-	@OriginalMember(owner = "com.jagex3.client.client!cl", name = "a", descriptor = "(IIIBII)V")
+    @OriginalMember(owner = "com.jagex3.client.client!cl", name = "a", descriptor = "(IIIBII)V")
 	public static void method898(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		@Pc(13) int local13 = arg2 * arg2;
 		@Pc(15) int local15 = 0;
@@ -93,22 +86,7 @@ public final class Static35 {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!cl", name = "a", descriptor = "(III)J")
-	public static long method899(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) Square local7 = Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2];
-		if (local7 == null) {
-			return 0L;
-		}
-		for (@Pc(13) int local13 = 0; local13 < local7.anInt662; local13++) {
-			@Pc(22) Sprite local22 = local7.aClass31Array1[local13];
-			if ((local22.aLong56 >> 29 & 0x3L) == 2L && local22.anInt1701 == arg1 && local22.anInt1696 == arg2) {
-				return local22.aLong56;
-			}
-		}
-		return 0L;
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!cl", name = "e", descriptor = "(I)V")
+    @OriginalMember(owner = "com.jagex3.client.client!cl", name = "e", descriptor = "(I)V")
 	public static void method902() {
 		for (@Pc(3) int local3 = 0; local3 < 5; local3++) {
 			Static176.aBooleanArray95[local3] = false;
@@ -117,6 +95,6 @@ public final class Static35 {
 		Static233.anInt5217 = 0;
 		Static155.anInt3718 = -1;
 		Static52.anInt1694 = -1;
-		Static227.anInt5096 = 1;
+		Client.anInt5096 = 1;
 	}
 }

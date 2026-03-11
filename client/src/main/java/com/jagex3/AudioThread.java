@@ -3,7 +3,6 @@ package com.jagex3;
 import com.jagex.signlink.SignLink;
 import deob.Static140;
 import deob.Static231;
-import deob.Static89;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -32,14 +31,14 @@ public final class AudioThread implements Runnable {
 				for (@Pc(9) int local9 = 0; local9 < 2; local9++) {
 					@Pc(19) PcmPlayer local19 = this.aClass62Array1[local9];
 					if (local19 != null) {
-						local19.method3565();
+						local19.cycle();
 					}
 				}
 				Static231.sleepPrecise(10L);
 				Static140.method2708(this.aClass213_1, null);
 			}
 		} catch (@Pc(43) Exception local43) {
-			Static89.report(null, local43);
+			JagException.report(null, local43);
 		} finally {
 			this.aBoolean64 = false;
 		}

@@ -1,9 +1,6 @@
 package deob;
 
-import com.jagex3.JagString;
-import com.jagex3.ModelSource;
-import com.jagex3.SoftLruCache;
-import com.jagex3.Square;
+import com.jagex3.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -43,21 +40,11 @@ public final class Static262 {
 		local8.anInt3049 = arg6;
 		local8.anInt3052 = arg7;
 		for (@Pc(42) int local42 = arg0; local42 >= 0; local42--) {
-			if (Static130.aClass3_Sub5ArrayArrayArray1[local42][arg1][arg2] == null) {
-				Static130.aClass3_Sub5ArrayArrayArray1[local42][arg1][arg2] = new Square(local42, arg1, arg2);
+			if (World.activeTiles[local42][arg1][arg2] == null) {
+				World.activeTiles[local42][arg1][arg2] = new Square(local42, arg1, arg2);
 			}
 		}
-		Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2].aClass77_1 = local8;
+		World.activeTiles[arg0][arg1][arg2].wall = local8;
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!vf", name = "a", descriptor = "(III)Lclient!jh;")
-	public static Wall method4509(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) Square local7 = Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2];
-		return local7 == null ? null : local7.aClass77_1;
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!vf", name = "a", descriptor = "(IB)Lclient!na;")
-	public static JagString method4510(@OriginalArg(0) int arg0) {
-		return arg0 >= 999999999 ? Static220.aClass100_930 : JagString.parseInt(arg0);
-	}
 }

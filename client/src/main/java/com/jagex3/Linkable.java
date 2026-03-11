@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 public class Linkable {
 
 	@OriginalMember(owner = "com.jagex3.client.client!ab", name = "a", descriptor = "J")
-	public long aLong192;
+	public long key;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ab", name = "d", descriptor = "Lclient!ab;")
 	public Linkable aClass3_222;
@@ -21,7 +21,7 @@ public class Linkable {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ab", name = "b", descriptor = "(I)V")
-	public final void method4658() {
+	public final void unlink() {
 		if (this.aClass3_223 != null) {
 			this.aClass3_223.aClass3_222 = this.aClass3_222;
 			this.aClass3_222.aClass3_223 = this.aClass3_223;

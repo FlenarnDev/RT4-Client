@@ -13,13 +13,13 @@ public final class HookRequest extends Linkable {
 	public JagString aClass100_598;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "w", descriptor = "I")
-	public int anInt3097;
+	public int mouseY;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "z", descriptor = "I")
-	public int anInt3099;
+	public int keyChar;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "A", descriptor = "I")
-	public int anInt3100;
+	public int keyCode;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "B", descriptor = "I")
 	public int anInt3101;
@@ -28,11 +28,11 @@ public final class HookRequest extends Linkable {
 	public boolean aBoolean158;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "D", descriptor = "I")
-	public int anInt3102;
+	public int mouseX;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "E", descriptor = "[Ljava/lang/Object;")
-	public Object[] anObjectArray31;
+	public Object[] onop;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jl", name = "F", descriptor = "Lclient!be;")
-	public IfType source;
+	public IfType component;
 }

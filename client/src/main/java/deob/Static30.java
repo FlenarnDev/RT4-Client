@@ -1,6 +1,7 @@
 package deob;
 
 import com.jagex3.*;
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -13,10 +14,7 @@ public final class Static30 {
 	@OriginalMember(owner = "com.jagex3.client.client!cg", name = "e", descriptor = "Lclient!na;")
 	public static final JagString aClass100_184 = Static28.parse("1");
 
-	@OriginalMember(owner = "com.jagex3.client.client!cg", name = "f", descriptor = "I")
-	public static int anInt978 = 127;
-
-	@OriginalMember(owner = "com.jagex3.client.client!cg", name = "h", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!cg", name = "h", descriptor = "Lclient!na;")
 	public static final JagString aClass100_185 = Static28.parse(")3");
 
 	@OriginalMember(owner = "com.jagex3.client.client!cg", name = "a", descriptor = "(ZILclient!ve;I)[Lclient!ek;")
@@ -34,9 +32,9 @@ public final class Static30 {
 		Static276.aClass3_Sub2_Sub1Array11 = Static209.method3708(Static202.anInt4741, arg0);
 		Static149.aClass3_Sub2_Sub1Array7 = Static209.method3708(Static149.anInt3551, arg0);
 		Static84.aClass3_Sub2_Sub1_4 = Static150.method2800(Static19.anInt647, arg0);
-		Static240.aClass3_Sub2_Sub1Array10 = Static131.method2580(Static32.anInt1016, arg0);
+		Client.cross = Static131.method2580(Static32.anInt1016, arg0);
 		Static139.aClass3_Sub2_Sub1Array6 = Static131.method2580(Static78.anInt2147, arg0);
-		Static241.aClass36Array16 = Static146.method2749(arg0, Static124.anInt3083);
+		Static241.scrollbar = Static146.method2749(arg0, Static124.anInt3083);
 		Static159.aClass36Array12 = Static146.method2749(arg0, Static224.anInt5057);
 		Static114.aClass3_Sub2_Sub9_42.method2873(Static159.aClass36Array12, null);
 		Static215.aClass3_Sub2_Sub9_32.method2873(Static159.aClass36Array12, null);

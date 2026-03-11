@@ -151,7 +151,7 @@ public final class Js5 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ve", name = "b", descriptor = "(ILclient!na;)V")
-	public final void method4486(@OriginalArg(1) JagString arg0) {
+	public final void updateCacheHint(@OriginalArg(1) JagString arg0) {
 		if (this.method4484()) {
 			@Pc(13) JagString local13 = arg0.toLowerCase();
 			@Pc(22) int local22 = this.aClass70_2.aClass76_1.method2405(local13.method3154());

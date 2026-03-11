@@ -36,7 +36,7 @@ public final class LruCache {
 
 	@OriginalMember(owner = "com.jagex3.client.client!gn", name = "a", descriptor = "(JI)Lclient!rg;")
 	public final DoubleLinkable method1806(@OriginalArg(0) long arg0) {
-		@Pc(16) DoubleLinkable local16 = (DoubleLinkable) this.aClass133_5.method3863(arg0);
+		@Pc(16) DoubleLinkable local16 = (DoubleLinkable) this.aClass133_5.find(arg0);
 		if (local16 != null) {
 			this.aClass16_1.method798(local16);
 		}
@@ -45,30 +45,30 @@ public final class LruCache {
 
 	@OriginalMember(owner = "com.jagex3.client.client!gn", name = "a", descriptor = "(I)Lclient!ab;")
 	public final Linkable method1808() {
-		return this.aClass133_5.method3859();
+		return this.aClass133_5.search();
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!gn", name = "a", descriptor = "(Lclient!rg;JB)V")
 	public final void method1811(@OriginalArg(0) DoubleLinkable arg0, @OriginalArg(1) long arg1) {
 		if (this.anInt2314 == 0) {
 			@Pc(14) DoubleLinkable local14 = this.aClass16_1.method796();
-			local14.method4658();
+			local14.unlink();
 			local14.method4365();
 			if (this.aClass3_Sub2_37 == local14) {
 				local14 = this.aClass16_1.method796();
-				local14.method4658();
+				local14.unlink();
 				local14.method4365();
 			}
 		} else {
 			this.anInt2314--;
 		}
-		this.aClass133_5.method3862(arg0, arg1);
+		this.aClass133_5.put(arg0, arg1);
 		this.aClass16_1.method798(arg0);
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!gn", name = "b", descriptor = "(I)Lclient!ab;")
 	public final Linkable method1813() {
-		return this.aClass133_5.method3861();
+		return this.aClass133_5.find();
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!gn", name = "c", descriptor = "(I)V")

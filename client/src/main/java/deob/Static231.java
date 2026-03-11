@@ -29,10 +29,7 @@ public final class Static231 {
 	@OriginalMember(owner = "com.jagex3.client.client!sk", name = "ib", descriptor = "I")
 	public static int anInt5202 = 0;
 
-	@OriginalMember(owner = "com.jagex3.client.client!sk", name = "kb", descriptor = "I")
-	public static int anInt5204 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!sk", name = "lb", descriptor = "Z")
+    @OriginalMember(owner = "com.jagex3.client.client!sk", name = "lb", descriptor = "Z")
 	public static boolean aBoolean252 = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!sk", name = "a", descriptor = "(ILclient!wa;)V")

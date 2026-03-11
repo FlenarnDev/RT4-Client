@@ -1,6 +1,7 @@
 package com.jagex3;
 
 import deob.Static15;
+import deob.Static233;
 import deob.Static26;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
@@ -48,6 +49,21 @@ public final class FloType {
     public static void init(@OriginalArg(1) Js5 arg0) {
         clientConfig = arg0;
         anInt2510 = clientConfig.getFileIdLimit(4);
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!uh", name = "e", descriptor = "(I)V")
+    public static void method4301() {
+        Static233.aClass99_31.clear();
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!aj", name = "c", descriptor = "(II)V")
+    public static void method119() {
+        Static233.aClass99_31.method3102(5);
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!wh", name = "a", descriptor = "(I)V")
+    public static void method4612() {
+        Static233.aClass99_31.method3104();
     }
 
     @OriginalMember(owner = "com.jagex3.client.client!wl", name = "a", descriptor = "(ILclient!wa;I)V")

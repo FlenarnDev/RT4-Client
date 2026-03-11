@@ -86,7 +86,7 @@ public final class ClientLocAnim extends ModelSource {
 			if (arg8 instanceof ClientLocAnim) {
 				((ClientLocAnim) arg8).method1046();
 			} else {
-				local67 = Static271.method4601(this.anInt1299);
+				local67 = LocType.list(this.anInt1299);
 				if (local67.anIntArray380 != null) {
 					local67 = local67.method3417();
 				}
@@ -96,16 +96,16 @@ public final class ClientLocAnim extends ModelSource {
 			}
 		}
 		if (arg6 != -1) {
-			this.aClass144_2 = Static36.method941(arg6);
+			this.aClass144_2 = SeqType.list(arg6);
 			this.anInt1297 = 0;
-			if (this.aClass144_2.anIntArray473.length <= 1) {
+			if (this.aClass144_2.frames.length <= 1) {
 				this.anInt1304 = 0;
 			} else {
 				this.anInt1304 = 1;
 			}
 			this.anInt1317 = 1;
-			this.anInt1320 = Static83.anInt372 - 1;
-			if (this.aClass144_2.anInt5347 == 0 && arg8 != null && arg8 instanceof ClientLocAnim) {
+			this.anInt1320 = Client.loopCycle - 1;
+			if (this.aClass144_2.duplicatebehavior == 0 && arg8 != null && arg8 instanceof ClientLocAnim) {
 				@Pc(142) ClientLocAnim local142 = (ClientLocAnim) arg8;
 				if (this.aClass144_2 == local142.aClass144_2) {
 					this.anInt1297 = local142.anInt1297;
@@ -116,23 +116,23 @@ public final class ClientLocAnim extends ModelSource {
 				}
 			}
 			if (arg7 && this.aClass144_2.anInt5362 != -1) {
-				this.anInt1297 = (int) (Math.random() * (double) this.aClass144_2.anIntArray473.length);
+				this.anInt1297 = (int) (Math.random() * (double) this.aClass144_2.frames.length);
 				this.anInt1304 = this.anInt1297 + 1;
-				if (this.anInt1304 >= this.aClass144_2.anIntArray473.length) {
+				if (this.anInt1304 >= this.aClass144_2.frames.length) {
 					this.anInt1304 -= this.aClass144_2.anInt5362;
-					if (this.anInt1304 < 0 || this.anInt1304 >= this.aClass144_2.anIntArray473.length) {
+					if (this.anInt1304 < 0 || this.anInt1304 >= this.aClass144_2.frames.length) {
 						this.anInt1304 = -1;
 					}
 				}
 				this.anInt1317 = (int) (Math.random() * (double) this.aClass144_2.anIntArray474[this.anInt1297]) + 1;
-				this.anInt1320 = Static83.anInt372 - this.anInt1317;
+				this.anInt1320 = Client.loopCycle - this.anInt1317;
 			}
 		}
 		if (GlRenderer.enabled && arg8 != null) {
 			this.method1048(true);
 		}
 		if (arg8 == null) {
-			local67 = Static271.method4601(this.anInt1299);
+			local67 = LocType.list(this.anInt1299);
 			if (local67.anIntArray380 != null) {
 				this.aBoolean80 = true;
 			}
@@ -178,55 +178,55 @@ public final class ClientLocAnim extends ModelSource {
 		if (this.aClass144_2 == null) {
 			return;
 		}
-		@Pc(10) int local10 = Static83.anInt372 - this.anInt1320;
+		@Pc(10) int local10 = Client.loopCycle - this.anInt1320;
 		if (local10 > 100 && this.aClass144_2.anInt5362 > 0) {
-			@Pc(29) int local29 = this.aClass144_2.anIntArray473.length - this.aClass144_2.anInt5362;
+			@Pc(29) int local29 = this.aClass144_2.frames.length - this.aClass144_2.anInt5362;
 			while (this.anInt1297 < local29 && this.aClass144_2.anIntArray474[this.anInt1297] < local10) {
 				local10 -= this.aClass144_2.anIntArray474[this.anInt1297];
 				this.anInt1297++;
 			}
 			if (this.anInt1297 >= local29) {
 				@Pc(77) int local77 = 0;
-				for (@Pc(79) int local79 = local29; local79 < this.aClass144_2.anIntArray473.length; local79++) {
+				for (@Pc(79) int local79 = local29; local79 < this.aClass144_2.frames.length; local79++) {
 					local77 += this.aClass144_2.anIntArray474[local79];
 				}
 				local10 %= local77;
 			}
 			this.anInt1304 = this.anInt1297 + 1;
-			if (this.anInt1304 >= this.aClass144_2.anIntArray473.length) {
+			if (this.anInt1304 >= this.aClass144_2.frames.length) {
 				this.anInt1304 -= this.aClass144_2.anInt5362;
-				if (this.anInt1304 < 0 || this.aClass144_2.anIntArray473.length <= this.anInt1304) {
+				if (this.anInt1304 < 0 || this.aClass144_2.frames.length <= this.anInt1304) {
 					this.anInt1304 = -1;
 				}
 			}
 		}
 		while (local10 > this.aClass144_2.anIntArray474[this.anInt1297]) {
-			Static152.method2836(arg0, this.aClass144_2, arg1, false, this.anInt1297);
+			Client.method2836(arg0, this.aClass144_2, arg1, false, this.anInt1297);
 			local10 -= this.aClass144_2.anIntArray474[this.anInt1297];
 			this.anInt1297++;
-			if (this.aClass144_2.anIntArray473.length <= this.anInt1297) {
+			if (this.aClass144_2.frames.length <= this.anInt1297) {
 				this.anInt1297 -= this.aClass144_2.anInt5362;
-				if (this.anInt1297 < 0 || this.aClass144_2.anIntArray473.length <= this.anInt1297) {
+				if (this.anInt1297 < 0 || this.aClass144_2.frames.length <= this.anInt1297) {
 					this.aClass144_2 = null;
 					break;
 				}
 			}
 			this.anInt1304 = this.anInt1297 + 1;
-			if (this.aClass144_2.anIntArray473.length <= this.anInt1304) {
+			if (this.aClass144_2.frames.length <= this.anInt1304) {
 				this.anInt1304 -= this.aClass144_2.anInt5362;
-				if (this.anInt1304 < 0 || this.anInt1304 >= this.aClass144_2.anIntArray473.length) {
+				if (this.anInt1304 < 0 || this.anInt1304 >= this.aClass144_2.frames.length) {
 					this.anInt1304 = -1;
 				}
 			}
 		}
 		this.anInt1317 = local10;
-		this.anInt1320 = Static83.anInt372 - local10;
+		this.anInt1320 = Client.loopCycle - local10;
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!dc", name = "a", descriptor = "(ZI)Lclient!th;")
 	private ModelSource method1048(@OriginalArg(0) boolean arg0) {
-		@Pc(12) boolean local12 = Static107.anIntArrayArrayArray10 != Static83.anIntArrayArrayArray4;
-		@Pc(19) LocType local19 = Static271.method4601(this.anInt1299);
+		@Pc(12) boolean local12 = Static107.anIntArrayArrayArray10 != World.groundh;
+		@Pc(19) LocType local19 = LocType.list(this.anInt1299);
 		@Pc(22) int local22 = local19.anInt4430;
 		if (local19.anIntArray380 != null) {
 			local19 = local19.method3417();
@@ -246,15 +246,15 @@ public final class ClientLocAnim extends ModelSource {
 			if (local69 == -1) {
 				this.aClass144_2 = null;
 			} else {
-				this.aClass144_2 = Static36.method941(local69);
+				this.aClass144_2 = SeqType.list(local69);
 			}
 			if (this.aClass144_2 != null) {
 				if (local19.aBoolean209 && this.aClass144_2.anInt5362 != -1) {
-					this.anInt1297 = (int) (Math.random() * (double) this.aClass144_2.anIntArray473.length);
+					this.anInt1297 = (int) (Math.random() * (double) this.aClass144_2.frames.length);
 					this.anInt1320 -= (int) (Math.random() * (double) this.aClass144_2.anIntArray474[this.anInt1297]);
 				} else {
 					this.anInt1297 = 0;
-					this.anInt1320 = Static83.anInt372 - 1;
+					this.anInt1320 = Client.loopCycle - 1;
 				}
 			}
 		}
@@ -277,7 +277,7 @@ public final class ClientLocAnim extends ModelSource {
 		if (arg0 && !local256) {
 			return null;
 		}
-		@Pc(267) int[][] local267 = Static83.anIntArrayArrayArray4[this.anInt1303];
+		@Pc(267) int[][] local267 = World.groundh[this.anInt1303];
 		@Pc(293) int local293 = local267[local178][local201] + local267[local185][local201] + local267[local185][local192] + local267[local178][local192] >> 2;
 		@Pc(302) int local302 = (local160 << 6) + (this.anInt1308 << 7);
 		@Pc(311) int local311 = (local157 << 6) + (this.anInt1300 << 7);
@@ -285,7 +285,7 @@ public final class ClientLocAnim extends ModelSource {
 		if (local12) {
 			local314 = Static107.anIntArrayArrayArray10[0];
 		} else if (this.anInt1303 < 3) {
-			local314 = Static83.anIntArrayArrayArray4[this.anInt1303 + 1];
+			local314 = World.groundh[this.anInt1303 + 1];
 		}
 		if (GlRenderer.enabled && local256) {
 			Static242.method4207(this.aClass36_Sub1_2, this.anInt1296, this.anInt1294, this.anInt1319);
@@ -306,7 +306,7 @@ public final class ClientLocAnim extends ModelSource {
 			}
 			@Pc(429) int local429 = 0;
 			if (this.anInt1303 != 0) {
-				@Pc(439) int[][] local439 = Static83.anIntArrayArrayArray4[0];
+				@Pc(439) int[][] local439 = World.groundh[0];
 				local429 = local293 - (local439[local178][local192] + local439[local185][local192] + local439[local185][local201] + local439[local178][local201] >> 2);
 			}
 			@Pc(471) SoftwarePix8 local471 = local389.aClass36_Sub1_3;
@@ -336,7 +336,7 @@ public final class ClientLocAnim extends ModelSource {
 
 	@OriginalMember(owner = "com.jagex3.client.client!dc", name = "b", descriptor = "()I")
 	@Override
-	public final int method4549() {
+	public final int calcBoundingCylinder() {
 		return this.anInt1311;
 	}
 }

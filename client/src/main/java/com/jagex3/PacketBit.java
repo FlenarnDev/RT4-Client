@@ -21,7 +21,7 @@ public final class PacketBit extends Packet {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!i", name = "q", descriptor = "(B)V")
-	public final void method2233() {
+	public final void gBitStart() {
 		this.anInt2846 = this.pos * 8;
 	}
 
@@ -57,7 +57,7 @@ public final class PacketBit extends Packet {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!i", name = "q", descriptor = "(II)I")
-	public final int method2241(@OriginalArg(0) int arg0) {
+	public final int bitsLeft(@OriginalArg(0) int arg0) {
 		return arg0 * 8 - this.anInt2846;
 	}
 
@@ -67,12 +67,12 @@ public final class PacketBit extends Packet {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!i", name = "s", descriptor = "(I)I")
-	public final int method2243() {
+	public final int g1Enc() {
 		return this.data[this.pos++] - this.aClass71_1.method2295() & 0xFF;
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!i", name = "h", descriptor = "(Z)V")
-	public final void method2244() {
+	public final void gBitEnd() {
 		this.pos = (this.anInt2846 + 7) / 8;
 	}
 }

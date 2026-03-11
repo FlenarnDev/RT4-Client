@@ -47,6 +47,29 @@ public final class QuickChatPhraseType extends DoubleLinkable {
         }
     }
 
+    @OriginalMember(owner = "com.jagex3.client.client!sj", name = "b", descriptor = "(II)Lclient!cb;")
+    public static QuickChatPhraseType list(@OriginalArg(1) int arg0) {
+        @Pc(10) QuickChatPhraseType local10 = (QuickChatPhraseType) Static249.aClass54_15.method1806((long) arg0);
+        if (local10 != null) {
+            return local10;
+        }
+        @Pc(27) byte[] local27;
+        if (arg0 < 32768) {
+            local27 = configClientSmall.method4495(1, arg0);
+        } else {
+            local27 = configClientLarge.method4495(1, arg0 & 0x7FFF);
+        }
+        local10 = new QuickChatPhraseType();
+        if (local27 != null) {
+            local10.method761(new Packet(local27));
+        }
+        if (arg0 >= 32768) {
+            local10.method763();
+        }
+        Static249.aClass54_15.method1811(local10, (long) arg0);
+        return local10;
+    }
+
     @OriginalMember(owner = "com.jagex3.client.client!cb", name = "a", descriptor = "(Lclient!wa;[IZ)V")
 	public final void method760(@OriginalArg(0) Packet arg0, @OriginalArg(1) int[] arg1) {
 		if (this.anIntArray71 == null) {

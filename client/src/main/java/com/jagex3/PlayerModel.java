@@ -9,7 +9,15 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("com.jagex3.client.client!hh")
 public final class PlayerModel {
 
-	@OriginalMember(owner = "com.jagex3.client.client!hh", name = "e", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!cj", name = "e", descriptor = "[[S")
+    public static short[][] recol1s;
+    @OriginalMember(owner = "com.jagex3.client.client!nj", name = "m", descriptor = "[[S")
+	public static short[][] recol1d;
+    @OriginalMember(owner = "com.jagex3.client.client!qe", name = "r", descriptor = "[S")
+    public static short[] recol2s;
+    @OriginalMember(owner = "com.jagex3.client.client!mj", name = "C", descriptor = "[S")
+    public static short[] recol2d;
+    @OriginalMember(owner = "com.jagex3.client.client!hh", name = "e", descriptor = "I")
 	public int anInt2492;
 
 	@OriginalMember(owner = "com.jagex3.client.client!hh", name = "i", descriptor = "J")
@@ -58,11 +66,11 @@ public final class PlayerModel {
 			}
 			local66 = new ModelUnlit(local36, local38);
 			for (@Pc(110) int local110 = 0; local110 < 5; local110++) {
-				if (this.anIntArray236[local110] < Static33.aShortArrayArray2[local110].length) {
-					local66.method1687(Static200.aShortArray65[local110], Static33.aShortArrayArray2[local110][this.anIntArray236[local110]]);
+				if (this.anIntArray236[local110] < recol1s[local110].length) {
+					local66.method1687(recol2s[local110], recol1s[local110][this.anIntArray236[local110]]);
 				}
-				if (Static172.aShortArrayArray7[local110].length > this.anIntArray236[local110]) {
-					local66.method1687(Static160.aShortArray41[local110], Static172.aShortArrayArray7[local110][this.anIntArray236[local110]]);
+				if (recol1d[local110].length > this.anIntArray236[local110]) {
+					local66.method1687(recol2d[local110], recol1d[local110][this.anIntArray236[local110]]);
 				}
 			}
 			local30 = local66.method1679(64, 768, -50, -10, -50);
@@ -136,7 +144,7 @@ public final class PlayerModel {
 
 	@OriginalMember(owner = "com.jagex3.client.client!hh", name = "b", descriptor = "(I)I")
 	public final int method1952() {
-		return this.anInt2492 == -1 ? (this.anIntArray233[8] << 10) + ((this.anIntArray236[0] << 25) + (this.anIntArray236[4] << 20)) + (this.anIntArray233[0] << 15) + (this.anIntArray233[11] << 5) + this.anIntArray233[1] : Static214.method4363(this.anInt2492).anInt3741 + 305419896;
+		return this.anInt2492 == -1 ? (this.anIntArray233[8] << 10) + ((this.anIntArray236[0] << 25) + (this.anIntArray236[4] << 20)) + (this.anIntArray233[0] << 15) + (this.anIntArray233[11] << 5) + this.anIntArray233[1] : NpcType.list(this.anInt2492).anInt3741 + 305419896;
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!hh", name = "a", descriptor = "(III)V")
@@ -151,7 +159,7 @@ public final class PlayerModel {
 	@OriginalMember(owner = "com.jagex3.client.client!hh", name = "a", descriptor = "([Lclient!ub;ILclient!tk;Lclient!tk;IIIIZII)Lclient!ak;")
 	public final ModelLit method1954(@OriginalArg(0) Class147[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) SeqType arg2, @OriginalArg(3) SeqType arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(7) int arg6, @OriginalArg(9) int arg7, @OriginalArg(10) int arg8) {
 		if (this.anInt2492 != -1) {
-			return Static214.method4363(this.anInt2492).method2937(arg0, arg5, arg8, arg1, arg6, arg7, arg2, arg4, arg3);
+			return NpcType.list(this.anInt2492).method2937(arg0, arg5, arg8, arg1, arg6, arg7, arg2, arg4, arg3);
 		}
 		@Pc(38) int[] local38 = this.anIntArray233;
 		@Pc(41) long local41 = this.aLong88;
@@ -201,7 +209,7 @@ public final class PlayerModel {
 					if ((local169 & Integer.MIN_VALUE) != 0 && !Static81.method1752(local169 & 0x3FFFFFFF).method1199()) {
 						local158 = true;
 					}
-				} else if (!Static71.method1439(local169 & 0x3FFFFFFF).method1822(this.aBoolean141)) {
+				} else if (!ObjType.list(local169 & 0x3FFFFFFF).method1822(this.aBoolean141)) {
 					local158 = true;
 				}
 			}
@@ -220,7 +228,7 @@ public final class PlayerModel {
 					local250 = local38[local169];
 					@Pc(272) ModelUnlit local272;
 					if ((local250 & 0x40000000) != 0) {
-						local272 = Static71.method1439(local250 & 0x3FFFFFFF).method1831(this.aBoolean141);
+						local272 = ObjType.list(local250 & 0x3FFFFFFF).method1831(this.aBoolean141);
 						if (local272 != null) {
 							local239[local169] = local272;
 						}
@@ -255,12 +263,12 @@ public final class PlayerModel {
 									local404[0] = local404[4] = local404[8] = 32768;
 									local404[14] = -local360;
 								} else {
-									local451 = Pix3D.anIntArray225[local374] >> 1;
-									local457 = Pix3D.anIntArray223[local374] >> 1;
-									@Pc(463) int local463 = Pix3D.anIntArray225[local367] >> 1;
-									@Pc(469) int local469 = Pix3D.anIntArray223[local367] >> 1;
-									local475 = Pix3D.anIntArray225[local381] >> 1;
-									local481 = Pix3D.anIntArray223[local381] >> 1;
+									local451 = Pix3D.cosTable[local374] >> 1;
+									local457 = Pix3D.sinTable[local374] >> 1;
+									@Pc(463) int local463 = Pix3D.cosTable[local367] >> 1;
+									@Pc(469) int local469 = Pix3D.sinTable[local367] >> 1;
+									local475 = Pix3D.cosTable[local381] >> 1;
+									local481 = Pix3D.sinTable[local381] >> 1;
 									local404[4] = local451 * local475 + 16384 >> 15;
 									local404[5] = -local457;
 									local404[3] = local481 * local451 + 16384 >> 15;
@@ -291,11 +299,11 @@ public final class PlayerModel {
 				}
 				@Pc(740) ModelUnlit local740 = new ModelUnlit(local239, local239.length);
 				for (local346 = 0; local346 < 5; local346++) {
-					if (Static33.aShortArrayArray2[local346].length > this.anIntArray236[local346]) {
-						local740.method1687(Static200.aShortArray65[local346], Static33.aShortArrayArray2[local346][this.anIntArray236[local346]]);
+					if (recol1s[local346].length > this.anIntArray236[local346]) {
+						local740.method1687(recol2s[local346], recol1s[local346][this.anIntArray236[local346]]);
 					}
-					if (Static172.aShortArrayArray7[local346].length > this.anIntArray236[local346]) {
-						local740.method1687(Static160.aShortArray41[local346], Static172.aShortArrayArray7[local346][this.anIntArray236[local346]]);
+					if (recol1d[local346].length > this.anIntArray236[local346]) {
+						local740.method1687(recol2d[local346], recol1d[local346][this.anIntArray236[local346]]);
 					}
 				}
 				local154 = local740.method1679(64, 850, -30, -50, -30);
@@ -314,13 +322,13 @@ public final class PlayerModel {
 		@Pc(979) int local979;
 		for (local353 = 0; local353 < local346; local353++) {
 			if (arg0[local353] != null) {
-				@Pc(858) SeqType local858 = Static36.method941(arg0[local353].anInt5396);
-				if (local858.anIntArray473 != null) {
+				@Pc(858) SeqType local858 = SeqType.list(arg0[local353].anInt5396);
+				if (local858.frames != null) {
 					local158 = true;
 					Static208.aClass144Array2[local353] = local858;
 					local374 = arg0[local353].anInt5399;
 					local367 = arg0[local353].anInt5398;
-					local381 = local858.anIntArray473[local374];
+					local381 = local858.frames[local374];
 					Static276.aClass3_Sub2_Sub7Array8[local353] = Static72.method1566(local381 >>> 16);
 					local381 &= 0xFFFF;
 					Static241.anIntArray520[local353] = local381;
@@ -329,10 +337,10 @@ public final class PlayerModel {
 						local827 |= Static276.aClass3_Sub2_Sub7Array8[local353].method901(local381);
 						local838 |= local858.aBoolean278;
 					}
-					if ((local858.aBoolean277 || Static204.aBoolean234) && local367 != -1 && local367 < local858.anIntArray473.length) {
+					if ((local858.aBoolean277 || Static204.aBoolean234) && local367 != -1 && local367 < local858.frames.length) {
 						Static262.anIntArray515[local353] = local858.anIntArray474[local374];
 						Static73.anIntArray183[local353] = arg0[local353].anInt5404;
-						local979 = local858.anIntArray473[local367];
+						local979 = local858.frames[local367];
 						Static133.aClass3_Sub2_Sub7Array7[local353] = Static72.method1566(local979 >>> 16);
 						@Pc(991) int local991 = local979 & 0xFFFF;
 						Static216.anIntArray187[local353] = local991;
@@ -358,7 +366,7 @@ public final class PlayerModel {
 		@Pc(1040) AnimFrameset local1040 = null;
 		@Pc(1042) AnimFrameset local1042 = null;
 		if (arg3 != null) {
-			local353 = arg3.anIntArray473[arg7];
+			local353 = arg3.frames[arg7];
 			local979 = local353 >>> 16;
 			local1042 = Static72.method1566(local979);
 			local353 &= 0xFFFF;
@@ -367,8 +375,8 @@ public final class PlayerModel {
 				local827 |= local1042.method901(local353);
 				local838 |= arg3.aBoolean278;
 			}
-			if ((arg3.aBoolean277 || Static204.aBoolean234) && arg1 != -1 && arg3.anIntArray473.length > arg1) {
-				local360 = arg3.anIntArray473[arg1];
+			if ((arg3.aBoolean277 || Static204.aBoolean234) && arg1 != -1 && arg3.frames.length > arg1) {
+				local360 = arg3.frames[arg1];
 				local451 = local360 >>> 16;
 				local360 &= 0xFFFF;
 				local374 = arg3.anIntArray474[arg7];
@@ -389,7 +397,7 @@ public final class PlayerModel {
 		@Pc(1156) AnimFrameset local1156 = null;
 		local457 = 0;
 		if (arg2 != null) {
-			local979 = arg2.anIntArray473[arg8];
+			local979 = arg2.frames[arg8];
 			local475 = local979 >>> 16;
 			local979 &= 0xFFFF;
 			local1154 = Static72.method1566(local475);
@@ -398,9 +406,9 @@ public final class PlayerModel {
 				local827 |= local1154.method901(local979);
 				local838 |= arg2.aBoolean278;
 			}
-			if ((arg2.aBoolean277 || Static204.aBoolean234) && arg5 != -1 && arg2.anIntArray473.length > arg5) {
+			if ((arg2.aBoolean277 || Static204.aBoolean234) && arg5 != -1 && arg2.frames.length > arg5) {
 				local457 = arg2.anIntArray474[arg8];
-				local451 = arg2.anIntArray473[arg5];
+				local451 = arg2.frames[arg5];
 				local481 = local451 >>> 16;
 				local451 &= 0xFFFF;
 				if (local475 == local481) {
@@ -442,7 +450,7 @@ public final class PlayerModel {
 	@OriginalMember(owner = "com.jagex3.client.client!hh", name = "a", descriptor = "(IBLclient!tk;II)Lclient!ak;")
 	public final ModelLit method1956(@OriginalArg(0) int arg0, @OriginalArg(2) SeqType arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		if (this.anInt2492 != -1) {
-			return Static214.method4363(this.anInt2492).method2943(arg1, arg0, arg3, arg2);
+			return NpcType.list(this.anInt2492).method2943(arg1, arg0, arg3, arg2);
 		}
 		@Pc(30) ModelLit local30 = (ModelLit) Static139.aClass99_21.method3106(this.aLong88);
 		if (local30 == null) {
@@ -454,7 +462,7 @@ public final class PlayerModel {
 					if ((local52 & Integer.MIN_VALUE) != 0 && !Static81.method1752(local52 & 0x3FFFFFFF).method1205()) {
 						local42 = true;
 					}
-				} else if (!Static71.method1439(local52 & 0x3FFFFFFF).method1816(this.aBoolean141)) {
+				} else if (!ObjType.list(local52 & 0x3FFFFFFF).method1816(this.aBoolean141)) {
 					local42 = true;
 				}
 			}
@@ -468,7 +476,7 @@ public final class PlayerModel {
 				local114 = this.anIntArray233[local104];
 				@Pc(134) ModelUnlit local134;
 				if ((local114 & 0x40000000) != 0) {
-					local134 = Static71.method1439(local114 & 0x3FFFFFFF).method1830(this.aBoolean141);
+					local134 = ObjType.list(local114 & 0x3FFFFFFF).method1830(this.aBoolean141);
 					if (local134 != null) {
 						local100[local52++] = local134;
 					}
@@ -481,11 +489,11 @@ public final class PlayerModel {
 			}
 			@Pc(171) ModelUnlit local171 = new ModelUnlit(local100, local52);
 			for (local114 = 0; local114 < 5; local114++) {
-				if (Static33.aShortArrayArray2[local114].length > this.anIntArray236[local114]) {
-					local171.method1687(Static200.aShortArray65[local114], Static33.aShortArrayArray2[local114][this.anIntArray236[local114]]);
+				if (recol1s[local114].length > this.anIntArray236[local114]) {
+					local171.method1687(recol2s[local114], recol1s[local114][this.anIntArray236[local114]]);
 				}
-				if (Static172.aShortArrayArray7[local114].length > this.anIntArray236[local114]) {
-					local171.method1687(Static160.aShortArray41[local114], Static172.aShortArrayArray7[local114][this.anIntArray236[local114]]);
+				if (recol1d[local114].length > this.anIntArray236[local114]) {
+					local171.method1687(recol2d[local114], recol1d[local114][this.anIntArray236[local114]]);
 				}
 			}
 			local30 = local171.method1679(64, 768, -50, -10, -50);

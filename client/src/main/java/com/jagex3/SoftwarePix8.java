@@ -94,12 +94,12 @@ public final class SoftwarePix8 extends Pix8 {
 		}
 		local41 = arg0 + arg1 * Static129.anInt3144;
 		@Pc(125) int local125 = Static129.anInt3144 - arg2;
-		if (arg1 + arg3 > Static129.anInt3149) {
-			arg3 -= arg1 + arg3 - Static129.anInt3149;
+		if (arg1 + arg3 > Pix2D.anInt3149) {
+			arg3 -= arg1 + arg3 - Pix2D.anInt3149;
 		}
 		@Pc(145) int local145;
-		if (arg1 < Static129.anInt3147) {
-			local145 = Static129.anInt3147 - arg1;
+		if (arg1 < Pix2D.anInt3147) {
+			local145 = Pix2D.anInt3147 - arg1;
 			arg3 -= local145;
 			local41 += local145 * Static129.anInt3144;
 			local9 += local27 * local145;
@@ -173,15 +173,15 @@ public final class SoftwarePix8 extends Pix8 {
 		@Pc(27) int local27 = Static129.anInt3144 - local23;
 		@Pc(29) int local29 = 0;
 		@Pc(36) int local36;
-		if (arg1 < Static129.anInt3147) {
-			local36 = Static129.anInt3147 - arg1;
+		if (arg1 < Pix2D.anInt3147) {
+			local36 = Pix2D.anInt3147 - arg1;
 			local20 -= local36;
-			arg1 = Static129.anInt3147;
+			arg1 = Pix2D.anInt3147;
 			local17 = local36 * local23;
 			local15 += local36 * Static129.anInt3144;
 		}
-		if (arg1 + local20 > Static129.anInt3149) {
-			local20 -= arg1 + local20 - Static129.anInt3149;
+		if (arg1 + local20 > Pix2D.anInt3149) {
+			local20 -= arg1 + local20 - Pix2D.anInt3149;
 		}
 		if (arg0 < Static129.anInt3145) {
 			local36 = Static129.anInt3145 - arg0;
@@ -251,12 +251,12 @@ public final class SoftwarePix8 extends Pix8 {
 		}
 		local41 = arg0 + arg1 * Static129.anInt3144;
 		@Pc(125) int local125 = Static129.anInt3144 - arg2;
-		if (arg1 + arg3 > Static129.anInt3149) {
-			arg3 -= arg1 + arg3 - Static129.anInt3149;
+		if (arg1 + arg3 > Pix2D.anInt3149) {
+			arg3 -= arg1 + arg3 - Pix2D.anInt3149;
 		}
 		@Pc(145) int local145;
-		if (arg1 < Static129.anInt3147) {
-			local145 = Static129.anInt3147 - arg1;
+		if (arg1 < Pix2D.anInt3147) {
+			local145 = Pix2D.anInt3147 - arg1;
 			arg3 -= local145;
 			local41 += local145 * Static129.anInt3144;
 			local9 += local27 * local145;
@@ -278,7 +278,7 @@ public final class SoftwarePix8 extends Pix8 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!ek", name = "a", descriptor = "(II)V")
 	@Override
-	public final void method3336(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+	public final void plotSprite(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		arg0 += this.anInt4280;
 		arg1 += this.anInt4273;
 		@Pc(15) int local15 = arg0 + arg1 * Static129.anInt3144;
@@ -288,15 +288,15 @@ public final class SoftwarePix8 extends Pix8 {
 		@Pc(27) int local27 = Static129.anInt3144 - local23;
 		@Pc(29) int local29 = 0;
 		@Pc(36) int local36;
-		if (arg1 < Static129.anInt3147) {
-			local36 = Static129.anInt3147 - arg1;
+		if (arg1 < Pix2D.anInt3147) {
+			local36 = Pix2D.anInt3147 - arg1;
 			local20 -= local36;
-			arg1 = Static129.anInt3147;
+			arg1 = Pix2D.anInt3147;
 			local17 = local36 * local23;
 			local15 += local36 * Static129.anInt3144;
 		}
-		if (arg1 + local20 > Static129.anInt3149) {
-			local20 -= arg1 + local20 - Static129.anInt3149;
+		if (arg1 + local20 > Pix2D.anInt3149) {
+			local20 -= arg1 + local20 - Pix2D.anInt3149;
 		}
 		if (arg0 < Static129.anInt3145) {
 			local36 = Static129.anInt3145 - arg0;

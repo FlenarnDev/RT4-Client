@@ -5,7 +5,6 @@ import java.awt.Frame;
 import com.jagex.signlink.PrivilegedRequest;
 import com.jagex.signlink.SignLink;
 import com.jagex3.*;
-import com.jagex3.client.applet.GameShell;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -21,38 +20,13 @@ public final class Static169 {
 	@OriginalMember(owner = "com.jagex3.client.client!nf", name = "e", descriptor = "I")
 	public static int anInt4073;
 
-	@OriginalMember(owner = "com.jagex3.client.client!nf", name = "h", descriptor = "Lclient!be;")
-	public static IfType aClass13_18;
-
-	@OriginalMember(owner = "com.jagex3.client.client!nf", name = "f", descriptor = "Lclient!n;")
+    @OriginalMember(owner = "com.jagex3.client.client!nf", name = "f", descriptor = "Lclient!n;")
 	public static final SoftLruCache aClass99_24 = new SoftLruCache(500);
 
 	@OriginalMember(owner = "com.jagex3.client.client!nf", name = "i", descriptor = "I")
 	public static int anInt4075 = -1;
 
-	@OriginalMember(owner = "com.jagex3.client.client!nf", name = "a", descriptor = "(Lclient!na;BZ)V")
-	public static void openUrl(@OriginalArg(0) JagString arg0, @OriginalArg(2) boolean arg1) {
-		if (!arg1) {
-			try {
-				Static230.anApplet_Sub1_1.getAppletContext().showDocument(arg0.method3127(Static230.anApplet_Sub1_1.getCodeBase()), "_top");
-			} catch (@Pc(22) Exception local22) {
-			}
-			return;
-		}
-		if (GlRenderer.enabled && Static40.aBoolean78) {
-			try {
-				Static287.method1758(GameShell.signLink.anApplet2, "openjs", new Object[] { arg0.method3127(Static230.anApplet_Sub1_1.getCodeBase()).toString() });
-				return;
-			} catch (@Pc(48) Throwable local48) {
-			}
-		}
-		try {
-			Static230.anApplet_Sub1_1.getAppletContext().showDocument(arg0.method3127(Static230.anApplet_Sub1_1.getCodeBase()), "_blank");
-		} catch (@Pc(59) Exception local59) {
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!nf", name = "a", descriptor = "(IIIIILsignlink!ll;)Ljava/awt/Frame;")
+    @OriginalMember(owner = "com.jagex3.client.client!nf", name = "a", descriptor = "(IIIIILsignlink!ll;)Ljava/awt/Frame;")
 	public static Frame method3176(@OriginalArg(2) int arg0, @OriginalArg(3) int arg1, @OriginalArg(4) int arg2, @OriginalArg(5) SignLink arg3) {
 		if (!arg3.method5111()) {
 			return null;

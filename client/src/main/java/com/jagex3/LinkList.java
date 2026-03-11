@@ -28,7 +28,7 @@ public final class LinkList {
 				this.aClass3_110 = null;
 				return;
 			}
-			local5.method4658();
+			local5.unlink();
 		}
 	}
 
@@ -45,9 +45,9 @@ public final class LinkList {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ih", name = "a", descriptor = "(ZLclient!ab;)V")
-	public final void method2282(@OriginalArg(1) Linkable arg0) {
+	public final void push(@OriginalArg(1) Linkable arg0) {
 		if (arg0.aClass3_223 != null) {
-			arg0.method4658();
+			arg0.unlink();
 		}
 		arg0.aClass3_222 = this.aClass3_109;
 		arg0.aClass3_223 = this.aClass3_109.aClass3_223;
@@ -56,9 +56,9 @@ public final class LinkList {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ih", name = "a", descriptor = "(ILclient!ab;)V")
-	public final void method2283(@OriginalArg(1) Linkable arg0) {
+	public final void pushFront(@OriginalArg(1) Linkable arg0) {
 		if (arg0.aClass3_223 != null) {
-			arg0.method4658();
+			arg0.unlink();
 		}
 		arg0.aClass3_222 = this.aClass3_109.aClass3_222;
 		arg0.aClass3_223 = this.aClass3_109;
@@ -79,18 +79,18 @@ public final class LinkList {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ih", name = "a", descriptor = "(B)Lclient!ab;")
-	public final Linkable method2287() {
+	public final Linkable popFront() {
 		@Pc(3) Linkable local3 = this.aClass3_109.aClass3_222;
 		if (this.aClass3_109 == local3) {
 			return null;
 		} else {
-			local3.method4658();
+			local3.unlink();
 			return local3;
 		}
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ih", name = "e", descriptor = "(I)Lclient!ab;")
-	public final Linkable method2288() {
+	public final Linkable next() {
 		@Pc(12) Linkable local12 = this.aClass3_110;
 		if (local12 == this.aClass3_109) {
 			this.aClass3_110 = null;
@@ -102,7 +102,7 @@ public final class LinkList {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ih", name = "f", descriptor = "(I)Lclient!ab;")
-	public final Linkable method2289() {
+	public final Linkable head() {
 		@Pc(3) Linkable local3 = this.aClass3_109.aClass3_222;
 		if (this.aClass3_109 == local3) {
 			this.aClass3_110 = null;

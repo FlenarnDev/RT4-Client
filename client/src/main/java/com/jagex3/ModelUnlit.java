@@ -398,7 +398,13 @@ public final class ModelUnlit extends ModelSource {
 		this.aShort18 = arg0.aShort18;
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!gb", name = "c", descriptor = "()V")
+    @OriginalMember(owner = "com.jagex3.client.client!gb", name = "a", descriptor = "(Lclient!ve;II)Lclient!gb;")
+    public static ModelUnlit method1686(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
+        @Pc(5) byte[] local5 = arg0.method4495(arg1, 0);
+        return local5 == null ? null : new ModelUnlit(local5);
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!gb", name = "c", descriptor = "()V")
 	public final void method1660() {
 		for (@Pc(1) int local1 = 0; local1 < this.anInt2139; local1++) {
 			this.anIntArray202[local1] = -this.anIntArray202[local1];
@@ -1246,7 +1252,7 @@ public final class ModelUnlit extends ModelSource {
 
 	@OriginalMember(owner = "com.jagex3.client.client!gb", name = "b", descriptor = "()I")
 	@Override
-	public final int method4549() {
+	public final int calcBoundingCylinder() {
 		if (!this.aBoolean121) {
 			this.method1664();
 		}

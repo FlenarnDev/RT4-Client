@@ -1,7 +1,5 @@
 package com.jagex3;
 
-import deob.Static34;
-import deob.Static36;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -57,18 +55,18 @@ public final class MapSpotAnim extends ModelSource {
 		this.anInt590 = arg6 + arg5;
 		this.anInt596 = arg0;
 		this.anInt599 = arg4;
-		@Pc(42) int local42 = Static34.method877(this.anInt596).anInt1754;
+		@Pc(42) int local42 = SpotType.list(this.anInt596).anim;
 		if (local42 == -1) {
 			this.aBoolean41 = true;
 		} else {
 			this.aBoolean41 = false;
-			this.aClass144_1 = Static36.method941(local42);
+			this.aClass144_1 = SeqType.list(local42);
 		}
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!bh", name = "b", descriptor = "(Z)Lclient!ak;")
 	private ModelLit method552() {
-		@Pc(8) SpotType local8 = Static34.method877(this.anInt596);
+		@Pc(8) SpotType local8 = SpotType.list(this.anInt596);
 		@Pc(26) ModelLit local26;
 		if (this.aBoolean41) {
 			local26 = local8.method1319(-1, -1, 0);
@@ -80,7 +78,7 @@ public final class MapSpotAnim extends ModelSource {
 
 	@OriginalMember(owner = "com.jagex3.client.client!bh", name = "b", descriptor = "()I")
 	@Override
-	public final int method4549() {
+	public final int calcBoundingCylinder() {
 		return this.anInt603;
 	}
 
@@ -90,7 +88,7 @@ public final class MapSpotAnim extends ModelSource {
 		@Pc(7) ModelLit local7 = this.method552();
 		if (local7 != null) {
 			local7.method4546(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, this.aClass47_Sub1_1);
-			this.anInt603 = local7.method4549();
+			this.anInt603 = local7.calcBoundingCylinder();
 		}
 	}
 
@@ -103,7 +101,7 @@ public final class MapSpotAnim extends ModelSource {
 		while (this.anInt607 > this.aClass144_1.anIntArray474[this.anInt593]) {
 			this.anInt607 -= this.aClass144_1.anIntArray474[this.anInt593];
 			this.anInt593++;
-			if (this.aClass144_1.anIntArray473.length <= this.anInt593) {
+			if (this.aClass144_1.frames.length <= this.anInt593) {
 				this.aBoolean41 = true;
 				break;
 			}

@@ -1,5 +1,6 @@
 package com.jagex3;
 
+import deob.Static262;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -95,6 +96,21 @@ public final class BasType {
     public static void init(@OriginalArg(1) Js5 arg0) {
         clientConfig = arg0;
     }
+
+    @OriginalMember(owner = "com.jagex3.client.client!di", name = "d", descriptor = "(I)V")
+	public static void method1172() {
+		Static262.aClass99_34.clear();
+	}
+
+    @OriginalMember(owner = "com.jagex3.client.client!bi", name = "c", descriptor = "(II)V")
+    public static void method586() {
+        Static262.aClass99_34.method3102(5);
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!jk", name = "e", descriptor = "(B)V")
+	public static void method2433() {
+		Static262.aClass99_34.method3104();
+	}
 
     @OriginalMember(owner = "com.jagex3.client.client!ck", name = "a", descriptor = "(I)V")
 	public final void method878() {

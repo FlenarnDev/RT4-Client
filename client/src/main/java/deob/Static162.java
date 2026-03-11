@@ -13,10 +13,7 @@ public final class Static162 {
 	@OriginalMember(owner = "com.jagex3.client.client!ml", name = "K", descriptor = "I")
 	public static int anInt3947;
 
-	@OriginalMember(owner = "com.jagex3.client.client!ml", name = "Q", descriptor = "I")
-	public static int anInt3953 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ml", name = "ab", descriptor = "Z")
+    @OriginalMember(owner = "com.jagex3.client.client!ml", name = "ab", descriptor = "Z")
 	public static boolean aBoolean190 = true;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ml", name = "a", descriptor = "(BILclient!ve;)[Lclient!ek;")

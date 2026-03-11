@@ -1,9 +1,6 @@
 package deob;
 
-import com.jagex3.GlRenderer;
-import com.jagex3.Ground;
-import com.jagex3.JagString;
-import com.jagex3.Rasteriser;
+import com.jagex3.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -64,8 +61,8 @@ public final class Static147 {
 			@Pc(164) int local164 = Static68.anIntArray164[local29];
 			if ((local39 - local148) * (local164 - local160) - (local156 - local160) * (local152 - local148) > 0) {
 				if (Static158.aBoolean187 && Static19.method583(Static89.anInt2388 + Rasteriser.anInt2471, Static131.anInt3259 + Rasteriser.anInt2469, local156, local160, local164, local39, local148, local152)) {
-					Static56.anInt1742 = arg5;
-					Static116.anInt2954 = arg6;
+					World.groundX = arg5;
+					World.groundZ = arg6;
 				}
 				if (!GlRenderer.enabled && !arg7) {
 					Rasteriser.aBoolean138 = false;
@@ -77,22 +74,16 @@ public final class Static147 {
 							Rasteriser.method1928(local156, local160, local164, local39, local148, local152, arg0.anIntArray167[local5], arg0.anIntArray172[local5], arg0.anIntArray171[local5]);
 						}
 					} else if (!Static159.aBoolean189) {
-						@Pc(373) int local373 = Rasteriser.anInterface1_2.method3234(arg0.anIntArray161[local5]);
+						@Pc(373) int local373 = Pix3D.anInterface1_2.method3234(arg0.anIntArray161[local5]);
 						Rasteriser.method1928(local156, local160, local164, local39, local148, local152, Static216.method1640(local373, arg0.anIntArray167[local5]), Static216.method1640(local373, arg0.anIntArray172[local5]), Static216.method1640(local373, arg0.anIntArray171[local5]));
 					} else if (arg0.aBoolean113) {
-						Rasteriser.method1909(local156, local160, local164, local39, local148, local152, arg0.anIntArray167[local5], arg0.anIntArray172[local5], arg0.anIntArray171[local5], Static68.anIntArray159[0], Static68.anIntArray159[1], Static68.anIntArray159[3], Static68.anIntArray170[0], Static68.anIntArray170[1], Static68.anIntArray170[3], Static68.anIntArray169[0], Static68.anIntArray169[1], Static68.anIntArray169[3], arg0.anIntArray161[local5]);
+						Pix3D.method1909(local156, local160, local164, local39, local148, local152, arg0.anIntArray167[local5], arg0.anIntArray172[local5], arg0.anIntArray171[local5], Static68.anIntArray159[0], Static68.anIntArray159[1], Static68.anIntArray159[3], Static68.anIntArray170[0], Static68.anIntArray170[1], Static68.anIntArray170[3], Static68.anIntArray169[0], Static68.anIntArray169[1], Static68.anIntArray169[3], arg0.anIntArray161[local5]);
 					} else {
-						Rasteriser.method1909(local156, local160, local164, local39, local148, local152, arg0.anIntArray167[local5], arg0.anIntArray172[local5], arg0.anIntArray171[local5], Static68.anIntArray159[local15], Static68.anIntArray159[local22], Static68.anIntArray159[local29], Static68.anIntArray170[local15], Static68.anIntArray170[local22], Static68.anIntArray170[local29], Static68.anIntArray169[local15], Static68.anIntArray169[local22], Static68.anIntArray169[local29], arg0.anIntArray161[local5]);
+						Pix3D.method1909(local156, local160, local164, local39, local148, local152, arg0.anIntArray167[local5], arg0.anIntArray172[local5], arg0.anIntArray171[local5], Static68.anIntArray159[local15], Static68.anIntArray159[local22], Static68.anIntArray159[local29], Static68.anIntArray170[local15], Static68.anIntArray170[local22], Static68.anIntArray170[local29], Static68.anIntArray169[local15], Static68.anIntArray169[local22], Static68.anIntArray169[local29], arg0.anIntArray161[local5]);
 					}
 				}
 			}
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!lh", name = "d", descriptor = "(B)V")
-	public static void method2764() {
-		Static190.aClass99_26.method3104();
-		Static124.aClass99_17.method3104();
-		Static87.aClass99_12.method3104();
-	}
 }

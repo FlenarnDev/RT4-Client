@@ -1,6 +1,5 @@
 package deob;
 
-import com.jagex3.IfType;
 import com.jagex3.JagString;
 import com.jagex3.LocalizedText;
 import org.openrs2.deob.annotation.OriginalArg;
@@ -9,13 +8,7 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static52 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!eb", name = "u", descriptor = "I")
-	public static int anInt1695;
-
-	@OriginalMember(owner = "com.jagex3.client.client!eb", name = "p", descriptor = "[I")
-	public static final int[] anIntArray136 = new int[1000];
-
-	@OriginalMember(owner = "com.jagex3.client.client!eb", name = "t", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!eb", name = "t", descriptor = "I")
 	public static int anInt1694 = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!eb", name = "a", descriptor = "(IIIIIII)I")
@@ -37,13 +30,7 @@ public final class Static52 {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!eb", name = "d", descriptor = "(I)V")
-	public static void method1287() {
-		IfType.list = new IfType[IfType.interfaces.getGroupCount()][];
-		IfType.open = new boolean[IfType.interfaces.getGroupCount()];
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!eb", name = "b", descriptor = "(II)Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!eb", name = "b", descriptor = "(II)Lclient!na;")
 	public static JagString method1288(@OriginalArg(1) int arg0) {
 		if (arg0 < 100000) {
 			return JagString.join(new JagString[] { Static105.aClass100_559, JagString.parseInt(arg0), Static123.aClass100_594 });

@@ -5,8 +5,6 @@ import java.io.UnsupportedEncodingException;
 import com.jagex.signlink.MonotonicClock;
 import com.jagex3.client.applet.GameShell;
 import com.jagex3.JagString;
-import com.jagex3.Packet;
-import com.jagex3.QuickChatPhraseType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -16,67 +14,19 @@ public final class Static230 {
     @OriginalMember(owner = "com.jagex3.client.client!sj", name = "D", descriptor = "I")
 	public static int anInt5158;
 
-	@OriginalMember(owner = "com.jagex3.client.client!sj", name = "p", descriptor = "I")
-	public static int anInt5150 = 1;
-
-	@OriginalMember(owner = "com.jagex3.client.client!sj", name = "q", descriptor = "[Lclient!na;")
-	public static final JagString[] aClass100Array158 = new JagString[100];
-
-	@OriginalMember(owner = "com.jagex3.client.client!sj", name = "t", descriptor = "I")
-	public static int anInt5152 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!sj", name = "u", descriptor = "Z")
-	public static boolean aBoolean250 = false;
-
-	@OriginalMember(owner = "com.jagex3.client.client!sj", name = "w", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!sj", name = "w", descriptor = "Lclient!na;")
 	public static final JagString aClass100_978 = Static28.parse("<)4col>");
 
 	@OriginalMember(owner = "com.jagex3.client.client!sj", name = "F", descriptor = "Lclient!rc;")
 	public static GameShell anApplet_Sub1_1 = null;
 
-	@OriginalMember(owner = "com.jagex3.client.client!sj", name = "H", descriptor = "I")
-	public static int anInt5161 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!sj", name = "c", descriptor = "(I)V")
+    @OriginalMember(owner = "com.jagex3.client.client!sj", name = "c", descriptor = "(I)V")
 	public static void method3947() {
 		Static250.aClass99_33.method3104();
 		Static139.aClass99_21.method3104();
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!sj", name = "a", descriptor = "(Z)V")
-	public static void method3948() {
-		try {
-			if (Static14.anInt441 == 1) {
-				@Pc(16) int local16 = Static172.aClass3_Sub3_Sub4_2.method4440();
-				if (local16 > 0 && Static172.aClass3_Sub3_Sub4_2.method4414()) {
-					local16 -= Static57.anInt1757;
-					if (local16 < 0) {
-						local16 = 0;
-					}
-					Static172.aClass3_Sub3_Sub4_2.method4447(local16);
-					return;
-				}
-				Static172.aClass3_Sub3_Sub4_2.method4446();
-				Static172.aClass3_Sub3_Sub4_2.method4426();
-				Static144.aClass3_Sub29_1 = null;
-				Static27.aClass89_1 = null;
-				if (Static172.aClass153_70 == null) {
-					Static14.anInt441 = 0;
-				} else {
-					Static14.anInt441 = 2;
-				}
-			}
-		} catch (@Pc(62) Exception local62) {
-			local62.printStackTrace();
-			Static172.aClass3_Sub3_Sub4_2.method4446();
-			Static172.aClass153_70 = null;
-			Static144.aClass3_Sub29_1 = null;
-			Static14.anInt441 = 0;
-			Static27.aClass89_1 = null;
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!sj", name = "a", descriptor = "(BII)I")
+    @OriginalMember(owner = "com.jagex3.client.client!sj", name = "a", descriptor = "(BII)I")
 	public static int method3949(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
 		if (arg0 == -2) {
 			return 12345678;
@@ -126,45 +76,22 @@ public final class Static230 {
 		return local23;
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!sj", name = "b", descriptor = "(II)Lclient!cb;")
-	public static QuickChatPhraseType method3953(@OriginalArg(1) int arg0) {
-		@Pc(10) QuickChatPhraseType local10 = (QuickChatPhraseType) Static249.aClass54_15.method1806((long) arg0);
-		if (local10 != null) {
-			return local10;
-		}
-		@Pc(27) byte[] local27;
-		if (arg0 < 32768) {
-			local27 = QuickChatPhraseType.configClientSmall.method4495(1, arg0);
-		} else {
-			local27 = QuickChatPhraseType.configClientLarge.method4495(1, arg0 & 0x7FFF);
-		}
-		local10 = new QuickChatPhraseType();
-		if (local27 != null) {
-			local10.method761(new Packet(local27));
-		}
-		if (arg0 >= 32768) {
-			local10.method763();
-		}
-		Static249.aClass54_15.method1811(local10, (long) arg0);
-		return local10;
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!sj", name = "a", descriptor = "(ILclient!na;)V")
+    @OriginalMember(owner = "com.jagex3.client.client!sj", name = "a", descriptor = "(ILclient!na;)V")
 	public static void method3954(@OriginalArg(1) JagString arg0) {
 		Static47.aClass100_991 = arg0;
-		if (GameShell.signLink.anApplet2 == null) {
+		if (GameShell.signLink.applet == null) {
 			return;
 		}
 		try {
-			@Pc(17) JagString local17 = Static272.aClass100_989.method3153(GameShell.signLink.anApplet2);
-			@Pc(23) JagString local23 = Static246.aClass100_1029.method3153(GameShell.signLink.anApplet2);
+			@Pc(17) JagString local17 = Static272.aClass100_989.method3153(GameShell.signLink.applet);
+			@Pc(23) JagString local23 = Static246.aClass100_1029.method3153(GameShell.signLink.applet);
 			@Pc(48) JagString local48 = JagString.join(new JagString[] { local17, Static142.aClass100_667, arg0, Static276.aClass100_1095, local23 });
 			if (arg0.length() == 0) {
 				local48 = JagString.join(new JagString[] { local48, Static245.aClass100_1018 });
 			} else {
 				local48 = JagString.join(new JagString[] { local48, Static263.aClass100_1082, Static33.method873(MonotonicClock.currentTime() + 94608000000L), Static64.aClass100_431, Static154.method2929(94608000L) });
 			}
-			JagString.join(new JagString[] { Static221.aClass100_821, local48, Static223.aClass100_946 }).method3134(GameShell.signLink.anApplet2);
+			JagString.join(new JagString[] { Static221.aClass100_821, local48, Static223.aClass100_946 }).method3134(GameShell.signLink.applet);
 		} catch (@Pc(124) Throwable local124) {
 		}
 	}

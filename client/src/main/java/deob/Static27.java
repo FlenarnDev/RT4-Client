@@ -12,10 +12,7 @@ public final class Static27 {
 	@OriginalMember(owner = "com.jagex3.client.client!cb", name = "hb", descriptor = "Lclient!le;")
 	public static WaveCache aClass89_1;
 
-	@OriginalMember(owner = "com.jagex3.client.client!cb", name = "I", descriptor = "[I")
-	public static final int[] anIntArray70 = new int[32];
-
-	@OriginalMember(owner = "com.jagex3.client.client!cb", name = "Y", descriptor = "Lclient!n;")
+    @OriginalMember(owner = "com.jagex3.client.client!cb", name = "Y", descriptor = "Lclient!n;")
 	public static final SoftLruCache aClass99_4 = new SoftLruCache(64);
 
 	@OriginalMember(owner = "com.jagex3.client.client!cb", name = "ab", descriptor = "Lclient!na;")

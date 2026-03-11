@@ -21,20 +21,22 @@ public final class IfType {
     public static IfType[][] list;
     @OriginalMember(owner = "com.jagex3.client.client!sc", name = "m", descriptor = "[Z")
     public static boolean[] open;
+    @OriginalMember(owner = "com.jagex3.client.client!rc", name = "C", descriptor = "Z")
+    public static boolean loadingAsset = false;
     @OriginalMember(owner = "com.jagex3.client.client!be", name = "b", descriptor = "[Ljava/lang/Object;")
 	public Object[] anObjectArray1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "d", descriptor = "[Ljava/lang/Object;")
-	public Object[] anObjectArray2;
+	public Object[] onstattransmit;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "e", descriptor = "[Ljava/lang/Object;")
 	public Object[] anObjectArray3;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "g", descriptor = "[Ljava/lang/Object;")
-	public Object[] anObjectArray4;
+	public Object[] onvarctransmit;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "k", descriptor = "[Ljava/lang/Object;")
-	public Object[] anObjectArray5;
+	public Object[] onclick;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "p", descriptor = "[Ljava/lang/Object;")
 	public Object[] anObjectArray6;
@@ -46,7 +48,7 @@ public final class IfType {
 	public JagString[] aClass100Array19;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "t", descriptor = "[Ljava/lang/Object;")
-	public Object[] anObjectArray7;
+	public Object[] oninvtransmit;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "u", descriptor = "[I")
 	public int[] anIntArray34;
@@ -58,25 +60,25 @@ public final class IfType {
 	public boolean aBoolean21;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "z", descriptor = "[Ljava/lang/Object;")
-	public Object[] anObjectArray9;
+	public Object[] onhold;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "E", descriptor = "[Ljava/lang/Object;")
-	public Object[] anObjectArray10;
+	public Object[] onscrollwheel;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "G", descriptor = "[I")
-	public int[] anIntArray35;
+	public int[] onvarcstrtransmitlist;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "I", descriptor = "I")
-	public int anInt452;
+	public int type;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "V", descriptor = "[I")
-	public int[] anIntArray36;
+	public int[] invBackground;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "X", descriptor = "Z")
 	public boolean aBoolean26;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Z", descriptor = "I")
-	public int modelId;
+	public int model1Id;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "bb", descriptor = "[Ljava/lang/Object;")
 	public Object[] anObjectArray11;
@@ -88,19 +90,19 @@ public final class IfType {
 	public int[] anIntArray37;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "kb", descriptor = "[I")
-	public int[] anIntArray38;
+	public int[] onvarctransmitlist;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "qb", descriptor = "[Ljava/lang/Object;")
 	public Object[] anObjectArray13;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "tb", descriptor = "[Ljava/lang/Object;")
-	public Object[] anObjectArray14;
+	public Object[] onkey;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "ub", descriptor = "[Ljava/lang/Object;")
-	public Object[] anObjectArray15;
+	public Object[] onvarcstrtransmit;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Db", descriptor = "[Ljava/lang/Object;")
-	public Object[] anObjectArray16;
+	public Object[] ondragcomplete;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Fb", descriptor = "[B")
 	public byte[] aByteArray7;
@@ -109,22 +111,22 @@ public final class IfType {
 	public Object[] anObjectArray17;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Nb", descriptor = "[Ljava/lang/Object;")
-	public Object[] anObjectArray18;
+	public Object[] onrelease;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Xb", descriptor = "[Ljava/lang/Object;")
-	public Object[] anObjectArray19;
+	public Object[] onmouseover;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Yb", descriptor = "[I")
 	public int[] anIntArray39;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "dc", descriptor = "[I")
-	public int[] objTypes;
+	public int[] linkObjNumber;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "fc", descriptor = "[Ljava/lang/Object;")
 	public Object[] anObjectArray20;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "lc", descriptor = "[Lclient!be;")
-	public IfType[] createdComponents;
+	public IfType[] subcomponents;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "mc", descriptor = "[B")
 	public byte[] aByteArray8;
@@ -133,28 +135,28 @@ public final class IfType {
 	public Object[] anObjectArray21;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "tc", descriptor = "[Ljava/lang/Object;")
-	public Object[] anObjectArray22;
+	public Object[] ontimer;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "yc", descriptor = "[I")
-	public int[] anIntArray41;
+	public int[] invBackgroundX;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Ac", descriptor = "[I")
-	public int[] anIntArray42;
+	public int[] onstattransmitlist;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Bc", descriptor = "[I")
-	public int[] anIntArray43;
+	public int[] scriptOperand;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Cc", descriptor = "[Ljava/lang/Object;")
-	public Object[] anObjectArray23;
+	public Object[] onmouserepeat;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Ic", descriptor = "[Ljava/lang/Object;")
-	public Object[] anObjectArray24;
+	public Object[] onmouseleave;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Jc", descriptor = "[Ljava/lang/Object;")
-	public Object[] anObjectArray25;
+	public Object[] onvartransmit;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Nc", descriptor = "[I")
-	public int[] anIntArray44;
+	public int[] onvartransmitlist;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Tc", descriptor = "[I")
 	public int[] anIntArray45;
@@ -163,19 +165,19 @@ public final class IfType {
 	public Object[] anObjectArray26;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "ad", descriptor = "[[I")
-	public int[][] anIntArrayArray4;
+	public int[][] scripts;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "bd", descriptor = "[I")
 	public int[] anIntArray46;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "cd", descriptor = "[I")
-	public int[] anIntArray47;
+	public int[] invBackgroundY;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "gd", descriptor = "[Ljava/lang/Object;")
 	public Object[] anObjectArray27;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "kd", descriptor = "[I")
-	public int[] anIntArray48;
+	public int[] scriptComparator;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "nd", descriptor = "[I")
 	public int[] anIntArray49;
@@ -184,16 +186,16 @@ public final class IfType {
 	public Object[] anObjectArray28;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "rd", descriptor = "[Ljava/lang/Object;")
-	public Object[] anObjectArray29;
+	public Object[] onop;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "sd", descriptor = "[Ljava/lang/Object;")
 	public Object[] anObjectArray30;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "wd", descriptor = "[I")
-	public int[] objCounts;
+	public int[] linkObjType;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "H", descriptor = "Z")
-	public boolean aBoolean23 = false;
+	public boolean tiling = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "f", descriptor = "I")
 	public int anInt442 = 1;
@@ -202,7 +204,7 @@ public final class IfType {
 	public int anInt459 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "S", descriptor = "I")
-	public int anInt460 = 0;
+	public int hAlign = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "j", descriptor = "I")
 	public int modelZoom = 100;
@@ -217,7 +219,7 @@ public final class IfType {
 	public int anInt472 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "W", descriptor = "I")
-	public int anInt462 = -1;
+	public int modelAnim2 = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "o", descriptor = "S")
 	public short aShort10 = 3000;
@@ -226,13 +228,13 @@ public final class IfType {
 	public int modelXAngle = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Eb", descriptor = "I")
-	public int anInt481 = 0;
+	public int modelYOf = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "A", descriptor = "Z")
-	public boolean aBoolean22 = false;
+	public boolean orthog = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "zb", descriptor = "Z")
-	public boolean aBoolean30 = false;
+	public boolean fill = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "y", descriptor = "I")
 	public int anInt447 = 0;
@@ -241,25 +243,25 @@ public final class IfType {
 	public int scrollY = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "xb", descriptor = "I")
-	public int anInt477 = -1;
+	public int graphic = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "eb", descriptor = "I")
 	public int anInt467 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "a", descriptor = "Z")
-	public boolean hidden = false;
+	public boolean hide = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Zb", descriptor = "I")
-	public int anInt490 = 1;
+	public int lineWidth = 1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Mb", descriptor = "I")
 	public int anInt484 = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "O", descriptor = "I")
-	public int componentId = -1;
+	public int subId = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "J", descriptor = "Z")
-	public boolean aBoolean24 = false;
+	public boolean clickTrigger = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Sb", descriptor = "Lclient!na;")
 	public JagString aClass100_85 = Static176.aClass100_800;
@@ -271,7 +273,7 @@ public final class IfType {
 	public int anInt478 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "lb", descriptor = "I")
-	public int anInt470 = -1;
+	public int overLayerId = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "m", descriptor = "Z")
 	public boolean aBoolean20 = false;
@@ -283,34 +285,34 @@ public final class IfType {
 	public byte aByte3 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "bc", descriptor = "I")
-	public int anInt491 = 0;
+	public int scrollHeight = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Y", descriptor = "Z")
-	public boolean aBoolean27 = false;
+	public boolean draggablebehavior = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "ob", descriptor = "Z")
 	public boolean aBoolean28 = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "cb", descriptor = "I")
-	public int anInt465 = -1;
+	public int drawTime = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "jc", descriptor = "I")
 	public int anInt496 = 1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Cb", descriptor = "I")
-	public int anInt480 = 0;
+	public int colourOver = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Hb", descriptor = "Z")
-	public boolean aBoolean32 = false;
+	public boolean v3 = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "gc", descriptor = "Lclient!bf;")
-	public ServerActive aClass3_Sub4_1 = Static45.aClass3_Sub4_2;
+	public ServerActive active = Static45.aClass3_Sub4_2;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "cc", descriptor = "I")
-	public int anInt492 = 0;
+	public int colour2 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Gb", descriptor = "Lclient!na;")
-	public JagString aClass100_84 = Static176.aClass100_800;
+	public JagString text = Static176.aClass100_800;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "n", descriptor = "I")
 	public int anInt445 = 0;
@@ -325,7 +327,7 @@ public final class IfType {
 	private int anInt461 = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "N", descriptor = "I")
-	public int layer = -1;
+	public int layerId = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "pb", descriptor = "I")
 	public int anInt473 = 1;
@@ -334,7 +336,7 @@ public final class IfType {
 	public int objId = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "vb", descriptor = "I")
-	public int anInt475 = 0;
+	public int colour2Over = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "nc", descriptor = "I")
 	public int modelZOffset = 0;
@@ -343,16 +345,16 @@ public final class IfType {
 	public JagString aClass100_88 = Static176.aClass100_800;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Lc", descriptor = "I")
-	public int anInt511 = 0;
+	public int varcTransmitNum = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "w", descriptor = "I")
-	public int baseWidth = 0;
+	public int width = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Mc", descriptor = "I")
-	public int anInt512 = 0;
+	public int marginX = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Ib", descriptor = "I")
-	public int anInt482 = -1;
+	public int transmitNum = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "c", descriptor = "Z")
 	public boolean aBoolean18 = false;
@@ -367,37 +369,37 @@ public final class IfType {
 	public int modelXOffset = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Ub", descriptor = "Lclient!na;")
-	public JagString aClass100_86 = Static176.aClass100_800;
+	public JagString targetVerb = Static176.aClass100_800;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Lb", descriptor = "I")
 	public int modelRotationSpeed = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "r", descriptor = "Lclient!na;")
-	public JagString aClass100_82 = Static176.aClass100_800;
+	public JagString text2 = Static176.aClass100_800;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Pc", descriptor = "I")
-	public int anInt514 = 0;
+	public int outline = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "oc", descriptor = "I")
 	public int anInt498 = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Rb", descriptor = "I")
-	public int anInt487 = 0;
+	public int varcstrTransmitNum = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "ic", descriptor = "I")
-	public int anInt495 = 0;
+	public int modelXOf = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Sc", descriptor = "I")
-	public int anInt516 = 0;
+	public int marginY = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Tb", descriptor = "I")
-	public int anInt488 = 0;
+	public int height = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Fc", descriptor = "I")
-	public int anInt507 = -1;
+	public int parentId = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Yc", descriptor = "I")
-	public int anInt519 = -1;
+	public int graphic2 = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "zc", descriptor = "B")
 	public byte yMode = 0;
@@ -412,19 +414,19 @@ public final class IfType {
 	public int anInt486 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "ec", descriptor = "I")
-	public int anInt493 = 0;
+	public int invTransmit = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Vc", descriptor = "S")
 	public short aShort11 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "ed", descriptor = "I")
-	public int anInt521 = 0;
+	public int rotate = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "id", descriptor = "I")
-	public int anInt522 = -1;
+	public int modelAnim = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Rc", descriptor = "Lclient!na;")
-	public JagString aClass100_89 = LocalizedText.OK;
+	public JagString buttonText = LocalizedText.OK;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Gc", descriptor = "I")
 	public int modelYOffset = 0;
@@ -433,22 +435,22 @@ public final class IfType {
 	public int objCount = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Uc", descriptor = "I")
-	public int anInt517 = -1;
+	public int drawCount = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "K", descriptor = "I")
-	public int anInt453 = 0;
+	public int clientCode = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Oc", descriptor = "I")
-	public int anInt513 = 0;
+	public int shadowColour = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "fd", descriptor = "Lclient!be;")
 	public IfType aClass13_5 = null;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "od", descriptor = "I")
-	public int anInt525 = 0;
+	public int statTransmit = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "ab", descriptor = "I")
-	public int modelType = 1;
+	public int model1Type = 1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "md", descriptor = "Z")
 	public boolean aBoolean34 = false;
@@ -469,13 +471,13 @@ public final class IfType {
 	public boolean aBoolean25 = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "vd", descriptor = "I")
-	public int baseX = 0;
+	public int dataX = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "jd", descriptor = "I")
 	public int x = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "l", descriptor = "I")
-	public int baseY = 0;
+	public int dataY = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "Bb", descriptor = "Z")
 	public boolean aBoolean31 = true;
@@ -484,13 +486,13 @@ public final class IfType {
 	public int anInt510 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "mb", descriptor = "I")
-	public int anInt471 = 0;
+	public int varTransmitNum = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "rb", descriptor = "I")
-	public int anInt474 = 0;
+	public int colour = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "xd", descriptor = "I")
-	public int anInt530 = 0;
+	public int buttonType = 0;
 
     @OriginalMember(owner = "com.jagex3.client.client!ab", name = "a", descriptor = "(ZLclient!ve;Lclient!ve;Lclient!ve;Lclient!ve;)V")
     public static void init(@OriginalArg(1) Js5 fontMetrics, @OriginalArg(2) Js5 sprites, @OriginalArg(3) Js5 interfaces, @OriginalArg(4) Js5 models) {
@@ -501,6 +503,121 @@ public final class IfType {
 
         list = new IfType[IfType.interfaces.getGroupCount()][];
         open = new boolean[IfType.interfaces.getGroupCount()];
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!af", name = "a", descriptor = "(BI)Lclient!be;")
+    public static IfType get(@OriginalArg(1) int id) {
+        @Pc(7) int interfaceId = id >> 16;
+        @Pc(18) int componentId = id & 0xFFFF;
+        if (list[interfaceId] == null || list[interfaceId][componentId] == null) {
+            @Pc(33) boolean success = openInterface(interfaceId);
+            if (!success) {
+                return null;
+            }
+            // todo: this should not be necessary, data/server-related?
+            if (list.length <= interfaceId || list[interfaceId].length <= componentId) {
+                return null;
+            }
+        }
+        return list[interfaceId][componentId];
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!da", name = "h", descriptor = "(B)V")
+    public static void method1019() {
+        Static190.aClass99_26.clear();
+        Static124.aClass99_17.clear();
+        Static87.aClass99_12.clear();
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!ec", name = "a", descriptor = "(II)V")
+    public static void method1289() {
+        Static190.aClass99_26.method3102(50);
+        Static124.aClass99_17.method3102(50);
+        Static87.aClass99_12.method3102(50);
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!tm", name = "b", descriptor = "(II)Z")
+    public static boolean openInterface(@OriginalArg(0) int arg0) {
+        if (open[arg0]) {
+            return true;
+        } else if (interfaces.method4479(arg0)) {
+            @Pc(25) int local25 = interfaces.getFileIdLimit(arg0);
+            if (local25 == 0) {
+                open[arg0] = true;
+                return true;
+            }
+            if (list[arg0] == null) {
+                list[arg0] = new IfType[local25];
+            }
+            for (@Pc(46) int local46 = 0; local46 < local25; local46++) {
+                if (list[arg0][local46] == null) {
+                    @Pc(62) byte[] local62 = interfaces.method4495(arg0, local46);
+                    if (local62 != null) {
+                        @Pc(74) IfType local74 = list[arg0][local46] = new IfType();
+                        local74.parentId = local46 + (arg0 << 16);
+                        if (local62[0] == -1) {
+                            local74.method490(new Packet(local62));
+                        } else {
+                            local74.method481(new Packet(local62));
+                        }
+                    }
+                }
+            }
+            open[arg0] = true;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!lh", name = "d", descriptor = "(B)V")
+    public static void method2764() {
+        Static190.aClass99_26.method3104();
+        Static124.aClass99_17.method3104();
+        Static87.aClass99_12.method3104();
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!qf", name = "a", descriptor = "(BII)Lclient!be;")
+    public static IfType method1418(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
+        @Pc(7) IfType local7 = get(arg0);
+        if (arg1 == -1) {
+            return local7;
+        } else if (local7 == null || local7.subcomponents == null || local7.subcomponents.length <= arg1) {
+            return null;
+        } else {
+            return local7.subcomponents[arg1];
+        }
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!ig", name = "a", descriptor = "(BI)V")
+	public static void closeInterface(@OriginalArg(1) int arg0) {
+		if (arg0 == -1 || !open[arg0]) {
+			return;
+		}
+		interfaces.method4490(arg0);
+		if (list[arg0] == null) {
+			return;
+		}
+		@Pc(27) boolean local27 = true;
+		for (@Pc(29) int local29 = 0; local29 < list[arg0].length; local29++) {
+			if (list[arg0][local29] != null) {
+				if (list[arg0][local29].type == 2) {
+					local27 = false;
+				} else {
+					list[arg0][local29] = null;
+				}
+			}
+		}
+		if (local27) {
+			list[arg0] = null;
+		}
+		open[arg0] = false;
+	}
+
+    @OriginalMember(owner = "com.jagex3.client.client!eb", name = "d", descriptor = "(I)V")
+    public static void method1287() {
+        list = new IfType[interfaces.getGroupCount()][];
+        open = new boolean[interfaces.getGroupCount()];
     }
 
     @OriginalMember(owner = "com.jagex3.client.client!be", name = "a", descriptor = "(IIB)V")
@@ -526,7 +643,7 @@ public final class IfType {
 		if (this.anIntArray37 != null) {
 			return true;
 		}
-		@Pc(18) SoftwarePix8 local18 = Static164.method3119(this.anInt477, sprites);
+		@Pc(18) SoftwarePix8 local18 = Static164.method3119(this.graphic, sprites);
 		if (local18 == null) {
 			return false;
 		}
@@ -571,37 +688,37 @@ public final class IfType {
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "a", descriptor = "(ILclient!wa;)V")
 	public final void method481(@OriginalArg(1) Packet arg0) {
-		this.aBoolean32 = false;
-		this.anInt452 = arg0.g1();
-		this.anInt530 = arg0.g1();
-		this.anInt453 = arg0.g2();
-		this.baseX = arg0.g2b();
-		this.baseY = arg0.g2b();
-		this.baseWidth = arg0.g2();
-		this.anInt488 = arg0.g2();
+		this.v3 = false;
+		this.type = arg0.g1();
+		this.buttonType = arg0.g1();
+		this.clientCode = arg0.g2();
+		this.dataX = arg0.g2b();
+		this.dataY = arg0.g2b();
+		this.width = arg0.g2();
+		this.height = arg0.g2();
 		this.aByte5 = 0;
 		this.aByte3 = 0;
 		this.yMode = 0;
 		this.xMode = 0;
 		this.anInt476 = arg0.g1();
-		this.layer = arg0.g2();
-		if (this.layer == 65535) {
-			this.layer = -1;
+		this.layerId = arg0.g2();
+		if (this.layerId == 65535) {
+			this.layerId = -1;
 		} else {
-			this.layer += this.anInt507 & 0xFFFF0000;
+			this.layerId += this.parentId & 0xFFFF0000;
 		}
-		this.anInt470 = arg0.g2();
-		if (this.anInt470 == 65535) {
-			this.anInt470 = -1;
+		this.overLayerId = arg0.g2();
+		if (this.overLayerId == 65535) {
+			this.overLayerId = -1;
 		}
 		@Pc(109) int local109 = arg0.g1();
 		@Pc(125) int local125;
 		if (local109 > 0) {
-			this.anIntArray48 = new int[local109];
-			this.anIntArray43 = new int[local109];
+			this.scriptComparator = new int[local109];
+			this.scriptOperand = new int[local109];
 			for (local125 = 0; local125 < local109; local125++) {
-				this.anIntArray43[local125] = arg0.g1();
-				this.anIntArray48[local125] = arg0.g2();
+				this.scriptOperand[local125] = arg0.g1();
+				this.scriptComparator[local125] = arg0.g2();
 			}
 		}
 		local125 = arg0.g1();
@@ -609,31 +726,31 @@ public final class IfType {
 		@Pc(175) int local175;
 		@Pc(183) int local183;
 		if (local125 > 0) {
-			this.anIntArrayArray4 = new int[local125][];
+			this.scripts = new int[local125][];
 			for (local164 = 0; local164 < local125; local164++) {
 				local175 = arg0.g2();
-				this.anIntArrayArray4[local164] = new int[local175];
+				this.scripts[local164] = new int[local175];
 				for (local183 = 0; local183 < local175; local183++) {
-					this.anIntArrayArray4[local164][local183] = arg0.g2();
-					if (this.anIntArrayArray4[local164][local183] == 65535) {
-						this.anIntArrayArray4[local164][local183] = -1;
+					this.scripts[local164][local183] = arg0.g2();
+					if (this.scripts[local164][local183] == 65535) {
+						this.scripts[local164][local183] = -1;
 					}
 				}
 			}
 		}
-		if (this.anInt452 == 0) {
-			this.anInt491 = arg0.g2();
-			this.hidden = arg0.g1() == 1;
+		if (this.type == 0) {
+			this.scrollHeight = arg0.g2();
+			this.hide = arg0.g1() == 1;
 		}
-		if (this.anInt452 == 1) {
+		if (this.type == 1) {
 			arg0.g2();
 			arg0.g1();
 		}
 		local164 = 0;
-		if (this.anInt452 == 2) {
+		if (this.type == 2) {
 			this.aByte3 = 3;
-			this.objCounts = new int[this.baseWidth * this.anInt488];
-			this.objTypes = new int[this.anInt488 * this.baseWidth];
+			this.linkObjType = new int[this.width * this.height];
+			this.linkObjNumber = new int[this.height * this.width];
 			this.aByte5 = 3;
 			local175 = arg0.g1();
 			local183 = arg0.g1();
@@ -651,20 +768,20 @@ public final class IfType {
 			if (local333 == 1) {
 				local164 |= 0x20000000;
 			}
-			this.anInt512 = arg0.g1();
-			this.anInt516 = arg0.g1();
-			this.anIntArray47 = new int[20];
-			this.anIntArray41 = new int[20];
-			this.anIntArray36 = new int[20];
+			this.marginX = arg0.g1();
+			this.marginY = arg0.g1();
+			this.invBackgroundY = new int[20];
+			this.invBackgroundX = new int[20];
+			this.invBackground = new int[20];
 			@Pc(364) int local364;
 			for (local364 = 0; local364 < 20; local364++) {
 				@Pc(371) int local371 = arg0.g1();
 				if (local371 == 1) {
-					this.anIntArray41[local364] = arg0.g2b();
-					this.anIntArray47[local364] = arg0.g2b();
-					this.anIntArray36[local364] = arg0.g4();
+					this.invBackgroundX[local364] = arg0.g2b();
+					this.invBackgroundY[local364] = arg0.g2b();
+					this.invBackground[local364] = arg0.g4();
 				} else {
-					this.anIntArray36[local364] = -1;
+					this.invBackground[local364] = -1;
 				}
 			}
 			this.aClass100Array19 = new JagString[5];
@@ -676,11 +793,11 @@ public final class IfType {
 				}
 			}
 		}
-		if (this.anInt452 == 3) {
-			this.aBoolean30 = arg0.g1() == 1;
+		if (this.type == 3) {
+			this.fill = arg0.g1() == 1;
 		}
-		if (this.anInt452 == 4 || this.anInt452 == 1) {
-			this.anInt460 = arg0.g1();
+		if (this.type == 4 || this.type == 1) {
+			this.hAlign = arg0.g1();
 			this.anInt478 = arg0.g1();
 			this.anInt467 = arg0.g1();
 			this.anInt502 = arg0.g2();
@@ -689,59 +806,59 @@ public final class IfType {
 			}
 			this.aBoolean28 = arg0.g1() == 1;
 		}
-		if (this.anInt452 == 4) {
-			this.aClass100_84 = arg0.gjstr();
-			this.aClass100_82 = arg0.gjstr();
+		if (this.type == 4) {
+			this.text = arg0.gjstr();
+			this.text2 = arg0.gjstr();
 		}
-		if (this.anInt452 == 1 || this.anInt452 == 3 || this.anInt452 == 4) {
-			this.anInt474 = arg0.g4();
+		if (this.type == 1 || this.type == 3 || this.type == 4) {
+			this.colour = arg0.g4();
 		}
-		if (this.anInt452 == 3 || this.anInt452 == 4) {
-			this.anInt492 = arg0.g4();
-			this.anInt480 = arg0.g4();
-			this.anInt475 = arg0.g4();
+		if (this.type == 3 || this.type == 4) {
+			this.colour2 = arg0.g4();
+			this.colourOver = arg0.g4();
+			this.colour2Over = arg0.g4();
 		}
-		if (this.anInt452 == 5) {
-			this.anInt477 = arg0.g4();
-			this.anInt519 = arg0.g4();
+		if (this.type == 5) {
+			this.graphic = arg0.g4();
+			this.graphic2 = arg0.g4();
 		}
-		if (this.anInt452 == 6) {
-			this.modelType = 1;
-			this.modelId = arg0.g2();
+		if (this.type == 6) {
+			this.model1Type = 1;
+			this.model1Id = arg0.g2();
 			this.anInt518 = 1;
-			if (this.modelId == 65535) {
-				this.modelId = -1;
+			if (this.model1Id == 65535) {
+				this.model1Id = -1;
 			}
 			this.anInt461 = arg0.g2();
 			if (this.anInt461 == 65535) {
 				this.anInt461 = -1;
 			}
-			this.anInt522 = arg0.g2();
-			if (this.anInt522 == 65535) {
-				this.anInt522 = -1;
+			this.modelAnim = arg0.g2();
+			if (this.modelAnim == 65535) {
+				this.modelAnim = -1;
 			}
-			this.anInt462 = arg0.g2();
-			if (this.anInt462 == 65535) {
-				this.anInt462 = -1;
+			this.modelAnim2 = arg0.g2();
+			if (this.modelAnim2 == 65535) {
+				this.modelAnim2 = -1;
 			}
 			this.modelZoom = arg0.g2();
 			this.modelXAngle = arg0.g2();
 			this.modelYAngle = arg0.g2();
 		}
-		if (this.anInt452 == 7) {
+		if (this.type == 7) {
 			this.aByte3 = 3;
 			this.aByte5 = 3;
-			this.objCounts = new int[this.anInt488 * this.baseWidth];
-			this.objTypes = new int[this.baseWidth * this.anInt488];
-			this.anInt460 = arg0.g1();
+			this.linkObjType = new int[this.height * this.width];
+			this.linkObjNumber = new int[this.width * this.height];
+			this.hAlign = arg0.g1();
 			this.anInt502 = arg0.g2();
 			if (this.anInt502 == 65535) {
 				this.anInt502 = -1;
 			}
 			this.aBoolean28 = arg0.g1() == 1;
-			this.anInt474 = arg0.g4();
-			this.anInt512 = arg0.g2b();
-			this.anInt516 = arg0.g2b();
+			this.colour = arg0.g4();
+			this.marginX = arg0.g2b();
+			this.marginY = arg0.g2b();
 			local175 = arg0.g1();
 			if (local175 == 1) {
 				local164 |= 0x40000000;
@@ -755,48 +872,48 @@ public final class IfType {
 				}
 			}
 		}
-		if (this.anInt452 == 8) {
-			this.aClass100_84 = arg0.gjstr();
+		if (this.type == 8) {
+			this.text = arg0.gjstr();
 		}
-		if (this.anInt530 == 2 || this.anInt452 == 2) {
-			this.aClass100_86 = arg0.gjstr();
+		if (this.buttonType == 2 || this.type == 2) {
+			this.targetVerb = arg0.gjstr();
 			this.aClass100_85 = arg0.gjstr();
 			local175 = arg0.g2() & 0x3F;
 			local164 |= local175 << 11;
 		}
-		if (this.anInt530 == 1 || this.anInt530 == 4 || this.anInt530 == 5 || this.anInt530 == 6) {
-			this.aClass100_89 = arg0.gjstr();
-			if (this.aClass100_89.length() == 0) {
-				if (this.anInt530 == 1) {
-					this.aClass100_89 = LocalizedText.OK;
+		if (this.buttonType == 1 || this.buttonType == 4 || this.buttonType == 5 || this.buttonType == 6) {
+			this.buttonText = arg0.gjstr();
+			if (this.buttonText.length() == 0) {
+				if (this.buttonType == 1) {
+					this.buttonText = LocalizedText.OK;
 				}
-				if (this.anInt530 == 4) {
-					this.aClass100_89 = LocalizedText.SELECT;
+				if (this.buttonType == 4) {
+					this.buttonText = LocalizedText.SELECT;
 				}
-				if (this.anInt530 == 5) {
-					this.aClass100_89 = LocalizedText.SELECT;
+				if (this.buttonType == 5) {
+					this.buttonText = LocalizedText.SELECT;
 				}
-				if (this.anInt530 == 6) {
-					this.aClass100_89 = LocalizedText.CONTINUE;
+				if (this.buttonType == 6) {
+					this.buttonText = LocalizedText.CONTINUE;
 				}
 			}
 		}
-		if (this.anInt530 == 1 || this.anInt530 == 4 || this.anInt530 == 5) {
+		if (this.buttonType == 1 || this.buttonType == 4 || this.buttonType == 5) {
 			local164 |= 0x400000;
 		}
-		if (this.anInt530 == 6) {
+		if (this.buttonType == 6) {
 			local164 |= 0x1;
 		}
-		this.aClass3_Sub4_1 = new ServerActive(local164, -1);
+		this.active = new ServerActive(local164, -1);
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "a", descriptor = "(ZI)Lclient!qf;")
 	public final AbstractPix32 method482(@OriginalArg(1) int arg0) {
-		Static211.aBoolean72 = false;
-		if (arg0 < 0 || arg0 >= this.anIntArray36.length) {
+		loadingAsset = false;
+		if (arg0 < 0 || arg0 >= this.invBackground.length) {
 			return null;
 		}
-		@Pc(29) int local29 = this.anIntArray36[arg0];
+		@Pc(29) int local29 = this.invBackground[arg0];
 		if (local29 == -1) {
 			return null;
 		}
@@ -806,7 +923,7 @@ public final class IfType {
 		}
 		local43 = Static150.method2800(local29, sprites);
 		if (local43 == null) {
-			Static211.aBoolean72 = true;
+			loadingAsset = true;
 		} else {
 			Static190.aClass99_26.method3095(local43, (long) local29);
 		}
@@ -847,25 +964,25 @@ public final class IfType {
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "b", descriptor = "(III)V")
 	public final void swapObjs(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(8) int local8 = this.objTypes[arg1];
-		this.objTypes[arg1] = this.objTypes[arg0];
-		this.objTypes[arg0] = local8;
-		@Pc(34) int local34 = this.objCounts[arg1];
-		this.objCounts[arg1] = this.objCounts[arg0];
-		this.objCounts[arg0] = local34;
+		@Pc(8) int local8 = this.linkObjNumber[arg1];
+		this.linkObjNumber[arg1] = this.linkObjNumber[arg0];
+		this.linkObjNumber[arg0] = local8;
+		@Pc(34) int local34 = this.linkObjType[arg1];
+		this.linkObjType[arg1] = this.linkObjType[arg0];
+		this.linkObjType[arg0] = local34;
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "a", descriptor = "(ILclient!tk;IIIZLclient!hh;)Lclient!ak;")
 	public final ModelLit method488(@OriginalArg(0) int arg0, @OriginalArg(1) SeqType arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) boolean arg4, @OriginalArg(6) PlayerModel arg5) {
-		Static211.aBoolean72 = false;
+		loadingAsset = false;
 		@Pc(10) int local10;
 		@Pc(13) int local13;
 		if (arg4) {
 			local10 = this.anInt518;
 			local13 = this.anInt461;
 		} else {
-			local13 = this.modelId;
-			local10 = this.modelType;
+			local13 = this.model1Id;
+			local10 = this.model1Type;
 		}
 		if (local10 == 0) {
 			return null;
@@ -876,9 +993,9 @@ public final class IfType {
 			if (local10 == 1) {
 				local61 = (ModelLit) Static124.aClass99_17.method3106((long) ((local10 << 16) + local13));
 				if (local61 == null) {
-					@Pc(69) ModelUnlit local69 = Static77.method1686(models, local13);
+					@Pc(69) ModelUnlit local69 = ModelUnlit.method1686(models, local13);
 					if (local69 == null) {
-						Static211.aBoolean72 = true;
+						loadingAsset = true;
 						return null;
 					}
 					local61 = local69.method1679(64, 768, -50, -10, -50);
@@ -889,9 +1006,9 @@ public final class IfType {
 				}
 				return local61;
 			} else if (local10 == 2) {
-				local61 = Static214.method4363(local13).method2943(arg1, arg3, arg0, arg2);
+				local61 = NpcType.list(local13).method2943(arg1, arg3, arg0, arg2);
 				if (local61 == null) {
-					Static211.aBoolean72 = true;
+					loadingAsset = true;
 					return null;
 				} else {
 					return local61;
@@ -902,24 +1019,24 @@ public final class IfType {
 				}
 				local61 = arg5.method1956(arg3, arg1, arg2, arg0);
 				if (local61 == null) {
-					Static211.aBoolean72 = true;
+					loadingAsset = true;
 					return null;
 				} else {
 					return local61;
 				}
 			} else if (local10 == 4) {
-				@Pc(164) ObjType local164 = Static71.method1439(local13);
-				@Pc(173) ModelLit local173 = local164.method1824(arg0, arg3, arg1, 10, arg2);
+				@Pc(164) ObjType local164 = ObjType.list(local13);
+				@Pc(173) ModelLit local173 = local164.getModelLit(arg0, arg3, arg1, 10, arg2);
 				if (local173 == null) {
-					Static211.aBoolean72 = true;
+					loadingAsset = true;
 					return null;
 				} else {
 					return local173;
 				}
 			} else if (local10 == 6) {
-				local61 = Static214.method4363(local13).method2937(null, 0, 0, arg0, arg3, arg2, null, 0, arg1);
+				local61 = NpcType.list(local13).method2937(null, 0, 0, arg0, arg3, arg2, null, 0, arg1);
 				if (local61 == null) {
-					Static211.aBoolean72 = true;
+					loadingAsset = true;
 					return null;
 				} else {
 					return local61;
@@ -929,12 +1046,12 @@ public final class IfType {
 			} else if (arg5 == null) {
 				return null;
 			} else {
-				@Pc(227) int local227 = this.modelId >>> 16;
-				@Pc(232) int local232 = this.modelId & 0xFFFF;
+				@Pc(227) int local227 = this.model1Id >>> 16;
+				@Pc(232) int local232 = this.model1Id & 0xFFFF;
 				@Pc(235) int local235 = this.anInt498;
 				@Pc(246) ModelLit local246 = arg5.method1946(arg0, local235, local227, arg3, arg1, arg2, local232);
 				if (local246 == null) {
-					Static211.aBoolean72 = true;
+					loadingAsset = true;
 					return null;
 				} else {
 					return local246;
@@ -944,18 +1061,18 @@ public final class IfType {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "a", descriptor = "(BZ)Lclient!qf;")
-	public final AbstractPix32 method489(@OriginalArg(1) boolean arg0) {
-		Static211.aBoolean72 = false;
+	public final AbstractPix32 getGraphic(@OriginalArg(1) boolean arg0) {
+		loadingAsset = false;
 		@Pc(12) int local12;
 		if (arg0) {
-			local12 = this.anInt519;
+			local12 = this.graphic2;
 		} else {
-			local12 = this.anInt477;
+			local12 = this.graphic;
 		}
 		if (local12 == -1) {
 			return null;
 		}
-		@Pc(66) long local66 = ((this.aBoolean21 ? 1L : 0L) << 38) + ((this.aBoolean18 ? 1L : 0L) << 35) + (long) local12 + ((long) this.anInt514 << 36) + ((this.aBoolean26 ? 1L : 0L) << 39) + ((long) this.anInt513 << 40);
+		@Pc(66) long local66 = ((this.aBoolean21 ? 1L : 0L) << 38) + ((this.aBoolean18 ? 1L : 0L) << 35) + (long) local12 + ((long) this.outline << 36) + ((this.aBoolean26 ? 1L : 0L) << 39) + ((long) this.shadowColour << 40);
 		@Pc(72) AbstractPix32 local72 = (AbstractPix32) Static190.aClass99_26.method3106(local66);
 		if (local72 != null) {
 			return local72;
@@ -967,7 +1084,7 @@ public final class IfType {
 			local85 = Static78.method1693(0, sprites, local12);
 		}
 		if (local85 == null) {
-			Static211.aBoolean72 = true;
+			loadingAsset = true;
 			return null;
 		}
 		if (this.aBoolean21) {
@@ -976,17 +1093,17 @@ public final class IfType {
 		if (this.aBoolean26) {
 			local85.method299();
 		}
-		if (this.anInt514 > 0) {
-			local85.method298(this.anInt514);
+		if (this.outline > 0) {
+			local85.method298(this.outline);
 		}
-		if (this.anInt514 >= 1) {
+		if (this.outline >= 1) {
 			local85.method303(1);
 		}
-		if (this.anInt514 >= 2) {
+		if (this.outline >= 2) {
 			local85.method303(16777215);
 		}
-		if (this.anInt513 != 0) {
-			local85.method314(this.anInt513);
+		if (this.shadowColour != 0) {
+			local85.method314(this.shadowColour);
 		}
 		if (!GlRenderer.enabled) {
 			local72 = local85;
@@ -1001,64 +1118,64 @@ public final class IfType {
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "c", descriptor = "(ILclient!wa;)V")
 	public final void method490(@OriginalArg(1) Packet arg0) {
-		this.aBoolean32 = true;
+		this.v3 = true;
 		arg0.pos++;
-		this.anInt452 = arg0.g1();
-		if ((this.anInt452 & 0x80) != 0) {
-			this.anInt452 &= 0x7F;
+		this.type = arg0.g1();
+		if ((this.type & 0x80) != 0) {
+			this.type &= 0x7F;
 			arg0.gjstr();
 		}
-		this.anInt453 = arg0.g2();
-		this.baseX = arg0.g2b();
-		this.baseY = arg0.g2b();
-		this.baseWidth = arg0.g2();
-		this.anInt488 = arg0.g2();
+		this.clientCode = arg0.g2();
+		this.dataX = arg0.g2b();
+		this.dataY = arg0.g2b();
+		this.width = arg0.g2();
+		this.height = arg0.g2();
 		this.aByte5 = arg0.g1b();
 		this.aByte3 = arg0.g1b();
 		this.yMode = arg0.g1b();
 		this.xMode = arg0.g1b();
-		this.layer = arg0.g2();
-		if (this.layer == 65535) {
-			this.layer = -1;
+		this.layerId = arg0.g2();
+		if (this.layerId == 65535) {
+			this.layerId = -1;
 		} else {
-			this.layer = (this.anInt507 & 0xFFFF0000) + this.layer;
+			this.layerId = (this.parentId & 0xFFFF0000) + this.layerId;
 		}
-		this.hidden = arg0.g1() == 1;
-		if (this.anInt452 == 0) {
+		this.hide = arg0.g1() == 1;
+		if (this.type == 0) {
 			this.anInt486 = arg0.g2();
-			this.anInt491 = arg0.g2();
+			this.scrollHeight = arg0.g2();
 			this.aBoolean29 = arg0.g1() == 1;
 		}
 		@Pc(175) int local175;
-		if (this.anInt452 == 5) {
-			this.anInt477 = arg0.g4();
-			this.anInt521 = arg0.g2();
+		if (this.type == 5) {
+			this.graphic = arg0.g4();
+			this.rotate = arg0.g2();
 			local175 = arg0.g1();
 			this.aBoolean18 = (local175 & 0x2) != 0;
-			this.aBoolean23 = (local175 & 0x1) != 0;
+			this.tiling = (local175 & 0x1) != 0;
 			this.anInt476 = arg0.g1();
-			this.anInt514 = arg0.g1();
-			this.anInt513 = arg0.g4();
+			this.outline = arg0.g1();
+			this.shadowColour = arg0.g4();
 			this.aBoolean21 = arg0.g1() == 1;
 			this.aBoolean26 = arg0.g1() == 1;
 		}
-		if (this.anInt452 == 6) {
-			this.modelType = 1;
-			this.modelId = arg0.g2();
-			if (this.modelId == 65535) {
-				this.modelId = -1;
+		if (this.type == 6) {
+			this.model1Type = 1;
+			this.model1Id = arg0.g2();
+			if (this.model1Id == 65535) {
+				this.model1Id = -1;
 			}
-			this.anInt495 = arg0.g2b();
-			this.anInt481 = arg0.g2b();
+			this.modelXOf = arg0.g2b();
+			this.modelYOf = arg0.g2b();
 			this.modelXAngle = arg0.g2();
 			this.modelYAngle = arg0.g2();
 			this.modelYOffset = arg0.g2();
 			this.modelZoom = arg0.g2();
-			this.anInt522 = arg0.g2();
-			if (this.anInt522 == 65535) {
-				this.anInt522 = -1;
+			this.modelAnim = arg0.g2();
+			if (this.modelAnim == 65535) {
+				this.modelAnim = -1;
 			}
-			this.aBoolean22 = arg0.g1() == 1;
+			this.orthog = arg0.g1() == 1;
 			this.aShort11 = (short) arg0.g2();
 			this.aShort10 = (short) arg0.g2();
 			this.aBoolean34 = arg0.g1() == 1;
@@ -1069,26 +1186,26 @@ public final class IfType {
 				this.anInt526 = arg0.g2();
 			}
 		}
-		if (this.anInt452 == 4) {
+		if (this.type == 4) {
 			this.anInt502 = arg0.g2();
 			if (this.anInt502 == 65535) {
 				this.anInt502 = -1;
 			}
-			this.aClass100_84 = arg0.gjstr();
+			this.text = arg0.gjstr();
 			this.anInt467 = arg0.g1();
-			this.anInt460 = arg0.g1();
+			this.hAlign = arg0.g1();
 			this.anInt478 = arg0.g1();
 			this.aBoolean28 = arg0.g1() == 1;
-			this.anInt474 = arg0.g4();
+			this.colour = arg0.g4();
 		}
-		if (this.anInt452 == 3) {
-			this.anInt474 = arg0.g4();
-			this.aBoolean30 = arg0.g1() == 1;
+		if (this.type == 3) {
+			this.colour = arg0.g4();
+			this.fill = arg0.g1() == 1;
 			this.anInt476 = arg0.g1();
 		}
-		if (this.anInt452 == 9) {
-			this.anInt490 = arg0.g1();
-			this.anInt474 = arg0.g4();
+		if (this.type == 9) {
+			this.lineWidth = arg0.g1();
+			this.colour = arg0.g4();
 			this.aBoolean20 = arg0.g1() == 1;
 		}
 		local175 = arg0.g3();
@@ -1137,9 +1254,9 @@ public final class IfType {
 		}
 		this.anInt472 = arg0.g1();
 		this.anInt447 = arg0.g1();
-		this.aBoolean27 = arg0.g1() == 1;
+		this.draggablebehavior = arg0.g1() == 1;
 		local567 = -1;
-		this.aClass100_86 = arg0.gjstr();
+		this.targetVerb = arg0.gjstr();
 		if (Static199.method3594(local175) != 0) {
 			local567 = arg0.g2();
 			this.anInt499 = arg0.g2();
@@ -1154,37 +1271,37 @@ public final class IfType {
 				this.anInt484 = -1;
 			}
 		}
-		this.aClass3_Sub4_1 = new ServerActive(local175, local567);
+		this.active = new ServerActive(local175, local567);
 		this.anObjectArray3 = this.method485(arg0);
-		this.anObjectArray19 = this.method485(arg0);
-		this.anObjectArray24 = this.method485(arg0);
+		this.onmouseover = this.method485(arg0);
+		this.onmouseleave = this.method485(arg0);
 		this.anObjectArray27 = this.method485(arg0);
 		this.anObjectArray11 = this.method485(arg0);
-		this.anObjectArray25 = this.method485(arg0);
-		this.anObjectArray7 = this.method485(arg0);
-		this.anObjectArray2 = this.method485(arg0);
-		this.anObjectArray22 = this.method485(arg0);
-		this.anObjectArray29 = this.method485(arg0);
-		this.anObjectArray23 = this.method485(arg0);
-		this.anObjectArray5 = this.method485(arg0);
+		this.onvartransmit = this.method485(arg0);
+		this.oninvtransmit = this.method485(arg0);
+		this.onstattransmit = this.method485(arg0);
+		this.ontimer = this.method485(arg0);
+		this.onop = this.method485(arg0);
+		this.onmouserepeat = this.method485(arg0);
+		this.onclick = this.method485(arg0);
 		this.anObjectArray6 = this.method485(arg0);
-		this.anObjectArray18 = this.method485(arg0);
-		this.anObjectArray9 = this.method485(arg0);
+		this.onrelease = this.method485(arg0);
+		this.onhold = this.method485(arg0);
 		this.anObjectArray26 = this.method485(arg0);
-		this.anObjectArray16 = this.method485(arg0);
-		this.anObjectArray10 = this.method485(arg0);
-		this.anObjectArray4 = this.method485(arg0);
-		this.anObjectArray15 = this.method485(arg0);
-		this.anIntArray44 = this.method486(arg0);
+		this.ondragcomplete = this.method485(arg0);
+		this.onscrollwheel = this.method485(arg0);
+		this.onvarctransmit = this.method485(arg0);
+		this.onvarcstrtransmit = this.method485(arg0);
+		this.onvartransmitlist = this.method486(arg0);
 		this.anIntArray34 = this.method486(arg0);
-		this.anIntArray42 = this.method486(arg0);
-		this.anIntArray38 = this.method486(arg0);
-		this.anIntArray35 = this.method486(arg0);
+		this.onstattransmitlist = this.method486(arg0);
+		this.onvarctransmitlist = this.method486(arg0);
+		this.onvarcstrtransmitlist = this.method486(arg0);
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "a", descriptor = "([Lclient!ok;I)Lclient!rk;")
-	public final PixFontGeneric method491(@OriginalArg(0) Pix8[] arg0) {
-		Static211.aBoolean72 = false;
+	public final PixFontGeneric getFont(@OriginalArg(0) Pix8[] arg0) {
+		loadingAsset = false;
 		if (this.anInt502 == -1) {
 			return null;
 		}
@@ -1194,7 +1311,7 @@ public final class IfType {
 		}
 		local21 = Static127.method2462(this.anInt502, sprites, fontMetrics);
 		if (local21 == null) {
-			Static211.aBoolean72 = true;
+			loadingAsset = true;
 		} else {
 			local21.method2873(arg0, null);
 			Static87.aClass99_12.method3095(local21, (long) this.anInt502);

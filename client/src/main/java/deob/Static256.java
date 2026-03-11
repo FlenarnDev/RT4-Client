@@ -9,23 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static256 {
 
-    @OriginalMember(owner = "com.jagex3.client.client!um", name = "a", descriptor = "(Z)V")
-	public static void method4392() {
-		Static11.anInt384 = 0;
-		@Pc(17) int local17 = Static225.originX + (Static173.self.anInt3412 >> 7);
-		@Pc(25) int local25 = (Static173.self.anInt3421 >> 7) + Static142.originZ;
-		if (local17 >= 3053 && local17 <= 3156 && local25 >= 3056 && local25 <= 3136) {
-			Static11.anInt384 = 1;
-		}
-		if (local17 >= 3072 && local17 <= 3118 && local25 >= 9492 && local25 <= 9535) {
-			Static11.anInt384 = 1;
-		}
-		if (Static11.anInt384 == 1 && local17 >= 3139 && local17 <= 3199 && local25 >= 3008 && local25 <= 3062) {
-			Static11.anInt384 = 0;
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!um", name = "c", descriptor = "(III)Z")
+    @OriginalMember(owner = "com.jagex3.client.client!um", name = "c", descriptor = "(III)Z")
 	public static boolean method4394(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		for (@Pc(1) int local1 = 0; local1 < Static215.anInt4870; local1++) {
 			@Pc(8) Occlude local8 = Static247.aOccludeArray2[local1];

@@ -14,16 +14,13 @@ public final class Static58 {
 	@OriginalMember(owner = "com.jagex3.client.client!eh", name = "a", descriptor = "Z")
 	public static boolean aBoolean101 = false;
 
-	@OriginalMember(owner = "com.jagex3.client.client!eh", name = "j", descriptor = "I")
-	public static int wheelRotation = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!eh", name = "a", descriptor = "(I)V")
+    @OriginalMember(owner = "com.jagex3.client.client!eh", name = "a", descriptor = "(I)V")
 	public static void method1321() {
 		@Pc(8) int[] local8 = new int[ObjType.anInt3245];
 		@Pc(10) int local10 = 0;
 		@Pc(12) int local12;
 		for (local12 = 0; local12 < ObjType.anInt3245; local12++) {
-			@Pc(19) ObjType local19 = Static71.method1439(local12);
+			@Pc(19) ObjType local19 = ObjType.list(local12);
 			if (local19.anInt2360 >= 0 || local19.anInt2331 >= 0) {
 				local8[local10++] = local12;
 			}

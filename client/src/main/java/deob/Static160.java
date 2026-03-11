@@ -13,44 +13,16 @@ public final class Static160 {
 	@OriginalMember(owner = "com.jagex3.client.client!mj", name = "u", descriptor = "B")
 	public static byte aByte14;
 
-	@OriginalMember(owner = "com.jagex3.client.client!mj", name = "C", descriptor = "[S")
-	public static short[] aShortArray41;
-
-	@OriginalMember(owner = "com.jagex3.client.client!mj", name = "d", descriptor = "[Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!mj", name = "d", descriptor = "[Lclient!na;")
 	public static final JagString[] aClass100Array121 = new JagString[8];
 
-	@OriginalMember(owner = "com.jagex3.client.client!mj", name = "g", descriptor = "Lclient!na;")
-	public static final JagString aClass100_761 = Static28.parse("(U3");
-
-	@OriginalMember(owner = "com.jagex3.client.client!mj", name = "i", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!mj", name = "i", descriptor = "I")
 	public static int anInt3902 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!mj", name = "A", descriptor = "J")
 	public static long aLong134 = 0L;
 
-	@OriginalMember(owner = "com.jagex3.client.client!mj", name = "a", descriptor = "(IILclient!be;IB)V")
-	public static void method3047(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) IfType arg2, @OriginalArg(3) int arg3) {
-		if (GlRenderer.enabled) {
-			Static46.method1187(arg0, arg1, arg2.anInt445 + arg0, arg2.anInt459 + arg1);
-		}
-		if (Static270.anInt5795 >= 3) {
-			if (GlRenderer.enabled) {
-				@Pc(44) AbstractPix32 local44 = arg2.method489(false);
-				if (local44 != null) {
-					local44.method1423(arg0, arg1);
-				}
-			} else {
-				Static129.method2504(arg0, arg1, arg2.anIntArray37, arg2.anIntArray45);
-			}
-		} else if (GlRenderer.enabled) {
-			((GlPix32) Static106.aClass3_Sub2_Sub1_7).method1427(arg0, arg1, arg2.anInt445, arg2.anInt459, Static106.aClass3_Sub2_Sub1_7.anInt1867 / 2, Static106.aClass3_Sub2_Sub1_7.anInt1859 / 2, Static57.anInt1747, 256, (GlPix32) arg2.method489(false));
-		} else {
-			((Pix32) Static106.aClass3_Sub2_Sub1_7).method313(arg0, arg1, arg2.anInt445, arg2.anInt459, Static106.aClass3_Sub2_Sub1_7.anInt1867 / 2, Static106.aClass3_Sub2_Sub1_7.anInt1859 / 2, Static57.anInt1747, arg2.anIntArray37, arg2.anIntArray45);
-		}
-		Static31.aBooleanArray29[arg3] = true;
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!mj", name = "a", descriptor = "(IIIII)Z")
+    @OriginalMember(owner = "com.jagex3.client.client!mj", name = "a", descriptor = "(IIIII)Z")
 	public static boolean method3049(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		@Pc(9) int local9 = arg3 * Static231.anInt5205 + arg0 * Static81.anInt2222 >> 16;
 		@Pc(19) int local19 = arg3 * Static81.anInt2222 - arg0 * Static231.anInt5205 >> 16;

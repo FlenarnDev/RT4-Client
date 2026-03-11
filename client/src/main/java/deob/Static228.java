@@ -17,10 +17,7 @@ public final class Static228 {
 	@OriginalMember(owner = "com.jagex3.client.client!sh", name = "e", descriptor = "Lclient!na;")
 	public static final JagString aClass100_967 = Static28.parse("");
 
-	@OriginalMember(owner = "com.jagex3.client.client!sh", name = "f", descriptor = "I")
-	public static int anInt5103 = -1;
-
-	@OriginalMember(owner = "com.jagex3.client.client!sh", name = "h", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!sh", name = "h", descriptor = "I")
 	public static int anInt5105 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!sh", name = "i", descriptor = "[[I")

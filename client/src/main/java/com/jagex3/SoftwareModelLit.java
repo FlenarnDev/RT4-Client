@@ -162,7 +162,7 @@ public final class SoftwareModelLit extends ModelLit {
 			this.aShortArray92 = new short[this.anInt5787];
 			for (local133 = 0; local133 < this.anInt5787; local133++) {
 				@Pc(142) short local142 = arg0.aShortArray23[local133];
-				if (local142 != -1 && Rasteriser.anInterface1_2.method3236(local142)) {
+				if (local142 != -1 && Pix3D.anInterface1_2.method3236(local142)) {
 					this.aShortArray92[local133] = local142;
 				} else {
 					this.aShortArray92[local133] = -1;
@@ -423,7 +423,29 @@ public final class SoftwareModelLit extends ModelLit {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!w", name = "e", descriptor = "(I)V")
+    @OriginalMember(owner = "com.jagex3.client.client!w", name = "m", descriptor = "()V")
+    public static void method4580() {
+        Static268.aBoolean307 = true;
+        Static268.anIntArray550 = new int[4096];
+        Static268.anIntArray549 = new int[4096];
+        Static268.anIntArray558 = null;
+        Static268.anIntArrayArray44 = null;
+        Static268.anIntArray552 = null;
+        Static268.anIntArrayArray43 = null;
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!w", name = "o", descriptor = "()V")
+    public static void method4583() {
+        Static268.aBoolean307 = false;
+        Static268.anIntArray550 = null;
+        Static268.anIntArray549 = null;
+        Static268.anIntArray558 = new int[1600];
+        Static268.anIntArrayArray44 = new int[1600][64];
+        Static268.anIntArray552 = new int[32];
+        Static268.anIntArrayArray43 = new int[32][512];
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!w", name = "e", descriptor = "(I)V")
 	private void method4579(@OriginalArg(0) int arg0) {
 		if (Static268.aBooleanArray132[arg0]) {
 			this.method4587(arg0);
@@ -453,9 +475,9 @@ public final class SoftwareModelLit extends ModelLit {
 				local151 = this.anIntArray525[local136];
 			}
 			if (this.anIntArray532[arg0] == -1) {
-				Rasteriser.method1912(Static268.anIntArray551[local12], Static268.anIntArray551[local17], Static268.anIntArray551[local22], Static268.anIntArray556[local12], Static268.anIntArray556[local17], Static268.anIntArray556[local22], this.anIntArray533[arg0], this.anIntArray533[arg0], this.anIntArray533[arg0], Static268.anIntArray560[local141], Static268.anIntArray560[local146], Static268.anIntArray560[local151], Static268.anIntArray548[local141], Static268.anIntArray548[local146], Static268.anIntArray548[local151], Static268.anIntArray544[local141], Static268.anIntArray544[local146], Static268.anIntArray544[local151], this.aShortArray92[arg0]);
+				Pix3D.method1912(Static268.anIntArray551[local12], Static268.anIntArray551[local17], Static268.anIntArray551[local22], Static268.anIntArray556[local12], Static268.anIntArray556[local17], Static268.anIntArray556[local22], this.anIntArray533[arg0], this.anIntArray533[arg0], this.anIntArray533[arg0], Static268.anIntArray560[local141], Static268.anIntArray560[local146], Static268.anIntArray560[local151], Static268.anIntArray548[local141], Static268.anIntArray548[local146], Static268.anIntArray548[local151], Static268.anIntArray544[local141], Static268.anIntArray544[local146], Static268.anIntArray544[local151], this.aShortArray92[arg0]);
 			} else {
-				Rasteriser.method1912(Static268.anIntArray551[local12], Static268.anIntArray551[local17], Static268.anIntArray551[local22], Static268.anIntArray556[local12], Static268.anIntArray556[local17], Static268.anIntArray556[local22], this.anIntArray533[arg0], this.anIntArray523[arg0], this.anIntArray532[arg0], Static268.anIntArray560[local141], Static268.anIntArray560[local146], Static268.anIntArray560[local151], Static268.anIntArray548[local141], Static268.anIntArray548[local146], Static268.anIntArray548[local151], Static268.anIntArray544[local141], Static268.anIntArray544[local146], Static268.anIntArray544[local151], this.aShortArray92[arg0]);
+				Pix3D.method1912(Static268.anIntArray551[local12], Static268.anIntArray551[local17], Static268.anIntArray551[local22], Static268.anIntArray556[local12], Static268.anIntArray556[local17], Static268.anIntArray556[local22], this.anIntArray533[arg0], this.anIntArray523[arg0], this.anIntArray532[arg0], Static268.anIntArray560[local141], Static268.anIntArray560[local146], Static268.anIntArray560[local151], Static268.anIntArray548[local141], Static268.anIntArray548[local146], Static268.anIntArray548[local151], Static268.anIntArray544[local141], Static268.anIntArray544[local146], Static268.anIntArray544[local151], this.aShortArray92[arg0]);
 			}
 		} else if (this.anIntArray532[arg0] == -1) {
 			Rasteriser.method1918(Static268.anIntArray551[local12], Static268.anIntArray551[local17], Static268.anIntArray551[local22], Static268.anIntArray556[local12], Static268.anIntArray556[local17], Static268.anIntArray556[local22], Rasteriser.anIntArray220[this.anIntArray533[arg0] & 0xFFFF]);
@@ -507,7 +529,7 @@ public final class SoftwareModelLit extends ModelLit {
 
 	@OriginalMember(owner = "com.jagex3.client.client!w", name = "b", descriptor = "()I")
 	@Override
-	public final int method4549() {
+	public final int calcBoundingCylinder() {
 		if (!this.aBoolean305) {
 			this.method4592();
 		}
@@ -583,8 +605,8 @@ public final class SoftwareModelLit extends ModelLit {
 	@OriginalMember(owner = "com.jagex3.client.client!w", name = "d", descriptor = "(I)V")
 	@Override
 	public final void method4574(@OriginalArg(0) int arg0) {
-		@Pc(3) int local3 = Pix3D.anIntArray223[arg0];
-		@Pc(7) int local7 = Pix3D.anIntArray225[arg0];
+		@Pc(3) int local3 = Pix3D.sinTable[arg0];
+		@Pc(7) int local7 = Pix3D.cosTable[arg0];
 		for (@Pc(9) int local9 = 0; local9 < this.anInt5788; local9++) {
 			@Pc(29) int local29 = this.anIntArray527[local9] * local7 - this.anIntArray531[local9] * local3 >> 16;
 			this.anIntArray531[local9] = this.anIntArray527[local9] * local3 + this.anIntArray531[local9] * local7 >> 16;
@@ -609,8 +631,8 @@ public final class SoftwareModelLit extends ModelLit {
 	@OriginalMember(owner = "com.jagex3.client.client!w", name = "c", descriptor = "(I)V")
 	@Override
 	public final void method4564(@OriginalArg(0) int arg0) {
-		@Pc(3) int local3 = Pix3D.anIntArray223[arg0];
-		@Pc(7) int local7 = Pix3D.anIntArray225[arg0];
+		@Pc(3) int local3 = Pix3D.sinTable[arg0];
+		@Pc(7) int local7 = Pix3D.cosTable[arg0];
 		for (@Pc(9) int local9 = 0; local9 < this.anInt5788; local9++) {
 			@Pc(29) int local29 = this.anIntArray527[local9] * local3 + this.anIntArray528[local9] * local7 >> 16;
 			this.anIntArray527[local9] = this.anIntArray527[local9] * local7 - this.anIntArray528[local9] * local3 >> 16;
@@ -658,8 +680,8 @@ public final class SoftwareModelLit extends ModelLit {
 		@Pc(176) int local176 = 0;
 		@Pc(178) int local178 = 0;
 		if (arg0 != 0) {
-			local176 = Pix3D.anIntArray223[arg0];
-			local178 = Pix3D.anIntArray225[arg0];
+			local176 = Pix3D.sinTable[arg0];
+			local178 = Pix3D.cosTable[arg0];
 		}
 		@Pc(190) boolean local190 = false;
 		@Pc(204) int local204;
@@ -942,14 +964,14 @@ public final class SoftwareModelLit extends ModelLit {
 			}
 			@Pc(6) int local6 = Rasteriser.anInt2471;
 			@Pc(8) int local8 = Rasteriser.anInt2469;
-			@Pc(12) int local12 = Pix3D.anIntArray223[0];
-			@Pc(16) int local16 = Pix3D.anIntArray225[0];
-			@Pc(20) int local20 = Pix3D.anIntArray223[arg0];
-			@Pc(24) int local24 = Pix3D.anIntArray225[arg0];
-			@Pc(28) int local28 = Pix3D.anIntArray223[arg1];
-			@Pc(32) int local32 = Pix3D.anIntArray225[arg1];
-			@Pc(36) int local36 = Pix3D.anIntArray223[arg2];
-			@Pc(40) int local40 = Pix3D.anIntArray225[arg2];
+			@Pc(12) int local12 = Pix3D.sinTable[0];
+			@Pc(16) int local16 = Pix3D.cosTable[0];
+			@Pc(20) int local20 = Pix3D.sinTable[arg0];
+			@Pc(24) int local24 = Pix3D.cosTable[arg0];
+			@Pc(28) int local28 = Pix3D.sinTable[arg1];
+			@Pc(32) int local32 = Pix3D.cosTable[arg1];
+			@Pc(36) int local36 = Pix3D.sinTable[arg2];
+			@Pc(40) int local40 = Pix3D.cosTable[arg2];
 			@Pc(50) int local50 = arg4 * local36 + arg5 * local40 >> 16;
 			for (@Pc(52) int local52 = 0; local52 < this.anInt5788; local52++) {
 				@Pc(61) int local61 = this.anIntArray528[local52];
@@ -1097,9 +1119,9 @@ public final class SoftwareModelLit extends ModelLit {
 					local719 = this.anIntArray525[local704];
 				}
 				if (this.anIntArray532[arg0] == -1) {
-					Rasteriser.method1912(local99, local614, local618, local75, local79, local86, this.anIntArray533[arg0], this.anIntArray533[arg0], this.anIntArray533[arg0], Static268.anIntArray560[local709], Static268.anIntArray560[local714], Static268.anIntArray560[local719], Static268.anIntArray548[local709], Static268.anIntArray548[local714], Static268.anIntArray548[local719], Static268.anIntArray544[local709], Static268.anIntArray544[local714], Static268.anIntArray544[local719], this.aShortArray92[arg0]);
+					Pix3D.method1912(local99, local614, local618, local75, local79, local86, this.anIntArray533[arg0], this.anIntArray533[arg0], this.anIntArray533[arg0], Static268.anIntArray560[local709], Static268.anIntArray560[local714], Static268.anIntArray560[local719], Static268.anIntArray548[local709], Static268.anIntArray548[local714], Static268.anIntArray548[local719], Static268.anIntArray544[local709], Static268.anIntArray544[local714], Static268.anIntArray544[local719], this.aShortArray92[arg0]);
 				} else {
-					Rasteriser.method1912(local99, local614, local618, local75, local79, local86, Static268.anIntArray553[0], Static268.anIntArray553[1], Static268.anIntArray553[2], Static268.anIntArray560[local709], Static268.anIntArray560[local714], Static268.anIntArray560[local719], Static268.anIntArray548[local709], Static268.anIntArray548[local714], Static268.anIntArray548[local719], Static268.anIntArray544[local709], Static268.anIntArray544[local714], Static268.anIntArray544[local719], this.aShortArray92[arg0]);
+					Pix3D.method1912(local99, local614, local618, local75, local79, local86, Static268.anIntArray553[0], Static268.anIntArray553[1], Static268.anIntArray553[2], Static268.anIntArray560[local709], Static268.anIntArray560[local714], Static268.anIntArray560[local719], Static268.anIntArray548[local709], Static268.anIntArray548[local714], Static268.anIntArray548[local719], Static268.anIntArray544[local709], Static268.anIntArray544[local714], Static268.anIntArray544[local719], this.aShortArray92[arg0]);
 				}
 			} else if (this.anIntArray532[arg0] == -1) {
 				Rasteriser.method1918(local99, local614, local618, local75, local79, local86, Rasteriser.anIntArray220[this.anIntArray533[arg0] & 0xFFFF]);
@@ -1126,11 +1148,11 @@ public final class SoftwareModelLit extends ModelLit {
 			}
 			@Pc(984) short local984 = this.aShortArray92[arg0];
 			if (this.anIntArray532[arg0] == -1) {
-				Rasteriser.method1912(local99, local614, local618, local75, local79, local86, this.anIntArray533[arg0], this.anIntArray533[arg0], this.anIntArray533[arg0], Static268.anIntArray560[local709], Static268.anIntArray560[local714], Static268.anIntArray560[local719], Static268.anIntArray548[local709], Static268.anIntArray548[local714], Static268.anIntArray548[local719], Static268.anIntArray544[local709], Static268.anIntArray544[local714], Static268.anIntArray544[local719], local984);
-				Rasteriser.method1912(local99, local618, Static268.anIntArray547[3], local75, local86, Static268.anIntArray542[3], this.anIntArray533[arg0], this.anIntArray533[arg0], this.anIntArray533[arg0], Static268.anIntArray560[local709], Static268.anIntArray560[local714], Static268.anIntArray560[local719], Static268.anIntArray548[local709], Static268.anIntArray548[local714], Static268.anIntArray548[local719], Static268.anIntArray544[local709], Static268.anIntArray544[local714], Static268.anIntArray544[local719], local984);
+				Pix3D.method1912(local99, local614, local618, local75, local79, local86, this.anIntArray533[arg0], this.anIntArray533[arg0], this.anIntArray533[arg0], Static268.anIntArray560[local709], Static268.anIntArray560[local714], Static268.anIntArray560[local719], Static268.anIntArray548[local709], Static268.anIntArray548[local714], Static268.anIntArray548[local719], Static268.anIntArray544[local709], Static268.anIntArray544[local714], Static268.anIntArray544[local719], local984);
+				Pix3D.method1912(local99, local618, Static268.anIntArray547[3], local75, local86, Static268.anIntArray542[3], this.anIntArray533[arg0], this.anIntArray533[arg0], this.anIntArray533[arg0], Static268.anIntArray560[local709], Static268.anIntArray560[local714], Static268.anIntArray560[local719], Static268.anIntArray548[local709], Static268.anIntArray548[local714], Static268.anIntArray548[local719], Static268.anIntArray544[local709], Static268.anIntArray544[local714], Static268.anIntArray544[local719], local984);
 			} else {
-				Rasteriser.method1912(local99, local614, local618, local75, local79, local86, Static268.anIntArray553[0], Static268.anIntArray553[1], Static268.anIntArray553[2], Static268.anIntArray560[local709], Static268.anIntArray560[local714], Static268.anIntArray560[local719], Static268.anIntArray548[local709], Static268.anIntArray548[local714], Static268.anIntArray548[local719], Static268.anIntArray544[local709], Static268.anIntArray544[local714], Static268.anIntArray544[local719], local984);
-				Rasteriser.method1912(local99, local618, Static268.anIntArray547[3], local75, local86, Static268.anIntArray542[3], Static268.anIntArray553[0], Static268.anIntArray553[2], Static268.anIntArray553[3], Static268.anIntArray560[local709], Static268.anIntArray560[local714], Static268.anIntArray560[local719], Static268.anIntArray548[local709], Static268.anIntArray548[local714], Static268.anIntArray548[local719], Static268.anIntArray544[local709], Static268.anIntArray544[local714], Static268.anIntArray544[local719], local984);
+				Pix3D.method1912(local99, local614, local618, local75, local79, local86, Static268.anIntArray553[0], Static268.anIntArray553[1], Static268.anIntArray553[2], Static268.anIntArray560[local709], Static268.anIntArray560[local714], Static268.anIntArray560[local719], Static268.anIntArray548[local709], Static268.anIntArray548[local714], Static268.anIntArray548[local719], Static268.anIntArray544[local709], Static268.anIntArray544[local714], Static268.anIntArray544[local719], local984);
+				Pix3D.method1912(local99, local618, Static268.anIntArray547[3], local75, local86, Static268.anIntArray542[3], Static268.anIntArray553[0], Static268.anIntArray553[2], Static268.anIntArray553[3], Static268.anIntArray560[local709], Static268.anIntArray560[local714], Static268.anIntArray560[local719], Static268.anIntArray548[local709], Static268.anIntArray548[local714], Static268.anIntArray548[local719], Static268.anIntArray544[local709], Static268.anIntArray544[local714], Static268.anIntArray544[local719], local984);
 			}
 		} else if (this.anIntArray532[arg0] == -1) {
 			local709 = Rasteriser.anIntArray220[this.anIntArray533[arg0] & 0xFFFF];
@@ -1213,8 +1235,8 @@ public final class SoftwareModelLit extends ModelLit {
 	@OriginalMember(owner = "com.jagex3.client.client!w", name = "b", descriptor = "(I)V")
 	@Override
 	public final void method4554(@OriginalArg(0) int arg0) {
-		@Pc(3) int local3 = Pix3D.anIntArray223[arg0];
-		@Pc(7) int local7 = Pix3D.anIntArray225[arg0];
+		@Pc(3) int local3 = Pix3D.sinTable[arg0];
+		@Pc(7) int local7 = Pix3D.cosTable[arg0];
 		for (@Pc(9) int local9 = 0; local9 < this.anInt5788; local9++) {
 			@Pc(29) int local29 = this.anIntArray531[local9] * local3 + this.anIntArray528[local9] * local7 >> 16;
 			this.anIntArray531[local9] = this.anIntArray531[local9] * local7 - this.anIntArray528[local9] * local3 >> 16;
@@ -1290,22 +1312,22 @@ public final class SoftwareModelLit extends ModelLit {
 						this.anIntArray527[local33] -= Static268.anInt5791;
 						this.anIntArray531[local33] -= Static268.anInt5792;
 						if (arg4 != 0) {
-							local41 = Pix3D.anIntArray223[arg4];
-							local222 = Pix3D.anIntArray225[arg4];
+							local41 = Pix3D.sinTable[arg4];
+							local222 = Pix3D.cosTable[arg4];
 							local240 = this.anIntArray527[local33] * local41 + this.anIntArray528[local33] * local222 + 32767 >> 16;
 							this.anIntArray527[local33] = this.anIntArray527[local33] * local222 + 32767 - this.anIntArray528[local33] * local41 >> 16;
 							this.anIntArray528[local33] = local240;
 						}
 						if (arg2 != 0) {
-							local41 = Pix3D.anIntArray223[arg2];
-							local222 = Pix3D.anIntArray225[arg2];
+							local41 = Pix3D.sinTable[arg2];
+							local222 = Pix3D.cosTable[arg2];
 							local240 = this.anIntArray527[local33] * local222 + 32767 - this.anIntArray531[local33] * local41 >> 16;
 							this.anIntArray531[local33] = this.anIntArray527[local33] * local41 + this.anIntArray531[local33] * local222 + 32767 >> 16;
 							this.anIntArray527[local33] = local240;
 						}
 						if (arg3 != 0) {
-							local41 = Pix3D.anIntArray223[arg3];
-							local222 = Pix3D.anIntArray225[arg3];
+							local41 = Pix3D.sinTable[arg3];
+							local222 = Pix3D.cosTable[arg3];
 							local240 = this.anIntArray531[local33] * local41 + this.anIntArray528[local33] * local222 + 32767 >> 16;
 							this.anIntArray531[local33] = this.anIntArray531[local33] * local222 + 32767 - this.anIntArray528[local33] * local41 >> 16;
 							this.anIntArray528[local33] = local240;
@@ -1744,14 +1766,14 @@ public final class SoftwareModelLit extends ModelLit {
 			}
 			@Pc(6) int local6 = Rasteriser.anInt2471;
 			@Pc(8) int local8 = Rasteriser.anInt2469;
-			@Pc(12) int local12 = Pix3D.anIntArray223[0];
-			@Pc(16) int local16 = Pix3D.anIntArray225[0];
-			@Pc(20) int local20 = Pix3D.anIntArray223[arg0];
-			@Pc(24) int local24 = Pix3D.anIntArray225[arg0];
-			@Pc(28) int local28 = Pix3D.anIntArray223[arg1];
-			@Pc(32) int local32 = Pix3D.anIntArray225[arg1];
-			@Pc(36) int local36 = Pix3D.anIntArray223[arg2];
-			@Pc(40) int local40 = Pix3D.anIntArray225[arg2];
+			@Pc(12) int local12 = Pix3D.sinTable[0];
+			@Pc(16) int local16 = Pix3D.cosTable[0];
+			@Pc(20) int local20 = Pix3D.sinTable[arg0];
+			@Pc(24) int local24 = Pix3D.cosTable[arg0];
+			@Pc(28) int local28 = Pix3D.sinTable[arg1];
+			@Pc(32) int local32 = Pix3D.cosTable[arg1];
+			@Pc(36) int local36 = Pix3D.sinTable[arg2];
+			@Pc(40) int local40 = Pix3D.cosTable[arg2];
 			@Pc(50) int local50 = arg4 * local36 + arg5 * local40 >> 16;
 			for (@Pc(52) int local52 = 0; local52 < this.anInt5788; local52++) {
 				@Pc(61) int local61 = this.anIntArray528[local52];
@@ -1951,22 +1973,22 @@ public final class SoftwareModelLit extends ModelLit {
 								this.anIntArray527[local33] -= Static268.anInt5791;
 								this.anIntArray531[local33] -= Static268.anInt5792;
 								if (arg4 != 0) {
-									local41 = Pix3D.anIntArray223[arg4];
-									local307 = Pix3D.anIntArray225[arg4];
+									local41 = Pix3D.sinTable[arg4];
+									local307 = Pix3D.cosTable[arg4];
 									local329 = this.anIntArray527[local33] * local41 + this.anIntArray528[local33] * local307 + 32767 >> 16;
 									this.anIntArray527[local33] = this.anIntArray527[local33] * local307 + 32767 - this.anIntArray528[local33] * local41 >> 16;
 									this.anIntArray528[local33] = local329;
 								}
 								if (arg2 != 0) {
-									local41 = Pix3D.anIntArray223[arg2];
-									local307 = Pix3D.anIntArray225[arg2];
+									local41 = Pix3D.sinTable[arg2];
+									local307 = Pix3D.cosTable[arg2];
 									local329 = this.anIntArray527[local33] * local307 + 32767 - this.anIntArray531[local33] * local41 >> 16;
 									this.anIntArray531[local33] = this.anIntArray527[local33] * local41 + this.anIntArray531[local33] * local307 + 32767 >> 16;
 									this.anIntArray527[local33] = local329;
 								}
 								if (arg3 != 0) {
-									local41 = Pix3D.anIntArray223[arg3];
-									local307 = Pix3D.anIntArray225[arg3];
+									local41 = Pix3D.sinTable[arg3];
+									local307 = Pix3D.cosTable[arg3];
 									local329 = this.anIntArray531[local33] * local41 + this.anIntArray528[local33] * local307 + 32767 >> 16;
 									this.anIntArray531[local33] = this.anIntArray531[local33] * local307 + 32767 - this.anIntArray528[local33] * local41 >> 16;
 									this.anIntArray528[local33] = local329;
@@ -1998,12 +2020,12 @@ public final class SoftwareModelLit extends ModelLit {
 					Static268.aBoolean306 = false;
 				}
 				@Pc(374) int[] local374 = new int[9];
-				local329 = Pix3D.anIntArray225[arg2] >> 1;
-				local351 = Pix3D.anIntArray223[arg2] >> 1;
-				local392 = Pix3D.anIntArray225[arg3] >> 1;
-				local398 = Pix3D.anIntArray223[arg3] >> 1;
-				local404 = Pix3D.anIntArray225[arg4] >> 1;
-				local410 = Pix3D.anIntArray223[arg4] >> 1;
+				local329 = Pix3D.cosTable[arg2] >> 1;
+				local351 = Pix3D.sinTable[arg2] >> 1;
+				local392 = Pix3D.cosTable[arg3] >> 1;
+				local398 = Pix3D.sinTable[arg3] >> 1;
+				local404 = Pix3D.cosTable[arg4] >> 1;
+				local410 = Pix3D.sinTable[arg4] >> 1;
 				local418 = local351 * local404 + 16384 >> 15;
 				local426 = local351 * local410 + 16384 >> 15;
 				local374[0] = local392 * local404 + local398 * local426 + 16384 >> 15;
@@ -2264,22 +2286,22 @@ public final class SoftwareModelLit extends ModelLit {
 					this.anIntArray527[local3] -= Static268.anInt5791;
 					this.anIntArray531[local3] -= Static268.anInt5792;
 					if (arg3 != 0) {
-						local11 = Pix3D.anIntArray223[arg3];
-						local146 = Pix3D.anIntArray225[arg3];
+						local11 = Pix3D.sinTable[arg3];
+						local146 = Pix3D.cosTable[arg3];
 						local164 = this.anIntArray527[local3] * local11 + this.anIntArray528[local3] * local146 + 32767 >> 16;
 						this.anIntArray527[local3] = this.anIntArray527[local3] * local146 + 32767 - this.anIntArray528[local3] * local11 >> 16;
 						this.anIntArray528[local3] = local164;
 					}
 					if (arg1 != 0) {
-						local11 = Pix3D.anIntArray223[arg1];
-						local146 = Pix3D.anIntArray225[arg1];
+						local11 = Pix3D.sinTable[arg1];
+						local146 = Pix3D.cosTable[arg1];
 						local164 = this.anIntArray527[local3] * local146 + 32767 - this.anIntArray531[local3] * local11 >> 16;
 						this.anIntArray531[local3] = this.anIntArray527[local3] * local11 + this.anIntArray531[local3] * local146 + 32767 >> 16;
 						this.anIntArray527[local3] = local164;
 					}
 					if (arg2 != 0) {
-						local11 = Pix3D.anIntArray223[arg2];
-						local146 = Pix3D.anIntArray225[arg2];
+						local11 = Pix3D.sinTable[arg2];
+						local146 = Pix3D.cosTable[arg2];
 						local164 = this.anIntArray531[local3] * local11 + this.anIntArray528[local3] * local146 + 32767 >> 16;
 						this.anIntArray531[local3] = this.anIntArray531[local3] * local146 + 32767 - this.anIntArray528[local3] * local11 >> 16;
 						this.anIntArray528[local3] = local164;

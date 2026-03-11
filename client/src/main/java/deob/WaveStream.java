@@ -80,7 +80,12 @@ public final class WaveStream extends PcmStream {
 		this.method416();
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!b", name = "b", descriptor = "([III)V")
+    @OriginalMember(owner = "com.jagex3.client.client!b", name = "a", descriptor = "(Lclient!kj;II)Lclient!b;")
+    public static WaveStream newRatePercent(@OriginalArg(0) Wave arg0, @OriginalArg(2) int arg1) {
+        return arg0.aByteArray47 == null || arg0.aByteArray47.length == 0 ? null : new WaveStream(arg0, (int) ((long) arg0.anInt3316 * 256L * (long) 100 / (long) (Static44.anInt1404 * 100)), arg1 << 6);
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!b", name = "b", descriptor = "([III)V")
 	@Override
 	public final synchronized void method4408(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (this.anInt343 == 0 && this.anInt351 == 0) {
@@ -100,7 +105,7 @@ public final class WaveStream extends PcmStream {
 		if (this.anInt346 < 0) {
 			if (this.anInt342 <= 0) {
 				this.method406();
-				this.method4658();
+				this.unlink();
 				return;
 			}
 			this.anInt346 = 0;
@@ -108,7 +113,7 @@ public final class WaveStream extends PcmStream {
 		if (this.anInt346 >= local29) {
 			if (this.anInt342 >= 0) {
 				this.method406();
-				this.method4658();
+				this.unlink();
 				return;
 			}
 			this.anInt346 = local29 - 1;
@@ -186,14 +191,14 @@ public final class WaveStream extends PcmStream {
 				if (this.anInt346 < 0) {
 					this.anInt346 = -1;
 					this.method406();
-					this.method4658();
+					this.unlink();
 				}
 			} else {
 				this.method385(arg0, local40, local29, local44, 0);
 				if (this.anInt346 >= local29) {
 					this.anInt346 = local29;
 					this.method406();
-					this.method4658();
+					this.unlink();
 				}
 			}
 		} else if (this.aBoolean14) {
@@ -291,7 +296,7 @@ public final class WaveStream extends PcmStream {
 		} else if (this.anInt343 == Integer.MIN_VALUE) {
 			this.anInt343 = 0;
 			this.anInt348 = this.anInt355 = this.anInt352 = 0;
-			this.method4658();
+			this.unlink();
 			return true;
 		} else {
 			this.method416();
@@ -303,12 +308,12 @@ public final class WaveStream extends PcmStream {
 	public final synchronized void method384(@OriginalArg(0) int arg0) {
 		if (arg0 == 0) {
 			this.method397();
-			this.method4658();
+			this.unlink();
 		} else if (this.anInt355 == 0 && this.anInt352 == 0) {
 			this.anInt351 = 0;
 			this.anInt343 = 0;
 			this.anInt348 = 0;
-			this.method4658();
+			this.unlink();
 		} else {
 			@Pc(31) int local31 = -this.anInt348;
 			if (this.anInt348 > local31) {
@@ -416,7 +421,7 @@ public final class WaveStream extends PcmStream {
 				if (this.anInt343 == Integer.MIN_VALUE) {
 					this.anInt343 = 0;
 					this.anInt348 = this.anInt355 = this.anInt352 = 0;
-					this.method4658();
+					this.unlink();
 					arg0 = this.anInt351;
 				}
 				this.anInt351 = 0;
@@ -439,7 +444,7 @@ public final class WaveStream extends PcmStream {
 		if (this.anInt346 < 0) {
 			if (this.anInt342 <= 0) {
 				this.method406();
-				this.method4658();
+				this.unlink();
 				return;
 			}
 			this.anInt346 = 0;
@@ -447,7 +452,7 @@ public final class WaveStream extends PcmStream {
 		if (this.anInt346 >= local87) {
 			if (this.anInt342 >= 0) {
 				this.method406();
-				this.method4658();
+				this.unlink();
 				return;
 			}
 			this.anInt346 = local87 - 1;
@@ -518,12 +523,12 @@ public final class WaveStream extends PcmStream {
 				if (this.anInt346 < 0) {
 					this.anInt346 = -1;
 					this.method406();
-					this.method4658();
+					this.unlink();
 				}
 			} else if (this.anInt346 >= local87) {
 				this.anInt346 = local87;
 				this.method406();
-				this.method4658();
+				this.unlink();
 			}
 		} else if (this.aBoolean14) {
 			if (this.anInt342 < 0) {
@@ -555,7 +560,7 @@ public final class WaveStream extends PcmStream {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!b", name = "f", descriptor = "(I)V")
-	public final synchronized void method396(@OriginalArg(0) int arg0) {
+	public final synchronized void setLoopCount(@OriginalArg(0) int arg0) {
 		this.anInt350 = arg0;
 	}
 

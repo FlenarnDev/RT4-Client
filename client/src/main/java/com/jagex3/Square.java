@@ -13,7 +13,7 @@ public final class Square extends Linkable {
 	public boolean aBoolean45;
 
 	@OriginalMember(owner = "com.jagex3.client.client!bj", name = "y", descriptor = "I")
-	public int anInt662;
+	public int spriteCount;
 
 	@OriginalMember(owner = "com.jagex3.client.client!bj", name = "A", descriptor = "Z")
 	public boolean aBoolean46;
@@ -37,7 +37,7 @@ public final class Square extends Linkable {
 	public WallDecor aClass24_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!bj", name = "K", descriptor = "Lclient!jh;")
-	public Wall aClass77_1;
+	public Wall wall;
 
 	@OriginalMember(owner = "com.jagex3.client.client!bj", name = "M", descriptor = "Lclient!bj;")
 	public Square aClass3_Sub5_1;
@@ -58,7 +58,7 @@ public final class Square extends Linkable {
 	public int anInt664 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!bj", name = "w", descriptor = "[Lclient!ec;")
-	public final Sprite[] aClass31Array1 = new Sprite[5];
+	public final Sprite[] sprites = new Sprite[5];
 
 	@OriginalMember(owner = "com.jagex3.client.client!bj", name = "P", descriptor = "[I")
 	public final int[] anIntArray59 = new int[5];

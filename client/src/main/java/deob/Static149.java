@@ -23,9 +23,6 @@ public final class Static149 {
 	@OriginalMember(owner = "com.jagex3.client.client!lj", name = "p", descriptor = "Lclient!gn;")
 	public static final LruCache aClass54_10 = new LruCache(128);
 
-	@OriginalMember(owner = "com.jagex3.client.client!lj", name = "w", descriptor = "I")
-	public static int anInt3554 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!lj", name = "z", descriptor = "[I")
+    @OriginalMember(owner = "com.jagex3.client.client!lj", name = "z", descriptor = "[I")
 	public static int[] anIntArray338 = new int[2];
 }

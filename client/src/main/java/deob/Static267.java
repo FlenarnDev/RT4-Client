@@ -24,18 +24,12 @@ public final class Static267 {
 	@OriginalMember(owner = "com.jagex3.client.client!vl", name = "i", descriptor = "[I")
 	public static int[] anIntArray518 = new int[2];
 
-	@OriginalMember(owner = "com.jagex3.client.client!vl", name = "j", descriptor = "I")
-	public static int anInt5774 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!vl", name = "k", descriptor = "I")
-	public static int anInt5775 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!vl", name = "l", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!vl", name = "l", descriptor = "I")
 	public static int anInt5776 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!vl", name = "a", descriptor = "(III)Lclient!bm;")
 	public static GroundDecor method4526(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) Square local7 = Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2];
+		@Pc(7) Square local7 = World.activeTiles[arg0][arg1][arg2];
 		if (local7 == null) {
 			return null;
 		} else {
@@ -49,7 +43,7 @@ public final class Static267 {
 	public static boolean method4527() {
 		if (Client.js) {
 			try {
-				return !((Boolean) Static119.aClass100_588.method3157(GameShell.signLink.anApplet2));
+				return !((Boolean) Static119.aClass100_588.method3157(GameShell.signLink.applet));
 			} catch (@Pc(21) Throwable local21) {
 			}
 		}
@@ -104,7 +98,7 @@ public final class Static267 {
 			Static1.anInt6++;
 		}
 		Static226.anInt5084 += arg0;
-		local60 = (arg0 + (Static83.anInt372 & 0x1)) / 2;
+		local60 = (arg0 + (Client.loopCycle & 0x1)) / 2;
 		if (local60 <= 0) {
 			return;
 		}
@@ -147,9 +141,4 @@ public final class Static267 {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!vl", name = "b", descriptor = "(I)V")
-	public static void method4529() {
-		Static231.aClass99_29.method3103();
-		Static219.aClass99_27.method3103();
-	}
 }

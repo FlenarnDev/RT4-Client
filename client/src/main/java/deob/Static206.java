@@ -17,13 +17,7 @@ public final class Static206 {
 	@OriginalMember(owner = "com.jagex3.client.client!qk", name = "b", descriptor = "Lclient!na;")
 	public static final JagString aClass100_900 = Static28.parse("tbrefresh");
 
-	@OriginalMember(owner = "com.jagex3.client.client!qk", name = "f", descriptor = "I")
-	public static int anInt4773 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!qk", name = "h", descriptor = "I")
-	public static int anInt4774 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!qk", name = "a", descriptor = "(ZIIIIFII)[I")
+    @OriginalMember(owner = "com.jagex3.client.client!qk", name = "a", descriptor = "(ZIIIIFII)[I")
 	public static int[] method3679(@OriginalArg(5) float arg0) {
 		@Pc(11) int[] local11 = new int[2048];
 		@Pc(15) TextureOp4 local15 = new TextureOp4();

@@ -359,10 +359,10 @@ public final class MidiFile extends Linkable {
 						local104 = local69 >> 16 & 0x7F;
 						if (local104 > 0) {
 							@Pc(179) int local179 = local15[local92];
-							@Pc(187) ByteArrayNode local187 = (ByteArrayNode) this.aClass133_22.method3863((long) local179);
+							@Pc(187) ByteArrayNode local187 = (ByteArrayNode) this.aClass133_22.find((long) local179);
 							if (local187 == null) {
 								local187 = new ByteArrayNode(new byte[128]);
-								this.aClass133_22.method3862(local187, (long) local179);
+								this.aClass133_22.put(local187, (long) local179);
 							}
 							local187.aByteArray17[local98] = 1;
 						}

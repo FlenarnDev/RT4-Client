@@ -2,7 +2,6 @@ package deob;
 
 import com.jagex3.AbstractPix32;
 import com.jagex3.Js5;
-import com.jagex3.Square;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 
@@ -11,10 +10,7 @@ public final class Static130 {
 	@OriginalMember(owner = "com.jagex3.client.client!kc", name = "n", descriptor = "Lclient!fd;")
 	public static WorldMapFont aClass41_1;
 
-	@OriginalMember(owner = "com.jagex3.client.client!kc", name = "o", descriptor = "[[[Lclient!bj;")
-	public static Square[][][] aClass3_Sub5ArrayArrayArray1;
-
-	@OriginalMember(owner = "com.jagex3.client.client!kc", name = "p", descriptor = "[I")
+    @OriginalMember(owner = "com.jagex3.client.client!kc", name = "p", descriptor = "[I")
 	public static int[] anIntArray299;
 
 	@OriginalMember(owner = "com.jagex3.client.client!kc", name = "t", descriptor = "I")

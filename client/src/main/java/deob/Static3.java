@@ -28,26 +28,7 @@ public final class Static3 {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!ab", name = "b", descriptor = "(B)V")
-	public static void method4657() {
-		Static232.aClass99_30.method3103();
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!ab", name = "a", descriptor = "(II)V")
-	public static void method4659(@OriginalArg(1) int arg0) {
-		if (arg0 == 0) {
-			return;
-		}
-		if (arg0 == 1) {
-			LocalizedText.switchToGerman();
-		} else if (arg0 == 2) {
-			LocalizedText.switchToFrench();
-		} else {
-			throw new RuntimeException();
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!ab", name = "c", descriptor = "(B)[Lclient!od;")
+    @OriginalMember(owner = "com.jagex3.client.client!ab", name = "c", descriptor = "(B)[Lclient!od;")
 	public static DisplayMode[] method4660() {
 		if (Static105.aDisplayModeArray1 == null) {
 			@Pc(16) DisplayMode[] local16 = Static197.method3558(GameShell.signLink);

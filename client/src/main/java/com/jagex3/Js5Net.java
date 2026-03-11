@@ -42,7 +42,7 @@ public final class Js5Net {
 	private byte aByte8 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jb", name = "I", descriptor = "I")
-	public volatile int errors = 0;
+	public volatile int js5Errors = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jb", name = "H", descriptor = "I")
 	public volatile int response = 0;
@@ -194,7 +194,7 @@ public final class Js5Net {
 			} catch (@Pc(650) Exception local650) {
 			}
 			this.response = -2;
-			this.errors++;
+			this.js5Errors++;
 			this.aClass95_1 = null;
 			return this.method2328() == 0 && this.method2321() == 0;
 		}
@@ -215,7 +215,7 @@ public final class Js5Net {
 				this.aClass95_1.close();
 			} catch (@Pc(45) Exception local45) {
 			}
-			this.errors++;
+			this.js5Errors++;
 			this.response = -2;
 			this.aClass95_1 = null;
 		}
@@ -227,7 +227,7 @@ public final class Js5Net {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!jb", name = "a", descriptor = "(ZZ)V")
-	public final void method2322(@OriginalArg(0) boolean arg0) {
+	public final void sendLoginLogoutPacket(@OriginalArg(0) boolean arg0) {
 		if (this.aClass95_1 == null) {
 			return;
 		}
@@ -241,7 +241,7 @@ public final class Js5Net {
 				this.aClass95_1.close();
 			} catch (@Pc(48) Exception local48) {
 			}
-			this.errors++;
+			this.js5Errors++;
 			this.response = -2;
 			this.aClass95_1 = null;
 		}
@@ -265,7 +265,7 @@ public final class Js5Net {
 		}
 		this.aClass95_1 = arg1;
 		this.method2331();
-		this.method2322(arg0);
+		this.sendLoginLogoutPacket(arg0);
 		this.aClass3_Sub15_5.pos = 0;
 		this.aClass3_Sub2_Sub5_Sub2_2 = null;
 		while (true) {
@@ -287,7 +287,7 @@ public final class Js5Net {
 								} catch (@Pc(113) Exception local113) {
 								}
 								this.response = -2;
-								this.errors++;
+								this.js5Errors++;
 								this.aClass95_1 = null;
 							}
 						}
@@ -316,7 +316,7 @@ public final class Js5Net {
 		this.response = -1;
 		this.aByte8 = (byte) (Math.random() * 255.0D + 1.0D);
 		this.aClass95_1 = null;
-		this.errors++;
+		this.js5Errors++;
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!jb", name = "d", descriptor = "(I)I")
@@ -325,7 +325,7 @@ public final class Js5Net {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!jb", name = "b", descriptor = "(Z)V")
-	public final void method2329() {
+	public final void shutdown() {
 		if (this.aClass95_1 != null) {
 			this.aClass95_1.close();
 		}
@@ -366,7 +366,7 @@ public final class Js5Net {
 				this.aClass95_1.close();
 			} catch (@Pc(43) Exception local43) {
 			}
-			this.errors++;
+			this.js5Errors++;
 			this.aClass95_1 = null;
 			this.response = -2;
 		}

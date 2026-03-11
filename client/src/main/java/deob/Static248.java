@@ -1,6 +1,7 @@
 package deob;
 
 import com.jagex3.*;
+import com.jagex3.client.Client;
 import com.jogamp.opengl.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -14,13 +15,10 @@ public final class Static248 {
 	@OriginalMember(owner = "com.jagex3.client.client!uc", name = "f", descriptor = "I")
 	public static int anInt4232;
 
-	@OriginalMember(owner = "com.jagex3.client.client!uc", name = "a", descriptor = "I")
-	public static int anInt4229 = 2;
-
-	@OriginalMember(owner = "com.jagex3.client.client!uc", name = "a", descriptor = "(IB)Z")
+    @OriginalMember(owner = "com.jagex3.client.client!uc", name = "a", descriptor = "(IB)Z")
 	public static boolean method3288(@OriginalArg(0) int arg0) {
 		Static189.anInt4443 = arg0 + 1 & 0xFFFF;
-		Static34.verifyIdChanged = true;
+		Client.verifyIdChanged = true;
 		return true;
 	}
 
@@ -46,7 +44,7 @@ public final class Static248 {
 		@Pc(37) int local37;
 		@Pc(183) int local183;
 		for (@Pc(23) int local23 = Static235.anInt5276; local23 < Static126.anInt3114; local23++) {
-			@Pc(30) Square[][] local30 = Static130.aClass3_Sub5ArrayArrayArray1[local23];
+			@Pc(30) Square[][] local30 = World.activeTiles[local23];
 			for (local32 = Static31.anInt987; local32 < Static2.anInt15; local32++) {
 				for (local37 = Static80.anInt4698; local37 < Static215.anInt4866; local37++) {
 					@Pc(46) Square local46 = local30[local32][local37];
@@ -54,7 +52,7 @@ public final class Static248 {
 						if (Static48.aBooleanArrayArray1[local32 + Static277.anInt5855 - Static167.anInt4069][local37 + Static277.anInt5855 - Static193.anInt4539] && (arg3 == null || local23 < arg4 || arg3[local23][local32][local37] != arg5)) {
 							local46.aBoolean45 = true;
 							local46.aBoolean46 = true;
-							if (local46.anInt662 > 0) {
+							if (local46.spriteCount > 0) {
 								local46.aBoolean47 = true;
 							} else {
 								local46.aBoolean47 = false;
@@ -65,8 +63,8 @@ public final class Static248 {
 							local46.aBoolean46 = false;
 							local46.anInt663 = 0;
 							if (local32 >= local9 && local32 <= local13 && local37 >= local17 && local37 <= local21) {
-								if (local46.aClass77_1 != null) {
-									@Pc(103) Wall local103 = local46.aClass77_1;
+								if (local46.wall != null) {
+									@Pc(103) Wall local103 = local46.wall;
 									local103.aClass8_5.method4545(0, local23, local103.anInt3051, local103.anInt3048, local103.anInt3044);
 									if (local103.aClass8_6 != null) {
 										local103.aClass8_6.method4545(0, local23, local103.anInt3051, local103.anInt3048, local103.anInt3044);
@@ -83,9 +81,9 @@ public final class Static248 {
 									@Pc(167) GroundDecor local167 = local46.aClass15_1;
 									local167.aClass8_1.method4545(0, local23, local167.anInt733, local167.anInt732, local167.anInt736);
 								}
-								if (local46.aClass31Array1 != null) {
-									for (local183 = 0; local183 < local46.anInt662; local183++) {
-										@Pc(192) Sprite local192 = local46.aClass31Array1[local183];
+								if (local46.sprites != null) {
+									for (local183 = 0; local183 < local46.spriteCount; local183++) {
+										@Pc(192) Sprite local192 = local46.sprites[local183];
 										local192.aClass8_4.method4545(local192.anInt1714, local23, local192.anInt1706, local192.anInt1699, local192.anInt1703);
 									}
 								}
@@ -95,7 +93,7 @@ public final class Static248 {
 				}
 			}
 		}
-		@Pc(240) boolean local240 = Static83.anIntArrayArrayArray4 == Static80.anIntArrayArrayArray19;
+		@Pc(240) boolean local240 = World.groundh == Static80.anIntArrayArrayArray19;
 		if (GlRenderer.enabled) {
 			@Pc(244) GL2 local244 = GlRenderer.gl;
 			local244.glPushMatrix();
@@ -115,27 +113,27 @@ public final class Static248 {
 						Static21.method619(local285.anInt2486);
 						Static161.method3066(Static123.method2422());
 					}
-					local285.method1944(Static130.aClass3_Sub5ArrayArrayArray1, local294, false);
+					local285.method1944(World.activeTiles, local294, false);
 				}
 				Static275.method4608();
 			} else {
 				local32 = Static235.anInt5276;
 				while (true) {
 					if (local32 >= Static126.anInt3114) {
-						Static120.method2402(Static167.anInt4069, Static193.anInt4539, Static130.aClass3_Sub5ArrayArrayArray1);
+						Static120.method2402(Static167.anInt4069, Static193.anInt4539, World.activeTiles);
 						break;
 					}
 					for (local37 = 0; local37 < Static182.aGlSquareArrayArray2[local32].length; local37++) {
 						@Pc(336) GlSquare local336 = Static182.aGlSquareArrayArray2[local32][local37];
 						@Pc(350) float local350 = 201.5F - (float) local32 * 50.0F - (local336.aBoolean140 ? 1.0F : 0.5F);
-						if (local336.anInt2485 != -1 && Rasteriser.anInterface1_2.method3237(local336.anInt2485) == 4 && Static220.aBoolean244) {
+						if (local336.anInt2485 != -1 && Pix3D.anInterface1_2.method3237(local336.anInt2485) == 4 && Static220.aBoolean244) {
 							Static21.method619(local336.anInt2486);
 						}
-						local336.method1944(Static130.aClass3_Sub5ArrayArrayArray1, local350, false);
+						local336.method1944(World.activeTiles, local350, false);
 					}
 					if (local32 == 0 && Static139.anInt3451 > 0) {
 						GlRenderer.method4159(101.5F);
-						Static242.method4198(Static167.anInt4069, Static193.anInt4539, Static277.anInt5855, arg1, Static48.aBooleanArrayArray1, Static83.anIntArrayArrayArray4[0]);
+						Static242.method4198(Static167.anInt4069, Static193.anInt4539, Static277.anInt5855, arg1, Static48.aBooleanArrayArray1, World.groundh[0]);
 					}
 					local32++;
 				}
@@ -150,7 +148,7 @@ public final class Static248 {
 		@Pc(415) int local415;
 		@Pc(428) int local428;
 		for (local399 = Static235.anInt5276; local399 < Static126.anInt3114; local399++) {
-			local406 = Static130.aClass3_Sub5ArrayArrayArray1[local399];
+			local406 = World.activeTiles[local399];
 			for (local37 = -Static277.anInt5855; local37 <= 0; local37++) {
 				local415 = Static167.anInt4069 + local37;
 				local183 = Static167.anInt4069 - local37;
@@ -197,7 +195,7 @@ public final class Static248 {
 			}
 		}
 		for (local399 = Static235.anInt5276; local399 < Static126.anInt3114; local399++) {
-			local406 = Static130.aClass3_Sub5ArrayArrayArray1[local399];
+			local406 = World.activeTiles[local399];
 			for (local37 = -Static277.anInt5855; local37 <= 0; local37++) {
 				local415 = Static167.anInt4069 + local37;
 				local183 = Static167.anInt4069 - local37;

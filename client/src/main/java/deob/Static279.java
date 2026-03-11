@@ -11,10 +11,7 @@ public final class Static279 {
 	@OriginalMember(owner = "com.jagex3.client.client!wk", name = "v", descriptor = "[I")
 	public static int[] anIntArray568;
 
-	@OriginalMember(owner = "com.jagex3.client.client!wk", name = "w", descriptor = "I")
-	public static int anInt5880;
-
-	@OriginalMember(owner = "com.jagex3.client.client!wk", name = "t", descriptor = "Lclient!n;")
+    @OriginalMember(owner = "com.jagex3.client.client!wk", name = "t", descriptor = "Lclient!n;")
 	public static final SoftLruCache aClass99_38 = new SoftLruCache(64);
 
 	@OriginalMember(owner = "com.jagex3.client.client!wk", name = "u", descriptor = "Lclient!na;")

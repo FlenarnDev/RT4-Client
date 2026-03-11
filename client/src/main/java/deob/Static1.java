@@ -2,6 +2,7 @@ package deob;
 
 import com.jagex3.*;
 import com.jagex3.client.Client;
+import com.jagex3.client.applet.GameShell;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -251,7 +252,7 @@ public final class Static1 {
 			}
 		}
 		@Pc(1161) GlSquare local1161;
-		for (local1161 = (GlSquare) local10.method3859(); local1161 != null; local1161 = (GlSquare) local10.method3861()) {
+		for (local1161 = (GlSquare) local10.search(); local1161 != null; local1161 = (GlSquare) local10.find()) {
 			local1161.method1940();
 		}
 		for (local12 = 1; local12 <= 102; local12++) {
@@ -516,9 +517,9 @@ public final class Static1 {
 				}
 			}
 		}
-		for (local1161 = (GlSquare) local10.method3859(); local1161 != null; local1161 = (GlSquare) local10.method3861()) {
+		for (local1161 = (GlSquare) local10.search(); local1161 != null; local1161 = (GlSquare) local10.find()) {
 			if (local1161.anInt2483 == 0) {
-				local1161.method4658();
+				local1161.unlink();
 			} else {
 				local1161.method1943();
 			}
@@ -528,7 +529,7 @@ public final class Static1 {
 		@Pc(2826) long[] local2826 = new long[local12];
 		local10.method3865(local2823);
 		for (local38 = 0; local38 < local12; local38++) {
-			local2826[local38] = local2823[local38].aLong192;
+			local2826[local38] = local2823[local38].key;
 		}
 		Static4.method23(local2826, local2823);
 		return local2823;
@@ -540,8 +541,8 @@ public final class Static1 {
 			Static46.method1187(arg0, arg3, arg2 + arg0, arg1 + arg3);
 			Static46.method1186(arg0, arg3, arg2, arg1, 0);
 		} else {
-			Static129.method2496(arg0, arg3, arg2 + arg0, arg3 + arg1);
-			Static129.method2495(arg0, arg3, arg2, arg1, 0);
+			Pix2D.method2496(arg0, arg3, arg2 + arg0, arg3 + arg1);
+			Pix2D.method2495(arg0, arg3, arg2, arg1, 0);
 		}
 		if (Static41.anInt1309 < 100) {
 			return;
@@ -558,7 +559,7 @@ public final class Static1 {
 			if (GlRenderer.enabled) {
 				Static129.anIntArray297 = null;
 			} else {
-				Static260.aClass27_2.method4189();
+				GameShell.drawArea.method4189();
 			}
 		}
 		Static70.aClass3_Sub2_Sub1_2.method1415(arg0, arg3);
@@ -574,8 +575,8 @@ public final class Static1 {
 			Static46.method1182(local161, local147, local167, local153, local169, 128);
 			Static46.method1179(local161, local147, local167, local153, local169);
 		} else {
-			Static129.method2484(local161, local147, local167, local153, local169, 128);
-			Static129.method2483(local161, local147, local167, local153, local169);
+			Pix2D.method2484(local161, local147, local167, local153, local169, 128);
+			Pix2D.method2483(local161, local147, local167, local153, local169);
 		}
 		if (Static201.anInt1864 <= 0) {
 			return;
@@ -586,14 +587,14 @@ public final class Static1 {
 		} else {
 			local225 = Static91.anInt2428 * 25;
 		}
-		for (@Pc(238) MapElement local238 = (MapElement) Static145.aClass69_84.method2289(); local238 != null; local238 = (MapElement) Static145.aClass69_84.method2288()) {
+		for (@Pc(238) MapElement local238 = (MapElement) Static145.aClass69_84.head(); local238 != null; local238 = (MapElement) Static145.aClass69_84.next()) {
 			if (local238.anInt4308 == Static9.anInt172) {
 				@Pc(258) int local258 = arg3 + local238.anInt4314 * arg1 / Static181.anInt4296;
 				@Pc(267) int local267 = arg2 * local238.anInt4307 / Static48.anInt1449 + arg0;
 				if (GlRenderer.enabled) {
 					Static46.method1182(local267 - 2, local258 + -2, 4, 4, 16776960, local225);
 				} else {
-					Static129.method2484(local267 - 2, local258 + -2, 4, 4, 16776960, local225);
+					Pix2D.method2484(local267 - 2, local258 + -2, 4, 4, 16776960, local225);
 				}
 			}
 		}

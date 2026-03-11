@@ -93,15 +93,15 @@ public class Pix32 extends AbstractPix32 {
 		@Pc(27) int local27 = Static129.anInt3144 - local23;
 		@Pc(29) int local29 = 0;
 		@Pc(36) int local36;
-		if (arg1 < Static129.anInt3147) {
-			local36 = Static129.anInt3147 - arg1;
+		if (arg1 < Pix2D.anInt3147) {
+			local36 = Pix2D.anInt3147 - arg1;
 			local20 -= local36;
-			arg1 = Static129.anInt3147;
+			arg1 = Pix2D.anInt3147;
 			local17 = local36 * local23;
 			local15 += local36 * Static129.anInt3144;
 		}
-		if (arg1 + local20 > Static129.anInt3149) {
-			local20 -= arg1 + local20 - Static129.anInt3149;
+		if (arg1 + local20 > Pix2D.anInt3149) {
+			local20 -= arg1 + local20 - Pix2D.anInt3149;
 		}
 		if (arg0 < Static129.anInt3145) {
 			local36 = Static129.anInt3145 - arg0;
@@ -216,11 +216,11 @@ public class Pix32 extends AbstractPix32 {
 		if (local166 > Static129.anInt3148) {
 			local166 = Static129.anInt3148;
 		}
-		if (local196 < Static129.anInt3147) {
-			local196 = Static129.anInt3147;
+		if (local196 < Pix2D.anInt3147) {
+			local196 = Pix2D.anInt3147;
 		}
-		if (local198 > Static129.anInt3149) {
-			local198 = Static129.anInt3149;
+		if (local198 > Pix2D.anInt3149) {
+			local198 = Pix2D.anInt3149;
 		}
 		local166 = local164 - local166;
 		if (local166 >= 0) {
@@ -658,15 +658,15 @@ public class Pix32 extends AbstractPix32 {
 		@Pc(36) int local36 = Static129.anInt3144 - local32;
 		@Pc(40) int local40 = local32 + local32;
 		@Pc(47) int local47;
-		if (arg1 < Static129.anInt3147) {
-			local47 = Static129.anInt3147 - arg1;
+		if (arg1 < Pix2D.anInt3147) {
+			local47 = Pix2D.anInt3147 - arg1;
 			local29 -= local47;
-			arg1 = Static129.anInt3147;
+			arg1 = Pix2D.anInt3147;
 			local26 += local47 * local32;
 			local21 += local47 * Static129.anInt3144;
 		}
-		if (arg1 + local29 > Static129.anInt3149) {
-			local29 -= arg1 + local29 - Static129.anInt3149;
+		if (arg1 + local29 > Pix2D.anInt3149) {
+			local29 -= arg1 + local29 - Pix2D.anInt3149;
 		}
 		if (arg0 < Static129.anInt3145) {
 			local47 = Static129.anInt3145 - arg0;
@@ -700,15 +700,15 @@ public class Pix32 extends AbstractPix32 {
 		@Pc(27) int local27 = Static129.anInt3144 - local23;
 		@Pc(29) int local29 = 0;
 		@Pc(36) int local36;
-		if (arg1 < Static129.anInt3147) {
-			local36 = Static129.anInt3147 - arg1;
+		if (arg1 < Pix2D.anInt3147) {
+			local36 = Pix2D.anInt3147 - arg1;
 			local20 -= local36;
-			arg1 = Static129.anInt3147;
+			arg1 = Pix2D.anInt3147;
 			local17 = local36 * local23;
 			local15 += local36 * Static129.anInt3144;
 		}
-		if (arg1 + local20 > Static129.anInt3149) {
-			local20 -= arg1 + local20 - Static129.anInt3149;
+		if (arg1 + local20 > Pix2D.anInt3149) {
+			local20 -= arg1 + local20 - Pix2D.anInt3149;
 		}
 		if (arg0 < Static129.anInt3145) {
 			local36 = Static129.anInt3145 - arg0;
@@ -732,7 +732,7 @@ public class Pix32 extends AbstractPix32 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!mm", name = "e", descriptor = "(II)V")
 	@Override
-	public void method1423(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+	public void plotSprite(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		arg0 += this.anInt1863;
 		arg1 += this.anInt1861;
 		@Pc(15) int local15 = arg0 + arg1 * Static129.anInt3144;
@@ -742,15 +742,15 @@ public class Pix32 extends AbstractPix32 {
 		@Pc(27) int local27 = Static129.anInt3144 - local23;
 		@Pc(29) int local29 = 0;
 		@Pc(36) int local36;
-		if (arg1 < Static129.anInt3147) {
-			local36 = Static129.anInt3147 - arg1;
+		if (arg1 < Pix2D.anInt3147) {
+			local36 = Pix2D.anInt3147 - arg1;
 			local20 -= local36;
-			arg1 = Static129.anInt3147;
+			arg1 = Pix2D.anInt3147;
 			local17 = local36 * local23;
 			local15 += local36 * Static129.anInt3144;
 		}
-		if (arg1 + local20 > Static129.anInt3149) {
-			local20 -= arg1 + local20 - Static129.anInt3149;
+		if (arg1 + local20 > Pix2D.anInt3149) {
+			local20 -= arg1 + local20 - Pix2D.anInt3149;
 		}
 		if (arg0 < Static129.anInt3145) {
 			local36 = Static129.anInt3145 - arg0;
@@ -835,7 +835,7 @@ public class Pix32 extends AbstractPix32 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!mm", name = "a", descriptor = "(II[I[I)V")
 	public final void method312(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int[] arg3) {
-		if (Static129.anInt3149 - Static129.anInt3147 != arg2.length) {
+		if (Pix2D.anInt3149 - Pix2D.anInt3147 != arg2.length) {
 			throw new IllegalStateException();
 		}
 		arg0 += this.anInt1863;
@@ -847,15 +847,15 @@ public class Pix32 extends AbstractPix32 {
 		@Pc(33) int local33 = 0;
 		@Pc(39) int local39 = arg0 + arg1 * Static129.anInt3144;
 		@Pc(46) int local46;
-		if (arg1 < Static129.anInt3147) {
-			local46 = Static129.anInt3147 - arg1;
+		if (arg1 < Pix2D.anInt3147) {
+			local46 = Pix2D.anInt3147 - arg1;
 			local24 -= local46;
-			arg1 = Static129.anInt3147;
+			arg1 = Pix2D.anInt3147;
 			local21 = local46 * local27;
 			local39 += local46 * Static129.anInt3144;
 		}
-		if (arg1 + local24 > Static129.anInt3149) {
-			local24 -= arg1 + local24 - Static129.anInt3149;
+		if (arg1 + local24 > Pix2D.anInt3149) {
+			local24 -= arg1 + local24 - Pix2D.anInt3149;
 		}
 		if (arg0 < Static129.anInt3145) {
 			local46 = Static129.anInt3145 - arg0;
@@ -876,7 +876,7 @@ public class Pix32 extends AbstractPix32 {
 			return;
 		}
 		local46 = arg0 - Static129.anInt3145;
-		@Pc(142) int local142 = arg1 - Static129.anInt3147;
+		@Pc(142) int local142 = arg1 - Pix2D.anInt3147;
 		for (@Pc(144) int local144 = local142; local144 < local142 + local24; local144++) {
 			@Pc(153) int local153 = arg2[local144];
 			@Pc(157) int local157 = arg3[local144];
@@ -1000,12 +1000,12 @@ public class Pix32 extends AbstractPix32 {
 		}
 		local46 = arg0 + arg1 * Static129.anInt3144;
 		@Pc(130) int local130 = Static129.anInt3144 - arg2;
-		if (arg1 + arg3 > Static129.anInt3149) {
-			arg3 -= arg1 + arg3 - Static129.anInt3149;
+		if (arg1 + arg3 > Pix2D.anInt3149) {
+			arg3 -= arg1 + arg3 - Pix2D.anInt3149;
 		}
 		@Pc(150) int local150;
-		if (arg1 < Static129.anInt3147) {
-			local150 = Static129.anInt3147 - arg1;
+		if (arg1 < Pix2D.anInt3147) {
+			local150 = Pix2D.anInt3147 - arg1;
 			arg3 -= local150;
 			local46 += local150 * Static129.anInt3144;
 			local14 += local32 * local150;
@@ -1089,12 +1089,12 @@ public class Pix32 extends AbstractPix32 {
 		}
 		local46 = arg0 + arg1 * Static129.anInt3144;
 		@Pc(130) int local130 = Static129.anInt3144 - arg2;
-		if (arg1 + arg3 > Static129.anInt3149) {
-			arg3 -= arg1 + arg3 - Static129.anInt3149;
+		if (arg1 + arg3 > Pix2D.anInt3149) {
+			arg3 -= arg1 + arg3 - Pix2D.anInt3149;
 		}
 		@Pc(150) int local150;
-		if (arg1 < Static129.anInt3147) {
-			local150 = Static129.anInt3147 - arg1;
+		if (arg1 < Pix2D.anInt3147) {
+			local150 = Pix2D.anInt3147 - arg1;
 			arg3 -= local150;
 			local46 += local150 * Static129.anInt3144;
 			local14 += local32 * local150;

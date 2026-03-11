@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.TitleScreen;
 import com.jagex3.client.Client;
 import com.jagex3.ClientInvCache;
 import com.jagex3.JagString;
@@ -30,19 +31,19 @@ public final class Static15 {
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "a", descriptor = "(Z)Lclient!na;")
 	public static JagString method479() {
 		@Pc(8) JagString local8 = Static93.aClass100_518;
-		@Pc(10) JagString local10 = Static186.aClass100_827;
+		@Pc(10) JagString local10 = TitleScreen.AUTO_EMPTY;
 		if (Client.modeWhere != 0) {
 			local8 = Static50.aClass100_365;
 		}
 		if (Static47.aClass100_991 != null) {
 			local10 = JagString.join(new JagString[] { Static150.aClass100_687, Static47.aClass100_991 });
 		}
-		return JagString.join(new JagString[] { Static61.aClass100_424, local8, Static80.aClass100_886, JagString.parseInt(Client.lang), Static257.aClass100_98, JagString.parseInt(Static204.anInt4760), local10, Static41.aClass100_268 });
+		return JagString.join(new JagString[] { Static61.aClass100_424, local8, Static80.aClass100_886, JagString.parseInt(Client.lang), Static257.aClass100_98, JagString.parseInt(Client.affid), local10, Static41.aClass100_268 });
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!be", name = "a", descriptor = "(III)I")
 	public static int method484(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(10) ClientInvCache local10 = (ClientInvCache) Static20.aClass133_2.method3863((long) arg0);
+		@Pc(10) ClientInvCache local10 = (ClientInvCache) Static20.aClass133_2.find((long) arg0);
 		if (local10 == null) {
 			return -1;
 		} else if (arg1 >= 0 && arg1 < local10.anIntArray420.length) {

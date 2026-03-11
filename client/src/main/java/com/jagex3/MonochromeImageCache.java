@@ -99,13 +99,13 @@ public final class MonochromeImageCache {
 					@Pc(80) MonochromeImageCacheEntry local80 = (MonochromeImageCacheEntry) this.aClass69_96.method2279();
 					local44 = new MonochromeImageCacheEntry(arg0, local80.anInt3468);
 					this.aClass3_Sub23Array1[local80.anInt3476] = null;
-					local80.method4658();
+					local80.unlink();
 				}
 				this.aClass3_Sub23Array1[arg0] = local44;
 			} else {
 				this.aBoolean195 = false;
 			}
-			this.aClass69_96.method2283(local44);
+			this.aClass69_96.pushFront(local44);
 			return this.anIntArrayArrayArray13[local44.anInt3468];
 		}
 	}

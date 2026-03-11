@@ -1,8 +1,6 @@
 package com.jagex3;
 
-import deob.Static36;
-import deob.Static56;
-import deob.Static77;
+import deob.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -43,7 +41,7 @@ public final class SpotType {
 	private int anInt1749 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!eg", name = "p", descriptor = "I")
-	public int anInt1754 = -1;
+	public int anim = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!eg", name = "n", descriptor = "I")
 	private int anInt1752 = 128;
@@ -59,6 +57,40 @@ public final class SpotType {
 		models = arg0;
 		spotConfig = arg1;
 	}
+
+    @OriginalMember(owner = "com.jagex3.client.client!ck", name = "a", descriptor = "(BI)Lclient!eg;")
+    public static SpotType list(@OriginalArg(1) int arg0) {
+        @Pc(10) SpotType local10 = (SpotType) Static279.aClass99_38.method3106((long) arg0);
+        if (local10 != null) {
+            return local10;
+        }
+        @Pc(26) byte[] local26 = spotConfig.method4495(Static206.method3681(arg0), Static133.method4010(arg0));
+        local10 = new SpotType();
+        local10.anInt1751 = arg0;
+        if (local26 != null) {
+            local10.method1316(new Packet(local26));
+        }
+        Static279.aClass99_38.method3095(local10, (long) arg0);
+        return local10;
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!fk", name = "a", descriptor = "(B)V")
+	public static void method1441() {
+		Static279.aClass99_38.clear();
+		Static56.aClass99_9.clear();
+	}
+
+    @OriginalMember(owner = "com.jagex3.client.client!kl", name = "c", descriptor = "(II)V")
+    public static void method2666() {
+        Static279.aClass99_38.method3102(5);
+        Static56.aClass99_9.method3102(5);
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!ub", name = "a", descriptor = "(Z)V")
+    public static void method4249() {
+        Static279.aClass99_38.method3104();
+        Static56.aClass99_9.method3104();
+    }
 
     @OriginalMember(owner = "com.jagex3.client.client!eg", name = "a", descriptor = "(Lclient!wa;B)V")
 	public final void method1316(@OriginalArg(0) Packet arg0) {
@@ -76,7 +108,7 @@ public final class SpotType {
 		if (arg1 == 1) {
 			this.anInt1753 = arg0.g2();
 		} else if (arg1 == 2) {
-			this.anInt1754 = arg0.g2();
+			this.anim = arg0.g2();
 		} else if (arg1 == 4) {
 			this.anInt1745 = arg0.g2();
 		} else if (arg1 == 5) {
@@ -116,7 +148,7 @@ public final class SpotType {
 	public final ModelLit method1319(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
 		@Pc(13) ModelLit local13 = (ModelLit) Static56.aClass99_9.method3106((long) this.anInt1751);
 		if (local13 == null) {
-			@Pc(28) ModelUnlit local28 = Static77.method1686(models, this.anInt1753);
+			@Pc(28) ModelUnlit local28 = ModelUnlit.method1686(models, this.anInt1753);
 			if (local28 == null) {
 				return null;
 			}
@@ -135,10 +167,10 @@ public final class SpotType {
 			Static56.aClass99_9.method3095(local13, (long) this.anInt1751);
 		}
 		@Pc(118) ModelLit local118;
-		if (this.anInt1754 == -1 || arg1 == -1) {
+		if (this.anim == -1 || arg1 == -1) {
 			local118 = local13.method4560(true, true, true);
 		} else {
-			local118 = Static36.method941(this.anInt1754).method4219(arg0, arg2, arg1, local13);
+			local118 = SeqType.list(this.anim).method4219(arg0, arg2, arg1, local13);
 		}
 		if (this.anInt1745 != 128 || this.anInt1752 != 128) {
 			local118.method4559(this.anInt1745, this.anInt1752, this.anInt1745);

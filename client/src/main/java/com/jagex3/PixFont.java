@@ -32,15 +32,15 @@ public final class PixFont extends PixFontGeneric {
 		@Pc(11) int local11 = 0;
 		@Pc(13) int local13 = 0;
 		@Pc(20) int local20;
-		if (arg2 < Static129.anInt3147) {
-			local20 = Static129.anInt3147 - arg2;
+		if (arg2 < Pix2D.anInt3147) {
+			local20 = Pix2D.anInt3147 - arg2;
 			arg4 -= local20;
-			arg2 = Static129.anInt3147;
+			arg2 = Pix2D.anInt3147;
 			local13 = local20 * arg3;
 			local5 += local20 * Static129.anInt3144;
 		}
-		if (arg2 + arg4 > Static129.anInt3149) {
-			arg4 -= arg2 + arg4 - Static129.anInt3149;
+		if (arg2 + arg4 > Pix2D.anInt3149) {
+			arg4 -= arg2 + arg4 - Pix2D.anInt3149;
 		}
 		if (arg1 < Static129.anInt3145) {
 			local20 = Static129.anInt3145 - arg1;
@@ -70,15 +70,15 @@ public final class PixFont extends PixFontGeneric {
 		@Pc(11) int local11 = 0;
 		@Pc(13) int local13 = 0;
 		@Pc(20) int local20;
-		if (arg2 < Static129.anInt3147) {
-			local20 = Static129.anInt3147 - arg2;
+		if (arg2 < Pix2D.anInt3147) {
+			local20 = Pix2D.anInt3147 - arg2;
 			arg4 -= local20;
-			arg2 = Static129.anInt3147;
+			arg2 = Pix2D.anInt3147;
 			local13 = local20 * arg3;
 			local5 += local20 * Static129.anInt3144;
 		}
-		if (arg2 + arg4 > Static129.anInt3149) {
-			arg4 -= arg2 + arg4 - Static129.anInt3149;
+		if (arg2 + arg4 > Pix2D.anInt3149) {
+			arg4 -= arg2 + arg4 - Pix2D.anInt3149;
 		}
 		if (arg1 < Static129.anInt3145) {
 			local20 = Static129.anInt3145 - arg1;

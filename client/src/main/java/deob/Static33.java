@@ -10,19 +10,10 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static33 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!cj", name = "e", descriptor = "[[S")
-	public static short[][] aShortArrayArray2;
-
-	@OriginalMember(owner = "com.jagex3.client.client!cj", name = "h", descriptor = "Z")
-	public static boolean aBoolean63;
-
-	@OriginalMember(owner = "com.jagex3.client.client!cj", name = "n", descriptor = "Lsignlink!im;")
+    @OriginalMember(owner = "com.jagex3.client.client!cj", name = "n", descriptor = "Lsignlink!im;")
 	public static PrivilegedRequest openUrlRequest;
 
-	@OriginalMember(owner = "com.jagex3.client.client!cj", name = "i", descriptor = "[I")
-	public static final int[] anIntArray79 = new int[32768];
-
-	@OriginalMember(owner = "com.jagex3.client.client!cj", name = "a", descriptor = "(ILclient!pb;ZIIII)Z")
+    @OriginalMember(owner = "com.jagex3.client.client!cj", name = "a", descriptor = "(ILclient!pb;ZIIII)Z")
 	public static boolean method867(@OriginalArg(0) int arg0, @OriginalArg(1) LocType arg1, @OriginalArg(5) int arg2, @OriginalArg(6) int arg3) {
 		@Pc(10) MsiType local10 = Static40.method1013(arg1.anInt4415);
 		if (local10.anInt12 == -1) {

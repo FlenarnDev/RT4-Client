@@ -43,5 +43,5 @@ public final class Sprite {
 	public int anInt1714;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ec", name = "A", descriptor = "J")
-	public long aLong56 = 0L;
+	public long typecode = 0L;
 }

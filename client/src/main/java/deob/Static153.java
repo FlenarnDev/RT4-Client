@@ -1,6 +1,5 @@
 package deob;
 
-import com.jagex3.client.Client;
 import com.jagex3.DelayedStateChange;
 import com.jagex3.JagString;
 import com.jagex3.Pix32;
@@ -16,10 +15,7 @@ public final class Static153 {
 	@OriginalMember(owner = "com.jagex3.client.client!mc", name = "S", descriptor = "Lclient!mm;")
 	public static Pix32 aClass3_Sub2_Sub1_Sub1_2;
 
-    @OriginalMember(owner = "com.jagex3.client.client!mc", name = "Y", descriptor = "[Lclient!na;")
-	public static final JagString[] aClass100Array112 = new JagString[100];
-
-	@OriginalMember(owner = "com.jagex3.client.client!mc", name = "ab", descriptor = "[I")
+    @OriginalMember(owner = "com.jagex3.client.client!mc", name = "ab", descriptor = "[I")
 	public static final int[] anIntArray351 = new int[] { 7, 8, 9, 10, 11, 12, 13, 15 };
 
 	@OriginalMember(owner = "com.jagex3.client.client!mc", name = "fb", descriptor = "Lclient!na;")
@@ -68,21 +64,7 @@ public final class Static153 {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!mc", name = "f", descriptor = "(B)V")
-	public static void method2909() {
-		Client.out.p1isaac(184);
-		for (@Pc(18) SubInterface local18 = (SubInterface) Static119.aClass133_9.method3859(); local18 != null; local18 = (SubInterface) Static119.aClass133_9.method3861()) {
-			if (local18.anInt5879 == 0) {
-				Static132.method2605(true, local18);
-			}
-		}
-		if (Static39.aClass13_10 != null) {
-			Static43.method1143(Static39.aClass13_10);
-			Static39.aClass13_10 = null;
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!mc", name = "a", descriptor = "(BI)V")
+    @OriginalMember(owner = "com.jagex3.client.client!mc", name = "a", descriptor = "(BI)V")
 	public static void method2910(@OriginalArg(1) int arg0) {
 		@Pc(4) DelayedStateChange local4 = Static238.method4143(8, arg0);
 		local4.method1007();

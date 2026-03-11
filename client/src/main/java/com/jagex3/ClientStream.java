@@ -9,7 +9,6 @@ import java.net.Socket;
 import com.jagex.signlink.PrivilegedRequest;
 import com.jagex.signlink.SignLink;
 import deob.Static231;
-import deob.Static89;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -193,7 +192,7 @@ public final class ClientStream implements Runnable {
 				}
 			}
 		} catch (@Pc(124) Exception local124) {
-			Static89.report(null, local124);
+			JagException.report(null, local124);
 		}
 	}
 

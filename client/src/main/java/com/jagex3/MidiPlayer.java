@@ -113,16 +113,16 @@ public final class MidiPlayer extends PcmStream {
 		arg0.method3741();
 		@Pc(5) boolean local5 = true;
 		@Pc(20) int[] local20 = new int[] { 22050 };
-		for (@Pc(34) ByteArrayNode local34 = (ByteArrayNode) arg0.aClass133_22.method3859(); local34 != null; local34 = (ByteArrayNode) arg0.aClass133_22.method3861()) {
-			@Pc(40) int local40 = (int) local34.aLong192;
-			@Pc(48) Patch local48 = (Patch) this.aClass133_23.method3863((long) local40);
+		for (@Pc(34) ByteArrayNode local34 = (ByteArrayNode) arg0.aClass133_22.search(); local34 != null; local34 = (ByteArrayNode) arg0.aClass133_22.find()) {
+			@Pc(40) int local40 = (int) local34.key;
+			@Pc(48) Patch local48 = (Patch) this.aClass133_23.find((long) local40);
 			if (local48 == null) {
 				local48 = Static116.method2320(arg1, local40);
 				if (local48 == null) {
 					local5 = false;
 					continue;
 				}
-				this.aClass133_23.method3862(local48, (long) local40);
+				this.aClass133_23.put(local48, (long) local40);
 			}
 			if (!local48.method2436(local20, arg2, local34.aByteArray17)) {
 				local5 = false;
@@ -136,7 +136,7 @@ public final class MidiPlayer extends PcmStream {
 
 	@OriginalMember(owner = "com.jagex3.client.client!va", name = "d", descriptor = "(B)V")
 	public final synchronized void method4412() {
-		for (@Pc(15) Patch local15 = (Patch) this.aClass133_23.method3859(); local15 != null; local15 = (Patch) this.aClass133_23.method3861()) {
+		for (@Pc(15) Patch local15 = (Patch) this.aClass133_23.search(); local15 != null; local15 = (Patch) this.aClass133_23.find()) {
 			local15.method2432();
 		}
 	}
@@ -215,19 +215,19 @@ public final class MidiPlayer extends PcmStream {
 
 	@OriginalMember(owner = "com.jagex3.client.client!va", name = "a", descriptor = "(BI)V")
 	private void method4422(@OriginalArg(1) int arg0) {
-		for (@Pc(20) MidiNote local20 = (MidiNote) this.aClass3_Sub3_Sub3_1.aClass69_126.method2289(); local20 != null; local20 = (MidiNote) this.aClass3_Sub3_Sub3_1.aClass69_126.method2288()) {
+		for (@Pc(20) MidiNote local20 = (MidiNote) this.aClass3_Sub3_Sub3_1.aClass69_126.head(); local20 != null; local20 = (MidiNote) this.aClass3_Sub3_Sub3_1.aClass69_126.next()) {
 			if (arg0 < 0 || local20.anInt3773 == arg0) {
 				if (local20.aClass3_Sub3_Sub1_3 != null) {
 					local20.aClass3_Sub3_Sub1_3.method384(Static44.anInt1404 / 100);
 					if (local20.aClass3_Sub3_Sub1_3.method412()) {
-						this.aClass3_Sub3_Sub3_1.aClass3_Sub3_Sub2_2.method1343(local20.aClass3_Sub3_Sub1_3);
+						this.aClass3_Sub3_Sub3_1.aClass3_Sub3_Sub2_2.playStream(local20.aClass3_Sub3_Sub1_3);
 					}
 					local20.method2957();
 				}
 				if (local20.anInt3767 < 0) {
 					this.aClass3_Sub25ArrayArray1[local20.anInt3773][local20.anInt3779] = null;
 				}
-				local20.method4658();
+				local20.unlink();
 			}
 		}
 	}
@@ -257,8 +257,8 @@ public final class MidiPlayer extends PcmStream {
 
 	@OriginalMember(owner = "com.jagex3.client.client!va", name = "e", descriptor = "(I)V")
 	public final synchronized void method4426() {
-		for (@Pc(7) Patch local7 = (Patch) this.aClass133_23.method3859(); local7 != null; local7 = (Patch) this.aClass133_23.method3861()) {
-			local7.method4658();
+		for (@Pc(7) Patch local7 = (Patch) this.aClass133_23.search(); local7 != null; local7 = (Patch) this.aClass133_23.find()) {
+			local7.unlink();
 		}
 	}
 
@@ -279,7 +279,7 @@ public final class MidiPlayer extends PcmStream {
 				}
 			}
 		}
-		@Pc(118) Patch local118 = (Patch) this.aClass133_23.method3863((long) this.anIntArray506[arg1]);
+		@Pc(118) Patch local118 = (Patch) this.aClass133_23.find((long) this.anIntArray506[arg1]);
 		if (local118 == null) {
 			return;
 		}
@@ -309,7 +309,7 @@ public final class MidiPlayer extends PcmStream {
 			this.method4442(local133, local118.aShortArray36[arg2] < 0);
 		}
 		if (local118.aShortArray36[arg2] < 0) {
-			local133.aClass3_Sub3_Sub1_3.method396(-1);
+			local133.aClass3_Sub3_Sub1_3.setLoopCount(-1);
 		}
 		if (local133.anInt3776 >= 0) {
 			@Pc(289) MidiNote local289 = this.aClass3_Sub25ArrayArray2[arg1][local133.anInt3776];
@@ -319,7 +319,7 @@ public final class MidiPlayer extends PcmStream {
 			}
 			this.aClass3_Sub25ArrayArray2[arg1][local133.anInt3776] = local133;
 		}
-		this.aClass3_Sub3_Sub3_1.aClass69_126.method2282(local133);
+		this.aClass3_Sub3_Sub3_1.aClass69_126.push(local133);
 		this.aClass3_Sub25ArrayArray1[arg1][arg2] = local133;
 	}
 
@@ -479,7 +479,7 @@ public final class MidiPlayer extends PcmStream {
 
 	@OriginalMember(owner = "com.jagex3.client.client!va", name = "d", descriptor = "(II)V")
 	private void method4430(@OriginalArg(1) int arg0) {
-		for (@Pc(12) MidiNote local12 = (MidiNote) this.aClass3_Sub3_Sub3_1.aClass69_126.method2289(); local12 != null; local12 = (MidiNote) this.aClass3_Sub3_Sub3_1.aClass69_126.method2288()) {
+		for (@Pc(12) MidiNote local12 = (MidiNote) this.aClass3_Sub3_Sub3_1.aClass69_126.head(); local12 != null; local12 = (MidiNote) this.aClass3_Sub3_Sub3_1.aClass69_126.next()) {
 			if ((arg0 < 0 || arg0 == local12.anInt3773) && local12.anInt3767 < 0) {
 				this.aClass3_Sub25ArrayArray1[local12.anInt3773][local12.anInt3779] = null;
 				local12.anInt3767 = 0;
@@ -519,7 +519,7 @@ public final class MidiPlayer extends PcmStream {
 		arg2.anInt3771 = Static44.anInt1404 / 100;
 		if (arg2.anInt3767 >= 0 && (arg2.aClass3_Sub3_Sub1_3 == null || arg2.aClass3_Sub3_Sub1_3.method411())) {
 			arg2.method2957();
-			arg2.method4658();
+			arg2.unlink();
 			if (arg2.anInt3776 > 0 && arg2 == this.aClass3_Sub25ArrayArray2[arg2.anInt3773][arg2.anInt3776]) {
 				this.aClass3_Sub25ArrayArray2[arg2.anInt3773][arg2.anInt3776] = null;
 			}
@@ -586,11 +586,11 @@ public final class MidiPlayer extends PcmStream {
 			arg2.aClass3_Sub3_Sub1_3.method4408(arg3, arg1, arg0);
 		}
 		if (arg2.aClass3_Sub3_Sub1_3.method412()) {
-			this.aClass3_Sub3_Sub3_1.aClass3_Sub3_Sub2_2.method1343(arg2.aClass3_Sub3_Sub1_3);
+			this.aClass3_Sub3_Sub3_1.aClass3_Sub3_Sub2_2.playStream(arg2.aClass3_Sub3_Sub1_3);
 		}
 		arg2.method2957();
 		if (arg2.anInt3767 >= 0) {
-			arg2.method4658();
+			arg2.unlink();
 			if (arg2.anInt3776 > 0 && this.aClass3_Sub25ArrayArray2[arg2.anInt3773][arg2.anInt3776] == arg2) {
 				this.aClass3_Sub25ArrayArray2[arg2.anInt3773][arg2.anInt3776] = null;
 			}
@@ -615,7 +615,7 @@ public final class MidiPlayer extends PcmStream {
 			local12.anInt3767 = 0;
 			return;
 		}
-		for (@Pc(44) MidiNote local44 = (MidiNote) this.aClass3_Sub3_Sub3_1.aClass69_126.method2289(); local44 != null; local44 = (MidiNote) this.aClass3_Sub3_Sub3_1.aClass69_126.method2288()) {
+		for (@Pc(44) MidiNote local44 = (MidiNote) this.aClass3_Sub3_Sub3_1.aClass69_126.head(); local44 != null; local44 = (MidiNote) this.aClass3_Sub3_Sub3_1.aClass69_126.next()) {
 			if (local44.anInt3773 == local12.anInt3773 && local44.anInt3767 < 0 && local44 != local12) {
 				local12.anInt3767 = 0;
 				break;
@@ -711,7 +711,7 @@ public final class MidiPlayer extends PcmStream {
 		if ((this.anIntArray508[arg0] & 0x4) == 0) {
 			return;
 		}
-		for (@Pc(24) MidiNote local24 = (MidiNote) this.aClass3_Sub3_Sub3_1.aClass69_126.method2289(); local24 != null; local24 = (MidiNote) this.aClass3_Sub3_Sub3_1.aClass69_126.method2288()) {
+		for (@Pc(24) MidiNote local24 = (MidiNote) this.aClass3_Sub3_Sub3_1.aClass69_126.head(); local24 != null; local24 = (MidiNote) this.aClass3_Sub3_Sub3_1.aClass69_126.next()) {
 			if (local24.anInt3773 == arg0) {
 				local24.anInt3775 = 0;
 			}
@@ -783,7 +783,7 @@ public final class MidiPlayer extends PcmStream {
 		if ((this.anIntArray508[arg0] & 0x2) == 0) {
 			return;
 		}
-		for (@Pc(20) MidiNote local20 = (MidiNote) this.aClass3_Sub3_Sub3_1.aClass69_126.method2289(); local20 != null; local20 = (MidiNote) this.aClass3_Sub3_Sub3_1.aClass69_126.method2288()) {
+		for (@Pc(20) MidiNote local20 = (MidiNote) this.aClass3_Sub3_Sub3_1.aClass69_126.head(); local20 != null; local20 = (MidiNote) this.aClass3_Sub3_Sub3_1.aClass69_126.next()) {
 			if (arg0 == local20.anInt3773 && this.aClass3_Sub25ArrayArray1[arg0][local20.anInt3779] == null && local20.anInt3767 < 0) {
 				local20.anInt3767 = 0;
 			}
@@ -796,7 +796,7 @@ public final class MidiPlayer extends PcmStream {
 			return false;
 		}
 		if (arg0.anInt3767 >= 0) {
-			arg0.method4658();
+			arg0.unlink();
 			if (arg0.anInt3776 > 0 && this.aClass3_Sub25ArrayArray2[arg0.anInt3773][arg0.anInt3776] == arg0) {
 				this.aClass3_Sub25ArrayArray2[arg0.anInt3773][arg0.anInt3776] = null;
 			}

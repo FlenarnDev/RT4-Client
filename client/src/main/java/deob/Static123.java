@@ -19,10 +19,7 @@ public final class Static123 {
 	@OriginalMember(owner = "com.jagex3.client.client!jj", name = "g", descriptor = "Lclient!na;")
 	public static final JagString aClass100_593 = Static28.parse(" (X");
 
-	@OriginalMember(owner = "com.jagex3.client.client!jj", name = "j", descriptor = "Z")
-	public static boolean aBoolean155 = false;
-
-	@OriginalMember(owner = "com.jagex3.client.client!jj", name = "m", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!jj", name = "m", descriptor = "Lclient!na;")
 	public static final JagString aClass100_594 = Static28.parse("<)4col>");
 
 	@OriginalMember(owner = "com.jagex3.client.client!jj", name = "a", descriptor = "(BI)Lclient!lk;")
@@ -44,7 +41,7 @@ public final class Static123 {
 	public static void method2418() {
 		if (!Client.advertSuppressed && Client.modeWhere != 2) {
 			try {
-				Static206.aClass100_900.method3157(Static215.aClient1);
+				Static206.aClass100_900.method3157(Client.client);
 			} catch (@Pc(26) Throwable local26) {
 			}
 		}
@@ -182,29 +179,7 @@ public final class Static123 {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!jj", name = "a", descriptor = "(IBI)Lclient!na;")
-	public static JagString method2420(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(4) int local4 = arg1 - arg0;
-		if (local4 < -9) {
-			return Static175.aClass100_798;
-		} else if (local4 < -6) {
-			return Static64.aClass100_433;
-		} else if (local4 < -3) {
-			return Static223.aClass100_951;
-		} else if (local4 < 0) {
-			return Static229.aClass100_972;
-		} else if (local4 > 9) {
-			return Static42.aClass100_332;
-		} else if (local4 > 6) {
-			return Static6.aClass100_18;
-		} else if (local4 <= 3) {
-			return local4 > 0 ? Static41.aClass100_266 : Static226.aClass100_965;
-		} else {
-			return Static263.aClass100_1081;
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!jj", name = "a", descriptor = "(B)[F")
+    @OriginalMember(owner = "com.jagex3.client.client!jj", name = "a", descriptor = "(B)[F")
 	public static float[] method2422() {
 		@Pc(3) float local3 = Static161.method3068() + Static161.method3059();
 		@Pc(9) int local9 = Static161.method3064();

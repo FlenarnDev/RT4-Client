@@ -1,6 +1,7 @@
 package deob;
 
 import com.jagex3.*;
+import com.jagex3.client.applet.GameShell;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -29,16 +30,11 @@ public final class Static181 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!oi", name = "a", descriptor = "(II)Lclient!na;")
-	public static JagString method3341(@OriginalArg(0) int arg0) {
+	public static JagString formatIPv4(@OriginalArg(0) int arg0) {
 		return JagString.join(new JagString[] { JagString.parseInt(arg0 >> 24 & 0xFF), Static233.aClass100_994, JagString.parseInt(arg0 >> 16 & 0xFF), Static233.aClass100_994, JagString.parseInt(arg0 >> 8 & 0xFF), Static233.aClass100_994, JagString.parseInt(arg0 & 0xFF) });
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!oi", name = "a", descriptor = "(I)V")
-	public static void method3342() {
-		Static67.aClass99_20.method3103();
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!oi", name = "a", descriptor = "(Lclient!ve;B)V")
+    @OriginalMember(owner = "com.jagex3.client.client!oi", name = "a", descriptor = "(Lclient!ve;B)V")
 	public static void method3344(@OriginalArg(0) Js5 arg0) {
 		if (Static18.aBoolean40) {
 			return;
@@ -49,11 +45,11 @@ public final class Static181 {
 			Static129.method2492();
 		}
 		Static78.aClass3_Sub2_Sub1_3 = Static130.method2514(arg0, Static262.anInt5754);
-		@Pc(20) int local20 = Static254.anInt5554;
+		@Pc(20) int local20 = GameShell.anInt5554;
 		@Pc(26) int local26 = local20 * 956 / 503;
-		Static78.aClass3_Sub2_Sub1_3.method1419((Static48.anInt1448 - local26) / 2, 0, local26, local20);
+		Static78.aClass3_Sub2_Sub1_3.method1419((GameShell.anInt1448 - local26) / 2, 0, local26, local20);
 		Static243.aClass36_1 = Static40.method1010(Static136.anInt3322, arg0);
-		Static243.aClass36_1.method3336(Static48.anInt1448 / 2 - Static243.aClass36_1.anInt4270 / 2, 18);
+		Static243.aClass36_1.plotSprite(GameShell.anInt1448 / 2 - Static243.aClass36_1.anInt4270 / 2, 18);
 		Static18.aBoolean40 = true;
 	}
 

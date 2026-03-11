@@ -2,7 +2,6 @@ package deob;
 
 import java.util.Random;
 
-import com.jagex3.client.Client;
 import com.jagex3.JagString;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -48,10 +47,4 @@ public final class Static171 {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!ni", name = "a", descriptor = "(ILclient!na;I)V")
-	public static void method3221(@OriginalArg(1) JagString arg0, @OriginalArg(2) int arg1) {
-		Client.out.p1isaac(188);
-		Client.out.p1_alt1(arg1);
-		Client.out.p8(arg0.encode37());
-	}
 }

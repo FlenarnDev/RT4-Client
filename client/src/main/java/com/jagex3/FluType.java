@@ -1,5 +1,6 @@
 package com.jagex3;
 
+import deob.Static83;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -50,6 +51,21 @@ public final class FluType {
         aClass153_8 = arg0;
         clientConfig = arg1;
         anInt1716 = clientConfig.getFileIdLimit(3);
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!sd", name = "f", descriptor = "(B)V")
+    public static void method3885() {
+        Static83.aClass99_3.clear();
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!fk", name = "b", descriptor = "(IB)V")
+    public static void method1443() {
+        Static83.aClass99_3.method3102(5);
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!ed", name = "c", descriptor = "(I)V")
+    public static void method1308() {
+        Static83.aClass99_3.method3104();
     }
 
     @OriginalMember(owner = "com.jagex3.client.client!ni", name = "a", descriptor = "(IB)V")

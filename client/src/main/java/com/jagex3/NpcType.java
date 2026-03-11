@@ -166,19 +166,57 @@ public final class NpcType {
         clientConfig = arg1;
     }
 
+    @OriginalMember(owner = "com.jagex3.client.client!t", name = "b", descriptor = "(B)V")
+    public static void method4001() {
+        Static93.aClass99_13.clear();
+        Static125.aClass99_18.clear();
+        Static262.aClass99_35.clear();
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!ra", name = "c", descriptor = "(BI)V")
+    public static void method3706() {
+        Static93.aClass99_13.method3102(5);
+        Static125.aClass99_18.method3102(5);
+        Static262.aClass99_35.method3102(5);
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!qi", name = "e", descriptor = "(B)V")
+    public static void method3673() {
+        Static93.aClass99_13.method3104();
+        Static125.aClass99_18.method3104();
+        Static262.aClass99_35.method3104();
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!rg", name = "b", descriptor = "(II)Lclient!me;")
+    public static NpcType list(@OriginalArg(0) int arg0) {
+        @Pc(10) NpcType local10 = (NpcType) Static93.aClass99_13.method3106((long) arg0);
+        if (local10 != null) {
+            return local10;
+        }
+        @Pc(26) byte[] local26 = clientConfig.method4495(Static60.method1447(arg0), Static179.method3322(arg0));
+        local10 = new NpcType();
+        local10.anInt3741 = arg0;
+        if (local26 != null) {
+            local10.method2939(new Packet(local26));
+        }
+        local10.method2942();
+        Static93.aClass99_13.method3095(local10, (long) arg0);
+        return local10;
+    }
+
     @OriginalMember(owner = "com.jagex3.client.client!me", name = "a", descriptor = "(B)Lclient!me;")
 	public final NpcType method2932() {
 		@Pc(5) int local5 = -1;
 		if (this.anInt3723 != -1) {
-			local5 = Static155.method2945(this.anInt3723);
+			local5 = VarCache.getVarbit(this.anInt3723);
 		} else if (this.anInt3749 != -1) {
-			local5 = Static7.anIntArray75[this.anInt3749];
+			local5 = VarCache.var[this.anInt3749];
 		}
 		if (local5 < 0 || local5 >= this.anIntArray357.length - 1 || this.anIntArray357[local5] == -1) {
 			@Pc(55) int local55 = this.anIntArray357[this.anIntArray357.length - 1];
-			return local55 == -1 ? null : Static214.method4363(local55);
+			return local55 == -1 ? null : list(local55);
 		} else {
-			return Static214.method4363(this.anIntArray357[local5]);
+			return list(this.anIntArray357[local5]);
 		}
 	}
 
@@ -189,9 +227,9 @@ public final class NpcType {
 		}
 		@Pc(16) int local16 = -1;
 		if (this.anInt3723 != -1) {
-			local16 = Static155.method2945(this.anInt3723);
+			local16 = VarCache.getVarbit(this.anInt3723);
 		} else if (this.anInt3749 != -1) {
-			local16 = Static7.anIntArray75[this.anInt3749];
+			local16 = VarCache.var[this.anInt3749];
 		}
 		if (local16 < 0 || local16 >= this.anIntArray357.length - 1 || this.anIntArray357[local16] == -1) {
 			@Pc(62) int local62 = this.anIntArray357[this.anIntArray357.length - 1];
@@ -208,7 +246,7 @@ public final class NpcType {
 		}
 		for (@Pc(35) int local35 = 0; local35 < this.anIntArray357.length; local35++) {
 			if (this.anIntArray357[local35] != -1) {
-				@Pc(60) NpcType local60 = Static214.method4363(this.anIntArray357[local35]);
+				@Pc(60) NpcType local60 = list(this.anIntArray357[local35]);
 				if (local60.anInt3728 != -1 || local60.anInt3747 != -1 || local60.anInt3734 != -1) {
 					return true;
 				}
@@ -222,7 +260,7 @@ public final class NpcType {
 		if (this.aClass133_15 == null) {
 			return arg1;
 		} else {
-			@Pc(18) IntNode local18 = (IntNode) this.aClass133_15.method3863((long) arg0);
+			@Pc(18) IntNode local18 = (IntNode) this.aClass133_15.find((long) arg0);
 			return local18 == null ? arg1 : local18.anInt3141;
 		}
 	}
@@ -259,7 +297,7 @@ public final class NpcType {
 			@Pc(84) ModelUnlit[] local84 = new ModelUnlit[this.anIntArray356.length];
 			for (@Pc(86) int local86 = 0; local86 < this.anIntArray356.length; local86++) {
 				if (this.anIntArray356[local86] != -1) {
-					local84[local86] = Static77.method1686(aClass153_37, this.anIntArray356[local86]);
+					local84[local86] = ModelUnlit.method1686(aClass153_37, this.anIntArray356[local86]);
 					if (this.anIntArrayArray29 != null && this.anIntArrayArray29[local86] != null && local84[local86] != null) {
 						local84[local86].method1672(this.anIntArrayArray29[local86][0], this.anIntArrayArray29[local86][1], this.anIntArrayArray29[local86][2]);
 					}
@@ -289,12 +327,12 @@ public final class NpcType {
 								local259[0] = local259[4] = local259[8] = 32768;
 								local259[12] = -local235;
 							} else {
-								local300 = Pix3D.anIntArray225[local207] >> 1;
-								@Pc(306) int local306 = Pix3D.anIntArray223[local207] >> 1;
-								@Pc(312) int local312 = Pix3D.anIntArray225[local214] >> 1;
-								local318 = Pix3D.anIntArray225[local228] >> 1;
-								local324 = Pix3D.anIntArray223[local214] >> 1;
-								local330 = Pix3D.anIntArray223[local228] >> 1;
+								local300 = Pix3D.cosTable[local207] >> 1;
+								@Pc(306) int local306 = Pix3D.sinTable[local207] >> 1;
+								@Pc(312) int local312 = Pix3D.cosTable[local214] >> 1;
+								local318 = Pix3D.cosTable[local228] >> 1;
+								local324 = Pix3D.sinTable[local214] >> 1;
+								local330 = Pix3D.sinTable[local228] >> 1;
 								local259[3] = local300 * local330 + 16384 >> 15;
 								local259[8] = local300 * local312 + 16384 >> 15;
 								local259[5] = -local306;
@@ -356,13 +394,13 @@ public final class NpcType {
 		local173 = arg0 == null ? 0 : arg0.length;
 		for (local235 = 0; local235 < local173; local235++) {
 			if (arg0[local235] != null) {
-				@Pc(753) SeqType local753 = Static36.method941(arg0[local235].anInt5396);
-				if (local753.anIntArray473 != null) {
+				@Pc(753) SeqType local753 = SeqType.list(arg0[local235].anInt5396);
+				if (local753.frames != null) {
 					Static146.aClass144Array1[local235] = local753;
 					local207 = arg0[local235].anInt5398;
 					local46 = true;
 					local200 = arg0[local235].anInt5399;
-					local214 = local753.anIntArray473[local200];
+					local214 = local753.frames[local200];
 					Static6.aClass3_Sub2_Sub7Array1[local235] = Static72.method1566(local214 >>> 16);
 					local214 &= 0xFFFF;
 					Static107.anIntArray259[local235] = local214;
@@ -371,10 +409,10 @@ public final class NpcType {
 						local721 |= Static6.aClass3_Sub2_Sub7Array1[local235].method901(local214);
 						local725 |= local753.aBoolean278;
 					}
-					if ((local753.aBoolean277 || Static204.aBoolean234) && local207 != -1 && local753.anIntArray473.length > local207) {
+					if ((local753.aBoolean277 || Static204.aBoolean234) && local207 != -1 && local753.frames.length > local207) {
 						Static71.anIntArray147[local235] = local753.anIntArray474[local200];
 						Static214.anIntArray492[local235] = arg0[local235].anInt5404;
-						local228 = local753.anIntArray473[local207];
+						local228 = local753.frames[local207];
 						Static131.aClass3_Sub2_Sub7Array5[local235] = Static72.method1566(local228 >>> 16);
 						local228 &= 0xFFFF;
 						Static61.anIntArray148[local235] = local228;
@@ -405,7 +443,7 @@ public final class NpcType {
 		@Pc(964) AnimFrameset local964 = null;
 		@Pc(1040) int local1040;
 		if (arg8 != null) {
-			local235 = arg8.anIntArray473[arg5];
+			local235 = arg8.frames[arg5];
 			local228 = local235 >>> 16;
 			local235 &= 0xFFFF;
 			local962 = Static72.method1566(local228);
@@ -414,9 +452,9 @@ public final class NpcType {
 				local721 |= local962.method901(local235);
 				local725 |= arg8.aBoolean278;
 			}
-			if ((arg8.aBoolean277 || Static204.aBoolean234) && arg3 != -1 && arg8.anIntArray473.length > arg3) {
+			if ((arg8.aBoolean277 || Static204.aBoolean234) && arg3 != -1 && arg8.frames.length > arg3) {
 				local200 = arg8.anIntArray474[arg5];
-				local221 = arg8.anIntArray473[arg3];
+				local221 = arg8.frames[arg3];
 				local1040 = local221 >>> 16;
 				local221 &= 0xFFFF;
 				if (local228 == local1040) {
@@ -436,7 +474,7 @@ public final class NpcType {
 		local300 = 0;
 		@Pc(1092) AnimFrameset local1092 = null;
 		if (arg6 != null) {
-			local228 = arg6.anIntArray473[arg2];
+			local228 = arg6.frames[arg2];
 			local324 = local228 >>> 16;
 			local228 &= 0xFFFF;
 			local1088 = Static72.method1566(local324);
@@ -445,9 +483,9 @@ public final class NpcType {
 				local721 |= local1088.method901(local228);
 				local725 |= arg6.aBoolean278;
 			}
-			if ((arg6.aBoolean277 || Static204.aBoolean234) && arg1 != -1 && arg1 < arg6.anIntArray473.length) {
+			if ((arg6.aBoolean277 || Static204.aBoolean234) && arg1 != -1 && arg1 < arg6.frames.length) {
 				local300 = arg6.anIntArray474[arg2];
-				local1040 = arg6.anIntArray473[arg1];
+				local1040 = arg6.frames[arg1];
 				local318 = local1040 >>> 16;
 				local1040 &= 0xFFFF;
 				if (local318 == local324) {
@@ -492,7 +530,7 @@ public final class NpcType {
 		if (this.aClass133_15 == null) {
 			return arg1;
 		} else {
-			@Pc(18) StringNode local18 = (StringNode) this.aClass133_15.method3863((long) arg0);
+			@Pc(18) StringNode local18 = (StringNode) this.aClass133_15.find((long) arg0);
 			return local18 == null ? arg1 : local18.aClass100_980;
 		}
 	}
@@ -533,7 +571,7 @@ public final class NpcType {
 				}
 				@Pc(82) ModelUnlit[] local82 = new ModelUnlit[this.anIntArray354.length];
 				for (@Pc(84) int local84 = 0; local84 < this.anIntArray354.length; local84++) {
-					local82[local84] = Static77.method1686(aClass153_37, this.anIntArray354[local84]);
+					local82[local84] = ModelUnlit.method1686(aClass153_37, this.anIntArray354[local84]);
 				}
 				@Pc(119) ModelUnlit local119;
 				if (local82.length == 1) {
@@ -585,7 +623,7 @@ public final class NpcType {
 			this.anInt3713 = arg1.g1();
 		} else if (arg0 >= 30 && arg0 < 35) {
 			this.aClass100Array116[arg0 - 30] = arg1.gjstr();
-			if (this.aClass100Array116[arg0 - 30].method3111(LocalizedText.HIDDEN)) {
+			if (this.aClass100Array116[arg0 - 30].equalsIgnoreCase(LocalizedText.HIDDEN)) {
 				this.aClass100Array116[arg0 - 30] = null;
 			}
 		} else if (arg0 == 40) {
@@ -741,7 +779,7 @@ public final class NpcType {
 					} else {
 						local605 = new IntNode(arg1.g4());
 					}
-					this.aClass133_15.method3862(local605, (long) local596);
+					this.aClass133_15.put(local605, (long) local596);
 				}
 			}
 		}

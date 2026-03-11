@@ -1,7 +1,8 @@
 package deob;
 
-import BgSound.AreaSound;
+import com.jagex3.BgSound;
 import com.jagex3.*;
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -17,10 +18,7 @@ public final class Static214 {
 	@OriginalMember(owner = "com.jagex3.client.client!rg", name = "r", descriptor = "[Lclient!na;")
 	public static final JagString[] aClass100Array170 = new JagString[200];
 
-	@OriginalMember(owner = "com.jagex3.client.client!rg", name = "s", descriptor = "I")
-	public static int anInt5574 = -1;
-
-	@OriginalMember(owner = "com.jagex3.client.client!rg", name = "A", descriptor = "[I")
+    @OriginalMember(owner = "com.jagex3.client.client!rg", name = "A", descriptor = "[I")
 	public static final int[] anIntArray492 = new int[14];
 
 	@OriginalMember(owner = "com.jagex3.client.client!rg", name = "F", descriptor = "I")
@@ -28,9 +26,9 @@ public final class Static214 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!rg", name = "a", descriptor = "(Lclient!e;I)V")
 	public static void method4359(@OriginalArg(0) ClientPlayer arg0) {
-		@Pc(12) AreaSound local12 = (AreaSound) Static93.aClass133_7.method3863(arg0.aClass100_364.encode37());
+		@Pc(12) BgSound local12 = (BgSound) Static93.aClass133_7.find(arg0.name.encode37());
 		if (local12 == null) {
-			Static122.method2411(arg0.movementQueueZ[0], null, 0, null, arg0.movementQueueX[0], Static55.level, arg0);
+			BgSound.method2411(arg0.routeZ[0], null, 0, null, arg0.routeX[0], Client.minusedlevel, arg0);
 		} else {
 			local12.method1567();
 		}
@@ -55,24 +53,7 @@ public final class Static214 {
 		return Static269.aClass3_Sub2_Sub4_2;
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!rg", name = "b", descriptor = "(II)Lclient!me;")
-	public static NpcType method4363(@OriginalArg(0) int arg0) {
-		@Pc(10) NpcType local10 = (NpcType) Static93.aClass99_13.method3106((long) arg0);
-		if (local10 != null) {
-			return local10;
-		}
-		@Pc(26) byte[] local26 = NpcType.clientConfig.method4495(Static60.method1447(arg0), Static179.method3322(arg0));
-		local10 = new NpcType();
-		local10.anInt3741 = arg0;
-		if (local26 != null) {
-			local10.method2939(new Packet(local26));
-		}
-		local10.method2942();
-		Static93.aClass99_13.method3095(local10, (long) arg0);
-		return local10;
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!rg", name = "a", descriptor = "(IIIIIIIII)V")
+    @OriginalMember(owner = "com.jagex3.client.client!rg", name = "a", descriptor = "(IIIIIIIII)V")
 	public static void method4364(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7) {
 		@Pc(7) int local7 = arg2 - arg7;
 		@Pc(16) int local16 = (arg0 - arg4 << 16) / local7;

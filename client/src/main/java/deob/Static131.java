@@ -21,10 +21,7 @@ public final class Static131 {
 	@OriginalMember(owner = "com.jagex3.client.client!kd", name = "mb", descriptor = "[Lclient!cl;")
 	public static final AnimFrameset[] aClass3_Sub2_Sub7Array5 = new AnimFrameset[14];
 
-	@OriginalMember(owner = "com.jagex3.client.client!kd", name = "ob", descriptor = "I")
-	public static int anInt3251 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!kd", name = "rb", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!kd", name = "rb", descriptor = "I")
 	public static final int anInt3254 = (int) (Math.random() * 17.0D) - 8;
 
 	@OriginalMember(owner = "com.jagex3.client.client!kd", name = "sb", descriptor = "[I")
@@ -68,13 +65,7 @@ public final class Static131 {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!kd", name = "a", descriptor = "(Ljava/lang/String;B)V")
-	public static void method2577(@OriginalArg(0) String arg0) {
-		System.out.println("Bad " + arg0 + ", Usage: worldid, <live/rc/wip>, <english/german>, <game0/game1>");
-		System.exit(1);
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!kd", name = "a", descriptor = "([[F[[II[[FI[ILclient!fj;BLclient!gi;[[FI)V")
+    @OriginalMember(owner = "com.jagex3.client.client!kd", name = "a", descriptor = "([[F[[II[[FI[ILclient!fj;BLclient!gi;[[FI)V")
 	public static void method2578(@OriginalArg(0) float[][] arg0, @OriginalArg(1) int[][] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) float[][] arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int[] arg5, @OriginalArg(6) Light_Class45 arg6, @OriginalArg(8) Light arg7, @OriginalArg(9) float[][] arg8, @OriginalArg(10) int arg9) {
 		@Pc(7) int[] local7 = new int[arg5.length / 2];
 		for (@Pc(13) int local13 = 0; local13 < local7.length; local13++) {

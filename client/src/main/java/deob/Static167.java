@@ -19,10 +19,7 @@ public final class Static167 {
 	@OriginalMember(owner = "com.jagex3.client.client!nd", name = "b", descriptor = "Lclient!na;")
 	public static final JagString aClass100_780 = Static28.parse("Clientscript error in: ");
 
-	@OriginalMember(owner = "com.jagex3.client.client!nd", name = "q", descriptor = "[[I")
-	public static final int[][] anIntArrayArray31 = new int[104][104];
-
-	@OriginalMember(owner = "com.jagex3.client.client!nd", name = "r", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!nd", name = "r", descriptor = "Lclient!na;")
 	public static final JagString aClass100_781 = Static28.parse("zap");
 
 	@OriginalMember(owner = "com.jagex3.client.client!nd", name = "x", descriptor = "Lclient!na;")

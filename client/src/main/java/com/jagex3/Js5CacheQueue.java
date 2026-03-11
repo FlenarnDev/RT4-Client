@@ -3,7 +3,6 @@ package com.jagex3;
 import com.jagex.signlink.PrivilegedRequest;
 import com.jagex3.client.applet.GameShell;
 import deob.Static231;
-import deob.Static89;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -47,7 +46,7 @@ public final class Js5CacheQueue implements Runnable {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!k", name = "a", descriptor = "(I)V")
-	public final void method2466() {
+	public final void shutdown() {
 		this.aBoolean161 = true;
 		@Pc(6) secondaryLinkList local6 = this.aClass16_6;
 		synchronized (this.aClass16_6) {
@@ -132,7 +131,7 @@ public final class Js5CacheQueue implements Runnable {
 					local19.aByteArray11 = local19.aClass49_3.method1701((int) local19.aLong185);
 				}
 			} catch (@Pc(83) Exception local83) {
-				Static89.report(null, local83);
+				JagException.report(null, local83);
 			}
 			local19.aBoolean226 = false;
 		}

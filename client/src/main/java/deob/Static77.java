@@ -1,7 +1,5 @@
 package deob;
 
-import com.jagex3.Js5;
-import com.jagex3.ModelUnlit;
 import com.jagex3.Pix3D;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -13,13 +11,13 @@ public final class Static77 {
 	public static final int[] anIntArray194 = new int[10000];
 
 	@OriginalMember(owner = "com.jagex3.client.client!gb", name = "N", descriptor = "[I")
-	public static final int[] anIntArray195 = Pix3D.anIntArray225;
+	public static final int[] anIntArray195 = Pix3D.cosTable;
 
 	@OriginalMember(owner = "com.jagex3.client.client!gb", name = "S", descriptor = "I")
 	public static int anInt2138 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!gb", name = "V", descriptor = "[I")
-	public static final int[] anIntArray198 = Pix3D.anIntArray223;
+	public static final int[] anIntArray198 = Pix3D.sinTable;
 
 	@OriginalMember(owner = "com.jagex3.client.client!gb", name = "Z", descriptor = "[I")
 	public static final int[] anIntArray199 = new int[10000];
@@ -38,9 +36,4 @@ public final class Static77 {
 		return local53 * (128 - local31) + local79 * local31 >> 7;
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!gb", name = "a", descriptor = "(Lclient!ve;II)Lclient!gb;")
-	public static ModelUnlit method1686(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
-		@Pc(5) byte[] local5 = arg0.method4495(arg1, 0);
-		return local5 == null ? null : new ModelUnlit(local5);
-	}
 }

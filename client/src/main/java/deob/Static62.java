@@ -20,10 +20,7 @@ public final class Static62 {
 	@OriginalMember(owner = "com.jagex3.client.client!f", name = "V", descriptor = "I")
 	public static int anInt1938 = 0;
 
-	@OriginalMember(owner = "com.jagex3.client.client!f", name = "Z", descriptor = "I")
-	public static int anInt1941 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!f", name = "h", descriptor = "(I)I")
+    @OriginalMember(owner = "com.jagex3.client.client!f", name = "h", descriptor = "(I)I")
 	public static int method1483() {
 		return 15;
 	}

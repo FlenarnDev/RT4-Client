@@ -1,6 +1,5 @@
 package deob;
 
-import com.jagex3.LinkList;
 import com.jagex3.MaterialRenderer;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -14,10 +13,7 @@ public final class Static128 {
 	@OriginalMember(owner = "com.jagex3.client.client!ka", name = "u", descriptor = "I")
 	public static int anInt3143;
 
-	@OriginalMember(owner = "com.jagex3.client.client!ka", name = "q", descriptor = "Lclient!ih;")
-	public static final LinkList aClass69_77 = new LinkList();
-
-	@OriginalMember(owner = "com.jagex3.client.client!ka", name = "t", descriptor = "[I")
+    @OriginalMember(owner = "com.jagex3.client.client!ka", name = "t", descriptor = "[I")
 	public static final int[] anIntArray294 = new int[] { 0, 0, 2, 0, 0, 2, 1, 1, 0 };
 
 	@OriginalMember(owner = "com.jagex3.client.client!ka", name = "b", descriptor = "(II)V")

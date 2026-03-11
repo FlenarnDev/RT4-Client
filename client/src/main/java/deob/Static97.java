@@ -13,13 +13,7 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static97 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!hi", name = "g", descriptor = "I")
-	public static int worldListAlternatePort;
-
-	@OriginalMember(owner = "com.jagex3.client.client!hi", name = "a", descriptor = "I")
-	public static int anInt2503 = -1;
-
-	@OriginalMember(owner = "com.jagex3.client.client!hi", name = "f", descriptor = "J")
+    @OriginalMember(owner = "com.jagex3.client.client!hi", name = "f", descriptor = "J")
 	public static long aLong89 = 0L;
 
 	@OriginalMember(owner = "com.jagex3.client.client!hi", name = "a", descriptor = "(BI)I")
@@ -27,36 +21,7 @@ public final class Static97 {
 		return arg0 >>> 8;
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!hi", name = "a", descriptor = "(IIIIILclient!be;Z)V")
-	public static void method1960(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) IfType arg5) {
-		@Pc(13) int local13 = arg3 * arg3 + arg4 * arg4;
-		if (local13 > 360000) {
-			return;
-		}
-		@Pc(30) int local30 = Math.min(arg5.anInt445 / 2, arg5.anInt459 / 2);
-		if (local30 * local30 >= local13) {
-			Static60.method1446(arg5, Static149.aClass3_Sub2_Sub1Array7[arg0], arg4, arg3, arg1, arg2);
-			return;
-		}
-		local30 -= 10;
-		@Pc(58) int local58 = Static59.anInt1814 + Static57.anInt1747 & 0x7FF;
-		@Pc(62) int local62 = Pix3D.anIntArray225[local58];
-		@Pc(66) int local66 = Pix3D.anIntArray223[local58];
-		@Pc(74) int local74 = local66 * 256 / (Static273.anInt4130 + 256);
-		@Pc(82) int local82 = local62 * 256 / (Static273.anInt4130 + 256);
-		@Pc(93) int local93 = arg4 * local74 + local82 * arg3 >> 16;
-		@Pc(104) int local104 = arg4 * local82 - local74 * arg3 >> 16;
-		@Pc(110) double local110 = Math.atan2((double) local93, (double) local104);
-		@Pc(117) int local117 = (int) (Math.sin(local110) * (double) local30);
-		@Pc(124) int local124 = (int) (Math.cos(local110) * (double) local30);
-		if (GlRenderer.enabled) {
-			((GlPix32) Static277.aClass3_Sub2_Sub1Array12[arg0]).method1428((arg5.anInt445 / 2 + arg2 + local117) * 16, (arg5.anInt459 / 2 + arg1 - local124) * 16, (int) (local110 * 10430.378D));
-		} else {
-			((Pix32) Static277.aClass3_Sub2_Sub1Array12[arg0]).method306(local117 + arg5.anInt445 / 2 + arg2 - 10, arg5.anInt459 / 2 + -10 + arg1 + -local124, local110);
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!hi", name = "a", descriptor = "(ILjava/lang/Throwable;)Ljava/lang/String;")
+    @OriginalMember(owner = "com.jagex3.client.client!hi", name = "a", descriptor = "(ILjava/lang/Throwable;)Ljava/lang/String;")
 	public static String method1961(@OriginalArg(1) Throwable arg0) throws IOException {
 		@Pc(24) String local24;
 		if (arg0 instanceof JagException) {
@@ -127,14 +92,4 @@ public final class Static97 {
 		Static61.aBoolean109 = true;
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!hi", name = "a", descriptor = "(Lclient!be;B)Lclient!na;")
-	public static JagString method1963(@OriginalArg(0) IfType arg0) {
-		if (Static36.method940(arg0).method512() == 0) {
-			return null;
-		} else if (arg0.aClass100_86 == null || arg0.aClass100_86.method3144().length() == 0) {
-			return Static121.aBoolean154 ? Static143.aClass100_668 : null;
-		} else {
-			return arg0.aClass100_86;
-		}
-	}
 }

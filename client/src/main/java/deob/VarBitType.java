@@ -26,6 +26,21 @@ public final class VarBitType {
         varbitConfig = arg0;
     }
 
+    @OriginalMember(owner = "com.jagex3.client.client!gd", name = "a", descriptor = "(I)V")
+    public static void method1694() {
+        Static125.aClass99_19.clear();
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!wa", name = "d", descriptor = "(BI)V")
+    public static void method2221() {
+        Static125.aClass99_19.method3102(5);
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!ec", name = "b", descriptor = "(I)V")
+    public static void method1295() {
+        Static125.aClass99_19.method3104();
+    }
+
     @OriginalMember(owner = "com.jagex3.client.client!kk", name = "a", descriptor = "(Lclient!wa;I)V")
 	public final void method2651(@OriginalArg(0) Packet arg0) {
 		while (true) {

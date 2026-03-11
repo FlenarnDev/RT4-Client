@@ -5,16 +5,10 @@ import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static55 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!ee", name = "b", descriptor = "I")
-	public static int level;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ee", name = "c", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!ee", name = "c", descriptor = "I")
 	public static int anInt1736;
 
-	@OriginalMember(owner = "com.jagex3.client.client!ee", name = "g", descriptor = "I")
-	public static int alternatePort;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ee", name = "a", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!ee", name = "a", descriptor = "Lclient!na;")
 	public static final JagString aClass100_376 = Static28.parse(" GMT");
 
 	@OriginalMember(owner = "com.jagex3.client.client!ee", name = "e", descriptor = "Lclient!na;")

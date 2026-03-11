@@ -1,13 +1,8 @@
 package deob;
 
-import java.awt.Component;
-
-import com.jagex.signlink.SignLink;
 import com.jagex3.*;
-import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
-import org.openrs2.deob.annotation.Pc;
 
 public final class Static107 {
 
@@ -17,10 +12,7 @@ public final class Static107 {
 	@OriginalMember(owner = "com.jagex3.client.client!id", name = "k", descriptor = "I")
 	public static int anInt2878;
 
-	@OriginalMember(owner = "com.jagex3.client.client!id", name = "l", descriptor = "Lclient!jb;")
-	public static Js5Net js5Net;
-
-	@OriginalMember(owner = "com.jagex3.client.client!id", name = "b", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!id", name = "b", descriptor = "I")
 	public static int anInt2875 = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!id", name = "c", descriptor = "Lclient!na;")
@@ -35,70 +27,7 @@ public final class Static107 {
 	@OriginalMember(owner = "com.jagex3.client.client!id", name = "f", descriptor = "Z")
 	public static boolean aBoolean147 = false;
 
-    @OriginalMember(owner = "com.jagex3.client.client!id", name = "b", descriptor = "(I)V")
-	public static void method2261() {
-		if (Client.soundPcmPlayer != null) {
-			Client.soundPcmPlayer.method3565();
-		}
-		if (Client.midiPcmPlayer != null) {
-			Client.midiPcmPlayer.method3565();
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!id", name = "a", descriptor = "(ILsignlink!ll;Ljava/awt/deob.Component;II)Lclient!vh;")
-	public static PcmPlayer method2262(@OriginalArg(0) int arg0, @OriginalArg(1) SignLink arg1, @OriginalArg(2) Component arg2, @OriginalArg(3) int arg3) {
-		if (Static44.anInt1404 == 0) {
-			throw new IllegalStateException();
-		}
-		try {
-			@Pc(33) PcmPlayer local33 = (PcmPlayer) Class.forName("com.jagex3.JavaPcmPlayer").getDeclaredConstructor().newInstance();
-			local33.anInt4641 = arg0;
-			local33.anIntArray411 = new int[(Static164.aBoolean192 ? 2 : 1) * 256];
-			local33.method3576(arg2);
-			local33.anInt4644 = (arg0 & -1024) + 1024;
-			if (local33.anInt4644 > 16384) {
-				local33.anInt4644 = 16384;
-			}
-			local33.method3562(local33.anInt4644);
-			if (Static258.anInt5637 > 0 && Static60.aClass19_1 == null) {
-				Static60.aClass19_1 = new AudioThread();
-				Static60.aClass19_1.aClass213_1 = arg1;
-				arg1.threadreq(Static258.anInt5637, Static60.aClass19_1);
-			}
-			if (Static60.aClass19_1 != null) {
-				if (Static60.aClass19_1.aClass62Array1[arg3] != null) {
-					throw new IllegalArgumentException();
-				}
-				Static60.aClass19_1.aClass62Array1[arg3] = local33;
-			}
-			return local33;
-		} catch (@Pc(109) Throwable local109) {
-			try {
-				@Pc(120) JavaSafePcmPlayer local120 = new JavaSafePcmPlayer(arg1, arg3);
-				local120.anIntArray411 = new int[(Static164.aBoolean192 ? 2 : 1) * 256];
-				local120.anInt4641 = arg0;
-				local120.method3576(arg2);
-				local120.anInt4644 = 16384;
-				local120.method3562(local120.anInt4644);
-				if (Static258.anInt5637 > 0 && Static60.aClass19_1 == null) {
-					Static60.aClass19_1 = new AudioThread();
-					Static60.aClass19_1.aClass213_1 = arg1;
-					arg1.threadreq(Static258.anInt5637, Static60.aClass19_1);
-				}
-				if (Static60.aClass19_1 != null) {
-					if (Static60.aClass19_1.aClass62Array1[arg3] != null) {
-						throw new IllegalArgumentException();
-					}
-					Static60.aClass19_1.aClass62Array1[arg3] = local120;
-				}
-				return local120;
-			} catch (@Pc(186) Throwable local186) {
-				return new PcmPlayer();
-			}
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!id", name = "a", descriptor = "(IIBII)V")
+    @OriginalMember(owner = "com.jagex3.client.client!id", name = "a", descriptor = "(IIBII)V")
 	public static void method2263(@OriginalArg(3) int arg0, @OriginalArg(4) int arg1) {
 		Static224.anInt5063 = arg1;
 		Static172.anInt4164 = 0;

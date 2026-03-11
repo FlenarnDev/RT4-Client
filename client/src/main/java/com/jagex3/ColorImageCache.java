@@ -73,13 +73,13 @@ public final class ColorImageCache {
 					@Pc(66) ColorImageCacheEntry local66 = (ColorImageCacheEntry) this.aClass69_103.method2279();
 					local29 = new ColorImageCacheEntry(arg0, local66.anInt4761);
 					this.aClass3_Sub28Array1[local66.anInt4759] = null;
-					local66.method4658();
+					local66.unlink();
 				}
 				this.aClass3_Sub28Array1[arg0] = local29;
 			} else {
 				this.aBoolean221 = false;
 			}
-			this.aClass69_103.method2283(local29);
+			this.aClass69_103.pushFront(local29);
 			return this.anIntArrayArray34[local29.anInt4761];
 		}
 	}

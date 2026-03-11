@@ -5,7 +5,6 @@ import java.io.IOException;
 
 import com.jagex.signlink.SignLink;
 import com.jagex3.*;
-import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -54,41 +53,7 @@ public final class Static140 {
 		return local14;
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!la", name = "a", descriptor = "(IJ)V")
-	public static void method2707(@OriginalArg(1) long arg0) {
-		if (arg0 == 0L) {
-			return;
-		}
-		if (Static35.anInt1093 >= 100) {
-			Static103.method2231(Static186.aClass100_827, 0, LocalizedText.IGNORELISTFULL);
-			return;
-		}
-		@Pc(34) JagString local34 = Static79.decode37(arg0).method3125();
-		@Pc(36) int local36;
-		for (local36 = 0; local36 < Static35.anInt1093; local36++) {
-			if (Static190.aLongArray6[local36] == arg0) {
-				Static103.method2231(Static186.aClass100_827, 0, JagString.join(new JagString[] { local34, LocalizedText.IGNORELISTDUPE}));
-				return;
-			}
-		}
-		for (local36 = 0; local36 < Static9.anInt178; local36++) {
-			if (Static92.aLongArray3[local36] == arg0) {
-				Static103.method2231(Static186.aClass100_827, 0, JagString.join(new JagString[] { LocalizedText.REMOVESOCIAL2, local34, LocalizedText.REMOVEFRIEND}));
-				return;
-			}
-		}
-		if (local34.method3108(Static173.self.aClass100_364)) {
-			Static103.method2231(Static186.aClass100_827, 0, LocalizedText.IGNORECANTADDSELF);
-			return;
-		}
-		Static190.aLongArray6[Static35.anInt1093] = arg0;
-		Static193.aClass100Array134[Static35.anInt1093++] = Static79.decode37(arg0);
-		Static185.anInt4369 = Static119.transmitTimer;
-		Client.out.p1isaac(34);
-		Client.out.p8(arg0);
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!la", name = "a", descriptor = "(Lsignlink!ll;Ljava/lang/Object;I)V")
+    @OriginalMember(owner = "com.jagex3.client.client!la", name = "a", descriptor = "(Lsignlink!ll;Ljava/lang/Object;I)V")
 	public static void method2708(@OriginalArg(0) SignLink arg0, @OriginalArg(1) Object arg1) {
 		if (arg0.anEventQueue1 == null) {
 			return;

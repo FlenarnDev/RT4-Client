@@ -46,7 +46,7 @@ public final class HashTable {
 				if (local14 == local17) {
 					break;
 				}
-				local17.method4658();
+				local17.unlink();
 			}
 		}
 		this.aClass3_193 = null;
@@ -54,13 +54,13 @@ public final class HashTable {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!sc", name = "c", descriptor = "(I)Lclient!ab;")
-	public final Linkable method3859() {
+	public final Linkable search() {
 		this.anInt5037 = 0;
-		return this.method3861();
+		return this.find();
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!sc", name = "d", descriptor = "(I)Lclient!ab;")
-	public final Linkable method3861() {
+	public final Linkable find() {
 		@Pc(24) Linkable local24;
 		if (this.anInt5037 > 0 && this.aClass3_193 != this.aClass3Array1[this.anInt5037 - 1]) {
 			local24 = this.aClass3_193;
@@ -78,24 +78,24 @@ public final class HashTable {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!sc", name = "a", descriptor = "(ILclient!ab;J)V")
-	public final void method3862(@OriginalArg(1) Linkable arg0, @OriginalArg(2) long arg1) {
+	public final void put(@OriginalArg(1) Linkable arg0, @OriginalArg(2) long arg1) {
 		if (arg0.aClass3_223 != null) {
-			arg0.method4658();
+			arg0.unlink();
 		}
 		@Pc(21) Linkable local21 = this.aClass3Array1[(int) (arg1 & (long) (this.anInt5023 - 1))];
 		arg0.aClass3_222 = local21;
-		arg0.aLong192 = arg1;
+		arg0.key = arg1;
 		arg0.aClass3_223 = local21.aClass3_223;
 		arg0.aClass3_223.aClass3_222 = arg0;
 		arg0.aClass3_222.aClass3_223 = arg0;
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!sc", name = "a", descriptor = "(JI)Lclient!ab;")
-	public final Linkable method3863(@OriginalArg(0) long arg0) {
+	public final Linkable find(@OriginalArg(0) long arg0) {
 		this.aLong168 = arg0;
 		@Pc(24) Linkable local24 = this.aClass3Array1[(int) (arg0 & (long) (this.anInt5023 - 1))];
 		for (this.aClass3_192 = local24.aClass3_222; this.aClass3_192 != local24; this.aClass3_192 = this.aClass3_192.aClass3_222) {
-			if (arg0 == this.aClass3_192.aLong192) {
+			if (arg0 == this.aClass3_192.key) {
 				@Pc(46) Linkable local46 = this.aClass3_192;
 				this.aClass3_192 = this.aClass3_192.aClass3_222;
 				return local46;
@@ -138,7 +138,7 @@ public final class HashTable {
 		}
 		@Pc(23) Linkable local23 = this.aClass3Array1[(int) (this.aLong168 & (long) (this.anInt5023 - 1))];
 		while (local23 != this.aClass3_192) {
-			if (this.aClass3_192.aLong192 == this.aLong168) {
+			if (this.aClass3_192.key == this.aLong168) {
 				@Pc(45) Linkable local45 = this.aClass3_192;
 				this.aClass3_192 = this.aClass3_192.aClass3_222;
 				return local45;

@@ -1,27 +1,19 @@
 package deob;
 
-import com.jagex3.JagString;
-import com.jagex3.MapElementList;
-import com.jagex3.Packet;
-import com.jagex3.QuickChatCatType;
+import com.jagex3.*;
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 public final class Static235 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!tb", name = "X", descriptor = "Lclient!se;")
-	public static MapElementList aMapElementList_2;
-
-	@OriginalMember(owner = "com.jagex3.client.client!tb", name = "P", descriptor = "Lclient!na;")
-	public static final JagString aClass100_1002 = Static28.parse("(U5");
-
-	@OriginalMember(owner = "com.jagex3.client.client!tb", name = "Q", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!tb", name = "Q", descriptor = "I")
 	public static int anInt5276 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!tb", name = "h", descriptor = "(I)I")
 	public static int method4044() {
-		return Static172.shiftClick && Static187.pressedKeys[81] && Static231.anInt5204 > 2 ? Static190.anIntArray382[Static231.anInt5204 - 2] : Static190.anIntArray382[Static231.anInt5204 - 1];
+		return Client.shiftClick && ClientKeyboardListener.keyHeld[81] && Client.menuNumEntries > 2 ? Client.anIntArray382[Client.menuNumEntries - 2] : Client.anIntArray382[Client.menuNumEntries - 1];
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!tb", name = "b", descriptor = "(IB)Lclient!bc;")

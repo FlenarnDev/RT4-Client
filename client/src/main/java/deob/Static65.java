@@ -1,6 +1,5 @@
 package deob;
 
-import com.jagex3.ClientKeyboardListener;
 import com.jagex3.JagString;
 import com.jagex3.Packet;
 import org.openrs2.deob.annotation.OriginalArg;
@@ -9,10 +8,7 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static65 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!fc", name = "a", descriptor = "I")
-	public static int anInt1951 = -1;
-
-	@OriginalMember(owner = "com.jagex3.client.client!fc", name = "f", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!fc", name = "f", descriptor = "Lclient!na;")
 	public static final JagString aClass100_435 = Static28.parse("<img=0>");
 
 	@OriginalMember(owner = "com.jagex3.client.client!fc", name = "a", descriptor = "(Lclient!wa;I)Lclient!na;")
@@ -32,74 +28,4 @@ public final class Static65 {
 		return local36;
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!fc", name = "a", descriptor = "()V")
-	public static void method1500() {
-		@Pc(3) int local3;
-		@Pc(9) int local9;
-		@Pc(14) int local14;
-		if (Static197.aClass3_Sub5ArrayArrayArray2 != null) {
-			for (local3 = 0; local3 < Static197.aClass3_Sub5ArrayArrayArray2.length; local3++) {
-				for (local9 = 0; local9 < Static152.anInt3594; local9++) {
-					for (local14 = 0; local14 < Static99.anInt2550; local14++) {
-						Static197.aClass3_Sub5ArrayArrayArray2[local3][local9][local14] = null;
-					}
-				}
-			}
-		}
-		Static36.aGlSquareArrayArray1 = null;
-		if (Static276.aClass3_Sub5ArrayArrayArray3 != null) {
-			for (local3 = 0; local3 < Static276.aClass3_Sub5ArrayArrayArray3.length; local3++) {
-				for (local9 = 0; local9 < Static152.anInt3594; local9++) {
-					for (local14 = 0; local14 < Static99.anInt2550; local14++) {
-						Static276.aClass3_Sub5ArrayArrayArray3[local3][local9][local14] = null;
-					}
-				}
-			}
-		}
-		Static195.aClass3_Sub14ArrayArray3 = null;
-		Static28.anInt917 = 0;
-		if (Static91.aOccludeArray1 != null) {
-			for (local3 = 0; local3 < Static28.anInt917; local3++) {
-				Static91.aOccludeArray1[local3] = null;
-			}
-		}
-		if (Static243.aClass31Array3 != null) {
-			for (local3 = 0; local3 < Static22.anInt726; local3++) {
-				Static243.aClass31Array3[local3] = null;
-			}
-			Static22.anInt726 = 0;
-		}
-		if (Static25.aClass31Array2 != null) {
-			for (local3 = 0; local3 < Static25.aClass31Array2.length; local3++) {
-				Static25.aClass31Array2[local3] = null;
-			}
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!fc", name = "b", descriptor = "(I)V")
-	public static void method1501() {
-		@Pc(12) ClientKeyboardListener local12 = Static10.aClass149_1;
-		synchronized (Static10.aClass149_1) {
-			Static102.anInt2678 = Static228.anInt5105;
-			Static229.anInt5140++;
-			@Pc(23) int local23;
-			if (Static114.anInt5844 < 0) {
-				for (local23 = 0; local23 < 112; local23++) {
-					Static187.pressedKeys[local23] = false;
-				}
-				Static114.anInt5844 = Static227.anInt5087;
-			} else {
-				while (Static114.anInt5844 != Static227.anInt5087) {
-					local23 = Static17.anIntArray53[Static227.anInt5087];
-					Static227.anInt5087 = Static227.anInt5087 + 1 & 0x7F;
-					if (local23 >= 0) {
-						Static187.pressedKeys[local23] = true;
-					} else {
-						Static187.pressedKeys[~local23] = false;
-					}
-				}
-			}
-			Static228.anInt5105 = Static53.anInt1708;
-		}
-	}
 }

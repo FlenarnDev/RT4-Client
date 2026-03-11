@@ -1,7 +1,7 @@
 package deob;
 
+import com.jagex3.WorldMap;
 import com.jagex3.client.Client;
-import com.jagex3.IfType;
 import com.jagex3.JagString;
 import com.jagex3.ModelSource;
 import org.openrs2.deob.annotation.OriginalArg;
@@ -10,19 +10,13 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static5 {
 
-    @OriginalMember(owner = "com.jagex3.client.client!af", name = "d", descriptor = "I")
-	public static int anInt40;
-
-	@OriginalMember(owner = "com.jagex3.client.client!af", name = "c", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!af", name = "c", descriptor = "I")
 	public static int anInt39 = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!af", name = "g", descriptor = "Lclient!na;")
 	public static final JagString aClass100_9 = Static28.parse("hint_mapedge");
 
-	@OriginalMember(owner = "com.jagex3.client.client!af", name = "k", descriptor = "I")
-	public static int anInt45 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!af", name = "l", descriptor = "[S")
+    @OriginalMember(owner = "com.jagex3.client.client!af", name = "l", descriptor = "[S")
 	public static final short[] aShortArray2 = new short[] { 30, 6, 31, 29, 10, 44, 37, 57 };
 
 	@OriginalMember(owner = "com.jagex3.client.client!af", name = "m", descriptor = "Lclient!na;")
@@ -33,26 +27,9 @@ public final class Static5 {
 		System.out.println("Error: " + Static40.method1014("%0a", "\n", arg0));
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!af", name = "a", descriptor = "(BI)Lclient!be;")
-	public static IfType getComponent(@OriginalArg(1) int id) {
-		@Pc(7) int interfaceId = id >> 16;
-		@Pc(18) int componentId = id & 0xFFFF;
-		if (IfType.list[interfaceId] == null || IfType.list[interfaceId][componentId] == null) {
-			@Pc(33) boolean success = Static245.load(interfaceId);
-			if (!success) {
-				return null;
-			}
-			// todo: this should not be necessary, data/server-related?
-			if (IfType.list.length <= interfaceId || IfType.list[interfaceId].length <= componentId) {
-				return null;
-			}
-		}
-		return IfType.list[interfaceId][componentId];
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!af", name = "b", descriptor = "(B)V")
+    @OriginalMember(owner = "com.jagex3.client.client!af", name = "b", descriptor = "(B)V")
 	public static void method34() {
-		Static116.method2325(false);
+		WorldMap.method2325(false);
 		System.gc();
 		Client.setMainState(25);
 	}

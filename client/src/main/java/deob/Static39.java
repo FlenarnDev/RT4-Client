@@ -1,6 +1,5 @@
 package deob;
 
-import java.awt.Frame;
 import java.util.Random;
 
 import com.jagex3.AbstractPix32;
@@ -10,9 +9,6 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 public final class Static39 {
-
-	@OriginalMember(owner = "com.jagex3.client.client!d", name = "Y", descriptor = "Ljava/awt/Frame;")
-	public static Frame aFrame1;
 
     @OriginalMember(owner = "com.jagex3.client.client!d", name = "ib", descriptor = "Lclient!qf;")
 	public static AbstractPix32 aClass3_Sub2_Sub1_1;
@@ -26,10 +22,7 @@ public final class Static39 {
 	@OriginalMember(owner = "com.jagex3.client.client!d", name = "db", descriptor = "Z")
 	public static boolean aBoolean77 = false;
 
-	@OriginalMember(owner = "com.jagex3.client.client!d", name = "eb", descriptor = "[S")
-	public static final short[] aShortArray6 = new short[500];
-
-	@OriginalMember(owner = "com.jagex3.client.client!d", name = "c", descriptor = "(III)I")
+    @OriginalMember(owner = "com.jagex3.client.client!d", name = "c", descriptor = "(III)I")
 	public static int method990(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		@Pc(11) int local11 = arg1 - 1 & arg0 >> 31;
 		return local11 + (arg0 + (arg0 >>> 31)) % arg1;

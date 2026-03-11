@@ -1,6 +1,5 @@
 package deob;
 
-import BgSound.AreaSound;
 import com.jagex3.*;
 import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
@@ -63,7 +62,7 @@ public final class Static91 {
 				while (local114-- > 0) {
 					@Pc(136) int local136 = local42.g4();
 					@Pc(140) int local140 = local42.g4();
-					local121.method3862(new IntNode(local140), (long) local136);
+					local121.put(new IntNode(local140), (long) local136);
 				}
 			}
 		}
@@ -88,27 +87,13 @@ public final class Static91 {
 		return local12;
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!hc", name = "a", descriptor = "(Lclient!km;Z)V")
-	public static void method1877(@OriginalArg(0) ClientNPC arg0) {
-		for (@Pc(13) AreaSound local13 = (AreaSound) Static152.aClass69_87.method2289(); local13 != null; local13 = (AreaSound) Static152.aClass69_87.method2288()) {
-			if (arg0 == local13.aClass8_Sub4_Sub2_1) {
-				if (local13.aClass3_Sub3_Sub1_1 != null) {
-					Client.soundMixer.method1347(local13.aClass3_Sub3_Sub1_1);
-					local13.aClass3_Sub3_Sub1_1 = null;
-				}
-				local13.method4658();
-				return;
-			}
-		}
-	}
-
     @OriginalMember(owner = "com.jagex3.client.client!hc", name = "a", descriptor = "(Lclient!na;Z)I")
 	public static int method1879(@OriginalArg(0) JagString arg0) {
 		if (Static203.aMapElementList_1 == null || arg0.length() == 0) {
 			return -1;
 		}
 		for (@Pc(20) int local20 = 0; local20 < Static203.aMapElementList_1.anInt5074; local20++) {
-			if (Static203.aMapElementList_1.aClass100Array153[local20].method3140(Static101.aClass100_538, Static197.aClass100_872).method3108(arg0)) {
+			if (Static203.aMapElementList_1.aClass100Array153[local20].method3140(Static101.aClass100_538, Static197.aClass100_872).equalsInner(arg0)) {
 				return local20;
 			}
 		}
@@ -132,10 +117,10 @@ public final class Static91 {
 		local6.anInt1394 = arg8;
 		local6.anInt1392 = arg9;
 		for (@Pc(46) int local46 = arg0; local46 >= 0; local46--) {
-			if (Static130.aClass3_Sub5ArrayArrayArray1[local46][arg1][arg2] == null) {
-				Static130.aClass3_Sub5ArrayArrayArray1[local46][arg1][arg2] = new Square(local46, arg1, arg2);
+			if (World.activeTiles[local46][arg1][arg2] == null) {
+				World.activeTiles[local46][arg1][arg2] = new Square(local46, arg1, arg2);
 			}
 		}
-		Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2].aClass24_1 = local6;
+		World.activeTiles[arg0][arg1][arg2].aClass24_1 = local6;
 	}
 }

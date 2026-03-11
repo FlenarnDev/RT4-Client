@@ -8,9 +8,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static184 {
 
-    @OriginalMember(owner = "com.jagex3.client.client!ol", name = "ib", descriptor = "I")
-	public static int anInt4358;
-
     @OriginalMember(owner = "com.jagex3.client.client!ol", name = "Y", descriptor = "Lclient!na;")
 	public static final JagString aClass100_819 = Static28.parse("<col=00ff80>");
 

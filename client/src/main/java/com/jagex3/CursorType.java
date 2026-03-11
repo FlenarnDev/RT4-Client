@@ -1,6 +1,7 @@
 package com.jagex3;
 
 import deob.Static7;
+import deob.Static79;
 import deob.Static80;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
@@ -28,6 +29,24 @@ public final class CursorType {
         archive = arg0;
         spritesArchive = arg1;
     }
+
+    @OriginalMember(owner = "com.jagex3.client.client!ca", name = "a", descriptor = "(Z)V")
+	public static void method741() {
+		Static79.aClass99_11.clear();
+		Static7.aClass99_5.clear();
+	}
+
+    @OriginalMember(owner = "com.jagex3.client.client!c", name = "d", descriptor = "(II)V")
+	public static void method716() {
+		Static79.aClass99_11.method3102(5);
+		Static7.aClass99_5.method3102(5);
+	}
+
+    @OriginalMember(owner = "com.jagex3.client.client!an", name = "i", descriptor = "(I)V")
+	public static void method351() {
+		Static79.aClass99_11.method3104();
+		Static7.aClass99_5.method3104();
+	}
 
     @OriginalMember(owner = "com.jagex3.client.client!ia", name = "a", descriptor = "(B)Lclient!mm;")
 	public final Pix32 method2246() {

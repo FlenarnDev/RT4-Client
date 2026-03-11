@@ -3,6 +3,7 @@ package deob;
 import com.jagex3.BasType;
 import com.jagex3.JagString;
 import com.jagex3.Packet;
+import com.jagex3.WorldMap;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -17,19 +18,11 @@ public final class Static90 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!hb", name = "b", descriptor = "(Lclient!na;I)V")
 	public static void method1853(@OriginalArg(0) JagString arg0) {
-		Static116.method2325(false);
+		WorldMap.method2325(false);
 		Static133.method4011(arg0);
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!hb", name = "c", descriptor = "(I)V")
-	public static void method1854() {
-		Static179.aClass99_25.method3104();
-		Static169.aClass99_24.method3104();
-		Static93.aClass99_14.method3104();
-		Static262.aClass99_36.method3104();
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!hb", name = "b", descriptor = "(II)Z")
+    @OriginalMember(owner = "com.jagex3.client.client!hb", name = "b", descriptor = "(II)Z")
 	public static boolean method1855(@OriginalArg(0) int arg0) {
 		return arg0 >= 0 && Static258.aBooleanArray130.length > arg0 ? Static258.aBooleanArray130[arg0] : false;
 	}

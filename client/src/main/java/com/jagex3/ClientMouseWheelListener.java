@@ -16,13 +16,13 @@ public final class ClientMouseWheelListener extends MouseWheelInterface implemen
 
 	@OriginalMember(owner = "com.jagex3.client.client!o", name = "a", descriptor = "(ZLjava/awt/deob.Component;)V")
 	@Override
-	public final void method3291(@OriginalArg(1) Component arg0) {
+	public final void removeListeners(@OriginalArg(1) Component arg0) {
 		arg0.removeMouseWheelListener(this);
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!o", name = "a", descriptor = "(I)I")
 	@Override
-	public final synchronized int method3287() {
+	public final synchronized int getRotation() {
 		@Pc(2) int local2 = this.anInt4233;
 		this.anInt4233 = 0;
 		return local2;
@@ -36,7 +36,7 @@ public final class ClientMouseWheelListener extends MouseWheelInterface implemen
 
 	@OriginalMember(owner = "com.jagex3.client.client!o", name = "a", descriptor = "(Ljava/awt/deob.Component;I)V")
 	@Override
-	public final void start(@OriginalArg(0) Component arg0) {
+	public final void addListeners(@OriginalArg(0) Component arg0) {
 		arg0.addMouseWheelListener(this);
 	}
 }

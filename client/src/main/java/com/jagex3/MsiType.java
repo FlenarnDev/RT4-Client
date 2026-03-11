@@ -2,6 +2,7 @@ package com.jagex3;
 
 import deob.Static164;
 import deob.Static219;
+import deob.Static231;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -41,6 +42,24 @@ public final class MsiType {
         blueDelta = local40 + local21;
         greenDelta = local12 + local40;
         redDelta = local40 + local33;
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!vl", name = "b", descriptor = "(I)V")
+    public static void method4529() {
+        Static231.aClass99_29.clear();
+        Static219.aClass99_27.clear();
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!wh", name = "a", descriptor = "(II)V")
+    public static void method4615() {
+        Static231.aClass99_29.method3102(5);
+        Static219.aClass99_27.method3102(5);
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!qg", name = "h", descriptor = "(I)V")
+    public static void method3653() {
+        Static231.aClass99_29.method3104();
+        Static219.aClass99_27.method3104();
     }
 
     @OriginalMember(owner = "com.jagex3.client.client!aa", name = "a", descriptor = "(BLclient!wa;I)V")

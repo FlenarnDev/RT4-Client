@@ -8,10 +8,7 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static41 {
 
-    @OriginalMember(owner = "com.jagex3.client.client!dc", name = "v", descriptor = "Lclient!na;")
-	public static final JagString aClass100_266 = Static28.parse("<col=c0ff00>");
-
-	@OriginalMember(owner = "com.jagex3.client.client!dc", name = "E", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!dc", name = "E", descriptor = "Lclient!na;")
 	private static final JagString aClass100_267 = Static28.parse("wave:");
 
 	@OriginalMember(owner = "com.jagex3.client.client!dc", name = "M", descriptor = "Lclient!na;")
@@ -63,8 +60,8 @@ public final class Static41 {
 				local130 = local83[local115];
 				for (@Pc(132) int local132 = 0; local132 < local41; local132++) {
 					@Pc(141) int local141 = (local132 << 11) / local41;
-					@Pc(152) int local152 = arg5 + Pix3D.anIntArray225[local141] * local130 >> 16;
-					local162 = arg3 + Pix3D.anIntArray223[local141] * local126 >> 16;
+					@Pc(152) int local152 = arg5 + Pix3D.cosTable[local141] * local130 >> 16;
+					local162 = arg3 + Pix3D.sinTable[local141] * local126 >> 16;
 					local113[local115][local132] = local103.method1685(local162, local152);
 				}
 			}
@@ -95,7 +92,7 @@ public final class Static41 {
 		local126 = arg8.method4576();
 		local130 = arg8.method4550();
 		if (arg2 != null) {
-			@Pc(403) int local403 = arg2.anIntArray473[arg10];
+			@Pc(403) int local403 = arg2.frames[arg10];
 			local386 = Static72.method1566(local403 >> 16);
 			arg10 = local403 & 0xFFFF;
 		}
@@ -141,18 +138,18 @@ public final class Static41 {
 		}
 		if (GlRenderer.enabled) {
 			@Pc(650) GlModelLit local650 = (GlModelLit) local33;
-			if (Static207.method3685(Static55.level, arg3 + local384, local126 + arg5) != arg11 || Static207.method3685(Static55.level, local115 + arg3, arg5 - -local130) != arg11) {
+			if (Client.getAvH(Client.minusedlevel, arg3 + local384, local126 + arg5) != arg11 || Client.getAvH(Client.minusedlevel, local115 + arg3, arg5 - -local130) != arg11) {
 				for (local162 = 0; local162 < local650.anInt5295; local162++) {
-					local650.anIntArray465[local162] += Static207.method3685(Static55.level, local650.anIntArray461[local162] + arg3, arg5 + local650.anIntArray466[local162]) - arg11;
+					local650.anIntArray465[local162] += Client.getAvH(Client.minusedlevel, local650.anIntArray461[local162] + arg3, arg5 + local650.anIntArray466[local162]) - arg11;
 				}
 				local650.aGlBoundingBox_1.aBoolean3 = false;
 				local650.aClass127_4.aBoolean235 = false;
 			}
 		} else {
 			@Pc(574) SoftwareModelLit local574 = (SoftwareModelLit) local33;
-			if (Static207.method3685(Static55.level, arg3 + local384, arg5 - -local126) != arg11 || arg11 != Static207.method3685(Static55.level, arg3 + local115, arg5 - -local130)) {
+			if (Client.getAvH(Client.minusedlevel, arg3 + local384, arg5 - -local126) != arg11 || arg11 != Client.getAvH(Client.minusedlevel, arg3 + local115, arg5 - -local130)) {
 				for (local162 = 0; local162 < local574.anInt5788; local162++) {
-					local574.anIntArray527[local162] += Static207.method3685(Static55.level, arg3 + local574.anIntArray528[local162], arg5 + local574.anIntArray531[local162]) - arg11;
+					local574.anIntArray527[local162] += Client.getAvH(Client.minusedlevel, arg3 + local574.anIntArray528[local162], arg5 + local574.anIntArray531[local162]) - arg11;
 				}
 				local574.aBoolean305 = false;
 			}
@@ -161,71 +158,10 @@ public final class Static41 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!dc", name = "a", descriptor = "(IIIZ)V")
-	public static void method1045(@OriginalArg(3) boolean arg0) {
+	public static void init(@OriginalArg(3) boolean arg0) {
 		Static258.anInt5637 = 2;
 		Static164.aBoolean192 = arg0;
 		Static44.anInt1404 = 22050;
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!dc", name = "b", descriptor = "(Z)V")
-	public static void method1050() {
-		@Pc(6) int local6 = Client.in.method2238(8);
-		@Pc(20) int local20;
-		if (Static267.anInt5774 > local6) {
-			for (local20 = local6; local20 < Static267.anInt5774; local20++) {
-				Static52.anIntArray136[Static240.anInt5335++] = Static105.anIntArray256[local20];
-			}
-		}
-		if (local6 > Static267.anInt5774) {
-			throw new RuntimeException("gppov1");
-		}
-		Static267.anInt5774 = 0;
-		for (local20 = 0; local20 < local6; local20++) {
-			@Pc(75) int local75 = Static105.anIntArray256[local20];
-			@Pc(79) ClientPlayer local79 = Static159.aClass8_Sub4_Sub1Array1[local75];
-			@Pc(84) int local84 = Client.in.method2238(1);
-			if (local84 == 0) {
-				Static105.anIntArray256[Static267.anInt5774++] = local75;
-				local79.anInt3430 = Static83.anInt372;
-			} else {
-				@Pc(107) int local107 = Client.in.method2238(2);
-				if (local107 == 0) {
-					Static105.anIntArray256[Static267.anInt5774++] = local75;
-					local79.anInt3430 = Static83.anInt372;
-					Static44.anIntArray106[Static116.anInt2951++] = local75;
-				} else {
-					@Pc(153) int local153;
-					@Pc(163) int local163;
-					if (local107 == 1) {
-						Static105.anIntArray256[Static267.anInt5774++] = local75;
-						local79.anInt3430 = Static83.anInt372;
-						local153 = Client.in.method2238(3);
-						local79.method2684(1, local153);
-						local163 = Client.in.method2238(1);
-						if (local163 == 1) {
-							Static44.anIntArray106[Static116.anInt2951++] = local75;
-						}
-					} else if (local107 == 2) {
-						Static105.anIntArray256[Static267.anInt5774++] = local75;
-						local79.anInt3430 = Static83.anInt372;
-						if (Client.in.method2238(1) == 1) {
-							local153 = Client.in.method2238(3);
-							local79.method2684(2, local153);
-							local163 = Client.in.method2238(3);
-							local79.method2684(2, local163);
-						} else {
-							local153 = Client.in.method2238(3);
-							local79.method2684(0, local153);
-						}
-						local153 = Client.in.method2238(1);
-						if (local153 == 1) {
-							Static44.anIntArray106[Static116.anInt2951++] = local75;
-						}
-					} else if (local107 == 3) {
-						Static52.anIntArray136[Static240.anInt5335++] = local75;
-					}
-				}
-			}
-		}
-	}
 }

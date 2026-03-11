@@ -1,7 +1,6 @@
 package com.jagex3;
 
-import deob.Static204;
-import deob.Static72;
+import deob.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -17,7 +16,7 @@ public final class SeqType {
     @OriginalMember(owner = "com.jagex3.client.client!se", name = "l", descriptor = "Lclient!ve;")
     public static Js5 anims;
     @OriginalMember(owner = "com.jagex3.client.client!tk", name = "g", descriptor = "[I")
-	public int[] anIntArray473;
+	public int[] frames;
 
 	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "n", descriptor = "[Z")
 	public boolean[] aBooleanArray123;
@@ -35,7 +34,7 @@ public final class SeqType {
 	private int[] anIntArray475;
 
 	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "a", descriptor = "I")
-	public int anInt5347 = 2;
+	public int duplicatebehavior = 2;
 
 	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "b", descriptor = "Z")
 	public boolean aBoolean277 = false;
@@ -59,7 +58,7 @@ public final class SeqType {
 	public int anInt5363 = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "p", descriptor = "I")
-	public int anInt5355 = 5;
+	public int priority = 5;
 
 	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "r", descriptor = "Z")
 	public boolean aBoolean279 = false;
@@ -77,6 +76,41 @@ public final class SeqType {
         anims = arg2;
     }
 
+    @OriginalMember(owner = "com.jagex3.client.client!com.jagex3.client.client", name = "a", descriptor = "(IB)Lclient!tk;")
+	public static SeqType list(@OriginalArg(0) int arg0) {
+		@Pc(17) SeqType local17 = (SeqType) Static142.aClass99_23.method3106((long) arg0);
+		if (local17 != null) {
+			return local17;
+		}
+		@Pc(32) byte[] local32 = seqConfig.method4495(Static221.method3389(arg0), Static118.method2356(arg0));
+		local17 = new SeqType();
+		local17.anInt5361 = arg0;
+		if (local32 != null) {
+			local17.method4213(new Packet(local32));
+		}
+		local17.method4218();
+		Static142.aClass99_23.method3095(local17, (long) arg0);
+		return local17;
+	}
+
+    @OriginalMember(owner = "com.jagex3.client.client!sg", name = "a", descriptor = "(B)V")
+    public static void method3903() {
+        Static142.aClass99_23.clear();
+        Static267.aClass99_37.clear();
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!fl", name = "a", descriptor = "(IB)V")
+    public static void method1570() {
+        Static142.aClass99_23.method3102(5);
+        Static267.aClass99_37.method3102(5);
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!an", name = "a", descriptor = "(Z)V")
+	public static void method350() {
+		Static142.aClass99_23.method3104();
+		Static267.aClass99_37.method3104();
+	}
+
     @OriginalMember(owner = "com.jagex3.client.client!tk", name = "a", descriptor = "(Lclient!wa;B)V")
 	public final void method4213(@OriginalArg(0) Packet arg0) {
 		while (true) {
@@ -91,7 +125,7 @@ public final class SeqType {
 	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "a", descriptor = "(IIILclient!ak;II)Lclient!ak;")
 	public final ModelLit method4214(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) ModelLit arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		@Pc(10) int local10 = this.anIntArray474[arg0];
-		@Pc(15) int local15 = this.anIntArray473[arg0];
+		@Pc(15) int local15 = this.frames[arg0];
 		@Pc(23) AnimFrameset local23 = Static72.method1566(local15 >> 16);
 		@Pc(27) int local27 = local15 & 0xFFFF;
 		if (local23 == null) {
@@ -99,8 +133,8 @@ public final class SeqType {
 		}
 		@Pc(39) int local39 = arg3 & 0x3;
 		@Pc(41) AnimFrameset local41 = null;
-		if ((this.aBoolean277 || Static204.aBoolean234) && arg1 != -1 && this.anIntArray473.length > arg1) {
-			@Pc(69) int local69 = this.anIntArray473[arg1];
+		if ((this.aBoolean277 || Static204.aBoolean234) && arg1 != -1 && this.frames.length > arg1) {
+			@Pc(69) int local69 = this.frames[arg1];
 			local41 = Static72.method1566(local69 >> 16);
 			arg1 = local69 & 0xFFFF;
 		}
@@ -146,7 +180,7 @@ public final class SeqType {
 
 	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "a", descriptor = "(Lclient!ak;BIII)Lclient!ak;")
 	public final ModelLit method4215(@OriginalArg(0) ModelLit arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		@Pc(8) int local8 = this.anIntArray473[arg3];
+		@Pc(8) int local8 = this.frames[arg3];
 		@Pc(13) int local13 = this.anIntArray474[arg3];
 		@Pc(19) AnimFrameset local19 = Static72.method1566(local8 >> 16);
 		@Pc(23) int local23 = local8 & 0xFFFF;
@@ -154,8 +188,8 @@ public final class SeqType {
 			return arg0.method4572(true, true, true);
 		}
 		@Pc(34) AnimFrameset local34 = null;
-		if ((this.aBoolean277 || Static204.aBoolean234) && arg1 != -1 && arg1 < this.anIntArray473.length) {
-			@Pc(59) int local59 = this.anIntArray473[arg1];
+		if ((this.aBoolean277 || Static204.aBoolean234) && arg1 != -1 && arg1 < this.frames.length) {
+			@Pc(59) int local59 = this.frames[arg1];
 			local34 = Static72.method1566(local59 >> 16);
 			arg1 = local59 & 0xFFFF;
 		}
@@ -204,7 +238,7 @@ public final class SeqType {
 	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "a", descriptor = "(IIIILclient!ak;I)Lclient!ak;")
 	public final ModelLit method4216(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) ModelLit arg4) {
 		@Pc(6) int local6 = this.anIntArray474[arg1];
-		@Pc(11) int local11 = this.anIntArray473[arg1];
+		@Pc(11) int local11 = this.frames[arg1];
 		@Pc(19) AnimFrameset local19 = Static72.method1566(local11 >> 16);
 		@Pc(27) int local27 = local11 & 0xFFFF;
 		if (local19 == null) {
@@ -212,8 +246,8 @@ public final class SeqType {
 		}
 		@Pc(40) int local40 = arg3 & 0x3;
 		@Pc(42) AnimFrameset local42 = null;
-		if ((this.aBoolean277 || Static204.aBoolean234) && arg0 != -1 && arg0 < this.anIntArray473.length) {
-			@Pc(66) int local66 = this.anIntArray473[arg0];
+		if ((this.aBoolean277 || Static204.aBoolean234) && arg0 != -1 && arg0 < this.frames.length) {
+			@Pc(66) int local66 = this.frames[arg0];
 			local42 = Static72.method1566(local66 >> 16);
 			arg0 = local66 & 0xFFFF;
 		}
@@ -279,15 +313,15 @@ public final class SeqType {
 	@OriginalMember(owner = "com.jagex3.client.client!tk", name = "a", descriptor = "(IIIBLclient!ak;)Lclient!ak;")
 	public final ModelLit method4219(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) ModelLit arg3) {
 		@Pc(16) int local16 = this.anIntArray474[arg2];
-		@Pc(21) int local21 = this.anIntArray473[arg2];
+		@Pc(21) int local21 = this.frames[arg2];
 		@Pc(27) AnimFrameset local27 = Static72.method1566(local21 >> 16);
 		@Pc(31) int local31 = local21 & 0xFFFF;
 		if (local27 == null) {
 			return arg3.method4560(true, true, true);
 		}
 		@Pc(42) AnimFrameset local42 = null;
-		if ((this.aBoolean277 || Static204.aBoolean234) && arg0 != -1 && this.anIntArray473.length > arg0) {
-			@Pc(65) int local65 = this.anIntArray473[arg0];
+		if ((this.aBoolean277 || Static204.aBoolean234) && arg0 != -1 && this.frames.length > arg0) {
+			@Pc(65) int local65 = this.frames[arg0];
 			local42 = Static72.method1566(local65 >> 16);
 			arg0 = local65 & 0xFFFF;
 		}
@@ -311,12 +345,12 @@ public final class SeqType {
 			for (local14 = 0; local14 < local8; local14++) {
 				this.anIntArray474[local14] = arg1.g2();
 			}
-			this.anIntArray473 = new int[local8];
+			this.frames = new int[local8];
 			for (local14 = 0; local14 < local8; local14++) {
-				this.anIntArray473[local14] = arg1.g2();
+				this.frames[local14] = arg1.g2();
 			}
 			for (local14 = 0; local14 < local8; local14++) {
-				this.anIntArray473[local14] += arg1.g2() << 16;
+				this.frames[local14] += arg1.g2() << 16;
 			}
 		} else if (arg0 == 2) {
 			this.anInt5362 = arg1.g2();
@@ -329,7 +363,7 @@ public final class SeqType {
 		} else if (arg0 == 4) {
 			this.aBoolean279 = true;
 		} else if (arg0 == 5) {
-			this.anInt5355 = arg1.g1();
+			this.priority = arg1.g1();
 		} else if (arg0 == 6) {
 			this.anInt5353 = arg1.g2();
 		} else if (arg0 == 7) {
@@ -341,7 +375,7 @@ public final class SeqType {
 		} else if (arg0 == 10) {
 			this.anInt5349 = arg1.g1();
 		} else if (arg0 == 11) {
-			this.anInt5347 = arg1.g1();
+			this.duplicatebehavior = arg1.g1();
 		} else if (arg0 == 12) {
 			local8 = arg1.g1();
 			this.anIntArray475 = new int[local8];

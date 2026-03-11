@@ -133,7 +133,7 @@ public final class GlSquare extends Linkable {
 		@Pc(1) long local1 = 0L;
 		if ((arg0 & 0x7F) == 0 || (arg2 & 0x7F) == 0) {
 			local1 = (long) (arg0 + (arg2 << 16)) + ((long) arg6 << 32);
-			@Pc(28) IntNode local28 = (IntNode) this.aClass133_8.method3863(local1);
+			@Pc(28) IntNode local28 = (IntNode) this.aClass133_8.find(local1);
 			if (local28 != null) {
 				if (arg1 < this.anIntArray230[local28.anInt3141]) {
 					this.anIntArray230[local28.anInt3141] = arg1;
@@ -152,7 +152,7 @@ public final class GlSquare extends Linkable {
 		this.aFloatArray5[this.anInt2483] = arg5;
 		this.anIntArray226[this.anInt2483] = arg6;
 		if (local1 != 0L) {
-			this.aClass133_8.method3862(new IntNode(this.anInt2483), local1);
+			this.aClass133_8.put(new IntNode(this.anInt2483), local1);
 		}
 		return this.anInt2483++;
 	}
@@ -283,7 +283,7 @@ public final class GlSquare extends Linkable {
 			GlRenderer.setTextureId(-1);
 			Static27.setMaterial(0, 0);
 		} else {
-			Rasteriser.anInterface1_2.method3227(this.anInt2485);
+			Pix3D.anInterface1_2.method3227(this.anInt2485);
 		}
 		@Pc(282) int local282 = this.aBoolean139 ? 40 : 36;
 		if (this.aClass155_3 == null) {

@@ -13,10 +13,7 @@ public final class Static221 {
 	@OriginalMember(owner = "com.jagex3.client.client!s", name = "i", descriptor = "[I")
 	public static int[] anIntArray376;
 
-	@OriginalMember(owner = "com.jagex3.client.client!s", name = "c", descriptor = "I")
-	public static int anInt4363 = -1;
-
-	@OriginalMember(owner = "com.jagex3.client.client!s", name = "d", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!s", name = "d", descriptor = "I")
 	public static int anInt4364 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!s", name = "e", descriptor = "[I")
@@ -149,12 +146,12 @@ public final class Static221 {
 								local135 = true;
 							}
 						}
-						@Pc(275) Sprite local275 = Static133.method4008(arg4, local114, local72);
+						@Pc(275) Sprite local275 = World.getScene(arg4, local114, local72);
 						if (local275 != null) {
-							@Pc(287) int local287 = (int) (local275.aLong56 >> 14) & 0x3F;
+							@Pc(287) int local287 = (int) (local275.typecode >> 14) & 0x3F;
 							if (local287 == 9) {
 								local234 = null;
-								@Pc(302) int local302 = (int) (local275.aLong56 >> 20) & 0x3;
+								@Pc(302) int local302 = (int) (local275.typecode >> 20) & 0x3;
 								@Pc(315) boolean local315;
 								@Pc(343) short local343;
 								@Pc(349) int local349;
@@ -269,12 +266,12 @@ public final class Static221 {
 								local791 = true;
 							}
 						}
-						@Pc(899) Sprite local899 = Static133.method4008(arg4, local114, local72);
+						@Pc(899) Sprite local899 = World.getScene(arg4, local114, local72);
 						if (local899 != null) {
-							@Pc(911) int local911 = (int) (local899.aLong56 >> 14) & 0x3F;
+							@Pc(911) int local911 = (int) (local899.typecode >> 14) & 0x3F;
 							if (local911 == 9) {
 								@Pc(917) int[] local917 = null;
-								@Pc(925) int local925 = (int) (local899.aLong56 >> 20) & 0x3;
+								@Pc(925) int local925 = (int) (local899.typecode >> 20) & 0x3;
 								@Pc(973) int local973;
 								@Pc(947) boolean local947;
 								@Pc(961) short local961;

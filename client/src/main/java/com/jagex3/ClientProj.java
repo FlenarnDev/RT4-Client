@@ -1,7 +1,5 @@
 package com.jagex3;
 
-import deob.Static34;
-import deob.Static36;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -108,11 +106,11 @@ public final class ClientProj extends ModelSource {
 		this.anInt4797 = arg8;
 		this.anInt4822 = arg5;
 		this.anInt4813 = arg4;
-		@Pc(58) int local58 = Static34.method877(this.anInt4816).anInt1754;
+		@Pc(58) int local58 = SpotType.list(this.anInt4816).anim;
 		if (local58 == -1) {
 			this.aClass144_3 = null;
 		} else {
-			this.aClass144_3 = Static36.method941(local58);
+			this.aClass144_3 = SeqType.list(local58);
 		}
 	}
 
@@ -123,7 +121,7 @@ public final class ClientProj extends ModelSource {
 
 	@OriginalMember(owner = "com.jagex3.client.client!ra", name = "b", descriptor = "(I)Lclient!ak;")
 	private ModelLit method3703() {
-		@Pc(14) SpotType local14 = Static34.method877(this.anInt4816);
+		@Pc(14) SpotType local14 = SpotType.list(this.anInt4816);
 		@Pc(24) ModelLit local24 = local14.method1319(this.anInt4798, this.anInt4820, this.anInt4796);
 		if (local24 == null) {
 			return null;
@@ -158,16 +156,16 @@ public final class ClientProj extends ModelSource {
 					}
 					this.anInt4796 -= this.aClass144_3.anIntArray474[this.anInt4820];
 					this.anInt4820++;
-					if (this.anInt4820 >= this.aClass144_3.anIntArray473.length) {
+					if (this.anInt4820 >= this.aClass144_3.frames.length) {
 						this.anInt4820 -= this.aClass144_3.anInt5362;
-						if (this.anInt4820 < 0 || this.aClass144_3.anIntArray473.length <= this.anInt4820) {
+						if (this.anInt4820 < 0 || this.aClass144_3.frames.length <= this.anInt4820) {
 							this.anInt4820 = 0;
 						}
 					}
 					this.anInt4798 = this.anInt4820 + 1;
-				} while (this.aClass144_3.anIntArray473.length > this.anInt4798);
+				} while (this.aClass144_3.frames.length > this.anInt4798);
 				this.anInt4798 -= this.aClass144_3.anInt5362;
-			} while (this.anInt4798 >= 0 && this.anInt4798 < this.aClass144_3.anIntArray473.length);
+			} while (this.anInt4798 >= 0 && this.anInt4798 < this.aClass144_3.frames.length);
 			this.anInt4798 = -1;
 		}
 	}
@@ -203,13 +201,13 @@ public final class ClientProj extends ModelSource {
 		@Pc(3) ModelLit local3 = this.method3703();
 		if (local3 != null) {
 			local3.method4546(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, this.aClass47_Sub1_6);
-			this.anInt4814 = local3.method4549();
+			this.anInt4814 = local3.calcBoundingCylinder();
 		}
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ra", name = "b", descriptor = "()I")
 	@Override
-	public final int method4549() {
+	public final int calcBoundingCylinder() {
 		return this.anInt4814;
 	}
 }

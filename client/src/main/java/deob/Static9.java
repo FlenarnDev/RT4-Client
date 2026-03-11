@@ -51,30 +51,20 @@ public final class Static9 {
 			local96 = arg5 + (local28 >> 1);
 			local100 = (local28 + 1 >> 1) + arg5;
 		}
-		@Pc(120) int[][] local120 = Static83.anIntArrayArrayArray4[arg7];
+		@Pc(120) int[][] local120 = World.groundh[arg7];
 		@Pc(122) int local122 = 0;
 		@Pc(148) int local148 = local120[local96][local51] + local120[local96][local53] + local120[local100][local53] + local120[local100][local51] >> 2;
 		@Pc(158) int[][] local158;
 		if (arg7 != 0) {
-			local158 = Static83.anIntArrayArrayArray4[0];
+			local158 = World.groundh[0];
 			local122 = local148 - (local158[local96][local51] + local158[local100][local53] + local158[local96][local53] + local158[local100][local51] >> 2);
 		}
 		local158 = null;
 		if (arg7 < 3) {
-			local158 = Static83.anIntArrayArrayArray4[arg7 + 1];
+			local158 = World.groundh[arg7 + 1];
 		}
 		@Pc(215) Class139 local215 = arg0.method3428(arg2, local80, local120, arg4, local148, local158, false, null, true, local88);
 		Static242.method4207(local215.aClass36_Sub1_3, local80 - arg3, local122, local88 - arg1);
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!al", name = "a", descriptor = "(Z)V")
-	public static void method182() {
-		Static241.aClass13Array13 = null;
-		Static6.method86(Static154.topLevelInterace, 0, Static48.anInt1448, 0, -1, Static254.anInt5554, 0, 0);
-		if (Static241.aClass13Array13 != null) {
-			Static87.method1809(0, Static127.anInt3126, Static80.anInt4696, Static241.aClass13Array13, Static48.anInt1448, -1412584499, 0, Static254.anInt5554, Static4.aClass13_1.anInt517);
-			Static241.aClass13Array13 = null;
-		}
 	}
 
     @OriginalMember(owner = "com.jagex3.client.client!al", name = "a", descriptor = "(ILclient!wa;)Lclient!ci;")
@@ -96,15 +86,7 @@ public final class Static9 {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!al", name = "a", descriptor = "(ZI)V")
-	public static void method186(@OriginalArg(0) boolean arg0) {
-		if (arg0 != ObjType.aBoolean276) {
-			ObjType.aBoolean276 = arg0;
-			Static176.method3302();
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!al", name = "a", descriptor = "(III)Z")
+    @OriginalMember(owner = "com.jagex3.client.client!al", name = "a", descriptor = "(III)Z")
 	public static boolean method187(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(7) int local7 = Static140.anIntArrayArrayArray12[arg0][arg1][arg2];
 		if (local7 == -Static13.anInt437) {
@@ -114,7 +96,7 @@ public final class Static9 {
 		} else {
 			@Pc(22) int local22 = arg1 << 7;
 			@Pc(26) int local26 = arg2 << 7;
-			if (Static256.method4394(local22 + 1, Static83.anIntArrayArrayArray4[arg0][arg1][arg2], local26 + 1) && Static256.method4394(local22 + 128 - 1, Static83.anIntArrayArrayArray4[arg0][arg1 + 1][arg2], local26 + 1) && Static256.method4394(local22 + 128 - 1, Static83.anIntArrayArrayArray4[arg0][arg1 + 1][arg2 + 1], local26 + 128 - 1) && Static256.method4394(local22 + 1, Static83.anIntArrayArrayArray4[arg0][arg1][arg2 + 1], local26 + 128 - 1)) {
+			if (Static256.method4394(local22 + 1, World.groundh[arg0][arg1][arg2], local26 + 1) && Static256.method4394(local22 + 128 - 1, World.groundh[arg0][arg1 + 1][arg2], local26 + 1) && Static256.method4394(local22 + 128 - 1, World.groundh[arg0][arg1 + 1][arg2 + 1], local26 + 128 - 1) && Static256.method4394(local22 + 1, World.groundh[arg0][arg1][arg2 + 1], local26 + 128 - 1)) {
 				Static140.anIntArrayArrayArray12[arg0][arg1][arg2] = Static13.anInt437;
 				return true;
 			} else {

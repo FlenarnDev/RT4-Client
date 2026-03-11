@@ -20,7 +20,7 @@ public final class ClientNPC extends ClientEntity {
 
 	@OriginalMember(owner = "com.jagex3.client.client!km", name = "b", descriptor = "()I")
 	@Override
-	public final int method4549() {
+	public final int calcBoundingCylinder() {
 		return this.anInt3413;
 	}
 
@@ -30,20 +30,20 @@ public final class ClientNPC extends ClientEntity {
 		if (this.aClass96_1 == null) {
 			return;
 		}
-		@Pc(29) SeqType local29 = this.anInt3369 != -1 && this.anInt3420 == 0 ? Static36.method941(this.anInt3369) : null;
-		@Pc(53) SeqType local53 = this.anInt3366 == -1 || this.anInt3366 == this.method2681().anInt1037 && local29 != null ? null : Static36.method941(this.anInt3366);
+		@Pc(29) SeqType local29 = this.anInt3369 != -1 && this.anInt3420 == 0 ? SeqType.list(this.anInt3369) : null;
+		@Pc(53) SeqType local53 = this.anInt3366 == -1 || this.anInt3366 == this.method2681().anInt1037 && local29 != null ? null : SeqType.list(this.anInt3366);
 		@Pc(74) ModelLit local74 = this.aClass96_1.method2937(this.aClass147Array3, this.anInt3388, this.anInt3407, this.anInt3373, this.anInt3360, this.anInt3425, local53, this.anInt3396, local29);
 		if (local74 == null) {
 			return;
 		}
-		this.anInt3413 = local74.method4549();
+		this.anInt3413 = local74.calcBoundingCylinder();
 		@Pc(84) NpcType local84 = this.aClass96_1;
 		if (local84.anIntArray357 != null) {
 			local84 = local84.method2932();
 		}
 		@Pc(140) ModelLit local140;
 		if (Static209.aBoolean240 && local84.aBoolean180) {
-			local140 = Static41.method1043(this.aClass96_1.aByte13, this.aBoolean171, local53 == null ? local29 : local53, this.anInt3412, this.aClass96_1.aShort23, this.anInt3421, this.aClass96_1.aShort24, this.aClass96_1.anInt3713, local74, arg0, local53 == null ? this.anInt3425 : this.anInt3407, this.anInt3424, this.aClass96_1.aByte12);
+			local140 = Static41.method1043(this.aClass96_1.aByte13, this.aBoolean171, local53 == null ? local29 : local53, this.x, this.aClass96_1.aShort23, this.z, this.aClass96_1.aShort24, this.aClass96_1.anInt3713, local74, arg0, local53 == null ? this.anInt3425 : this.anInt3407, this.anInt3424, this.aClass96_1.aByte12);
 			if (GlRenderer.enabled) {
 				@Pc(144) float local144 = GlRenderer.method4179();
 				@Pc(146) float local146 = GlRenderer.method4166();
@@ -60,7 +60,7 @@ public final class ClientNPC extends ClientEntity {
 		this.method2685(local74, arg0);
 		local140 = null;
 		if (this.anInt3432 != -1 && this.anInt3399 != -1) {
-			@Pc(211) SpotType local211 = Static34.method877(this.anInt3432);
+			@Pc(211) SpotType local211 = SpotType.list(this.anInt3432);
 			local140 = local211.method1319(this.anInt3418, this.anInt3399, this.anInt3361);
 			if (local140 != null) {
 				local140.method4575(0, -this.anInt3394, 0);

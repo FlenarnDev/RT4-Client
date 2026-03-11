@@ -52,7 +52,7 @@ public final class JavaSafePixMap extends PixMap implements ImageProducer, Image
 
 	@OriginalMember(owner = "com.jagex3.client.client!di", name = "a", descriptor = "(IIIILjava/awt/Graphics;I)V")
 	@Override
-	public final void method4191(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) Graphics arg3, @OriginalArg(5) int arg4) {
+	public final void draw(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) Graphics arg3, @OriginalArg(5) int arg4) {
 		this.method1168(arg0, arg2, arg1, arg4);
 		@Pc(17) Shape local17 = arg3.getClip();
 		arg3.clipRect(arg1, arg4, arg0, arg2);

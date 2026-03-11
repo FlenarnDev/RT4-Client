@@ -33,7 +33,7 @@ public abstract class PixMap {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!vk", name = "a", descriptor = "(IIIILjava/awt/Graphics;I)V")
-	public abstract void method4191(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) Graphics arg3, @OriginalArg(5) int arg4);
+	public abstract void draw(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) Graphics arg3, @OriginalArg(5) int arg4);
 
 	@OriginalMember(owner = "com.jagex3.client.client!vk", name = "a", descriptor = "(IZILjava/awt/deob.Component;)V")
 	public abstract void method4192(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Component arg2);

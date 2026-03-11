@@ -14,7 +14,7 @@ public final class ClientPlayer extends ClientEntity {
 	public PlayerModel aClass59_1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!e", name = "Mc", descriptor = "Lclient!na;")
-	public JagString aClass100_364;
+	public JagString name;
 
 	@OriginalMember(owner = "com.jagex3.client.client!e", name = "tc", descriptor = "I")
 	public int anInt1649 = -1;
@@ -26,7 +26,7 @@ public final class ClientPlayer extends ClientEntity {
 	public int anInt1650 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!e", name = "yc", descriptor = "I")
-	public int anInt1652 = 0;
+	public int combatLevel = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!e", name = "Fc", descriptor = "I")
 	public int anInt1656 = 0;
@@ -61,7 +61,7 @@ public final class ClientPlayer extends ClientEntity {
 	@OriginalMember(owner = "com.jagex3.client.client!e", name = "c", descriptor = "(B)I")
 	@Override
 	public final int method2693() {
-		return this.aClass59_1 == null || this.aClass59_1.anInt2492 == -1 ? super.method2693() : Static214.method4363(this.aClass59_1.anInt2492).anInt3713;
+		return this.aClass59_1 == null || this.aClass59_1.anInt2492 == -1 ? super.method2693() : NpcType.list(this.aClass59_1.anInt2492).anInt3713;
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!e", name = "b", descriptor = "(I)I")
@@ -81,8 +81,8 @@ public final class ClientPlayer extends ClientEntity {
 		@Pc(44) int[] local44 = new int[12];
 		this.method2692((local20 >> 3 & 0x7) + 1);
 		this.anInt1651 = local20 >> 6 & 0x3;
-		this.anInt3412 += (this.method2693() - local41) * 64;
-		this.anInt3421 += (this.method2693() - local41) * 64;
+		this.x += (this.method2693() - local41) * 64;
+		this.z += (this.method2693() - local41) * 64;
 		this.anInt1669 = arg0.g1b();
 		this.anInt1649 = arg0.g1b();
 		this.anInt1650 = 0;
@@ -105,7 +105,7 @@ public final class ClientPlayer extends ClientEntity {
 				if (local134 >= 32768) {
 					local134 = Static234.anIntArray455[local134 - 32768];
 					local44[local102] = local134 | 0x40000000;
-					local175 = Static71.method1439(local134).anInt2351;
+					local175 = ObjType.list(local134).anInt2351;
 					if (local175 != 0) {
 						this.anInt1650 = local175;
 					}
@@ -117,18 +117,18 @@ public final class ClientPlayer extends ClientEntity {
 		@Pc(197) int[] local197 = new int[5];
 		for (local111 = 0; local111 < 5; local111++) {
 			local127 = arg0.g1();
-			if (local127 < 0 || local127 >= Static33.aShortArrayArray2[local111].length) {
+			if (local127 < 0 || local127 >= PlayerModel.recol1s[local111].length) {
 				local127 = 0;
 			}
 			local197[local111] = local127;
 		}
 		this.anInt3365 = arg0.g2();
 		@Pc(236) long local236 = arg0.g8();
-		this.aClass100_364 = Static79.decode37(local236).method3125();
-		this.anInt1652 = arg0.g1();
+		this.name = Static79.toBaseDisplayName(local236).method3125();
+		this.combatLevel = arg0.g1();
 		if (local37) {
 			this.anInt1671 = arg0.g2();
-			this.anInt1656 = this.anInt1652;
+			this.anInt1656 = this.combatLevel;
 			this.anInt1667 = -1;
 		} else {
 			this.anInt1671 = 0;
@@ -141,7 +141,7 @@ public final class ClientPlayer extends ClientEntity {
 		local134 = this.anInt1664;
 		this.anInt1664 = arg0.g1();
 		if (this.anInt1664 == 0) {
-			Static271.method4597(this);
+			BgSound.method4597(this);
 		} else {
 			@Pc(309) int local309 = this.anInt1658;
 			@Pc(312) int local312 = this.anInt1654;
@@ -161,8 +161,8 @@ public final class ClientPlayer extends ClientEntity {
 		local175 = this.aClass59_1.anInt2492;
 		this.aClass59_1.method1950(local197, local22, local26 == 1, local44, this.anInt3365);
 		if (local175 != local22) {
-			this.anInt3412 = this.movementQueueX[0] * 128 + this.method2693() * 64;
-			this.anInt3421 = this.movementQueueZ[0] * 128 + this.method2693() * 64;
+			this.x = this.routeX[0] * 128 + this.method2693() * 64;
+			this.z = this.routeZ[0] * 128 + this.method2693() * 64;
 		}
 		if (this.aClass47_Sub1_5 != null) {
 			this.aClass47_Sub1_5.method1646();
@@ -175,8 +175,8 @@ public final class ClientPlayer extends ClientEntity {
 		if (this.aClass59_1 == null) {
 			return;
 		}
-		@Pc(25) SeqType local25 = this.anInt3369 != -1 && this.anInt3420 == 0 ? Static36.method941(this.anInt3369) : null;
-		@Pc(54) SeqType local54 = this.anInt3366 == -1 || this.aBoolean98 || this.anInt3366 == this.method2681().anInt1037 && local25 != null ? null : Static36.method941(this.anInt3366);
+		@Pc(25) SeqType local25 = this.anInt3369 != -1 && this.anInt3420 == 0 ? SeqType.list(this.anInt3369) : null;
+		@Pc(54) SeqType local54 = this.anInt3366 == -1 || this.aBoolean98 || this.anInt3366 == this.method2681().anInt1037 && local25 != null ? null : SeqType.list(this.anInt3366);
 		@Pc(76) ModelLit local76 = this.aClass59_1.method1954(this.aClass147Array3, this.anInt3373, local54, local25, this.anInt3396, this.anInt3388, this.anInt3360, this.anInt3425, this.anInt3407);
 		@Pc(79) int local79 = Static198.method1029();
 		if (GlRenderer.enabled && Static238.anInt5316 < 96 && local79 > 50) {
@@ -197,10 +197,10 @@ public final class ClientPlayer extends ClientEntity {
 		if (local76 == null) {
 			return;
 		}
-		this.anInt3413 = local76.method4549();
+		this.anInt3413 = local76.calcBoundingCylinder();
 		@Pc(184) ModelLit local184;
-		if (Static209.aBoolean240 && (this.aClass59_1.anInt2492 == -1 || Static214.method4363(this.aClass59_1.anInt2492).aBoolean180)) {
-			local184 = Static41.method1043(160, this.aBoolean171, local54 == null ? local25 : local54, this.anInt3412, 0, this.anInt3421, 0, 1, local76, arg0, local54 == null ? this.anInt3425 : this.anInt3407, this.anInt3424, 240);
+		if (Static209.aBoolean240 && (this.aClass59_1.anInt2492 == -1 || NpcType.list(this.aClass59_1.anInt2492).aBoolean180)) {
+			local184 = Static41.method1043(160, this.aBoolean171, local54 == null ? local25 : local54, this.x, 0, this.z, 0, 1, local76, arg0, local54 == null ? this.anInt3425 : this.anInt3407, this.anInt3424, 240);
 			if (GlRenderer.enabled) {
 				@Pc(188) float local188 = GlRenderer.method4179();
 				@Pc(190) float local190 = GlRenderer.method4166();
@@ -213,30 +213,30 @@ public final class ClientPlayer extends ClientEntity {
 				local184.method4546(0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, -1L, arg9, null);
 			}
 		}
-		if (Static173.self == this) {
+		if (Client.localPlayer == this) {
 			for (local102 = Static143.aClass102Array1.length - 1; local102 >= 0; local102--) {
 				@Pc(245) MapMarker local245 = Static143.aClass102Array1[local102];
 				if (local245 != null && local245.anInt4052 != -1) {
 					@Pc(291) int local291;
 					@Pc(302) int local302;
-					if (local245.anInt4058 == 1 && local245.anInt4057 >= 0 && Static175.aClass8_Sub4_Sub2Array1.length > local245.anInt4057) {
-						@Pc(278) ClientNPC local278 = Static175.aClass8_Sub4_Sub2Array1[local245.anInt4057];
+					if (local245.anInt4058 == 1 && local245.anInt4057 >= 0 && Client.npcs.length > local245.anInt4057) {
+						@Pc(278) ClientNPC local278 = Client.npcs[local245.anInt4057];
 						if (local278 != null) {
-							local291 = local278.anInt3412 / 32 - Static173.self.anInt3412 / 32;
-							local302 = local278.anInt3421 / 32 - Static173.self.anInt3421 / 32;
+							local291 = local278.x / 32 - Client.localPlayer.x / 32;
+							local302 = local278.z / 32 - Client.localPlayer.z / 32;
 							this.method1263(null, local302, local76, local291, arg5, arg9, arg0, arg7, arg4, arg3, arg1, local245.anInt4052, arg2, arg6);
 						}
 					}
 					if (local245.anInt4058 == 2) {
-						@Pc(340) int local340 = (local245.anInt4053 - Static225.originX) * 4 + 2 - Static173.self.anInt3412 / 32;
-						local291 = (local245.anInt4046 - Static142.originZ) * 4 + 2 - Static173.self.anInt3421 / 32;
+						@Pc(340) int local340 = (local245.anInt4053 - Client.mapBuildBaseX) * 4 + 2 - Client.localPlayer.x / 32;
+						local291 = (local245.anInt4046 - Client.mapBuildBaseZ) * 4 + 2 - Client.localPlayer.z / 32;
 						this.method1263(null, local291, local76, local340, arg5, arg9, arg0, arg7, arg4, arg3, arg1, local245.anInt4052, arg2, arg6);
 					}
-					if (local245.anInt4058 == 10 && local245.anInt4057 >= 0 && Static159.aClass8_Sub4_Sub1Array1.length > local245.anInt4057) {
-						@Pc(395) ClientPlayer local395 = Static159.aClass8_Sub4_Sub1Array1[local245.anInt4057];
+					if (local245.anInt4058 == 10 && local245.anInt4057 >= 0 && Client.players.length > local245.anInt4057) {
+						@Pc(395) ClientPlayer local395 = Client.players[local245.anInt4057];
 						if (local395 != null) {
-							local291 = local395.anInt3412 / 32 - Static173.self.anInt3412 / 32;
-							local302 = local395.anInt3421 / 32 - Static173.self.anInt3421 / 32;
+							local291 = local395.x / 32 - Client.localPlayer.x / 32;
+							local302 = local395.z / 32 - Client.localPlayer.z / 32;
 							this.method1263(null, local302, local76, local291, arg5, arg9, arg0, arg7, arg4, arg3, arg1, local245.anInt4052, arg2, arg6);
 						}
 					}
@@ -247,7 +247,7 @@ public final class ClientPlayer extends ClientEntity {
 		this.method2685(local76, arg0);
 		local184 = null;
 		if (!this.aBoolean98 && this.anInt3432 != -1 && this.anInt3399 != -1) {
-			@Pc(471) SpotType local471 = Static34.method877(this.anInt3432);
+			@Pc(471) SpotType local471 = SpotType.list(this.anInt3432);
 			local184 = local471.method1319(this.anInt3418, this.anInt3399, this.anInt3361);
 			if (local184 != null) {
 				local184.method4575(0, -this.anInt3394, 0);
@@ -266,16 +266,16 @@ public final class ClientPlayer extends ClientEntity {
 		}
 		@Pc(515) ModelLit local515 = null;
 		if (!this.aBoolean98 && this.anObject5 != null) {
-			if (Static83.anInt372 >= this.anInt3375) {
+			if (Client.loopCycle >= this.anInt3375) {
 				this.anObject5 = null;
 			}
-			if (this.anInt3390 <= Static83.anInt372 && this.anInt3375 > Static83.anInt372) {
+			if (this.anInt3390 <= Client.loopCycle && this.anInt3375 > Client.loopCycle) {
 				if (this.anObject5 instanceof ClientLocAnim) {
 					local515 = (ModelLit) ((ClientLocAnim) this.anObject5).method1049();
 				} else {
 					local515 = (ModelLit) this.anObject5;
 				}
-				local515.method4575(this.anInt3379 - this.anInt3412, this.anInt3406 + -this.anInt3424, this.anInt3426 - this.anInt3421);
+				local515.method4575(this.anInt3379 - this.x, this.anInt3406 + -this.anInt3424, this.anInt3426 - this.z);
 				if (this.anInt3400 == 512) {
 					local515.method4578();
 				} else if (this.anInt3400 == 1024) {
@@ -312,7 +312,7 @@ public final class ClientPlayer extends ClientEntity {
 		} else if (this.anInt3400 == 1536) {
 			local515.method4578();
 		}
-		local515.method4575(this.anInt3412 - this.anInt3379, -this.anInt3406 + this.anInt3424, this.anInt3421 - this.anInt3426);
+		local515.method4575(this.x - this.anInt3379, -this.anInt3406 + this.anInt3424, this.z - this.anInt3426);
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!e", name = "a", descriptor = "(Lclient!ga;ILclient!ak;IIIIIIIIIIII)V")
@@ -322,7 +322,7 @@ public final class ClientPlayer extends ClientEntity {
 			return;
 		}
 		@Pc(34) int local34 = (int) (Math.atan2((double) arg3, (double) arg1) * 325.949D) & 0x7FF;
-		@Pc(46) ModelLit local46 = Static220.method3800(local34, this.anInt3421, arg11, this.anInt3412, arg2, this.anInt3424);
+		@Pc(46) ModelLit local46 = Client.method3800(local34, this.z, arg11, this.x, arg2, this.anInt3424);
 		if (local46 == null) {
 			return;
 		}
@@ -347,7 +347,7 @@ public final class ClientPlayer extends ClientEntity {
 
 	@OriginalMember(owner = "com.jagex3.client.client!e", name = "e", descriptor = "(I)Lclient!na;")
 	public final JagString method1264() {
-		@Pc(2) JagString local2 = this.aClass100_364;
+		@Pc(2) JagString local2 = this.name;
 		if (Static103.aClass100Array88 != null) {
 			local2 = JagString.join(new JagString[] { Static103.aClass100Array88[this.anInt1651], local2 });
 		}
@@ -374,7 +374,7 @@ public final class ClientPlayer extends ClientEntity {
 
 	@OriginalMember(owner = "com.jagex3.client.client!e", name = "b", descriptor = "()I")
 	@Override
-	public final int method4549() {
+	public final int calcBoundingCylinder() {
 		return this.anInt3413;
 	}
 }

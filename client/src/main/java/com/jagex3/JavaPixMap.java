@@ -42,7 +42,7 @@ public final class JavaPixMap extends PixMap {
 
 	@OriginalMember(owner = "com.jagex3.client.client!ti", name = "a", descriptor = "(IIIILjava/awt/Graphics;I)V")
 	@Override
-	public final void method4191(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) Graphics arg3, @OriginalArg(5) int arg4) {
+	public final void draw(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) Graphics arg3, @OriginalArg(5) int arg4) {
 		@Pc(2) Shape local2 = arg3.getClip();
 		arg3.clipRect(arg1, arg4, arg0, arg2);
 		arg3.drawImage(this.anImage4, 0, 0, this.aComponent1);

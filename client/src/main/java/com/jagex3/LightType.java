@@ -1,5 +1,6 @@
 package com.jagex3;
 
+import deob.Static220;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -26,6 +27,21 @@ public final class LightType {
     public static void init(@OriginalArg(0) Js5 arg0) {
         archive = arg0;
     }
+
+    @OriginalMember(owner = "com.jagex3.client.client!hd", name = "a", descriptor = "(I)V")
+	public static void method1882() {
+		Static220.aClass99_28.clear();
+	}
+
+    @OriginalMember(owner = "com.jagex3.client.client!c", name = "c", descriptor = "(II)V")
+    public static void method715() {
+        Static220.aClass99_28.method3102(5);
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!gd", name = "b", descriptor = "(I)V")
+	public static void method1695() {
+		Static220.aClass99_28.method3104();
+	}
 
     @OriginalMember(owner = "com.jagex3.client.client!ic", name = "a", descriptor = "(ILclient!wa;I)V")
 	public final void method2257(@OriginalArg(1) Packet arg0, @OriginalArg(2) int arg1) {

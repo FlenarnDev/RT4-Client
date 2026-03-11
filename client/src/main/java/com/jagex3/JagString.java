@@ -79,7 +79,7 @@ public final class JagString implements StringWrapper {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!na", name = "a", descriptor = "(BLclient!na;)Z")
-	public final boolean method3108(@OriginalArg(1) JagString arg0) {
+	public final boolean equalsInner(@OriginalArg(1) JagString arg0) {
 		if (arg0 == null) {
 			return false;
 		} else if (arg0 == this) {
@@ -143,7 +143,7 @@ public final class JagString implements StringWrapper {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!na", name = "a", descriptor = "(ILclient!na;)Z")
-	public final boolean method3111(@OriginalArg(1) JagString arg0) {
+	public final boolean equalsIgnoreCase(@OriginalArg(1) JagString arg0) {
 		if (arg0 == null) {
 			return false;
 		} else if (this.anInt4030 == arg0.anInt4030) {
@@ -499,7 +499,7 @@ public final class JagString implements StringWrapper {
 		if (!(arg0 instanceof JagString)) {
 			throw new IllegalArgumentException();
 		}
-		return this.method3108((JagString) arg0);
+		return this.equalsInner((JagString) arg0);
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!na", name = "c", descriptor = "(Lclient!na;I)I")
@@ -733,7 +733,7 @@ public final class JagString implements StringWrapper {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!na", name = "i", descriptor = "(I)[B")
-	public final byte[] method3148() {
+	public final byte[] builderToString() {
 		@Pc(7) byte[] local7 = new byte[this.anInt4030];
 		Static289.method2612(this.aByteArray52, 0, local7, 0, this.anInt4030);
 		return local7;
@@ -753,8 +753,8 @@ public final class JagString implements StringWrapper {
 			if (Static148.aClass133_13 == null) {
 				Static148.aClass133_13 = new HashTable(4096);
 			} else {
-				for (local30 = (StringNode) Static148.aClass133_13.method3863(local9); local30 != null; local30 = (StringNode) Static148.aClass133_13.method3867()) {
-					if (this.method3108(local30.aClass100_980)) {
+				for (local30 = (StringNode) Static148.aClass133_13.find(local9); local30 != null; local30 = (StringNode) Static148.aClass133_13.method3867()) {
+					if (this.equalsInner(local30.aClass100_980)) {
 						return local30.aClass100_980;
 					}
 				}
@@ -762,7 +762,7 @@ public final class JagString implements StringWrapper {
 			local30 = new StringNode();
 			local30.aClass100_980 = this;
 			this.aBoolean193 = false;
-			Static148.aClass133_13.method3862(local30, local9);
+			Static148.aClass133_13.put(local30, local9);
 			return this;
 		}
 	}
@@ -860,7 +860,7 @@ public final class JagString implements StringWrapper {
 
 	@OriginalMember(owner = "com.jagex3.client.client!na", name = "k", descriptor = "(I)Lclient!na;")
 	public final JagString method3159() {
-		@Pc(9) JagString local9 = Static79.decode37(this.encode37());
+		@Pc(9) JagString local9 = Static79.toBaseDisplayName(this.encode37());
 		return local9 == null ? Static228.aClass100_967 : local9;
 	}
 

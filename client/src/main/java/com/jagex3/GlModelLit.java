@@ -140,7 +140,7 @@ public final class GlModelLit extends ModelLit {
 		@Pc(23) int[] local23 = new int[arg0.anInt2136];
 		this.anIntArray462 = new int[arg0.anInt2139 + 1];
 		for (@Pc(32) int local32 = 0; local32 < arg0.anInt2136; local32++) {
-			if ((arg0.aByteArray30 == null || arg0.aByteArray30[local32] != 2) && (arg0.aShortArray23 == null || arg0.aShortArray23[local32] == -1 || !Rasteriser.anInterface1_2.method3231(arg0.aShortArray23[local32] & 0xFFFF))) {
+			if ((arg0.aByteArray30 == null || arg0.aByteArray30[local32] != 2) && (arg0.aShortArray23 == null || arg0.aShortArray23[local32] == -1 || !Pix3D.anInterface1_2.method3231(arg0.aShortArray23[local32] & 0xFFFF))) {
 				local23[this.anInt5297++] = local32;
 				this.anIntArray462[arg0.anIntArray197[local32]]++;
 				this.anIntArray462[arg0.anIntArray200[local32]]++;
@@ -162,11 +162,11 @@ public final class GlModelLit extends ModelLit {
 			if (arg0.aShortArray23 != null) {
 				local135 = arg0.aShortArray23[local125];
 				if (local135 != -1) {
-					local131 = Rasteriser.anInterface1_2.method3237(local135 & 0xFFFF);
-					local133 = Rasteriser.anInterface1_2.method3228(local135 & 0xFFFF);
+					local131 = Pix3D.anInterface1_2.method3237(local135 & 0xFFFF);
+					local133 = Pix3D.anInterface1_2.method3228(local135 & 0xFFFF);
 				}
 			}
-			@Pc(182) boolean local182 = arg0.aByteArray26 != null && arg0.aByteArray26[local125] != 0 || local135 != -1 && !Rasteriser.anInterface1_2.method3226(local135 & 0xFFFF);
+			@Pc(182) boolean local182 = arg0.aByteArray26 != null && arg0.aByteArray26[local125] != 0 || local135 != -1 && !Pix3D.anInterface1_2.method3226(local135 & 0xFFFF);
 			if ((arg3 || local182) && arg0.aByteArray35 != null) {
 				local127 += arg0.aByteArray35[local125] << 17;
 			}
@@ -667,8 +667,8 @@ public final class GlModelLit extends ModelLit {
 		@Pc(161) int local161 = 0;
 		@Pc(163) int local163 = 0;
 		if (arg0 != 0) {
-			local161 = Pix3D.anIntArray223[arg0];
-			local163 = Pix3D.anIntArray225[arg0];
+			local161 = Pix3D.sinTable[arg0];
+			local163 = Pix3D.cosTable[arg0];
 		}
 		if (arg8 > 0L && Static39.aBoolean77 && local70 > 0) {
 			@Pc(187) int local187;
@@ -847,8 +847,8 @@ public final class GlModelLit extends ModelLit {
 	@OriginalMember(owner = "com.jagex3.client.client!td", name = "c", descriptor = "(I)V")
 	@Override
 	public final void method4564(@OriginalArg(0) int arg0) {
-		@Pc(3) int local3 = Pix3D.anIntArray223[arg0];
-		@Pc(7) int local7 = Pix3D.anIntArray225[arg0];
+		@Pc(3) int local3 = Pix3D.sinTable[arg0];
+		@Pc(7) int local7 = Pix3D.cosTable[arg0];
 		for (@Pc(9) int local9 = 0; local9 < this.anInt5295; local9++) {
 			@Pc(29) int local29 = this.anIntArray465[local9] * local3 + this.anIntArray461[local9] * local7 >> 16;
 			this.anIntArray465[local9] = this.anIntArray465[local9] * local7 - this.anIntArray461[local9] * local3 >> 16;
@@ -1108,8 +1108,8 @@ public final class GlModelLit extends ModelLit {
 	@OriginalMember(owner = "com.jagex3.client.client!td", name = "b", descriptor = "(I)V")
 	@Override
 	public final void method4554(@OriginalArg(0) int arg0) {
-		@Pc(3) int local3 = Pix3D.anIntArray223[arg0];
-		@Pc(7) int local7 = Pix3D.anIntArray225[arg0];
+		@Pc(3) int local3 = Pix3D.sinTable[arg0];
+		@Pc(7) int local7 = Pix3D.cosTable[arg0];
 		for (@Pc(9) int local9 = 0; local9 < this.anInt5295; local9++) {
 			@Pc(29) int local29 = this.anIntArray466[local9] * local3 + this.anIntArray461[local9] * local7 >> 16;
 			this.anIntArray466[local9] = this.anIntArray466[local9] * local7 - this.anIntArray461[local9] * local3 >> 16;
@@ -1228,22 +1228,22 @@ public final class GlModelLit extends ModelLit {
 								this.anIntArray465[local45] -= Static237.anInt5300;
 								this.anIntArray466[local45] -= Static237.anInt5299;
 								if (arg4 != 0) {
-									local53 = Pix3D.anIntArray223[arg4];
-									local343 = Pix3D.anIntArray225[arg4];
+									local53 = Pix3D.sinTable[arg4];
+									local343 = Pix3D.cosTable[arg4];
 									local365 = this.anIntArray465[local45] * local53 + this.anIntArray461[local45] * local343 + 32767 >> 16;
 									this.anIntArray465[local45] = this.anIntArray465[local45] * local343 + 32767 - this.anIntArray461[local45] * local53 >> 16;
 									this.anIntArray461[local45] = local365;
 								}
 								if (arg2 != 0) {
-									local53 = Pix3D.anIntArray223[arg2];
-									local343 = Pix3D.anIntArray225[arg2];
+									local53 = Pix3D.sinTable[arg2];
+									local343 = Pix3D.cosTable[arg2];
 									local365 = this.anIntArray465[local45] * local343 + 32767 - this.anIntArray466[local45] * local53 >> 16;
 									this.anIntArray466[local45] = this.anIntArray465[local45] * local53 + this.anIntArray466[local45] * local343 + 32767 >> 16;
 									this.anIntArray465[local45] = local365;
 								}
 								if (arg3 != 0) {
-									local53 = Pix3D.anIntArray223[arg3];
-									local343 = Pix3D.anIntArray225[arg3];
+									local53 = Pix3D.sinTable[arg3];
+									local343 = Pix3D.cosTable[arg3];
 									local365 = this.anIntArray466[local45] * local53 + this.anIntArray461[local45] * local343 + 32767 >> 16;
 									this.anIntArray466[local45] = this.anIntArray466[local45] * local343 + 32767 - this.anIntArray461[local45] * local53 >> 16;
 									this.anIntArray461[local45] = local365;
@@ -1271,22 +1271,22 @@ public final class GlModelLit extends ModelLit {
 											break;
 										}
 										if (arg4 != 0) {
-											local428 = Pix3D.anIntArray223[arg4];
-											local434 = Pix3D.anIntArray225[arg4];
+											local428 = Pix3D.sinTable[arg4];
+											local434 = Pix3D.cosTable[arg4];
 											local440 = this.aShortArray79[local387] * local428 + this.aShortArray76[local387] * local434 + 32767 >> 16;
 											this.aShortArray79[local387] = (short) (this.aShortArray79[local387] * local434 + 32767 - this.aShortArray76[local387] * local428 >> 16);
 											this.aShortArray76[local387] = (short) local440;
 										}
 										if (arg2 != 0) {
-											local428 = Pix3D.anIntArray223[arg2];
-											local434 = Pix3D.anIntArray225[arg2];
+											local428 = Pix3D.sinTable[arg2];
+											local434 = Pix3D.cosTable[arg2];
 											local440 = this.aShortArray79[local387] * local434 + 32767 - this.aShortArray85[local387] * local428 >> 16;
 											this.aShortArray85[local387] = (short) (this.aShortArray79[local387] * local428 + this.aShortArray85[local387] * local434 + 32767 >> 16);
 											this.aShortArray79[local387] = (short) local440;
 										}
 										if (arg3 != 0) {
-											local428 = Pix3D.anIntArray223[arg3];
-											local434 = Pix3D.anIntArray225[arg3];
+											local428 = Pix3D.sinTable[arg3];
+											local434 = Pix3D.cosTable[arg3];
 											local440 = this.aShortArray85[local387] * local428 + this.aShortArray76[local387] * local434 + 32767 >> 16;
 											this.aShortArray85[local387] = (short) (this.aShortArray85[local387] * local434 + 32767 - this.aShortArray76[local387] * local428 >> 16);
 											this.aShortArray76[local387] = (short) local440;
@@ -1320,12 +1320,12 @@ public final class GlModelLit extends ModelLit {
 					Static237.aBoolean260 = false;
 				}
 				@Pc(410) int[] local410 = new int[9];
-				local365 = Pix3D.anIntArray225[arg2] >> 1;
-				local387 = Pix3D.anIntArray223[arg2] >> 1;
-				local428 = Pix3D.anIntArray225[arg3] >> 1;
-				local434 = Pix3D.anIntArray223[arg3] >> 1;
-				local440 = Pix3D.anIntArray225[arg4] >> 1;
-				local446 = Pix3D.anIntArray223[arg4] >> 1;
+				local365 = Pix3D.cosTable[arg2] >> 1;
+				local387 = Pix3D.sinTable[arg2] >> 1;
+				local428 = Pix3D.cosTable[arg3] >> 1;
+				local434 = Pix3D.sinTable[arg3] >> 1;
+				local440 = Pix3D.cosTable[arg4] >> 1;
+				local446 = Pix3D.sinTable[arg4] >> 1;
 				local454 = local387 * local440 + 16384 >> 15;
 				local462 = local387 * local446 + 16384 >> 15;
 				local410[0] = local428 * local440 + local434 * local462 + 16384 >> 15;
@@ -1553,7 +1553,7 @@ public final class GlModelLit extends ModelLit {
 
 	@OriginalMember(owner = "com.jagex3.client.client!td", name = "b", descriptor = "()I")
 	@Override
-	public final int method4549() {
+	public final int calcBoundingCylinder() {
 		if (!this.aGlBoundingBox_1.aBoolean3) {
 			this.method4108();
 		}
@@ -1745,14 +1745,14 @@ public final class GlModelLit extends ModelLit {
 		local1 = 0;
 		@Pc(22) int local22 = 0;
 		if (arg0 != -1) {
-			local1 = Rasteriser.anInterface1_2.method3238(arg0 & 0xFFFF);
-			local22 = Rasteriser.anInterface1_2.method3229(arg0 & 0xFFFF);
+			local1 = Pix3D.anInterface1_2.method3238(arg0 & 0xFFFF);
+			local22 = Pix3D.anInterface1_2.method3229(arg0 & 0xFFFF);
 		}
 		@Pc(41) int local41 = 0;
 		@Pc(43) int local43 = 0;
 		if (arg1 != -1) {
-			local41 = Rasteriser.anInterface1_2.method3238(arg1 & 0xFFFF);
-			local43 = Rasteriser.anInterface1_2.method3229(arg1 & 0xFFFF);
+			local41 = Pix3D.anInterface1_2.method3238(arg1 & 0xFFFF);
+			local43 = Pix3D.anInterface1_2.method3229(arg1 & 0xFFFF);
 		}
 		if (local1 != local41 || local22 != local43) {
 			this.aClass127_1.aBoolean235 = false;
@@ -2698,22 +2698,22 @@ public final class GlModelLit extends ModelLit {
 						this.anIntArray465[local45] -= Static237.anInt5300;
 						this.anIntArray466[local45] -= Static237.anInt5299;
 						if (arg4 != 0) {
-							local53 = Pix3D.anIntArray223[arg4];
-							local246 = Pix3D.anIntArray225[arg4];
+							local53 = Pix3D.sinTable[arg4];
+							local246 = Pix3D.cosTable[arg4];
 							local264 = this.anIntArray465[local45] * local53 + this.anIntArray461[local45] * local246 + 32767 >> 16;
 							this.anIntArray465[local45] = this.anIntArray465[local45] * local246 + 32767 - this.anIntArray461[local45] * local53 >> 16;
 							this.anIntArray461[local45] = local264;
 						}
 						if (arg2 != 0) {
-							local53 = Pix3D.anIntArray223[arg2];
-							local246 = Pix3D.anIntArray225[arg2];
+							local53 = Pix3D.sinTable[arg2];
+							local246 = Pix3D.cosTable[arg2];
 							local264 = this.anIntArray465[local45] * local246 + 32767 - this.anIntArray466[local45] * local53 >> 16;
 							this.anIntArray466[local45] = this.anIntArray465[local45] * local53 + this.anIntArray466[local45] * local246 + 32767 >> 16;
 							this.anIntArray465[local45] = local264;
 						}
 						if (arg3 != 0) {
-							local53 = Pix3D.anIntArray223[arg3];
-							local246 = Pix3D.anIntArray225[arg3];
+							local53 = Pix3D.sinTable[arg3];
+							local246 = Pix3D.cosTable[arg3];
 							local264 = this.anIntArray466[local45] * local53 + this.anIntArray461[local45] * local246 + 32767 >> 16;
 							this.anIntArray466[local45] = this.anIntArray466[local45] * local246 + 32767 - this.anIntArray461[local45] * local53 >> 16;
 							this.anIntArray461[local45] = local264;
@@ -2742,22 +2742,22 @@ public final class GlModelLit extends ModelLit {
 								@Pc(498) int local498;
 								@Pc(516) int local516;
 								if (arg4 != 0) {
-									local494 = Pix3D.anIntArray223[arg4];
-									local498 = Pix3D.anIntArray225[arg4];
+									local494 = Pix3D.sinTable[arg4];
+									local498 = Pix3D.cosTable[arg4];
 									local516 = this.aShortArray79[local484] * local494 + this.aShortArray76[local484] * local498 + 32767 >> 16;
 									this.aShortArray79[local484] = (short) (this.aShortArray79[local484] * local498 + 32767 - this.aShortArray76[local484] * local494 >> 16);
 									this.aShortArray76[local484] = (short) local516;
 								}
 								if (arg2 != 0) {
-									local494 = Pix3D.anIntArray223[arg2];
-									local498 = Pix3D.anIntArray225[arg2];
+									local494 = Pix3D.sinTable[arg2];
+									local498 = Pix3D.cosTable[arg2];
 									local516 = this.aShortArray79[local484] * local498 + 32767 - this.aShortArray85[local484] * local494 >> 16;
 									this.aShortArray85[local484] = (short) (this.aShortArray79[local484] * local494 + this.aShortArray85[local484] * local498 + 32767 >> 16);
 									this.aShortArray79[local484] = (short) local516;
 								}
 								if (arg3 != 0) {
-									local494 = Pix3D.anIntArray223[arg3];
-									local498 = Pix3D.anIntArray225[arg3];
+									local494 = Pix3D.sinTable[arg3];
+									local498 = Pix3D.cosTable[arg3];
 									local516 = this.aShortArray85[local484] * local494 + this.aShortArray76[local484] * local498 + 32767 >> 16;
 									this.aShortArray85[local484] = (short) (this.aShortArray85[local484] * local498 + 32767 - this.aShortArray76[local484] * local494 >> 16);
 									this.aShortArray76[local484] = (short) local516;
@@ -2885,22 +2885,22 @@ public final class GlModelLit extends ModelLit {
 					this.anIntArray465[local3] -= Static237.anInt5300;
 					this.anIntArray466[local3] -= Static237.anInt5299;
 					if (arg3 != 0) {
-						local11 = Pix3D.anIntArray223[arg3];
-						local146 = Pix3D.anIntArray225[arg3];
+						local11 = Pix3D.sinTable[arg3];
+						local146 = Pix3D.cosTable[arg3];
 						local164 = this.anIntArray465[local3] * local11 + this.anIntArray461[local3] * local146 + 32767 >> 16;
 						this.anIntArray465[local3] = this.anIntArray465[local3] * local146 + 32767 - this.anIntArray461[local3] * local11 >> 16;
 						this.anIntArray461[local3] = local164;
 					}
 					if (arg1 != 0) {
-						local11 = Pix3D.anIntArray223[arg1];
-						local146 = Pix3D.anIntArray225[arg1];
+						local11 = Pix3D.sinTable[arg1];
+						local146 = Pix3D.cosTable[arg1];
 						local164 = this.anIntArray465[local3] * local146 + 32767 - this.anIntArray466[local3] * local11 >> 16;
 						this.anIntArray466[local3] = this.anIntArray465[local3] * local11 + this.anIntArray466[local3] * local146 + 32767 >> 16;
 						this.anIntArray465[local3] = local164;
 					}
 					if (arg2 != 0) {
-						local11 = Pix3D.anIntArray223[arg2];
-						local146 = Pix3D.anIntArray225[arg2];
+						local11 = Pix3D.sinTable[arg2];
+						local146 = Pix3D.cosTable[arg2];
 						local164 = this.anIntArray466[local3] * local11 + this.anIntArray461[local3] * local146 + 32767 >> 16;
 						this.anIntArray466[local3] = this.anIntArray466[local3] * local146 + 32767 - this.anIntArray461[local3] * local11 >> 16;
 						this.anIntArray461[local3] = local164;
@@ -3072,7 +3072,7 @@ public final class GlModelLit extends ModelLit {
 				GlRenderer.setTextureId(-1);
 				Static27.setMaterial(0, 0);
 			} else {
-				Rasteriser.anInterface1_2.method3227(local439 & 0xFFFF);
+				Pix3D.anInterface1_2.method3227(local439 & 0xFFFF);
 			}
 			if (this.aClass127_5.aClass155_4 == null) {
 				this.aClass127_5.aByteBuffer8.position(local427 * 12);
@@ -3122,8 +3122,8 @@ public final class GlModelLit extends ModelLit {
 	@OriginalMember(owner = "com.jagex3.client.client!td", name = "d", descriptor = "(I)V")
 	@Override
 	public final void method4574(@OriginalArg(0) int arg0) {
-		@Pc(3) int local3 = Pix3D.anIntArray223[arg0];
-		@Pc(7) int local7 = Pix3D.anIntArray225[arg0];
+		@Pc(3) int local3 = Pix3D.sinTable[arg0];
+		@Pc(7) int local7 = Pix3D.cosTable[arg0];
 		for (@Pc(9) int local9 = 0; local9 < this.anInt5295; local9++) {
 			@Pc(29) int local29 = this.anIntArray465[local9] * local7 - this.anIntArray466[local9] * local3 >> 16;
 			this.anIntArray466[local9] = this.anIntArray465[local9] * local3 + this.anIntArray466[local9] * local7 >> 16;
@@ -3139,8 +3139,8 @@ public final class GlModelLit extends ModelLit {
 			this.method4554(256);
 			return;
 		}
-		@Pc(10) int local10 = Pix3D.anIntArray223[256];
-		@Pc(14) int local14 = Pix3D.anIntArray225[256];
+		@Pc(10) int local10 = Pix3D.sinTable[256];
+		@Pc(14) int local14 = Pix3D.cosTable[256];
 		@Pc(16) int local16;
 		@Pc(36) int local36;
 		for (local16 = 0; local16 < this.anInt5295; local16++) {

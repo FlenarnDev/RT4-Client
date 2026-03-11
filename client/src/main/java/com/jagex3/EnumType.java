@@ -57,7 +57,7 @@ public final class EnumType extends DoubleLinkable {
 				} else {
 					local70 = new IntNode(arg1.g4());
 				}
-				this.aClass133_16.method3862(local70, (long) local58);
+				this.aClass133_16.put(local70, (long) local58);
 			}
 		}
 	}
@@ -67,7 +67,7 @@ public final class EnumType extends DoubleLinkable {
 		if (this.aClass133_16 == null) {
 			return this.aClass100_766;
 		} else {
-			@Pc(26) StringNode local26 = (StringNode) this.aClass133_16.method3863((long) arg0);
+			@Pc(26) StringNode local26 = (StringNode) this.aClass133_16.find((long) arg0);
 			return local26 == null ? this.aClass100_766 : local26.aClass100_980;
 		}
 	}
@@ -80,8 +80,8 @@ public final class EnumType extends DoubleLinkable {
 		if (this.aClass133_17 == null) {
 			this.method3087();
 		}
-		for (@Pc(38) EnumStringNode local38 = (EnumStringNode) this.aClass133_17.method3863(arg0.method3118()); local38 != null; local38 = (EnumStringNode) this.aClass133_17.method3867()) {
-			if (local38.aClass100_503.method3108(arg0)) {
+		for (@Pc(38) EnumStringNode local38 = (EnumStringNode) this.aClass133_17.find(arg0.method3118()); local38 != null; local38 = (EnumStringNode) this.aClass133_17.method3867()) {
+			if (local38.aClass100_503.equalsInner(arg0)) {
 				return true;
 			}
 		}
@@ -91,9 +91,9 @@ public final class EnumType extends DoubleLinkable {
 	@OriginalMember(owner = "com.jagex3.client.client!ml", name = "d", descriptor = "(I)V")
 	private void method3087() {
 		this.aClass133_17 = new HashTable(this.aClass133_16.method3868());
-		for (@Pc(22) StringNode local22 = (StringNode) this.aClass133_16.method3859(); local22 != null; local22 = (StringNode) this.aClass133_16.method3861()) {
-			@Pc(36) EnumStringNode local36 = new EnumStringNode(local22.aClass100_980, (int) local22.aLong192);
-			this.aClass133_17.method3862(local36, local22.aClass100_980.method3118());
+		for (@Pc(22) StringNode local22 = (StringNode) this.aClass133_16.search(); local22 != null; local22 = (StringNode) this.aClass133_16.find()) {
+			@Pc(36) EnumStringNode local36 = new EnumStringNode(local22.aClass100_980, (int) local22.key);
+			this.aClass133_17.put(local36, local22.aClass100_980.method3118());
 		}
 	}
 
@@ -102,7 +102,7 @@ public final class EnumType extends DoubleLinkable {
 		if (this.aClass133_16 == null) {
 			return this.anInt3960;
 		} else {
-			@Pc(18) IntNode local18 = (IntNode) this.aClass133_16.method3863((long) arg0);
+			@Pc(18) IntNode local18 = (IntNode) this.aClass133_16.find((long) arg0);
 			return local18 == null ? this.anInt3960 : local18.anInt3141;
 		}
 	}
@@ -115,16 +115,16 @@ public final class EnumType extends DoubleLinkable {
 		if (this.aClass133_17 == null) {
 			this.method3091();
 		}
-		@Pc(34) IntNode local34 = (IntNode) this.aClass133_17.method3863((long) arg0);
+		@Pc(34) IntNode local34 = (IntNode) this.aClass133_17.find((long) arg0);
 		return local34 != null;
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ml", name = "e", descriptor = "(I)V")
 	private void method3091() {
 		this.aClass133_17 = new HashTable(this.aClass133_16.method3868());
-		for (@Pc(24) IntNode local24 = (IntNode) this.aClass133_16.method3859(); local24 != null; local24 = (IntNode) this.aClass133_16.method3861()) {
-			@Pc(34) IntNode local34 = new IntNode((int) local24.aLong192);
-			this.aClass133_17.method3862(local34, (long) local24.anInt3141);
+		for (@Pc(24) IntNode local24 = (IntNode) this.aClass133_16.search(); local24 != null; local24 = (IntNode) this.aClass133_16.find()) {
+			@Pc(34) IntNode local34 = new IntNode((int) local24.key);
+			this.aClass133_17.put(local34, (long) local24.anInt3141);
 		}
 	}
 

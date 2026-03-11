@@ -1,6 +1,6 @@
 package com.jagex3;
 
-import deob.Static77;
+import deob.Static67;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -33,13 +33,28 @@ public final class IdkType {
 	@OriginalMember(owner = "com.jagex3.client.client!dm", name = "A", descriptor = "Z")
 	public boolean aBoolean85 = false;
 
-	@OriginalMember(owner = "com.jagex3.client.client!dm", name = "a", descriptor = "(Z)Lclient!gb;")
+    @OriginalMember(owner = "com.jagex3.client.client!oi", name = "a", descriptor = "(I)V")
+    public static void method3342() {
+        Static67.aClass99_20.clear();
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!te", name = "a", descriptor = "(IZ)V")
+    public static void method4142() {
+        Static67.aClass99_20.method3102(5);
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!t", name = "b", descriptor = "(I)V")
+    public static void method3999() {
+        Static67.aClass99_20.method3104();
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!dm", name = "a", descriptor = "(Z)Lclient!gb;")
 	public final ModelUnlit method1198() {
 		@Pc(13) int local13 = 0;
 		@Pc(16) ModelUnlit[] local16 = new ModelUnlit[5];
 		for (@Pc(18) int local18 = 0; local18 < 5; local18++) {
 			if (this.anIntArray113[local18] != -1) {
-				local16[local13++] = Static77.method1686(FluType.aClass153_8, this.anIntArray113[local18]);
+				local16[local13++] = ModelUnlit.method1686(FluType.aClass153_8, this.anIntArray113[local18]);
 			}
 		}
 		@Pc(52) ModelUnlit local52 = new ModelUnlit(local16, local13);
@@ -115,7 +130,7 @@ public final class IdkType {
 		}
 		@Pc(16) ModelUnlit[] local16 = new ModelUnlit[this.anIntArray112.length];
 		for (@Pc(18) int local18 = 0; local18 < this.anIntArray112.length; local18++) {
-			local16[local18] = Static77.method1686(FluType.aClass153_8, this.anIntArray112[local18]);
+			local16[local18] = ModelUnlit.method1686(FluType.aClass153_8, this.anIntArray112[local18]);
 		}
 		@Pc(56) ModelUnlit local56;
 		if (local16.length == 1) {

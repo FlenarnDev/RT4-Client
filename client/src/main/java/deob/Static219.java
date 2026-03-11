@@ -2,10 +2,8 @@ package deob;
 
 import com.jagex3.AbstractPix32;
 import com.jagex3.JagString;
-import com.jagex3.LocChange;
 import com.jagex3.SoftLruCache;
 import org.openrs2.deob.annotation.OriginalMember;
-import org.openrs2.deob.annotation.Pc;
 
 public final class Static219 {
 
@@ -27,10 +25,7 @@ public final class Static219 {
 	@OriginalMember(owner = "com.jagex3.client.client!rl", name = "W", descriptor = "Lclient!na;")
 	private static final JagString aClass100_923 = Static28.parse("Fri");
 
-	@OriginalMember(owner = "com.jagex3.client.client!rl", name = "X", descriptor = "I")
-	public static int anInt4937 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!rl", name = "db", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!rl", name = "db", descriptor = "Lclient!na;")
 	private static final JagString aClass100_927 = Static28.parse("Sun");
 
 	@OriginalMember(owner = "com.jagex3.client.client!rl", name = "cb", descriptor = "Lclient!na;")
@@ -51,15 +46,4 @@ public final class Static219 {
 	@OriginalMember(owner = "com.jagex3.client.client!rl", name = "eb", descriptor = "Lclient!na;")
 	public static final JagString aClass100_928 = Static28.parse("(U0a )2 in: ");
 
-	@OriginalMember(owner = "com.jagex3.client.client!rl", name = "i", descriptor = "(I)V")
-	public static void method3796() {
-		for (@Pc(10) LocChange local10 = (LocChange) Static26.aClass69_27.method2289(); local10 != null; local10 = (LocChange) Static26.aClass69_27.method2288()) {
-			if (local10.anInt924 == -1) {
-				local10.anInt925 = 0;
-				Static226.method3898(local10);
-			} else {
-				local10.method4658();
-			}
-		}
-	}
 }
