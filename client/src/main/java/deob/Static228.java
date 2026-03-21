@@ -1,5 +1,7 @@
 package deob;
 
+import com.jagex3.JagString;
+import com.jagex3.LinkList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -7,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static228 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!sh", name = "a", descriptor = "Lclient!ih;")
-	public static final LinkedList aClass69_120 = new LinkedList();
+	public static final LinkList aClass69_120 = new LinkList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!sh", name = "c", descriptor = "I")
 	public static int anInt5101 = 0;
@@ -15,10 +17,7 @@ public final class Static228 {
 	@OriginalMember(owner = "com.jagex3.client.client!sh", name = "e", descriptor = "Lclient!na;")
 	public static final JagString aClass100_967 = Static28.parse("");
 
-	@OriginalMember(owner = "com.jagex3.client.client!sh", name = "f", descriptor = "I")
-	public static int anInt5103 = -1;
-
-	@OriginalMember(owner = "com.jagex3.client.client!sh", name = "h", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!sh", name = "h", descriptor = "I")
 	public static int anInt5105 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!sh", name = "i", descriptor = "[[I")

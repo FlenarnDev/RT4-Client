@@ -1,5 +1,8 @@
 package deob;
 
+import com.jagex3.Floor;
+import com.jagex3.JagVorbis;
+import com.jagex3.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -46,7 +49,7 @@ public final class Static117 {
 	public static VorbisCodebook[] aClass78Array1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jc", name = "J", descriptor = "[Lclient!ie;")
-	public static Class67[] aClass67Array1;
+	public static Floor[] aFloorArray1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jc", name = "L", descriptor = "[I")
 	public static int[] anIntArray277;
@@ -94,10 +97,10 @@ public final class Static117 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!jc", name = "a", descriptor = "(Lclient!ve;II)Lclient!jc;")
-	public static VorbisSound method2345(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	public static JagVorbis method2345(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (method2344(arg0)) {
 			@Pc(16) byte[] local16 = arg0.method4495(arg1, arg2);
-			return local16 == null ? null : new VorbisSound(local16);
+			return local16 == null ? null : new JagVorbis(local16);
 		} else {
 			arg0.method4491(arg2, arg1);
 			return null;
@@ -178,9 +181,9 @@ public final class Static117 {
 			method2350(16);
 		}
 		local26 = method2350(6) + 1;
-		aClass67Array1 = new Class67[local26];
+		aFloorArray1 = new Floor[local26];
 		for (local30 = 0; local30 < local26; local30++) {
-			aClass67Array1[local30] = new Class67();
+			aFloorArray1[local30] = new Floor();
 		}
 		local30 = method2350(6) + 1;
 		aClass152Array1 = new VorbisResidue[local30];

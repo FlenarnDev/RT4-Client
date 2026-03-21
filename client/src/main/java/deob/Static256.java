@@ -1,34 +1,18 @@
 package deob;
 
+import com.jagex3.FloType;
+import com.jagex3.Occlude;
+import com.jagex3.Packet;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 public final class Static256 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!um", name = "U", descriptor = "Lclient!dd;")
-	public static SoftwareFont aClass3_Sub2_Sub9_Sub1_1;
-
-	@OriginalMember(owner = "com.jagex3.client.client!um", name = "a", descriptor = "(Z)V")
-	public static void method4392() {
-		Static11.anInt384 = 0;
-		@Pc(17) int local17 = Static225.originX + (Static173.self.anInt3412 >> 7);
-		@Pc(25) int local25 = (Static173.self.anInt3421 >> 7) + Static142.originZ;
-		if (local17 >= 3053 && local17 <= 3156 && local25 >= 3056 && local25 <= 3136) {
-			Static11.anInt384 = 1;
-		}
-		if (local17 >= 3072 && local17 <= 3118 && local25 >= 9492 && local25 <= 9535) {
-			Static11.anInt384 = 1;
-		}
-		if (Static11.anInt384 == 1 && local17 >= 3139 && local17 <= 3199 && local25 >= 3008 && local25 <= 3062) {
-			Static11.anInt384 = 0;
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!um", name = "c", descriptor = "(III)Z")
+    @OriginalMember(owner = "com.jagex3.client.client!um", name = "c", descriptor = "(III)Z")
 	public static boolean method4394(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		for (@Pc(1) int local1 = 0; local1 < Static215.anInt4870; local1++) {
-			@Pc(8) Class120 local8 = Static247.aClass120Array2[local1];
+			@Pc(8) Occlude local8 = Static247.aOccludeArray2[local1];
 			@Pc(17) int local17;
 			@Pc(29) int local29;
 			@Pc(39) int local39;
@@ -100,7 +84,7 @@ public final class Static256 {
 		if (local6 != null) {
 			return local6;
 		}
-		@Pc(30) byte[] local30 = Static35.aClass153_22.method4495(4, arg0);
+		@Pc(30) byte[] local30 = FloType.clientConfig.method4495(4, arg0);
 		local6 = new FloType();
 		if (local30 != null) {
 			local6.method4669(new Packet(local30), arg0);

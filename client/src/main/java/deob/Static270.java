@@ -1,5 +1,8 @@
 package deob;
 
+import com.jagex3.GWCWorld;
+import com.jagex3.JagString;
+import com.jagex3.Packet;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -18,13 +21,7 @@ public final class Static270 {
 	@OriginalMember(owner = "com.jagex3.client.client!wb", name = "c", descriptor = "I")
 	public static int anInt5794 = -1;
 
-	@OriginalMember(owner = "com.jagex3.client.client!wb", name = "d", descriptor = "I")
-	public static int anInt5795 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!wb", name = "e", descriptor = "Lclient!na;")
-	public static final JagString aClass100_1090 = Static28.parse("l");
-
-	@OriginalMember(owner = "com.jagex3.client.client!wb", name = "f", descriptor = "Lclient!wa;")
+    @OriginalMember(owner = "com.jagex3.client.client!wb", name = "f", descriptor = "Lclient!wa;")
 	public static final Packet aClass3_Sub15_9 = new Packet(new byte[5000]);
 
 	@OriginalMember(owner = "com.jagex3.client.client!wb", name = "j", descriptor = "Lclient!na;")
@@ -136,7 +133,7 @@ public final class Static270 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!wb", name = "a", descriptor = "(Lclient!ba;IILclient!ba;Z)I")
-	public static int method4595(@OriginalArg(0) World arg0, @OriginalArg(1) int arg1, @OriginalArg(3) World arg2, @OriginalArg(4) boolean arg3) {
+	public static int method4595(@OriginalArg(0) GWCWorld arg0, @OriginalArg(1) int arg1, @OriginalArg(3) GWCWorld arg2, @OriginalArg(4) boolean arg3) {
 		if (arg1 == 1) {
 			@Pc(11) int local11 = arg0.anInt379;
 			@Pc(14) int local14 = arg2.anInt379;
@@ -152,15 +149,15 @@ public final class Static270 {
 		} else if (arg1 == 2) {
 			return arg0.method445().aClass100_378.method3126(arg2.method445().aClass100_378);
 		} else if (arg1 == 3) {
-			if (arg0.aClass100_69.method3108(Static111.aClass100_570)) {
-				if (arg2.aClass100_69.method3108(Static111.aClass100_570)) {
+			if (arg0.aClass100_69.equalsInner(Static111.aClass100_570)) {
+				if (arg2.aClass100_69.equalsInner(Static111.aClass100_570)) {
 					return 0;
 				} else if (arg3) {
 					return -1;
 				} else {
 					return 1;
 				}
-			} else if (arg2.aClass100_69.method3108(Static111.aClass100_570)) {
+			} else if (arg2.aClass100_69.equalsInner(Static111.aClass100_570)) {
 				return arg3 ? 1 : -1;
 			} else {
 				return arg0.aClass100_69.method3126(arg2.aClass100_69);

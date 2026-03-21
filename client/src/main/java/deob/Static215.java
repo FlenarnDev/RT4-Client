@@ -1,6 +1,7 @@
 package deob;
 
-import com.jagex3.client.Client;
+import com.jagex3.PixFontGeneric;
+import com.jagex3.secondaryLinkList;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static215 {
@@ -12,21 +13,15 @@ public final class Static215 {
 	public static int anInt4866;
 
 	@OriginalMember(owner = "com.jagex3.client.client!rh", name = "h", descriptor = "Lclient!rk;")
-	public static Font aClass3_Sub2_Sub9_32;
+	public static PixFontGeneric aClass3_Sub2_Sub9_32;
 
-	@OriginalMember(owner = "com.jagex3.client.client!rh", name = "j", descriptor = "Lclient!com.jagex3.client.client;")
-	public static Client aClient1;
-
-	@OriginalMember(owner = "com.jagex3.client.client!rh", name = "e", descriptor = "Lclient!ce;")
-	public static final SecondaryLinkedList aClass16_9 = new SecondaryLinkedList();
+    @OriginalMember(owner = "com.jagex3.client.client!rh", name = "e", descriptor = "Lclient!ce;")
+	public static final secondaryLinkList aClass16_9 = new secondaryLinkList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!rh", name = "g", descriptor = "I")
 	public static final int anInt4868 = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!rh", name = "k", descriptor = "I")
 	public static int anInt4870 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!rh", name = "o", descriptor = "I")
-	public static int anInt4873 = 0;
 
 }

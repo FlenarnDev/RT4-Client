@@ -1,5 +1,8 @@
 package deob;
 
+import com.jagex3.JagString;
+import com.jagex3.MaterialRenderer;
+import com.jagex3.SoftLruCache;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -7,13 +10,10 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static27 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!cb", name = "hb", descriptor = "Lclient!le;")
-	public static SoundBank aClass89_1;
+	public static WaveCache aClass89_1;
 
-	@OriginalMember(owner = "com.jagex3.client.client!cb", name = "I", descriptor = "[I")
-	public static final int[] anIntArray70 = new int[32];
-
-	@OriginalMember(owner = "com.jagex3.client.client!cb", name = "Y", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_4 = new SoftLruHashTable(64);
+    @OriginalMember(owner = "com.jagex3.client.client!cb", name = "Y", descriptor = "Lclient!n;")
+	public static final SoftLruCache aClass99_4 = new SoftLruCache(64);
 
 	@OriginalMember(owner = "com.jagex3.client.client!cb", name = "ab", descriptor = "Lclient!na;")
 	public static final JagString aClass100_164 = Static28.parse(" )2> <col=00ffff>");

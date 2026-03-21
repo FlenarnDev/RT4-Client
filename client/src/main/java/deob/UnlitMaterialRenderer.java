@@ -1,5 +1,7 @@
 package deob;
 
+import com.jagex3.GlRenderer;
+import com.jagex3.MaterialRenderer;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;

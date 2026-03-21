@@ -1,40 +1,25 @@
 package deob;
 
+import com.jagex3.Js5;
+import com.jagex3.LinkList;
+import com.jagex3.MidiPlayer;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 public final class Static172 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "c", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_69;
+    @OriginalMember(owner = "com.jagex3.client.client!nj", name = "e", descriptor = "Lclient!va;")
+	public static MidiPlayer aClass3_Sub3_Sub4_2;
 
-	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "e", descriptor = "Lclient!va;")
-	public static MidiPcmStream aClass3_Sub3_Sub4_2;
-
-	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "f", descriptor = "Lclient!en;")
-	public static BufferedFile cacheData;
-
-	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "g", descriptor = "Lclient!ve;")
+    @OriginalMember(owner = "com.jagex3.client.client!nj", name = "g", descriptor = "Lclient!ve;")
 	public static Js5 aClass153_70;
 
-	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "j", descriptor = "[I")
-	public static int[] anIntArray366;
-
-	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "k", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!nj", name = "k", descriptor = "I")
 	public static int anInt4165;
 
-	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "l", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_71;
-
-	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "m", descriptor = "[[S")
-	public static short[][] aShortArrayArray7;
-
-	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "a", descriptor = "Z")
-	public static boolean shiftClick = false;
-
-	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "h", descriptor = "Lclient!ih;")
-	public static final LinkedList aClass69_97 = new LinkedList();
+    @OriginalMember(owner = "com.jagex3.client.client!nj", name = "h", descriptor = "Lclient!ih;")
+	public static final LinkList aClass69_97 = new LinkList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!nj", name = "i", descriptor = "I")
 	public static int anInt4164 = 0;

@@ -1,6 +1,8 @@
 package deob;
 
-import com.jagex.signlink.PrivilegedRequest;
+import com.jagex3.AnimFrameset;
+import com.jagex3.JagString;
+import com.jagex3.SeqType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -10,31 +12,13 @@ public final class Static72 {
 	@OriginalMember(owner = "com.jagex3.client.client!fl", name = "u", descriptor = "Z")
 	public static boolean aBoolean116;
 
-	@OriginalMember(owner = "com.jagex3.client.client!fl", name = "C", descriptor = "Lsignlink!im;")
-	public static PrivilegedRequest aClass212_3;
-
-	@OriginalMember(owner = "com.jagex3.client.client!fl", name = "D", descriptor = "[[I")
-	public static int[][] anIntArrayArray14;
-
-	@OriginalMember(owner = "com.jagex3.client.client!fl", name = "U", descriptor = "I")
-	public static int anInt2046;
-
-	@OriginalMember(owner = "com.jagex3.client.client!fl", name = "s", descriptor = "I")
-	public static int anInt2031 = 128;
-
-	@OriginalMember(owner = "com.jagex3.client.client!fl", name = "w", descriptor = "J")
+    @OriginalMember(owner = "com.jagex3.client.client!fl", name = "w", descriptor = "J")
 	public static long aLong74 = 0L;
 
-	@OriginalMember(owner = "com.jagex3.client.client!fl", name = "B", descriptor = "I")
-	public static int updatedVarcstrsWriterIndex = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!fl", name = "H", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!fl", name = "H", descriptor = "Lclient!na;")
 	public static final JagString aClass100_446 = Static28.parse("<img=0>");
 
-	@OriginalMember(owner = "com.jagex3.client.client!fl", name = "P", descriptor = "I")
-	public static int anInt2043 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!fl", name = "Q", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!fl", name = "Q", descriptor = "Lclient!na;")
 	public static final JagString aClass100_447 = Static28.parse("");
 
 	@OriginalMember(owner = "com.jagex3.client.client!fl", name = "V", descriptor = "Lclient!na;")
@@ -46,7 +30,7 @@ public final class Static72 {
 		if (local19 != null) {
 			return local19;
 		}
-		local19 = Static87.method1803(Static225.aClass153_92, Static5.aClass153_1, arg0);
+		local19 = Static87.method1803(SeqType.anims, SeqType.bases, arg0);
 		if (local19 != null) {
 			Static267.aClass99_37.method3095(local19, (long) arg0);
 		}
@@ -102,9 +86,4 @@ public final class Static72 {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!fl", name = "a", descriptor = "(IB)V")
-	public static void method1570() {
-		Static142.aClass99_23.method3102(5);
-		Static267.aClass99_37.method3102(5);
-	}
 }

@@ -1,5 +1,8 @@
 package deob;
 
+import com.jagex3.HashTable;
+import com.jagex3.JagString;
+import com.jagex3.VarCache;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -15,23 +18,7 @@ public final class Static8 {
 	@OriginalMember(owner = "com.jagex3.client.client!aj", name = "R", descriptor = "Lclient!na;")
 	public static final JagString aClass100_32 = Static28.parse("<col=ff9040>");
 
-	@OriginalMember(owner = "com.jagex3.client.client!aj", name = "a", descriptor = "(BILclient!be;)I")
-	public static int method118(@OriginalArg(1) int arg0, @OriginalArg(2) Component arg1) {
-		if (!Static36.method940(arg1).method503(arg0) && arg1.anObjectArray29 == null) {
-			return -1;
-		} else if (arg1.anIntArray39 == null || arg0 >= arg1.anIntArray39.length) {
-			return -1;
-		} else {
-			return arg1.anIntArray39[arg0];
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!aj", name = "c", descriptor = "(II)V")
-	public static void method119() {
-		Static233.aClass99_31.method3102(5);
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!aj", name = "a", descriptor = "(IIIZIII)V")
+    @OriginalMember(owner = "com.jagex3.client.client!aj", name = "a", descriptor = "(IIIZIII)V")
 	public static void method120(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
 		Static251.method4278(arg4);
 		@Pc(8) int local8 = arg4 - arg1;
@@ -118,11 +105,11 @@ public final class Static8 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!aj", name = "i", descriptor = "(I)V")
 	public static void method121() {
-		for (@Pc(3) int local3 = 0; local3 < Static165.anInt4043; local3++) {
-			@Pc(19) Class35 local19 = Static247.method4248(local3);
-			if (local19 != null && local19.anInt1765 == 0) {
-				Static106.anIntArray257[local3] = 0;
-				Static7.anIntArray75[local3] = 0;
+		for (@Pc(3) int local3 = 0; local3 < VarpType.numDefinitions; local3++) {
+			@Pc(19) VarpType local19 = VarpType.list(local3);
+			if (local19 != null && local19.clientcode == 0) {
+				VarCache.varServ[local3] = 0;
+				VarCache.var[local3] = 0;
 			}
 		}
 		Static199.aClass133_20 = new HashTable(16);

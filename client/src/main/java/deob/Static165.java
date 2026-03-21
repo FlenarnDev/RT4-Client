@@ -1,5 +1,7 @@
 package deob;
 
+import com.jagex3.AbstractPix32;
+import com.jagex3.JagString;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -10,21 +12,12 @@ public final class Static165 {
 	public static int anInt4038;
 
 	@OriginalMember(owner = "com.jagex3.client.client!nb", name = "i", descriptor = "Lclient!qf;")
-	public static Sprite aClass3_Sub2_Sub1_8;
+	public static AbstractPix32 aClass3_Sub2_Sub1_8;
 
 	@OriginalMember(owner = "com.jagex3.client.client!nb", name = "o", descriptor = "I")
 	public static int anInt4042;
 
-	@OriginalMember(owner = "com.jagex3.client.client!nb", name = "p", descriptor = "I")
-	public static int anInt4043;
-
-	@OriginalMember(owner = "com.jagex3.client.client!nb", name = "a", descriptor = "Lclient!na;")
-	public static final JagString aClass100_772 = Static28.parse("um");
-
-	@OriginalMember(owner = "com.jagex3.client.client!nb", name = "d", descriptor = "I")
-	public static int anInt4035 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!nb", name = "e", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!nb", name = "e", descriptor = "Lclient!na;")
 	public static final JagString aClass100_775 = Static28.parse("::breakcon");
 
 	@OriginalMember(owner = "com.jagex3.client.client!nb", name = "j", descriptor = "I")

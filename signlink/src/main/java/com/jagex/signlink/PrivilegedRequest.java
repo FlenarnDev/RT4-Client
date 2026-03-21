@@ -19,7 +19,7 @@ public final class PrivilegedRequest {
 	public Object anObject7;
 
 	@OriginalMember(owner = "signlink!im", name = "a", descriptor = "I")
-	public int anInt5926;
+	public int intArg;
 
 	@OriginalMember(owner = "signlink!im", name = "g", descriptor = "I")
 	public int anInt5927;

@@ -1,5 +1,9 @@
 package deob;
 
+import com.jagex3.GlRenderer;
+import com.jagex3.JagString;
+import com.jagex3.Packet;
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -9,10 +13,7 @@ public final class Static115 {
 	@OriginalMember(owner = "com.jagex3.client.client!ja", name = "q", descriptor = "I")
 	public static int anInt2940;
 
-	@OriginalMember(owner = "com.jagex3.client.client!ja", name = "f", descriptor = "Lclient!ih;")
-	public static final LinkedList aClass69_70 = new LinkedList();
-
-	@OriginalMember(owner = "com.jagex3.client.client!ja", name = "j", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!ja", name = "j", descriptor = "I")
 	public static int anInt2937 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ja", name = "k", descriptor = "Lclient!na;")
@@ -21,10 +22,7 @@ public final class Static115 {
 	@OriginalMember(owner = "com.jagex3.client.client!ja", name = "l", descriptor = "[Lclient!wa;")
 	public static final Packet[] aClass3_Sub15Array1 = new Packet[2048];
 
-	@OriginalMember(owner = "com.jagex3.client.client!ja", name = "n", descriptor = "I")
-	public static int anInt2939 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ja", name = "r", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!ja", name = "r", descriptor = "I")
 	public static int anInt2941 = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ja", name = "s", descriptor = "Lclient!na;")
@@ -56,24 +54,7 @@ public final class Static115 {
 		return Static170.method2569(local63, local70, local17, arg0);
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!ja", name = "a", descriptor = "(IIIIB)V")
-	public static void method2310(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		if (Static70.type == 1) {
-			Static240.aClass3_Sub2_Sub1Array10[Static17.milliseconds / 100].method1423(Static122.x - 8, Static25.y + -8);
-		}
-		if (Static70.type == 2) {
-			Static240.aClass3_Sub2_Sub1Array10[Static17.milliseconds / 100 + 4].method1423(Static122.x - 8, Static25.y + -8);
-		}
-		Static256.method4392();
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!ja", name = "a", descriptor = "(Lclient!ve;Lclient!ve;I)V")
-	public static void method2311(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Js5 arg1) {
-		Static87.aClass153_38 = arg1;
-		Static29.aClass153_19 = arg0;
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!ja", name = "a", descriptor = "(II)V")
+    @OriginalMember(owner = "com.jagex3.client.client!ja", name = "a", descriptor = "(II)V")
 	public static void method2312(@OriginalArg(0) int arg0) {
 		Static11.anInt386 = 1000 / arg0;
 	}
@@ -146,7 +127,7 @@ public final class Static115 {
 	public static void method2315() {
 		Static215.aClass3_Sub2_Sub9_32 = null;
 		Static213.aClass3_Sub2_Sub1Array8 = null;
-		Static240.aClass3_Sub2_Sub1Array10 = null;
+		Client.cross = null;
 		Static159.aClass36Array12 = null;
 		Static265.aClass3_Sub2_Sub9_Sub1_2 = null;
 		Static173.aClass3_Sub2_Sub1_Sub1Array9 = null;
@@ -162,6 +143,6 @@ public final class Static115 {
 		Static277.aClass3_Sub2_Sub1Array12 = null;
 		Static276.aClass3_Sub2_Sub1Array11 = null;
 		Static219.aClass3_Sub2_Sub1Array9 = null;
-		Static241.aClass36Array16 = null;
+		Static241.scrollbar = null;
 	}
 }

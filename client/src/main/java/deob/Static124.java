@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -12,30 +13,19 @@ public final class Static124 {
     @OriginalMember(owner = "com.jagex3.client.client!jk", name = "J", descriptor = "I")
 	public static int anInt3083;
 
-	@OriginalMember(owner = "com.jagex3.client.client!jk", name = "p", descriptor = "I")
-	public static int anInt3075 = -1;
-
-	@OriginalMember(owner = "com.jagex3.client.client!jk", name = "y", descriptor = "Z")
+    @OriginalMember(owner = "com.jagex3.client.client!jk", name = "y", descriptor = "Z")
 	public static boolean aBoolean156 = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jk", name = "z", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_17 = new SoftLruHashTable(50);
+	public static final SoftLruCache aClass99_17 = new SoftLruCache(50);
 
 	@OriginalMember(owner = "com.jagex3.client.client!jk", name = "F", descriptor = "Lclient!na;")
 	public static final JagString aClass100_596 = Static28.parse("::tween");
 
-	@OriginalMember(owner = "com.jagex3.client.client!jk", name = "G", descriptor = "Z")
-	public static boolean aBoolean157 = false;
-
-	@OriginalMember(owner = "com.jagex3.client.client!jk", name = "e", descriptor = "(B)V")
-	public static void method2433() {
-		Static262.aClass99_34.method3104();
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!jk", name = "a", descriptor = "(ILclient!na;)Lclient!bn;")
+    @OriginalMember(owner = "com.jagex3.client.client!jk", name = "a", descriptor = "(ILclient!na;)Lclient!bn;")
 	public static Map method2434(@OriginalArg(1) JagString arg0) {
-		for (@Pc(15) Map local15 = (Map) Static228.aClass69_120.method2289(); local15 != null; local15 = (Map) Static228.aClass69_120.method2288()) {
-			if (local15.aClass100_138.method3108(arg0)) {
+		for (@Pc(15) Map local15 = (Map) Static228.aClass69_120.head(); local15 != null; local15 = (Map) Static228.aClass69_120.next()) {
+			if (local15.aClass100_138.equalsInner(arg0)) {
 				return local15;
 			}
 		}
@@ -71,14 +61,14 @@ public final class Static124 {
 					@Pc(90) CollisionMap local90 = null;
 					if (!arg1) {
 						@Pc(95) int local95 = local50;
-						if ((Static12.aByteArrayArrayArray2[1][local72][local76] & 0x2) == 2) {
+						if ((ClientBuild.mapl[1][local72][local76] & 0x2) == 2) {
 							local95 = local50 - 1;
 						}
 						if (local95 >= 0) {
 							local90 = arg4[local95];
 						}
 					}
-					Static185.method3397(local50, !arg1, local50, arg1, local90, local12, local64, local72, local76, local68);
+					ClientBuild.method3397(local50, !arg1, local50, arg1, local90, local12, local64, local72, local76, local68);
 				}
 			}
 		}

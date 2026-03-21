@@ -1,6 +1,9 @@
 package deob;
 
 import com.jagex3.client.Client;
+import com.jagex3.JagString;
+import com.jagex3.Occlude;
+import com.jagex3.Packet;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -16,10 +19,7 @@ public final class Static123 {
 	@OriginalMember(owner = "com.jagex3.client.client!jj", name = "g", descriptor = "Lclient!na;")
 	public static final JagString aClass100_593 = Static28.parse(" (X");
 
-	@OriginalMember(owner = "com.jagex3.client.client!jj", name = "j", descriptor = "Z")
-	public static boolean aBoolean155 = false;
-
-	@OriginalMember(owner = "com.jagex3.client.client!jj", name = "m", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!jj", name = "m", descriptor = "Lclient!na;")
 	public static final JagString aClass100_594 = Static28.parse("<)4col>");
 
 	@OriginalMember(owner = "com.jagex3.client.client!jj", name = "a", descriptor = "(BI)Lclient!lk;")
@@ -28,7 +28,7 @@ public final class Static123 {
 		if (local10 != null) {
 			return local10;
 		}
-		@Pc(26) byte[] local26 = Static23.aClass153_11.method4495(26, arg0);
+		@Pc(26) byte[] local26 = Static23.clientConfig.method4495(26, arg0);
 		local10 = new StructType();
 		if (local26 != null) {
 			local10.method2806(new Packet(local26));
@@ -41,7 +41,7 @@ public final class Static123 {
 	public static void method2418() {
 		if (!Client.advertSuppressed && Client.modeWhere != 2) {
 			try {
-				Static206.aClass100_900.method3157(Static215.aClient1);
+				Static206.aClass100_900.method3157(Client.client);
 			} catch (@Pc(26) Throwable local26) {
 			}
 		}
@@ -51,7 +51,7 @@ public final class Static123 {
 	public static void method2419() {
 		Static215.anInt4870 = 0;
 		label194: for (@Pc(3) int local3 = 0; local3 < Static28.anInt917; local3++) {
-			@Pc(10) Class120 local10 = Static91.aClass120Array1[local3];
+			@Pc(10) Occlude local10 = Static91.aOccludeArray1[local3];
 			@Pc(14) int local14;
 			if (Static8.anIntArray8 != null) {
 				for (local14 = 0; local14 < Static8.anIntArray8.length; local14++) {
@@ -97,7 +97,7 @@ public final class Static123 {
 						local10.anInt4450 = (local10.anInt4449 - Static217.anInt4903 << 8) / local158;
 						local10.anInt4459 = (local10.anInt4444 - Static162.anInt3947 << 8) / local158;
 						local10.anInt4463 = (local10.anInt4447 - Static162.anInt3947 << 8) / local158;
-						Static247.aClass120Array2[Static215.anInt4870++] = local10;
+						Static247.aOccludeArray2[Static215.anInt4870++] = local10;
 					}
 				}
 			} else if (local10.anInt4453 == 2) {
@@ -133,7 +133,7 @@ public final class Static123 {
 						local10.anInt4456 = (local10.anInt4445 - Static149.anInt3555 << 8) / local158;
 						local10.anInt4459 = (local10.anInt4444 - Static162.anInt3947 << 8) / local158;
 						local10.anInt4463 = (local10.anInt4447 - Static162.anInt3947 << 8) / local158;
-						Static247.aClass120Array2[Static215.anInt4870++] = local10;
+						Static247.aOccludeArray2[Static215.anInt4870++] = local10;
 					}
 				}
 			} else if (local10.anInt4453 == 4) {
@@ -171,7 +171,7 @@ public final class Static123 {
 							local10.anInt4456 = (local10.anInt4445 - Static149.anInt3555 << 8) / local14;
 							local10.anInt4454 = (local10.anInt4458 - Static217.anInt4903 << 8) / local14;
 							local10.anInt4450 = (local10.anInt4449 - Static217.anInt4903 << 8) / local14;
-							Static247.aClass120Array2[Static215.anInt4870++] = local10;
+							Static247.aOccludeArray2[Static215.anInt4870++] = local10;
 						}
 					}
 				}
@@ -179,29 +179,7 @@ public final class Static123 {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!jj", name = "a", descriptor = "(IBI)Lclient!na;")
-	public static JagString method2420(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(4) int local4 = arg1 - arg0;
-		if (local4 < -9) {
-			return Static175.aClass100_798;
-		} else if (local4 < -6) {
-			return Static64.aClass100_433;
-		} else if (local4 < -3) {
-			return Static223.aClass100_951;
-		} else if (local4 < 0) {
-			return Static229.aClass100_972;
-		} else if (local4 > 9) {
-			return Static42.aClass100_332;
-		} else if (local4 > 6) {
-			return Static6.aClass100_18;
-		} else if (local4 <= 3) {
-			return local4 > 0 ? Static41.aClass100_266 : Static226.aClass100_965;
-		} else {
-			return Static263.aClass100_1081;
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!jj", name = "a", descriptor = "(B)[F")
+    @OriginalMember(owner = "com.jagex3.client.client!jj", name = "a", descriptor = "(B)[F")
 	public static float[] method2422() {
 		@Pc(3) float local3 = Static161.method3068() + Static161.method3059();
 		@Pc(9) int local9 = Static161.method3064();
@@ -216,8 +194,4 @@ public final class Static123 {
 		return Static251.aFloatArray28;
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!jj", name = "b", descriptor = "(BI)Lclient!na;")
-	public static JagString method2423(@OriginalArg(1) int arg0) {
-		return Static198.method1025(false, arg0);
-	}
 }

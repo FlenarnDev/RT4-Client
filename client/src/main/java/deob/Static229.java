@@ -1,5 +1,7 @@
 package deob;
 
+import com.jagex3.DelayedStateChange;
+import com.jagex3.JagString;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -21,10 +23,7 @@ public final class Static229 {
 	@OriginalMember(owner = "com.jagex3.client.client!si", name = "X", descriptor = "[Lclient!sg;")
 	public static final StockMarketOffer[] aClass136Array1 = new StockMarketOffer[6];
 
-	@OriginalMember(owner = "com.jagex3.client.client!si", name = "Z", descriptor = "Lclient!na;")
-	public static final JagString aClass100_972 = Static28.parse("<col=ffb000>");
-
-	@OriginalMember(owner = "com.jagex3.client.client!si", name = "eb", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!si", name = "eb", descriptor = "I")
 	public static volatile int anInt5140 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!si", name = "gb", descriptor = "Lclient!na;")

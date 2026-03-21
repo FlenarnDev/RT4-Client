@@ -1,18 +1,14 @@
 package deob;
 
+import com.jagex3.JagString;
+import com.jagex3.LocalizedText;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 public final class Static52 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!eb", name = "u", descriptor = "I")
-	public static int anInt1695;
-
-	@OriginalMember(owner = "com.jagex3.client.client!eb", name = "p", descriptor = "[I")
-	public static final int[] anIntArray136 = new int[1000];
-
-	@OriginalMember(owner = "com.jagex3.client.client!eb", name = "t", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!eb", name = "t", descriptor = "I")
 	public static int anInt1694 = -1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!eb", name = "a", descriptor = "(IIIIIII)I")
@@ -34,20 +30,14 @@ public final class Static52 {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!eb", name = "d", descriptor = "(I)V")
-	public static void method1287() {
-		Static241.components = new Component[Static202.aClass153_84.method4483()][];
-		Static223.aBooleanArray115 = new boolean[Static202.aClass153_84.method4483()];
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!eb", name = "b", descriptor = "(II)Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!eb", name = "b", descriptor = "(II)Lclient!na;")
 	public static JagString method1288(@OriginalArg(1) int arg0) {
 		if (arg0 < 100000) {
-			return Static34.method882(new JagString[] { Static105.aClass100_559, Static123.method2423(arg0), Static123.aClass100_594 });
+			return JagString.join(new JagString[] { Static105.aClass100_559, JagString.parseInt(arg0), Static123.aClass100_594 });
 		} else if (arg0 >= 10000000) {
-			return Static34.method882(new JagString[] { Static184.aClass100_819, Static123.method2423(arg0 / 1000000), LocalizedText.MILLION, Static123.aClass100_594 });
+			return JagString.join(new JagString[] { Static184.aClass100_819, JagString.parseInt(arg0 / 1000000), LocalizedText.MILLION, Static123.aClass100_594 });
 		} else {
-			return Static34.method882(new JagString[] { Static137.aClass100_637, Static123.method2423(arg0 / 1000), LocalizedText.THOUSAND, Static123.aClass100_594 });
+			return JagString.join(new JagString[] { Static137.aClass100_637, JagString.parseInt(arg0 / 1000), LocalizedText.THOUSAND, Static123.aClass100_594 });
 		}
 	}
 }

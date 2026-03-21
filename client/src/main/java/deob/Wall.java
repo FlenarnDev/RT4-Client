@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.ModelSource;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
@@ -10,10 +11,10 @@ public final class Wall {
 	public int anInt3044;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jh", name = "e", descriptor = "Lclient!th;")
-	public Entity aClass8_5;
+	public ModelSource aClass8_5;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jh", name = "h", descriptor = "Lclient!th;")
-	public Entity aClass8_6;
+	public ModelSource aClass8_6;
 
 	@OriginalMember(owner = "com.jagex3.client.client!jh", name = "k", descriptor = "I")
 	public int anInt3048;

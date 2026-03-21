@@ -1,36 +1,25 @@
 package deob;
 
+import com.jagex3.JagString;
+import com.jagex3.Js5;
+import com.jagex3.PcmStream;
+import com.jagex3.Pix32;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 public final class Static167 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!nd", name = "n", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_61;
-
-	@OriginalMember(owner = "com.jagex3.client.client!nd", name = "p", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_62;
-
-	@OriginalMember(owner = "com.jagex3.client.client!nd", name = "s", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!nd", name = "s", descriptor = "I")
 	public static int anInt4069;
 
-	@OriginalMember(owner = "com.jagex3.client.client!nd", name = "t", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_63;
-
-	@OriginalMember(owner = "com.jagex3.client.client!nd", name = "v", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_64;
-
-	@OriginalMember(owner = "com.jagex3.client.client!nd", name = "y", descriptor = "Lclient!mm;")
-	public static SoftwareSprite aClass3_Sub2_Sub1_Sub1_3;
+    @OriginalMember(owner = "com.jagex3.client.client!nd", name = "y", descriptor = "Lclient!mm;")
+	public static Pix32 aClass3_Sub2_Sub1_Sub1_3;
 
 	@OriginalMember(owner = "com.jagex3.client.client!nd", name = "b", descriptor = "Lclient!na;")
 	public static final JagString aClass100_780 = Static28.parse("Clientscript error in: ");
 
-	@OriginalMember(owner = "com.jagex3.client.client!nd", name = "q", descriptor = "[[I")
-	public static final int[][] anIntArrayArray31 = new int[104][104];
-
-	@OriginalMember(owner = "com.jagex3.client.client!nd", name = "r", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!nd", name = "r", descriptor = "Lclient!na;")
 	public static final JagString aClass100_781 = Static28.parse("zap");
 
 	@OriginalMember(owner = "com.jagex3.client.client!nd", name = "x", descriptor = "Lclient!na;")

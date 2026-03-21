@@ -1,22 +1,28 @@
 package deob;
 
+import com.jagex3.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("com.jagex3.client.client!lk")
-public final class StructType extends SecondaryNode {
+public final class StructType extends DoubleLinkable {
 
 	@OriginalMember(owner = "com.jagex3.client.client!lk", name = "I", descriptor = "Lclient!sc;")
 	private HashTable aClass133_14;
 
-	@OriginalMember(owner = "com.jagex3.client.client!lk", name = "a", descriptor = "(IIB)I")
+    @OriginalMember(owner = "com.jagex3.client.client!eh", name = "a", descriptor = "(Lclient!ve;I)V")
+    public static void init(@OriginalArg(0) Js5 arg0) {
+        Static23.clientConfig = arg0;
+    }
+
+    @OriginalMember(owner = "com.jagex3.client.client!lk", name = "a", descriptor = "(IIB)I")
 	public final int method2798(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		if (this.aClass133_14 == null) {
 			return arg1;
 		} else {
-			@Pc(29) IntNode local29 = (IntNode) this.aClass133_14.method3863((long) arg0);
+			@Pc(29) IntNode local29 = (IntNode) this.aClass133_14.find((long) arg0);
 			return local29 == null ? arg1 : local29.anInt3141;
 		}
 	}
@@ -35,13 +41,13 @@ public final class StructType extends SecondaryNode {
 		for (local25 = 0; local25 < local17; local25++) {
 			@Pc(45) boolean local45 = arg0.g1() == 1;
 			@Pc(49) int local49 = arg0.g3();
-			@Pc(58) Node local58;
+			@Pc(58) Linkable local58;
 			if (local45) {
 				local58 = new StringNode(arg0.gjstr());
 			} else {
 				local58 = new IntNode(arg0.g4());
 			}
-			this.aClass133_14.method3862(local58, (long) local49);
+			this.aClass133_14.put(local58, (long) local49);
 		}
 	}
 
@@ -50,7 +56,7 @@ public final class StructType extends SecondaryNode {
 		if (this.aClass133_14 == null) {
 			return arg0;
 		} else {
-			@Pc(16) StringNode local16 = (StringNode) this.aClass133_14.method3863((long) arg1);
+			@Pc(16) StringNode local16 = (StringNode) this.aClass133_14.find((long) arg1);
 			return local16 == null ? arg0 : local16.aClass100_980;
 		}
 	}

@@ -1,6 +1,6 @@
 package deob;
 
-import com.jagex3.client.Client;
+import com.jagex3.JagString;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -16,57 +16,7 @@ public final class Static59 {
 	@OriginalMember(owner = "com.jagex3.client.client!ej", name = "U", descriptor = "I")
 	public static int anInt1812 = 0;
 
-	@OriginalMember(owner = "com.jagex3.client.client!ej", name = "W", descriptor = "I")
-	public static int anInt1814 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ej", name = "h", descriptor = "(I)V")
-	public static void method1372() {
-		if (Static162.anInt3953 == 2) {
-			if (Static155.anInt3751 == Static277.anInt5850 && Static60.anInt1892 == Static280.anInt5895) {
-				Static162.anInt3953 = 0;
-				if (Static172.shiftClick && Static187.pressedKeys[81] && Static231.anInt5204 > 2) {
-					Static103.method2232(Static231.anInt5204 - 2);
-				} else {
-					Static103.method2232(Static231.anInt5204 - 1);
-				}
-			}
-		} else if (Static155.anInt3751 == Static7.clickX && Static60.anInt1892 == Static60.clickY) {
-			Static162.anInt3953 = 0;
-			if (Static172.shiftClick && Static187.pressedKeys[81] && Static231.anInt5204 > 2) {
-				Static103.method2232(Static231.anInt5204 - 2);
-			} else {
-				Static103.method2232(Static231.anInt5204 - 1);
-			}
-		} else {
-			Static280.anInt5895 = Static60.clickY;
-			Static162.anInt3953 = 2;
-			Static277.anInt5850 = Static7.clickX;
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!ej", name = "i", descriptor = "(I)V")
-	public static void method1373() {
-		Client.out.p1isaac(243);
-		Client.out.p1(Static144.method2736());
-		Client.out.p2(Static48.anInt1448);
-		Client.out.p2(Static254.anInt5554);
-		Client.out.p1(Static186.anInt4392);
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!ej", name = "a", descriptor = "(Lclient!ve;ILclient!ve;Lclient!of;)V")
-	public static void method1374(@OriginalArg(0) Js5 arg0, @OriginalArg(2) Js5 arg1, @OriginalArg(3) QuickChatCommandDecoder arg2) {
-		Static262.aClass153_108 = arg0;
-		Static107.anInterface3_1 = arg2;
-		Static238.aClass153_96 = arg1;
-		if (Static238.aClass153_96 != null) {
-			Static144.anInt3490 = Static238.aClass153_96.method4504(1);
-		}
-		if (Static262.aClass153_108 != null) {
-			Static34.anInt1047 = Static262.aClass153_108.method4504(1);
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!ej", name = "a", descriptor = "(IZIJ)Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!ej", name = "a", descriptor = "(IZIJ)Lclient!na;")
 	public static JagString method1376(@OriginalArg(3) long arg0) {
 		@Pc(35) long local35 = arg0 / (long) 10;
 		@Pc(37) int local37 = 1;

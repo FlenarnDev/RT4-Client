@@ -1,5 +1,8 @@
 package deob;
 
+import com.jagex3.AbstractPix32;
+import com.jagex3.ByteArrayWrapper;
+import com.jagex3.JagString;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -7,27 +10,15 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static138 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!km", name = "sc", descriptor = "[Lclient!qf;")
-	public static Sprite[] aClass3_Sub2_Sub1Array5;
+	public static AbstractPix32[] aClass3_Sub2_Sub1Array5;
 
 	@OriginalMember(owner = "com.jagex3.client.client!km", name = "uc", descriptor = "F")
 	public static float aFloat14;
 
-	@OriginalMember(owner = "com.jagex3.client.client!km", name = "Nc", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_50;
-
-	@OriginalMember(owner = "com.jagex3.client.client!km", name = "Oc", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_51;
-
-	@OriginalMember(owner = "com.jagex3.client.client!km", name = "Pc", descriptor = "I")
-	public static int anInt3439;
-
-	@OriginalMember(owner = "com.jagex3.client.client!km", name = "Yc", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!km", name = "Yc", descriptor = "I")
 	public static int anInt3443;
 
-	@OriginalMember(owner = "com.jagex3.client.client!km", name = "pc", descriptor = "Z")
-	public static boolean aBoolean172 = false;
-
-	@OriginalMember(owner = "com.jagex3.client.client!km", name = "tc", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!km", name = "tc", descriptor = "Lclient!na;")
 	private static final JagString aClass100_641 = Static28.parse("Dec");
 
 	@OriginalMember(owner = "com.jagex3.client.client!km", name = "vc", descriptor = "Lclient!na;")
@@ -66,10 +57,7 @@ public final class Static138 {
 	@OriginalMember(owner = "com.jagex3.client.client!km", name = "Ac", descriptor = "[Lclient!na;")
 	public static final JagString[] aClass100Array102 = new JagString[] { aClass100_649, aClass100_650, aClass100_646, aClass100_655, aClass100_644, aClass100_656, aClass100_642, aClass100_653, aClass100_657, aClass100_658, aClass100_645, aClass100_641 };
 
-	@OriginalMember(owner = "com.jagex3.client.client!km", name = "Bc", descriptor = "[I")
-	public static final int[] updatedVarcs = new int[32];
-
-	@OriginalMember(owner = "com.jagex3.client.client!km", name = "Mc", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!km", name = "Mc", descriptor = "Lclient!na;")
 	public static final JagString aClass100_652 = Static28.parse("loginscreen");
 
 	@OriginalMember(owner = "com.jagex3.client.client!km", name = "Rc", descriptor = "[I")
@@ -96,51 +84,12 @@ public final class Static138 {
 		} else if (arg0 instanceof byte[]) {
 			@Pc(14) byte[] local14 = (byte[]) arg0;
 			return arg1 ? Static23.method648(local14) : local14;
-		} else if (arg0 instanceof ByteArray) {
-			@Pc(34) ByteArray local34 = (ByteArray) arg0;
+		} else if (arg0 instanceof ByteArrayWrapper) {
+			@Pc(34) ByteArrayWrapper local34 = (ByteArrayWrapper) arg0;
 			return local34.method4236();
 		} else {
 			throw new IllegalArgumentException();
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!km", name = "f", descriptor = "(I)Z")
-	public static boolean method2697() {
-		return GlRenderer.enabled ? true : Static162.aBoolean190;
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!km", name = "c", descriptor = "(Z)Z")
-	public static boolean method2699() {
-		try {
-			if (Static14.anInt441 == 2) {
-				if (Static144.aClass3_Sub29_1 == null) {
-					Static144.aClass3_Sub29_1 = Static291.method3742(Static172.aClass153_70, Static277.anInt5853, Static226.anInt5085);
-					if (Static144.aClass3_Sub29_1 == null) {
-						return false;
-					}
-				}
-				if (Static27.aClass89_1 == null) {
-					Static27.aClass89_1 = new SoundBank(Static78.aClass153_32, Static252.aClass153_103);
-				}
-				if (Static172.aClass3_Sub3_Sub4_2.method4411(Static144.aClass3_Sub29_1, Static210.aClass153_87, Static27.aClass89_1)) {
-					Static172.aClass3_Sub3_Sub4_2.method4412();
-					Static172.aClass3_Sub3_Sub4_2.method4447(Static253.anInt5527);
-					Static172.aClass3_Sub3_Sub4_2.method4431(Static72.aBoolean116, Static144.aClass3_Sub29_1);
-					Static14.anInt441 = 0;
-					Static144.aClass3_Sub29_1 = null;
-					Static27.aClass89_1 = null;
-					Static172.aClass153_70 = null;
-					return true;
-				}
-			}
-		} catch (@Pc(68) Exception local68) {
-			local68.printStackTrace();
-			Static172.aClass3_Sub3_Sub4_2.method4446();
-			Static172.aClass153_70 = null;
-			Static144.aClass3_Sub29_1 = null;
-			Static14.anInt441 = 0;
-			Static27.aClass89_1 = null;
-		}
-		return false;
-	}
 }

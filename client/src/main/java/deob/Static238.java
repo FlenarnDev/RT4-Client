@@ -1,34 +1,24 @@
 package deob;
 
+import com.jagex3.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 public final class Static238 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!te", name = "y", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_96;
-
-	@OriginalMember(owner = "com.jagex3.client.client!te", name = "H", descriptor = "[I")
-	public static int[] anIntArray470;
-
-	@OriginalMember(owner = "com.jagex3.client.client!te", name = "B", descriptor = "[I")
+    @OriginalMember(owner = "com.jagex3.client.client!te", name = "B", descriptor = "[I")
 	public static final int[] anIntArray469 = new int[] { 0, -1, 0, 1 };
 
 	@OriginalMember(owner = "com.jagex3.client.client!te", name = "C", descriptor = "I")
 	public static int anInt5316 = 64;
 
-	@OriginalMember(owner = "com.jagex3.client.client!te", name = "a", descriptor = "(IZ)V")
-	public static void method4142() {
-		Static67.aClass99_20.method3102(5);
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!te", name = "a", descriptor = "(III)Lclient!da;")
+    @OriginalMember(owner = "com.jagex3.client.client!te", name = "a", descriptor = "(III)Lclient!da;")
 	public static DelayedStateChange method4143(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(13) DelayedStateChange local13 = (DelayedStateChange) Static36.aClass133_3.method3863((long) arg1 | (long) arg0 << 32);
+		@Pc(13) DelayedStateChange local13 = (DelayedStateChange) Static36.aClass133_3.find((long) arg1 | (long) arg0 << 32);
 		if (local13 == null) {
 			local13 = new DelayedStateChange(arg0, arg1);
-			Static36.aClass133_3.method3862(local13, local13.aLong192);
+			Static36.aClass133_3.put(local13, local13.key);
 		}
 		return local13;
 	}
@@ -39,7 +29,7 @@ public final class Static238 {
 			return false;
 		}
 		for (@Pc(11) int local11 = 0; local11 < Static35.anInt1093; local11++) {
-			if (arg0.method3111(Static193.aClass100Array134[local11])) {
+			if (arg0.equalsIgnoreCase(Static193.aClass100Array134[local11])) {
 				return true;
 			}
 		}

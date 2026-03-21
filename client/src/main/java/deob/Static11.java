@@ -1,18 +1,13 @@
 package deob;
 
+import com.jagex3.ClientInvCache;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 public final class Static11 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!ba", name = "D", descriptor = "Lclient!vh;")
-	public static AudioChannel aClass62_1;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ba", name = "w", descriptor = "I")
-	public static int anInt384 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ba", name = "x", descriptor = "Z")
+    @OriginalMember(owner = "com.jagex3.client.client!ba", name = "x", descriptor = "Z")
 	public static boolean aBoolean15 = true;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ba", name = "B", descriptor = "I")
@@ -28,7 +23,7 @@ public final class Static11 {
 		if (arg0 < 0) {
 			return 0;
 		}
-		@Pc(17) Inv local17 = (Inv) Static20.aClass133_2.method3863((long) arg0);
+		@Pc(17) ClientInvCache local17 = (ClientInvCache) Static20.aClass133_2.find((long) arg0);
 		if (local17 == null) {
 			return Static246.method4241(arg0).anInt3706;
 		}

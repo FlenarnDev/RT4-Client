@@ -1,5 +1,7 @@
 package deob;
 
+import com.jagex3.*;
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -12,14 +14,11 @@ public final class Static30 {
 	@OriginalMember(owner = "com.jagex3.client.client!cg", name = "e", descriptor = "Lclient!na;")
 	public static final JagString aClass100_184 = Static28.parse("1");
 
-	@OriginalMember(owner = "com.jagex3.client.client!cg", name = "f", descriptor = "I")
-	public static int anInt978 = 127;
-
-	@OriginalMember(owner = "com.jagex3.client.client!cg", name = "h", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!cg", name = "h", descriptor = "Lclient!na;")
 	public static final JagString aClass100_185 = Static28.parse(")3");
 
 	@OriginalMember(owner = "com.jagex3.client.client!cg", name = "a", descriptor = "(ZILclient!ve;I)[Lclient!ek;")
-	private static SoftwareIndexedSprite[] method837(@OriginalArg(1) int arg0, @OriginalArg(2) Js5 arg1) {
+	private static SoftwarePix8[] method837(@OriginalArg(1) int arg0, @OriginalArg(2) Js5 arg1) {
 		return Static234.method4016(arg1, 0, arg0) ? Static121.method2406() : null;
 	}
 
@@ -33,9 +32,9 @@ public final class Static30 {
 		Static276.aClass3_Sub2_Sub1Array11 = Static209.method3708(Static202.anInt4741, arg0);
 		Static149.aClass3_Sub2_Sub1Array7 = Static209.method3708(Static149.anInt3551, arg0);
 		Static84.aClass3_Sub2_Sub1_4 = Static150.method2800(Static19.anInt647, arg0);
-		Static240.aClass3_Sub2_Sub1Array10 = Static131.method2580(Static32.anInt1016, arg0);
+		Client.cross = Static131.method2580(Static32.anInt1016, arg0);
 		Static139.aClass3_Sub2_Sub1Array6 = Static131.method2580(Static78.anInt2147, arg0);
-		Static241.aClass36Array16 = Static146.method2749(arg0, Static124.anInt3083);
+		Static241.scrollbar = Static146.method2749(arg0, Static124.anInt3083);
 		Static159.aClass36Array12 = Static146.method2749(arg0, Static224.anInt5057);
 		Static114.aClass3_Sub2_Sub9_42.method2873(Static159.aClass36Array12, null);
 		Static215.aClass3_Sub2_Sub9_32.method2873(Static159.aClass36Array12, null);
@@ -46,22 +45,22 @@ public final class Static30 {
 				Static242.aClass36_Sub1Array2[local101].method1396();
 			}
 		}
-		@Pc(124) SoftwareSprite local124 = Static78.method1693(0, arg0, Static163.anInt3962);
+		@Pc(124) Pix32 local124 = Static78.method1693(0, arg0, Static163.anInt3962);
 		local124.method311();
 		if (GlRenderer.enabled) {
-			Static106.aClass3_Sub2_Sub1_7 = new GlSprite(local124);
+			Static106.aClass3_Sub2_Sub1_7 = new GlPix32(local124);
 		} else {
 			Static106.aClass3_Sub2_Sub1_7 = local124;
 		}
-		@Pc(143) SoftwareSprite[] local143 = Static265.method4523(Static128.anInt3143, arg0);
+		@Pc(143) Pix32[] local143 = Static265.method4523(Static128.anInt3143, arg0);
 		@Pc(145) int local145;
 		for (local145 = 0; local145 < local143.length; local145++) {
 			local143[local145].method311();
 		}
 		if (GlRenderer.enabled) {
-			Static277.aClass3_Sub2_Sub1Array12 = new Sprite[local143.length];
+			Static277.aClass3_Sub2_Sub1Array12 = new AbstractPix32[local143.length];
 			for (local145 = 0; local145 < local143.length; local145++) {
-				Static277.aClass3_Sub2_Sub1Array12[local145] = new GlSprite(local143[local145]);
+				Static277.aClass3_Sub2_Sub1Array12[local145] = new GlPix32(local143[local145]);
 			}
 		} else {
 			Static277.aClass3_Sub2_Sub1Array12 = local143;
@@ -75,9 +74,9 @@ public final class Static30 {
 			Static173.aClass3_Sub2_Sub1_Sub1Array9[local219].method315(local145 + local217, local217 + local196, local217 + local210);
 		}
 		if (GlRenderer.enabled) {
-			Static67.aClass3_Sub2_Sub1Array4 = new Sprite[Static173.aClass3_Sub2_Sub1_Sub1Array9.length];
+			Static67.aClass3_Sub2_Sub1Array4 = new AbstractPix32[Static173.aClass3_Sub2_Sub1_Sub1Array9.length];
 			for (local219 = 0; local219 < Static173.aClass3_Sub2_Sub1_Sub1Array9.length; local219++) {
-				Static67.aClass3_Sub2_Sub1Array4[local219] = new GlSprite(Static173.aClass3_Sub2_Sub1_Sub1Array9[local219]);
+				Static67.aClass3_Sub2_Sub1Array4[local219] = new GlPix32(Static173.aClass3_Sub2_Sub1_Sub1Array9[local219]);
 			}
 		} else {
 			Static67.aClass3_Sub2_Sub1Array4 = Static173.aClass3_Sub2_Sub1_Sub1Array9;

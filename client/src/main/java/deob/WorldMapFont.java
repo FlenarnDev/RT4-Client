@@ -7,6 +7,10 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.PixelGrabber;
+
+import com.jagex3.Pix2D;
+import com.jagex3.client.applet.GameCanvas;
+import com.jagex3.JagString;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -124,15 +128,15 @@ public final class WorldMapFont {
 		@Pc(57) int local57 = Static129.anInt3144 - local21;
 		@Pc(59) int local59 = 0;
 		@Pc(66) int local66;
-		if (local15 < Static129.anInt3147) {
-			local66 = Static129.anInt3147 - local15;
+		if (local15 < Pix2D.anInt3147) {
+			local66 = Pix2D.anInt3147 - local15;
 			local27 -= local66;
-			local15 = Static129.anInt3147;
+			local15 = Pix2D.anInt3147;
 			local47 += local66 * local21;
 			local53 += local66 * Static129.anInt3144;
 		}
-		if (local15 + local27 >= Static129.anInt3149) {
-			local27 -= local15 + local27 + 1 - Static129.anInt3149;
+		if (local15 + local27 >= Pix2D.anInt3149) {
+			local27 -= local15 + local27 + 1 - Pix2D.anInt3149;
 		}
 		if (local7 < Static129.anInt3145) {
 			local66 = Static129.anInt3145 - local7;
@@ -203,7 +207,7 @@ public final class WorldMapFont {
 	public final void method1508(@OriginalArg(0) JagString arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		@Pc(5) int local5 = this.method1510(arg0) / 2;
 		@Pc(8) int local8 = this.method1511();
-		if (arg1 - local5 <= Static129.anInt3148 && (arg1 + local5 >= Static129.anInt3145 && (arg2 - local8 <= Static129.anInt3149 && arg2 >= 0))) {
+		if (arg1 - local5 <= Static129.anInt3148 && (arg1 + local5 >= Static129.anInt3145 && (arg2 - local8 <= Pix2D.anInt3149 && arg2 >= 0))) {
 			this.method1502(arg0, arg1 - local5, arg2, arg3, true);
 		}
 	}
@@ -226,7 +230,7 @@ public final class WorldMapFont {
 		@Pc(48) int local48 = arg1.getMaxAscent();
 		@Pc(54) int local54 = arg1.getMaxAscent() + arg1.getMaxDescent();
 		@Pc(57) int local57 = arg1.getHeight();
-		@Pc(62) Image local62 = Static154.canvas.createImage(local3, local54);
+		@Pc(62) Image local62 = GameCanvas.canvas.createImage(local3, local54);
 		@Pc(65) Graphics local65 = local62.getGraphics();
 		local65.setColor(Color.black);
 		local65.fillRect(0, 0, local3, local54);

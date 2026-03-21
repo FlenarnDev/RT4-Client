@@ -1,5 +1,8 @@
 package deob;
 
+import com.jagex3.JagString;
+import com.jagex3.Pix32;
+import com.jagex3.Pix8;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -7,19 +10,13 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static241 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!th", name = "f", descriptor = "[Lclient!ok;")
-	public static IndexedSprite[] aClass36Array16;
+	public static Pix8[] scrollbar;
 
-	@OriginalMember(owner = "com.jagex3.client.client!th", name = "j", descriptor = "[[Lclient!be;")
-	public static Component[][] components;
-
-	@OriginalMember(owner = "com.jagex3.client.client!th", name = "m", descriptor = "[Lclient!be;")
-	public static Component[] aClass13Array13;
-
-	@OriginalMember(owner = "com.jagex3.client.client!th", name = "o", descriptor = "[I")
+    @OriginalMember(owner = "com.jagex3.client.client!th", name = "o", descriptor = "[I")
 	public static int[] anIntArray522;
 
 	@OriginalMember(owner = "com.jagex3.client.client!th", name = "p", descriptor = "[Lclient!mm;")
-	public static SoftwareSprite[] aClass3_Sub2_Sub1_Sub1Array13;
+	public static Pix32[] aClass3_Sub2_Sub1_Sub1Array13;
 
 	@OriginalMember(owner = "com.jagex3.client.client!th", name = "h", descriptor = "Lclient!na;")
 	public static final JagString aClass100_1088 = Static28.parse("::setparticles");
@@ -27,13 +24,7 @@ public final class Static241 {
 	@OriginalMember(owner = "com.jagex3.client.client!th", name = "i", descriptor = "[I")
 	public static final int[] anIntArray520 = new int[14];
 
-	@OriginalMember(owner = "com.jagex3.client.client!th", name = "l", descriptor = "[I")
-	public static final int[] anIntArray521 = new int[100];
-
-	@OriginalMember(owner = "com.jagex3.client.client!th", name = "n", descriptor = "Z")
-	public static boolean aBoolean302 = false;
-
-	@OriginalMember(owner = "com.jagex3.client.client!th", name = "a", descriptor = "(DI)V")
+    @OriginalMember(owner = "com.jagex3.client.client!th", name = "a", descriptor = "(DI)V")
 	public static void method4537(@OriginalArg(0) double arg0) {
 		if (Static122.aDouble1 == arg0) {
 			return;
@@ -45,24 +36,7 @@ public final class Static241 {
 		Static122.aDouble1 = arg0;
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!th", name = "a", descriptor = "(ZIIII)V")
-	public static void method4540(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		Static97.aLong89 = 0L;
-		@Pc(4) int local4 = Static144.method2736();
-		if (arg1 == 3 || local4 == 3) {
-			arg0 = true;
-		}
-		@Pc(44) boolean local44 = false;
-		if (local4 > 0 != arg1 > 0) {
-			local44 = true;
-		}
-		if (arg0 && arg1 > 0) {
-			local44 = true;
-		}
-		Static197.method3560(arg0, arg1, local44, local4, arg2, arg3);
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!th", name = "a", descriptor = "(IIBIIII)I")
+    @OriginalMember(owner = "com.jagex3.client.client!th", name = "a", descriptor = "(IIBIIII)I")
 	public static int method4541(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5) {
 		if ((arg4 & 0x1) == 1) {
 			@Pc(9) int local9 = arg0;
@@ -81,19 +55,7 @@ public final class Static241 {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!th", name = "a", descriptor = "(ZBLclient!ve;Lclient!dd;Lclient!ve;)V")
-	public static void method4542(@OriginalArg(2) Js5 arg0, @OriginalArg(3) SoftwareFont arg1, @OriginalArg(4) Js5 arg2) {
-		Static240.aBoolean276 = true;
-		Static230.aClass153_95 = arg2;
-		Static167.aClass153_61 = arg0;
-		@Pc(23) int local23 = Static167.aClass153_61.method4483() - 1;
-		Static170.anInt3245 = Static167.aClass153_61.method4504(local23) + local23 * 256;
-		Static143.aClass100Array104 = new JagString[] { null, null, null, null, LocalizedText.DROP};
-		Static269.aClass100Array87 = new JagString[] { null, null, LocalizedText.TAKE, null, null };
-		Static256.aClass3_Sub2_Sub9_Sub1_1 = arg1;
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!th", name = "a", descriptor = "(BIIIII)V")
+    @OriginalMember(owner = "com.jagex3.client.client!th", name = "a", descriptor = "(BIIIII)V")
 	public static void method4547(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
 		@Pc(9) int local9 = arg1 - arg2;
 		@Pc(14) int local14 = arg3 - arg4;

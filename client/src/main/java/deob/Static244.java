@@ -1,5 +1,7 @@
 package deob;
 
+import com.jagex3.JagString;
+import com.jagex3.SoftLruCache;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -7,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static244 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!tl", name = "c", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_32 = new SoftLruHashTable(50);
+	public static final SoftLruCache aClass99_32 = new SoftLruCache(50);
 
 
     @OriginalMember(owner = "com.jagex3.client.client!tl", name = "f", descriptor = "Lclient!na;")

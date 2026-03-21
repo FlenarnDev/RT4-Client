@@ -1,6 +1,6 @@
 package deob;
 
-import com.jagex3.client.Client;
+import com.jagex3.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -13,10 +13,7 @@ public final class Static245 {
 	@OriginalMember(owner = "com.jagex3.client.client!tm", name = "d", descriptor = "Lclient!na;")
 	public static final JagString aClass100_1018 = Static28.parse("; Expires=Thu)1 01)2Jan)21970 00:00:00 GMT; Max)2Age=0");
 
-	@OriginalMember(owner = "com.jagex3.client.client!tm", name = "e", descriptor = "Z")
-	public static boolean enabled = false;
-
-	@OriginalMember(owner = "com.jagex3.client.client!tm", name = "i", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!tm", name = "i", descriptor = "I")
 	public static int anInt5377 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!tm", name = "a", descriptor = "(II)V")
@@ -25,61 +22,14 @@ public final class Static245 {
 		local16.method1007();
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!tm", name = "b", descriptor = "(II)Z")
-	public static boolean load(@OriginalArg(0) int arg0) {
-		if (Static223.aBooleanArray115[arg0]) {
-			return true;
-		} else if (Static202.aClass153_84.method4479(arg0)) {
-			@Pc(25) int local25 = Static202.aClass153_84.method4504(arg0);
-			if (local25 == 0) {
-				Static223.aBooleanArray115[arg0] = true;
-				return true;
-			}
-			if (Static241.components[arg0] == null) {
-				Static241.components[arg0] = new Component[local25];
-			}
-			for (@Pc(46) int local46 = 0; local46 < local25; local46++) {
-				if (Static241.components[arg0][local46] == null) {
-					@Pc(62) byte[] local62 = Static202.aClass153_84.method4495(arg0, local46);
-					if (local62 != null) {
-						@Pc(74) Component local74 = Static241.components[arg0][local46] = new Component();
-						local74.anInt507 = local46 + (arg0 << 16);
-						if (local62[0] == -1) {
-							local74.method490(new Packet(local62));
-						} else {
-							local74.method481(new Packet(local62));
-						}
-					}
-				}
-			}
-			Static223.aBooleanArray115[arg0] = true;
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!tm", name = "a", descriptor = "(I)V")
-	public static void method4226() {
-		for (@Pc(7) int local7 = 0; local7 < Static116.anInt2951; local7++) {
-			@Pc(31) int local31 = Static44.anIntArray106[local7];
-			@Pc(35) Player local35 = Static159.aClass8_Sub4_Sub1Array1[local31];
-			@Pc(39) int local39 = Client.in.g1();
-			if ((local39 & 0x10) != 0) {
-				local39 += Client.in.g1() << 8;
-			}
-			Static84.method1768(local39, local31, local35);
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!tm", name = "a", descriptor = "(III[Lclient!mj;IB[BIIIZ)V")
+    @OriginalMember(owner = "com.jagex3.client.client!tm", name = "a", descriptor = "(III[Lclient!mj;IB[BIIIZ)V")
 	public static void method4228(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) CollisionMap[] arg3, @OriginalArg(4) int arg4, @OriginalArg(6) byte[] arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8, @OriginalArg(10) boolean arg9) {
 		@Pc(17) int local17;
 		if (!arg9) {
 			for (@Pc(10) int local10 = 0; local10 < 8; local10++) {
 				for (local17 = 0; local17 < 8; local17++) {
 					if (arg1 + local10 > 0 && local10 + arg1 < 103 && local17 + arg4 > 0 && arg4 + local17 < 103) {
-						arg3[arg2].anIntArrayArray30[local10 + arg1][local17 + arg4] &= 0xFEFFFFFF;
+						arg3[arg2].flags[local10 + arg1][local17 + arg4] &= 0xFEFFFFFF;
 					}
 				}
 			}
@@ -146,7 +96,7 @@ public final class Static245 {
 						}
 						while (local237 > local232) {
 							while (local417 < local255) {
-								Static232.aByteArrayArrayArray13[arg2][local232][local417] = 0;
+								World.aByteArrayArrayArray13[arg2][local232][local417] = 0;
 								local417++;
 							}
 							local232++;
@@ -163,7 +113,7 @@ public final class Static245 {
 											local316 = arg1 + Static214.method4360(arg0, local266 & 0x7, local255 & 0x7);
 											@Pc(328) int local328 = Static202.method3659(arg0, local255 & 0x7, local266 & 0x7) + arg4;
 											if (local316 >= 0 && local316 < 104 && local328 >= 0 && local328 < 104) {
-												Static232.aByteArrayArrayArray13[arg2][local316][local328] = local246;
+												World.aByteArrayArrayArray13[arg2][local316][local328] = local246;
 											}
 										}
 									}
@@ -213,8 +163,8 @@ public final class Static245 {
 						local417 = local517.anInt2240 >> 7;
 						local255 = local517.anInt2245 >> 7;
 						if (local417 >= 0 && local255 >= 0 && local417 < 104 && local255 < 104) {
-							local517.aBoolean125 = (Static12.aByteArrayArrayArray2[1][local417][local255] & 0x2) != 0;
-							local517.anInt2235 = Static83.anIntArrayArrayArray4[local517.anInt2241][local417][local255] - local517.anInt2235;
+							local517.aBoolean125 = (ClientBuild.mapl[1][local417][local255] & 0x2) != 0;
+							local517.anInt2235 = World.groundh[local517.anInt2241][local417][local255] - local517.anInt2235;
 							Static120.method2389(local517);
 						}
 					}
@@ -225,7 +175,7 @@ public final class Static245 {
 		local108 = arg4 + 7;
 		for (local497 = arg1; local497 < local103; local497++) {
 			for (local232 = arg4; local232 < local108; local232++) {
-				Static232.aByteArrayArrayArray13[arg2][local497][local232] = 0;
+				World.aByteArrayArrayArray13[arg2][local497][local232] = 0;
 			}
 		}
 	}

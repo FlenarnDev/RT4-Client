@@ -1,5 +1,9 @@
 package deob;
 
+import com.jagex3.Bzip2Decompressor;
+import com.jagex3.Js5;
+import com.jagex3.Packet;
+import com.jagex3.SoftwarePix8;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -9,14 +13,11 @@ public final class Static162 {
 	@OriginalMember(owner = "com.jagex3.client.client!ml", name = "K", descriptor = "I")
 	public static int anInt3947;
 
-	@OriginalMember(owner = "com.jagex3.client.client!ml", name = "Q", descriptor = "I")
-	public static int anInt3953 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ml", name = "ab", descriptor = "Z")
+    @OriginalMember(owner = "com.jagex3.client.client!ml", name = "ab", descriptor = "Z")
 	public static boolean aBoolean190 = true;
 
 	@OriginalMember(owner = "com.jagex3.client.client!ml", name = "a", descriptor = "(BILclient!ve;)[Lclient!ek;")
-	public static SoftwareIndexedSprite[] method3088(@OriginalArg(1) int arg0, @OriginalArg(2) Js5 arg1) {
+	public static SoftwarePix8[] method3088(@OriginalArg(1) int arg0, @OriginalArg(2) Js5 arg1) {
 		return Static254.method4346(arg1, arg0) ? Static121.method2406() : null;
 	}
 

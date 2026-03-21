@@ -1,5 +1,9 @@
 package deob;
 
+import com.jagex3.JagString;
+import com.jagex3.LocType;
+import com.jagex3.MapElement;
+import com.jagex3.Packet;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -72,7 +76,7 @@ public final class Static166 {
 											Static83.anIntArrayArrayArray3[local84][local95] = new int[4096];
 										}
 										local214--;
-										@Pc(312) LocType local312 = Static271.method4601(local214);
+										@Pc(312) LocType local312 = LocType.list(local214);
 										if (local312.anIntArray380 != null) {
 											local312 = local312.method3417();
 											if (local312 == null || local312.anInt4400 == -1) {
@@ -80,11 +84,11 @@ public final class Static166 {
 											}
 										}
 										Static83.anIntArrayArrayArray3[local84][local95][(63 - local155 << 6) + local150] = local312.anInt4426 + 1;
-										@Pc(353) Class3_Sub26 local353 = new Class3_Sub26();
+										@Pc(353) MapElement local353 = new MapElement();
 										local353.anInt4308 = local312.anInt4400;
 										local353.anInt4307 = local53;
 										local353.anInt4314 = local65;
-										Static145.aClass69_84.method2282(local353);
+										Static145.aClass69_84.push(local353);
 									}
 								}
 							}

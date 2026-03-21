@@ -1,15 +1,15 @@
 package deob;
 
+import com.jagex3.client.Client;
+import com.jagex3.ClientMouseListener;
+import com.jagex3.Packet;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 public final class Static48 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!dl", name = "d", descriptor = "I")
-	public static int anInt1448;
-
-	@OriginalMember(owner = "com.jagex3.client.client!dl", name = "e", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!dl", name = "e", descriptor = "I")
 	public static int anInt1449;
 
 	@OriginalMember(owner = "com.jagex3.client.client!dl", name = "h", descriptor = "[[Z")
@@ -45,17 +45,17 @@ public final class Static48 {
 		local4.p1(Static220.aBoolean244 ? 1 : 0);
 		local4.p1(Static71.aBoolean107 ? 1 : 0);
 		local4.p1(Static102.anInt2679);
-		local4.p1(Static99.aBoolean143 ? 1 : 0);
-		local4.p1(Static125.anInt3104);
-		local4.p1(Static12.anInt391);
-		local4.p1(Static30.anInt978);
+		local4.p1(Client.lowMem ? 1 : 0);
+		local4.p1(Client.waveVolume);
+		local4.p1(Client.midiVolume);
+		local4.p1(Client.ambientVolume);
 		local4.p2(Static114.anInt5831);
 		local4.p2(Static22.anInt729);
 		local4.p1(Static76.method1644());
 		local4.p4(Static164.anInt3988);
 		local4.p1(Static214.anInt5581);
 		local4.p1(Static164.aBoolean191 ? 1 : 0);
-		local4.p1(Static33.aBoolean63 ? 1 : 0);
+		local4.p1(Client.aBoolean63 ? 1 : 0);
 		local4.p1(Static141.anInt3474);
 		local4.p1(Static127.aBoolean159 ? 1 : 0);
 		local4.p1(Static64.aBoolean111 ? 1 : 0);
@@ -64,7 +64,7 @@ public final class Static48 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!dl", name = "a", descriptor = "(II)V")
 	public static void setIdleLoops(@OriginalArg(1) int arg0) {
-		@Pc(10) Mouse local10 = Static93.aClass150_1;
+		@Pc(10) ClientMouseListener local10 = Static93.aClass150_1;
 		synchronized (Static93.aClass150_1) {
 			Static93.anInt2467 = arg0;
 		}

@@ -1,6 +1,8 @@
 package deob;
 
-import com.jagex.signlink.PrivilegedRequest;
+import com.jagex3.LocType;
+import com.jagex3.MapElement;
+import com.jagex3.SoftLruCache;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -10,17 +12,11 @@ public final class Static232 {
 	@OriginalMember(owner = "com.jagex3.client.client!sm", name = "b", descriptor = "I")
 	public static int anInt5208;
 
-	@OriginalMember(owner = "com.jagex3.client.client!sm", name = "e", descriptor = "[[[B")
-	public static byte[][][] aByteArrayArrayArray13;
-
-	@OriginalMember(owner = "com.jagex3.client.client!sm", name = "k", descriptor = "Lsignlink!im;")
-	public static PrivilegedRequest aClass212_5;
-
-	@OriginalMember(owner = "com.jagex3.client.client!sm", name = "m", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!sm", name = "m", descriptor = "I")
 	public static int anInt5212;
 
 	@OriginalMember(owner = "com.jagex3.client.client!sm", name = "c", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_30 = new SoftLruHashTable(64);
+	public static final SoftLruCache aClass99_30 = new SoftLruCache(64);
 
 	@OriginalMember(owner = "com.jagex3.client.client!sm", name = "l", descriptor = "[S")
 	public static short[] aShortArray74 = new short[256];
@@ -59,16 +55,16 @@ public final class Static232 {
 								@Pc(203) int local203 = (local50 + arg4 & 0x3F) + ((arg6 + local119 & 0x3F) << 6);
 								@Pc(209) int local209 = local116[local163][local203];
 								if (local209 != 0) {
-									@Pc(222) LocType local222 = Static271.method4601(local209 - 1);
+									@Pc(222) LocType local222 = LocType.list(local209 - 1);
 									if (!Static258.aBooleanArray130[local222.anInt4400]) {
 										if (local11 != -1 && local222.anInt4400 == Static9.anInt172) {
-											@Pc(243) Class3_Sub26 local243 = new Class3_Sub26();
+											@Pc(243) MapElement local243 = new MapElement();
 											local243.anInt4307 = local65;
 											local243.anInt4314 = local144;
 											local243.anInt4308 = local222.anInt4400;
-											Static172.aClass69_97.method2282(local243);
+											Static172.aClass69_97.push(local243);
 										} else {
-											Static241.aClass3_Sub2_Sub1_Sub1Array13[local222.anInt4400].method1423(local65 - 7, local144 + -7);
+											Static241.aClass3_Sub2_Sub1_Sub1Array13[local222.anInt4400].plotSprite(local65 - 7, local144 + -7);
 										}
 									}
 								}
@@ -78,12 +74,12 @@ public final class Static232 {
 				}
 			}
 		}
-		for (@Pc(285) Class3_Sub26 local285 = (Class3_Sub26) Static172.aClass69_97.method2289(); local285 != null; local285 = (Class3_Sub26) Static172.aClass69_97.method2288()) {
+		for (@Pc(285) MapElement local285 = (MapElement) Static172.aClass69_97.head(); local285 != null; local285 = (MapElement) Static172.aClass69_97.next()) {
 			Static129.method2502(local285.anInt4307, local285.anInt4314, 15, local11);
 			Static129.method2502(local285.anInt4307, local285.anInt4314, 13, local11);
 			Static129.method2502(local285.anInt4307, local285.anInt4314, 11, local11);
 			Static129.method2502(local285.anInt4307, local285.anInt4314, 9, local11);
-			Static241.aClass3_Sub2_Sub1_Sub1Array13[local285.anInt4308].method1423(local285.anInt4307 - 7, local285.anInt4314 + -7);
+			Static241.aClass3_Sub2_Sub1_Sub1Array13[local285.anInt4308].plotSprite(local285.anInt4307 - 7, local285.anInt4314 + -7);
 		}
 		Static172.aClass69_97.method2278();
 	}

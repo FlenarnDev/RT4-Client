@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.*;
 import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -7,13 +8,7 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static41 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!dc", name = "z", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_25;
-
-	@OriginalMember(owner = "com.jagex3.client.client!dc", name = "v", descriptor = "Lclient!na;")
-	public static final JagString aClass100_266 = Static28.parse("<col=c0ff00>");
-
-	@OriginalMember(owner = "com.jagex3.client.client!dc", name = "E", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!dc", name = "E", descriptor = "Lclient!na;")
 	private static final JagString aClass100_267 = Static28.parse("wave:");
 
 	@OriginalMember(owner = "com.jagex3.client.client!dc", name = "M", descriptor = "Lclient!na;")
@@ -35,9 +30,9 @@ public final class Static41 {
 	public static final byte[][] aByteArrayArray6 = new byte[50][];
 
 	@OriginalMember(owner = "com.jagex3.client.client!dc", name = "a", descriptor = "(IZLclient!tk;IIIIILclient!ak;IIIIB)Lclient!ak;")
-	public static Model method1043(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) SeqType arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) Model arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int arg11, @OriginalArg(12) int arg12) {
+	public static ModelLit method1043(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) SeqType arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) ModelLit arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int arg11, @OriginalArg(12) int arg12) {
 		@Pc(23) long local23 = ((long) arg4 << 48) + (long) (arg7 + (arg0 << 16) + (arg12 << 24)) + ((long) arg6 << 32);
-		@Pc(33) Model local33 = (Model) Static45.aClass99_6.method3106(local23);
+		@Pc(33) ModelLit local33 = (ModelLit) Static45.aClass99_6.method3106(local23);
 		@Pc(109) int local109;
 		@Pc(115) int local115;
 		@Pc(126) int local126;
@@ -57,7 +52,7 @@ public final class Static41 {
 				local41 = 21;
 			}
 			@Pc(83) int[] local83 = new int[] { 64, 96, 128 };
-			@Pc(103) RawModel local103 = new RawModel(local41 * 3 + 1, -local41 + local41 * 3 * 2, 0);
+			@Pc(103) ModelUnlit local103 = new ModelUnlit(local41 * 3 + 1, -local41 + local41 * 3 * 2, 0);
 			local109 = local103.method1685(0, 0);
 			@Pc(113) int[][] local113 = new int[3][local41];
 			for (local115 = 0; local115 < 3; local115++) {
@@ -65,8 +60,8 @@ public final class Static41 {
 				local130 = local83[local115];
 				for (@Pc(132) int local132 = 0; local132 < local41; local132++) {
 					@Pc(141) int local141 = (local132 << 11) / local41;
-					@Pc(152) int local152 = arg5 + MathUtils.anIntArray225[local141] * local130 >> 16;
-					local162 = arg3 + MathUtils.anIntArray223[local141] * local126 >> 16;
+					@Pc(152) int local152 = arg5 + Pix3D.cosTable[local141] * local130 >> 16;
+					local162 = arg3 + Pix3D.sinTable[local141] * local126 >> 16;
 					local113[local115][local132] = local103.method1685(local162, local152);
 				}
 			}
@@ -97,7 +92,7 @@ public final class Static41 {
 		local126 = arg8.method4576();
 		local130 = arg8.method4550();
 		if (arg2 != null) {
-			@Pc(403) int local403 = arg2.anIntArray473[arg10];
+			@Pc(403) int local403 = arg2.frames[arg10];
 			local386 = Static72.method1566(local403 >> 16);
 			arg10 = local403 & 0xFFFF;
 		}
@@ -142,19 +137,19 @@ public final class Static41 {
 			local33.method4554(arg9);
 		}
 		if (GlRenderer.enabled) {
-			@Pc(650) GlModel local650 = (GlModel) local33;
-			if (Static207.method3685(Static55.level, arg3 + local384, local126 + arg5) != arg11 || Static207.method3685(Static55.level, local115 + arg3, arg5 - -local130) != arg11) {
+			@Pc(650) GlModelLit local650 = (GlModelLit) local33;
+			if (Client.getAvH(Client.minusedlevel, arg3 + local384, local126 + arg5) != arg11 || Client.getAvH(Client.minusedlevel, local115 + arg3, arg5 - -local130) != arg11) {
 				for (local162 = 0; local162 < local650.anInt5295; local162++) {
-					local650.anIntArray465[local162] += Static207.method3685(Static55.level, local650.anIntArray461[local162] + arg3, arg5 + local650.anIntArray466[local162]) - arg11;
+					local650.anIntArray465[local162] += Client.getAvH(Client.minusedlevel, local650.anIntArray461[local162] + arg3, arg5 + local650.anIntArray466[local162]) - arg11;
 				}
-				local650.aClass5_1.aBoolean3 = false;
+				local650.aGlBoundingBox_1.aBoolean3 = false;
 				local650.aClass127_4.aBoolean235 = false;
 			}
 		} else {
-			@Pc(574) SoftwareModel local574 = (SoftwareModel) local33;
-			if (Static207.method3685(Static55.level, arg3 + local384, arg5 - -local126) != arg11 || arg11 != Static207.method3685(Static55.level, arg3 + local115, arg5 - -local130)) {
+			@Pc(574) SoftwareModelLit local574 = (SoftwareModelLit) local33;
+			if (Client.getAvH(Client.minusedlevel, arg3 + local384, arg5 - -local126) != arg11 || arg11 != Client.getAvH(Client.minusedlevel, arg3 + local115, arg5 - -local130)) {
 				for (local162 = 0; local162 < local574.anInt5788; local162++) {
-					local574.anIntArray527[local162] += Static207.method3685(Static55.level, arg3 + local574.anIntArray528[local162], arg5 + local574.anIntArray531[local162]) - arg11;
+					local574.anIntArray527[local162] += Client.getAvH(Client.minusedlevel, arg3 + local574.anIntArray528[local162], arg5 + local574.anIntArray531[local162]) - arg11;
 				}
 				local574.aBoolean305 = false;
 			}
@@ -163,71 +158,10 @@ public final class Static41 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!dc", name = "a", descriptor = "(IIIZ)V")
-	public static void method1045(@OriginalArg(3) boolean arg0) {
+	public static void init(@OriginalArg(3) boolean arg0) {
 		Static258.anInt5637 = 2;
 		Static164.aBoolean192 = arg0;
 		Static44.anInt1404 = 22050;
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!dc", name = "b", descriptor = "(Z)V")
-	public static void method1050() {
-		@Pc(6) int local6 = Client.in.method2238(8);
-		@Pc(20) int local20;
-		if (Static267.anInt5774 > local6) {
-			for (local20 = local6; local20 < Static267.anInt5774; local20++) {
-				Static52.anIntArray136[Static240.anInt5335++] = Static105.anIntArray256[local20];
-			}
-		}
-		if (local6 > Static267.anInt5774) {
-			throw new RuntimeException("gppov1");
-		}
-		Static267.anInt5774 = 0;
-		for (local20 = 0; local20 < local6; local20++) {
-			@Pc(75) int local75 = Static105.anIntArray256[local20];
-			@Pc(79) Player local79 = Static159.aClass8_Sub4_Sub1Array1[local75];
-			@Pc(84) int local84 = Client.in.method2238(1);
-			if (local84 == 0) {
-				Static105.anIntArray256[Static267.anInt5774++] = local75;
-				local79.anInt3430 = Static83.anInt372;
-			} else {
-				@Pc(107) int local107 = Client.in.method2238(2);
-				if (local107 == 0) {
-					Static105.anIntArray256[Static267.anInt5774++] = local75;
-					local79.anInt3430 = Static83.anInt372;
-					Static44.anIntArray106[Static116.anInt2951++] = local75;
-				} else {
-					@Pc(153) int local153;
-					@Pc(163) int local163;
-					if (local107 == 1) {
-						Static105.anIntArray256[Static267.anInt5774++] = local75;
-						local79.anInt3430 = Static83.anInt372;
-						local153 = Client.in.method2238(3);
-						local79.method2684(1, local153);
-						local163 = Client.in.method2238(1);
-						if (local163 == 1) {
-							Static44.anIntArray106[Static116.anInt2951++] = local75;
-						}
-					} else if (local107 == 2) {
-						Static105.anIntArray256[Static267.anInt5774++] = local75;
-						local79.anInt3430 = Static83.anInt372;
-						if (Client.in.method2238(1) == 1) {
-							local153 = Client.in.method2238(3);
-							local79.method2684(2, local153);
-							local163 = Client.in.method2238(3);
-							local79.method2684(2, local163);
-						} else {
-							local153 = Client.in.method2238(3);
-							local79.method2684(0, local153);
-						}
-						local153 = Client.in.method2238(1);
-						if (local153 == 1) {
-							Static44.anIntArray106[Static116.anInt2951++] = local75;
-						}
-					} else if (local107 == 3) {
-						Static52.anIntArray136[Static240.anInt5335++] = local75;
-					}
-				}
-			}
-		}
-	}
 }

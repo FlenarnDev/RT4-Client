@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 import com.jagex.signlink.SignLink;
-import com.jagex3.client.Client;
+import com.jagex3.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -15,7 +15,7 @@ public final class Static140 {
 	public static int[][][] anIntArrayArrayArray12;
 
 	@OriginalMember(owner = "com.jagex3.client.client!la", name = "f", descriptor = "Lclient!ce;")
-	public static final SecondaryLinkedList aClass16_7 = new SecondaryLinkedList();
+	public static final secondaryLinkList aClass16_7 = new secondaryLinkList();
 
 	@OriginalMember(owner = "com.jagex3.client.client!la", name = "a", descriptor = "(Lclient!wa;Z)V")
 	public static void method2705(@OriginalArg(0) Packet arg0) {
@@ -40,7 +40,7 @@ public final class Static140 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!la", name = "a", descriptor = "(ILclient!e;)I")
-	public static int method2706(@OriginalArg(1) Player arg0) {
+	public static int method2706(@OriginalArg(1) ClientPlayer arg0) {
 		@Pc(14) int local14 = arg0.anInt1654;
 		@Pc(18) BasType local18 = arg0.method2681();
 		if (local18.anInt1037 == arg0.anInt3366) {
@@ -53,41 +53,7 @@ public final class Static140 {
 		return local14;
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!la", name = "a", descriptor = "(IJ)V")
-	public static void method2707(@OriginalArg(1) long arg0) {
-		if (arg0 == 0L) {
-			return;
-		}
-		if (Static35.anInt1093 >= 100) {
-			Static103.method2231(Static186.aClass100_827, 0, LocalizedText.IGNORELISTFULL);
-			return;
-		}
-		@Pc(34) JagString local34 = Static79.decode37(arg0).method3125();
-		@Pc(36) int local36;
-		for (local36 = 0; local36 < Static35.anInt1093; local36++) {
-			if (Static190.aLongArray6[local36] == arg0) {
-				Static103.method2231(Static186.aClass100_827, 0, Static34.method882(new JagString[] { local34, LocalizedText.IGNORELISTDUPE}));
-				return;
-			}
-		}
-		for (local36 = 0; local36 < Static9.anInt178; local36++) {
-			if (Static92.aLongArray3[local36] == arg0) {
-				Static103.method2231(Static186.aClass100_827, 0, Static34.method882(new JagString[] { LocalizedText.REMOVESOCIAL2, local34, LocalizedText.REMOVEFRIEND}));
-				return;
-			}
-		}
-		if (local34.method3108(Static173.self.aClass100_364)) {
-			Static103.method2231(Static186.aClass100_827, 0, LocalizedText.IGNORECANTADDSELF);
-			return;
-		}
-		Static190.aLongArray6[Static35.anInt1093] = arg0;
-		Static193.aClass100Array134[Static35.anInt1093++] = Static79.decode37(arg0);
-		Static185.anInt4369 = Static119.transmitTimer;
-		Client.out.p1isaac(34);
-		Client.out.p8(arg0);
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!la", name = "a", descriptor = "(Lsignlink!ll;Ljava/lang/Object;I)V")
+    @OriginalMember(owner = "com.jagex3.client.client!la", name = "a", descriptor = "(Lsignlink!ll;Ljava/lang/Object;I)V")
 	public static void method2708(@OriginalArg(0) SignLink arg0, @OriginalArg(1) Object arg1) {
 		if (arg0.anEventQueue1 == null) {
 			return;
@@ -106,7 +72,7 @@ public final class Static140 {
 		if (local10 != null) {
 			return local10;
 		}
-		@Pc(26) byte[] local26 = Static85.aClass153_36.method4495(31, arg0);
+		@Pc(26) byte[] local26 = LightType.archive.method4495(31, arg0);
 		local10 = new LightType();
 		if (local26 != null) {
 			local10.method2257(new Packet(local26), arg0);
@@ -116,13 +82,13 @@ public final class Static140 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!la", name = "a", descriptor = "(ILclient!na;Lclient!ve;)Lclient!se;")
-	public static Class134 method2711(@OriginalArg(1) JagString arg0, @OriginalArg(2) Js5 arg1) {
+	public static MapElementList method2711(@OriginalArg(1) JagString arg0, @OriginalArg(2) Js5 arg1) {
 		@Pc(10) int local10 = arg1.method4482(arg0);
 		if (local10 == -1) {
-			return new Class134(0);
+			return new MapElementList(0);
 		}
 		@Pc(29) int[] local29 = arg1.method4503(local10);
-		@Pc(35) Class134 local35 = new Class134(local29.length);
+		@Pc(35) MapElementList local35 = new MapElementList(local29.length);
 		for (@Pc(37) int local37 = 0; local37 < local35.anInt5074; local37++) {
 			@Pc(56) Packet local56 = new Packet(arg1.method4495(local10, local29[local37]));
 			local35.aClass100Array153[local37] = local56.gjstr();

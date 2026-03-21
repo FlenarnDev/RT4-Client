@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.SoftLruCache;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -9,22 +10,13 @@ public final class Static83 {
 	@OriginalMember(owner = "com.jagex3.client.client!gj", name = "i", descriptor = "[[[I")
 	public static int[][][] anIntArrayArrayArray3;
 
-	@OriginalMember(owner = "com.jagex3.client.client!gj", name = "m", descriptor = "[[[I")
-	public static int[][][] anIntArrayArrayArray4;
-
-	@OriginalMember(owner = "com.jagex3.client.client!gj", name = "r", descriptor = "F")
+    @OriginalMember(owner = "com.jagex3.client.client!gj", name = "r", descriptor = "F")
 	public static float aFloat3;
 
-    @OriginalMember(owner = "com.jagex3.client.client!gj", name = "d", descriptor = "I")
-	public static int anInt372 = 0;
+    @OriginalMember(owner = "com.jagex3.client.client!gj", name = "p", descriptor = "Lclient!n;")
+	public static final SoftLruCache aClass99_3 = new SoftLruCache(64);
 
-	@OriginalMember(owner = "com.jagex3.client.client!gj", name = "p", descriptor = "Lclient!n;")
-	public static final SoftLruHashTable aClass99_3 = new SoftLruHashTable(64);
-
-	@OriginalMember(owner = "com.jagex3.client.client!gj", name = "q", descriptor = "[I")
-	public static final int[] updatedVarps = new int[32];
-
-	@OriginalMember(owner = "com.jagex3.client.client!gj", name = "a", descriptor = "(II)Z")
+    @OriginalMember(owner = "com.jagex3.client.client!gj", name = "a", descriptor = "(II)Z")
 	public static boolean method433(@OriginalArg(0) int arg0) {
 		if (arg0 >= 97 && arg0 <= 122) {
 			return true;
@@ -35,13 +27,7 @@ public final class Static83 {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!gj", name = "a", descriptor = "(III)Lclient!df;")
-	public static WallDecor method435(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(7) Tile local7 = Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2];
-		return local7 == null ? null : local7.aClass24_1;
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!gj", name = "a", descriptor = "([JII[II)V")
+    @OriginalMember(owner = "com.jagex3.client.client!gj", name = "a", descriptor = "([JII[II)V")
 	public static void method436(@OriginalArg(0) long[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int[] arg3) {
 		if (arg1 >= arg2) {
 			return;

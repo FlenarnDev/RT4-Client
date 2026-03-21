@@ -1,6 +1,8 @@
 package deob;
 
 import java.nio.FloatBuffer;
+
+import com.jagex3.GlRenderer;
 import com.jogamp.opengl.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;

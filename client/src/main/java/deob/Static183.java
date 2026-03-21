@@ -1,5 +1,8 @@
 package deob;
 
+import com.jagex3.Linkable;
+import com.jagex3.Map;
+import com.jagex3.secondaryLinkList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -12,13 +15,10 @@ public final class Static183 {
 	@OriginalMember(owner = "com.jagex3.client.client!ok", name = "c", descriptor = "I")
 	public static int anInt4272 = (int) (Math.random() * 33.0D) - 16;
 
-	@OriginalMember(owner = "com.jagex3.client.client!ok", name = "f", descriptor = "J")
-	public static long prevClickTime = 0L;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ok", name = "a", descriptor = "(Lclient!ab;Lclient!ab;I)V")
-	public static void method3331(@OriginalArg(0) Node arg0, @OriginalArg(1) Node arg1) {
+    @OriginalMember(owner = "com.jagex3.client.client!ok", name = "a", descriptor = "(Lclient!ab;Lclient!ab;I)V")
+	public static void method3331(@OriginalArg(0) Linkable arg0, @OriginalArg(1) Linkable arg1) {
 		if (arg0.aClass3_223 != null) {
-			arg0.method4658();
+			arg0.unlink();
 		}
 		arg0.aClass3_222 = arg1;
 		arg0.aClass3_223 = arg1.aClass3_223;
@@ -27,9 +27,9 @@ public final class Static183 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!ok", name = "a", descriptor = "(IIB)Lclient!ce;")
-	public static SecondaryLinkedList method3333(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(9) SecondaryLinkedList local9 = new SecondaryLinkedList();
-		for (@Pc(14) Map local14 = (Map) Static228.aClass69_120.method2289(); local14 != null; local14 = (Map) Static228.aClass69_120.method2288()) {
+	public static secondaryLinkList method3333(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+		@Pc(9) secondaryLinkList local9 = new secondaryLinkList();
+		for (@Pc(14) Map local14 = (Map) Static228.aClass69_120.head(); local14 != null; local14 = (Map) Static228.aClass69_120.next()) {
 			if (local14.aBoolean50 && local14.method664(arg1, arg0)) {
 				local9.method798(local14);
 			}

@@ -1,6 +1,6 @@
 package deob;
 
-import com.jagex3.client.Client;
+import com.jagex3.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -10,19 +10,13 @@ public final class Static84 {
 	@OriginalMember(owner = "com.jagex3.client.client!gk", name = "d", descriptor = "F")
 	public static float aFloat10;
 
-	@OriginalMember(owner = "com.jagex3.client.client!gk", name = "e", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_35;
-
-	@OriginalMember(owner = "com.jagex3.client.client!gk", name = "j", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!gk", name = "j", descriptor = "I")
 	public static int anInt2257;
 
 	@OriginalMember(owner = "com.jagex3.client.client!gk", name = "l", descriptor = "Lclient!qf;")
-	public static Sprite aClass3_Sub2_Sub1_4;
+	public static AbstractPix32 aClass3_Sub2_Sub1_4;
 
-	@OriginalMember(owner = "com.jagex3.client.client!gk", name = "c", descriptor = "[I")
-	public static final int[] anIntArray209 = new int[4096];
-
-	@OriginalMember(owner = "com.jagex3.client.client!gk", name = "g", descriptor = "Z")
+    @OriginalMember(owner = "com.jagex3.client.client!gk", name = "g", descriptor = "Z")
 	public static boolean aBoolean127 = false;
 
 	@OriginalMember(owner = "com.jagex3.client.client!gk", name = "h", descriptor = "I")
@@ -31,172 +25,7 @@ public final class Static84 {
 	@OriginalMember(owner = "com.jagex3.client.client!gk", name = "i", descriptor = "I")
 	public static int anInt2256 = 0;
 
-	@OriginalMember(owner = "com.jagex3.client.client!gk", name = "a", descriptor = "(IIBLclient!e;)V")
-	public static void method1768(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) Player arg2) {
-		@Pc(13) int local13;
-		@Pc(17) int local17;
-		@Pc(24) int local24;
-		if ((arg0 & 0x80) != 0) {
-			local13 = Client.in.g2_alt1();
-			local17 = Client.in.g1();
-			@Pc(21) int local21 = Client.in.g1();
-			local24 = Client.in.pos;
-			@Pc(35) boolean local35 = (local13 & 0x8000) != 0;
-			if (arg2.aClass100_364 != null && arg2.aClass59_1 != null) {
-				@Pc(48) long local48 = arg2.aClass100_364.encode37();
-				@Pc(50) boolean local50 = false;
-				if (local17 <= 1) {
-					if (!local35 && (Static124.aBoolean157 && !Static207.aBoolean236 || Static86.aBoolean129)) {
-						local50 = true;
-					} else {
-						for (@Pc(69) int local69 = 0; local69 < Static35.anInt1093; local69++) {
-							if (Static190.aLongArray6[local69] == local48) {
-								local50 = true;
-								break;
-							}
-						}
-					}
-				}
-				if (!local50 && Static11.anInt384 == 0) {
-					Static270.aClass3_Sub15_9.pos = 0;
-					Client.in.gdata_alt1(local21, Static270.aClass3_Sub15_9.data);
-					Static270.aClass3_Sub15_9.pos = 0;
-					@Pc(106) int local106 = -1;
-					@Pc(127) JagString local127;
-					if (local35) {
-						@Pc(112) Class12 local112 = Static264.method3568(Static270.aClass3_Sub15_9);
-						local13 &= 0x7FFF;
-						local106 = local112.anInt439;
-						local127 = local112.aClass3_Sub2_Sub6_1.method770(Static270.aClass3_Sub15_9);
-					} else {
-						local127 = Static218.method2862(Static65.method1497(Static270.aClass3_Sub15_9).method3116());
-					}
-					arg2.aClass100_640 = local127.method3144();
-					arg2.anInt3352 = local13 & 0xFF;
-					arg2.anInt3408 = 150;
-					arg2.anInt3429 = local13 >> 8;
-					if (local17 == 2) {
-						Static154.method2928(local106, local35 ? 17 : 1, local127, null, Static34.method882(new JagString[] { Static44.aClass100_336, arg2.method1264() }));
-					} else if (local17 == 1) {
-						Static154.method2928(local106, local35 ? 17 : 1, local127, null, Static34.method882(new JagString[] { Static65.aClass100_435, arg2.method1264() }));
-					} else {
-						Static154.method2928(local106, local35 ? 17 : 2, local127, null, arg2.method1264());
-					}
-				}
-			}
-			Client.in.pos = local24 + local21;
-		}
-		if ((arg0 & 0x1) != 0) {
-			local13 = Client.in.gsmart();
-			local17 = Client.in.g1_alt1();
-			arg2.method2686(local17, Static83.anInt372, local13);
-			arg2.anInt3378 = Static83.anInt372 + 300;
-			arg2.anInt3372 = Client.in.g1_alt3();
-		}
-		if ((arg0 & 0x8) != 0) {
-			local13 = Client.in.g2();
-			if (local13 == 65535) {
-				local13 = -1;
-			}
-			local17 = Client.in.g1();
-			Static186.method3415(local17, local13, arg2);
-		}
-		if ((arg0 & 0x4) != 0) {
-			local13 = Client.in.g1_alt1();
-			@Pc(309) byte[] local309 = new byte[local13];
-			@Pc(314) Packet local314 = new Packet(local309);
-			Client.in.gdata(local13, local309);
-			Static115.aClass3_Sub15Array1[arg1] = local314;
-			arg2.method1262(local314);
-		}
-		if ((arg0 & 0x2) != 0) {
-			arg2.anInt3370 = Client.in.g2_alt2();
-			if (arg2.anInt3370 == 65535) {
-				arg2.anInt3370 = -1;
-			}
-		}
-		if ((arg0 & 0x400) != 0) {
-			arg2.anInt3380 = Client.in.g1_alt2();
-			arg2.anInt3428 = Client.in.g1();
-			arg2.anInt3416 = Client.in.g1_alt1();
-			arg2.anInt3392 = Client.in.g1();
-			arg2.anInt3395 = Client.in.g2_alt1() + Static83.anInt372;
-			arg2.anInt3386 = Client.in.g2_alt1() + Static83.anInt372;
-			arg2.anInt3431 = Client.in.g1_alt2();
-			arg2.anInt3409 = 1;
-			arg2.anInt3405 = 0;
-		}
-		if ((arg0 & 0x20) != 0) {
-			arg2.aClass100_640 = Client.in.gjstr();
-			if (arg2.aClass100_640.method3149(0) == 126) {
-				arg2.aClass100_640 = arg2.aClass100_640.method3136(1);
-				Static103.method2231(arg2.method1264(), 2, arg2.aClass100_640);
-			} else if (arg2 == Static173.self) {
-				Static103.method2231(arg2.method1264(), 2, arg2.aClass100_640);
-			}
-			arg2.anInt3352 = 0;
-			arg2.anInt3429 = 0;
-			arg2.anInt3408 = 150;
-		}
-		if ((arg0 & 0x200) != 0) {
-			local13 = Client.in.gsmart();
-			local17 = Client.in.g1_alt3();
-			arg2.method2686(local17, Static83.anInt372, local13);
-		}
-		if ((arg0 & 0x800) != 0) {
-			local13 = Client.in.g1_alt2();
-			@Pc(502) int[] local502 = new int[local13];
-			@Pc(505) int[] local505 = new int[local13];
-			@Pc(508) int[] local508 = new int[local13];
-			for (@Pc(510) int local510 = 0; local510 < local13; local510++) {
-				@Pc(521) int local521 = Client.in.g2_alt1();
-				if (local521 == 65535) {
-					local521 = -1;
-				}
-				local502[local510] = local521;
-				local505[local510] = Client.in.g1_alt1();
-				local508[local510] = Client.in.g2();
-			}
-			Static32.method865(local505, local502, arg2, local508);
-		}
-		if ((arg0 & 0x100) != 0) {
-			local13 = Client.in.g2_alt1();
-			if (local13 == 65535) {
-				local13 = -1;
-			}
-			local17 = Client.in.g4_alt3();
-			@Pc(573) boolean local573 = true;
-			if (local13 != -1 && arg2.anInt3432 != -1 && Static36.method941(Static34.method877(local13).anInt1754).anInt5355 < Static36.method941(Static34.method877(arg2.anInt3432).anInt1754).anInt5355) {
-				local573 = false;
-			}
-			if (local573) {
-				arg2.anInt3359 = (local17 & 0xFFFF) + Static83.anInt372;
-				arg2.anInt3361 = 0;
-				arg2.anInt3399 = 0;
-				arg2.anInt3432 = local13;
-				if (arg2.anInt3359 > Static83.anInt372) {
-					arg2.anInt3399 = -1;
-				}
-				arg2.anInt3394 = local17 >> 16;
-				arg2.anInt3418 = 1;
-				if (arg2.anInt3432 != -1 && Static83.anInt372 == arg2.anInt3359) {
-					local24 = Static34.method877(arg2.anInt3432).anInt1754;
-					if (local24 != -1) {
-						@Pc(663) SeqType local663 = Static36.method941(local24);
-						if (local663 != null && local663.anIntArray473 != null) {
-							Static152.method2836(arg2.anInt3421, local663, arg2.anInt3412, arg2 == Static173.self, 0);
-						}
-					}
-				}
-			}
-		}
-		if ((arg0 & 0x40) != 0) {
-			arg2.anInt3382 = Client.in.g2();
-			arg2.anInt3363 = Client.in.g2_alt3();
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!gk", name = "a", descriptor = "([BI)V")
+    @OriginalMember(owner = "com.jagex3.client.client!gk", name = "a", descriptor = "([BI)V")
 	public static void method1770(@OriginalArg(0) byte[] arg0) {
 		@Pc(4) Packet local4 = new Packet(arg0);
 		local4.pos = arg0.length - 2;
@@ -291,7 +120,7 @@ public final class Static84 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!gk", name = "a", descriptor = "(Lclient!rg;Lclient!rg;B)V")
-	public static void method1772(@OriginalArg(0) SecondaryNode arg0, @OriginalArg(1) SecondaryNode arg1) {
+	public static void method1772(@OriginalArg(0) DoubleLinkable arg0, @OriginalArg(1) DoubleLinkable arg1) {
 		if (arg1.aClass3_Sub2_66 != null) {
 			arg1.method4365();
 		}

@@ -4,28 +4,23 @@ import java.io.IOException;
 import java.net.Socket;
 
 import com.jagex.signlink.MonotonicClock;
+import com.jagex3.*;
 import com.jagex3.client.Client;
-import com.jagex3.client.GameShell;
+import com.jagex3.client.applet.GameShell;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 public final class Static207 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!ql", name = "c", descriptor = "Z")
-	public static boolean aBoolean236 = false;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ql", name = "d", descriptor = "I")
-	public static int anInt4778 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ql", name = "h", descriptor = "Lclient!na;")
+    @OriginalMember(owner = "com.jagex3.client.client!ql", name = "h", descriptor = "Lclient!na;")
 	public static final JagString aClass100_903 = Static28.parse("Hidden)2");
 
 	@OriginalMember(owner = "com.jagex3.client.client!ql", name = "i", descriptor = "Lclient!na;")
 	public static final JagString aClass100_904 = Static28.parse("::wm2");
 
 	@OriginalMember(owner = "com.jagex3.client.client!ql", name = "a", descriptor = "(IFII[[I[[II[[FIBIZLclient!hg;[[FII[[FI)I")
-	public static int method3683(@OriginalArg(0) int arg0, @OriginalArg(1) float arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int[][] arg4, @OriginalArg(5) int[][] arg5, @OriginalArg(6) int arg6, @OriginalArg(7) float[][] arg7, @OriginalArg(8) int arg8, @OriginalArg(10) int arg9, @OriginalArg(11) boolean arg10, @OriginalArg(12) Class3_Sub14 arg11, @OriginalArg(13) float[][] arg12, @OriginalArg(14) int arg13, @OriginalArg(15) int arg14, @OriginalArg(16) float[][] arg15, @OriginalArg(17) int arg16) {
+	public static int method3683(@OriginalArg(0) int arg0, @OriginalArg(1) float arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int[][] arg4, @OriginalArg(5) int[][] arg5, @OriginalArg(6) int arg6, @OriginalArg(7) float[][] arg7, @OriginalArg(8) int arg8, @OriginalArg(10) int arg9, @OriginalArg(11) boolean arg10, @OriginalArg(12) GlSquare arg11, @OriginalArg(13) float[][] arg12, @OriginalArg(14) int arg13, @OriginalArg(15) int arg14, @OriginalArg(16) float[][] arg15, @OriginalArg(17) int arg16) {
 		@Pc(20) int local20;
 		if (arg9 == 1) {
 			local20 = arg14;
@@ -98,8 +93,8 @@ public final class Static207 {
 				if (MonotonicClock.currentTime() - 5000L < Static231.aLong174) {
 					return 0;
 				}
-				System.out.println(Static208.worldListPort);
-				Static72.aClass212_3 = GameShell.signLink.socketreq(Static143.worldListHostname, Static208.worldListPort);
+				System.out.println(Client.worldListPort);
+				Client.socketReq = GameShell.signLink.socketreq(Client.worldListHostname, Client.worldListPort);
 				Static15.aLong18 = MonotonicClock.currentTime();
 				Static82.anInt2231 = 1;
 			}
@@ -109,34 +104,34 @@ public final class Static207 {
 			@Pc(82) int local82;
 			@Pc(124) int local124;
 			if (Static82.anInt2231 == 1) {
-				if (Static72.aClass212_3.status == 2) {
+				if (Client.socketReq.status == 2) {
 					return Static10.method347(1001);
 				}
-				if (Static72.aClass212_3.status != 1) {
+				if (Client.socketReq.status != 1) {
 					return -1;
 				}
-				Client.loginStream = new ClientStream((Socket) Static72.aClass212_3.result, GameShell.signLink);
+				Client.stream = new ClientStream((Socket) Client.socketReq.result, GameShell.signLink);
 				Client.out.pos = 0;
-				Static72.aClass212_3 = null;
+				Client.socketReq = null;
 				local82 = 0;
 				if (Static61.aBoolean109) {
 					local82 = Static80.anInt4702;
 				}
 				Client.out.p1(255);
 				Client.out.p4(local82);
-				Client.loginStream.write(Client.out.data, Client.out.pos);
-				if (Static11.aClass62_1 != null) {
-					Static11.aClass62_1.method3571();
+				Client.stream.write(Client.out.data, Client.out.pos);
+				if (Client.midiPcmPlayer != null) {
+					Client.midiPcmPlayer.skipNextAcceptedCheck();
 				}
-				if (Static147.aClass62_2 != null) {
-					Static147.aClass62_2.method3571();
+				if (Client.soundPcmPlayer != null) {
+					Client.soundPcmPlayer.skipNextAcceptedCheck();
 				}
-				local124 = Client.loginStream.read();
-				if (Static11.aClass62_1 != null) {
-					Static11.aClass62_1.method3571();
+				local124 = Client.stream.read();
+				if (Client.midiPcmPlayer != null) {
+					Client.midiPcmPlayer.skipNextAcceptedCheck();
 				}
-				if (Static147.aClass62_2 != null) {
-					Static147.aClass62_2.method3571();
+				if (Client.soundPcmPlayer != null) {
+					Client.soundPcmPlayer.skipNextAcceptedCheck();
 				}
 				if (local124 != 0) {
 					return Static10.method347(local124);
@@ -144,12 +139,12 @@ public final class Static207 {
 				Static82.anInt2231 = 2;
 			}
 			if (Static82.anInt2231 == 2) {
-				if (Client.loginStream.available() < 2) {
+				if (Client.stream.available() < 2) {
 					return -1;
 				}
-				Static116.anInt2961 = Client.loginStream.read();
+				Static116.anInt2961 = Client.stream.read();
 				Static116.anInt2961 <<= 0x8;
-				Static116.anInt2961 += Client.loginStream.read();
+				Static116.anInt2961 += Client.stream.read();
 				Static82.anInt2231 = 3;
 				Static141.anInt3469 = 0;
 				Static229.aByteArray70 = new byte[Static116.anInt2961];
@@ -157,28 +152,28 @@ public final class Static207 {
 			if (Static82.anInt2231 != 3) {
 				return -1;
 			}
-			local82 = Client.loginStream.available();
+			local82 = Client.stream.available();
 			if (local82 < 1) {
 				return -1;
 			}
 			if (local82 > Static116.anInt2961 - Static141.anInt3469) {
 				local82 = Static116.anInt2961 - Static141.anInt3469;
 			}
-			Client.loginStream.read(Static141.anInt3469, local82, Static229.aByteArray70);
+			Client.stream.read(Static141.anInt3469, local82, Static229.aByteArray70);
 			Static141.anInt3469 += local82;
 			if (Static141.anInt3469 < Static116.anInt2961) {
 				return -1;
 			} else if (Static170.method2572(Static229.aByteArray70)) {
-				Static101.aClass10_Sub1Array1 = new World[Static106.anInt2871];
+				Static101.aClass10_Sub1Array1 = new GWCWorld[Static106.anInt2871];
 				local124 = 0;
 				for (@Pc(240) int local240 = Static19.anInt636; local240 <= Static171.anInt4157; local240++) {
-					@Pc(247) World local247 = Static54.method1310(local240);
+					@Pc(247) GWCWorld local247 = Static54.method1310(local240);
 					if (local247 != null) {
 						Static101.aClass10_Sub1Array1[local124++] = local247;
 					}
 				}
-				Client.loginStream.close();
-				Client.loginStream = null;
+				Client.stream.close();
+				Client.stream = null;
 				Static127.anInt3132 = 0;
 				Static82.anInt2231 = 0;
 				Static229.aByteArray70 = null;
@@ -192,24 +187,4 @@ public final class Static207 {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!ql", name = "a", descriptor = "(IIII)I")
-	public static int method3685(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		if (Static83.anIntArrayArrayArray4 == null) {
-			return 0;
-		}
-		@Pc(12) int local12 = arg1 >> 7;
-		@Pc(16) int local16 = arg2 >> 7;
-		if (local12 < 0 || local16 < 0 || local12 > 103 || local16 > 103) {
-			return 0;
-		}
-		@Pc(36) int local36 = arg1 & 0x7F;
-		@Pc(40) int local40 = arg2 & 0x7F;
-		@Pc(42) int local42 = arg0;
-		if (arg0 < 3 && (Static12.aByteArrayArrayArray2[1][local12][local16] & 0x2) == 2) {
-			local42 = arg0 + 1;
-		}
-		@Pc(91) int local91 = local36 * Static83.anIntArrayArrayArray4[local42][local12 + 1][local16 + 1] + Static83.anIntArrayArrayArray4[local42][local12][local16 + 1] * (128 - local36) >> 7;
-		@Pc(118) int local118 = local36 * Static83.anIntArrayArrayArray4[local42][local12 + 1][local16] + (128 - local36) * Static83.anIntArrayArrayArray4[local42][local12][local16] >> 7;
-		return local40 * local91 + (128 - local40) * local118 >> 7;
-	}
 }

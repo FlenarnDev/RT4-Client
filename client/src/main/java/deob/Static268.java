@@ -1,5 +1,6 @@
 package deob;
 
+import com.jagex3.SoftwareModelLit;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 
@@ -33,7 +34,7 @@ public final class Static268 {
 	public static int[] anIntArray558;
 
 	@OriginalMember(owner = "com.jagex3.client.client!w", name = "ab", descriptor = "Lclient!w;")
-	public static final SoftwareModel aClass8_Sub1_Sub2_1 = new SoftwareModel();
+	public static final SoftwareModelLit aClass8_Sub1_Sub2_1 = new SoftwareModelLit();
 
 	@OriginalMember(owner = "com.jagex3.client.client!w", name = "cb", descriptor = "[I")
 	public static int[] anIntArray535 = new int[1];
@@ -42,7 +43,7 @@ public final class Static268 {
 	public static int[] anIntArray536 = new int[1];
 
 	@OriginalMember(owner = "com.jagex3.client.client!w", name = "eb", descriptor = "Lclient!w;")
-	public static final SoftwareModel aClass8_Sub1_Sub2_2 = new SoftwareModel();
+	public static final SoftwareModelLit aClass8_Sub1_Sub2_2 = new SoftwareModelLit();
 
 	@OriginalMember(owner = "com.jagex3.client.client!w", name = "fb", descriptor = "[B")
 	public static byte[] aByteArray76 = new byte[1];
@@ -66,7 +67,7 @@ public final class Static268 {
 	public static byte[] aByteArray77 = new byte[1];
 
 	@OriginalMember(owner = "com.jagex3.client.client!w", name = "nb", descriptor = "Lclient!w;")
-	public static final SoftwareModel aClass8_Sub1_Sub2_3 = new SoftwareModel();
+	public static final SoftwareModelLit aClass8_Sub1_Sub2_3 = new SoftwareModelLit();
 
 	@OriginalMember(owner = "com.jagex3.client.client!w", name = "ob", descriptor = "[I")
 	public static int[] anIntArray540 = new int[1];
@@ -146,18 +147,7 @@ public final class Static268 {
 	@OriginalMember(owner = "com.jagex3.client.client!w", name = "Wb", descriptor = "[I")
 	public static final int[] anIntArray561 = new int[8192];
 
-	@OriginalMember(owner = "com.jagex3.client.client!w", name = "m", descriptor = "()V")
-	public static void method4580() {
-		aBoolean307 = true;
-		anIntArray550 = new int[4096];
-		anIntArray549 = new int[4096];
-		anIntArray558 = null;
-		anIntArrayArray44 = null;
-		anIntArray552 = null;
-		anIntArrayArray43 = null;
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!w", name = "f", descriptor = "(I)I")
+    @OriginalMember(owner = "com.jagex3.client.client!w", name = "f", descriptor = "(I)I")
 	public static int method4582(@OriginalArg(0) int arg0) {
 		if (arg0 < 2) {
 			arg0 = 2;
@@ -167,18 +157,7 @@ public final class Static268 {
 		return arg0;
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!w", name = "o", descriptor = "()V")
-	public static void method4583() {
-		aBoolean307 = false;
-		anIntArray550 = null;
-		anIntArray549 = null;
-		anIntArray558 = new int[1600];
-		anIntArrayArray44 = new int[1600][64];
-		anIntArray552 = new int[32];
-		anIntArrayArray43 = new int[32][512];
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!w", name = "a", descriptor = "(II)I")
+    @OriginalMember(owner = "com.jagex3.client.client!w", name = "a", descriptor = "(II)I")
 	public static int method4585(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		arg1 = arg1 * (arg0 & 0x7F) >> 7;
 		if (arg1 < 2) {

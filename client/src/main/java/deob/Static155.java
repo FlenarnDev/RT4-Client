@@ -1,21 +1,17 @@
 package deob;
 
+import com.jagex3.JagString;
+import com.jagex3.ObjType;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 public final class Static155 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!me", name = "nb", descriptor = "I")
-	public static int anInt3751;
-
-	@OriginalMember(owner = "com.jagex3.client.client!me", name = "k", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!me", name = "k", descriptor = "I")
 	public static int anInt3718 = -1;
 
-	@OriginalMember(owner = "com.jagex3.client.client!me", name = "P", descriptor = "[I")
-	public static final int[] varcs = new int[2000];
-
-	@OriginalMember(owner = "com.jagex3.client.client!me", name = "a", descriptor = "(IB)V")
+    @OriginalMember(owner = "com.jagex3.client.client!me", name = "a", descriptor = "(IB)V")
 	public static void method2940(@OriginalArg(0) int arg0) {
 		Static217.anInt4901 = -1;
 		if (arg0 == 37) {
@@ -37,9 +33,9 @@ public final class Static155 {
 		@Pc(8) short[] local8 = new short[16];
 		@Pc(12) JagString local12 = arg1.toLowerCase();
 		@Pc(14) int local14 = 0;
-		for (@Pc(16) int local16 = 0; local16 < Static170.anInt3245; local16++) {
-			@Pc(27) ObjType local27 = Static71.method1439(local16);
-			if ((!arg0 || local27.aBoolean132) && local27.anInt2358 == -1 && local27.anInt2334 == -1 && local27.anInt2370 == 0 && local27.aClass100_495.toLowerCase().indexOf(local12) != -1) {
+		for (@Pc(16) int local16 = 0; local16 < ObjType.anInt3245; local16++) {
+			@Pc(27) ObjType local27 = ObjType.list(local16);
+			if ((!arg0 || local27.aBoolean132) && local27.anInt2358 == -1 && local27.anInt2334 == -1 && local27.anInt2370 == 0 && local27.name.toLowerCase().indexOf(local12) != -1) {
 				if (local14 >= 250) {
 					Static169.aShortArray52 = null;
 					Static111.anInt2905 = -1;
@@ -60,18 +56,9 @@ public final class Static155 {
 		Static111.anInt2905 = local14;
 		@Pc(117) JagString[] local117 = new JagString[Static111.anInt2905];
 		for (@Pc(119) int local119 = 0; local119 < Static111.anInt2905; local119++) {
-			local117[local119] = Static71.method1439(local8[local119]).aClass100_495;
+			local117[local119] = ObjType.list(local8[local119]).name;
 		}
 		Static202.method3656(local117, Static169.aShortArray52);
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!me", name = "a", descriptor = "(II)I")
-	public static int method2945(@OriginalArg(1) int arg0) {
-		@Pc(13) Class85 local13 = Static125.method2449(arg0);
-		@Pc(16) int local16 = local13.anInt3327;
-		@Pc(19) int local19 = local13.anInt3323;
-		@Pc(22) int local22 = local13.anInt3318;
-		@Pc(29) int local29 = Class3_Sub9.anIntArray135[local19 - local22];
-		return Static7.anIntArray75[local16] >> local22 & local29;
-	}
 }

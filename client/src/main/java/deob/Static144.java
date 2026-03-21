@@ -1,5 +1,7 @@
 package deob;
 
+import com.jagex3.*;
+import com.jagex3.client.applet.GameShell;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -7,15 +9,9 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static144 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!le", name = "c", descriptor = "Lclient!rf;")
-	public static Song aClass3_Sub29_1;
+	public static MidiFile aClass3_Sub29_1;
 
-	@OriginalMember(owner = "com.jagex3.client.client!le", name = "e", descriptor = "I")
-	public static int anInt3490 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!le", name = "k", descriptor = "Z")
-	public static boolean aBoolean173 = false;
-
-	@OriginalMember(owner = "com.jagex3.client.client!le", name = "a", descriptor = "(IIIIIIIIIII)V")
+    @OriginalMember(owner = "com.jagex3.client.client!le", name = "a", descriptor = "(IIIIIIIIIII)V")
 	public static void method2735(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7) {
 		@Pc(9) int local9 = arg3 - arg5;
 		@Pc(14) int local14 = arg1 - arg2;
@@ -81,7 +77,7 @@ public final class Static144 {
 									if (local312 == 0) {
 										local312 = 1;
 									}
-									Static129.method2495(local47, local222, local62, local238, local312);
+									Pix2D.method2495(local47, local222, local62, local238, local312);
 									continue;
 								}
 							} else {
@@ -94,7 +90,7 @@ public final class Static144 {
 							@Pc(395) int local395 = local209[local254] == null ? 0 : Static145.anIntArray330[local209[local254][local276] & 0xFF];
 							@Pc(437) int local437;
 							if (local372 == 0 && local395 == 0) {
-								Static129.method2495(local47, local222, local62, local238, local312);
+								Pix2D.method2495(local47, local222, local62, local238, local312);
 							} else {
 								@Pc(433) byte local433;
 								if (local372 != 0) {
@@ -104,7 +100,7 @@ public final class Static144 {
 									local433 = local193[local254] == null ? 0 : local193[local254][local276];
 									local437 = local433 & 0xFC;
 									if (local437 == 0 || local62 <= 1 || local238 <= 1) {
-										Static129.method2495(local47, local222, local62, local238, local372);
+										Pix2D.method2495(local47, local222, local62, local238, local372);
 									} else {
 										Static280.method4667(Static129.anIntArray297, local372, local47, local433 & 0x3, local312, local437 >> 2, local238, local62, local222, true);
 									}
@@ -116,7 +112,7 @@ public final class Static144 {
 									local433 = local201[local254][local276];
 									local437 = local433 & 0xFC;
 									if (local437 == 0 || local62 <= 1 || local238 <= 1) {
-										Static129.method2495(local47, local222, local62, local238, local395);
+										Pix2D.method2495(local47, local222, local62, local238, local395);
 									}
 									Static280.method4667(Static129.anIntArray297, local395, local47, local433 & 0x3, 0, local437 >> 2, local238, local62, local222, local372 == 0);
 								}
@@ -200,7 +196,7 @@ public final class Static144 {
 						local145 = (arg6 * local90 >> 16) + arg0;
 						local157 = arg0 + ((local90 + 1) * arg6 >> 16);
 						local162 = local157 - local145;
-						Static129.method2495(local47, local145, local62, local162, local104);
+						Pix2D.method2495(local47, local145, local62, local162, local104);
 					}
 				}
 			}
@@ -228,8 +224,8 @@ public final class Static144 {
 									local233 = local222 & 0x3FFF;
 									if (local233 != 0) {
 										local254 = local222 >> 14 & 0x3;
-										@Pc(998) Class2 local998 = Static40.method1013(local233 - 1);
-										@Pc(1003) SoftwareIndexedSprite local1003 = local998.method9(local254);
+										@Pc(998) MsiType local998 = Static40.method1013(local233 - 1);
+										@Pc(1003) SoftwarePix8 local1003 = local998.method9(local254);
 										if (local1003 != null) {
 											local276 = local162 * local1003.anInt4278 / 4;
 											local270 = local62 * local1003.anInt4270 / 4;
@@ -264,7 +260,7 @@ public final class Static144 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!le", name = "a", descriptor = "(I)I")
 	public static int method2736() {
-		if (Static69.aFrame2 != null) {
+		if (GameShell.aFrame2 != null) {
 			return 3;
 		} else if (GlRenderer.enabled && Static124.aBoolean156) {
 			return 2;

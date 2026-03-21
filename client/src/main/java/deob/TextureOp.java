@@ -1,12 +1,16 @@
 package deob;
 
+import com.jagex3.ColorImageCache;
+import com.jagex3.Linkable;
+import com.jagex3.MonochromeImageCache;
+import com.jagex3.Packet;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("com.jagex3.client.client!j")
-public abstract class TextureOp extends Node {
+public abstract class TextureOp extends Linkable {
 
 	@OriginalMember(owner = "com.jagex3.client.client!j", name = "t", descriptor = "Lclient!nd;")
 	protected MonochromeImageCache aClass103_41;

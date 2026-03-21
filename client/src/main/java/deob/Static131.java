@@ -1,6 +1,8 @@
 package deob;
 
 import java.awt.Component;
+
+import com.jagex3.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -19,10 +21,7 @@ public final class Static131 {
 	@OriginalMember(owner = "com.jagex3.client.client!kd", name = "mb", descriptor = "[Lclient!cl;")
 	public static final AnimFrameset[] aClass3_Sub2_Sub7Array5 = new AnimFrameset[14];
 
-	@OriginalMember(owner = "com.jagex3.client.client!kd", name = "ob", descriptor = "I")
-	public static int anInt3251 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!kd", name = "rb", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!kd", name = "rb", descriptor = "I")
 	public static final int anInt3254 = (int) (Math.random() * 17.0D) - 8;
 
 	@OriginalMember(owner = "com.jagex3.client.client!kd", name = "sb", descriptor = "[I")
@@ -66,14 +65,8 @@ public final class Static131 {
 		}
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!kd", name = "a", descriptor = "(Ljava/lang/String;B)V")
-	public static void method2577(@OriginalArg(0) String arg0) {
-		System.out.println("Bad " + arg0 + ", Usage: worldid, <live/rc/wip>, <english/german>, <game0/game1>");
-		System.exit(1);
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!kd", name = "a", descriptor = "([[F[[II[[FI[ILclient!fj;BLclient!gi;[[FI)V")
-	public static void method2578(@OriginalArg(0) float[][] arg0, @OriginalArg(1) int[][] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) float[][] arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int[] arg5, @OriginalArg(6) Class45 arg6, @OriginalArg(8) Light arg7, @OriginalArg(9) float[][] arg8, @OriginalArg(10) int arg9) {
+    @OriginalMember(owner = "com.jagex3.client.client!kd", name = "a", descriptor = "([[F[[II[[FI[ILclient!fj;BLclient!gi;[[FI)V")
+	public static void method2578(@OriginalArg(0) float[][] arg0, @OriginalArg(1) int[][] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) float[][] arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int[] arg5, @OriginalArg(6) Light_Class45 arg6, @OriginalArg(8) Light arg7, @OriginalArg(9) float[][] arg8, @OriginalArg(10) int arg9) {
 		@Pc(7) int[] local7 = new int[arg5.length / 2];
 		for (@Pc(13) int local13 = 0; local13 < local7.length; local13++) {
 			@Pc(27) int local27 = arg5[local13 + local13];
@@ -138,21 +131,21 @@ public final class Static131 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!kd", name = "a", descriptor = "(IIZLjava/awt/deob.Component;)Lclient!vk;")
-	public static FrameBuffer method2579(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) Component arg2) {
+	public static PixMap method2579(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) Component arg2) {
 		try {
-			@Pc(12) Class local12 = Class.forName("deob.BufferedImageFrameBuffer");
-			@Pc(16) FrameBuffer local16 = (FrameBuffer) local12.getDeclaredConstructor().newInstance();
+			@Pc(12) Class local12 = Class.forName("com.jagex3.JavaPixMap");
+			@Pc(16) PixMap local16 = (PixMap) local12.getDeclaredConstructor().newInstance();
 			local16.method4192(arg0, arg1, arg2);
 			return local16;
 		} catch (@Pc(25) Throwable local25) {
-			@Pc(29) ImageProducerFrameBuffer local29 = new ImageProducerFrameBuffer();
+			@Pc(29) JavaSafePixMap local29 = new JavaSafePixMap();
 			local29.method4192(arg0, arg1, arg2);
 			return local29;
 		}
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!kd", name = "a", descriptor = "(IIILclient!ve;)[Lclient!qf;")
-	public static Sprite[] method2580(@OriginalArg(2) int arg0, @OriginalArg(3) Js5 arg1) {
+	public static AbstractPix32[] method2580(@OriginalArg(2) int arg0, @OriginalArg(3) Js5 arg1) {
 		return Static234.method4016(arg1, 0, arg0) ? Static33.method870() : null;
 	}
 }

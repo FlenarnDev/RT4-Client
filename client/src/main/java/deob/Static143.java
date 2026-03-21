@@ -1,18 +1,17 @@
 package deob;
 
+import com.jagex3.JagString;
+import com.jagex3.MapMarker;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static143 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!ld", name = "k", descriptor = "Ljava/lang/String;")
-	public static String worldListHostname;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ld", name = "a", descriptor = "[I")
+    @OriginalMember(owner = "com.jagex3.client.client!ld", name = "a", descriptor = "[I")
 	public static final int[] anIntArray329 = new int[] { 2, 2, 4, 0, 1, 8, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0 };
 
 	@OriginalMember(owner = "com.jagex3.client.client!ld", name = "b", descriptor = "[Lclient!nc;")
-	public static final Class102[] aClass102Array1 = new Class102[4];
+	public static final MapMarker[] aClass102Array1 = new MapMarker[4];
 
 	@OriginalMember(owner = "com.jagex3.client.client!ld", name = "c", descriptor = "I")
 	public static int anInt3484 = -1;
@@ -20,13 +19,7 @@ public final class Static143 {
 	@OriginalMember(owner = "com.jagex3.client.client!ld", name = "d", descriptor = "Lclient!na;")
 	public static final JagString aClass100_668 = Static28.parse("Hidden)2use");
 
-	@OriginalMember(owner = "com.jagex3.client.client!ld", name = "g", descriptor = "[Lclient!na;")
-	public static JagString[] aClass100Array104 = null;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ld", name = "i", descriptor = "I")
-	public static int anInt3486 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!ld", name = "a", descriptor = "(IIIIZI)V")
+    @OriginalMember(owner = "com.jagex3.client.client!ld", name = "a", descriptor = "(IIIIZI)V")
 	public static void method2731(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(5) int arg4) {
 		Static230.anInt5158 = arg1;
 		Static59.anInt1815 = arg4;

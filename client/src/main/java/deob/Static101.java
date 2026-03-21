@@ -1,5 +1,7 @@
 package deob;
 
+import com.jagex3.GWCWorld;
+import com.jagex3.JagString;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -22,12 +24,12 @@ public final class Static101 {
 	public static int anInt2640 = 0;
 
 	@OriginalMember(owner = "com.jagex3.client.client!hm", name = "fb", descriptor = "[Lclient!ba;")
-	public static World[] aClass10_Sub1Array1 = new World[0];
+	public static GWCWorld[] aClass10_Sub1Array1 = new GWCWorld[0];
 
 	@OriginalMember(owner = "com.jagex3.client.client!hm", name = "a", descriptor = "(Lclient!na;B)I")
 	public static int method2053(@OriginalArg(0) JagString arg0) {
 		for (@Pc(12) int local12 = 0; local12 < Static153.aClass100Array113.length; local12++) {
-			if (Static153.aClass100Array113[local12].method3111(arg0)) {
+			if (Static153.aClass100Array113[local12].equalsIgnoreCase(arg0)) {
 				return local12;
 			}
 		}

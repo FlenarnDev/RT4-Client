@@ -1,5 +1,7 @@
 package deob;
 
+import com.jagex3.*;
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -7,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static91 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!hc", name = "O", descriptor = "[Lclient!pe;")
-	public static Class120[] aClass120Array1;
+	public static Occlude[] aOccludeArray1;
 
 	@OriginalMember(owner = "com.jagex3.client.client!hc", name = "P", descriptor = "I")
 	public static int anInt2428;
@@ -33,7 +35,7 @@ public final class Static91 {
 		if (local12 != null) {
 			return local12;
 		}
-		@Pc(22) byte[] local22 = Static16.aClass153_9.method4495(arg0, 0);
+		@Pc(22) byte[] local22 = Client.scripts.method4495(arg0, 0);
 		if (local22 == null) {
 			return null;
 		}
@@ -60,7 +62,7 @@ public final class Static91 {
 				while (local114-- > 0) {
 					@Pc(136) int local136 = local42.g4();
 					@Pc(140) int local140 = local42.g4();
-					local121.method3862(new IntNode(local140), (long) local136);
+					local121.put(new IntNode(local140), (long) local136);
 				}
 			}
 		}
@@ -85,32 +87,13 @@ public final class Static91 {
 		return local12;
 	}
 
-	@OriginalMember(owner = "com.jagex3.client.client!hc", name = "a", descriptor = "(Lclient!km;Z)V")
-	public static void method1877(@OriginalArg(0) Npc arg0) {
-		for (@Pc(13) AreaSound local13 = (AreaSound) Static152.aClass69_87.method2289(); local13 != null; local13 = (AreaSound) Static152.aClass69_87.method2288()) {
-			if (arg0 == local13.aClass8_Sub4_Sub2_1) {
-				if (local13.aClass3_Sub3_Sub1_1 != null) {
-					Static204.aClass3_Sub3_Sub2_1.method1347(local13.aClass3_Sub3_Sub1_1);
-					local13.aClass3_Sub3_Sub1_1 = null;
-				}
-				local13.method4658();
-				return;
-			}
-		}
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!hc", name = "a", descriptor = "(Lclient!ve;I)V")
-	public static void method1878(@OriginalArg(0) Js5 arg0) {
-		Static182.aClass153_77 = arg0;
-	}
-
-	@OriginalMember(owner = "com.jagex3.client.client!hc", name = "a", descriptor = "(Lclient!na;Z)I")
+    @OriginalMember(owner = "com.jagex3.client.client!hc", name = "a", descriptor = "(Lclient!na;Z)I")
 	public static int method1879(@OriginalArg(0) JagString arg0) {
-		if (Static203.aClass134_1 == null || arg0.length() == 0) {
+		if (Static203.aMapElementList_1 == null || arg0.length() == 0) {
 			return -1;
 		}
-		for (@Pc(20) int local20 = 0; local20 < Static203.aClass134_1.anInt5074; local20++) {
-			if (Static203.aClass134_1.aClass100Array153[local20].method3140(Static101.aClass100_538, Static197.aClass100_872).method3108(arg0)) {
+		for (@Pc(20) int local20 = 0; local20 < Static203.aMapElementList_1.anInt5074; local20++) {
+			if (Static203.aMapElementList_1.aClass100Array153[local20].method3140(Static101.aClass100_538, Static197.aClass100_872).equalsInner(arg0)) {
 				return local20;
 			}
 		}
@@ -118,7 +101,7 @@ public final class Static91 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!hc", name = "a", descriptor = "(IIIILclient!th;Lclient!th;IIIIJ)V")
-	public static void method1880(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) Entity arg4, @OriginalArg(5) Entity arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) long arg10) {
+	public static void method1880(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) ModelSource arg4, @OriginalArg(5) ModelSource arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) long arg10) {
 		if (arg4 == null) {
 			return;
 		}
@@ -134,10 +117,10 @@ public final class Static91 {
 		local6.anInt1394 = arg8;
 		local6.anInt1392 = arg9;
 		for (@Pc(46) int local46 = arg0; local46 >= 0; local46--) {
-			if (Static130.aClass3_Sub5ArrayArrayArray1[local46][arg1][arg2] == null) {
-				Static130.aClass3_Sub5ArrayArrayArray1[local46][arg1][arg2] = new Tile(local46, arg1, arg2);
+			if (World.activeTiles[local46][arg1][arg2] == null) {
+				World.activeTiles[local46][arg1][arg2] = new Square(local46, arg1, arg2);
 			}
 		}
-		Static130.aClass3_Sub5ArrayArrayArray1[arg0][arg1][arg2].aClass24_1 = local6;
+		World.activeTiles[arg0][arg1][arg2].aClass24_1 = local6;
 	}
 }

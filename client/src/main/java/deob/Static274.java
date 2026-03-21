@@ -1,5 +1,8 @@
 package deob;
 
+import com.jagex3.IfType;
+import com.jagex3.JagString;
+import com.jagex3.ModelUnlit;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 
@@ -14,14 +17,11 @@ public final class Static274 {
 	@OriginalMember(owner = "com.jagex3.client.client!wf", name = "f", descriptor = "I")
 	public static int anInt4999;
 
-	@OriginalMember(owner = "com.jagex3.client.client!wf", name = "g", descriptor = "Lclient!ve;")
-	public static Js5 aClass153_90;
-
-	@OriginalMember(owner = "com.jagex3.client.client!wf", name = "j", descriptor = "Lclient!be;")
-	public static Component aClass13_24;
+    @OriginalMember(owner = "com.jagex3.client.client!wf", name = "j", descriptor = "Lclient!be;")
+	public static IfType aClass13_24;
 
 	@OriginalMember(owner = "com.jagex3.client.client!wf", name = "o", descriptor = "[Lclient!gb;")
-	public static final RawModel[] aClass8_Sub5Array5 = new RawModel[4];
+	public static final ModelUnlit[] aClass8_Sub5Array5 = new ModelUnlit[4];
 
 	@OriginalMember(owner = "com.jagex3.client.client!wf", name = "s", descriptor = "Lclient!na;")
 	public static final JagString aClass100_943 = Static28.parse("Forced tweening disabled)3");

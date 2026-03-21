@@ -5,25 +5,21 @@ import java.io.IOException;
 import com.jagex.signlink.FileOnDisk;
 import com.jagex.signlink.PrivilegedRequest;
 import com.jagex.signlink.SignLink;
+import com.jagex3.*;
+import com.jagex3.client.Client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 public final class Static80 {
 
-	@OriginalMember(owner = "com.jagex3.client.client!gf", name = "K", descriptor = "I")
-	public static int anInt4696;
-
-	@OriginalMember(owner = "com.jagex3.client.client!gf", name = "M", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!gf", name = "M", descriptor = "I")
 	public static int anInt4698;
 
 	@OriginalMember(owner = "com.jagex3.client.client!gf", name = "O", descriptor = "[[[I")
 	public static int[][][] anIntArrayArrayArray19;
 
-	@OriginalMember(owner = "com.jagex3.client.client!gf", name = "R", descriptor = "I")
-	public static int anInt4701;
-
-	@OriginalMember(owner = "com.jagex3.client.client!gf", name = "T", descriptor = "I")
+    @OriginalMember(owner = "com.jagex3.client.client!gf", name = "T", descriptor = "I")
 	public static int anInt4702;
 
 	@OriginalMember(owner = "com.jagex3.client.client!gf", name = "I", descriptor = "Lclient!na;")
@@ -36,7 +32,7 @@ public final class Static80 {
 	public static final int[] anIntArray419 = new int[] { 0, 2, 2, 2, 1, 1, 2, 2, 1, 3, 1, 1 };
 
 	@OriginalMember(owner = "com.jagex3.client.client!gf", name = "a", descriptor = "(Lclient!ve;IIB)Lclient!mm;")
-	public static SoftwareSprite method3613(@OriginalArg(0) Js5 arg0, @OriginalArg(2) int arg1) {
+	public static Pix32 method3613(@OriginalArg(0) Js5 arg0, @OriginalArg(2) int arg1) {
 		return Static234.method4016(arg0, 0, arg1) ? Static102.method2071() : null;
 	}
 
@@ -45,25 +41,25 @@ public final class Static80 {
 		Static113.anInt4609 = 3;
 		Static53.method1293(true);
 		aBoolean231 = true;
-		Static99.aBoolean143 = true;
+		Client.lowMem = true;
 		Static220.aBoolean244 = true;
 		Static102.anInt2679 = 0;
 		Static22.anInt729 = 0;
 		Static250.aBoolean283 = true;
 		Static11.aBoolean15 = true;
 		Static15.aBoolean33 = true;
-		Static30.anInt978 = 127;
+		Client.ambientVolume = 127;
 		Static71.aBoolean107 = true;
 		Static209.aBoolean240 = true;
 		Static114.anInt5831 = 0;
 		Static139.anInt3451 = 2;
 		Static159.aBoolean189 = true;
 		Static178.highDetailLighting = true;
-		Static12.anInt391 = 255;
+		Client.midiVolume = 255;
 		Static53.aBoolean99 = true;
 		Static186.anInt4392 = 0;
 		@Pc(48) FileOnDisk local48 = null;
-		Static125.anInt3104 = 127;
+		Client.waveVolume = 127;
 		if (Static238.anInt5316 >= 96) {
 			Static76.method1645(2);
 		} else {
@@ -71,7 +67,7 @@ public final class Static80 {
 		}
 		Static164.anInt3988 = 0;
 		Static141.anInt3474 = 0;
-		Static33.aBoolean63 = false;
+		Client.aBoolean63 = false;
 		Static64.aBoolean111 = true;
 		Static164.aBoolean191 = false;
 		Static127.aBoolean159 = false;

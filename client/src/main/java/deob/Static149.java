@@ -1,6 +1,9 @@
 package deob;
 
 import java.awt.Image;
+
+import com.jagex3.AbstractPix32;
+import com.jagex3.LruCache;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static149 {
@@ -9,7 +12,7 @@ public final class Static149 {
 	public static int anInt3551;
 
 	@OriginalMember(owner = "com.jagex3.client.client!lj", name = "t", descriptor = "[Lclient!qf;")
-	public static Sprite[] aClass3_Sub2_Sub1Array7;
+	public static AbstractPix32[] aClass3_Sub2_Sub1Array7;
 
 	@OriginalMember(owner = "com.jagex3.client.client!lj", name = "y", descriptor = "Ljava/awt/Image;")
 	public static Image anImage3;
@@ -18,11 +21,8 @@ public final class Static149 {
 	public static int anInt3555;
 
 	@OriginalMember(owner = "com.jagex3.client.client!lj", name = "p", descriptor = "Lclient!gn;")
-	public static final LruHashTable aClass54_10 = new LruHashTable(128);
+	public static final LruCache aClass54_10 = new LruCache(128);
 
-	@OriginalMember(owner = "com.jagex3.client.client!lj", name = "w", descriptor = "I")
-	public static int anInt3554 = 0;
-
-	@OriginalMember(owner = "com.jagex3.client.client!lj", name = "z", descriptor = "[I")
+    @OriginalMember(owner = "com.jagex3.client.client!lj", name = "z", descriptor = "[I")
 	public static int[] anIntArray338 = new int[2];
 }

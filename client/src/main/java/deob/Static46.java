@@ -1,6 +1,9 @@
 package deob;
 
 import java.nio.IntBuffer;
+
+import com.jagex3.GlPix32;
+import com.jagex3.GlRenderer;
 import com.jogamp.opengl.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -9,7 +12,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static46 {
 
 	@OriginalMember(owner = "com.jagex3.client.client!dj", name = "a", descriptor = "Lclient!cf;")
-	public static GlSprite aClass3_Sub2_Sub1_Sub2_1 = null;
+	public static GlPix32 aClass3_Sub2_Sub1_Sub2_1 = null;
 
 	@OriginalMember(owner = "com.jagex3.client.client!dj", name = "b", descriptor = "I")
 	public static int anInt1438 = 0;
@@ -272,7 +275,7 @@ public final class Static46 {
 	}
 
 	@OriginalMember(owner = "com.jagex3.client.client!dj", name = "a", descriptor = "(Lclient!cf;)V")
-	public static void method1188(@OriginalArg(0) GlSprite arg0) {
+	public static void method1188(@OriginalArg(0) GlPix32 arg0) {
 		if (arg0.anInt1859 != anInt1441 - anInt1438) {
 			throw new IllegalArgumentException();
 		}
